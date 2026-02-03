@@ -36,3 +36,6 @@ env/
 # OS
 .DS_Store
 Thumbs.db
+
+# Project State
+active_state.md
