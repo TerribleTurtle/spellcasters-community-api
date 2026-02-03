@@ -1,0 +1,21 @@
+{
+  "$schema": "../../schemas/v1/creature.schema.json",
+  "id": "rocket_soldier",
+  "name": "Rocket Soldier",
+  "rank": 1,
+  "description": "Medium-range soldier that deals bonus damage to buildings",
+  "stats": {
+    "health": 220,
+    "speed": 4,
+    "dps": 10,
+    "range": 15,
+    "hps": 0
+  },
+  "tags": [],
+  "meta": {
+    "source": "Spellcasters.md migration"
+  },
+  "date_modified": "2026-02-03T01:54:09.599902Z",
+  "version": "1.0.1",
+  "type": "Unknown"
+}

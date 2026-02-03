@@ -1,0 +1,32 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Game Info",
+  "description": "General information about the game.",
+  "type": "object",
+  "required": ["name", "version", "developer", "publisher", "genre", "links", "description", "date_modified"],
+  "additionalProperties": false,
+  "properties": {
+    "$schema": { "type": "string" },
+    "version": { "type": "string", "pattern": "^\\d+\\.\\d+\\.\\d+$" },
+    "name": { "type": "string" },
+    "developer": { "type": "string" },
+    "publisher": { "type": "string" },
+    "genre": { "type": "string" },
+    "monetization": { "type": "string", "description": "e.g., F2P, Subscription, Box Price" },
+    "description": { "type": "string" },
+    "links": {
+      "type": "object",
+      "properties": {
+        "homepage": { "type": "string", "format": "uri" },
+        "steam": { "type": "string", "format": "uri" },
+        "discord": { "type": "string", "format": "uri" }
+      },
+      "additionalProperties": true
+    },
+    "date_modified": { "type": "string", "format": "date-time" },
+    "meta": {
+      "type": "object",
+      "additionalProperties": true
+    }
+  }
+}

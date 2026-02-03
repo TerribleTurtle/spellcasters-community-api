@@ -1,0 +1,61 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Hero",
+  "type": "object",
+  "required": ["id", "version", "name", "class", "max_level", "description", "date_modified"],
+  "additionalProperties": false,
+  "properties": {
+    "$schema": { "type": "string" },
+    "version": { "type": "string", "pattern": "^\\d+\\.\\d+\\.\\d+$" },
+    "id": { "type": "string" },
+    "image_required": { "type": "boolean", "default": false },
+    "name": { "type": "string" },
+    "class": { "type": "string" },
+    "description": { "type": "string" },
+    "date_modified": { 
+      "type": "string",
+      "format": "date-time"
+    },
+    "max_level": { "type": "integer", "minimum": 1 },
+    "rank_unlock_levels": {
+      "type": "object",
+      "description": "Map of Level (string) to Rank (string) unlocked.",
+      "patternProperties": {
+        "^[0-9]+$": { "type": "string", "enum": ["I", "II", "III", "IV"] }
+      }
+    },
+    "population_caps": {
+      "type": "object",
+      "description": "Max population cap for each rank.",
+      "properties": {
+        "I": { "type": "integer" },
+        "II": { "type": "integer" },
+        "III": { "type": "integer" },
+        "IV": { "type": "integer" }
+      }
+    },
+    "starting_stats": {
+      "type": "object",
+      "properties": {
+        "health": { "type": "integer" },
+        "mana": { "type": "integer" },
+        "power": { "type": "integer" },
+        "population": { "type": "integer" }
+      }
+    },
+    "abilities": {
+      "type": "array",
+      "items": { "type": "string" },
+      "description": "List of Spell IDs this hero can use."
+    },
+    "passive_skills": {
+      "type": "array",
+      "items": { "type": "string" },
+      "description": "List of Passive IDs or descriptions."
+    },
+    "meta": {
+      "type": "object",
+      "additionalProperties": true
+    }
+  }
+}

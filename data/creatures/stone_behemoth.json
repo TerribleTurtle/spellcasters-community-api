@@ -1,0 +1,21 @@
+{
+  "$schema": "../../schemas/v1/creature.schema.json",
+  "id": "stone_behemoth",
+  "name": "STONE BEHEMOTH",
+  "rank": 3,
+  "description": "Siege unit that hurls long-range boulders for heavy area damage",
+  "stats": {
+    "health": 210,
+    "speed": 2,
+    "dps": 40,
+    "range": 55,
+    "hps": 0
+  },
+  "tags": [],
+  "meta": {
+    "source": "Spellcasters.md migration"
+  },
+  "date_modified": "2026-02-03T01:54:09.600868Z",
+  "version": "1.0.1",
+  "type": "Unknown"
+}

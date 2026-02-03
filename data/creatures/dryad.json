@@ -1,0 +1,20 @@
+{
+  "$schema": "../../schemas/v1/creature.schema.json",
+  "id": "dryad",
+  "name": "Dryad",
+  "rank": 2,
+  "description": "Support creature that heals allies. Uses elemental attacks when infused",
+  "stats": {
+    "health": 225,
+    "speed": 3,
+    "dps": 12,
+    "hps": 150
+  },
+  "tags": [],
+  "meta": {
+    "source": "Spellcasters.md migration"
+  },
+  "date_modified": "2026-02-03T01:54:09.596517Z",
+  "version": "1.0.1",
+  "type": "Unknown"
+}

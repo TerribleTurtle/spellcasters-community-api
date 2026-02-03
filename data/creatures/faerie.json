@@ -1,0 +1,21 @@
+{
+  "$schema": "../../schemas/v1/creature.schema.json",
+  "id": "faerie",
+  "name": "Faerie",
+  "rank": 1,
+  "description": "Stealthy flying ranged creature that turns invisible out of combat",
+  "stats": {
+    "health": 100,
+    "speed": 3,
+    "dps": 9,
+    "range": 25,
+    "hps": 0
+  },
+  "tags": [],
+  "meta": {
+    "source": "Spellcasters.md migration"
+  },
+  "date_modified": "2026-02-03T01:54:09.597372Z",
+  "version": "1.0.1",
+  "type": "Unknown"
+}

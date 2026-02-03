@@ -1,0 +1,18 @@
+{
+  "$schema": "../../schemas/v1/titan.schema.json",
+  "id": "thanatos",
+  "name": "THANATOS",
+  "rank": "III",
+  "description": "The Titan of Death inflict curses to enemies, increasing the damage they take and reducing their movement speed.",
+  "stats": {
+    "health": 1000,
+    "speed": 4,
+    "damage": 40
+  },
+  "tags": [],
+  "meta": {
+    "source": "Spellcasters.md migration"
+  },
+  "date_modified": "2026-02-03T01:16:56.468387Z",
+  "version": "1.0.0"
+}

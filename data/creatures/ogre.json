@@ -1,0 +1,20 @@
+{
+  "$schema": "../../schemas/v1/creature.schema.json",
+  "id": "ogre",
+  "name": "Ogre",
+  "rank": 3,
+  "description": "Mighty warrior that crushes target areas with a hammer",
+  "stats": {
+    "health": 230,
+    "speed": 3,
+    "dps": 70,
+    "hps": 0
+  },
+  "tags": [],
+  "meta": {
+    "source": "Spellcasters.md migration"
+  },
+  "date_modified": "2026-02-03T01:54:09.599554Z",
+  "version": "1.0.1",
+  "type": "Unknown"
+}

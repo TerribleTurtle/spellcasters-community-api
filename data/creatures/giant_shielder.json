@@ -1,0 +1,20 @@
+{
+  "$schema": "../../schemas/v1/creature.schema.json",
+  "id": "giant_shielder",
+  "name": "Giant Shielder",
+  "rank": 3,
+  "description": "Slow giant that protects allies with a massive shield",
+  "stats": {
+    "health": 150,
+    "speed": 3,
+    "dps": 30,
+    "hps": 0
+  },
+  "tags": [],
+  "meta": {
+    "source": "Spellcasters.md migration"
+  },
+  "date_modified": "2026-02-03T01:54:09.597690Z",
+  "version": "1.0.1",
+  "type": "Unknown"
+}

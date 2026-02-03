@@ -1,0 +1,40 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Upgrade",
+  "description": "A random upgrade option presented upon leveling up.",
+  "type": "object",
+  "required": ["id", "version", "name", "type", "description", "date_modified"],
+  "additionalProperties": false,
+  "properties": {
+    "$schema": { "type": "string" },
+    "version": { "type": "string", "pattern": "^\\d+\\.\\d+\\.\\d+$" },
+    "id": { "type": "string" },
+    "image_required": { "type": "boolean", "default": false },
+    "name": { "type": "string" },
+    "description": { "type": "string" },
+    "date_modified": { "type": "string", "format": "date-time" },
+    "rarity": {
+      "type": "string",
+      "enum": ["common", "rare", "epic", "legendary"]
+    },
+    "type": {
+      "type": "string",
+      "enum": ["stat_boost", "spell_upgrade", "population_boost"],
+      "description": "The category of upgrade."
+    },
+    "effect": {
+      "type": "object",
+      "properties": {
+        "stat": { "type": "string", "description": "Target stat (e.g., 'health', 'max_population')." },
+        "amount": { "type": "number" },
+        "spell_id": { "type": "string", "description": "Target spell ID if type is spell_upgrade." },
+        "level_increase": { "type": "integer", "description": "How many levels to increase the spell by." }
+      },
+      "additionalProperties": true
+    },
+    "meta": {
+      "type": "object",
+      "additionalProperties": true
+    }
+  }
+}

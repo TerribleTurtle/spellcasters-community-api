@@ -1,0 +1,20 @@
+{
+  "$schema": "../../schemas/v1/creature.schema.json",
+  "id": "ruin_spider",
+  "name": "RUIN SPIDER",
+  "rank": 1,
+  "description": "Fast creature that explodes on contact, dealing bonus damage to buildings",
+  "stats": {
+    "health": 85,
+    "speed": 7,
+    "dps": 20,
+    "hps": 0
+  },
+  "tags": [],
+  "meta": {
+    "source": "Spellcasters.md migration"
+  },
+  "date_modified": "2026-02-03T01:54:09.600253Z",
+  "version": "1.0.1",
+  "type": "Unknown"
+}

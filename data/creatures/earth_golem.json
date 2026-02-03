@@ -1,0 +1,20 @@
+{
+  "$schema": "../../schemas/v1/creature.schema.json",
+  "id": "earth_golem",
+  "name": "EARTH GOLEM",
+  "rank": 2,
+  "description": "Strong melee unit that resists damage from large enemies",
+  "stats": {
+    "health": 650,
+    "speed": 2,
+    "dps": 25,
+    "hps": 0
+  },
+  "tags": [],
+  "meta": {
+    "source": "Spellcasters.md migration"
+  },
+  "date_modified": "2026-02-03T01:54:09.597035Z",
+  "version": "1.0.1",
+  "type": "Unknown"
+}

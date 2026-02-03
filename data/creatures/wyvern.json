@@ -1,0 +1,21 @@
+{
+  "$schema": "../../schemas/v1/creature.schema.json",
+  "id": "wyvern",
+  "name": "WYVERN",
+  "rank": 2,
+  "description": "Flying dragonkin that attacks with mid-range projectiles",
+  "stats": {
+    "health": 220,
+    "speed": 7,
+    "dps": 19,
+    "range": 35,
+    "hps": 0
+  },
+  "tags": [],
+  "meta": {
+    "source": "Spellcasters.md migration"
+  },
+  "date_modified": "2026-02-03T01:54:09.601457Z",
+  "version": "1.0.1",
+  "type": "Unknown"
+}

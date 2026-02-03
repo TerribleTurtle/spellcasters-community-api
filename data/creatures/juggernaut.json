@@ -1,0 +1,20 @@
+{
+  "$schema": "../../schemas/v1/creature.schema.json",
+  "id": "juggernaut",
+  "name": "Juggernaut",
+  "rank": 4,
+  "description": "Colossal creature that deals massive damage to structures",
+  "stats": {
+    "health": 100,
+    "speed": 3,
+    "dps": 50,
+    "hps": 0
+  },
+  "tags": [],
+  "meta": {
+    "source": "Spellcasters.md migration"
+  },
+  "date_modified": "2026-02-03T01:54:09.598425Z",
+  "version": "1.0.1",
+  "type": "Unknown"
+}

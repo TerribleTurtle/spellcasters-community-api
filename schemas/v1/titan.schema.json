@@ -1,0 +1,42 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Titan",
+  "type": "object",
+  "required": ["id", "version", "name", "stats", "description", "date_modified"],
+  "additionalProperties": false,
+  "properties": {
+    "$schema": { "type": "string" },
+    "version": { "type": "string", "pattern": "^\\d+\\.\\d+\\.\\d+$" },
+    "id": { "type": "string" },
+    "image_required": { "type": "boolean", "default": false },
+    "name": { "type": "string" },
+    "description": { "type": "string" },
+    "rank": { "type": "string", "enum": ["I", "II", "III", "IV", "V"] },
+    "tags": {
+      "type": "array",
+      "items": { "type": "string" }
+    },
+    "date_modified": { 
+      "type": "string",
+      "format": "date-time"
+    },
+    "stats": {
+      "type": "object",
+      "required": ["health", "damage"],
+      "properties": {
+        "health": { "type": "integer", "minimum": 1000 },
+        "damage": { "type": "integer" },
+        "speed": { "type": "integer" },
+        "range": { "type": "integer" }
+      }
+    },
+    "abilities": {
+      "type": "array",
+      "items": { "type": "string" }
+    },
+    "meta": {
+      "type": "object",
+      "additionalProperties": true
+    }
+  }
+}
