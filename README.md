@@ -6,7 +6,19 @@ The central, static API for Spellcasters Chronicles data.
 
 Please refer to [GUIDE.md](GUIDE.md) for the complete Setup, Usage, and Contribution guide.
 
-## 🚀 Quick Start
+## 🌐 Live API Usage
+
+**Base URL:** `https://terribleturtle.github.io/spellcasters-community-api/api/v1/`
+
+Developers should use this base URL to fetch data for their applications.
+
+- **Landing Page:** [View Live Site](https://terribleturtle.github.io/spellcasters-community-api/)
+- **Game Info:** [game_info.json](https://terribleturtle.github.io/spellcasters-community-api/api/v1/game_info.json)
+- **Creatures:** [all_creatures.json](https://terribleturtle.github.io/spellcasters-community-api/api/v1/all_creatures.json)
+
+Full endpoint documentation is available in [GUIDE.md](GUIDE.md).
+
+## 🚀 Quick Start (Local Build)
 
 1.  **Install Python 3.9+**
 2.  **Install Dependencies:**
