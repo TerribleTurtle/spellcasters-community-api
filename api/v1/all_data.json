@@ -1,11 +1,35 @@
 {
   "meta": {
-    "generated_at": "2026-02-03T15:35:27.235193+00:00",
+    "generated_at": "2026-02-03T18:01:28.006980+00:00",
     "version": "v1",
     "license": "MIT"
   },
   "data": {
-    "buildings": [],
+    "buildings": [
+      {
+        "$schema": "../../schemas/v1/building.schema.json",
+        "id": "harpy_nest",
+        "version": "1.0.0",
+        "name": "Harpy Nest",
+        "classification": "military",
+        "size": "3x3",
+        "description": "A high crag where harpies roost and train.",
+        "date_modified": "2026-02-03T12:00:00Z",
+        "image_required": false,
+        "build_time": 450,
+        "cost": {
+          "gold": 400,
+          "stone": 500,
+          "wood": 300
+        },
+        "stats": {
+          "health": 1500
+        },
+        "meta": {
+          "note": "Stub with real name, fake data."
+        }
+      }
+    ],
     "creatures": [
       {
         "$schema": "../../schemas/v1/creature.schema.json",
@@ -315,10 +339,88 @@
       }
     ],
     "decks": [],
-    "heroes": [],
+    "heroes": [
+      {
+        "$schema": "../../schemas/v1/hero.schema.json",
+        "id": "stone_shaman",
+        "version": "1.0.0",
+        "name": "Stone Shaman",
+        "class": "Shaman",
+        "max_level": 50,
+        "description": "A wise elder who communes with the earth spirits.",
+        "date_modified": "2026-02-03T12:00:00Z",
+        "image_required": false,
+        "starting_stats": {
+          "health": 600,
+          "mana": 300,
+          "power": 40,
+          "population": 50
+        },
+        "rank_unlock_levels": {
+          "10": "II",
+          "20": "III",
+          "40": "IV"
+        },
+        "population_caps": {
+          "I": 100,
+          "II": 250,
+          "III": 500,
+          "IV": 800
+        },
+        "abilities": [],
+        "passive_skills": [
+          "stone_skin"
+        ],
+        "meta": {
+          "note": "Stub with real name, fake data."
+        }
+      }
+    ],
     "items": [],
     "mechanics": [],
-    "spells": [],
+    "spells": [
+      {
+        "$schema": "../../schemas/v1/spell.schema.json",
+        "id": "earthquake",
+        "version": "1.0.0",
+        "name": "Earthquake",
+        "school": "Earth",
+        "description": "Shakes the ground, dealing damage and slowing enemies in a large area.",
+        "date_modified": "2026-02-03T12:00:00Z",
+        "image_required": false,
+        "cost": {
+          "mana": 80,
+          "charges": 1
+        },
+        "cast_time": 2.0,
+        "cooldown": 12.0,
+        "effects": [
+          {
+            "type": "damage",
+            "value": 150,
+            "element": "earth",
+            "area": "AoE"
+          },
+          {
+            "type": "slow",
+            "value": 30,
+            "duration": 4.0
+          }
+        ],
+        "upgrades": [
+          {
+            "level": 2,
+            "description": "Increases area of effect by 20%.",
+            "effect": {
+              "aoe_bonus": 20
+            }
+          }
+        ],
+        "meta": {
+          "note": "Stub with real name, fake data."
+        }
+      }
+    ],
     "titans": [
       {
         "$schema": "../../schemas/v1/titan.schema.json",

@@ -1,0 +1,39 @@
+{
+  "$schema": "../../schemas/v1/spell.schema.json",
+  "id": "earthquake",
+  "version": "1.0.0",
+  "name": "Earthquake",
+  "school": "Earth",
+  "description": "Shakes the ground, dealing damage and slowing enemies in a large area.",
+  "date_modified": "2026-02-03T12:00:00Z",
+  "image_required": false,
+  "cost": {
+    "mana": 80,
+    "charges": 1
+  },
+  "cast_time": 2.0,
+  "cooldown": 12.0,
+  "effects": [
+    {
+      "type": "damage",
+      "value": 150,
+      "element": "earth",
+      "area": "AoE"
+    },
+    {
+      "type": "slow",
+      "value": 30,
+      "duration": 4.0
+    }
+  ],
+  "upgrades": [
+    {
+      "level": 2,
+      "description": "Increases area of effect by 20%.",
+      "effect": { "aoe_bonus": 20 }
+    }
+  ],
+  "meta": {
+    "note": "Stub with real name, fake data."
+  }
+}

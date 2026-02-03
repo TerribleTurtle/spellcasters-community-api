@@ -1,0 +1,33 @@
+{
+  "$schema": "../../schemas/v1/hero.schema.json",
+  "id": "stone_shaman",
+  "version": "1.0.0",
+  "name": "Stone Shaman",
+  "class": "Shaman",
+  "max_level": 50,
+  "description": "A wise elder who communes with the earth spirits.",
+  "date_modified": "2026-02-03T12:00:00Z",
+  "image_required": false,
+  "starting_stats": {
+    "health": 600,
+    "mana": 300,
+    "power": 40,
+    "population": 50
+  },
+  "rank_unlock_levels": {
+    "10": "II",
+    "20": "III",
+    "40": "IV"
+  },
+  "population_caps": {
+    "I": 100,
+    "II": 250,
+    "III": 500,
+    "IV": 800
+  },
+  "abilities": [],
+  "passive_skills": ["stone_skin"],
+  "meta": {
+    "note": "Stub with real name, fake data."
+  }
+}

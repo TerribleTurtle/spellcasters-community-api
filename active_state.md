@@ -15,10 +15,10 @@ Ready for API usage and Content Expansion.
 - [ ] Populate missing JSON data (Partial: Creatures/Titans done)
   - [x] Creatures
   - [x] Titans
-  - [ ] Heroes
-  - [ ] Spells
+  - [x] Heroes
+  - [x] Spells
   - [ ] Items
-  - [ ] Buildings
+  - [x] Buildings
   - [ ] Upgrades
 - [ ] Populate Assets (Images)
   - [ ] Creatures
@@ -47,6 +47,7 @@ Ready for API usage and Content Expansion.
     - [x] **Launch Prep (2026-02-03):**
       - [x] Refined messaging: "Free & Open API".
       - [x] Polished `index.html` landing page.
+      - [x] Added Beta/Early Access warning to `index.html`.
       - [x] Removed `LAUNCH_CHECKLIST.md` (Ready).
 - [x] **Mechanics Integration:**
   - [x] Added `deck.schema.json` (Starter Decks)

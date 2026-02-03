@@ -1,0 +1,23 @@
+{
+  "$schema": "../../schemas/v1/building.schema.json",
+  "id": "harpy_nest",
+  "version": "1.0.0",
+  "name": "Harpy Nest",
+  "classification": "military",
+  "size": "3x3",
+  "description": "A high crag where harpies roost and train.",
+  "date_modified": "2026-02-03T12:00:00Z",
+  "image_required": false,
+  "build_time": 450,
+  "cost": {
+    "gold": 400,
+    "stone": 500,
+    "wood": 300
+  },
+  "stats": {
+    "health": 1500
+  },
+  "meta": {
+    "note": "Stub with real name, fake data."
+  }
+}
