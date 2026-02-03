@@ -1,10 +1,17 @@
-# Spellcasters Community API
+# Spellcasters Community API (Free & Open)
 
-The central, static API for Spellcasters Chronicles data.
+**A free, open-source API for Spellcasters Chronicles.**
+
+This project is a collaborative tool for **developers** (building apps/tools) and the **community** (wiki editors/fans).
+It is **free to use** and **open for anyone to contribute**.
 
 ## 📚 Documentation
 
-Please refer to [GUIDE.md](GUIDE.md) for the complete Setup, Usage, and Contribution guide.
+Please refer to [GUIDE.md](GUIDE.md) to learn how to:
+
+- Use this data in your own projects
+- Add new creatures or items
+- Fix typos
 
 ## 🌐 Live API Usage
 
@@ -39,7 +46,9 @@ Full endpoint documentation is available in [GUIDE.md](GUIDE.md).
 
 ## 🤝 Contributing
 
-We welcome contributions! Please read [CONTRIBUTING.md](CONTRIBUTING.md) for details.
+This project is built by the community, for the community. **Anyone is free to contribute!**
+
+Please read [CONTRIBUTING.md](CONTRIBUTING.md) for details.
 
 - **Found a typo?** Reference the [Quick Fix Guide](CONTRIBUTING.md#%E2%9A%A1-quick-fix-typos--small-edits).
 - **Adding data?** See the [Advanced Guide](CONTRIBUTING.md#%F0%9F%9B%A0%EF%B8%8F-advanced-adding-new-data).

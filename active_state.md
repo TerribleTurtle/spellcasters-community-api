@@ -44,6 +44,10 @@ Ready for API usage and Content Expansion.
     - [x] **Developer Experience:**
       - [x] Created `verify.bat` for one-click Windows validation.
       - [x] Streamlined `CONTRIBUTING.md` verification instructions.
+    - [x] **Launch Prep (2026-02-03):**
+      - [x] Refined messaging: "Free & Open API".
+      - [x] Polished `index.html` landing page.
+      - [x] Removed `LAUNCH_CHECKLIST.md` (Ready).
 - [x] **Mechanics Integration:**
   - [x] Added `deck.schema.json` (Starter Decks)
   - [x] Added `upgrade.schema.json` (Level-up options)

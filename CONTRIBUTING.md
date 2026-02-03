@@ -1,6 +1,6 @@
 # Contributing to Spellcasters Community API
 
-Thank you for your interest in contributing! This project relies on community submissions to keep the database accurate and up-to-date.
+Thank you for your interest in contributing! This project is **100% community-driven** and relies on submissions from people like you to keep the database accurate.
 
 Please review our [Code of Conduct](CODE_OF_CONDUCT.md) before participating.
 

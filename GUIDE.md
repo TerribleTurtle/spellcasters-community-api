@@ -6,16 +6,19 @@
 
 ## 1. Project Overview
 
-**Goal:** Create a robust, serverless, and versioned database for _Spellcasters Chronicles_ data (Creatures, Spells, Heroes, Buildings).
-**Architecture:** GitHub Repository -> Python Build Script -> Validated JSON API (hosted on GitHub Pages).
+**Goal:** Maintain a **Free & Open API** for _Spellcasters Chronicles_.
 
-This project serves as the "Source of Truth" for all external tools, wikis, and community projects.
+This is a public utility.
+
+- **For Developers:** A standardized database to build apps, deck builders, and calculators.
+- **For Community:** A reliable reference for wikis and spreadsheets.
+- **For Everyone:** A place to contribute and ensure data accuracy.
 
 ---
 
 ## 2. Directory Structure
 
-The project follows a "Parallel Structure" to separate raw source data from assets and build logic.
+The project keeps raw data (JSON files) separate from images (Assets).
 
 ```
 spellcasters-community-api/
@@ -130,9 +133,9 @@ python scripts/build_api.py
 3.  **Verify:** Run the python script to ensure no schema errors. A [Pull Request Template](.github/PULL_REQUEST_TEMPLATE.md) will guide you through the submission process.
 4.  **Push:** Commit changes. GitHub Actions will automatically deploy to the API endpoint.
 
-### 5.1 Image Hosting Guidelines
+### 5.1 Image Hosting
 
-We use a **Git-Native** hosting strategy for robustness and simplicity.
+We host images directly in the repository for simplicity.
 
 - **Location:** `assets/[category]/[id].png`
 - **Size Limit:** Must be < 1MB per image.
