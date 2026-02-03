@@ -28,11 +28,10 @@
     "cost": {
       "type": "object",
       "properties": {
-        "gold": { "type": "integer" },
-        "wood": { "type": "integer" },
-        "stone": { "type": "integer" }
+        "population": { "type": "integer", "default": 0 },
+        "charges": { "type": "integer", "default": 1 }
       },
-      "additionalProperties": true
+      "additionalProperties": false
     },
     "stats": {
       "type": "object",

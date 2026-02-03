@@ -10,9 +10,8 @@
   "image_required": false,
   "build_time": 450,
   "cost": {
-    "gold": 400,
-    "stone": 500,
-    "wood": 300
+    "population": 0,
+    "charges": 1
   },
   "stats": {
     "health": 1500

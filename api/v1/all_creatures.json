@@ -3,7 +3,7 @@
     "$schema": "../../schemas/v1/creature.schema.json",
     "id": "dryad",
     "name": "Dryad",
-    "rank": 2,
+    "rank": "II",
     "description": "Support creature that heals allies. Uses elemental attacks when infused",
     "stats": {
       "health": 225,
@@ -15,15 +15,19 @@
     "meta": {
       "source": "Spellcasters.md migration"
     },
-    "date_modified": "2026-02-03T01:54:09.596517Z",
+    "date_modified": "2026-02-03T18:39:01.861073Z",
     "version": "1.0.1",
-    "type": "Unknown"
+    "type": "Unknown",
+    "cost": {
+      "population": 0,
+      "charges": 1
+    }
   },
   {
     "$schema": "../../schemas/v1/creature.schema.json",
     "id": "earth_golem",
     "name": "EARTH GOLEM",
-    "rank": 2,
+    "rank": "II",
     "description": "Strong melee unit that resists damage from large enemies",
     "stats": {
       "health": 650,
@@ -35,15 +39,19 @@
     "meta": {
       "source": "Spellcasters.md migration"
     },
-    "date_modified": "2026-02-03T01:54:09.597035Z",
+    "date_modified": "2026-02-03T18:39:01.861621Z",
     "version": "1.0.1",
-    "type": "Unknown"
+    "type": "Unknown",
+    "cost": {
+      "population": 0,
+      "charges": 1
+    }
   },
   {
     "$schema": "../../schemas/v1/creature.schema.json",
     "id": "faerie",
     "name": "Faerie",
-    "rank": 1,
+    "rank": "I",
     "description": "Stealthy flying ranged creature that turns invisible out of combat",
     "stats": {
       "health": 100,
@@ -56,15 +64,19 @@
     "meta": {
       "source": "Spellcasters.md migration"
     },
-    "date_modified": "2026-02-03T01:54:09.597372Z",
+    "date_modified": "2026-02-03T18:39:01.862028Z",
     "version": "1.0.1",
-    "type": "Unknown"
+    "type": "Unknown",
+    "cost": {
+      "population": 0,
+      "charges": 1
+    }
   },
   {
     "$schema": "../../schemas/v1/creature.schema.json",
     "id": "giant_shielder",
     "name": "Giant Shielder",
-    "rank": 3,
+    "rank": "III",
     "description": "Slow giant that protects allies with a massive shield",
     "stats": {
       "health": 150,
@@ -76,15 +88,19 @@
     "meta": {
       "source": "Spellcasters.md migration"
     },
-    "date_modified": "2026-02-03T01:54:09.597690Z",
+    "date_modified": "2026-02-03T18:39:01.862385Z",
     "version": "1.0.1",
-    "type": "Unknown"
+    "type": "Unknown",
+    "cost": {
+      "population": 0,
+      "charges": 1
+    }
   },
   {
     "$schema": "../../schemas/v1/creature.schema.json",
     "id": "harpy",
     "name": "HARPY",
-    "rank": 1,
+    "rank": "I",
     "description": "Agile flying creature that excels at defeating ground units",
     "stats": {
       "health": 100,
@@ -96,15 +112,19 @@
     "meta": {
       "source": "Spellcasters.md migration"
     },
-    "date_modified": "2026-02-03T01:54:09.598040Z",
+    "date_modified": "2026-02-03T18:39:01.862856Z",
     "version": "1.0.1",
-    "type": "Unknown"
+    "type": "Unknown",
+    "cost": {
+      "population": 0,
+      "charges": 1
+    }
   },
   {
     "$schema": "../../schemas/v1/creature.schema.json",
     "id": "juggernaut",
     "name": "Juggernaut",
-    "rank": 4,
+    "rank": "IV",
     "description": "Colossal creature that deals massive damage to structures",
     "stats": {
       "health": 100,
@@ -116,15 +136,19 @@
     "meta": {
       "source": "Spellcasters.md migration"
     },
-    "date_modified": "2026-02-03T01:54:09.598425Z",
+    "date_modified": "2026-02-03T18:39:01.863194Z",
     "version": "1.0.1",
-    "type": "Unknown"
+    "type": "Unknown",
+    "cost": {
+      "population": 0,
+      "charges": 1
+    }
   },
   {
     "$schema": "../../schemas/v1/creature.schema.json",
     "id": "lich",
     "name": "Lich",
-    "rank": 2,
+    "rank": "II",
     "description": "Undead caster that inflict curses to enemies, increasing the damage they take and reducing their movement speed.",
     "stats": {
       "health": 500,
@@ -136,15 +160,19 @@
     "meta": {
       "source": "Spellcasters.md migration"
     },
-    "date_modified": "2026-02-03T01:54:09.598766Z",
+    "date_modified": "2026-02-03T18:39:01.863541Z",
     "version": "1.0.1",
-    "type": "Unknown"
+    "type": "Unknown",
+    "cost": {
+      "population": 0,
+      "charges": 1
+    }
   },
   {
     "$schema": "../../schemas/v1/creature.schema.json",
     "id": "lizard_archer",
     "name": "Lizard Archer",
-    "rank": 1,
+    "rank": "I",
     "description": "Long-range fighter that deals bonus damage to flying enemies",
     "stats": {
       "health": 85,
@@ -157,15 +185,19 @@
     "meta": {
       "source": "Spellcasters.md migration"
     },
-    "date_modified": "2026-02-03T01:54:09.599150Z",
+    "date_modified": "2026-02-03T18:39:01.863866Z",
     "version": "1.0.1",
-    "type": "Unknown"
+    "type": "Unknown",
+    "cost": {
+      "population": 0,
+      "charges": 1
+    }
   },
   {
     "$schema": "../../schemas/v1/creature.schema.json",
     "id": "ogre",
     "name": "Ogre",
-    "rank": 3,
+    "rank": "III",
     "description": "Mighty warrior that crushes target areas with a hammer",
     "stats": {
       "health": 230,
@@ -177,15 +209,19 @@
     "meta": {
       "source": "Spellcasters.md migration"
     },
-    "date_modified": "2026-02-03T01:54:09.599554Z",
+    "date_modified": "2026-02-03T18:39:01.864234Z",
     "version": "1.0.1",
-    "type": "Unknown"
+    "type": "Unknown",
+    "cost": {
+      "population": 0,
+      "charges": 1
+    }
   },
   {
     "$schema": "../../schemas/v1/creature.schema.json",
     "id": "rocket_soldier",
     "name": "Rocket Soldier",
-    "rank": 1,
+    "rank": "I",
     "description": "Medium-range soldier that deals bonus damage to buildings",
     "stats": {
       "health": 220,
@@ -198,15 +234,19 @@
     "meta": {
       "source": "Spellcasters.md migration"
     },
-    "date_modified": "2026-02-03T01:54:09.599902Z",
+    "date_modified": "2026-02-03T18:39:01.864521Z",
     "version": "1.0.1",
-    "type": "Unknown"
+    "type": "Unknown",
+    "cost": {
+      "population": 0,
+      "charges": 1
+    }
   },
   {
     "$schema": "../../schemas/v1/creature.schema.json",
     "id": "ruin_spider",
     "name": "RUIN SPIDER",
-    "rank": 1,
+    "rank": "I",
     "description": "Fast creature that explodes on contact, dealing bonus damage to buildings",
     "stats": {
       "health": 85,
@@ -218,15 +258,19 @@
     "meta": {
       "source": "Spellcasters.md migration"
     },
-    "date_modified": "2026-02-03T01:54:09.600253Z",
+    "date_modified": "2026-02-03T18:39:01.864901Z",
     "version": "1.0.1",
-    "type": "Unknown"
+    "type": "Unknown",
+    "cost": {
+      "population": 0,
+      "charges": 1
+    }
   },
   {
     "$schema": "../../schemas/v1/creature.schema.json",
     "id": "skeleton_warrior",
     "name": "SKELETON WARRIOR",
-    "rank": 1,
+    "rank": "I",
     "description": "Undead soldier that captures altars quickly in large groups",
     "stats": {
       "health": 200,
@@ -238,15 +282,19 @@
     "meta": {
       "source": "Spellcasters.md migration"
     },
-    "date_modified": "2026-02-03T01:54:09.600568Z",
+    "date_modified": "2026-02-03T18:39:01.865252Z",
     "version": "1.0.1",
-    "type": "Unknown"
+    "type": "Unknown",
+    "cost": {
+      "population": 0,
+      "charges": 1
+    }
   },
   {
     "$schema": "../../schemas/v1/creature.schema.json",
     "id": "stone_behemoth",
     "name": "STONE BEHEMOTH",
-    "rank": 3,
+    "rank": "III",
     "description": "Siege unit that hurls long-range boulders for heavy area damage",
     "stats": {
       "health": 210,
@@ -259,15 +307,19 @@
     "meta": {
       "source": "Spellcasters.md migration"
     },
-    "date_modified": "2026-02-03T01:54:09.600868Z",
+    "date_modified": "2026-02-03T18:39:01.865600Z",
     "version": "1.0.1",
-    "type": "Unknown"
+    "type": "Unknown",
+    "cost": {
+      "population": 0,
+      "charges": 1
+    }
   },
   {
     "$schema": "../../schemas/v1/creature.schema.json",
     "id": "wolven_hunter",
     "name": "Wolven Hunter",
-    "rank": 2,
+    "rank": "II",
     "description": "Hunter unit that fires powerful long-range bolts",
     "stats": {
       "health": 340,
@@ -280,15 +332,19 @@
     "meta": {
       "source": "Spellcasters.md migration"
     },
-    "date_modified": "2026-02-03T01:54:09.601146Z",
+    "date_modified": "2026-02-03T18:39:01.865936Z",
     "version": "1.0.1",
-    "type": "Unknown"
+    "type": "Unknown",
+    "cost": {
+      "population": 0,
+      "charges": 1
+    }
   },
   {
     "$schema": "../../schemas/v1/creature.schema.json",
     "id": "wyvern",
     "name": "WYVERN",
-    "rank": 2,
+    "rank": "II",
     "description": "Flying dragonkin that attacks with mid-range projectiles",
     "stats": {
       "health": 220,
@@ -301,8 +357,12 @@
     "meta": {
       "source": "Spellcasters.md migration"
     },
-    "date_modified": "2026-02-03T01:54:09.601457Z",
+    "date_modified": "2026-02-03T18:39:01.866313Z",
     "version": "1.0.1",
-    "type": "Unknown"
+    "type": "Unknown",
+    "cost": {
+      "population": 0,
+      "charges": 1
+    }
   }
 ]

@@ -2,7 +2,7 @@
   "$schema": "../../schemas/v1/creature.schema.json",
   "id": "skeleton_warrior",
   "name": "SKELETON WARRIOR",
-  "rank": 1,
+  "rank": "I",
   "description": "Undead soldier that captures altars quickly in large groups",
   "stats": {
     "health": 200,
@@ -14,7 +14,11 @@
   "meta": {
     "source": "Spellcasters.md migration"
   },
-  "date_modified": "2026-02-03T01:54:09.600568Z",
+  "date_modified": "2026-02-03T18:39:01.865252Z",
   "version": "1.0.1",
-  "type": "Unknown"
+  "type": "Unknown",
+  "cost": {
+    "population": 0,
+    "charges": 1
+  }
 }

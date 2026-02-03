@@ -73,16 +73,19 @@ File: `data/creatures/unit_id.json`
   "image_required": true,
   "name": "Orc Grunt",
   "type": "Infantry",
-  "rank": 1,
+  "rank": "I",
   "description": "Standard infantry unit.",
   "date_modified": "2024-01-01T12:00:00Z",
+  "cost": {
+    "population": 1,
+    "charges": 1
+  },
   "stats": {
     "health": 200,
     "dps": 10,
     "speed": 4,
     "hps": 0,
-    "range": 0, // 0 or "Melee" if verified by logic
-    "cost": 50 // Optional
+    "range": 0 // 0 or "Melee"
   },
   "tags": ["Grunt"],
   "meta": {

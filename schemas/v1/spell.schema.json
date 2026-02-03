@@ -19,9 +19,10 @@
     "cost": {
       "type": "object",
       "properties": {
-        "mana": { "type": "integer" },
-        "charges": { "type": "integer" }
-      }
+        "charges": { "type": "integer" },
+        "population": { "type": "integer", "default": 0 }
+      },
+      "additionalProperties": false
     },
     "cast_time": { "type": "number", "minimum": 0 },
     "cooldown": { "type": "number", "minimum": 0 },

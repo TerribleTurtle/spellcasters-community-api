@@ -2,7 +2,7 @@
   "$schema": "../../schemas/v1/creature.schema.json",
   "id": "lizard_archer",
   "name": "Lizard Archer",
-  "rank": 1,
+  "rank": "I",
   "description": "Long-range fighter that deals bonus damage to flying enemies",
   "stats": {
     "health": 85,
@@ -15,7 +15,11 @@
   "meta": {
     "source": "Spellcasters.md migration"
   },
-  "date_modified": "2026-02-03T01:54:09.599150Z",
+  "date_modified": "2026-02-03T18:39:01.863866Z",
   "version": "1.0.1",
-  "type": "Unknown"
+  "type": "Unknown",
+  "cost": {
+    "population": 0,
+    "charges": 1
+  }
 }
