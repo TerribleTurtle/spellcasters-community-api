@@ -46,7 +46,7 @@ Ready for API usage and Content Expansion.
       - [x] Streamlined `CONTRIBUTING.md` verification instructions.
     - [x] **Launch Prep (2026-02-03):**
       - [x] Refined messaging: "Free & Open API".
-      - [x] Polished `index.html` landing page.
+      - [x] Polished `index.html` landing page (Added all v1 endpoints).
       - [x] Added Beta/Early Access warning to `index.html`.
       - [x] Removed `LAUNCH_CHECKLIST.md` (Ready).
 - [x] **Mechanics Integration:**
