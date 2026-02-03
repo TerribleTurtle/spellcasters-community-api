@@ -13,10 +13,16 @@ Please refer to [GUIDE.md](GUIDE.md) for the complete Setup, Usage, and Contribu
     ```bash
     pip install -r requirements.txt
     ```
-3.  **Build API:**
+3.  **Build & Verify:**
+
     ```bash
+    # Windows
+    verify.bat
+
+    # Mac/Linux
     python scripts/build_api.py
     ```
+
     See `api/v1/all_creatures.json`
 
 ## 🤝 Contributing

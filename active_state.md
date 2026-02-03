@@ -41,6 +41,9 @@ Ready for API usage and Content Expansion.
       - [x] Fixed script output buffering.
       - [x] Implemented "Opt-In" Asset Validation (`image_required` flag).
       - [x] Synced `GUIDE.md` and `CONTRIBUTING.md` with new standards.
+    - [x] **Developer Experience:**
+      - [x] Created `verify.bat` for one-click Windows validation.
+      - [x] Streamlined `CONTRIBUTING.md` verification instructions.
 - [x] **Mechanics Integration:**
   - [x] Added `deck.schema.json` (Starter Decks)
   - [x] Added `upgrade.schema.json` (Level-up options)

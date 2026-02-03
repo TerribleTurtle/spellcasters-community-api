@@ -36,10 +36,18 @@ To add a new creature, spell, hero, or item:
 
 ### 3. Verification
 
-Before submitting a Pull Request, run the build script to verify your changes:
+Before submitting a Pull Request, run the verification script to check your changes:
+
+**Windows:**
+
+```cmd
+verify.bat
+```
+
+**Mac/Linux:**
 
 ```bash
-python scripts/build_api.py
+python scripts/validate_integrity.py && python scripts/build_api.py
 ```
 
 If the script passes without errors, your data is valid!
