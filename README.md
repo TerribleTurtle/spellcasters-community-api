@@ -2,6 +2,10 @@
 
 **A free, open-source API for Spellcasters Chronicles.**
 
+> [!WARNING]
+> **BETA NOTICE:** Current data reflects the **Closed Beta**.
+> We will begin manual updates for **Early Access** on and after **Feb 26th**.
+
 This project is a collaborative tool for **developers** (building apps/tools) and the **community** (wiki editors/fans).
 It is **free to use** and **open for anyone to contribute**.
 
@@ -15,7 +19,10 @@ Please refer to [GUIDE.md](GUIDE.md) to learn how to:
 
 ## 💬 Community
 
-Join the conversation on the [Official Discord](https://discord.com/invite/spellcasters-chronicles-1425209254847058003).
+This project is a fan-made initiative.
+
+- **Looking for the game devs?** [Join the Official Game Discord](https://discord.com/invite/spellcasters-chronicles-1425209254847058003).
+- **Want to help with this API?** Check out [CONTRIBUTING.md](CONTRIBUTING.md).
 
 ## 🌐 Live API Usage
 

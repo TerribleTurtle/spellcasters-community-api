@@ -19,7 +19,7 @@
   "collision_radius": 50,
   "image_required": true,
   "card_config": {
-    "rank": "I",
+    "rank": "II",
     "cost_population": 0,
     "cost_charges": 2,
     "cast_time": 1.0
