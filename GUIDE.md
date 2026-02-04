@@ -23,7 +23,7 @@ The project keeps raw data (JSON files) separate from images (Assets).
 ```
 spellcasters-community-api/
 ├── assets/                 # Images and Icons
-│   ├── units/              # e.g., orc_grunt.png
+│   ├── units/              # e.g., orc_grunt_card.png
 │   ├── heroes/
 │   ├── consumables/
 │   └── upgrades/
@@ -116,7 +116,7 @@ python scripts/build_api.py
 
 1.  **Add Data:** Create a new `.json` file in the appropriate `data/` subfolder.
 2.  **Add Images:** Place a `.png` file in `assets/` with the **exact same filename** as the JSON ID.
-    - Example: `data/units/orc_grunt.json` -> `assets/units/orc_grunt.png`
+    - Example: `data/units/orc_grunt.json` -> `assets/units/orc_grunt_card.png`
 3.  **Verify:** Run the python script to ensure no schema errors. A [Pull Request Template](.github/PULL_REQUEST_TEMPLATE.md) will guide you through the submission process.
 4.  **Push:** Commit changes. GitHub Actions will automatically deploy to the API endpoint.
 
@@ -124,12 +124,12 @@ python scripts/build_api.py
 
 We host images directly in the repository for simplicity.
 
-- **Location:** `assets/[category]/[id].png`
+- **Location:** `assets/[category]/[id].png` (Units use `[id]_card.png`)
 - **Size Limit:** Must be < 1MB per image.
 - **Total Limit:** We aim to keep the repo under 1GB.
 - **Format:** `.png` preferred.
 - **Access:** Images are fetched directly via the GitHub Pages URL.
-  - Example: `https://terribleturtle.github.io/spellcasters-community-api/assets/units/orc_grunt.png`
+  - Example: `https://terribleturtle.github.io/spellcasters-community-api/assets/units/orc_grunt_card.png`
   - **Validation:** `scripts/validate_integrity.py` checks for these images.
     - **Note:** Missing images are only flagged if `"image_required": true` is set in the JSON file. If omitted (default `true` per v1.0), warnings will be issued.
 

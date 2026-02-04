@@ -28,14 +28,14 @@ To add a new unit, card, hero, or consumable:
 2.  **Create a new JSON file** in the appropriate `data/` subdirectory (e.g., `data/units/new_unit.json`).
 3.  **Follow the Schema:** Ensure your JSON matches the corresponding schema in `schemas/v1/`.
     - You must include a `version` field (e.g., `"version": "1.0.0"`).
-    - You must include `date_modified`.
+    - You must include `last_modified`.
     - **Optional:** If the item _requires_ an in-game asset (e.g., a card art), set `"image_required": true`. Default is `true` (see schema).
-4.  **Add Assets (Optional):** If you have the icon, add it to `assets/` with the exact same filename (e.g., `assets/units/new_unit.png`).
+4.  **Add Assets (Optional):** If you have the icon, add it to `assets/` with the exact same filename (e.g., `assets/units/new_unit_card.png`).
 
 ### 2. Updating Existing Data
 
 1.  Modify the fields in the existing JSON file.
-2.  **Update `date_modified`** to the current timestamp.
+2.  **Update `last_modified`** to the current timestamp.
 3.  Increment the `version` if the change is structural or significant.
 
 ### 3. Verification
