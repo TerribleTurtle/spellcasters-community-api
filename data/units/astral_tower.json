@@ -1,0 +1,27 @@
+{
+  "$schema": "../../schemas/v1/unit.schema.json",
+  "game_version": "0.0.1",
+  "entity_id": "astral_tower",
+  "name": "Astral Tower",
+  "category": "Building",
+  "health": 1800,
+  "damage": 90,
+  "attack_speed": 1.2,
+  "movement_speed": 0,
+  "range": 18,
+  "movement_type": "Ground",
+  "tags": [
+    "defensive",
+    "magic",
+    "energy"
+  ],
+  "description": "A mystical tower that channels astral energy to zap nearby enemies.",
+  "collision_radius": 35,
+  "image_required": true,
+  "card_config": {
+    "rank": "III",
+    "cost_population": 0,
+    "cost_charges": 1,
+    "cast_time": 3.5
+  }
+}

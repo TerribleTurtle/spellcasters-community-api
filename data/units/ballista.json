@@ -1,0 +1,27 @@
+{
+  "$schema": "../../schemas/v1/unit.schema.json",
+  "game_version": "0.0.1",
+  "entity_id": "ballista",
+  "name": "Ballista",
+  "category": "Building",
+  "health": 1200,
+  "damage": 250,
+  "attack_speed": 0.4,
+  "movement_speed": 0,
+  "range": 30,
+  "movement_type": "Ground",
+  "tags": [
+    "defensive",
+    "siege",
+    "piercing"
+  ],
+  "description": "A stationary siege engine that launches massive bolts at distant targets.",
+  "collision_radius": 30,
+  "image_required": true,
+  "card_config": {
+    "rank": "II",
+    "cost_population": 0,
+    "cost_charges": 1,
+    "cast_time": 3.0
+  }
+}

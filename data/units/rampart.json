@@ -1,0 +1,27 @@
+{
+  "$schema": "../../schemas/v1/unit.schema.json",
+  "game_version": "0.0.1",
+  "entity_id": "rampart",
+  "name": "Rampart",
+  "category": "Building",
+  "health": 5000,
+  "damage": 0,
+  "attack_speed": 0,
+  "movement_speed": 0,
+  "range": 0,
+  "movement_type": "Ground",
+  "tags": [
+    "defensive",
+    "structure",
+    "fortification"
+  ],
+  "description": "A reinforced wall section designed to hold back enemy waves.",
+  "collision_radius": 50,
+  "image_required": true,
+  "card_config": {
+    "rank": "I",
+    "cost_population": 0,
+    "cost_charges": 2,
+    "cast_time": 1.0
+  }
+}
