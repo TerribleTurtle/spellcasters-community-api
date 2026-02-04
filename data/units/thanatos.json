@@ -4,7 +4,7 @@
   "entity_id": "thanatos",
   "name": "Thanatos",
   "category": "Titan",
-  "health": 1000,
+  "health": 15000,
   "damage": 40,
   "attack_speed": 1.0,
   "movement_speed": 4,

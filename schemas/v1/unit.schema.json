@@ -94,6 +94,12 @@
       "minimum": 0,
       "description": "Amount of HP restored per action (if applicable)."
     },
+    "passive_health_regen": {
+      "type": "integer",
+      "minimum": 0,
+       "default": 0,
+      "description": "Passive health regeneration per second."
+    },
     "collision_radius": {
       "type": "integer",
       "minimum": 0,

@@ -4,7 +4,7 @@
   "entity_id": "ogre",
   "name": "Ogre",
   "category": "Creature",
-  "health": 230,
+  "health": 2300,
   "damage": 70,
   "attack_speed": 1.0,
   "movement_speed": 3,

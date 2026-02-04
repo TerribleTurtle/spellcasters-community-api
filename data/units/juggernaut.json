@@ -4,7 +4,7 @@
   "entity_id": "juggernaut",
   "name": "Juggernaut",
   "category": "Creature",
-  "health": 100,
+  "health": 10000,
   "damage": 50,
   "attack_speed": 1.0,
   "movement_speed": 3,

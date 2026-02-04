@@ -4,7 +4,7 @@
   "entity_id": "skeleton_warrior",
   "name": "Skeleton Warrior",
   "category": "Creature",
-  "health": 200,
+  "health": 2000,
   "damage": 15,
   "attack_speed": 1.0,
   "movement_speed": 3,

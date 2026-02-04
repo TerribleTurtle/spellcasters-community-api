@@ -8,7 +8,7 @@
   "damage": 16,
   "attack_speed": 1.0,
   "movement_speed": 3,
-  "range": 1,
+  "range": 750,
   "movement_type": "Ground",
   "tags": [],
   "description": "Hunter unit that fires powerful long-range bolts",

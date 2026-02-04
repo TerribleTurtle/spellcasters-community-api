@@ -4,7 +4,7 @@
   "entity_id": "earth_golem",
   "name": "Earth Golem",
   "category": "Creature",
-  "health": 650,
+  "health": 6500,
   "damage": 25,
   "attack_speed": 1.0,
   "movement_speed": 2,

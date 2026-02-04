@@ -1,0 +1,9 @@
+{
+  "$schema": "../../schemas/v1/consumable.schema.json",
+  "game_version": "0.0.1",
+  "consumable_id": "medium_heal",
+  "name": "Medium Heal",
+  "effect_type": "Heal",
+  "value": 50,
+  "ttl": 30
+}

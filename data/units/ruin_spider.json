@@ -4,7 +4,7 @@
   "entity_id": "ruin_spider",
   "name": "Ruin Spider",
   "category": "Creature",
-  "health": 85,
+  "health": 850,
   "damage": 20,
   "attack_speed": 1.0,
   "movement_speed": 7,

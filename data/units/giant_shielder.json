@@ -4,7 +4,7 @@
   "entity_id": "giant_shielder",
   "name": "Giant Shielder",
   "category": "Creature",
-  "health": 150,
+  "health": 1500,
   "damage": 30,
   "attack_speed": 1.0,
   "movement_speed": 3,
