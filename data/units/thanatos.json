@@ -4,6 +4,7 @@
   "entity_id": "thanatos",
   "name": "Thanatos",
   "category": "Titan",
+  "magic_school": "Dark",
   "health": 15000,
   "damage": 40,
   "attack_speed": 1.0,
@@ -15,7 +16,9 @@
   "card_config": {
     "rank": "III",
     "cost_population": 0,
-    "cost_charges": 100,
+    "cost_charges": 1,
+    "initial_charges": 0,
+    "charge_time": 120,
     "cast_time": 2.0
   }
 }

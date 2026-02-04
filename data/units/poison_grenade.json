@@ -1,0 +1,27 @@
+{
+  "game_version": "0.0.1",
+  "entity_id": "poison_grenade",
+  "name": "Poison Grenade",
+  "category": "Spell",
+  "magic_school": "Dark",
+  "description": "Grenade that creates a Poison cloud over the target area.",
+  "image_required": true,
+  "health": 0,
+  "damage": 50,
+  "duration": 8.0,
+  "radius": 4.0,
+  "tick_rate": 1.0,
+  "target_mask": ["Ground", "Enemy"],
+  "tags": ["Poison", "AoE", "DoT"],
+  "movement_speed": 0,
+  "attack_speed": 0,
+  "range": 10,
+  "card_config": {
+    "rank": "III",
+    "cost_population": 0,
+    "cost_charges": 1,
+    "initial_charges": 1,
+    "charge_time": 40,
+    "cast_time": 1.0
+  }
+}

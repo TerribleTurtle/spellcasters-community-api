@@ -4,6 +4,7 @@
   "entity_id": "wyvern",
   "name": "Wyvern",
   "category": "Creature",
+  "magic_school": "Elemental",
   "health": 2200,
   "damage": 19,
   "attack_speed": 1.0,
@@ -14,8 +15,10 @@
   "description": "Flying dragonkin that attacks with mid-range projectiles",
   "card_config": {
     "rank": "II",
-    "cost_population": 0,
+    "cost_population": 1,
     "cost_charges": 1,
+    "initial_charges": 5,
+    "charge_time": 20,
     "cast_time": 2.0
   }
 }

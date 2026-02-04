@@ -4,6 +4,7 @@
   "entity_id": "earth_golem",
   "name": "Earth Golem",
   "category": "Creature",
+  "magic_school": "Elemental",
   "health": 6500,
   "damage": 25,
   "attack_speed": 1.0,
@@ -14,8 +15,10 @@
   "description": "Strong melee unit that resists damage from large enemies",
   "card_config": {
     "rank": "II",
-    "cost_population": 0,
+    "cost_population": 1,
     "cost_charges": 1,
+    "initial_charges": 5,
+    "charge_time": 20,
     "cast_time": 2.0
   }
 }

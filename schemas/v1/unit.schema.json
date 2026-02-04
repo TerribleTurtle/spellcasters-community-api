@@ -10,6 +10,7 @@
     "category",
     "health",
     "movement_speed",
+    "magic_school",
     "tags"
   ],
   "properties": {
@@ -41,6 +42,19 @@
         "Spell"
       ],
       "description": "Broad classification of the entity."
+    },
+    "magic_school": {
+      "type": "string",
+      "enum": [
+        "Elemental",
+        "Lightning",
+        "War",
+        "Astral",
+        "Holy",
+        "Frost",
+        "Dark"
+      ],
+      "description": "The magical affinity of this unit."
     },
     "health": {
       "type": "integer",
@@ -77,7 +91,8 @@
       "enum": [
         "Ground",
         "Hover",
-        "Fly"
+        "Fly",
+        "Stationary"
       ],
       "default": "Ground",
       "description": "Navigation capabilities of the unit."
@@ -116,6 +131,8 @@
         "rank",
         "cost_population",
         "cost_charges",
+        "initial_charges",
+        "charge_time",
         "cast_time"
       ],
       "properties": {
@@ -139,6 +156,16 @@
           "minimum": 0,
           "description": "Ammo cost to cast."
         },
+        "initial_charges": {
+          "type": "integer",
+          "minimum": 0,
+          "description": "Number of charges available immediately when the game starts."
+        },
+        "charge_time": {
+          "type": "integer",
+          "minimum": 0,
+          "description": "Time in seconds to replenish one charge."
+        },
         "cast_time": {
           "type": "number",
           "minimum": 0,
@@ -146,6 +173,34 @@
         }
       },
       "additionalProperties": false
+    },
+    "duration": {
+      "type": "number",
+      "minimum": 0,
+      "description": "Duration in seconds for buffs, debuffs, or zones."
+    },
+    "radius": {
+      "type": "number",
+      "minimum": 0,
+      "description": "Area of Effect radius in meters."
+    },
+    "max_targets": {
+      "type": "integer",
+      "minimum": 0,
+      "description": "Maximum number of units affected."
+    },
+    "tick_rate": {
+      "type": "number",
+      "minimum": 0,
+      "description": "Frequency of effect application in seconds."
+    },
+    "target_mask": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "enum": ["Ground", "Air", "Structure", "Self", "Ally", "Enemy", "Deceased"]
+      },
+      "description": "Valid targets for this spell."
     }
   },
   "additionalProperties": false

@@ -4,6 +4,7 @@
   "entity_id": "steam_tank",
   "name": "Steam Tank",
   "category": "Creature",
+  "magic_school": "War",
   "health": 2500,
   "damage": 120,
   "attack_speed": 0.6,
@@ -20,8 +21,10 @@
   "image_required": true,
   "card_config": {
     "rank": "III",
-    "cost_population": 4,
+    "cost_population": 1,
     "cost_charges": 1,
+    "initial_charges": 3,
+    "charge_time": 40,
     "cast_time": 4.0
   }
 }

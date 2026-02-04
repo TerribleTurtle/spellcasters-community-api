@@ -4,24 +4,27 @@
   "entity_id": "crypt",
   "name": "Crypt",
   "category": "Building",
+  "magic_school": "Dark",
   "health": 2000,
   "damage": 0,
   "attack_speed": 0,
   "movement_speed": 0,
   "range": 0,
-  "movement_type": "Ground",
+  "movement_type": "Stationary",
   "tags": [
     "undead",
     "spawner",
     "structure"
   ],
-  "description": "A dark mausoleum from which the restless dead emerge.",
+  "description": "Shrine that continuously summons new Skeleton Warriors.",
   "collision_radius": 40,
   "image_required": true,
   "card_config": {
     "rank": "III",
-    "cost_population": 0,
+    "cost_population": 1,
     "cost_charges": 1,
+    "initial_charges": 3,
+    "charge_time": 40,
     "cast_time": 2.5
   }
 }

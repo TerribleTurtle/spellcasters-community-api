@@ -1,0 +1,28 @@
+{
+  "game_version": "0.0.1",
+  "entity_id": "healing_rain",
+  "name": "Healing Rain",
+  "category": "Spell",
+  "magic_school": "Holy",
+  "description": "Calls down soothing rain that heals allies over time.",
+  "image_required": true,
+  "health": 0,
+  "damage": 0,
+  "heal_amount": 20,
+  "duration": 6.0,
+  "radius": 5.0,
+  "tick_rate": 1.0,
+  "target_mask": ["Ground", "Ally"],
+  "tags": ["Water", "Healing", "AoE"],
+  "movement_speed": 0,
+  "attack_speed": 0,
+  "range": 10,
+  "card_config": {
+    "rank": "II",
+    "cost_population": 0,
+    "cost_charges": 1,
+    "initial_charges": 1,
+    "charge_time": 20,
+    "cast_time": 1.5
+  }
+}

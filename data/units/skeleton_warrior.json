@@ -4,6 +4,7 @@
   "entity_id": "skeleton_warrior",
   "name": "Skeleton Warrior",
   "category": "Creature",
+  "magic_school": "Dark",
   "health": 2000,
   "damage": 15,
   "attack_speed": 1.0,
@@ -14,8 +15,10 @@
   "description": "Undead soldier that captures altars quickly in large groups",
   "card_config": {
     "rank": "I",
-    "cost_population": 0,
+    "cost_population": 1,
     "cost_charges": 1,
+    "initial_charges": 10,
+    "charge_time": 10,
     "cast_time": 2.0
   }
 }

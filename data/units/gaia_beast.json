@@ -4,6 +4,7 @@
   "entity_id": "gaia_beast",
   "name": "Gaia Beast",
   "category": "Titan",
+  "magic_school": "Elemental",
   "health": 20000,
   "damage": 80,
   "passive_health_regen": 50,
@@ -16,7 +17,9 @@
   "card_config": {
     "rank": "III",
     "cost_population": 0,
-    "cost_charges": 100,
+    "cost_charges": 1,
+    "initial_charges": 0,
+    "charge_time": 120,
     "cast_time": 2.0
   }
 }

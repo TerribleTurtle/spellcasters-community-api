@@ -4,6 +4,7 @@
   "entity_id": "wolven_hunter",
   "name": "Wolven Hunter",
   "category": "Creature",
+  "magic_school": "War",
   "health": 340,
   "damage": 16,
   "attack_speed": 1.0,
@@ -14,8 +15,10 @@
   "description": "Hunter unit that fires powerful long-range bolts",
   "card_config": {
     "rank": "II",
-    "cost_population": 0,
+    "cost_population": 1,
     "cost_charges": 1,
+    "initial_charges": 5,
+    "charge_time": 20,
     "cast_time": 2.0
   }
 }

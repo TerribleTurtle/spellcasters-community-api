@@ -4,6 +4,7 @@
   "entity_id": "ruin_spider",
   "name": "Ruin Spider",
   "category": "Creature",
+  "magic_school": "Dark",
   "health": 850,
   "damage": 20,
   "attack_speed": 1.0,
@@ -14,8 +15,10 @@
   "description": "Fast creature that explodes on contact, dealing bonus damage to buildings",
   "card_config": {
     "rank": "I",
-    "cost_population": 0,
+    "cost_population": 1,
     "cost_charges": 1,
+    "initial_charges": 10,
+    "charge_time": 10,
     "cast_time": 2.0
   }
 }

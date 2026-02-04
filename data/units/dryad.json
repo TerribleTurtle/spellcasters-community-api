@@ -4,6 +4,7 @@
   "entity_id": "dryad",
   "name": "Dryad",
   "category": "Creature",
+  "magic_school": "Holy",
   "health": 2250,
   "damage": 12,
   "heal_amount": 150,
@@ -15,8 +16,10 @@
   "description": "Support creature that heals allies. Uses elemental attacks when infused",
   "card_config": {
     "rank": "II",
-    "cost_population": 0,
+    "cost_population": 1,
     "cost_charges": 1,
+    "initial_charges": 5,
+    "charge_time": 20,
     "cast_time": 2.0
   }
 }

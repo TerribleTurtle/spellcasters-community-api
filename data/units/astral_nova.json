@@ -1,0 +1,25 @@
+{
+  "game_version": "0.0.1",
+  "entity_id": "astral_nova",
+  "name": "Astral Nova",
+  "category": "Spell",
+  "magic_school": "Astral",
+  "description": "Massive projectile that deals heavy damage on impact.",
+  "image_required": true,
+  "health": 0,
+  "damage": 600,
+  "radius": 5.0,
+  "target_mask": ["Ground", "Air", "Enemy", "Structure"],
+  "tags": ["Astral", "Nuke", "AoE"],
+  "movement_speed": 0,
+  "attack_speed": 0,
+  "range": 15,
+  "card_config": {
+    "rank": "IV",
+    "cost_population": 0,
+    "cost_charges": 1,
+    "initial_charges": 1,
+    "charge_time": 60,
+    "cast_time": 3.0
+  }
+}
