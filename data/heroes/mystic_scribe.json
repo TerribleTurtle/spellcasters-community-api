@@ -1,0 +1,42 @@
+{
+  "$schema": "../../schemas/v1/hero.schema.json",
+  "game_version": "0.0.1",
+  "hero_id": "mystic_scribe",
+  "name": "Mystic Scribe",
+  "image_required": true,
+  "health": 600,
+  "movement_speed": 3,
+  "flight_speed": 0,
+  "health_regen_rate": 1.0,
+  "regen_delay": 5.0,
+  "attack_damage_summoner": 40,
+  "attack_damage_minion": 40,
+  "abilities": {
+    "passive": [
+      {
+        "name": "Holy Magic Mastery",
+        "description": "All Holy spells recharge faster."
+      },
+      {
+        "name": "Thousand Favors",
+        "description": "Healing recharges Rank I and II creatures."
+      },
+      {
+        "name": "Echo of Mercy",
+        "description": "When the Mystic Scribe heals an ally, she is healed for the same amount."
+      }
+    ],
+    "primary": {
+      "name": "Brush Strike",
+      "description": "Strike with enchanted ink to damage enemies and boost allies’ Max HP."
+    },
+    "defense": {
+      "name": "Scroll Barrier",
+      "description": "Creates a barrier that absorbs projectiles and reduces all damage."
+    },
+    "ultimate": {
+      "name": "Seal of Immortality",
+      "description": "Mark the ground with a massive healing seal."
+    }
+  }
+}

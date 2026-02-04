@@ -18,61 +18,39 @@
   ],
   "properties": {
     "$schema": { "type": "string" },
-    "game_version": {
-      "type": "string"
-    },
-    "hero_id": {
-      "type": "string"
-    },
-    "name": {
-      "type": "string"
-    },
-    "image_required": {
-      "type": "boolean",
-      "default": true
-    },
-    "health": {
-      "type": "integer",
-      "minimum": 1
-    },
-    "movement_speed": {
-      "type": "integer",
-      "minimum": 0
-    },
-    "flight_speed": {
-      "type": "integer",
-      "minimum": 0
-    },
-    "health_regen_rate": {
-      "type": "number",
-      "minimum": 0,
-      "description": "HP restored per second."
-    },
-    "regen_delay": {
-      "type": "number",
-      "minimum": 0,
-      "description": "Seconds without damage before regen starts."
-    },
-    "attack_damage_summoner": {
-      "type": "integer",
-      "minimum": 0,
-      "description": "Damage vs Enemy Heroes."
-    },
-    "attack_damage_minion": {
-      "type": "integer",
-      "minimum": 0,
-      "description": "Damage vs Minions/Units."
-    },
+    "game_version": { "type": "string" },
+    "hero_id": { "type": "string" },
+    "name": { "type": "string" },
+    "image_required": { "type": "boolean", "default": true },
+    "health": { "type": "integer", "minimum": 1 },
+    "movement_speed": { "type": "integer", "minimum": 0 },
+    "flight_speed": { "type": "integer", "minimum": 0 },
+    "health_regen_rate": { "type": "number", "minimum": 0 },
+    "regen_delay": { "type": "number", "minimum": 0 },
+    "attack_damage_summoner": { "type": "integer", "minimum": 0 },
+    "attack_damage_minion": { "type": "integer", "minimum": 0 },
     "abilities": {
       "type": "object",
       "properties": {
-        "passive": { "type": "string" },
-        "primary": { "type": "string" },
-        "defense": { "type": "string" },
-        "ultimate": { "type": "string" }
+        "passive": {
+          "type": "array",
+          "items": { "$ref": "#/definitions/ability_detail" }
+        },
+        "primary": { "$ref": "#/definitions/ability_detail" },
+        "defense": { "$ref": "#/definitions/ability_detail" },
+        "ultimate": { "$ref": "#/definitions/ability_detail" }
       },
-      "required": ["passive", "primary", "defense", "ultimate"],
-      "description": "Names/Descriptions of the hero's fixed ability kit."
+      "required": ["passive", "primary", "defense", "ultimate"]
+    }
+  },
+  "definitions": {
+    "ability_detail": {
+      "type": "object",
+      "properties": {
+        "name": { "type": "string" },
+        "description": { "type": "string" }
+      },
+      "required": ["name", "description"]
     }
   },
   "additionalProperties": false

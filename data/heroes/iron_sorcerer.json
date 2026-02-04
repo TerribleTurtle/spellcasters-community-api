@@ -1,0 +1,38 @@
+{
+  "$schema": "../../schemas/v1/hero.schema.json",
+  "game_version": "0.0.1",
+  "hero_id": "iron_sorcerer",
+  "name": "Iron Sorcerer",
+  "image_required": true,
+  "health": 600,
+  "movement_speed": 3,
+  "flight_speed": 0,
+  "health_regen_rate": 1.0,
+  "regen_delay": 5.0,
+  "attack_damage_summoner": 40,
+  "attack_damage_minion": 40,
+  "abilities": {
+    "passive": [
+      {
+        "name": "Forges of Valm",
+        "description": "Creatures spawned from Buildings have significantly more health."
+      },
+      {
+        "name": "Scourge of War",
+        "description": "All Rank III Buildings start with +1 Max Charge."
+      }
+    ],
+    "primary": {
+      "name": "Twin Strike",
+      "description": "Strike with powerful mid-range attacks that interrupt enemies."
+    },
+    "defense": {
+      "name": "Rune Shield",
+      "description": "Raise a shield that protects allies and reflects attacks."
+    },
+    "ultimate": {
+      "name": "Iron Tempest",
+      "description": "Unleash a metal vortex that deals heavy damage along its path."
+    }
+  }
+}

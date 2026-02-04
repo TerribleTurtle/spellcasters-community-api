@@ -1,0 +1,42 @@
+{
+  "$schema": "../../schemas/v1/hero.schema.json",
+  "game_version": "0.0.1",
+  "hero_id": "fire_elementalist",
+  "name": "Fire Elementalist",
+  "image_required": true,
+  "health": 600,
+  "movement_speed": 3,
+  "flight_speed": 0,
+  "health_regen_rate": 1.0,
+  "regen_delay": 5.0,
+  "attack_damage_summoner": 40,
+  "attack_damage_minion": 40,
+  "abilities": {
+    "passive": [
+      {
+        "name": "Ignition Spark",
+        "description": "All Rank I Spells start with +1 Max Charge."
+      },
+      {
+        "name": "Fire Magic Mastery",
+        "description": "All Fire spells and Fire-infused creatures deal more damage."
+      },
+      {
+        "name": "Blazing Momentum",
+        "description": "After destroying an enemy with an Fire spell, all Fire spells recharge faster."
+      }
+    ],
+    "primary": {
+      "name": "Flame Strikes",
+      "description": "Burns enemies with powerful Fire attacks."
+    },
+    "defense": {
+      "name": "Fiery Dash",
+      "description": "Performs an invincible dash in a chosen direction."
+    },
+    "ultimate": {
+      "name": "Burning Conquest",
+      "description": "Captures a territory and inflicts Fire damage to any enemies in range."
+    }
+  }
+}

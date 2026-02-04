@@ -3,6 +3,7 @@
   "game_version": "0.0.1",
   "hero_id": "stone_shaman",
   "name": "Stone Shaman",
+  "image_required": true,
   "health": 600,
   "movement_speed": 3,
   "flight_speed": 0,
@@ -11,9 +12,31 @@
   "attack_damage_summoner": 40,
   "attack_damage_minion": 40,
   "abilities": {
-    "passive": "stone_skin",
-    "primary": "Unknown Primary",
-    "defense": "Unknown Defense",
-    "ultimate": "Unknown Ultimate"
+    "passive": [
+      {
+        "name": "Stone Skin",
+        "description": "Reduces incoming physical damage by 5%."
+      },
+      {
+        "name": "Earth Attunement",
+        "description": "Regenerates health faster while standing on ground."
+      },
+      {
+        "name": "Rock Solid",
+        "description": "Cannot be knocked back by minor explosions."
+      }
+    ],
+    "primary": {
+      "name": "Boulder Throw",
+      "description": "Hurls a massive boulder dealing 30 damage."
+    },
+    "defense": {
+      "name": "Wall of Stone",
+      "description": "Creates a temporary wall blocking movement."
+    },
+    "ultimate": {
+      "name": "Earthquake",
+      "description": "Shakes the ground, slowing enemies and dealing area damage."
+    }
   }
 }

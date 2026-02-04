@@ -1,0 +1,38 @@
+{
+  "$schema": "../../schemas/v1/hero.schema.json",
+  "game_version": "0.0.1",
+  "hero_id": "swamp_witch",
+  "name": "Swamp Witch",
+  "image_required": true,
+  "health": 600,
+  "movement_speed": 3,
+  "flight_speed": 0,
+  "health_regen_rate": 1.0,
+  "regen_delay": 5.0,
+  "attack_damage_summoner": 40,
+  "attack_damage_minion": 40,
+  "abilities": {
+    "passive": [
+      {
+        "name": "Pact of Sacrifice",
+        "description": "When a Witch's creature is destroyed, her spell and ability recharge faster."
+      },
+      {
+        "name": "Brood Rite",
+        "description": "All Rank I Creatures start with +5 Max Charge."
+      }
+    ],
+    "primary": {
+      "name": "Poison Strike",
+      "description": "Fire a barrage of projectiles that deal Poison damage."
+    },
+    "defense": {
+      "name": "Witchslip",
+      "description": "Performs an invincible dash in a chosen direction."
+    },
+    "ultimate": {
+      "name": "Dark Ascension",
+      "description": "Unleashes a demonic form that boosts all spell damage."
+    }
+  }
+}

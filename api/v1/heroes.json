@@ -2,8 +2,9 @@
   {
     "$schema": "../../schemas/v1/hero.schema.json",
     "game_version": "0.0.1",
-    "hero_id": "stone_shaman",
-    "name": "Stone Shaman",
+    "hero_id": "astral_monk",
+    "name": "Astral Monk",
+    "image_required": true,
     "health": 600,
     "movement_speed": 3,
     "flight_speed": 0,
@@ -12,10 +13,234 @@
     "attack_damage_summoner": 40,
     "attack_damage_minion": 40,
     "abilities": {
-      "passive": "stone_skin",
-      "primary": "Unknown Primary",
-      "defense": "Unknown Defense",
-      "ultimate": "Unknown Ultimate"
+      "passive": [
+        {
+          "name": "Mantra of Power",
+          "description": "When the Astral Monk kills a Spellcaster with a spell, she gains a charge of that spell."
+        },
+        {
+          "name": "Last Light",
+          "description": "Spells deal increased damage when the target is under half health."
+        },
+        {
+          "name": "Arcane Alignment",
+          "description": "All Rank III Spells start with +1 Max Charge."
+        }
+      ],
+      "primary": {
+        "name": "Astral Fists",
+        "description": "Pierces through enemies with colossal astral fists."
+      },
+      "defense": {
+        "name": "Veil Shift",
+        "description": "Turns invisible and move faster."
+      },
+      "ultimate": {
+        "name": "Dimension of Varani",
+        "description": "Conjures a time bubble that freezes enemy projectiles and creatures inside it."
+      }
+    }
+  },
+  {
+    "$schema": "../../schemas/v1/hero.schema.json",
+    "game_version": "0.0.1",
+    "hero_id": "fire_elementalist",
+    "name": "Fire Elementalist",
+    "image_required": true,
+    "health": 600,
+    "movement_speed": 3,
+    "flight_speed": 0,
+    "health_regen_rate": 1.0,
+    "regen_delay": 5.0,
+    "attack_damage_summoner": 40,
+    "attack_damage_minion": 40,
+    "abilities": {
+      "passive": [
+        {
+          "name": "Ignition Spark",
+          "description": "All Rank I Spells start with +1 Max Charge."
+        },
+        {
+          "name": "Fire Magic Mastery",
+          "description": "All Fire spells and Fire-infused creatures deal more damage."
+        },
+        {
+          "name": "Blazing Momentum",
+          "description": "After destroying an enemy with an Fire spell, all Fire spells recharge faster."
+        }
+      ],
+      "primary": {
+        "name": "Flame Strikes",
+        "description": "Burns enemies with powerful Fire attacks."
+      },
+      "defense": {
+        "name": "Fiery Dash",
+        "description": "Performs an invincible dash in a chosen direction."
+      },
+      "ultimate": {
+        "name": "Burning Conquest",
+        "description": "Captures a territory and inflicts Fire damage to any enemies in range."
+      }
+    }
+  },
+  {
+    "$schema": "../../schemas/v1/hero.schema.json",
+    "game_version": "0.0.1",
+    "hero_id": "iron_sorcerer",
+    "name": "Iron Sorcerer",
+    "image_required": true,
+    "health": 600,
+    "movement_speed": 3,
+    "flight_speed": 0,
+    "health_regen_rate": 1.0,
+    "regen_delay": 5.0,
+    "attack_damage_summoner": 40,
+    "attack_damage_minion": 40,
+    "abilities": {
+      "passive": [
+        {
+          "name": "Forges of Valm",
+          "description": "Creatures spawned from Buildings have significantly more health."
+        },
+        {
+          "name": "Scourge of War",
+          "description": "All Rank III Buildings start with +1 Max Charge."
+        }
+      ],
+      "primary": {
+        "name": "Twin Strike",
+        "description": "Strike with powerful mid-range attacks that interrupt enemies."
+      },
+      "defense": {
+        "name": "Rune Shield",
+        "description": "Raise a shield that protects allies and reflects attacks."
+      },
+      "ultimate": {
+        "name": "Iron Tempest",
+        "description": "Unleash a metal vortex that deals heavy damage along its path."
+      }
+    }
+  },
+  {
+    "$schema": "../../schemas/v1/hero.schema.json",
+    "game_version": "0.0.1",
+    "hero_id": "mystic_scribe",
+    "name": "Mystic Scribe",
+    "image_required": true,
+    "health": 600,
+    "movement_speed": 3,
+    "flight_speed": 0,
+    "health_regen_rate": 1.0,
+    "regen_delay": 5.0,
+    "attack_damage_summoner": 40,
+    "attack_damage_minion": 40,
+    "abilities": {
+      "passive": [
+        {
+          "name": "Holy Magic Mastery",
+          "description": "All Holy spells recharge faster."
+        },
+        {
+          "name": "Thousand Favors",
+          "description": "Healing recharges Rank I and II creatures."
+        },
+        {
+          "name": "Echo of Mercy",
+          "description": "When the Mystic Scribe heals an ally, she is healed for the same amount."
+        }
+      ],
+      "primary": {
+        "name": "Brush Strike",
+        "description": "Strike with enchanted ink to damage enemies and boost allies\u2019 Max HP."
+      },
+      "defense": {
+        "name": "Scroll Barrier",
+        "description": "Creates a barrier that absorbs projectiles and reduces all damage."
+      },
+      "ultimate": {
+        "name": "Seal of Immortality",
+        "description": "Mark the ground with a massive healing seal."
+      }
+    }
+  },
+  {
+    "$schema": "../../schemas/v1/hero.schema.json",
+    "game_version": "0.0.1",
+    "hero_id": "stone_shaman",
+    "name": "Stone Shaman",
+    "image_required": true,
+    "health": 600,
+    "movement_speed": 3,
+    "flight_speed": 0,
+    "health_regen_rate": 1.0,
+    "regen_delay": 5.0,
+    "attack_damage_summoner": 40,
+    "attack_damage_minion": 40,
+    "abilities": {
+      "passive": [
+        {
+          "name": "Stone Skin",
+          "description": "Reduces incoming physical damage by 5%."
+        },
+        {
+          "name": "Earth Attunement",
+          "description": "Regenerates health faster while standing on ground."
+        },
+        {
+          "name": "Rock Solid",
+          "description": "Cannot be knocked back by minor explosions."
+        }
+      ],
+      "primary": {
+        "name": "Boulder Throw",
+        "description": "Hurls a massive boulder dealing 30 damage."
+      },
+      "defense": {
+        "name": "Wall of Stone",
+        "description": "Creates a temporary wall blocking movement."
+      },
+      "ultimate": {
+        "name": "Earthquake",
+        "description": "Shakes the ground, slowing enemies and dealing area damage."
+      }
+    }
+  },
+  {
+    "$schema": "../../schemas/v1/hero.schema.json",
+    "game_version": "0.0.1",
+    "hero_id": "swamp_witch",
+    "name": "Swamp Witch",
+    "image_required": true,
+    "health": 600,
+    "movement_speed": 3,
+    "flight_speed": 0,
+    "health_regen_rate": 1.0,
+    "regen_delay": 5.0,
+    "attack_damage_summoner": 40,
+    "attack_damage_minion": 40,
+    "abilities": {
+      "passive": [
+        {
+          "name": "Pact of Sacrifice",
+          "description": "When a Witch's creature is destroyed, her spell and ability recharge faster."
+        },
+        {
+          "name": "Brood Rite",
+          "description": "All Rank I Creatures start with +5 Max Charge."
+        }
+      ],
+      "primary": {
+        "name": "Poison Strike",
+        "description": "Fire a barrage of projectiles that deal Poison damage."
+      },
+      "defense": {
+        "name": "Witchslip",
+        "description": "Performs an invincible dash in a chosen direction."
+      },
+      "ultimate": {
+        "name": "Dark Ascension",
+        "description": "Unleashes a demonic form that boosts all spell damage."
+      }
     }
   }
 ]
