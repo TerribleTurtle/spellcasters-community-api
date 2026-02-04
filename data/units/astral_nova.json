@@ -9,8 +9,17 @@
   "health": 0,
   "damage": 600,
   "radius": 5.0,
-  "target_mask": ["Ground", "Air", "Enemy", "Structure"],
-  "tags": ["Astral", "Nuke", "AoE"],
+  "target_mask": [
+    "Ground",
+    "Air",
+    "Enemy",
+    "Structure"
+  ],
+  "tags": [
+    "Astral",
+    "Nuke",
+    "AoE"
+  ],
   "movement_speed": 0,
   "attack_speed": 0,
   "range": 15,
@@ -21,5 +30,6 @@
     "initial_charges": 1,
     "charge_time": 60,
     "cast_time": 3.0
-  }
+  },
+  "last_modified": "2026-02-04T15:25:39.109004Z"
 }

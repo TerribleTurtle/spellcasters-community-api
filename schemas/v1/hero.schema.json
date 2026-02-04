@@ -14,11 +14,13 @@
     "regen_delay",
     "attack_damage_summoner",
     "attack_damage_minion",
-    "abilities"
+    "abilities",
+    "last_modified"
   ],
   "properties": {
     "$schema": { "type": "string" },
     "game_version": { "type": "string" },
+    "last_modified": { "type": "string", "format": "date-time", "description": "UTC Timestamp of the last update" },
     "hero_id": { "type": "string" },
     "name": { "type": "string" },
     "image_required": { "type": "boolean", "default": true },

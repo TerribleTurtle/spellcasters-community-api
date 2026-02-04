@@ -6,7 +6,8 @@
     "name": "Light Heal",
     "effect_type": "Heal",
     "value": 25,
-    "ttl": 30
+    "ttl": 30,
+    "last_modified": "2026-02-04T15:25:39.104991Z"
   },
   {
     "$schema": "../../schemas/v1/consumable.schema.json",
@@ -15,7 +16,8 @@
     "name": "Light Recharge",
     "effect_type": "Charge_Refill",
     "value": 25,
-    "ttl": 30
+    "ttl": 30,
+    "last_modified": "2026-02-04T15:25:39.105359Z"
   },
   {
     "$schema": "../../schemas/v1/consumable.schema.json",
@@ -24,7 +26,8 @@
     "name": "Medium Heal",
     "effect_type": "Heal",
     "value": 50,
-    "ttl": 30
+    "ttl": 30,
+    "last_modified": "2026-02-04T15:25:39.105670Z"
   },
   {
     "$schema": "../../schemas/v1/consumable.schema.json",
@@ -33,6 +36,7 @@
     "name": "Medium Recharge",
     "effect_type": "Charge_Refill",
     "value": 50,
-    "ttl": 30
+    "ttl": 30,
+    "last_modified": "2026-02-04T15:25:39.105994Z"
   }
 ]

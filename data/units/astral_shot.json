@@ -9,8 +9,15 @@
   "health": 0,
   "damage": 80,
   "max_targets": 3,
-  "target_mask": ["Ground", "Air", "Enemy"],
-  "tags": ["Astral", "Burst"],
+  "target_mask": [
+    "Ground",
+    "Air",
+    "Enemy"
+  ],
+  "tags": [
+    "Astral",
+    "Burst"
+  ],
   "movement_speed": 0,
   "attack_speed": 0,
   "range": 14,
@@ -21,5 +28,6 @@
     "initial_charges": 1,
     "charge_time": 20,
     "cast_time": 0.8
-  }
+  },
+  "last_modified": "2026-02-04T15:25:39.109496Z"
 }

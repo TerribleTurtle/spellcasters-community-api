@@ -8,13 +8,15 @@
     "upgrade_id",
     "description",
     "target_tags",
-    "effect"
+    "effect",
+    "last_modified"
   ],
   "properties": {
     "$schema": { "type": "string" },
     "game_version": {
       "type": "string"
     },
+    "last_modified": { "type": "string", "format": "date-time", "description": "UTC Timestamp of the last update" },
     "upgrade_id": {
       "type": "string"
     },

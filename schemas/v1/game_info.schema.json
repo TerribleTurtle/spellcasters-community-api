@@ -3,7 +3,7 @@
   "title": "Game Info",
   "description": "General information about the game.",
   "type": "object",
-  "required": ["name", "version", "developer", "publisher", "genre", "links", "description", "date_modified"],
+  "required": ["name", "version", "developer", "publisher", "genre", "links", "description", "last_modified"],
   "additionalProperties": false,
   "properties": {
     "$schema": { "type": "string" },
@@ -23,7 +23,7 @@
       },
       "additionalProperties": true
     },
-    "date_modified": { "type": "string", "format": "date-time" },
+    "last_modified": { "type": "string", "format": "date-time" },
     "meta": {
       "type": "object",
       "additionalProperties": true

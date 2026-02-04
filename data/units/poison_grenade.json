@@ -11,8 +11,15 @@
   "duration": 8.0,
   "radius": 4.0,
   "tick_rate": 1.0,
-  "target_mask": ["Ground", "Enemy"],
-  "tags": ["Poison", "AoE", "DoT"],
+  "target_mask": [
+    "Ground",
+    "Enemy"
+  ],
+  "tags": [
+    "Poison",
+    "AoE",
+    "DoT"
+  ],
   "movement_speed": 0,
   "attack_speed": 0,
   "range": 10,
@@ -23,5 +30,6 @@
     "initial_charges": 1,
     "charge_time": 40,
     "cast_time": 1.0
-  }
+  },
+  "last_modified": "2026-02-04T15:25:39.119760Z"
 }

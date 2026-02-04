@@ -9,8 +9,17 @@
   "health": 0,
   "damage": 250,
   "radius": 3.0,
-  "target_mask": ["Ground", "Air", "Structure", "Enemy"],
-  "tags": ["Fire", "AoE", "Destruction"],
+  "target_mask": [
+    "Ground",
+    "Air",
+    "Structure",
+    "Enemy"
+  ],
+  "tags": [
+    "Fire",
+    "AoE",
+    "Destruction"
+  ],
   "movement_speed": 0,
   "attack_speed": 0,
   "range": 8,
@@ -21,5 +30,6 @@
     "initial_charges": 1,
     "charge_time": 40,
     "cast_time": 1.0
-  }
+  },
+  "last_modified": "2026-02-04T15:25:39.113296Z"
 }

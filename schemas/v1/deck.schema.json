@@ -3,7 +3,7 @@
   "title": "Deck",
   "description": "A pre-built deck configuration, e.g., 'Starter Deck' or 'Meta Build'.",
   "type": "object",
-  "required": ["id", "version", "name", "hero_id", "titan_id", "cards", "description", "date_modified"],
+  "required": ["id", "version", "name", "hero_id", "titan_id", "cards", "description", "last_modified"],
   "additionalProperties": false,
   "properties": {
     "$schema": { "type": "string" },
@@ -11,7 +11,7 @@
     "id": { "type": "string" },
     "name": { "type": "string" },
     "description": { "type": "string" },
-    "date_modified": { "type": "string", "format": "date-time" },
+    "last_modified": { "type": "string", "format": "date-time" },
     "hero_id": { 
       "type": "string",
       "description": "The Hero this deck is built for."

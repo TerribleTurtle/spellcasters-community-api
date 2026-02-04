@@ -11,8 +11,16 @@
   "radius": 1.0,
   "duration": 2.0,
   "tick_rate": 0.2,
-  "target_mask": ["Ground", "Air", "Enemy"],
-  "tags": ["Lightning", "Beam", "SingleTarget"],
+  "target_mask": [
+    "Ground",
+    "Air",
+    "Enemy"
+  ],
+  "tags": [
+    "Lightning",
+    "Beam",
+    "SingleTarget"
+  ],
   "movement_speed": 0,
   "attack_speed": 0,
   "range": 12,
@@ -23,5 +31,6 @@
     "initial_charges": 1,
     "charge_time": 10,
     "cast_time": 0.5
-  }
+  },
+  "last_modified": "2026-02-04T15:25:39.123714Z"
 }

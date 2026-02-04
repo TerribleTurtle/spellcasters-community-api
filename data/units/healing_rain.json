@@ -12,8 +12,15 @@
   "duration": 6.0,
   "radius": 5.0,
   "tick_rate": 1.0,
-  "target_mask": ["Ground", "Ally"],
-  "tags": ["Water", "Healing", "AoE"],
+  "target_mask": [
+    "Ground",
+    "Ally"
+  ],
+  "tags": [
+    "Water",
+    "Healing",
+    "AoE"
+  ],
   "movement_speed": 0,
   "attack_speed": 0,
   "range": 10,
@@ -24,5 +31,6 @@
     "initial_charges": 1,
     "charge_time": 20,
     "cast_time": 1.5
-  }
+  },
+  "last_modified": "2026-02-04T15:25:39.117316Z"
 }

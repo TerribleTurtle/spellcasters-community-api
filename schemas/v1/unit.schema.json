@@ -11,7 +11,8 @@
     "health",
     "movement_speed",
     "magic_school",
-    "tags"
+    "tags",
+    "last_modified"
   ],
   "properties": {
     "$schema": { "type": "string" },
@@ -19,6 +20,7 @@
       "type": "string",
       "description": "SemVer string (e.g., '0.0.1') indicating the patch version for this entity data."
     },
+    "last_modified": { "type": "string", "format": "date-time", "description": "UTC Timestamp of the last update" },
     "entity_id": {
       "type": "string",
       "description": "Unique identifier for this specific unit iteration (e.g., 'skeleton_warrior_v1')."

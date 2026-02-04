@@ -11,8 +11,16 @@
   "duration": 5.0,
   "radius": 8.0,
   "tick_rate": 0.5,
-  "target_mask": ["Ground", "Enemy", "Structure"],
-  "tags": ["Fire", "AoE", "DoT"],
+  "target_mask": [
+    "Ground",
+    "Enemy",
+    "Structure"
+  ],
+  "tags": [
+    "Fire",
+    "AoE",
+    "DoT"
+  ],
   "movement_speed": 0,
   "attack_speed": 0,
   "range": 20,
@@ -23,5 +31,6 @@
     "initial_charges": 1,
     "charge_time": 60,
     "cast_time": 2.5
-  }
+  },
+  "last_modified": "2026-02-04T15:25:39.113715Z"
 }

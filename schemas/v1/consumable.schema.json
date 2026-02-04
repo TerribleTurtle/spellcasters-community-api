@@ -9,13 +9,15 @@
     "name",
     "effect_type",
     "value",
-    "ttl"
+    "ttl",
+    "last_modified"
   ],
   "properties": {
     "$schema": { "type": "string" },
     "game_version": {
       "type": "string"
     },
+    "last_modified": { "type": "string", "format": "date-time", "description": "UTC Timestamp of the last update" },
     "consumable_id": {
       "type": "string",
       "description": "Unique ID (e.g., 'small_health_potion')."
