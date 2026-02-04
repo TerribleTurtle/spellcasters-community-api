@@ -24,22 +24,18 @@ The project keeps raw data (JSON files) separate from images (Assets).
 spellcasters-community-api/
 ├── assets/                 # Images and Icons
 │   ├── units/              # e.g., orc_grunt.png
-│   ├── cards/              # e.g., fireball.png
 │   ├── heroes/
 │   ├── consumables/
 │   └── upgrades/
 ├── data/                   # Raw JSON Data Sources
 │   ├── units/              # e.g., orc_grunt.json
-│   ├── cards/              # e.g., fireball.json
 │   ├── heroes/
 │   ├── consumables/
-│   ├── cards/              # Starter Decks / Meta Builds
 │   ├── upgrades/           # Level-up options
 │   └── mechanics/          # Game Logic (Curves, Settings)
 ├── schemas/                # Validation Logic
 │   └── v1/                 # Versioned JSON Schemas
 │       ├── unit.schema.json
-│       ├── card.schema.json
 │       ├── hero.schema.json
 │       ├── consumable.schema.json
 │       ├── upgrade.schema.json
@@ -60,7 +56,7 @@ spellcasters-community-api/
 
 ### Standard JSON Templates
 
-#### 1. Unit (The Entity)
+#### 1. Unit (Unified Entity)
 
 File: `data/units/orc_grunt.json`
 
@@ -79,25 +75,13 @@ File: `data/units/orc_grunt.json`
   "range": 0,
   "projectile_speed": null,
   "movement_type": "Ground",
-  "tags": ["Grunt", "Melee"]
-}
-```
-
-#### 2. Card (The Deck Item)
-
-File: `data/cards/card_orc_grunt_I.json`
-
-```json
-{
-  "game_version": "0.0.1",
-  "card_id": "card_orc_grunt_I",
-  "entity_id": "orc_grunt",
-  "name": "Orc Grunt",
-  "rank": "I",
-  "cost_population": 1,
-  "cost_charges": 1,
-  "cast_time": 1.0,
-  "image_required": true
+  "tags": ["Grunt", "Melee"],
+  "card_config": {
+    "rank": "I",
+    "cost_population": 1,
+    "cost_charges": 1,
+    "cast_time": 1.0
+  }
 }
 ```
 

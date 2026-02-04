@@ -11,5 +11,11 @@
   "range": 1,
   "movement_type": "Ground",
   "tags": [],
-  "description": "Mighty warrior that crushes target areas with a hammer"
+  "description": "Mighty warrior that crushes target areas with a hammer",
+  "card_config": {
+    "rank": "III",
+    "cost_population": 0,
+    "cost_charges": 1,
+    "cast_time": 2.0
+  }
 }

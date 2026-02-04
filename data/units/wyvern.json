@@ -11,5 +11,11 @@
   "range": 1,
   "movement_type": "Ground",
   "tags": [],
-  "description": "Flying dragonkin that attacks with mid-range projectiles"
+  "description": "Flying dragonkin that attacks with mid-range projectiles",
+  "card_config": {
+    "rank": "II",
+    "cost_population": 0,
+    "cost_charges": 1,
+    "cast_time": 2.0
+  }
 }

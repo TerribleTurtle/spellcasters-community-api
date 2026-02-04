@@ -15,5 +15,11 @@
     "damage",
     "slow"
   ],
-  "description": "Shakes the ground, dealing damage and slowing enemies in a large area."
+  "description": "Shakes the ground, dealing damage and slowing enemies in a large area.",
+  "card_config": {
+    "rank": "I",
+    "cost_population": 0,
+    "cost_charges": 1,
+    "cast_time": 2.0
+  }
 }

@@ -12,7 +12,13 @@
     "range": 1,
     "movement_type": "Ground",
     "tags": [],
-    "description": "Support creature that heals allies. Uses elemental attacks when infused"
+    "description": "Support creature that heals allies. Uses elemental attacks when infused",
+    "card_config": {
+      "rank": "II",
+      "cost_population": 0,
+      "cost_charges": 1,
+      "cast_time": 2.0
+    }
   },
   {
     "$schema": "../../schemas/v1/unit.schema.json",
@@ -31,13 +37,19 @@
       "damage",
       "slow"
     ],
-    "description": "Shakes the ground, dealing damage and slowing enemies in a large area."
+    "description": "Shakes the ground, dealing damage and slowing enemies in a large area.",
+    "card_config": {
+      "rank": "I",
+      "cost_population": 0,
+      "cost_charges": 1,
+      "cast_time": 2.0
+    }
   },
   {
     "$schema": "../../schemas/v1/unit.schema.json",
     "game_version": "0.0.1",
     "entity_id": "earth_golem",
-    "name": "EARTH GOLEM",
+    "name": "Earth Golem",
     "category": "Creature",
     "health": 650,
     "damage": 25,
@@ -46,7 +58,13 @@
     "range": 1,
     "movement_type": "Ground",
     "tags": [],
-    "description": "Strong melee unit that resists damage from large enemies"
+    "description": "Strong melee unit that resists damage from large enemies",
+    "card_config": {
+      "rank": "II",
+      "cost_population": 0,
+      "cost_charges": 1,
+      "cast_time": 2.0
+    }
   },
   {
     "$schema": "../../schemas/v1/unit.schema.json",
@@ -61,7 +79,13 @@
     "range": 1,
     "movement_type": "Ground",
     "tags": [],
-    "description": "Stealthy flying ranged creature that turns invisible out of combat"
+    "description": "Stealthy flying ranged creature that turns invisible out of combat",
+    "card_config": {
+      "rank": "I",
+      "cost_population": 0,
+      "cost_charges": 1,
+      "cast_time": 2.0
+    }
   },
   {
     "$schema": "../../schemas/v1/unit.schema.json",
@@ -76,7 +100,13 @@
     "range": 1,
     "movement_type": "Ground",
     "tags": [],
-    "description": "The Wild Titan. Crushes all structures as it marches toward the Lifestones."
+    "description": "The Wild Titan. Crushes all structures as it marches toward the Lifestones.",
+    "card_config": {
+      "rank": "III",
+      "cost_population": 0,
+      "cost_charges": 100,
+      "cast_time": 2.0
+    }
   },
   {
     "$schema": "../../schemas/v1/unit.schema.json",
@@ -91,13 +121,19 @@
     "range": 1,
     "movement_type": "Ground",
     "tags": [],
-    "description": "Slow giant that protects allies with a massive shield"
+    "description": "Slow giant that protects allies with a massive shield",
+    "card_config": {
+      "rank": "III",
+      "cost_population": 0,
+      "cost_charges": 1,
+      "cast_time": 2.0
+    }
   },
   {
     "$schema": "../../schemas/v1/unit.schema.json",
     "game_version": "0.0.1",
     "entity_id": "harpy",
-    "name": "HARPY",
+    "name": "Harpy",
     "category": "Creature",
     "health": 100,
     "damage": 12,
@@ -106,7 +142,13 @@
     "range": 1,
     "movement_type": "Ground",
     "tags": [],
-    "description": "Agile flying creature that excels at defeating ground units"
+    "description": "Agile flying creature that excels at defeating ground units",
+    "card_config": {
+      "rank": "I",
+      "cost_population": 0,
+      "cost_charges": 1,
+      "cast_time": 2.0
+    }
   },
   {
     "$schema": "../../schemas/v1/unit.schema.json",
@@ -124,7 +166,13 @@
       "military"
     ],
     "description": "A high crag where harpies roost and train.",
-    "collision_radius": 2
+    "collision_radius": 2,
+    "card_config": {
+      "rank": "I",
+      "cost_population": 0,
+      "cost_charges": 1,
+      "cast_time": 2.0
+    }
   },
   {
     "$schema": "../../schemas/v1/unit.schema.json",
@@ -139,7 +187,13 @@
     "range": 1,
     "movement_type": "Ground",
     "tags": [],
-    "description": "Colossal creature that deals massive damage to structures"
+    "description": "Colossal creature that deals massive damage to structures",
+    "card_config": {
+      "rank": "IV",
+      "cost_population": 0,
+      "cost_charges": 1,
+      "cast_time": 2.0
+    }
   },
   {
     "$schema": "../../schemas/v1/unit.schema.json",
@@ -154,7 +208,13 @@
     "range": 1,
     "movement_type": "Ground",
     "tags": [],
-    "description": "Undead caster that inflict curses to enemies, increasing the damage they take and reducing their movement speed."
+    "description": "Undead caster that inflict curses to enemies, increasing the damage they take and reducing their movement speed.",
+    "card_config": {
+      "rank": "II",
+      "cost_population": 0,
+      "cost_charges": 1,
+      "cast_time": 2.0
+    }
   },
   {
     "$schema": "../../schemas/v1/unit.schema.json",
@@ -169,7 +229,13 @@
     "range": 1,
     "movement_type": "Ground",
     "tags": [],
-    "description": "Long-range fighter that deals bonus damage to flying enemies"
+    "description": "Long-range fighter that deals bonus damage to flying enemies",
+    "card_config": {
+      "rank": "I",
+      "cost_population": 0,
+      "cost_charges": 1,
+      "cast_time": 2.0
+    }
   },
   {
     "$schema": "../../schemas/v1/unit.schema.json",
@@ -184,7 +250,13 @@
     "range": 1,
     "movement_type": "Ground",
     "tags": [],
-    "description": "Mighty warrior that crushes target areas with a hammer"
+    "description": "Mighty warrior that crushes target areas with a hammer",
+    "card_config": {
+      "rank": "III",
+      "cost_population": 0,
+      "cost_charges": 1,
+      "cast_time": 2.0
+    }
   },
   {
     "$schema": "../../schemas/v1/unit.schema.json",
@@ -199,13 +271,19 @@
     "range": 1,
     "movement_type": "Ground",
     "tags": [],
-    "description": "Medium-range soldier that deals bonus damage to buildings"
+    "description": "Medium-range soldier that deals bonus damage to buildings",
+    "card_config": {
+      "rank": "I",
+      "cost_population": 0,
+      "cost_charges": 1,
+      "cast_time": 2.0
+    }
   },
   {
     "$schema": "../../schemas/v1/unit.schema.json",
     "game_version": "0.0.1",
     "entity_id": "ruin_spider",
-    "name": "RUIN SPIDER",
+    "name": "Ruin Spider",
     "category": "Creature",
     "health": 85,
     "damage": 20,
@@ -214,13 +292,19 @@
     "range": 1,
     "movement_type": "Ground",
     "tags": [],
-    "description": "Fast creature that explodes on contact, dealing bonus damage to buildings"
+    "description": "Fast creature that explodes on contact, dealing bonus damage to buildings",
+    "card_config": {
+      "rank": "I",
+      "cost_population": 0,
+      "cost_charges": 1,
+      "cast_time": 2.0
+    }
   },
   {
     "$schema": "../../schemas/v1/unit.schema.json",
     "game_version": "0.0.1",
     "entity_id": "skeleton_warrior",
-    "name": "SKELETON WARRIOR",
+    "name": "Skeleton Warrior",
     "category": "Creature",
     "health": 200,
     "damage": 15,
@@ -229,13 +313,19 @@
     "range": 1,
     "movement_type": "Ground",
     "tags": [],
-    "description": "Undead soldier that captures altars quickly in large groups"
+    "description": "Undead soldier that captures altars quickly in large groups",
+    "card_config": {
+      "rank": "I",
+      "cost_population": 0,
+      "cost_charges": 1,
+      "cast_time": 2.0
+    }
   },
   {
     "$schema": "../../schemas/v1/unit.schema.json",
     "game_version": "0.0.1",
     "entity_id": "stone_behemoth",
-    "name": "STONE BEHEMOTH",
+    "name": "Stone Behemoth",
     "category": "Creature",
     "health": 210,
     "damage": 40,
@@ -244,13 +334,19 @@
     "range": 1,
     "movement_type": "Ground",
     "tags": [],
-    "description": "Siege unit that hurls long-range boulders for heavy area damage"
+    "description": "Siege unit that hurls long-range boulders for heavy area damage",
+    "card_config": {
+      "rank": "III",
+      "cost_population": 0,
+      "cost_charges": 1,
+      "cast_time": 2.0
+    }
   },
   {
     "$schema": "../../schemas/v1/unit.schema.json",
     "game_version": "0.0.1",
     "entity_id": "thanatos",
-    "name": "THANATOS",
+    "name": "Thanatos",
     "category": "Titan",
     "health": 1000,
     "damage": 40,
@@ -259,7 +355,13 @@
     "range": 1,
     "movement_type": "Ground",
     "tags": [],
-    "description": "The Titan of Death inflict curses to enemies, increasing the damage they take and reducing their movement speed."
+    "description": "The Titan of Death inflict curses to enemies, increasing the damage they take and reducing their movement speed.",
+    "card_config": {
+      "rank": "III",
+      "cost_population": 0,
+      "cost_charges": 100,
+      "cast_time": 2.0
+    }
   },
   {
     "$schema": "../../schemas/v1/unit.schema.json",
@@ -274,13 +376,19 @@
     "range": 1,
     "movement_type": "Ground",
     "tags": [],
-    "description": "Hunter unit that fires powerful long-range bolts"
+    "description": "Hunter unit that fires powerful long-range bolts",
+    "card_config": {
+      "rank": "II",
+      "cost_population": 0,
+      "cost_charges": 1,
+      "cast_time": 2.0
+    }
   },
   {
     "$schema": "../../schemas/v1/unit.schema.json",
     "game_version": "0.0.1",
     "entity_id": "wyvern",
-    "name": "WYVERN",
+    "name": "Wyvern",
     "category": "Creature",
     "health": 220,
     "damage": 19,
@@ -289,6 +397,12 @@
     "range": 1,
     "movement_type": "Ground",
     "tags": [],
-    "description": "Flying dragonkin that attacks with mid-range projectiles"
+    "description": "Flying dragonkin that attacks with mid-range projectiles",
+    "card_config": {
+      "rank": "II",
+      "cost_population": 0,
+      "cost_charges": 1,
+      "cast_time": 2.0
+    }
   }
 ]

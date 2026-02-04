@@ -17,7 +17,6 @@ MAX_IMG_SIZE_KB = 100
 # Schema Filenames
 SCHEMA_FILES = {
     "unit": "unit.schema.json",
-    "card": "card.schema.json",
     "hero": "hero.schema.json",
     "consumable": "consumable.schema.json",
     "upgrade": "upgrade.schema.json",
@@ -28,7 +27,6 @@ SCHEMA_FILES = {
 # Data Folder Mapping (Source -> Schema Type)
 FOLDER_TO_SCHEMA = {
     "units": "unit",
-    "cards": "card",
     "heroes": "hero",
     "consumables": "consumable",
     "upgrades": "upgrade",
@@ -54,7 +52,12 @@ def load_schema(name):
 
 def check_asset_exists(category, entity_id, is_required):
     """Checks if assets/[category]/[entity_id].png exists and validates hygiene."""
-    path = os.path.join(ASSETS_DIR, category, f"{entity_id}.png")
+    # Special handling for units in Unified Model: assets/units/{id}_card.png
+    filename = f"{entity_id}.png"
+    if category == "units":
+        filename = f"{entity_id}_card.png"
+
+    path = os.path.join(ASSETS_DIR, category, filename)
     
     if not os.path.exists(path):
         if is_required:
@@ -85,7 +88,10 @@ def validate_decks(db):
     Returns a list of error strings.
     """
     errors = []
+    # Support both data/decks.json and data/decks/*.json
     deck_files = glob.glob(os.path.join(DATA_DIR, "decks", "*.json"))
+    if os.path.exists(os.path.join(DATA_DIR, "decks.json")):
+        deck_files.append(os.path.join(DATA_DIR, "decks.json"))
     
     for f in deck_files:
         data = load_json(f)
@@ -95,7 +101,8 @@ def validate_decks(db):
 
         hero_id = data.get("hero_id")
         titan_id = data.get("titan_id")
-        card_ids = data.get("cards", [])
+        # In Unified Model, cards list contains unit_ids
+        unit_ids = data.get("cards", [])
 
         # Hero Check
         if hero_id and hero_id not in db["heroes"]:
@@ -103,25 +110,26 @@ def validate_decks(db):
         
         # Titan Check
         if titan_id:
-            if titan_id not in db["cards"]:
-                errors.append(f"[FAIL] Deck {f} references missing titan_id '{titan_id}' (Card not found)")
+            # Titan ID is now a Unit ID (Unified)
+            if titan_id not in db["units"]:
+                errors.append(f"[FAIL] Deck {f} references missing titan_id '{titan_id}' (Unit not found)")
             else:
-                # Deep Check: Is it actually a Titan?
-                titan_card = db["cards"][titan_id]
-                titan_entity_id = titan_card.get("entity_id")
-                
-                if titan_entity_id not in db["units"]:
-                        errors.append(f"[FAIL] Titan Card '{titan_id}' references missing entity '{titan_entity_id}'")
-                else:
-                    unit = db["units"][titan_entity_id]
-                    if unit.get("category") != "Titan":
-                        errors.append(f"[FAIL] Deck {f} titan_id '{titan_id}' is NOT a Titan (Category: {unit.get('category')})")
-        
-        # Cards Check
-        for cid in card_ids:
-            if cid not in db["cards"]:
-                    errors.append(f"[FAIL] Deck {f} references missing card_id '{cid}'")
-                    
+                unit = db["units"][titan_id]
+                if unit.get("category") != "Titan":
+                    errors.append(f"[FAIL] Deck {f} titan_id '{titan_id}' is NOT a Titan (Category: {unit.get('category')})")
+                if "card_config" not in unit:
+                     errors.append(f"[FAIL] Deck {f} titan_id '{titan_id}' is missing 'card_config' (Not playable)")
+
+        # Cards Check (Units)
+        for uid in unit_ids:
+            if uid not in db["units"]:
+                    errors.append(f"[FAIL] Deck {f} references missing unit_id '{uid}'")
+            else:
+                # MUST have card_config
+                unit = db["units"][uid]
+                if "card_config" not in unit:
+                    errors.append(f"[FAIL] Deck {f} references unit '{uid}' which is missing 'card_config' (Not playable)")
+
     return errors
 
 def validate_integrity():
@@ -132,7 +140,6 @@ def validate_integrity():
     # 1. Load All Data for Cross-Reference
     db = {
         "units": {},
-        "cards": {},
         "heroes": {},
         "consumables": {},
         "upgrades": {}
@@ -148,7 +155,6 @@ def validate_integrity():
             # Identify ID field based on type
             id_field = "id" # default fallback
             if key == "units": id_field = "entity_id"
-            elif key == "cards": id_field = "card_id"
             elif key == "heroes": id_field = "hero_id"
             elif key == "consumables": id_field = "consumable_id"
             elif key == "upgrades": id_field = "upgrade_id"
@@ -181,25 +187,15 @@ def validate_integrity():
                 continue
             
             # Asset Check
-            # Mappings for asset folders: units->units, cards->cards, etc.
             if data.get("image_required", True):
                 # deduce ID
                 obj_id = ""
                 if schema_key == "unit": obj_id = data.get("entity_id")
-                elif schema_key == "card": obj_id = data.get("card_id")
                 elif schema_key == "hero": obj_id = data.get("hero_id")
                 elif schema_key == "consumable": obj_id = data.get("consumable_id")
                 
                 if obj_id:
                     check_asset_exists(folder, obj_id, True)
-
-            # Logic: Card -> Unit Reference
-            if schema_key == "card":
-                entity_id = data.get("entity_id")
-                if entity_id not in db["units"]:
-                    # Is it a Neutral/Token/Spell? unit.schema handles all.
-                    print(f"[FAIL] Orphan Card: {f} points to missing entity_id '{entity_id}'")
-                    errors += 1
             
             # Logic: Upgrade -> Tags
             if schema_key == "upgrade":
@@ -209,11 +205,6 @@ def validate_integrity():
                 for u in db["units"].values():
                     for t in u.get("tags", []): all_tags.add(t)
                 
-                for t in targets:
-                    if t not in all_tags:
-                        print(f"[WARN] Upgrade {f} targets tag '{t}' which no unit possesses.")
-                        warnings += 1
-
                 for t in targets:
                     if t not in all_tags:
                         print(f"[WARN] Upgrade {f} targets tag '{t}' which no unit possesses.")

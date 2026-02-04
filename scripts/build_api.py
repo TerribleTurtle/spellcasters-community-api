@@ -13,7 +13,6 @@ DATA_DIR = "data"
 # Output FilenameBase -> Source Directory
 AGGREGATION_MAP = {
     "units": "units",
-    "cards": "cards",
     "heroes": "heroes",
     "consumables": "consumables",
     "upgrades": "upgrades"

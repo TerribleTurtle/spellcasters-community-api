@@ -102,6 +102,44 @@
     "description": {
       "type": "string",
       "description": "Lore or gameplay description."
+    },
+    "card_config": {
+      "type": "object",
+      "description": "Configuration if this Unit is playable as a Card.",
+      "required": [
+        "rank",
+        "cost_population",
+        "cost_charges",
+        "cast_time"
+      ],
+      "properties": {
+        "rank": {
+          "type": "string",
+          "enum": [
+            "I",
+            "II",
+            "III",
+            "IV"
+          ],
+          "description": "Progression tier of the card."
+        },
+        "cost_population": {
+          "type": "integer",
+          "minimum": 0,
+          "description": "Population occupancy cost."
+        },
+        "cost_charges": {
+          "type": "integer",
+          "minimum": 0,
+          "description": "Ammo cost to cast."
+        },
+        "cast_time": {
+          "type": "number",
+          "minimum": 0,
+          "description": "Time in seconds to cast the card. Acts as rate-limiter."
+        }
+      },
+      "additionalProperties": false
     }
   },
   "additionalProperties": false

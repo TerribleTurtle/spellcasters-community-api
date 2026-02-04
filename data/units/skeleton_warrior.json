@@ -11,5 +11,11 @@
   "range": 1,
   "movement_type": "Ground",
   "tags": [],
-  "description": "Undead soldier that captures altars quickly in large groups"
+  "description": "Undead soldier that captures altars quickly in large groups",
+  "card_config": {
+    "rank": "I",
+    "cost_population": 0,
+    "cost_charges": 1,
+    "cast_time": 2.0
+  }
 }

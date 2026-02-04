@@ -11,5 +11,11 @@
   "range": 1,
   "movement_type": "Ground",
   "tags": [],
-  "description": "Siege unit that hurls long-range boulders for heavy area damage"
+  "description": "Siege unit that hurls long-range boulders for heavy area damage",
+  "card_config": {
+    "rank": "III",
+    "cost_population": 0,
+    "cost_charges": 1,
+    "cast_time": 2.0
+  }
 }

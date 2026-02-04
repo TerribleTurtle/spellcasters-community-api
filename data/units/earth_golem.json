@@ -11,5 +11,11 @@
   "range": 1,
   "movement_type": "Ground",
   "tags": [],
-  "description": "Strong melee unit that resists damage from large enemies"
+  "description": "Strong melee unit that resists damage from large enemies",
+  "card_config": {
+    "rank": "II",
+    "cost_population": 0,
+    "cost_charges": 1,
+    "cast_time": 2.0
+  }
 }

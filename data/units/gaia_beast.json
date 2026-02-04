@@ -11,5 +11,11 @@
   "range": 1,
   "movement_type": "Ground",
   "tags": [],
-  "description": "The Wild Titan. Crushes all structures as it marches toward the Lifestones."
+  "description": "The Wild Titan. Crushes all structures as it marches toward the Lifestones.",
+  "card_config": {
+    "rank": "III",
+    "cost_population": 0,
+    "cost_charges": 100,
+    "cast_time": 2.0
+  }
 }

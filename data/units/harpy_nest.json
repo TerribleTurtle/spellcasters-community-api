@@ -14,5 +14,11 @@
     "military"
   ],
   "description": "A high crag where harpies roost and train.",
-  "collision_radius": 2
+  "collision_radius": 2,
+  "card_config": {
+    "rank": "I",
+    "cost_population": 0,
+    "cost_charges": 1,
+    "cast_time": 2.0
+  }
 }
