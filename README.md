@@ -10,8 +10,12 @@ It is **free to use** and **open for anyone to contribute**.
 Please refer to [GUIDE.md](GUIDE.md) to learn how to:
 
 - Use this data in your own projects
-- Add new creatures or items
+- Add new units or items
 - Fix typos
+
+## 💬 Community
+
+Join the conversation on the [Official Discord](https://discord.com/invite/spellcasters-chronicles-1425209254847058003).
 
 ## 🌐 Live API Usage
 
@@ -21,7 +25,7 @@ Developers should use this base URL to fetch data for their applications.
 
 - **Landing Page:** [View Live Site](https://terribleturtle.github.io/spellcasters-community-api/)
 - **Game Info:** [game_info.json](https://terribleturtle.github.io/spellcasters-community-api/api/v1/game_info.json)
-- **Creatures:** [all_creatures.json](https://terribleturtle.github.io/spellcasters-community-api/api/v1/all_creatures.json)
+- **Units:** [units.json](https://terribleturtle.github.io/spellcasters-community-api/api/v1/units.json)
 
 Full endpoint documentation is available in [GUIDE.md](GUIDE.md).
 
@@ -42,7 +46,7 @@ Full endpoint documentation is available in [GUIDE.md](GUIDE.md).
     python scripts/build_api.py
     ```
 
-    See `api/v1/all_creatures.json`
+    See `api/v1/units.json`
 
 ## 🤝 Contributing
 

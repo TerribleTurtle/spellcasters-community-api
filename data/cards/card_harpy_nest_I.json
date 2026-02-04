@@ -1,0 +1,11 @@
+{
+  "$schema": "../../schemas/v1/card.schema.json",
+  "game_version": "0.0.1",
+  "card_id": "card_harpy_nest_I",
+  "entity_id": "harpy_nest",
+  "name": "Harpy Nest Card",
+  "rank": "I",
+  "cost_population": 0,
+  "cost_charges": 1,
+  "cast_time": 2.0
+}

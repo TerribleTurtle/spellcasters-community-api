@@ -1,0 +1,15 @@
+{
+  "$schema": "../../schemas/v1/unit.schema.json",
+  "game_version": "0.0.1",
+  "entity_id": "giant_shielder",
+  "name": "Giant Shielder",
+  "category": "Creature",
+  "health": 150,
+  "damage": 30,
+  "attack_speed": 1.0,
+  "movement_speed": 3,
+  "range": 1,
+  "movement_type": "Ground",
+  "tags": [],
+  "description": "Slow giant that protects allies with a massive shield"
+}

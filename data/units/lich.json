@@ -1,0 +1,15 @@
+{
+  "$schema": "../../schemas/v1/unit.schema.json",
+  "game_version": "0.0.1",
+  "entity_id": "lich",
+  "name": "Lich",
+  "category": "Creature",
+  "health": 500,
+  "damage": 5,
+  "attack_speed": 1.0,
+  "movement_speed": 5,
+  "range": 1,
+  "movement_type": "Ground",
+  "tags": [],
+  "description": "Undead caster that inflict curses to enemies, increasing the damage they take and reducing their movement speed."
+}

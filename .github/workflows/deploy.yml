@@ -30,6 +30,9 @@ jobs:
         run: |
           pip install -r requirements.txt
 
+      - name: Run Integrity Validation
+        run: python scripts/validate_integrity.py
+
       - name: Run Build Script
         run: python scripts/build_api.py
 

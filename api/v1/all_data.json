@@ -1,541 +1,551 @@
 {
-  "meta": {
-    "generated_at": "2026-02-03T18:39:16.049985+00:00",
-    "version": "v1",
-    "license": "MIT"
+  "build_info": {
+    "version": "0.0.1",
+    "generated_at": null
   },
-  "data": {
-    "buildings": [
-      {
-        "$schema": "../../schemas/v1/building.schema.json",
-        "id": "harpy_nest",
-        "version": "1.0.0",
-        "name": "Harpy Nest",
-        "classification": "military",
-        "size": "3x3",
-        "description": "A high crag where harpies roost and train.",
-        "date_modified": "2026-02-03T12:00:00Z",
-        "image_required": false,
-        "build_time": 450,
-        "cost": {
-          "population": 0,
-          "charges": 1
-        },
-        "stats": {
-          "health": 1500
-        },
-        "meta": {
-          "note": "Stub with real name, fake data."
-        }
+  "units": [
+    {
+      "$schema": "../../schemas/v1/unit.schema.json",
+      "game_version": "0.0.1",
+      "entity_id": "dryad",
+      "name": "Dryad",
+      "category": "Creature",
+      "health": 225,
+      "damage": 12,
+      "attack_speed": 1.0,
+      "movement_speed": 3,
+      "range": 1,
+      "movement_type": "Ground",
+      "tags": [],
+      "description": "Support creature that heals allies. Uses elemental attacks when infused"
+    },
+    {
+      "$schema": "../../schemas/v1/unit.schema.json",
+      "game_version": "0.0.1",
+      "entity_id": "earthquake",
+      "name": "Earthquake",
+      "category": "Spell",
+      "health": 0,
+      "damage": 150,
+      "attack_speed": 1.0,
+      "movement_speed": 3,
+      "range": 1,
+      "movement_type": "Ground",
+      "tags": [
+        "Earth",
+        "damage",
+        "slow"
+      ],
+      "description": "Shakes the ground, dealing damage and slowing enemies in a large area."
+    },
+    {
+      "$schema": "../../schemas/v1/unit.schema.json",
+      "game_version": "0.0.1",
+      "entity_id": "earth_golem",
+      "name": "EARTH GOLEM",
+      "category": "Creature",
+      "health": 650,
+      "damage": 25,
+      "attack_speed": 1.0,
+      "movement_speed": 2,
+      "range": 1,
+      "movement_type": "Ground",
+      "tags": [],
+      "description": "Strong melee unit that resists damage from large enemies"
+    },
+    {
+      "$schema": "../../schemas/v1/unit.schema.json",
+      "game_version": "0.0.1",
+      "entity_id": "faerie",
+      "name": "Faerie",
+      "category": "Creature",
+      "health": 100,
+      "damage": 9,
+      "attack_speed": 1.0,
+      "movement_speed": 3,
+      "range": 1,
+      "movement_type": "Ground",
+      "tags": [],
+      "description": "Stealthy flying ranged creature that turns invisible out of combat"
+    },
+    {
+      "$schema": "../../schemas/v1/unit.schema.json",
+      "game_version": "0.0.1",
+      "entity_id": "gaia_beast",
+      "name": "Gaia Beast",
+      "category": "Titan",
+      "health": 1000,
+      "damage": 80,
+      "attack_speed": 1.0,
+      "movement_speed": 4,
+      "range": 1,
+      "movement_type": "Ground",
+      "tags": [],
+      "description": "The Wild Titan. Crushes all structures as it marches toward the Lifestones."
+    },
+    {
+      "$schema": "../../schemas/v1/unit.schema.json",
+      "game_version": "0.0.1",
+      "entity_id": "giant_shielder",
+      "name": "Giant Shielder",
+      "category": "Creature",
+      "health": 150,
+      "damage": 30,
+      "attack_speed": 1.0,
+      "movement_speed": 3,
+      "range": 1,
+      "movement_type": "Ground",
+      "tags": [],
+      "description": "Slow giant that protects allies with a massive shield"
+    },
+    {
+      "$schema": "../../schemas/v1/unit.schema.json",
+      "game_version": "0.0.1",
+      "entity_id": "harpy",
+      "name": "HARPY",
+      "category": "Creature",
+      "health": 100,
+      "damage": 12,
+      "attack_speed": 1.0,
+      "movement_speed": 8,
+      "range": 1,
+      "movement_type": "Ground",
+      "tags": [],
+      "description": "Agile flying creature that excels at defeating ground units"
+    },
+    {
+      "$schema": "../../schemas/v1/unit.schema.json",
+      "game_version": "0.0.1",
+      "entity_id": "harpy_nest",
+      "name": "Harpy Nest",
+      "category": "Building",
+      "health": 1500,
+      "damage": 0,
+      "attack_speed": 1.0,
+      "movement_speed": 3,
+      "range": 1,
+      "movement_type": "Ground",
+      "tags": [
+        "military"
+      ],
+      "description": "A high crag where harpies roost and train.",
+      "collision_radius": 2
+    },
+    {
+      "$schema": "../../schemas/v1/unit.schema.json",
+      "game_version": "0.0.1",
+      "entity_id": "juggernaut",
+      "name": "Juggernaut",
+      "category": "Creature",
+      "health": 100,
+      "damage": 50,
+      "attack_speed": 1.0,
+      "movement_speed": 3,
+      "range": 1,
+      "movement_type": "Ground",
+      "tags": [],
+      "description": "Colossal creature that deals massive damage to structures"
+    },
+    {
+      "$schema": "../../schemas/v1/unit.schema.json",
+      "game_version": "0.0.1",
+      "entity_id": "lich",
+      "name": "Lich",
+      "category": "Creature",
+      "health": 500,
+      "damage": 5,
+      "attack_speed": 1.0,
+      "movement_speed": 5,
+      "range": 1,
+      "movement_type": "Ground",
+      "tags": [],
+      "description": "Undead caster that inflict curses to enemies, increasing the damage they take and reducing their movement speed."
+    },
+    {
+      "$schema": "../../schemas/v1/unit.schema.json",
+      "game_version": "0.0.1",
+      "entity_id": "lizard_archer",
+      "name": "Lizard Archer",
+      "category": "Creature",
+      "health": 85,
+      "damage": 8,
+      "attack_speed": 1.0,
+      "movement_speed": 3,
+      "range": 1,
+      "movement_type": "Ground",
+      "tags": [],
+      "description": "Long-range fighter that deals bonus damage to flying enemies"
+    },
+    {
+      "$schema": "../../schemas/v1/unit.schema.json",
+      "game_version": "0.0.1",
+      "entity_id": "ogre",
+      "name": "Ogre",
+      "category": "Creature",
+      "health": 230,
+      "damage": 70,
+      "attack_speed": 1.0,
+      "movement_speed": 3,
+      "range": 1,
+      "movement_type": "Ground",
+      "tags": [],
+      "description": "Mighty warrior that crushes target areas with a hammer"
+    },
+    {
+      "$schema": "../../schemas/v1/unit.schema.json",
+      "game_version": "0.0.1",
+      "entity_id": "rocket_soldier",
+      "name": "Rocket Soldier",
+      "category": "Creature",
+      "health": 220,
+      "damage": 10,
+      "attack_speed": 1.0,
+      "movement_speed": 4,
+      "range": 1,
+      "movement_type": "Ground",
+      "tags": [],
+      "description": "Medium-range soldier that deals bonus damage to buildings"
+    },
+    {
+      "$schema": "../../schemas/v1/unit.schema.json",
+      "game_version": "0.0.1",
+      "entity_id": "ruin_spider",
+      "name": "RUIN SPIDER",
+      "category": "Creature",
+      "health": 85,
+      "damage": 20,
+      "attack_speed": 1.0,
+      "movement_speed": 7,
+      "range": 1,
+      "movement_type": "Ground",
+      "tags": [],
+      "description": "Fast creature that explodes on contact, dealing bonus damage to buildings"
+    },
+    {
+      "$schema": "../../schemas/v1/unit.schema.json",
+      "game_version": "0.0.1",
+      "entity_id": "skeleton_warrior",
+      "name": "SKELETON WARRIOR",
+      "category": "Creature",
+      "health": 200,
+      "damage": 15,
+      "attack_speed": 1.0,
+      "movement_speed": 3,
+      "range": 1,
+      "movement_type": "Ground",
+      "tags": [],
+      "description": "Undead soldier that captures altars quickly in large groups"
+    },
+    {
+      "$schema": "../../schemas/v1/unit.schema.json",
+      "game_version": "0.0.1",
+      "entity_id": "stone_behemoth",
+      "name": "STONE BEHEMOTH",
+      "category": "Creature",
+      "health": 210,
+      "damage": 40,
+      "attack_speed": 1.0,
+      "movement_speed": 2,
+      "range": 1,
+      "movement_type": "Ground",
+      "tags": [],
+      "description": "Siege unit that hurls long-range boulders for heavy area damage"
+    },
+    {
+      "$schema": "../../schemas/v1/unit.schema.json",
+      "game_version": "0.0.1",
+      "entity_id": "thanatos",
+      "name": "THANATOS",
+      "category": "Titan",
+      "health": 1000,
+      "damage": 40,
+      "attack_speed": 1.0,
+      "movement_speed": 4,
+      "range": 1,
+      "movement_type": "Ground",
+      "tags": [],
+      "description": "The Titan of Death inflict curses to enemies, increasing the damage they take and reducing their movement speed."
+    },
+    {
+      "$schema": "../../schemas/v1/unit.schema.json",
+      "game_version": "0.0.1",
+      "entity_id": "wolven_hunter",
+      "name": "Wolven Hunter",
+      "category": "Creature",
+      "health": 340,
+      "damage": 16,
+      "attack_speed": 1.0,
+      "movement_speed": 3,
+      "range": 1,
+      "movement_type": "Ground",
+      "tags": [],
+      "description": "Hunter unit that fires powerful long-range bolts"
+    },
+    {
+      "$schema": "../../schemas/v1/unit.schema.json",
+      "game_version": "0.0.1",
+      "entity_id": "wyvern",
+      "name": "WYVERN",
+      "category": "Creature",
+      "health": 220,
+      "damage": 19,
+      "attack_speed": 1.0,
+      "movement_speed": 7,
+      "range": 1,
+      "movement_type": "Ground",
+      "tags": [],
+      "description": "Flying dragonkin that attacks with mid-range projectiles"
+    }
+  ],
+  "cards": [
+    {
+      "$schema": "../../schemas/v1/card.schema.json",
+      "game_version": "0.0.1",
+      "card_id": "card_dryad_II",
+      "entity_id": "dryad",
+      "name": "Dryad Card",
+      "rank": "II",
+      "cost_population": 0,
+      "cost_charges": 1,
+      "cast_time": 2.0
+    },
+    {
+      "$schema": "../../schemas/v1/card.schema.json",
+      "game_version": "0.0.1",
+      "card_id": "card_earthquake_I",
+      "entity_id": "earthquake",
+      "name": "Earthquake Card",
+      "rank": "I",
+      "cost_population": 0,
+      "cost_charges": 1,
+      "cast_time": 2.0
+    },
+    {
+      "$schema": "../../schemas/v1/card.schema.json",
+      "game_version": "0.0.1",
+      "card_id": "card_earth_golem_II",
+      "entity_id": "earth_golem",
+      "name": "EARTH GOLEM Card",
+      "rank": "II",
+      "cost_population": 0,
+      "cost_charges": 1,
+      "cast_time": 2.0
+    },
+    {
+      "$schema": "../../schemas/v1/card.schema.json",
+      "game_version": "0.0.1",
+      "card_id": "card_faerie_I",
+      "entity_id": "faerie",
+      "name": "Faerie Card",
+      "rank": "I",
+      "cost_population": 0,
+      "cost_charges": 1,
+      "cast_time": 2.0
+    },
+    {
+      "$schema": "../../schemas/v1/card.schema.json",
+      "game_version": "0.0.1",
+      "card_id": "card_gaia_beast_III",
+      "entity_id": "gaia_beast",
+      "name": "Gaia Beast Card",
+      "rank": "III",
+      "cost_population": 0,
+      "cost_charges": 100,
+      "cast_time": 2.0
+    },
+    {
+      "$schema": "../../schemas/v1/card.schema.json",
+      "game_version": "0.0.1",
+      "card_id": "card_giant_shielder_III",
+      "entity_id": "giant_shielder",
+      "name": "Giant Shielder Card",
+      "rank": "III",
+      "cost_population": 0,
+      "cost_charges": 1,
+      "cast_time": 2.0
+    },
+    {
+      "$schema": "../../schemas/v1/card.schema.json",
+      "game_version": "0.0.1",
+      "card_id": "card_harpy_I",
+      "entity_id": "harpy",
+      "name": "HARPY Card",
+      "rank": "I",
+      "cost_population": 0,
+      "cost_charges": 1,
+      "cast_time": 2.0
+    },
+    {
+      "$schema": "../../schemas/v1/card.schema.json",
+      "game_version": "0.0.1",
+      "card_id": "card_harpy_nest_I",
+      "entity_id": "harpy_nest",
+      "name": "Harpy Nest Card",
+      "rank": "I",
+      "cost_population": 0,
+      "cost_charges": 1,
+      "cast_time": 2.0
+    },
+    {
+      "$schema": "../../schemas/v1/card.schema.json",
+      "game_version": "0.0.1",
+      "card_id": "card_juggernaut_IV",
+      "entity_id": "juggernaut",
+      "name": "Juggernaut Card",
+      "rank": "IV",
+      "cost_population": 0,
+      "cost_charges": 1,
+      "cast_time": 2.0
+    },
+    {
+      "$schema": "../../schemas/v1/card.schema.json",
+      "game_version": "0.0.1",
+      "card_id": "card_lich_II",
+      "entity_id": "lich",
+      "name": "Lich Card",
+      "rank": "II",
+      "cost_population": 0,
+      "cost_charges": 1,
+      "cast_time": 2.0
+    },
+    {
+      "$schema": "../../schemas/v1/card.schema.json",
+      "game_version": "0.0.1",
+      "card_id": "card_lizard_archer_I",
+      "entity_id": "lizard_archer",
+      "name": "Lizard Archer Card",
+      "rank": "I",
+      "cost_population": 0,
+      "cost_charges": 1,
+      "cast_time": 2.0
+    },
+    {
+      "$schema": "../../schemas/v1/card.schema.json",
+      "game_version": "0.0.1",
+      "card_id": "card_ogre_III",
+      "entity_id": "ogre",
+      "name": "Ogre Card",
+      "rank": "III",
+      "cost_population": 0,
+      "cost_charges": 1,
+      "cast_time": 2.0
+    },
+    {
+      "$schema": "../../schemas/v1/card.schema.json",
+      "game_version": "0.0.1",
+      "card_id": "card_rocket_soldier_I",
+      "entity_id": "rocket_soldier",
+      "name": "Rocket Soldier Card",
+      "rank": "I",
+      "cost_population": 0,
+      "cost_charges": 1,
+      "cast_time": 2.0
+    },
+    {
+      "$schema": "../../schemas/v1/card.schema.json",
+      "game_version": "0.0.1",
+      "card_id": "card_ruin_spider_I",
+      "entity_id": "ruin_spider",
+      "name": "RUIN SPIDER Card",
+      "rank": "I",
+      "cost_population": 0,
+      "cost_charges": 1,
+      "cast_time": 2.0
+    },
+    {
+      "$schema": "../../schemas/v1/card.schema.json",
+      "game_version": "0.0.1",
+      "card_id": "card_skeleton_warrior_I",
+      "entity_id": "skeleton_warrior",
+      "name": "SKELETON WARRIOR Card",
+      "rank": "I",
+      "cost_population": 0,
+      "cost_charges": 1,
+      "cast_time": 2.0
+    },
+    {
+      "$schema": "../../schemas/v1/card.schema.json",
+      "game_version": "0.0.1",
+      "card_id": "card_stone_behemoth_III",
+      "entity_id": "stone_behemoth",
+      "name": "STONE BEHEMOTH Card",
+      "rank": "III",
+      "cost_population": 0,
+      "cost_charges": 1,
+      "cast_time": 2.0
+    },
+    {
+      "$schema": "../../schemas/v1/card.schema.json",
+      "game_version": "0.0.1",
+      "card_id": "card_thanatos_III",
+      "entity_id": "thanatos",
+      "name": "THANATOS Card",
+      "rank": "III",
+      "cost_population": 0,
+      "cost_charges": 100,
+      "cast_time": 2.0
+    },
+    {
+      "$schema": "../../schemas/v1/card.schema.json",
+      "game_version": "0.0.1",
+      "card_id": "card_wolven_hunter_II",
+      "entity_id": "wolven_hunter",
+      "name": "Wolven Hunter Card",
+      "rank": "II",
+      "cost_population": 0,
+      "cost_charges": 1,
+      "cast_time": 2.0
+    },
+    {
+      "$schema": "../../schemas/v1/card.schema.json",
+      "game_version": "0.0.1",
+      "card_id": "card_wyvern_II",
+      "entity_id": "wyvern",
+      "name": "WYVERN Card",
+      "rank": "II",
+      "cost_population": 0,
+      "cost_charges": 1,
+      "cast_time": 2.0
+    }
+  ],
+  "heroes": [
+    {
+      "$schema": "../../schemas/v1/hero.schema.json",
+      "game_version": "0.0.1",
+      "hero_id": "stone_shaman",
+      "name": "Stone Shaman",
+      "health": 600,
+      "movement_speed": 3,
+      "flight_speed": 0,
+      "health_regen_rate": 1.0,
+      "regen_delay": 5.0,
+      "attack_damage_summoner": 40,
+      "attack_damage_minion": 40,
+      "abilities": {
+        "passive": "stone_skin",
+        "primary": "Unknown Primary",
+        "defense": "Unknown Defense",
+        "ultimate": "Unknown Ultimate"
       }
-    ],
-    "creatures": [
-      {
-        "$schema": "../../schemas/v1/creature.schema.json",
-        "id": "dryad",
-        "name": "Dryad",
-        "rank": "II",
-        "description": "Support creature that heals allies. Uses elemental attacks when infused",
-        "stats": {
-          "health": 225,
-          "speed": 3,
-          "dps": 12,
-          "hps": 150
-        },
-        "tags": [],
-        "meta": {
-          "source": "Spellcasters.md migration"
-        },
-        "date_modified": "2026-02-03T18:39:01.861073Z",
-        "version": "1.0.1",
-        "type": "Unknown",
-        "cost": {
-          "population": 0,
-          "charges": 1
-        }
-      },
-      {
-        "$schema": "../../schemas/v1/creature.schema.json",
-        "id": "earth_golem",
-        "name": "EARTH GOLEM",
-        "rank": "II",
-        "description": "Strong melee unit that resists damage from large enemies",
-        "stats": {
-          "health": 650,
-          "speed": 2,
-          "dps": 25,
-          "hps": 0
-        },
-        "tags": [],
-        "meta": {
-          "source": "Spellcasters.md migration"
-        },
-        "date_modified": "2026-02-03T18:39:01.861621Z",
-        "version": "1.0.1",
-        "type": "Unknown",
-        "cost": {
-          "population": 0,
-          "charges": 1
-        }
-      },
-      {
-        "$schema": "../../schemas/v1/creature.schema.json",
-        "id": "faerie",
-        "name": "Faerie",
-        "rank": "I",
-        "description": "Stealthy flying ranged creature that turns invisible out of combat",
-        "stats": {
-          "health": 100,
-          "speed": 3,
-          "dps": 9,
-          "range": 25,
-          "hps": 0
-        },
-        "tags": [],
-        "meta": {
-          "source": "Spellcasters.md migration"
-        },
-        "date_modified": "2026-02-03T18:39:01.862028Z",
-        "version": "1.0.1",
-        "type": "Unknown",
-        "cost": {
-          "population": 0,
-          "charges": 1
-        }
-      },
-      {
-        "$schema": "../../schemas/v1/creature.schema.json",
-        "id": "giant_shielder",
-        "name": "Giant Shielder",
-        "rank": "III",
-        "description": "Slow giant that protects allies with a massive shield",
-        "stats": {
-          "health": 150,
-          "speed": 3,
-          "dps": 30,
-          "hps": 0
-        },
-        "tags": [],
-        "meta": {
-          "source": "Spellcasters.md migration"
-        },
-        "date_modified": "2026-02-03T18:39:01.862385Z",
-        "version": "1.0.1",
-        "type": "Unknown",
-        "cost": {
-          "population": 0,
-          "charges": 1
-        }
-      },
-      {
-        "$schema": "../../schemas/v1/creature.schema.json",
-        "id": "harpy",
-        "name": "HARPY",
-        "rank": "I",
-        "description": "Agile flying creature that excels at defeating ground units",
-        "stats": {
-          "health": 100,
-          "speed": 8,
-          "dps": 12,
-          "hps": 0
-        },
-        "tags": [],
-        "meta": {
-          "source": "Spellcasters.md migration"
-        },
-        "date_modified": "2026-02-03T18:39:01.862856Z",
-        "version": "1.0.1",
-        "type": "Unknown",
-        "cost": {
-          "population": 0,
-          "charges": 1
-        }
-      },
-      {
-        "$schema": "../../schemas/v1/creature.schema.json",
-        "id": "juggernaut",
-        "name": "Juggernaut",
-        "rank": "IV",
-        "description": "Colossal creature that deals massive damage to structures",
-        "stats": {
-          "health": 100,
-          "speed": 3,
-          "dps": 50,
-          "hps": 0
-        },
-        "tags": [],
-        "meta": {
-          "source": "Spellcasters.md migration"
-        },
-        "date_modified": "2026-02-03T18:39:01.863194Z",
-        "version": "1.0.1",
-        "type": "Unknown",
-        "cost": {
-          "population": 0,
-          "charges": 1
-        }
-      },
-      {
-        "$schema": "../../schemas/v1/creature.schema.json",
-        "id": "lich",
-        "name": "Lich",
-        "rank": "II",
-        "description": "Undead caster that inflict curses to enemies, increasing the damage they take and reducing their movement speed.",
-        "stats": {
-          "health": 500,
-          "speed": 5,
-          "dps": 5,
-          "hps": 0
-        },
-        "tags": [],
-        "meta": {
-          "source": "Spellcasters.md migration"
-        },
-        "date_modified": "2026-02-03T18:39:01.863541Z",
-        "version": "1.0.1",
-        "type": "Unknown",
-        "cost": {
-          "population": 0,
-          "charges": 1
-        }
-      },
-      {
-        "$schema": "../../schemas/v1/creature.schema.json",
-        "id": "lizard_archer",
-        "name": "Lizard Archer",
-        "rank": "I",
-        "description": "Long-range fighter that deals bonus damage to flying enemies",
-        "stats": {
-          "health": 85,
-          "speed": 3,
-          "dps": 8,
-          "range": 35,
-          "hps": 0
-        },
-        "tags": [],
-        "meta": {
-          "source": "Spellcasters.md migration"
-        },
-        "date_modified": "2026-02-03T18:39:01.863866Z",
-        "version": "1.0.1",
-        "type": "Unknown",
-        "cost": {
-          "population": 0,
-          "charges": 1
-        }
-      },
-      {
-        "$schema": "../../schemas/v1/creature.schema.json",
-        "id": "ogre",
-        "name": "Ogre",
-        "rank": "III",
-        "description": "Mighty warrior that crushes target areas with a hammer",
-        "stats": {
-          "health": 230,
-          "speed": 3,
-          "dps": 70,
-          "hps": 0
-        },
-        "tags": [],
-        "meta": {
-          "source": "Spellcasters.md migration"
-        },
-        "date_modified": "2026-02-03T18:39:01.864234Z",
-        "version": "1.0.1",
-        "type": "Unknown",
-        "cost": {
-          "population": 0,
-          "charges": 1
-        }
-      },
-      {
-        "$schema": "../../schemas/v1/creature.schema.json",
-        "id": "rocket_soldier",
-        "name": "Rocket Soldier",
-        "rank": "I",
-        "description": "Medium-range soldier that deals bonus damage to buildings",
-        "stats": {
-          "health": 220,
-          "speed": 4,
-          "dps": 10,
-          "range": 15,
-          "hps": 0
-        },
-        "tags": [],
-        "meta": {
-          "source": "Spellcasters.md migration"
-        },
-        "date_modified": "2026-02-03T18:39:01.864521Z",
-        "version": "1.0.1",
-        "type": "Unknown",
-        "cost": {
-          "population": 0,
-          "charges": 1
-        }
-      },
-      {
-        "$schema": "../../schemas/v1/creature.schema.json",
-        "id": "ruin_spider",
-        "name": "RUIN SPIDER",
-        "rank": "I",
-        "description": "Fast creature that explodes on contact, dealing bonus damage to buildings",
-        "stats": {
-          "health": 85,
-          "speed": 7,
-          "dps": 20,
-          "hps": 0
-        },
-        "tags": [],
-        "meta": {
-          "source": "Spellcasters.md migration"
-        },
-        "date_modified": "2026-02-03T18:39:01.864901Z",
-        "version": "1.0.1",
-        "type": "Unknown",
-        "cost": {
-          "population": 0,
-          "charges": 1
-        }
-      },
-      {
-        "$schema": "../../schemas/v1/creature.schema.json",
-        "id": "skeleton_warrior",
-        "name": "SKELETON WARRIOR",
-        "rank": "I",
-        "description": "Undead soldier that captures altars quickly in large groups",
-        "stats": {
-          "health": 200,
-          "speed": 3,
-          "dps": 15,
-          "hps": 0
-        },
-        "tags": [],
-        "meta": {
-          "source": "Spellcasters.md migration"
-        },
-        "date_modified": "2026-02-03T18:39:01.865252Z",
-        "version": "1.0.1",
-        "type": "Unknown",
-        "cost": {
-          "population": 0,
-          "charges": 1
-        }
-      },
-      {
-        "$schema": "../../schemas/v1/creature.schema.json",
-        "id": "stone_behemoth",
-        "name": "STONE BEHEMOTH",
-        "rank": "III",
-        "description": "Siege unit that hurls long-range boulders for heavy area damage",
-        "stats": {
-          "health": 210,
-          "speed": 2,
-          "dps": 40,
-          "range": 55,
-          "hps": 0
-        },
-        "tags": [],
-        "meta": {
-          "source": "Spellcasters.md migration"
-        },
-        "date_modified": "2026-02-03T18:39:01.865600Z",
-        "version": "1.0.1",
-        "type": "Unknown",
-        "cost": {
-          "population": 0,
-          "charges": 1
-        }
-      },
-      {
-        "$schema": "../../schemas/v1/creature.schema.json",
-        "id": "wolven_hunter",
-        "name": "Wolven Hunter",
-        "rank": "II",
-        "description": "Hunter unit that fires powerful long-range bolts",
-        "stats": {
-          "health": 340,
-          "speed": 3,
-          "dps": 16,
-          "range": 75,
-          "hps": 0
-        },
-        "tags": [],
-        "meta": {
-          "source": "Spellcasters.md migration"
-        },
-        "date_modified": "2026-02-03T18:39:01.865936Z",
-        "version": "1.0.1",
-        "type": "Unknown",
-        "cost": {
-          "population": 0,
-          "charges": 1
-        }
-      },
-      {
-        "$schema": "../../schemas/v1/creature.schema.json",
-        "id": "wyvern",
-        "name": "WYVERN",
-        "rank": "II",
-        "description": "Flying dragonkin that attacks with mid-range projectiles",
-        "stats": {
-          "health": 220,
-          "speed": 7,
-          "dps": 19,
-          "range": 35,
-          "hps": 0
-        },
-        "tags": [],
-        "meta": {
-          "source": "Spellcasters.md migration"
-        },
-        "date_modified": "2026-02-03T18:39:01.866313Z",
-        "version": "1.0.1",
-        "type": "Unknown",
-        "cost": {
-          "population": 0,
-          "charges": 1
-        }
-      }
-    ],
-    "decks": [],
-    "heroes": [
-      {
-        "$schema": "../../schemas/v1/hero.schema.json",
-        "id": "stone_shaman",
-        "version": "1.0.0",
-        "name": "Stone Shaman",
-        "class": "Shaman",
-        "max_level": 50,
-        "description": "A wise elder who communes with the earth spirits.",
-        "date_modified": "2026-02-03T12:00:00Z",
-        "image_required": false,
-        "starting_stats": {
-          "health": 600,
-          "mana": 300,
-          "power": 40,
-          "population": 50
-        },
-        "rank_unlock_levels": {
-          "10": "II",
-          "20": "III",
-          "40": "IV"
-        },
-        "population_caps": {
-          "I": 100,
-          "II": 250,
-          "III": 500,
-          "IV": 800
-        },
-        "abilities": [],
-        "passive_skills": [
-          "stone_skin"
-        ],
-        "meta": {
-          "note": "Stub with real name, fake data."
-        }
-      }
-    ],
-    "items": [],
-    "mechanics": [],
-    "spells": [
-      {
-        "$schema": "../../schemas/v1/spell.schema.json",
-        "id": "earthquake",
-        "version": "1.0.0",
-        "name": "Earthquake",
-        "school": "Earth",
-        "description": "Shakes the ground, dealing damage and slowing enemies in a large area.",
-        "date_modified": "2026-02-03T18:39:01.866791Z",
-        "image_required": false,
-        "cost": {
-          "charges": 1,
-          "population": 0
-        },
-        "cast_time": 2.0,
-        "cooldown": 12.0,
-        "effects": [
-          {
-            "type": "damage",
-            "value": 150,
-            "element": "earth",
-            "area": "AoE"
-          },
-          {
-            "type": "slow",
-            "value": 30,
-            "duration": 4.0
-          }
-        ],
-        "upgrades": [
-          {
-            "level": 2,
-            "description": "Increases area of effect by 20%.",
-            "effect": {
-              "aoe_bonus": 20
-            }
-          }
-        ],
-        "meta": {
-          "note": "Stub with real name, fake data."
-        }
-      }
-    ],
-    "titans": [
-      {
-        "$schema": "../../schemas/v1/titan.schema.json",
-        "id": "gaia_beast",
-        "name": "Gaia Beast",
-        "rank": "III",
-        "description": "The Wild Titan. Crushes all structures as it marches toward the Lifestones.",
-        "stats": {
-          "health": 1000,
-          "speed": 4,
-          "hps": 50,
-          "damage": 80
-        },
-        "tags": [],
-        "meta": {
-          "source": "Spellcasters.md migration"
-        },
-        "date_modified": "2026-02-03T01:16:56.467799Z",
-        "version": "1.0.0"
-      },
-      {
-        "$schema": "../../schemas/v1/titan.schema.json",
-        "id": "thanatos",
-        "name": "THANATOS",
-        "rank": "III",
-        "description": "The Titan of Death inflict curses to enemies, increasing the damage they take and reducing their movement speed.",
-        "stats": {
-          "health": 1000,
-          "speed": 4,
-          "damage": 40
-        },
-        "tags": [],
-        "meta": {
-          "source": "Spellcasters.md migration"
-        },
-        "date_modified": "2026-02-03T01:16:56.468387Z",
-        "version": "1.0.0"
-      }
-    ],
-    "upgrades": [],
-    "game_info": {
-      "name": "Spellcasters Chronicles",
-      "version": "1.0.0",
-      "developer": "Quantic Dream",
-      "publisher": "Quantic Dream",
-      "genre": "3v3 Deckbuilder RTS MOBA",
-      "monetization": "Free to Play (Cosmetic Microtransactions)",
-      "description": "Spellcasters Chronicles is a 3v3 Deckbuilder RTS MOBA where players create decks of Heroes, Titans, and cards (Spells, Buildings, Creatures) to battle for control of the lanes.",
-      "links": {
-        "homepage": "https://www.spellcasterschronicles.com/en-US",
-        "steam": "https://store.steampowered.com/app/2458470/Spellcasters_Chronicles/"
-      },
-      "date_modified": "2026-02-02T21:35:00Z",
-      "meta": {
-        "status": "In Development"
-      }
+    }
+  ],
+  "consumables": [],
+  "upgrades": [],
+  "game_info": {
+    "name": "Spellcasters Chronicles",
+    "version": "0.0.1",
+    "developer": "Quantic Dream",
+    "publisher": "Quantic Dream",
+    "genre": "3v3 Deckbuilder RTS MOBA",
+    "monetization": "Free to Play (Cosmetic Microtransactions)",
+    "description": "Spellcasters Chronicles is a 3v3 Deckbuilder RTS MOBA where players create decks of Heroes, Titans, and cards (Spells, Buildings, Creatures) to battle for control of the lanes.",
+    "links": {
+      "homepage": "https://www.spellcasterschronicles.com/en-US",
+      "steam": "https://store.steampowered.com/app/2458470/Spellcasters_Chronicles/"
+    },
+    "date_modified": "2026-02-02T21:35:00Z",
+    "meta": {
+      "status": "In Development"
     }
   }
 }

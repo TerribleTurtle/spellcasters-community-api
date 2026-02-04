@@ -1,0 +1,15 @@
+{
+  "$schema": "../../schemas/v1/unit.schema.json",
+  "game_version": "0.0.1",
+  "entity_id": "skeleton_warrior",
+  "name": "Skeleton Warrior",
+  "category": "Creature",
+  "health": 200,
+  "damage": 15,
+  "attack_speed": 1.0,
+  "movement_speed": 3,
+  "range": 1,
+  "movement_type": "Ground",
+  "tags": [],
+  "description": "Undead soldier that captures altars quickly in large groups"
+}

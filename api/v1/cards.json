@@ -1,0 +1,211 @@
+[
+  {
+    "$schema": "../../schemas/v1/card.schema.json",
+    "game_version": "0.0.1",
+    "card_id": "card_dryad_II",
+    "entity_id": "dryad",
+    "name": "Dryad Card",
+    "rank": "II",
+    "cost_population": 0,
+    "cost_charges": 1,
+    "cast_time": 2.0
+  },
+  {
+    "$schema": "../../schemas/v1/card.schema.json",
+    "game_version": "0.0.1",
+    "card_id": "card_earthquake_I",
+    "entity_id": "earthquake",
+    "name": "Earthquake Card",
+    "rank": "I",
+    "cost_population": 0,
+    "cost_charges": 1,
+    "cast_time": 2.0
+  },
+  {
+    "$schema": "../../schemas/v1/card.schema.json",
+    "game_version": "0.0.1",
+    "card_id": "card_earth_golem_II",
+    "entity_id": "earth_golem",
+    "name": "EARTH GOLEM Card",
+    "rank": "II",
+    "cost_population": 0,
+    "cost_charges": 1,
+    "cast_time": 2.0
+  },
+  {
+    "$schema": "../../schemas/v1/card.schema.json",
+    "game_version": "0.0.1",
+    "card_id": "card_faerie_I",
+    "entity_id": "faerie",
+    "name": "Faerie Card",
+    "rank": "I",
+    "cost_population": 0,
+    "cost_charges": 1,
+    "cast_time": 2.0
+  },
+  {
+    "$schema": "../../schemas/v1/card.schema.json",
+    "game_version": "0.0.1",
+    "card_id": "card_gaia_beast_III",
+    "entity_id": "gaia_beast",
+    "name": "Gaia Beast Card",
+    "rank": "III",
+    "cost_population": 0,
+    "cost_charges": 100,
+    "cast_time": 2.0
+  },
+  {
+    "$schema": "../../schemas/v1/card.schema.json",
+    "game_version": "0.0.1",
+    "card_id": "card_giant_shielder_III",
+    "entity_id": "giant_shielder",
+    "name": "Giant Shielder Card",
+    "rank": "III",
+    "cost_population": 0,
+    "cost_charges": 1,
+    "cast_time": 2.0
+  },
+  {
+    "$schema": "../../schemas/v1/card.schema.json",
+    "game_version": "0.0.1",
+    "card_id": "card_harpy_I",
+    "entity_id": "harpy",
+    "name": "HARPY Card",
+    "rank": "I",
+    "cost_population": 0,
+    "cost_charges": 1,
+    "cast_time": 2.0
+  },
+  {
+    "$schema": "../../schemas/v1/card.schema.json",
+    "game_version": "0.0.1",
+    "card_id": "card_harpy_nest_I",
+    "entity_id": "harpy_nest",
+    "name": "Harpy Nest Card",
+    "rank": "I",
+    "cost_population": 0,
+    "cost_charges": 1,
+    "cast_time": 2.0
+  },
+  {
+    "$schema": "../../schemas/v1/card.schema.json",
+    "game_version": "0.0.1",
+    "card_id": "card_juggernaut_IV",
+    "entity_id": "juggernaut",
+    "name": "Juggernaut Card",
+    "rank": "IV",
+    "cost_population": 0,
+    "cost_charges": 1,
+    "cast_time": 2.0
+  },
+  {
+    "$schema": "../../schemas/v1/card.schema.json",
+    "game_version": "0.0.1",
+    "card_id": "card_lich_II",
+    "entity_id": "lich",
+    "name": "Lich Card",
+    "rank": "II",
+    "cost_population": 0,
+    "cost_charges": 1,
+    "cast_time": 2.0
+  },
+  {
+    "$schema": "../../schemas/v1/card.schema.json",
+    "game_version": "0.0.1",
+    "card_id": "card_lizard_archer_I",
+    "entity_id": "lizard_archer",
+    "name": "Lizard Archer Card",
+    "rank": "I",
+    "cost_population": 0,
+    "cost_charges": 1,
+    "cast_time": 2.0
+  },
+  {
+    "$schema": "../../schemas/v1/card.schema.json",
+    "game_version": "0.0.1",
+    "card_id": "card_ogre_III",
+    "entity_id": "ogre",
+    "name": "Ogre Card",
+    "rank": "III",
+    "cost_population": 0,
+    "cost_charges": 1,
+    "cast_time": 2.0
+  },
+  {
+    "$schema": "../../schemas/v1/card.schema.json",
+    "game_version": "0.0.1",
+    "card_id": "card_rocket_soldier_I",
+    "entity_id": "rocket_soldier",
+    "name": "Rocket Soldier Card",
+    "rank": "I",
+    "cost_population": 0,
+    "cost_charges": 1,
+    "cast_time": 2.0
+  },
+  {
+    "$schema": "../../schemas/v1/card.schema.json",
+    "game_version": "0.0.1",
+    "card_id": "card_ruin_spider_I",
+    "entity_id": "ruin_spider",
+    "name": "RUIN SPIDER Card",
+    "rank": "I",
+    "cost_population": 0,
+    "cost_charges": 1,
+    "cast_time": 2.0
+  },
+  {
+    "$schema": "../../schemas/v1/card.schema.json",
+    "game_version": "0.0.1",
+    "card_id": "card_skeleton_warrior_I",
+    "entity_id": "skeleton_warrior",
+    "name": "SKELETON WARRIOR Card",
+    "rank": "I",
+    "cost_population": 0,
+    "cost_charges": 1,
+    "cast_time": 2.0
+  },
+  {
+    "$schema": "../../schemas/v1/card.schema.json",
+    "game_version": "0.0.1",
+    "card_id": "card_stone_behemoth_III",
+    "entity_id": "stone_behemoth",
+    "name": "STONE BEHEMOTH Card",
+    "rank": "III",
+    "cost_population": 0,
+    "cost_charges": 1,
+    "cast_time": 2.0
+  },
+  {
+    "$schema": "../../schemas/v1/card.schema.json",
+    "game_version": "0.0.1",
+    "card_id": "card_thanatos_III",
+    "entity_id": "thanatos",
+    "name": "THANATOS Card",
+    "rank": "III",
+    "cost_population": 0,
+    "cost_charges": 100,
+    "cast_time": 2.0
+  },
+  {
+    "$schema": "../../schemas/v1/card.schema.json",
+    "game_version": "0.0.1",
+    "card_id": "card_wolven_hunter_II",
+    "entity_id": "wolven_hunter",
+    "name": "Wolven Hunter Card",
+    "rank": "II",
+    "cost_population": 0,
+    "cost_charges": 1,
+    "cast_time": 2.0
+  },
+  {
+    "$schema": "../../schemas/v1/card.schema.json",
+    "game_version": "0.0.1",
+    "card_id": "card_wyvern_II",
+    "entity_id": "wyvern",
+    "name": "WYVERN Card",
+    "rank": "II",
+    "cost_population": 0,
+    "cost_charges": 1,
+    "cast_time": 2.0
+  }
+]

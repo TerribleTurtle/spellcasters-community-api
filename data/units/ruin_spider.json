@@ -1,0 +1,15 @@
+{
+  "$schema": "../../schemas/v1/unit.schema.json",
+  "game_version": "0.0.1",
+  "entity_id": "ruin_spider",
+  "name": "Ruin Spider",
+  "category": "Creature",
+  "health": 85,
+  "damage": 20,
+  "attack_speed": 1.0,
+  "movement_speed": 7,
+  "range": 1,
+  "movement_type": "Ground",
+  "tags": [],
+  "description": "Fast creature that explodes on contact, dealing bonus damage to buildings"
+}

@@ -1,0 +1,15 @@
+{
+  "$schema": "../../schemas/v1/unit.schema.json",
+  "game_version": "0.0.1",
+  "entity_id": "wyvern",
+  "name": "Wyvern",
+  "category": "Creature",
+  "health": 220,
+  "damage": 19,
+  "attack_speed": 1.0,
+  "movement_speed": 7,
+  "range": 1,
+  "movement_type": "Ground",
+  "tags": [],
+  "description": "Flying dragonkin that attacks with mid-range projectiles"
+}

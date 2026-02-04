@@ -1,0 +1,108 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Unit",
+  "description": "Base entity definition for Creatures, Buildings, Titans, Neutrals, and Spells.",
+  "type": "object",
+  "required": [
+    "game_version",
+    "entity_id",
+    "name",
+    "category",
+    "health",
+    "movement_speed",
+    "tags"
+  ],
+  "properties": {
+    "$schema": { "type": "string" },
+    "game_version": {
+      "type": "string",
+      "description": "SemVer string (e.g., '0.0.1') indicating the patch version for this entity data."
+    },
+    "entity_id": {
+      "type": "string",
+      "description": "Unique identifier for this specific unit iteration (e.g., 'skeleton_warrior_v1')."
+    },
+    "name": {
+      "type": "string",
+      "description": "Display name of the unit."
+    },
+    "image_required": {
+      "type": "boolean",
+      "default": true,
+      "description": "If true, validates that an image exists in assets/units/."
+    },
+    "category": {
+      "type": "string",
+      "enum": [
+        "Creature",
+        "Building",
+        "Titan",
+        "Neutral",
+        "Spell"
+      ],
+      "description": "Broad classification of the entity."
+    },
+    "health": {
+      "type": "integer",
+      "minimum": 0,
+      "description": "Maximum Health Points. 0 for Spells (actions)."
+    },
+    "damage": {
+      "type": "integer",
+      "minimum": 0,
+       "default": 0,
+      "description": "True Damage dealt by this unit's primary attack (or spell effect)."
+    },
+    "attack_speed": {
+      "type": "number",
+      "minimum": 0,
+      "description": "Attacks per second."
+    },
+    "movement_speed": {
+      "type": "integer",
+      "minimum": 0,
+      "description": "Base movement speed in game units."
+    },
+    "range": {
+      "type": "integer",
+      "minimum": 0,
+      "description": "Attack or Effect range."
+    },
+    "projectile_speed": {
+      "type": ["number", "null"],
+      "description": "Travel speed of the attack. Null = Instant Hit (Hitscan)."
+    },
+    "movement_type": {
+      "type": "string",
+      "enum": [
+        "Ground",
+        "Hover",
+        "Fly"
+      ],
+      "default": "Ground",
+      "description": "Navigation capabilities of the unit."
+    },
+    "tags": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "List of gameplay traits (e.g., 'siege', 'undead', 'healer') used for logic and upgrades."
+    },
+    "heal_amount": {
+      "type": "integer",
+      "minimum": 0,
+      "description": "Amount of HP restored per action (if applicable)."
+    },
+    "collision_radius": {
+      "type": "integer",
+      "minimum": 0,
+      "description": "Physical footprint radius (Crucial for Buildings)."
+    },
+    "description": {
+      "type": "string",
+      "description": "Lore or gameplay description."
+    }
+  },
+  "additionalProperties": false
+}

@@ -1,0 +1,15 @@
+{
+  "$schema": "../../schemas/v1/unit.schema.json",
+  "game_version": "0.0.1",
+  "entity_id": "earth_golem",
+  "name": "Earth Golem",
+  "category": "Creature",
+  "health": 650,
+  "damage": 25,
+  "attack_speed": 1.0,
+  "movement_speed": 2,
+  "range": 1,
+  "movement_type": "Ground",
+  "tags": [],
+  "description": "Strong melee unit that resists damage from large enemies"
+}

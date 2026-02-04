@@ -8,7 +8,7 @@
 
 **Goal:** Maintain a **Free & Open API** for _Spellcasters Chronicles_.
 
-This is a public utility.
+Think of this as the community's shared encyclopedia—open to everyone, owned by no one.
 
 - **For Developers:** A standardized database to build apps, deck builders, and calculators.
 - **For Community:** A reliable reference for wikis and spreadsheets.
@@ -23,27 +23,25 @@ The project keeps raw data (JSON files) separate from images (Assets).
 ```
 spellcasters-community-api/
 ├── assets/                 # Images and Icons
-│   ├── creatures/          # e.g., orc_grunt.png
-│   ├── titans/             # e.g., gaia_beast.png
-│   ├── spells/
+│   ├── units/              # e.g., orc_grunt.png
+│   ├── cards/              # e.g., fireball.png
 │   ├── heroes/
-│   ├── buildings/
-│   ├── items/
+│   ├── consumables/
 │   └── upgrades/
 ├── data/                   # Raw JSON Data Sources
-│   ├── creatures/          # e.g., orc_grunt.json
-│   ├── titans/             # e.g., gaia_beast.json
+│   ├── units/              # e.g., orc_grunt.json
+│   ├── cards/              # e.g., fireball.json
 │   ├── heroes/
-│   ├── spells/
-│   ├── items/
-│   ├── buildings/
-│   ├── decks/              # Starter Decks / Meta Builds
+│   ├── consumables/
+│   ├── cards/              # Starter Decks / Meta Builds
 │   ├── upgrades/           # Level-up options
 │   └── mechanics/          # Game Logic (Curves, Settings)
 ├── schemas/                # Validation Logic
 │   └── v1/                 # Versioned JSON Schemas
-│       ├── creature.schema.json
-│       ├── deck.schema.json
+│       ├── unit.schema.json
+│       ├── card.schema.json
+│       ├── hero.schema.json
+│       ├── consumable.schema.json
 │       ├── upgrade.schema.json
 │       └── ...
 ├── scripts/                # Build Tools
@@ -60,46 +58,48 @@ spellcasters-community-api/
 
 ### Core Principles
 
-1.  **Flexible Metadata:** Future-proof data using the `meta` object. This allows adding arbitrary key-value pairs (e.g., specific flags, patch notes, internal IDs) without breaking the core schema.
-2.  **Versioning:** All API output is versioned (e.g., `api/v1/`).
+### Standard JSON Templates
 
-### Standard "Creature" JSON Template
+#### 1. Unit (The Entity)
 
-File: `data/creatures/unit_id.json`
+File: `data/units/orc_grunt.json`
 
 ```json
 {
-  "id": "orc_grunt",
-  "image_required": true,
+  "game_version": "0.0.1",
+  "entity_id": "orc_grunt",
   "name": "Orc Grunt",
-  "type": "Infantry",
-  "rank": "I",
+  "category": "Creature",
   "description": "Standard infantry unit.",
-  "date_modified": "2024-01-01T12:00:00Z",
-  "cost": {
-    "population": 1,
-    "charges": 1
-  },
-  "stats": {
-    "health": 200,
-    "dps": 10,
-    "speed": 4,
-    "hps": 0,
-    "range": 0 // 0 or "Melee"
-  },
-  "tags": ["Grunt"],
-  "meta": {
-    "version_added": "Closed Beta 1"
-  }
+  "image_required": true,
+  "health": 200,
+  "damage": 10,
+  "attack_speed": 1.5,
+  "movement_speed": 4,
+  "range": 0,
+  "projectile_speed": null,
+  "movement_type": "Ground",
+  "tags": ["Grunt", "Melee"]
 }
 ```
 
-### Flexibility via `meta`
+#### 2. Card (The Deck Item)
 
-The `meta` field is designed to be unstructured. You can add any valid JSON key-pair here.
+File: `data/cards/card_orc_grunt_I.json`
 
-- _Good:_ `"meta": { "seasonal_event": "Winter 2024" }`
-- _Bad:_ Adding root-level fields like `"seasonal_event": "Winter 2024"` (This breaks strict schema validation).
+```json
+{
+  "game_version": "0.0.1",
+  "card_id": "card_orc_grunt_I",
+  "entity_id": "orc_grunt",
+  "name": "Orc Grunt",
+  "rank": "I",
+  "cost_population": 1,
+  "cost_charges": 1,
+  "cast_time": 1.0,
+  "image_required": true
+}
+```
 
 ---
 
@@ -132,7 +132,7 @@ python scripts/build_api.py
 
 1.  **Add Data:** Create a new `.json` file in the appropriate `data/` subfolder.
 2.  **Add Images:** Place a `.png` file in `assets/` with the **exact same filename** as the JSON ID.
-    - Example: `data/creatures/orc_grunt.json` -> `assets/creatures/orc_grunt.png`
+    - Example: `data/units/orc_grunt.json` -> `assets/units/orc_grunt.png`
 3.  **Verify:** Run the python script to ensure no schema errors. A [Pull Request Template](.github/PULL_REQUEST_TEMPLATE.md) will guide you through the submission process.
 4.  **Push:** Commit changes. GitHub Actions will automatically deploy to the API endpoint.
 
@@ -145,9 +145,9 @@ We host images directly in the repository for simplicity.
 - **Total Limit:** We aim to keep the repo under 1GB.
 - **Format:** `.png` preferred.
 - **Access:** Images are fetched directly via the GitHub Pages URL.
-  - Example: `https://terribleturtle.github.io/spellcasters-community-api/assets/creatures/orc_grunt.png`
+  - Example: `https://terribleturtle.github.io/spellcasters-community-api/assets/units/orc_grunt.png`
   - **Validation:** `scripts/validate_integrity.py` checks for these images.
-    - **Note:** Missing images are only flagged if `"image_required": true` is set in the JSON file. If omitted (default `false`), no warning is issued.
+    - **Note:** Missing images are only flagged if `"image_required": true` is set in the JSON file. If omitted (default `true` per v1.0), warnings will be issued.
 
 ### 5.2 Optional Drops
 
@@ -161,9 +161,9 @@ We host images directly in the repository for simplicity.
 
 Base URL: `https://terribleturtle.github.io/spellcasters-community-api/api/v1/`
 
-- **Creatures:** `.../all_creatures.json`
-- **Spells:** `.../all_spells.json`
-- **Heroes:** `.../all_heroes.json`
-- **Decks:** `.../all_decks.json`
-- **Upgrades:** `.../all_upgrades.json`
+- **Units:** `.../units.json`
+- **Cards:** `.../cards.json`
+- **Heroes:** `.../heroes.json`
+- **Consumables:** `.../consumables.json`
+- **Upgrades:** `.../upgrades.json`
 - **Game Info:** `.../game_info.json` (Singleton)

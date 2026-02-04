@@ -1,60 +1,79 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema#",
   "title": "Hero",
+  "description": "Player Character definition including stats and fixed ability kit.",
   "type": "object",
-  "required": ["id", "version", "name", "class", "max_level", "description", "date_modified"],
-  "additionalProperties": false,
+  "required": [
+    "game_version",
+    "hero_id",
+    "name",
+    "health",
+    "movement_speed",
+    "flight_speed",
+    "health_regen_rate",
+    "regen_delay",
+    "attack_damage_summoner",
+    "attack_damage_minion",
+    "abilities"
+  ],
   "properties": {
     "$schema": { "type": "string" },
-    "version": { "type": "string", "pattern": "^\\d+\\.\\d+\\.\\d+$" },
-    "id": { "type": "string" },
-    "image_required": { "type": "boolean", "default": false },
-    "name": { "type": "string" },
-    "class": { "type": "string" },
-    "description": { "type": "string" },
-    "date_modified": { 
-      "type": "string",
-      "format": "date-time"
+    "game_version": {
+      "type": "string"
     },
-    "max_level": { "type": "integer", "minimum": 1 },
-    "rank_unlock_levels": {
-      "type": "object",
-      "description": "Map of Level (string) to Rank (string) unlocked.",
-      "patternProperties": {
-        "^[0-9]+$": { "type": "string", "enum": ["I", "II", "III", "IV"] }
-      }
+    "hero_id": {
+      "type": "string"
     },
-    "population_caps": {
-      "type": "object",
-      "description": "Max population cap for each rank.",
-      "properties": {
-        "I": { "type": "integer" },
-        "II": { "type": "integer" },
-        "III": { "type": "integer" },
-        "IV": { "type": "integer" }
-      }
+    "name": {
+      "type": "string"
     },
-    "starting_stats": {
-      "type": "object",
-      "properties": {
-        "health": { "type": "integer" },
-        "power": { "type": "integer" },
-        "population": { "type": "integer" }
-      }
+    "image_required": {
+      "type": "boolean",
+      "default": true
+    },
+    "health": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "movement_speed": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "flight_speed": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "health_regen_rate": {
+      "type": "number",
+      "minimum": 0,
+      "description": "HP restored per second."
+    },
+    "regen_delay": {
+      "type": "number",
+      "minimum": 0,
+      "description": "Seconds without damage before regen starts."
+    },
+    "attack_damage_summoner": {
+      "type": "integer",
+      "minimum": 0,
+      "description": "Damage vs Enemy Heroes."
+    },
+    "attack_damage_minion": {
+      "type": "integer",
+      "minimum": 0,
+      "description": "Damage vs Minions/Units."
     },
     "abilities": {
-      "type": "array",
-      "items": { "type": "string" },
-      "description": "List of Spell IDs this hero can use."
-    },
-    "passive_skills": {
-      "type": "array",
-      "items": { "type": "string" },
-      "description": "List of Passive IDs or descriptions."
-    },
-    "meta": {
       "type": "object",
-      "additionalProperties": true
+      "properties": {
+        "passive": { "type": "string" },
+        "primary": { "type": "string" },
+        "defense": { "type": "string" },
+        "ultimate": { "type": "string" }
+      },
+      "required": ["passive", "primary", "defense", "ultimate"],
+      "description": "Names/Descriptions of the hero's fixed ability kit."
     }
-  }
+  },
+  "additionalProperties": false
 }

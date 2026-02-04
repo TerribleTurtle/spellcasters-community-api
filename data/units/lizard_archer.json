@@ -1,0 +1,15 @@
+{
+  "$schema": "../../schemas/v1/unit.schema.json",
+  "game_version": "0.0.1",
+  "entity_id": "lizard_archer",
+  "name": "Lizard Archer",
+  "category": "Creature",
+  "health": 85,
+  "damage": 8,
+  "attack_speed": 1.0,
+  "movement_speed": 3,
+  "range": 1,
+  "movement_type": "Ground",
+  "tags": [],
+  "description": "Long-range fighter that deals bonus damage to flying enemies"
+}

@@ -1,0 +1,15 @@
+{
+  "$schema": "../../schemas/v1/unit.schema.json",
+  "game_version": "0.0.1",
+  "entity_id": "harpy",
+  "name": "Harpy",
+  "category": "Creature",
+  "health": 100,
+  "damage": 12,
+  "attack_speed": 1.0,
+  "movement_speed": 8,
+  "range": 1,
+  "movement_type": "Ground",
+  "tags": [],
+  "description": "Agile flying creature that excels at defeating ground units"
+}

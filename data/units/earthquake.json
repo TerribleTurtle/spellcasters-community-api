@@ -1,0 +1,19 @@
+{
+  "$schema": "../../schemas/v1/unit.schema.json",
+  "game_version": "0.0.1",
+  "entity_id": "earthquake",
+  "name": "Earthquake",
+  "category": "Spell",
+  "health": 0,
+  "damage": 150,
+  "attack_speed": 1.0,
+  "movement_speed": 3,
+  "range": 1,
+  "movement_type": "Ground",
+  "tags": [
+    "Earth",
+    "damage",
+    "slow"
+  ],
+  "description": "Shakes the ground, dealing damage and slowing enemies in a large area."
+}

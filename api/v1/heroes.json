@@ -1,0 +1,21 @@
+[
+  {
+    "$schema": "../../schemas/v1/hero.schema.json",
+    "game_version": "0.0.1",
+    "hero_id": "stone_shaman",
+    "name": "Stone Shaman",
+    "health": 600,
+    "movement_speed": 3,
+    "flight_speed": 0,
+    "health_regen_rate": 1.0,
+    "regen_delay": 5.0,
+    "attack_damage_summoner": 40,
+    "attack_damage_minion": 40,
+    "abilities": {
+      "passive": "stone_skin",
+      "primary": "Unknown Primary",
+      "defense": "Unknown Defense",
+      "ultimate": "Unknown Ultimate"
+    }
+  }
+]

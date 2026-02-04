@@ -16,17 +16,21 @@ You don't need to be a developer to fix a typo!
 4.  Scroll down to "Commit changes" and select **"Create a new branch for this commit and start a pull request"**.
 5.  Click **Propose changes**.
 
+### 🎨 Artist or Lorekeeper?
+
+We need you! If you see a Unit with a missing description or a placeholder icon, you can contribute those just as easily as code.
+
 ### 🛠️ Advanced: Adding New Data
 
-To add a new creature, spell, hero, or item:
+To add a new unit, card, hero, or consumable:
 
 1.  **Fork the repository.**
-2.  **Create a new JSON file** in the appropriate `data/` subdirectory (e.g., `data/creatures/new_creature.json`).
+2.  **Create a new JSON file** in the appropriate `data/` subdirectory (e.g., `data/units/new_unit.json`).
 3.  **Follow the Schema:** Ensure your JSON matches the corresponding schema in `schemas/v1/`.
     - You must include a `version` field (e.g., `"version": "1.0.0"`).
     - You must include `date_modified`.
-    - **Optional:** If the item _requires_ an in-game asset (e.g., a card art), set `"image_required": true`. Default is `false`.
-4.  **Add Assets (Optional):** If you have the icon, add it to `assets/` with the exact same filename (e.g., `assets/creatures/new_creature.png`).
+    - **Optional:** If the item _requires_ an in-game asset (e.g., a card art), set `"image_required": true`. Default is `true` (see schema).
+4.  **Add Assets (Optional):** If you have the icon, add it to `assets/` with the exact same filename (e.g., `assets/units/new_unit.png`).
 
 ### 2. Updating Existing Data
 

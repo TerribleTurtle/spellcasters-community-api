@@ -1,0 +1,46 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Consumable",
+  "description": "Loot items found in chests or dropped by enemies.",
+  "type": "object",
+  "required": [
+    "game_version",
+    "consumable_id",
+    "name",
+    "effect_type",
+    "value",
+    "ttl"
+  ],
+  "properties": {
+    "$schema": { "type": "string" },
+    "game_version": {
+      "type": "string"
+    },
+    "consumable_id": {
+      "type": "string",
+      "description": "Unique ID (e.g., 'small_health_potion')."
+    },
+    "name": {
+      "type": "string"
+    },
+    "image_required": {
+      "type": "boolean",
+      "default": true
+    },
+    "effect_type": {
+      "type": "string",
+      "enum": ["Heal", "Charge_Refill", "Buff"],
+      "description": "The mechanic triggered on pickup/use."
+    },
+    "value": {
+      "type": "integer",
+      "description": "Magnitude of the effect (e.g., 50 HP)."
+    },
+    "ttl": {
+      "type": "integer",
+      "minimum": 0,
+      "description": "Time-To-Live in seconds before the item despawns from the world."
+    }
+  },
+  "additionalProperties": false
+}
