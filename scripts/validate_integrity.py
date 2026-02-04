@@ -51,18 +51,20 @@ def load_schema(name):
         sys.exit(1)
 
 def check_asset_exists(category, entity_id, is_required):
-    """Checks if assets/[category]/[entity_id].png exists and validates hygiene."""
+    """Checks if assets/[category]/[entity_id].png exists and validates hygiene. Returns warning count."""
     # Special handling for units in Unified Model: assets/units/{id}_card.png
     filename = f"{entity_id}.png"
     if category == "units":
         filename = f"{entity_id}_card.png"
 
     path = os.path.join(ASSETS_DIR, category, filename)
+    warnings = 0
     
     if not os.path.exists(path):
         if is_required:
             print(f"[WARN] Missing Asset: {path}")
-        return False # Missing
+            return 1
+        return 0
         
     # Asset Exists - Perform Hygiene Check
     try:
@@ -70,17 +72,20 @@ def check_asset_exists(category, entity_id, is_required):
         size_kb = os.path.getsize(path) / 1024
         if size_kb > MAX_IMG_SIZE_KB:
             print(f"[WARN] Hygiene: {path} is {size_kb:.1f}KB (Max: {MAX_IMG_SIZE_KB}KB)")
+            warnings += 1
             
         # Check Dimensions
         with Image.open(path) as img:
             width, height = img.size
             if width > MAX_IMG_DIMENSION or height > MAX_IMG_DIMENSION:
                  print(f"[WARN] Hygiene: {path} is {width}x{height} (Max: {MAX_IMG_DIMENSION}x{MAX_IMG_DIMENSION})")
+                 warnings += 1
                  
     except Exception as e:
         print(f"[WARN] Could not validate image {path}: {e}")
+        warnings += 1
         
-    return True
+    return warnings
 
 def validate_decks(db):
     """
@@ -195,7 +200,7 @@ def validate_integrity():
                 elif schema_key == "consumable": obj_id = data.get("consumable_id")
                 
                 if obj_id:
-                    check_asset_exists(folder, obj_id, True)
+                    warnings += check_asset_exists(folder, obj_id, True)
             
             # Logic: Upgrade -> Tags
             if schema_key == "upgrade":

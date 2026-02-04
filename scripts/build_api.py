@@ -3,6 +3,7 @@ import os
 import glob
 import sys
 import hashlib
+from datetime import datetime, timezone
 
 # Configuration
 VERSION_API = "v1"
@@ -54,7 +55,7 @@ def main():
     all_data = {
         "build_info": {
             "version": "0.0.1",
-            "generated_at": None # Could add timestamp
+            "generated_at": datetime.now(timezone.utc).isoformat()
         }
     }
 

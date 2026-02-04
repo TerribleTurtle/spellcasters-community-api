@@ -1,1 +1,38 @@
-[]
+[
+  {
+    "$schema": "../../schemas/v1/consumable.schema.json",
+    "game_version": "0.0.1",
+    "consumable_id": "light_heal",
+    "name": "Light Heal",
+    "effect_type": "Heal",
+    "value": 25,
+    "ttl": 30
+  },
+  {
+    "$schema": "../../schemas/v1/consumable.schema.json",
+    "game_version": "0.0.1",
+    "consumable_id": "light_recharge",
+    "name": "Light Recharge",
+    "effect_type": "Charge_Refill",
+    "value": 25,
+    "ttl": 30
+  },
+  {
+    "$schema": "../../schemas/v1/consumable.schema.json",
+    "game_version": "0.0.1",
+    "consumable_id": "medium_heal",
+    "name": "Medium Heal",
+    "effect_type": "Heal",
+    "value": 50,
+    "ttl": 30
+  },
+  {
+    "$schema": "../../schemas/v1/consumable.schema.json",
+    "game_version": "0.0.1",
+    "consumable_id": "medium_recharge",
+    "name": "Medium Recharge",
+    "effect_type": "Charge_Refill",
+    "value": 50,
+    "ttl": 30
+  }
+]
