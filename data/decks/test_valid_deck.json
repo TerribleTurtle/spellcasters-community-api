@@ -4,7 +4,12 @@
   "name": "Valid Deck",
   "hero_id": "astral_monk",
   "titan_id": "gaia_beast",
-  "cards": ["skeleton_warrior", "astral_nova", "fire_rain", "fireball"],
+  "cards": [
+    "skeleton_warrior",
+    "astral_nova",
+    "fire_rain",
+    "fireball"
+  ],
   "description": "A deck with a Rank I creature.",
-  "last_modified": "2026-02-05T17:25:00Z"
+  "last_modified": "2026-02-05T22:26:13.111366Z"
 }
