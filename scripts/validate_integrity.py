@@ -126,6 +126,7 @@ def validate_decks(db):
                      errors.append(f"[FAIL] Deck {f} titan_id '{titan_id}' is missing 'card_config' (Not playable)")
 
         # Cards Check (Units)
+        has_rank_1_or_2_creature = False
         for uid in unit_ids:
             if uid not in db["units"]:
                     errors.append(f"[FAIL] Deck {f} references missing unit_id '{uid}'")
@@ -134,8 +135,16 @@ def validate_decks(db):
                 unit = db["units"][uid]
                 if "card_config" not in unit:
                     errors.append(f"[FAIL] Deck {f} references unit '{uid}' which is missing 'card_config' (Not playable)")
+                else:
+                    rank = unit["card_config"].get("rank")
+                    category = unit.get("category")
+                    if category == "Creature" and rank in ["I", "II"]:
+                        has_rank_1_or_2_creature = True
 
-    return errors
+        if not has_rank_1_or_2_creature:
+            errors.append(f"[FAIL] Deck {f} must contain at least one Rank I or Rank II CREATURE card.")
+
+        return errors
 
 def validate_integrity():
     print("Starting Integrity Validation...")

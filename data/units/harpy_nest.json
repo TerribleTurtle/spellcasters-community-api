@@ -15,7 +15,7 @@
   "description": "Nest that continuously spawns new Harpies.",
   "collision_radius": 2,
   "card_config": {
-    "rank": "I",
+    "rank": "III",
     "cost_population": 1,
     "cost_charges": 1,
     "initial_charges": 10,
