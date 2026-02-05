@@ -15,16 +15,16 @@
   "abilities": {
     "passive": [
       {
+        "name": "Echo of Mercy",
+        "description": "While on the ground, the Mystic Scribe emits a healing aura."
+      },
+      {
         "name": "Holy Magic Mastery",
-        "description": "All Holy spells recharge faster."
+        "description": "All Holy incantations recharge faster."
       },
       {
         "name": "Thousand Favors",
         "description": "Healing recharges Rank I and II creatures."
-      },
-      {
-        "name": "Echo of Mercy",
-        "description": "When the Mystic Scribe heals an ally, she is healed for the same amount."
       }
     ],
     "primary": {
