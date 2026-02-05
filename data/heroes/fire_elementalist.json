@@ -16,15 +16,15 @@
     "passive": [
       {
         "name": "Ignition Spark",
-        "description": "All Rank I Spells start with +1 Max Charge."
+        "description": "Allied creatures near the Fire Elementalist capture Altar faster."
       },
       {
-        "name": "Fire Magic Mastery",
-        "description": "All Fire spells and Fire-infused creatures deal more damage."
+        "name": "Enduring Flame",
+        "description": "Damaging burning enemies heals the Fire Elementalist."
       },
       {
         "name": "Blazing Momentum",
-        "description": "After destroying an enemy with an Fire spell, all Fire spells recharge faster."
+        "description": "When you or your creatures kill a Burning enemy, recharge Elemental incantations."
       }
     ],
     "primary": {
@@ -37,7 +37,7 @@
     },
     "ultimate": {
       "name": "Burning Conquest",
-      "description": "Captures a territory and inflicts Fire damage to any enemies in range."
+      "description": "Captures a territory, inflicts Fire damage and imbues allied units with Fire."
     }
   },
   "last_modified": "2026-02-05T17:05:01.971147Z"
