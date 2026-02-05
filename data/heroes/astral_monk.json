@@ -15,16 +15,16 @@
   "abilities": {
     "passive": [
       {
-        "name": "Mantra of Power",
-        "description": "When the Astral Monk kills a Spellcaster with a spell, she gains a charge of that spell."
+        "name": "Arcane Alignment",
+        "description": "All Astral spells recharge faster."
       },
       {
         "name": "Last Light",
-        "description": "Spells deal increased damage when the target is under half health."
+        "description": "All damage dealt is increased against targets below half health."
       },
       {
-        "name": "Arcane Alignment",
-        "description": "All Rank III Spells start with +1 Max Charge."
+        "name": "Cosmic Air",
+        "description": "All flying creatures summoned by the Astral Monk are invisible."
       }
     ],
     "primary": {
