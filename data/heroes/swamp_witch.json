@@ -16,11 +16,15 @@
     "passive": [
       {
         "name": "Pact of Sacrifice",
-        "description": "When a Witch's creature is destroyed, her spell and ability recharge faster."
+        "description": "Killing Poisoned Creatures recharges Necromancy spells."
       },
       {
         "name": "Brood Rite",
-        "description": "All Rank I Creatures start with +5 Max Charge."
+        "description": "When a Swamp Witch’s creature is destroyed, her incantations and abilities recharge faster."
+      },
+      {
+        "name": "Swarm Dominance",
+        "description": "The Swamp Witch has more Rank I population, but less Rank II and Rank III population.  "
       }
     ],
     "primary": {
