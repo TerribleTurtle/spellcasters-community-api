@@ -15,7 +15,6 @@
   "tags": [],
   "description": "The Wild Titan. Crushes all structures as it marches toward the Lifestones.",
   "card_config": {
-    "rank": "III",
     "cost_population": 0,
     "cost_charges": 1,
     "initial_charges": 0,
