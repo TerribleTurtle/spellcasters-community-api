@@ -15,12 +15,16 @@
   "abilities": {
     "passive": [
       {
+        "name": "Scourge of War",
+        "description": "Increases Rank III population, reduces Rank II population."
+      },
+      {
         "name": "Forges of Valm",
         "description": "Creatures spawned from Buildings have significantly more health."
       },
       {
-        "name": "Scourge of War",
-        "description": "All Rank III Buildings start with +1 Max Charge."
+        "name": "Field Commander",
+        "description": "While on the ground, nearby WAR creatures gain a strong defensive buff."
       }
     ],
     "primary": {
@@ -33,7 +37,7 @@
     },
     "ultimate": {
       "name": "Iron Tempest",
-      "description": "Unleash a metal vortex that deals heavy damage along its path."
+      "description": "Unleash a metal vortex that deals heavy damage and knocks back enemies along its path."
     }
   },
   "last_modified": "2026-02-05T17:05:01.971455Z"
