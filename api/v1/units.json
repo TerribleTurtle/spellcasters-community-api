@@ -32,7 +32,7 @@
       "charge_time": 60,
       "cast_time": 3.0
     },
-    "last_modified": "2026-02-04T15:25:39.109004Z"
+    "last_modified": "2026-02-04T15:27:05.219729Z"
   },
   {
     "game_version": "0.0.1",
@@ -65,7 +65,7 @@
       "charge_time": 20,
       "cast_time": 0.8
     },
-    "last_modified": "2026-02-04T15:25:39.109496Z"
+    "last_modified": "2026-02-04T15:27:05.219959Z"
   },
   {
     "$schema": "../../schemas/v1/unit.schema.json",
@@ -96,7 +96,7 @@
       "charge_time": 40,
       "cast_time": 3.5
     },
-    "last_modified": "2026-02-04T15:25:39.109931Z"
+    "last_modified": "2026-02-04T15:27:05.220164Z"
   },
   {
     "$schema": "../../schemas/v1/unit.schema.json",
@@ -127,40 +127,7 @@
       "charge_time": 20,
       "cast_time": 3.0
     },
-    "last_modified": "2026-02-04T15:25:39.110293Z"
-  },
-  {
-    "game_version": "0.0.1",
-    "entity_id": "chain_lightning",
-    "name": "Chain Lightning",
-    "category": "Spell",
-    "magic_school": "Lightning",
-    "description": "Arcs between enemies, prioritizing those closest to the primary target.",
-    "image_required": true,
-    "health": 0,
-    "damage": 150,
-    "max_targets": 3,
-    "target_mask": [
-      "Ground",
-      "Air",
-      "Enemy"
-    ],
-    "tags": [
-      "Lightning",
-      "Chain"
-    ],
-    "movement_speed": 0,
-    "attack_speed": 0,
-    "range": 7,
-    "card_config": {
-      "rank": "II",
-      "cost_population": 0,
-      "cost_charges": 1,
-      "initial_charges": 1,
-      "charge_time": 20,
-      "cast_time": 0.5
-    },
-    "last_modified": "2026-02-04T15:25:39.110698Z"
+    "last_modified": "2026-02-04T15:27:05.220367Z"
   },
   {
     "$schema": "../../schemas/v1/unit.schema.json",
@@ -191,7 +158,7 @@
       "charge_time": 40,
       "cast_time": 2.5
     },
-    "last_modified": "2026-02-04T15:25:39.111112Z"
+    "last_modified": "2026-02-04T15:27:05.220766Z"
   },
   {
     "$schema": "../../schemas/v1/unit.schema.json",
@@ -217,7 +184,7 @@
       "charge_time": 20,
       "cast_time": 2.0
     },
-    "last_modified": "2026-02-04T15:25:39.111510Z"
+    "last_modified": "2026-02-04T15:27:05.220986Z"
   },
   {
     "game_version": "0.0.1",
@@ -251,7 +218,7 @@
       "charge_time": 40,
       "cast_time": 2.0
     },
-    "last_modified": "2026-02-04T15:25:39.111857Z"
+    "last_modified": "2026-02-04T15:27:05.221372Z"
   },
   {
     "$schema": "../../schemas/v1/unit.schema.json",
@@ -276,7 +243,7 @@
       "charge_time": 20,
       "cast_time": 2.0
     },
-    "last_modified": "2026-02-04T15:25:39.112214Z"
+    "last_modified": "2026-02-04T15:27:05.221175Z"
   },
   {
     "$schema": "../../schemas/v1/unit.schema.json",
@@ -301,7 +268,7 @@
       "charge_time": 10,
       "cast_time": 2.0
     },
-    "last_modified": "2026-02-04T15:25:39.112844Z"
+    "last_modified": "2026-02-04T15:27:05.221570Z"
   },
   {
     "game_version": "0.0.1",
@@ -336,7 +303,7 @@
       "charge_time": 40,
       "cast_time": 1.0
     },
-    "last_modified": "2026-02-04T15:25:39.113296Z"
+    "last_modified": "2026-02-04T15:27:05.222182Z"
   },
   {
     "game_version": "0.0.1",
@@ -372,7 +339,7 @@
       "charge_time": 60,
       "cast_time": 2.5
     },
-    "last_modified": "2026-02-04T15:25:39.113715Z"
+    "last_modified": "2026-02-04T15:27:05.221764Z"
   },
   {
     "game_version": "0.0.1",
@@ -408,7 +375,7 @@
       "charge_time": 10,
       "cast_time": 0.5
     },
-    "last_modified": "2026-02-04T15:25:39.114102Z"
+    "last_modified": "2026-02-04T15:27:05.221980Z"
   },
   {
     "game_version": "0.0.1",
@@ -442,7 +409,7 @@
       "charge_time": 40,
       "cast_time": 1.0
     },
-    "last_modified": "2026-02-04T15:25:39.114469Z"
+    "last_modified": "2026-02-04T15:27:05.222378Z"
   },
   {
     "game_version": "0.0.1",
@@ -476,7 +443,7 @@
       "charge_time": 40,
       "cast_time": 1.0
     },
-    "last_modified": "2026-02-04T15:25:39.114817Z"
+    "last_modified": "2026-02-04T15:27:05.222571Z"
   },
   {
     "$schema": "../../schemas/v1/unit.schema.json",
@@ -495,14 +462,13 @@
     "tags": [],
     "description": "The Wild Titan. Crushes all structures as it marches toward the Lifestones.",
     "card_config": {
-      "rank": "III",
       "cost_population": 0,
       "cost_charges": 1,
       "initial_charges": 0,
       "charge_time": 120,
       "cast_time": 2.0
     },
-    "last_modified": "2026-02-04T15:25:39.115148Z"
+    "last_modified": "2026-02-05T04:03:11.642389Z"
   },
   {
     "$schema": "../../schemas/v1/unit.schema.json",
@@ -527,7 +493,7 @@
       "charge_time": 40,
       "cast_time": 2.0
     },
-    "last_modified": "2026-02-04T15:25:39.115527Z"
+    "last_modified": "2026-02-04T15:27:05.222975Z"
   },
   {
     "game_version": "0.0.1",
@@ -561,7 +527,7 @@
       "charge_time": 60,
       "cast_time": 2.0
     },
-    "last_modified": "2026-02-04T15:25:39.115969Z"
+    "last_modified": "2026-02-04T15:27:05.223169Z"
   },
   {
     "$schema": "../../schemas/v1/unit.schema.json",
@@ -586,7 +552,7 @@
       "charge_time": 10,
       "cast_time": 2.0
     },
-    "last_modified": "2026-02-04T15:25:39.116409Z"
+    "last_modified": "2026-02-04T15:27:05.223362Z"
   },
   {
     "$schema": "../../schemas/v1/unit.schema.json",
@@ -612,43 +578,7 @@
       "charge_time": 10,
       "cast_time": 2.0
     },
-    "last_modified": "2026-02-04T15:25:39.116801Z"
-  },
-  {
-    "game_version": "0.0.1",
-    "entity_id": "healing_rain",
-    "name": "Healing Rain",
-    "category": "Spell",
-    "magic_school": "Holy",
-    "description": "Calls down soothing rain that heals allies over time.",
-    "image_required": true,
-    "health": 0,
-    "damage": 0,
-    "heal_amount": 20,
-    "duration": 6.0,
-    "radius": 5.0,
-    "tick_rate": 1.0,
-    "target_mask": [
-      "Ground",
-      "Ally"
-    ],
-    "tags": [
-      "Water",
-      "Healing",
-      "AoE"
-    ],
-    "movement_speed": 0,
-    "attack_speed": 0,
-    "range": 10,
-    "card_config": {
-      "rank": "II",
-      "cost_population": 0,
-      "cost_charges": 1,
-      "initial_charges": 1,
-      "charge_time": 20,
-      "cast_time": 1.5
-    },
-    "last_modified": "2026-02-04T15:25:39.117316Z"
+    "last_modified": "2026-02-04T15:27:05.223553Z"
   },
   {
     "game_version": "0.0.1",
@@ -684,7 +614,7 @@
       "charge_time": 10,
       "cast_time": 0.5
     },
-    "last_modified": "2026-02-04T15:25:39.117758Z"
+    "last_modified": "2026-02-04T15:27:05.223742Z"
   },
   {
     "$schema": "../../schemas/v1/unit.schema.json",
@@ -709,7 +639,7 @@
       "charge_time": 60,
       "cast_time": 2.0
     },
-    "last_modified": "2026-02-04T15:25:39.118177Z"
+    "last_modified": "2026-02-04T15:27:05.224187Z"
   },
   {
     "$schema": "../../schemas/v1/unit.schema.json",
@@ -734,7 +664,7 @@
       "charge_time": 20,
       "cast_time": 2.0
     },
-    "last_modified": "2026-02-04T15:25:39.118633Z"
+    "last_modified": "2026-02-04T15:27:05.224365Z"
   },
   {
     "$schema": "../../schemas/v1/unit.schema.json",
@@ -759,7 +689,7 @@
       "charge_time": 10,
       "cast_time": 2.0
     },
-    "last_modified": "2026-02-04T15:25:39.119005Z"
+    "last_modified": "2026-02-04T15:27:05.224550Z"
   },
   {
     "$schema": "../../schemas/v1/unit.schema.json",
@@ -784,7 +714,7 @@
       "charge_time": 40,
       "cast_time": 2.0
     },
-    "last_modified": "2026-02-04T15:25:39.119395Z"
+    "last_modified": "2026-02-04T15:27:05.224732Z"
   },
   {
     "game_version": "0.0.1",
@@ -819,7 +749,7 @@
       "charge_time": 40,
       "cast_time": 1.0
     },
-    "last_modified": "2026-02-04T15:25:39.119760Z"
+    "last_modified": "2026-02-04T15:27:05.224941Z"
   },
   {
     "$schema": "../../schemas/v1/unit.schema.json",
@@ -850,7 +780,7 @@
       "charge_time": 20,
       "cast_time": 1.0
     },
-    "last_modified": "2026-02-04T15:25:39.120128Z"
+    "last_modified": "2026-02-04T15:27:05.225136Z"
   },
   {
     "game_version": "0.0.1",
@@ -883,7 +813,7 @@
       "charge_time": 60,
       "cast_time": 4.0
     },
-    "last_modified": "2026-02-04T15:25:39.120519Z"
+    "last_modified": "2026-02-04T15:27:05.225328Z"
   },
   {
     "$schema": "../../schemas/v1/unit.schema.json",
@@ -908,7 +838,7 @@
       "charge_time": 10,
       "cast_time": 2.0
     },
-    "last_modified": "2026-02-04T15:25:39.120915Z"
+    "last_modified": "2026-02-04T15:27:05.225532Z"
   },
   {
     "$schema": "../../schemas/v1/unit.schema.json",
@@ -933,7 +863,7 @@
       "charge_time": 10,
       "cast_time": 2.0
     },
-    "last_modified": "2026-02-04T15:25:39.121393Z"
+    "last_modified": "2026-02-04T15:27:05.225722Z"
   },
   {
     "game_version": "0.0.1",
@@ -966,7 +896,7 @@
       "charge_time": 10,
       "cast_time": 1.0
     },
-    "last_modified": "2026-02-04T15:25:39.121793Z"
+    "last_modified": "2026-02-04T15:27:05.225927Z"
   },
   {
     "$schema": "../../schemas/v1/unit.schema.json",
@@ -991,7 +921,7 @@
       "charge_time": 10,
       "cast_time": 2.0
     },
-    "last_modified": "2026-02-04T15:25:39.122211Z"
+    "last_modified": "2026-02-04T15:27:05.226135Z"
   },
   {
     "$schema": "../../schemas/v1/unit.schema.json",
@@ -1022,7 +952,7 @@
       "charge_time": 40,
       "cast_time": 4.0
     },
-    "last_modified": "2026-02-04T15:25:39.122639Z"
+    "last_modified": "2026-02-04T15:27:05.226304Z"
   },
   {
     "$schema": "../../schemas/v1/unit.schema.json",
@@ -1047,7 +977,7 @@
       "charge_time": 40,
       "cast_time": 2.0
     },
-    "last_modified": "2026-02-04T15:25:39.123019Z"
+    "last_modified": "2026-02-04T15:27:05.226502Z"
   },
   {
     "$schema": "../../schemas/v1/unit.schema.json",
@@ -1065,14 +995,13 @@
     "tags": [],
     "description": "The Titan of Death inflict curses to enemies, increasing the damage they take and reducing their movement speed.",
     "card_config": {
-      "rank": "III",
       "cost_population": 0,
       "cost_charges": 1,
       "initial_charges": 0,
       "charge_time": 120,
       "cast_time": 2.0
     },
-    "last_modified": "2026-02-04T15:25:39.123383Z"
+    "last_modified": "2026-02-05T04:02:50.559559Z"
   },
   {
     "game_version": "0.0.1",
@@ -1108,7 +1037,7 @@
       "charge_time": 10,
       "cast_time": 0.5
     },
-    "last_modified": "2026-02-04T15:25:39.123714Z"
+    "last_modified": "2026-02-04T15:27:05.226898Z"
   },
   {
     "$schema": "../../schemas/v1/unit.schema.json",
@@ -1133,7 +1062,7 @@
       "charge_time": 20,
       "cast_time": 2.0
     },
-    "last_modified": "2026-02-04T15:25:39.124049Z"
+    "last_modified": "2026-02-04T15:27:05.227094Z"
   },
   {
     "$schema": "../../schemas/v1/unit.schema.json",
@@ -1158,6 +1087,6 @@
       "charge_time": 20,
       "cast_time": 2.0
     },
-    "last_modified": "2026-02-04T15:25:39.124392Z"
+    "last_modified": "2026-02-04T15:27:05.227275Z"
   }
 ]

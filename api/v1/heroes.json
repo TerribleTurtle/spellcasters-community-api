@@ -4,6 +4,7 @@
     "game_version": "0.0.1",
     "hero_id": "astral_monk",
     "name": "Astral Monk",
+    "class": "Duelist",
     "image_required": true,
     "health": 600,
     "movement_speed": 3,
@@ -40,13 +41,14 @@
         "description": "Conjures a time bubble that freezes enemy projectiles and creatures inside it."
       }
     },
-    "last_modified": "2026-02-04T15:25:39.106334Z"
+    "last_modified": "2026-02-04T15:27:05.218354Z"
   },
   {
     "$schema": "../../schemas/v1/hero.schema.json",
     "game_version": "0.0.1",
     "hero_id": "fire_elementalist",
     "name": "Fire Elementalist",
+    "class": "Conqueror",
     "image_required": true,
     "health": 600,
     "movement_speed": 3,
@@ -83,13 +85,14 @@
         "description": "Captures a territory and inflicts Fire damage to any enemies in range."
       }
     },
-    "last_modified": "2026-02-04T15:25:39.106873Z"
+    "last_modified": "2026-02-04T15:27:05.218596Z"
   },
   {
     "$schema": "../../schemas/v1/hero.schema.json",
     "game_version": "0.0.1",
     "hero_id": "iron_sorcerer",
     "name": "Iron Sorcerer",
+    "class": "Conqueror",
     "image_required": true,
     "health": 600,
     "movement_speed": 3,
@@ -122,13 +125,14 @@
         "description": "Unleash a metal vortex that deals heavy damage along its path."
       }
     },
-    "last_modified": "2026-02-04T15:25:39.107228Z"
+    "last_modified": "2026-02-04T15:27:05.218867Z"
   },
   {
     "$schema": "../../schemas/v1/hero.schema.json",
     "game_version": "0.0.1",
     "hero_id": "mystic_scribe",
     "name": "Mystic Scribe",
+    "class": "Enchanter",
     "image_required": true,
     "health": 600,
     "movement_speed": 3,
@@ -165,13 +169,14 @@
         "description": "Mark the ground with a massive healing seal."
       }
     },
-    "last_modified": "2026-02-04T15:25:39.107573Z"
+    "last_modified": "2026-02-04T15:27:05.219073Z"
   },
   {
     "$schema": "../../schemas/v1/hero.schema.json",
     "game_version": "0.0.1",
     "hero_id": "stone_shaman",
     "name": "Stone Shaman",
+    "class": "Enchanter",
     "image_required": true,
     "health": 600,
     "movement_speed": 3,
@@ -208,13 +213,14 @@
         "description": "Shakes the ground, slowing enemies and dealing area damage."
       }
     },
-    "last_modified": "2026-02-04T15:25:39.108031Z"
+    "last_modified": "2026-02-04T15:27:05.219297Z"
   },
   {
     "$schema": "../../schemas/v1/hero.schema.json",
     "game_version": "0.0.1",
     "hero_id": "swamp_witch",
     "name": "Swamp Witch",
+    "class": "Duelist",
     "image_required": true,
     "health": 600,
     "movement_speed": 3,
@@ -247,6 +253,6 @@
         "description": "Unleashes a demonic form that boosts all spell damage."
       }
     },
-    "last_modified": "2026-02-04T15:25:39.108537Z"
+    "last_modified": "2026-02-04T15:27:05.219517Z"
   }
 ]
