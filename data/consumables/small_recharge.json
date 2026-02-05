@@ -1,8 +1,8 @@
 {
   "$schema": "../../schemas/v1/consumable.schema.json",
   "game_version": "0.0.1",
-  "consumable_id": "light_recharge",
-  "name": "Light Recharge",
+  "consumable_id": "small_recharge",
+  "name": "Small Recharge",
   "effect_type": "Charge_Refill",
   "value": 25,
   "ttl": 30,
