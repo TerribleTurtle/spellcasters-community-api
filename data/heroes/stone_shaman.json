@@ -15,29 +15,33 @@
   "abilities": {
     "passive": [
       {
-        "name": "Stone Skin",
-        "description": "Reduces incoming physical damage by 5%."
+        "name": "Mountain’s Favor",
+        "description": "The Stone Shaman’s attacks deal double damage to buildings."
       },
       {
-        "name": "Earth Attunement",
-        "description": "Regenerates health faster while standing on ground."
+        "name": "Child of the Titans",
+        "description": "Increases Rank II and Rank III population while reducing Rank I population."
       },
       {
-        "name": "Rock Solid",
-        "description": "Cannot be knocked back by minor explosions."
+        "name": "Pathfinder",
+        "description": "While on the ground, the Shaman recharges Wild incantations much faster."
+      },
+      {
+        "name": "Spellcaster Interruption",
+        "description": "Successfully hitting a Spellcaster twice interrupts their actions."
       }
     ],
     "primary": {
-      "name": "Boulder Throw",
-      "description": "Hurls a massive boulder dealing 30 damage."
+      "name": "Mountain Staff",
+      "description": "Swing your catalyst to deal heavy melee damage and interrupt enemies."
     },
     "defense": {
-      "name": "Wall of Stone",
-      "description": "Creates a temporary wall blocking movement."
+      "name": "Wind Shield",
+      "description": "Conjure a protective wind barrier that deals damage on contact."
     },
     "ultimate": {
-      "name": "Earthquake",
-      "description": "Shakes the ground, slowing enemies and dealing area damage."
+      "name": "Wall of Kamazad",
+      "description": "Deploys a colossal wall capable of blocking Titans."
     }
   },
   "last_modified": "2026-02-05T17:05:01.972044Z"
