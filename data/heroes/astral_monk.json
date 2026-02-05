@@ -3,6 +3,7 @@
   "game_version": "0.0.1",
   "hero_id": "astral_monk",
   "name": "Astral Monk",
+  "class": "Duelist",
   "image_required": true,
   "health": 600,
   "movement_speed": 3,

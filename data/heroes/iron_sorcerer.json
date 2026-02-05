@@ -3,6 +3,7 @@
   "game_version": "0.0.1",
   "hero_id": "iron_sorcerer",
   "name": "Iron Sorcerer",
+  "class": "Conqueror",
   "image_required": true,
   "health": 600,
   "movement_speed": 3,

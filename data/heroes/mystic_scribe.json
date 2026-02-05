@@ -3,6 +3,7 @@
   "game_version": "0.0.1",
   "hero_id": "mystic_scribe",
   "name": "Mystic Scribe",
+  "class": "Enchanter",
   "image_required": true,
   "health": 600,
   "movement_speed": 3,

@@ -7,6 +7,7 @@
     "game_version",
     "hero_id",
     "name",
+    "class",
     "health",
     "movement_speed",
     "flight_speed",
@@ -23,6 +24,11 @@
     "last_modified": { "type": "string", "format": "date-time", "description": "UTC Timestamp of the last update" },
     "hero_id": { "type": "string" },
     "name": { "type": "string" },
+    "class": { 
+      "type": "string", 
+      "enum": ["Conqueror", "Duelist", "Enchanter"],
+      "description": "Intrinsic Spellcaster class that determines upgrade priorities"
+    },
     "image_required": { "type": "boolean", "default": true },
     "health": { "type": "integer", "minimum": 1 },
     "movement_speed": { "type": "integer", "minimum": 0 },
