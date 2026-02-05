@@ -1,11 +1,14 @@
 name: Update Timestamps
 
+# DEPRECATED: This workflow has been merged into deploy.yml to prevent double-deployments
+# Kept for reference only - timestamps are now updated before build/deploy
 on:
-  push:
-    branches:
-      - main
-    paths:
-      - "data/**/*.json"
+  # push:
+  #   branches:
+  #     - main
+  #   paths:
+  #     - "data/**/*.json"
+  workflow_dispatch: # Can still trigger manually if needed
 
 jobs:
   update-timestamps:
@@ -42,5 +45,5 @@ jobs:
           git config --global user.name "github-actions[bot]"
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
           git add data/**/*.json
-          git commit -m "chore: update last_modified timestamps" || echo "No changes to commit"
-          git push
+          git commit -m "chore: update last_modified timestamps [skip ci]" || echo "No changes to commit"
+          git pull --rebase origin main && git push
