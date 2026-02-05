@@ -14,11 +14,13 @@
   "tags": [],
   "description": "The Titan of Death inflict curses to enemies, increasing the damage they take and reducing their movement speed.",
   "card_config": {
+    "rank": "III",
     "cost_population": 0,
     "cost_charges": 1,
     "initial_charges": 0,
     "charge_time": 120,
     "cast_time": 2.0
   },
+
   "last_modified": "2026-02-05T04:02:50.559559Z"
 }

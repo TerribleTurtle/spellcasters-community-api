@@ -1,7 +1,7 @@
 {
   "build_info": {
     "version": "0.0.1",
-    "generated_at": "2026-02-05T18:04:21.084145+00:00"
+    "generated_at": "2026-02-05T18:12:41.259607+00:00"
   },
   "units": [
     {
@@ -467,6 +467,7 @@
       "tags": [],
       "description": "The Wild Titan. Crushes all structures as it marches toward the Lifestones.",
       "card_config": {
+        "rank": "III",
         "cost_population": 0,
         "cost_charges": 1,
         "initial_charges": 0,
@@ -1000,6 +1001,7 @@
       "tags": [],
       "description": "The Titan of Death inflict curses to enemies, increasing the damage they take and reducing their movement speed.",
       "card_config": {
+        "rank": "III",
         "cost_population": 0,
         "cost_charges": 1,
         "initial_charges": 0,
@@ -1138,7 +1140,7 @@
           "description": "Conjures a time bubble that freezes enemy projectiles and creatures inside it."
         }
       },
-      "last_modified": "2026-02-04T15:27:05.218354Z"
+      "last_modified": "2026-02-05T17:05:01.970742Z"
     },
     {
       "$schema": "../../schemas/v1/hero.schema.json",
@@ -1182,7 +1184,7 @@
           "description": "Captures a territory and inflicts Fire damage to any enemies in range."
         }
       },
-      "last_modified": "2026-02-04T15:27:05.218596Z"
+      "last_modified": "2026-02-05T17:05:01.971147Z"
     },
     {
       "$schema": "../../schemas/v1/hero.schema.json",
@@ -1222,7 +1224,7 @@
           "description": "Unleash a metal vortex that deals heavy damage along its path."
         }
       },
-      "last_modified": "2026-02-04T15:27:05.218867Z"
+      "last_modified": "2026-02-05T17:05:01.971455Z"
     },
     {
       "$schema": "../../schemas/v1/hero.schema.json",
@@ -1266,7 +1268,7 @@
           "description": "Mark the ground with a massive healing seal."
         }
       },
-      "last_modified": "2026-02-04T15:27:05.219073Z"
+      "last_modified": "2026-02-05T17:05:01.971742Z"
     },
     {
       "$schema": "../../schemas/v1/hero.schema.json",
@@ -1310,7 +1312,7 @@
           "description": "Shakes the ground, slowing enemies and dealing area damage."
         }
       },
-      "last_modified": "2026-02-04T15:27:05.219297Z"
+      "last_modified": "2026-02-05T17:05:01.972044Z"
     },
     {
       "$schema": "../../schemas/v1/hero.schema.json",
@@ -1350,7 +1352,7 @@
           "description": "Unleashes a demonic form that boosts all spell damage."
         }
       },
-      "last_modified": "2026-02-04T15:27:05.219517Z"
+      "last_modified": "2026-02-05T17:05:01.972347Z"
     }
   ],
   "consumables": [
