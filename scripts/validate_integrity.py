@@ -141,10 +141,11 @@ def validate_decks(db):
                     if category == "Creature" and rank in ["I", "II"]:
                         has_rank_1_or_2_creature = True
 
+
         if not has_rank_1_or_2_creature:
             errors.append(f"[FAIL] Deck {f} must contain at least one Rank I or Rank II CREATURE card.")
 
-        return errors
+    return errors
 
 def validate_integrity():
     print("Starting Integrity Validation...")
