@@ -3,7 +3,7 @@
   "entity_id": "earthquake",
   "name": "Earthquake",
   "category": "Spell",
-  "magic_school": "Elemental",
+  "magic_school": "Wild",
   "description": "Ground shockwave that damages structures and staggers creatures.",
   "image_required": true,
   "health": 0,

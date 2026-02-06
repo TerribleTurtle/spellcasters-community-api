@@ -4,7 +4,7 @@
   "entity_id": "giant_shielder",
   "name": "Giant Shielder",
   "category": "Creature",
-  "magic_school": "War",
+  "magic_school": "Holy",
   "health": 1500,
   "damage": 30,
   "attack_speed": 1.0,

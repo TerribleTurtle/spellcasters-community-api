@@ -3,7 +3,7 @@
   "entity_id": "frost_surge",
   "name": "Frost Surge",
   "category": "Spell",
-  "magic_school": "Frost",
+  "magic_school": "Wild",
   "description": "Ice pulse that freezes enemies and infuses nearby allies.",
   "image_required": true,
   "health": 0,

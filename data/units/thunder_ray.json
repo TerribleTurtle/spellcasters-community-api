@@ -3,7 +3,7 @@
   "entity_id": "thunder_ray",
   "name": "Thunder Ray",
   "category": "Spell",
-  "magic_school": "Lightning",
+  "magic_school": "Technomancy",
   "description": "Focused beam that deals low Lightning Damage.",
   "image_required": true,
   "health": 0,

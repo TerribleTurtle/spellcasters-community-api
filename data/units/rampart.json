@@ -4,7 +4,7 @@
   "entity_id": "rampart",
   "name": "Rampart",
   "category": "Building",
-  "magic_school": "War",
+  "magic_school": "Holy",
   "health": 5000,
   "damage": 0,
   "attack_speed": 0,

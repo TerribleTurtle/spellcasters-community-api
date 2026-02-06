@@ -49,12 +49,13 @@
       "type": "string",
       "enum": [
         "Elemental",
-        "Lightning",
+        "Wild",
         "War",
         "Astral",
         "Holy",
-        "Frost",
-        "Dark"
+        "Technomancy",
+        "Necromancy",
+        "Titan"
       ],
       "description": "The magical affinity of this unit."
     },

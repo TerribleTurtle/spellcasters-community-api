@@ -4,7 +4,7 @@
   "entity_id": "skeleton_warrior",
   "name": "Skeleton Warrior",
   "category": "Creature",
-  "magic_school": "Dark",
+  "magic_school": "Necromancy",
   "health": 2000,
   "damage": 15,
   "attack_speed": 1.0,

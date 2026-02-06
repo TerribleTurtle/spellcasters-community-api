@@ -4,7 +4,7 @@
   "entity_id": "crypt",
   "name": "Crypt",
   "category": "Building",
-  "magic_school": "Dark",
+  "magic_school": "Necromancy",
   "health": 2000,
   "damage": 0,
   "attack_speed": 0,

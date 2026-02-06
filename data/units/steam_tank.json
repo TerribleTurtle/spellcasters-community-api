@@ -4,7 +4,7 @@
   "entity_id": "steam_tank",
   "name": "Steam Tank",
   "category": "Creature",
-  "magic_school": "War",
+  "magic_school": "Technomancy",
   "health": 2500,
   "damage": 120,
   "attack_speed": 0.6,

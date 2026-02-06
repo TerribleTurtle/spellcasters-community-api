@@ -3,7 +3,7 @@
   "entity_id": "sacrifice",
   "name": "Sacrifice",
   "category": "Spell",
-  "magic_school": "Dark",
+  "magic_school": "Astral",
   "description": "Dark ritual that recalls allies to recharge summons.",
   "image_required": true,
   "health": 0,

@@ -4,7 +4,7 @@
   "entity_id": "wyvern",
   "name": "Wyvern",
   "category": "Creature",
-  "magic_school": "Elemental",
+  "magic_school": "Wild",
   "health": 2200,
   "damage": 19,
   "attack_speed": 1.0,

@@ -3,7 +3,7 @@
   "entity_id": "grand_lightning",
   "name": "Grand Lightning",
   "category": "Spell",
-  "magic_school": "Lightning",
+  "magic_school": "Technomancy",
   "description": "Thunderstrike that deals extreme Lightning damage to a target.",
   "image_required": true,
   "health": 0,

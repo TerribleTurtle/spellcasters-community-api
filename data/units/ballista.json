@@ -4,7 +4,7 @@
   "entity_id": "ballista",
   "name": "Ballista",
   "category": "Building",
-  "magic_school": "War",
+  "magic_school": "Technomancy",
   "health": 1200,
   "damage": 250,
   "attack_speed": 0.4,

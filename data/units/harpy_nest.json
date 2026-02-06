@@ -4,7 +4,7 @@
   "entity_id": "harpy_nest",
   "name": "Harpy Nest",
   "category": "Building",
-  "magic_school": "Frost",
+  "magic_school": "Wild",
   "health": 1500,
   "damage": 0,
   "attack_speed": 1.0,
@@ -22,5 +22,5 @@
     "charge_time": 10,
     "cast_time": 2.0
   },
-  "last_modified": "2026-02-05T22:26:13.111600Z"
+  "last_modified": "2026-02-04T15:27:05.223553Z"
 }

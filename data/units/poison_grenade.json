@@ -3,7 +3,7 @@
   "entity_id": "poison_grenade",
   "name": "Poison Grenade",
   "category": "Spell",
-  "magic_school": "Dark",
+  "magic_school": "Necromancy",
   "description": "Grenade that creates a Poison cloud over the target area.",
   "image_required": true,
   "health": 0,
