@@ -60,17 +60,28 @@ def check_asset_exists(category, entity_id, is_required):
     # if category in ["units", "spells", "titans", "spellcasters"]:
     #    filename = f"{entity_id}_card.png"
     
-    # Unified Model - All assets are just {entity_id}.png
-    filename = f"{entity_id}.png"
-
-    path = os.path.join(ASSETS_DIR, category, filename)
+    # Unified Model - All assets are just {entity_id}.png or {entity_id}.webp
+    # Prioritize WebP for production, but PNG is also valid.
     warnings = 0
     
-    if not os.path.exists(path):
+    path_webp = os.path.join(ASSETS_DIR, category, f"{entity_id}.webp")
+    path_png = os.path.join(ASSETS_DIR, category, f"{entity_id}.png")
+    
+    final_path = None
+    
+    if os.path.exists(path_webp):
+        final_path = path_webp
+    elif os.path.exists(path_png):
+        final_path = path_png
+    
+    if not final_path:
         if is_required:
-            print(f"[WARN] Missing Asset: {path}")
+            print(f"[WARN] Missing Asset: {path_webp} (or .png)")
             return 1
         return 0
+        
+    # Asset Exists - Perform Hygiene Check
+    path = final_path
         
     # Asset Exists - Perform Hygiene Check
     try:

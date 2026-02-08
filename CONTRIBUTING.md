@@ -35,8 +35,10 @@ To add a new Spellcaster, Unit, Spell, Titan, or Consumable:
     - **Changelog:** Use the `changelog` array to track version history.
     - `last_modified`: Update this timestamp.
     - `image_required`: Defaults to `true`.
-4.  **Add Assets:** Add the image to `assets/[category]/[id].png`.
-    - Example: `data/units/skeleton_warrior.json` -> `assets/units/skeleton_warrior.png`.
+4.  **Add Assets:**
+    - **Production:** Add the image to `assets/[category]/[id].webp`.
+    - **Archive:** Source PNGs should be stored in `assets/_archive/[category]/[id].png`.
+    - **Automatic:** Place `.png` files in the main folder and run `python scripts/optimize_assets.py`. This script will generate the `.webp` and archive the `.png` for you.
 
 ### 📚 Data Reference & Hierarchy
 
