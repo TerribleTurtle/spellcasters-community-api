@@ -42,13 +42,18 @@ jobs:
         run: |
           python scripts/update_timestamps.py ${{ steps.changed-files.outputs.all_changed_files }}
 
+      - name: Build API
+        if: steps.changed-files.outputs.any_changed == 'true'
+        run: |
+          python scripts/build_api.py
+
       - name: Commit and Push changes
         if: steps.changed-files.outputs.any_changed == 'true'
         run: |
           git config --global user.name "github-actions[bot]"
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
-          git add data/**/*.json
-          git commit -m "chore: update last_modified timestamps [skip ci]" || echo "No changes to commit"
+          git add data/**/*.json api/**/*.json
+          git commit -m "chore: update timestamps and regenerate API [skip ci]" || echo "No changes to commit"
           git pull --rebase origin main && git push
 
   build:
