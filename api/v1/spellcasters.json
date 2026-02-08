@@ -35,7 +35,7 @@
         "description": "Conjures a time bubble that freezes enemy projectiles and creatures inside it."
       }
     },
-    "last_modified": "2026-02-05T18:34:05.939129Z",
+    "last_modified": "2026-02-08T14:59:13.845143+00:00",
     "changelog": [
       {
         "version": "0.0.1",
@@ -80,7 +80,7 @@
         "description": "Captures a territory, inflicts Fire damage and imbues allied units with Fire."
       }
     },
-    "last_modified": "2026-02-05T17:05:01.971147Z",
+    "last_modified": "2026-02-08T14:59:13.845583+00:00",
     "changelog": [
       {
         "version": "0.0.1",
@@ -125,7 +125,7 @@
         "description": "Unleash a metal vortex that deals heavy damage and knocks back enemies along its path."
       }
     },
-    "last_modified": "2026-02-05T18:34:58.970266Z",
+    "last_modified": "2026-02-08T14:59:13.846219+00:00",
     "changelog": [
       {
         "version": "0.0.1",
@@ -170,7 +170,7 @@
         "description": "Mark the ground with a massive healing seal."
       }
     },
-    "last_modified": "2026-02-05T18:33:10.223377Z",
+    "last_modified": "2026-02-08T14:59:13.847025+00:00",
     "changelog": [
       {
         "version": "0.0.1",
@@ -219,7 +219,7 @@
         "description": "Deploys a colossal wall capable of blocking Titans."
       }
     },
-    "last_modified": "2026-02-05T18:35:34.217480Z",
+    "last_modified": "2026-02-08T14:59:13.847479+00:00",
     "changelog": [
       {
         "version": "0.0.1",
@@ -264,7 +264,7 @@
         "description": "Unleashes a demonic form that boosts all spell damage."
       }
     },
-    "last_modified": "2026-02-05T17:05:01.972347Z",
+    "last_modified": "2026-02-08T14:59:13.847944+00:00",
     "changelog": [
       {
         "version": "0.0.1",

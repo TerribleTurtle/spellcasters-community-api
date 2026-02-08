@@ -7,7 +7,7 @@
     "rank": "IV",
     "description": "Massive projectile that deals heavy damage on impact.",
     "image_required": true,
-    "last_modified": "2026-02-08T09:49:16.846742+00:00",
+    "last_modified": "2026-02-08T14:59:13.824682+00:00",
     "tags": [],
     "changelog": [
       {
@@ -27,7 +27,7 @@
     "rank": "II",
     "description": "Rapid burst of projectiles.",
     "image_required": true,
-    "last_modified": "2026-02-08T09:49:16.839777+00:00",
+    "last_modified": "2026-02-08T14:59:13.825233+00:00",
     "tags": [],
     "changelog": [
       {
@@ -47,7 +47,7 @@
     "rank": "III",
     "description": "Ground shockwave that damages structures and staggers creatures.",
     "image_required": true,
-    "last_modified": "2026-02-08T09:49:16.843317+00:00",
+    "last_modified": "2026-02-08T14:59:13.825640+00:00",
     "tags": [],
     "changelog": [
       {
@@ -67,7 +67,7 @@
     "rank": "III",
     "description": "Fast projectile that deals medium Fire damage to a target.",
     "image_required": true,
-    "last_modified": "2026-02-08T09:49:16.843620+00:00",
+    "last_modified": "2026-02-08T14:59:13.826195+00:00",
     "tags": [],
     "changelog": [
       {
@@ -87,7 +87,7 @@
     "rank": "IV",
     "description": "Fire projectiles that deal continuous damage over a wide area.",
     "image_required": true,
-    "last_modified": "2026-02-08T09:49:16.847017+00:00",
+    "last_modified": "2026-02-08T14:59:13.826727+00:00",
     "tags": [],
     "changelog": [
       {
@@ -108,7 +108,7 @@
     "rank": "I",
     "description": "Focused beam that deals low Fire damage.",
     "image_required": true,
-    "last_modified": "2026-02-08T09:49:16.836670+00:00",
+    "last_modified": "2026-02-08T14:59:13.827448+00:00",
     "tags": [],
     "changelog": [
       {
@@ -128,7 +128,7 @@
     "rank": "III",
     "description": "Fire pulse that burns enemies and infuses nearby allies.",
     "image_required": true,
-    "last_modified": "2026-02-08T09:49:16.843934+00:00",
+    "last_modified": "2026-02-08T14:59:13.827871+00:00",
     "tags": [],
     "changelog": [
       {
@@ -147,7 +147,7 @@
     "rank": "III",
     "description": "Ice pulse that freezes enemies and infuses nearby allies.",
     "image_required": true,
-    "last_modified": "2026-02-08T09:49:16.844303+00:00",
+    "last_modified": "2026-02-08T14:59:13.828294+00:00",
     "tags": [],
     "changelog": [
       {
@@ -166,7 +166,7 @@
     "rank": "IV",
     "description": "Thunderstrike that deals extreme Lightning damage to a target.",
     "image_required": true,
-    "last_modified": "2026-02-08T09:49:16.847345+00:00",
+    "last_modified": "2026-02-08T14:59:13.828654+00:00",
     "tags": [],
     "changelog": [
       {
@@ -186,7 +186,7 @@
     "rank": "I",
     "description": "Healing ray that can be aimed at the ground to restore allies in the area.",
     "image_required": true,
-    "last_modified": "2026-02-08T09:49:16.837289+00:00",
+    "last_modified": "2026-02-08T14:59:13.829193+00:00",
     "tags": [],
     "changelog": [
       {
@@ -206,7 +206,7 @@
     "rank": "III",
     "description": "Grenade that creates a Poison cloud over the target area.",
     "image_required": true,
-    "last_modified": "2026-02-08T09:49:16.845763+00:00",
+    "last_modified": "2026-02-08T14:59:13.829965+00:00",
     "tags": [],
     "changelog": [
       {
@@ -227,7 +227,7 @@
     "rank": "IV",
     "description": "Magic circle that resurrects creatures with partial health.",
     "image_required": true,
-    "last_modified": "2026-02-08T09:49:16.848165+00:00",
+    "last_modified": "2026-02-08T14:59:13.830451+00:00",
     "tags": [],
     "changelog": [
       {
@@ -246,7 +246,7 @@
     "rank": "I",
     "description": "Dark ritual that recalls allies to recharge summons.",
     "image_required": true,
-    "last_modified": "2026-02-08T09:49:16.838616+00:00",
+    "last_modified": "2026-02-08T14:59:13.830848+00:00",
     "tags": [],
     "changelog": [
       {
@@ -265,7 +265,7 @@
     "rank": "I",
     "description": "Focused beam that deals low Lightning damage.",
     "image_required": true,
-    "last_modified": "2026-02-08T09:49:16.839433+00:00",
+    "last_modified": "2026-02-08T14:59:13.831217+00:00",
     "tags": [],
     "changelog": [
       {

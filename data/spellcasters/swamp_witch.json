@@ -14,7 +14,7 @@
       },
       {
         "name": "Brood Rite",
-        "description": "When a Swamp Witch’s creature is destroyed, her incantations and abilities recharge faster."
+        "description": "When a Swamp Witch\u2019s creature is destroyed, her incantations and abilities recharge faster."
       },
       {
         "name": "Swarm Dominance",
@@ -34,7 +34,7 @@
       "description": "Unleashes a demonic form that boosts all spell damage."
     }
   },
-  "last_modified": "2026-02-05T17:05:01.972347Z",
+  "last_modified": "2026-02-08T14:59:13.847944+00:00",
   "changelog": [
     {
       "version": "0.0.1",

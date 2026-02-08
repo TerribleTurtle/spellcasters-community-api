@@ -23,7 +23,7 @@
     ],
     "primary": {
       "name": "Brush Strike",
-      "description": "Strike with enchanted ink to damage enemies and boost allies’ Max HP."
+      "description": "Strike with enchanted ink to damage enemies and boost allies\u2019 Max HP."
     },
     "defense": {
       "name": "Scroll Barrier",
@@ -34,7 +34,7 @@
       "description": "Mark the ground with a massive healing seal."
     }
   },
-  "last_modified": "2026-02-05T18:33:10.223377Z",
+  "last_modified": "2026-02-08T14:59:13.847025+00:00",
   "changelog": [
     {
       "version": "0.0.1",

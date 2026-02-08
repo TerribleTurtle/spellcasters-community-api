@@ -4,7 +4,7 @@
   "name": "Medium Heal",
   "effect_type": "Heal",
   "value": 50,
-  "last_modified": "2026-02-04T15:27:05.217803Z",
+  "last_modified": "2026-02-08T14:59:13.833121+00:00",
   "changelog": [
     {
       "version": "0.0.1",
