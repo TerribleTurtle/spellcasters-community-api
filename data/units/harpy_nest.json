@@ -1,26 +1,19 @@
 {
-  "$schema": "../../schemas/v1/unit.schema.json",
-  "game_version": "0.0.1",
   "entity_id": "harpy_nest",
   "name": "Harpy Nest",
   "category": "Building",
   "magic_school": "Wild",
-  "health": 1500,
-  "damage": 0,
-  "attack_speed": 1.0,
-  "movement_speed": 0,
-  "range": 1,
-  "movement_type": "Stationary",
-  "tags": [],
+  "rank": "III",
   "description": "Nest that continuously spawns new Harpies.",
-  "collision_radius": 2,
-  "card_config": {
-    "rank": "III",
-    "cost_population": 1,
-    "cost_charges": 1,
-    "initial_charges": 10,
-    "charge_time": 10,
-    "cast_time": 2.0
-  },
-  "last_modified": "2026-02-06T09:15:41.016030Z"
+  "image_required": true,
+  "last_modified": "2026-02-08T09:49:16.844994+00:00",
+  "tags": [],
+  "changelog": [
+    {
+      "version": "0.0.1",
+      "date": "2026-02-08T09:49:16.844994+00:00",
+      "description": "Initial Closed Beta 2 Data"
+    }
+  ],
+  "health": 750
 }

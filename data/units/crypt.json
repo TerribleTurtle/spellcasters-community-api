@@ -1,31 +1,19 @@
 {
-  "$schema": "../../schemas/v1/unit.schema.json",
-  "game_version": "0.0.1",
   "entity_id": "crypt",
   "name": "Crypt",
   "category": "Building",
   "magic_school": "Necromancy",
-  "health": 2000,
-  "damage": 0,
-  "attack_speed": 0,
-  "movement_speed": 0,
-  "range": 0,
-  "movement_type": "Stationary",
-  "tags": [
-    "undead",
-    "spawner",
-    "structure"
-  ],
+  "rank": "III",
   "description": "Shrine that continuously summons new Skeleton Warriors.",
-  "collision_radius": 40,
   "image_required": true,
-  "card_config": {
-    "rank": "III",
-    "cost_population": 1,
-    "cost_charges": 1,
-    "initial_charges": 3,
-    "charge_time": 40,
-    "cast_time": 2.5
-  },
-  "last_modified": "2026-02-06T09:15:41.015284Z"
+  "last_modified": "2026-02-08T09:49:16.843010+00:00",
+  "tags": [],
+  "changelog": [
+    {
+      "version": "0.0.1",
+      "date": "2026-02-08T09:49:16.843010+00:00",
+      "description": "Initial Closed Beta 2 Data"
+    }
+  ],
+  "health": 1000
 }

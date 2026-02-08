@@ -1,25 +1,22 @@
 {
-  "$schema": "../../schemas/v1/unit.schema.json",
-  "game_version": "0.0.1",
   "entity_id": "stone_behemoth",
   "name": "Stone Behemoth",
   "category": "Creature",
   "magic_school": "Elemental",
-  "health": 2100,
-  "damage": 40,
-  "attack_speed": 1.0,
-  "movement_speed": 2,
-  "range": 55,
-  "movement_type": "Ground",
+  "rank": "III",
+  "description": "Siege unit that hurls long-range boulders for heavy area damage.",
+  "image_required": true,
+  "last_modified": "2026-02-08T09:49:16.846434+00:00",
   "tags": [],
-  "description": "Siege unit that hurls long-range boulders for heavy area damage",
-  "card_config": {
-    "rank": "III",
-    "cost_population": 1,
-    "cost_charges": 1,
-    "initial_charges": 3,
-    "charge_time": 40,
-    "cast_time": 2.0
-  },
-  "last_modified": "2026-02-04T15:27:05.226502Z"
+  "changelog": [
+    {
+      "version": "0.0.1",
+      "date": "2026-02-08T09:49:16.846434+00:00",
+      "description": "Initial Closed Beta 2 Data"
+    }
+  ],
+  "damage": 40,
+  "health": 210,
+  "range": 55,
+  "movement_speed": 2
 }

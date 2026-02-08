@@ -1,0 +1,20 @@
+{
+  "entity_id": "earthquake",
+  "name": "Earthquake",
+  "category": "Spell",
+  "magic_school": "Wild",
+  "rank": "III",
+  "description": "Ground shockwave that damages structures and staggers creatures.",
+  "image_required": true,
+  "last_modified": "2026-02-08T09:49:16.843317+00:00",
+  "tags": [],
+  "changelog": [
+    {
+      "version": "0.0.1",
+      "date": "2026-02-08T09:49:16.843317+00:00",
+      "description": "Initial Closed Beta 2 Data"
+    }
+  ],
+  "damage": 230,
+  "range": 35
+}

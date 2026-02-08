@@ -1,0 +1,20 @@
+{
+  "entity_id": "heal_ray",
+  "name": "Heal Ray",
+  "category": "Spell",
+  "magic_school": "Holy",
+  "rank": "I",
+  "description": "Healing ray that can be aimed at the ground to restore allies in the area.",
+  "image_required": true,
+  "last_modified": "2026-02-08T09:49:16.837289+00:00",
+  "tags": [],
+  "changelog": [
+    {
+      "version": "0.0.1",
+      "date": "2026-02-08T09:49:16.837289+00:00",
+      "description": "Initial Closed Beta 2 Data"
+    }
+  ],
+  "range": 45,
+  "heal_amount": 300
+}

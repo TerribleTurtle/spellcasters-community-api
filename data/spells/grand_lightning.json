@@ -1,0 +1,20 @@
+{
+  "entity_id": "grand_lightning",
+  "name": "Grand Lightning",
+  "category": "Spell",
+  "magic_school": "Technomancy",
+  "rank": "IV",
+  "description": "Thunderstrike that deals extreme Lightning damage to a target.",
+  "image_required": true,
+  "last_modified": "2026-02-08T09:49:16.847345+00:00",
+  "tags": [],
+  "changelog": [
+    {
+      "version": "0.0.1",
+      "date": "2026-02-08T09:49:16.847345+00:00",
+      "description": "Initial Closed Beta 2 Data"
+    }
+  ],
+  "damage": 3675,
+  "range": 36
+}

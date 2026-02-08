@@ -1,0 +1,45 @@
+{
+  "$schema": "../../schemas/v1/spellcaster.schema.json",
+  "spellcaster_id": "astral_monk",
+  "name": "Astral Monk",
+  "class": "Duelist",
+  "category": "Spellcaster",
+  "image_required": true,
+  "difficulty": 3,
+  "abilities": {
+    "passive": [
+      {
+        "name": "Arcane Alignment",
+        "description": "All Astral spells recharge faster."
+      },
+      {
+        "name": "Last Light",
+        "description": "All damage dealt is increased against targets below half health."
+      },
+      {
+        "name": "Cosmic Air",
+        "description": "All flying creatures summoned by the Astral Monk are invisible."
+      }
+    ],
+    "primary": {
+      "name": "Astral Fists",
+      "description": "Pierces through enemies with colossal astral fists."
+    },
+    "defense": {
+      "name": "Veil Shift",
+      "description": "Turns invisible and move faster."
+    },
+    "ultimate": {
+      "name": "Dimension of Varani",
+      "description": "Conjures a time bubble that freezes enemy projectiles and creatures inside it."
+    }
+  },
+  "last_modified": "2026-02-05T18:34:05.939129Z",
+  "changelog": [
+    {
+      "version": "0.0.1",
+      "date": "2026-02-05T18:34:05.939129Z",
+      "description": "Initial Closed Beta 2 Data"
+    }
+  ]
+}

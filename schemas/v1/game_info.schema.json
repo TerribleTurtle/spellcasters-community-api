@@ -24,6 +24,18 @@
       "additionalProperties": true
     },
     "last_modified": { "type": "string", "format": "date-time" },
+    "changelog": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["date", "version", "description"],
+        "properties": {
+          "date": { "type": "string", "format": "date-time" },
+          "version": { "type": "string" },
+          "description": { "type": "string" }
+        }
+      }
+    },
     "meta": {
       "type": "object",
       "additionalProperties": true

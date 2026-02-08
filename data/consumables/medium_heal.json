@@ -1,10 +1,18 @@
 {
   "$schema": "../../schemas/v1/consumable.schema.json",
-  "game_version": "0.0.1",
-  "consumable_id": "medium_heal",
+  "entity_id": "medium_heal",
   "name": "Medium Heal",
   "effect_type": "Heal",
   "value": 50,
-  "ttl": 30,
-  "last_modified": "2026-02-04T15:27:05.217803Z"
+  "last_modified": "2026-02-04T15:27:05.217803Z",
+  "changelog": [
+    {
+      "version": "0.0.1",
+      "date": "2026-02-04T15:27:05.217803Z",
+      "description": "Initial Closed Beta 2 Data"
+    }
+  ],
+  "category": "Consumable",
+  "image_required": false,
+  "duration": 30
 }

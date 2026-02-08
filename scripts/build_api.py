@@ -13,10 +13,12 @@ DATA_DIR = "data"
 # Schema to Data Directory Map
 # Output FilenameBase -> Source Directory
 AGGREGATION_MAP = {
-    "units": "units",
-    "heroes": "heroes",
+    "spellcasters": "spellcasters",
     "consumables": "consumables",
-    "upgrades": "upgrades"
+    "upgrades": "upgrades",
+    "units": "units",
+    "spells": "spells",
+    "titans": "titans"
 }
 
 # Single File Copy
@@ -58,6 +60,8 @@ def main():
             "generated_at": datetime.now(timezone.utc).isoformat()
         }
     }
+    
+    errors = 0
 
     # Aggregate Collections
     for key, folder in AGGREGATION_MAP.items():
@@ -68,6 +72,7 @@ def main():
         if not os.path.exists(source_path):
             print(f"[WARN] Directory not found: {source_path}")
             all_data[key] = []
+            # Not a critical error, just a warning
             continue
 
         files = glob.glob(os.path.join(source_path, "*.json"))
@@ -75,6 +80,8 @@ def main():
             content = load_json(file)
             if content:
                 collection.append(content)
+            else:
+                errors += 1
         
         # Save individual aggregation
         save_json(f"{key}.json", collection)
@@ -89,11 +96,22 @@ def main():
             if content:
                 save_json(f"{key}.json", content)
                 all_data[key] = content
+            else:
+                errors += 1
         else:
             print(f"[WARN] File not found: {path}")
+            # Optional file missing is not always a critical error depending on logic,
+            # but usually single files are expected.
+            # strict mode: errors += 1 (?) -> Let's keep it as warn for now unless critical.
+
 
     # Save Master File
     save_json("all_data.json", all_data)
+    
+    if errors > 0:
+        print(f"[FAIL] Build failed with {errors} errors.")
+        sys.exit(1)
+        
     print("Build Complete.")
 
 if __name__ == "__main__":

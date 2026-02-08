@@ -1,1094 +1,444 @@
 [
   {
-    "game_version": "0.0.1",
-    "entity_id": "astral_nova",
-    "name": "Astral Nova",
-    "category": "Spell",
-    "magic_school": "Astral",
-    "description": "Massive projectile that deals heavy damage on impact.",
-    "image_required": true,
-    "health": 0,
-    "damage": 600,
-    "radius": 5.0,
-    "target_mask": [
-      "Ground",
-      "Air",
-      "Enemy",
-      "Structure"
-    ],
-    "tags": [
-      "Astral",
-      "Nuke",
-      "AoE"
-    ],
-    "movement_speed": 0,
-    "attack_speed": 0,
-    "range": 15,
-    "card_config": {
-      "rank": "IV",
-      "cost_population": 0,
-      "cost_charges": 1,
-      "initial_charges": 1,
-      "charge_time": 60,
-      "cast_time": 3.0
-    },
-    "last_modified": "2026-02-04T15:27:05.219729Z"
-  },
-  {
-    "game_version": "0.0.1",
-    "entity_id": "astral_shot",
-    "name": "Astral Shot",
-    "category": "Spell",
-    "magic_school": "Astral",
-    "description": "Rapid burst of projectiles.",
-    "image_required": true,
-    "health": 0,
-    "damage": 80,
-    "max_targets": 3,
-    "target_mask": [
-      "Ground",
-      "Air",
-      "Enemy"
-    ],
-    "tags": [
-      "Astral",
-      "Burst"
-    ],
-    "movement_speed": 0,
-    "attack_speed": 0,
-    "range": 14,
-    "card_config": {
-      "rank": "II",
-      "cost_population": 0,
-      "cost_charges": 1,
-      "initial_charges": 1,
-      "charge_time": 20,
-      "cast_time": 0.8
-    },
-    "last_modified": "2026-02-04T15:27:05.219959Z"
-  },
-  {
-    "$schema": "../../schemas/v1/unit.schema.json",
-    "game_version": "0.0.1",
     "entity_id": "astral_tower",
     "name": "Astral Tower",
     "category": "Building",
     "magic_school": "Astral",
-    "health": 1800,
-    "damage": 90,
-    "attack_speed": 1.2,
-    "movement_speed": 0,
-    "range": 18,
-    "movement_type": "Stationary",
-    "tags": [
-      "defensive",
-      "magic",
-      "energy"
-    ],
+    "rank": "III",
     "description": "Heavy defensive tower that targets enemies at medium range.",
-    "collision_radius": 35,
     "image_required": true,
-    "card_config": {
-      "rank": "III",
-      "cost_population": 1,
-      "cost_charges": 1,
-      "initial_charges": 3,
-      "charge_time": 40,
-      "cast_time": 3.5
-    },
-    "last_modified": "2026-02-04T15:27:05.220164Z"
+    "last_modified": "2026-02-08T09:49:16.842699+00:00",
+    "tags": [],
+    "changelog": [
+      {
+        "version": "0.0.1",
+        "date": "2026-02-08T09:49:16.842699+00:00",
+        "description": "Initial Closed Beta 2 Data"
+      }
+    ],
+    "damage": 50,
+    "health": 3500
   },
   {
-    "$schema": "../../schemas/v1/unit.schema.json",
-    "game_version": "0.0.1",
     "entity_id": "ballista",
     "name": "Ballista",
     "category": "Building",
-    "magic_school": "War",
-    "health": 1200,
-    "damage": 250,
-    "attack_speed": 0.4,
-    "movement_speed": 0,
-    "range": 30,
-    "movement_type": "Stationary",
-    "tags": [
-      "defensive",
-      "siege",
-      "piercing"
-    ],
-    "description": "A stationary siege engine that launches massive bolts at distant targets.",
-    "collision_radius": 30,
+    "magic_school": "Technomancy",
+    "rank": "II",
+    "description": "Static weapon that targets enemies at long range.",
     "image_required": true,
-    "card_config": {
-      "rank": "II",
-      "cost_population": 1,
-      "cost_charges": 1,
-      "initial_charges": 5,
-      "charge_time": 20,
-      "cast_time": 3.0
-    },
-    "last_modified": "2026-02-04T15:27:05.220367Z"
+    "last_modified": "2026-02-08T09:49:16.840179+00:00",
+    "tags": [],
+    "changelog": [
+      {
+        "version": "0.0.1",
+        "date": "2026-02-08T09:49:16.840179+00:00",
+        "description": "Initial Closed Beta 2 Data"
+      }
+    ],
+    "damage": 25,
+    "health": 300,
+    "range": 80
   },
   {
-    "$schema": "../../schemas/v1/unit.schema.json",
-    "game_version": "0.0.1",
     "entity_id": "crypt",
     "name": "Crypt",
     "category": "Building",
-    "magic_school": "Dark",
-    "health": 2000,
-    "damage": 0,
-    "attack_speed": 0,
-    "movement_speed": 0,
-    "range": 0,
-    "movement_type": "Stationary",
-    "tags": [
-      "undead",
-      "spawner",
-      "structure"
-    ],
+    "magic_school": "Necromancy",
+    "rank": "III",
     "description": "Shrine that continuously summons new Skeleton Warriors.",
-    "collision_radius": 40,
     "image_required": true,
-    "card_config": {
-      "rank": "III",
-      "cost_population": 1,
-      "cost_charges": 1,
-      "initial_charges": 3,
-      "charge_time": 40,
-      "cast_time": 2.5
-    },
-    "last_modified": "2026-02-04T15:27:05.220766Z"
+    "last_modified": "2026-02-08T09:49:16.843010+00:00",
+    "tags": [],
+    "changelog": [
+      {
+        "version": "0.0.1",
+        "date": "2026-02-08T09:49:16.843010+00:00",
+        "description": "Initial Closed Beta 2 Data"
+      }
+    ],
+    "health": 1000
   },
   {
-    "$schema": "../../schemas/v1/unit.schema.json",
-    "game_version": "0.0.1",
     "entity_id": "dryad",
     "name": "Dryad",
     "category": "Creature",
     "magic_school": "Holy",
-    "health": 2250,
-    "damage": 12,
-    "heal_amount": 150,
-    "attack_speed": 1.0,
-    "movement_speed": 3,
-    "range": 1,
-    "movement_type": "Ground",
-    "tags": [],
-    "description": "Support creature that heals allies. Uses elemental attacks when infused",
-    "card_config": {
-      "rank": "II",
-      "cost_population": 1,
-      "cost_charges": 1,
-      "initial_charges": 5,
-      "charge_time": 20,
-      "cast_time": 2.0
-    },
-    "last_modified": "2026-02-04T15:27:05.220986Z"
-  },
-  {
-    "game_version": "0.0.1",
-    "entity_id": "earthquake",
-    "name": "Earthquake",
-    "category": "Spell",
-    "magic_school": "Elemental",
-    "description": "Ground shockwave that damages structures and staggers creatures.",
+    "rank": "II",
+    "description": "Support creature that heals allies. Uses elemental attacks when infused.",
     "image_required": true,
-    "health": 0,
-    "damage": 300,
-    "radius": 10.0,
-    "target_mask": [
-      "Ground",
-      "Enemy",
-      "Structure"
+    "last_modified": "2026-02-08T09:49:16.840490+00:00",
+    "tags": [],
+    "changelog": [
+      {
+        "version": "0.0.1",
+        "date": "2026-02-08T09:49:16.840490+00:00",
+        "description": "Initial Closed Beta 2 Data"
+      }
     ],
-    "tags": [
-      "Earth",
-      "AoE",
-      "Siege"
-    ],
-    "movement_speed": 0,
-    "attack_speed": 0,
-    "range": 0,
-    "card_config": {
-      "rank": "III",
-      "cost_population": 0,
-      "cost_charges": 1,
-      "initial_charges": 1,
-      "charge_time": 40,
-      "cast_time": 2.0
-    },
-    "last_modified": "2026-02-04T15:27:05.221372Z"
+    "damage": 12,
+    "health": 225,
+    "movement_speed": 3,
+    "heal_amount": 150
   },
   {
-    "$schema": "../../schemas/v1/unit.schema.json",
-    "game_version": "0.0.1",
     "entity_id": "earth_golem",
     "name": "Earth Golem",
     "category": "Creature",
     "magic_school": "Elemental",
-    "health": 6500,
-    "damage": 25,
-    "attack_speed": 1.0,
-    "movement_speed": 2,
-    "range": 1,
-    "movement_type": "Ground",
+    "rank": "II",
+    "description": "Strong melee unit that resists damage from large enemies.",
+    "image_required": true,
+    "last_modified": "2026-02-08T09:49:16.840800+00:00",
     "tags": [],
-    "description": "Strong melee unit that resists damage from large enemies",
-    "card_config": {
-      "rank": "II",
-      "cost_population": 1,
-      "cost_charges": 1,
-      "initial_charges": 5,
-      "charge_time": 20,
-      "cast_time": 2.0
-    },
-    "last_modified": "2026-02-04T15:27:05.221175Z"
+    "changelog": [
+      {
+        "version": "0.0.1",
+        "date": "2026-02-08T09:49:16.840800+00:00",
+        "description": "Initial Closed Beta 2 Data"
+      }
+    ],
+    "damage": 25,
+    "health": 650,
+    "movement_speed": 2
   },
   {
-    "$schema": "../../schemas/v1/unit.schema.json",
-    "game_version": "0.0.1",
     "entity_id": "faerie",
     "name": "Faerie",
     "category": "Creature",
     "magic_school": "Astral",
-    "health": 1000,
+    "rank": "I",
+    "description": "Stealthy flying ranged creature that turns invisible out of combat.",
+    "image_required": true,
+    "last_modified": "2026-02-08T09:49:16.836151+00:00",
+    "tags": [],
+    "changelog": [
+      {
+        "version": "0.0.1",
+        "date": "2026-02-08T09:49:16.836151+00:00",
+        "description": "Initial Closed Beta 2 Data"
+      }
+    ],
     "damage": 9,
-    "attack_speed": 1.0,
-    "movement_speed": 3,
+    "health": 100,
     "range": 25,
-    "movement_type": "Fly",
-    "tags": [],
-    "description": "Stealthy flying ranged creature that turns invisible out of combat",
-    "card_config": {
-      "rank": "I",
-      "cost_population": 1,
-      "cost_charges": 1,
-      "initial_charges": 10,
-      "charge_time": 10,
-      "cast_time": 2.0
-    },
-    "last_modified": "2026-02-04T15:27:05.221570Z"
+    "movement_speed": 3
   },
   {
-    "game_version": "0.0.1",
-    "entity_id": "fireball",
-    "name": "Fireball",
-    "category": "Spell",
-    "magic_school": "Elemental",
-    "description": "Explodes in a fiery ball, dealing damage to all enemies in the area.",
-    "image_required": true,
-    "health": 0,
-    "damage": 250,
-    "radius": 3.0,
-    "target_mask": [
-      "Ground",
-      "Air",
-      "Structure",
-      "Enemy"
-    ],
-    "tags": [
-      "Fire",
-      "AoE",
-      "Destruction"
-    ],
-    "movement_speed": 0,
-    "attack_speed": 0,
-    "range": 8,
-    "card_config": {
-      "rank": "III",
-      "cost_population": 0,
-      "cost_charges": 1,
-      "initial_charges": 1,
-      "charge_time": 40,
-      "cast_time": 1.0
-    },
-    "last_modified": "2026-02-04T15:27:05.222182Z"
-  },
-  {
-    "game_version": "0.0.1",
-    "entity_id": "fire_rain",
-    "name": "Fire Rain",
-    "category": "Spell",
-    "magic_school": "Elemental",
-    "description": "Fire projectiles that deal continuous damage over a wide area.",
-    "image_required": true,
-    "health": 0,
-    "damage": 100,
-    "duration": 5.0,
-    "radius": 8.0,
-    "tick_rate": 0.5,
-    "target_mask": [
-      "Ground",
-      "Enemy",
-      "Structure"
-    ],
-    "tags": [
-      "Fire",
-      "AoE",
-      "DoT"
-    ],
-    "movement_speed": 0,
-    "attack_speed": 0,
-    "range": 20,
-    "card_config": {
-      "rank": "IV",
-      "cost_population": 0,
-      "cost_charges": 1,
-      "initial_charges": 1,
-      "charge_time": 60,
-      "cast_time": 2.5
-    },
-    "last_modified": "2026-02-04T15:27:05.221764Z"
-  },
-  {
-    "game_version": "0.0.1",
-    "entity_id": "fire_ray",
-    "name": "Fire Ray",
-    "category": "Spell",
-    "magic_school": "Elemental",
-    "description": "Focused beam that deals low Fire Damage.",
-    "image_required": true,
-    "health": 0,
-    "damage": 100,
-    "radius": 1.0,
-    "duration": 2.0,
-    "tick_rate": 0.2,
-    "target_mask": [
-      "Ground",
-      "Air",
-      "Enemy"
-    ],
-    "tags": [
-      "Fire",
-      "Beam",
-      "SingleTarget"
-    ],
-    "movement_speed": 0,
-    "attack_speed": 0,
-    "range": 12,
-    "card_config": {
-      "rank": "I",
-      "cost_population": 0,
-      "cost_charges": 1,
-      "initial_charges": 1,
-      "charge_time": 10,
-      "cast_time": 0.5
-    },
-    "last_modified": "2026-02-04T15:27:05.221980Z"
-  },
-  {
-    "game_version": "0.0.1",
-    "entity_id": "flame_surge",
-    "name": "Flame Surge",
-    "category": "Spell",
-    "magic_school": "War",
-    "description": "Fire pulse that burns enemies and infuses allies.",
-    "image_required": true,
-    "health": 0,
-    "damage": 200,
-    "radius": 5.0,
-    "target_mask": [
-      "Ground",
-      "Enemy",
-      "Ally"
-    ],
-    "tags": [
-      "Fire",
-      "Buff",
-      "AoE"
-    ],
-    "movement_speed": 0,
-    "attack_speed": 0,
-    "range": 0,
-    "card_config": {
-      "rank": "III",
-      "cost_population": 0,
-      "cost_charges": 1,
-      "initial_charges": 1,
-      "charge_time": 40,
-      "cast_time": 1.0
-    },
-    "last_modified": "2026-02-04T15:27:05.222378Z"
-  },
-  {
-    "game_version": "0.0.1",
-    "entity_id": "frost_surge",
-    "name": "Frost Surge",
-    "category": "Spell",
-    "magic_school": "Frost",
-    "description": "Ice pulse that freezes enemies and infuses nearby allies.",
-    "image_required": true,
-    "health": 0,
-    "damage": 150,
-    "radius": 6.0,
-    "target_mask": [
-      "Ground",
-      "Enemy",
-      "Ally"
-    ],
-    "tags": [
-      "Frost",
-      "Control",
-      "Buff"
-    ],
-    "movement_speed": 0,
-    "attack_speed": 0,
-    "range": 0,
-    "card_config": {
-      "rank": "III",
-      "cost_population": 0,
-      "cost_charges": 1,
-      "initial_charges": 1,
-      "charge_time": 40,
-      "cast_time": 1.0
-    },
-    "last_modified": "2026-02-04T15:27:05.222571Z"
-  },
-  {
-    "$schema": "../../schemas/v1/unit.schema.json",
-    "game_version": "0.0.1",
-    "entity_id": "gaia_beast",
-    "name": "Gaia Beast",
-    "category": "Titan",
-    "magic_school": "Elemental",
-    "health": 20000,
-    "damage": 80,
-    "passive_health_regen": 50,
-    "attack_speed": 1.0,
-    "movement_speed": 4,
-    "range": 1,
-    "movement_type": "Ground",
-    "tags": [],
-    "description": "The Wild Titan. Crushes all structures as it marches toward the Lifestones.",
-    "card_config": {
-      "rank": "III",
-      "cost_population": 0,
-      "cost_charges": 1,
-      "initial_charges": 0,
-      "charge_time": 120,
-      "cast_time": 2.0
-    },
-    "last_modified": "2026-02-05T04:03:11.642389Z"
-  },
-  {
-    "$schema": "../../schemas/v1/unit.schema.json",
-    "game_version": "0.0.1",
     "entity_id": "giant_shielder",
     "name": "Giant Shielder",
     "category": "Creature",
-    "magic_school": "War",
-    "health": 1500,
-    "damage": 30,
-    "attack_speed": 1.0,
-    "movement_speed": 3,
-    "range": 1,
-    "movement_type": "Ground",
-    "tags": [],
-    "description": "Slow giant that protects allies with a massive shield",
-    "card_config": {
-      "rank": "III",
-      "cost_population": 1,
-      "cost_charges": 1,
-      "initial_charges": 3,
-      "charge_time": 40,
-      "cast_time": 2.0
-    },
-    "last_modified": "2026-02-04T15:27:05.222975Z"
-  },
-  {
-    "game_version": "0.0.1",
-    "entity_id": "grand_lightning",
-    "name": "Grand Lightning",
-    "category": "Spell",
-    "magic_school": "Lightning",
-    "description": "Thunderstrike that deals extreme Lightning damage to a target.",
+    "magic_school": "Holy",
+    "rank": "III",
+    "description": "Slow giant that protects allies with a massive shield.",
     "image_required": true,
-    "health": 0,
-    "damage": 800,
-    "target_mask": [
-      "Ground",
-      "Air",
-      "Enemy",
-      "Structure"
+    "last_modified": "2026-02-08T09:49:16.844628+00:00",
+    "tags": [],
+    "changelog": [
+      {
+        "version": "0.0.1",
+        "date": "2026-02-08T09:49:16.844628+00:00",
+        "description": "Initial Closed Beta 2 Data"
+      }
     ],
-    "tags": [
-      "Lightning",
-      "Nuke",
-      "SingleTarget"
-    ],
-    "movement_speed": 0,
-    "attack_speed": 0,
-    "range": 18,
-    "card_config": {
-      "rank": "IV",
-      "cost_population": 0,
-      "cost_charges": 1,
-      "initial_charges": 1,
-      "charge_time": 60,
-      "cast_time": 2.0
-    },
-    "last_modified": "2026-02-04T15:27:05.223169Z"
+    "damage": 30,
+    "health": 1800,
+    "movement_speed": 3
   },
   {
-    "$schema": "../../schemas/v1/unit.schema.json",
-    "game_version": "0.0.1",
     "entity_id": "harpy",
     "name": "Harpy",
     "category": "Creature",
-    "magic_school": "Frost",
-    "health": 1000,
-    "damage": 12,
-    "attack_speed": 1.0,
-    "movement_speed": 8,
-    "range": 1,
-    "movement_type": "Fly",
+    "magic_school": "Wild",
+    "rank": "I",
+    "description": "Agile flying creature that excels at defeating ground units.",
+    "image_required": true,
+    "last_modified": "2026-02-08T09:49:16.837000+00:00",
     "tags": [],
-    "description": "Agile flying creature that excels at defeating ground units",
-    "card_config": {
-      "rank": "I",
-      "cost_population": 1,
-      "cost_charges": 1,
-      "initial_charges": 10,
-      "charge_time": 10,
-      "cast_time": 2.0
-    },
-    "last_modified": "2026-02-04T15:27:05.223362Z"
+    "changelog": [
+      {
+        "version": "0.0.1",
+        "date": "2026-02-08T09:49:16.837000+00:00",
+        "description": "Initial Closed Beta 2 Data"
+      }
+    ],
+    "damage": 12,
+    "health": 100,
+    "movement_speed": 8
   },
   {
-    "$schema": "../../schemas/v1/unit.schema.json",
-    "game_version": "0.0.1",
     "entity_id": "harpy_nest",
     "name": "Harpy Nest",
     "category": "Building",
-    "magic_school": "Frost",
-    "health": 1500,
-    "damage": 0,
-    "attack_speed": 1.0,
-    "movement_speed": 0,
-    "range": 1,
-    "movement_type": "Stationary",
-    "tags": [],
+    "magic_school": "Wild",
+    "rank": "III",
     "description": "Nest that continuously spawns new Harpies.",
-    "collision_radius": 2,
-    "card_config": {
-      "rank": "I",
-      "cost_population": 1,
-      "cost_charges": 1,
-      "initial_charges": 10,
-      "charge_time": 10,
-      "cast_time": 2.0
-    },
-    "last_modified": "2026-02-04T15:27:05.223553Z"
-  },
-  {
-    "game_version": "0.0.1",
-    "entity_id": "heal_ray",
-    "name": "Heal Ray",
-    "category": "Spell",
-    "magic_school": "Holy",
-    "description": "Healing ray can be aimed at the ground to restore allies in the area.",
     "image_required": true,
-    "health": 0,
-    "damage": 0,
-    "heal_amount": 50,
-    "radius": 2.0,
-    "duration": 3.0,
-    "tick_rate": 0.5,
-    "target_mask": [
-      "Ground",
-      "Ally"
+    "last_modified": "2026-02-08T09:49:16.844994+00:00",
+    "tags": [],
+    "changelog": [
+      {
+        "version": "0.0.1",
+        "date": "2026-02-08T09:49:16.844994+00:00",
+        "description": "Initial Closed Beta 2 Data"
+      }
     ],
-    "tags": [
-      "Holy",
-      "Heal",
-      "Beam"
-    ],
-    "movement_speed": 0,
-    "attack_speed": 0,
-    "range": 12,
-    "card_config": {
-      "rank": "I",
-      "cost_population": 0,
-      "cost_charges": 1,
-      "initial_charges": 1,
-      "charge_time": 10,
-      "cast_time": 0.5
-    },
-    "last_modified": "2026-02-04T15:27:05.223742Z"
+    "health": 750
   },
   {
-    "$schema": "../../schemas/v1/unit.schema.json",
-    "game_version": "0.0.1",
     "entity_id": "juggernaut",
     "name": "Juggernaut",
     "category": "Creature",
     "magic_school": "War",
-    "health": 10000,
-    "damage": 50,
-    "attack_speed": 1.0,
-    "movement_speed": 3,
-    "range": 1,
-    "movement_type": "Ground",
+    "rank": "IV",
+    "description": "Colossal creature that deals massive damage to structures.",
+    "image_required": true,
+    "last_modified": "2026-02-08T09:49:16.847802+00:00",
     "tags": [],
-    "description": "Colossal creature that deals massive damage to structures",
-    "card_config": {
-      "rank": "IV",
-      "cost_population": 1,
-      "cost_charges": 1,
-      "initial_charges": 1,
-      "charge_time": 60,
-      "cast_time": 2.0
-    },
-    "last_modified": "2026-02-04T15:27:05.224187Z"
+    "changelog": [
+      {
+        "version": "0.0.1",
+        "date": "2026-02-08T09:49:16.847802+00:00",
+        "description": "Initial Closed Beta 2 Data"
+      }
+    ],
+    "damage": 100,
+    "health": 10000,
+    "movement_speed": 3
   },
   {
-    "$schema": "../../schemas/v1/unit.schema.json",
-    "game_version": "0.0.1",
     "entity_id": "lich",
     "name": "Lich",
     "category": "Creature",
-    "magic_school": "Dark",
-    "health": 500,
-    "damage": 5,
-    "attack_speed": 1.0,
-    "movement_speed": 5,
-    "range": 1,
-    "movement_type": "Ground",
+    "magic_school": "Necromancy",
+    "rank": "II",
+    "description": "Undead caster that inflicts curses to enemies, increasing the damage they take and reducing their movement speed.",
+    "image_required": true,
+    "last_modified": "2026-02-08T09:49:16.841271+00:00",
     "tags": [],
-    "description": "Undead caster that inflict curses to enemies, increasing the damage they take and reducing their movement speed.",
-    "card_config": {
-      "rank": "II",
-      "cost_population": 1,
-      "cost_charges": 1,
-      "initial_charges": 5,
-      "charge_time": 20,
-      "cast_time": 2.0
-    },
-    "last_modified": "2026-02-04T15:27:05.224365Z"
+    "changelog": [
+      {
+        "version": "0.0.1",
+        "date": "2026-02-08T09:49:16.841271+00:00",
+        "description": "Initial Closed Beta 2 Data"
+      }
+    ],
+    "damage": 5,
+    "health": 500,
+    "movement_speed": 5
   },
   {
-    "$schema": "../../schemas/v1/unit.schema.json",
-    "game_version": "0.0.1",
     "entity_id": "lizard_archer",
     "name": "Lizard Archer",
     "category": "Creature",
     "magic_school": "War",
-    "health": 850,
-    "damage": 8,
-    "attack_speed": 1.0,
-    "movement_speed": 3,
-    "range": 35,
-    "movement_type": "Ground",
+    "rank": "I",
+    "description": "Long-range fighter that deals bonus damage to flying enemies.",
+    "image_required": true,
+    "last_modified": "2026-02-08T09:49:16.837714+00:00",
     "tags": [],
-    "description": "Long-range fighter that deals bonus damage to flying enemies",
-    "card_config": {
-      "rank": "I",
-      "cost_population": 1,
-      "cost_charges": 1,
-      "initial_charges": 10,
-      "charge_time": 10,
-      "cast_time": 2.0
-    },
-    "last_modified": "2026-02-04T15:27:05.224550Z"
+    "changelog": [
+      {
+        "version": "0.0.1",
+        "date": "2026-02-08T09:49:16.837714+00:00",
+        "description": "Initial Closed Beta 2 Data"
+      }
+    ],
+    "damage": 8,
+    "health": 85,
+    "range": 36,
+    "movement_speed": 3
   },
   {
-    "$schema": "../../schemas/v1/unit.schema.json",
-    "game_version": "0.0.1",
     "entity_id": "ogre",
     "name": "Ogre",
     "category": "Creature",
     "magic_school": "War",
-    "health": 2300,
-    "damage": 70,
-    "attack_speed": 1.0,
-    "movement_speed": 3,
-    "range": 1,
-    "movement_type": "Ground",
-    "tags": [],
-    "description": "Mighty warrior that crushes target areas with a hammer",
-    "card_config": {
-      "rank": "III",
-      "cost_population": 1,
-      "cost_charges": 1,
-      "initial_charges": 3,
-      "charge_time": 40,
-      "cast_time": 2.0
-    },
-    "last_modified": "2026-02-04T15:27:05.224732Z"
-  },
-  {
-    "game_version": "0.0.1",
-    "entity_id": "poison_grenade",
-    "name": "Poison Grenade",
-    "category": "Spell",
-    "magic_school": "Dark",
-    "description": "Grenade that creates a Poison cloud over the target area.",
+    "rank": "III",
+    "description": "Mighty warrior that crushes target areas with a hammer.",
     "image_required": true,
-    "health": 0,
-    "damage": 50,
-    "duration": 8.0,
-    "radius": 4.0,
-    "tick_rate": 1.0,
-    "target_mask": [
-      "Ground",
-      "Enemy"
+    "last_modified": "2026-02-08T09:49:16.845391+00:00",
+    "tags": [],
+    "changelog": [
+      {
+        "version": "0.0.1",
+        "date": "2026-02-08T09:49:16.845391+00:00",
+        "description": "Initial Closed Beta 2 Data"
+      }
     ],
-    "tags": [
-      "Poison",
-      "AoE",
-      "DoT"
-    ],
-    "movement_speed": 0,
-    "attack_speed": 0,
-    "range": 10,
-    "card_config": {
-      "rank": "III",
-      "cost_population": 0,
-      "cost_charges": 1,
-      "initial_charges": 1,
-      "charge_time": 40,
-      "cast_time": 1.0
-    },
-    "last_modified": "2026-02-04T15:27:05.224941Z"
+    "damage": 70,
+    "health": 2300,
+    "movement_speed": 3
   },
   {
-    "$schema": "../../schemas/v1/unit.schema.json",
-    "game_version": "0.0.1",
     "entity_id": "rampart",
     "name": "Rampart",
     "category": "Building",
-    "magic_school": "War",
-    "health": 5000,
-    "damage": 0,
-    "attack_speed": 0,
-    "movement_speed": 0,
-    "range": 0,
-    "movement_type": "Stationary",
-    "tags": [
-      "defensive",
-      "structure",
-      "fortification"
-    ],
-    "description": "A reinforced wall section designed to hold back enemy waves.",
-    "collision_radius": 50,
-    "image_required": true,
-    "card_config": {
-      "rank": "II",
-      "cost_population": 1,
-      "cost_charges": 1,
-      "initial_charges": 5,
-      "charge_time": 20,
-      "cast_time": 1.0
-    },
-    "last_modified": "2026-02-04T15:27:05.225136Z"
-  },
-  {
-    "game_version": "0.0.1",
-    "entity_id": "resurrection",
-    "name": "Resurrection",
-    "category": "Spell",
     "magic_school": "Holy",
-    "description": "Magic circle that resurrects creatures with partial health.",
+    "rank": "II",
+    "description": "Defensive wall that blocks enemy paths.",
     "image_required": true,
-    "health": 0,
-    "damage": 0,
-    "radius": 6.0,
-    "target_mask": [
-      "Ground",
-      "Ally",
-      "Deceased"
+    "last_modified": "2026-02-08T09:49:16.841572+00:00",
+    "tags": [],
+    "changelog": [
+      {
+        "version": "0.0.1",
+        "date": "2026-02-08T09:49:16.841572+00:00",
+        "description": "Initial Closed Beta 2 Data"
+      }
     ],
-    "tags": [
-      "Holy",
-      "Revive"
-    ],
-    "movement_speed": 0,
-    "attack_speed": 0,
-    "range": 15,
-    "card_config": {
-      "rank": "IV",
-      "cost_population": 0,
-      "cost_charges": 1,
-      "initial_charges": 1,
-      "charge_time": 60,
-      "cast_time": 4.0
-    },
-    "last_modified": "2026-02-04T15:27:05.225328Z"
+    "health": 250
   },
   {
-    "$schema": "../../schemas/v1/unit.schema.json",
-    "game_version": "0.0.1",
     "entity_id": "rocket_soldier",
     "name": "Rocket Soldier",
     "category": "Creature",
-    "magic_school": "War",
-    "health": 2200,
-    "damage": 10,
-    "attack_speed": 1.0,
-    "movement_speed": 4,
-    "range": 15,
-    "movement_type": "Ground",
+    "magic_school": "Technomancy",
+    "rank": "I",
+    "description": "Medium-range soldier that deals bonus damage to structures.",
+    "image_required": true,
+    "last_modified": "2026-02-08T09:49:16.838054+00:00",
     "tags": [],
-    "description": "Medium-range soldier that deals bonus damage to buildings",
-    "card_config": {
-      "rank": "I",
-      "cost_population": 1,
-      "cost_charges": 1,
-      "initial_charges": 10,
-      "charge_time": 10,
-      "cast_time": 2.0
-    },
-    "last_modified": "2026-02-04T15:27:05.225532Z"
+    "changelog": [
+      {
+        "version": "0.0.1",
+        "date": "2026-02-08T09:49:16.838054+00:00",
+        "description": "Initial Closed Beta 2 Data"
+      }
+    ],
+    "damage": 10,
+    "health": 220,
+    "range": 16,
+    "movement_speed": 4
   },
   {
-    "$schema": "../../schemas/v1/unit.schema.json",
-    "game_version": "0.0.1",
     "entity_id": "ruin_spider",
     "name": "Ruin Spider",
     "category": "Creature",
-    "magic_school": "Dark",
-    "health": 850,
-    "damage": 20,
-    "attack_speed": 1.0,
-    "movement_speed": 7,
-    "range": 1,
-    "movement_type": "Ground",
-    "tags": [],
-    "description": "Fast creature that explodes on contact, dealing bonus damage to buildings",
-    "card_config": {
-      "rank": "I",
-      "cost_population": 1,
-      "cost_charges": 1,
-      "initial_charges": 10,
-      "charge_time": 10,
-      "cast_time": 2.0
-    },
-    "last_modified": "2026-02-04T15:27:05.225722Z"
-  },
-  {
-    "game_version": "0.0.1",
-    "entity_id": "sacrifice",
-    "name": "Sacrifice",
-    "category": "Spell",
-    "magic_school": "Dark",
-    "description": "Dark ritual that recalls allies to recharge summons.",
+    "magic_school": "Necromancy",
+    "rank": "I",
+    "description": "Fast creature that explodes on contact, dealing bonus damage to structures.",
     "image_required": true,
-    "health": 0,
-    "damage": 9999,
-    "radius": 4.0,
-    "target_mask": [
-      "Ground",
-      "Ally"
+    "last_modified": "2026-02-08T09:49:16.838362+00:00",
+    "tags": [],
+    "changelog": [
+      {
+        "version": "0.0.1",
+        "date": "2026-02-08T09:49:16.838362+00:00",
+        "description": "Initial Closed Beta 2 Data"
+      }
     ],
-    "tags": [
-      "Dark",
-      "Ritual",
-      "Recall"
-    ],
-    "movement_speed": 0,
-    "attack_speed": 0,
-    "range": 5,
-    "card_config": {
-      "rank": "I",
-      "cost_population": 0,
-      "cost_charges": 1,
-      "initial_charges": 1,
-      "charge_time": 10,
-      "cast_time": 1.0
-    },
-    "last_modified": "2026-02-04T15:27:05.225927Z"
+    "damage": 20,
+    "health": 85,
+    "movement_speed": 7
   },
   {
-    "$schema": "../../schemas/v1/unit.schema.json",
-    "game_version": "0.0.1",
     "entity_id": "skeleton_warrior",
     "name": "Skeleton Warrior",
     "category": "Creature",
-    "magic_school": "Dark",
-    "health": 2000,
-    "damage": 15,
-    "attack_speed": 1.0,
-    "movement_speed": 3,
-    "range": 1,
-    "movement_type": "Ground",
+    "magic_school": "Necromancy",
+    "rank": "I",
+    "description": "Undead soldier that captures altars quickly in large groups.",
+    "image_required": true,
+    "last_modified": "2026-02-08T09:49:16.838860+00:00",
     "tags": [],
-    "description": "Undead soldier that captures altars quickly in large groups",
-    "card_config": {
-      "rank": "I",
-      "cost_population": 1,
-      "cost_charges": 1,
-      "initial_charges": 10,
-      "charge_time": 10,
-      "cast_time": 2.0
-    },
-    "last_modified": "2026-02-04T15:27:05.226135Z"
+    "changelog": [
+      {
+        "version": "0.0.1",
+        "date": "2026-02-08T09:49:16.838860+00:00",
+        "description": "Initial Closed Beta 2 Data"
+      }
+    ],
+    "damage": 15,
+    "health": 200,
+    "movement_speed": 3
   },
   {
-    "$schema": "../../schemas/v1/unit.schema.json",
-    "game_version": "0.0.1",
     "entity_id": "steam_tank",
     "name": "Steam Tank",
     "category": "Creature",
-    "magic_school": "War",
-    "health": 2500,
-    "damage": 120,
-    "attack_speed": 0.6,
-    "movement_speed": 180,
-    "range": 22,
-    "movement_type": "Ground",
-    "tags": [
-      "mechanical",
-      "siege",
-      "ranged"
-    ],
-    "description": "A heavily armored steam-powered war machine capable of crushing infantry and breaching walls.",
-    "collision_radius": 45,
+    "magic_school": "Technomancy",
+    "rank": "III",
+    "description": "Long-range unit that deals heavy damage to a target.",
     "image_required": true,
-    "card_config": {
-      "rank": "III",
-      "cost_population": 1,
-      "cost_charges": 1,
-      "initial_charges": 3,
-      "charge_time": 40,
-      "cast_time": 4.0
-    },
-    "last_modified": "2026-02-04T15:27:05.226304Z"
+    "last_modified": "2026-02-08T09:49:16.846123+00:00",
+    "tags": [],
+    "changelog": [
+      {
+        "version": "0.0.1",
+        "date": "2026-02-08T09:49:16.846123+00:00",
+        "description": "Initial Closed Beta 2 Data"
+      }
+    ],
+    "damage": 40,
+    "health": 130,
+    "range": 75,
+    "movement_speed": 3
   },
   {
-    "$schema": "../../schemas/v1/unit.schema.json",
-    "game_version": "0.0.1",
     "entity_id": "stone_behemoth",
     "name": "Stone Behemoth",
     "category": "Creature",
     "magic_school": "Elemental",
-    "health": 2100,
-    "damage": 40,
-    "attack_speed": 1.0,
-    "movement_speed": 2,
-    "range": 55,
-    "movement_type": "Ground",
-    "tags": [],
-    "description": "Siege unit that hurls long-range boulders for heavy area damage",
-    "card_config": {
-      "rank": "III",
-      "cost_population": 1,
-      "cost_charges": 1,
-      "initial_charges": 3,
-      "charge_time": 40,
-      "cast_time": 2.0
-    },
-    "last_modified": "2026-02-04T15:27:05.226502Z"
-  },
-  {
-    "$schema": "../../schemas/v1/unit.schema.json",
-    "game_version": "0.0.1",
-    "entity_id": "thanatos",
-    "name": "Thanatos",
-    "category": "Titan",
-    "magic_school": "Dark",
-    "health": 15000,
-    "damage": 40,
-    "attack_speed": 1.0,
-    "movement_speed": 4,
-    "range": 1,
-    "movement_type": "Ground",
-    "tags": [],
-    "description": "The Titan of Death inflict curses to enemies, increasing the damage they take and reducing their movement speed.",
-    "card_config": {
-      "rank": "III",
-      "cost_population": 0,
-      "cost_charges": 1,
-      "initial_charges": 0,
-      "charge_time": 120,
-      "cast_time": 2.0
-    },
-    "last_modified": "2026-02-05T04:02:50.559559Z"
-  },
-  {
-    "game_version": "0.0.1",
-    "entity_id": "thunder_ray",
-    "name": "Thunder Ray",
-    "category": "Spell",
-    "magic_school": "Lightning",
-    "description": "Focused beam that deals low Lightning Damage.",
+    "rank": "III",
+    "description": "Siege unit that hurls long-range boulders for heavy area damage.",
     "image_required": true,
-    "health": 0,
-    "damage": 100,
-    "radius": 1.0,
-    "duration": 2.0,
-    "tick_rate": 0.2,
-    "target_mask": [
-      "Ground",
-      "Air",
-      "Enemy"
+    "last_modified": "2026-02-08T09:49:16.846434+00:00",
+    "tags": [],
+    "changelog": [
+      {
+        "version": "0.0.1",
+        "date": "2026-02-08T09:49:16.846434+00:00",
+        "description": "Initial Closed Beta 2 Data"
+      }
     ],
-    "tags": [
-      "Lightning",
-      "Beam",
-      "SingleTarget"
-    ],
-    "movement_speed": 0,
-    "attack_speed": 0,
-    "range": 12,
-    "card_config": {
-      "rank": "I",
-      "cost_population": 0,
-      "cost_charges": 1,
-      "initial_charges": 1,
-      "charge_time": 10,
-      "cast_time": 0.5
-    },
-    "last_modified": "2026-02-04T15:27:05.226898Z"
+    "damage": 40,
+    "health": 210,
+    "range": 55,
+    "movement_speed": 2
   },
   {
-    "$schema": "../../schemas/v1/unit.schema.json",
-    "game_version": "0.0.1",
     "entity_id": "wolven_hunter",
     "name": "Wolven Hunter",
     "category": "Creature",
     "magic_school": "War",
-    "health": 340,
-    "damage": 16,
-    "attack_speed": 1.0,
-    "movement_speed": 3,
-    "range": 750,
-    "movement_type": "Ground",
+    "rank": "II",
+    "description": "Hunter unit that fires powerful long-range bolts.",
+    "image_required": true,
+    "last_modified": "2026-02-08T09:49:16.841893+00:00",
     "tags": [],
-    "description": "Hunter unit that fires powerful long-range bolts",
-    "card_config": {
-      "rank": "II",
-      "cost_population": 1,
-      "cost_charges": 1,
-      "initial_charges": 5,
-      "charge_time": 20,
-      "cast_time": 2.0
-    },
-    "last_modified": "2026-02-04T15:27:05.227094Z"
+    "changelog": [
+      {
+        "version": "0.0.1",
+        "date": "2026-02-08T09:49:16.841893+00:00",
+        "description": "Initial Closed Beta 2 Data"
+      }
+    ],
+    "damage": 16,
+    "health": 340,
+    "range": 75,
+    "movement_speed": 3
   },
   {
-    "$schema": "../../schemas/v1/unit.schema.json",
-    "game_version": "0.0.1",
     "entity_id": "wyvern",
     "name": "Wyvern",
     "category": "Creature",
-    "magic_school": "Elemental",
-    "health": 2200,
-    "damage": 19,
-    "attack_speed": 1.0,
-    "movement_speed": 7,
-    "range": 35,
-    "movement_type": "Fly",
+    "magic_school": "Wild",
+    "rank": "II",
+    "description": "Flying dragonkin that attacks with mid-range projectiles.",
+    "image_required": true,
+    "last_modified": "2026-02-08T09:49:16.842389+00:00",
     "tags": [],
-    "description": "Flying dragonkin that attacks with mid-range projectiles",
-    "card_config": {
-      "rank": "II",
-      "cost_population": 1,
-      "cost_charges": 1,
-      "initial_charges": 5,
-      "charge_time": 20,
-      "cast_time": 2.0
-    },
-    "last_modified": "2026-02-04T15:27:05.227275Z"
+    "changelog": [
+      {
+        "version": "0.0.1",
+        "date": "2026-02-08T09:49:16.842389+00:00",
+        "description": "Initial Closed Beta 2 Data"
+      }
+    ],
+    "damage": 19,
+    "health": 220,
+    "range": 36,
+    "movement_speed": 7
   }
 ]

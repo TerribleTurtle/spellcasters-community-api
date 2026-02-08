@@ -1,6 +1,0 @@
-This directory is reserved for game mechanics data such as:
-- Global Leveling Curves (XP per level)
-- Match Settings (Gold per second, Respawn times)
-- Population Limit Baselines (if not Hero specific)
-
-Currently awaiting hard data.

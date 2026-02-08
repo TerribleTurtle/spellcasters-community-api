@@ -22,21 +22,55 @@ We need you! If you see a Unit with a missing description or a placeholder icon,
 
 ### 🛠️ Advanced: Adding New Data
 
-To add a new unit, card, hero, or consumable:
+To add a new Spellcaster, Unit, Spell, Titan, or Consumable:
 
 1.  **Fork the repository.**
-2.  **Create a new JSON file** in the appropriate `data/` subdirectory (e.g., `data/units/new_unit.json`).
+2.  **Create a new JSON file** in the appropriate `data/` subdirectory.
+    - `data/spellcasters/` - Player characters.
+    - `data/units/` - Creatures and Buildings.
+    - `data/spells/` - Spells.
+    - `data/titans/` - Titan cards.
+    - `data/consumables/` - Loot items.
 3.  **Follow the Schema:** Ensure your JSON matches the corresponding schema in `schemas/v1/`.
-    - You must include a `version` field (e.g., `"version": "1.0.0"`).
-    - You must include `last_modified`.
-    - **Optional:** If the item _requires_ an in-game asset (e.g., a card art), set `"image_required": true`. Default is `true` (see schema).
-4.  **Add Assets (Optional):** If you have the icon, add it to `assets/` with the exact same filename (e.g., `assets/units/new_unit_card.png`).
+    - **Changelog:** Use the `changelog` array to track version history.
+    - `last_modified`: Update this timestamp.
+    - `image_required`: Defaults to `true`.
+4.  **Add Assets:** Add the image to `assets/[category]/[id].png`.
+    - Example: `data/units/skeleton_warrior.json` -> `assets/units/skeleton_warrior.png`.
+
+### 📚 Data Reference & Hierarchy
+
+#### 1. Spellcasters (`data/spellcasters`)
+
+Refers to the player-controlled character (previously "Hero").
+
+- **Schema**: `spellcaster.schema.json`
+- **Key Fields**: `class` (Conqueror/Duelist/Enchanter), `difficulty` (1-3).
+
+#### 2. Incantations
+
+The base type for all deck-able items.
+
+- **Schema**: `incantation.schema.json`
+- **Sub-types**:
+  - **Units** (`data/units`): Physical entities with `health`, `collision_radius`.
+  - **Spells** (`data/spells`): Instant actions or effects.
+
+#### 3. Titans (`data/titans`)
+
+Unique class-ultimate entities.
+
+- **Schema**: `titan.schema.json`
+
+#### 4. Consumables (`data/consumables`)
+
+Loot items found in chests.
 
 ### 2. Updating Existing Data
 
 1.  Modify the fields in the existing JSON file.
 2.  **Update `last_modified`** to the current timestamp.
-3.  Increment the `version` if the change is structural or significant.
+3.  Add a new entry to the `changelog` array if the change is significant.
 
 ### 3. Verification
 

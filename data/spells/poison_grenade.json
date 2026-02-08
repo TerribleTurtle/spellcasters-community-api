@@ -1,0 +1,21 @@
+{
+  "entity_id": "poison_grenade",
+  "name": "Poison Grenade",
+  "category": "Spell",
+  "magic_school": "Necromancy",
+  "rank": "III",
+  "description": "Grenade that creates a Poison cloud over the target area.",
+  "image_required": true,
+  "last_modified": "2026-02-08T09:49:16.845763+00:00",
+  "tags": [],
+  "changelog": [
+    {
+      "version": "0.0.1",
+      "date": "2026-02-08T09:49:16.845763+00:00",
+      "description": "Initial Closed Beta 2 Data"
+    }
+  ],
+  "damage": 25,
+  "range": 40,
+  "duration": 12
+}

@@ -1,0 +1,19 @@
+{
+  "entity_id": "resurrection",
+  "name": "Resurrection",
+  "category": "Spell",
+  "magic_school": "Holy",
+  "rank": "IV",
+  "description": "Magic circle that resurrects creatures with partial health.",
+  "image_required": true,
+  "last_modified": "2026-02-08T09:49:16.848165+00:00",
+  "tags": [],
+  "changelog": [
+    {
+      "version": "0.0.1",
+      "date": "2026-02-08T09:49:16.848165+00:00",
+      "description": "Initial Closed Beta 2 Data"
+    }
+  ],
+  "duration": 12
+}

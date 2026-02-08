@@ -1,26 +1,22 @@
 {
-  "$schema": "../../schemas/v1/unit.schema.json",
-  "game_version": "0.0.1",
   "entity_id": "dryad",
   "name": "Dryad",
   "category": "Creature",
   "magic_school": "Holy",
-  "health": 2250,
-  "damage": 12,
-  "heal_amount": 150,
-  "attack_speed": 1.0,
-  "movement_speed": 3,
-  "range": 1,
-  "movement_type": "Ground",
+  "rank": "II",
+  "description": "Support creature that heals allies. Uses elemental attacks when infused.",
+  "image_required": true,
+  "last_modified": "2026-02-08T09:49:16.840490+00:00",
   "tags": [],
-  "description": "Support creature that heals allies. Uses elemental attacks when infused",
-  "card_config": {
-    "rank": "II",
-    "cost_population": 1,
-    "cost_charges": 1,
-    "initial_charges": 5,
-    "charge_time": 20,
-    "cast_time": 2.0
-  },
-  "last_modified": "2026-02-04T15:27:05.220986Z"
+  "changelog": [
+    {
+      "version": "0.0.1",
+      "date": "2026-02-08T09:49:16.840490+00:00",
+      "description": "Initial Closed Beta 2 Data"
+    }
+  ],
+  "damage": 12,
+  "health": 225,
+  "movement_speed": 3,
+  "heal_amount": 150
 }

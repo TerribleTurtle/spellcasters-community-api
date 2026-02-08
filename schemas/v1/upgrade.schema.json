@@ -4,19 +4,28 @@
   "description": "RNG Level-up bonus options.",
   "type": "object",
   "required": [
-    "game_version",
     "upgrade_id",
     "description",
     "target_tags",
     "effect",
+    "changelog",
     "last_modified"
   ],
   "properties": {
     "$schema": { "type": "string" },
-    "game_version": {
-      "type": "string"
-    },
     "last_modified": { "type": "string", "format": "date-time", "description": "UTC Timestamp of the last update" },
+    "changelog": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["date", "version", "description"],
+        "properties": {
+          "date": { "type": "string", "format": "date-time" },
+          "version": { "type": "string" },
+          "description": { "type": "string" }
+        }
+      }
+    },
     "upgrade_id": {
       "type": "string"
     },

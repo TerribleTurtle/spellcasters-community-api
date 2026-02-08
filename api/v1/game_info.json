@@ -13,5 +13,12 @@
   "meta": {
     "status": "In Development"
   },
-  "last_modified": "2026-02-04T15:25:39.104407Z"
+  "last_modified": "2026-02-04T15:25:39.104407Z",
+  "changelog": [
+    {
+      "version": "0.0.1",
+      "date": "2026-02-04T15:25:39.104407Z",
+      "description": "Initial Closed Beta 2 Data"
+    }
+  ]
 }

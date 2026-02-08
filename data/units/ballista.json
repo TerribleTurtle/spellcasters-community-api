@@ -1,31 +1,21 @@
 {
-  "$schema": "../../schemas/v1/unit.schema.json",
-  "game_version": "0.0.1",
   "entity_id": "ballista",
   "name": "Ballista",
   "category": "Building",
   "magic_school": "Technomancy",
-  "health": 1200,
-  "damage": 250,
-  "attack_speed": 0.4,
-  "movement_speed": 0,
-  "range": 30,
-  "movement_type": "Stationary",
-  "tags": [
-    "defensive",
-    "siege",
-    "piercing"
-  ],
-  "description": "A stationary siege engine that launches massive bolts at distant targets.",
-  "collision_radius": 30,
+  "rank": "II",
+  "description": "Static weapon that targets enemies at long range.",
   "image_required": true,
-  "card_config": {
-    "rank": "II",
-    "cost_population": 1,
-    "cost_charges": 1,
-    "initial_charges": 5,
-    "charge_time": 20,
-    "cast_time": 3.0
-  },
-  "last_modified": "2026-02-06T09:15:41.015023Z"
+  "last_modified": "2026-02-08T09:49:16.840179+00:00",
+  "tags": [],
+  "changelog": [
+    {
+      "version": "0.0.1",
+      "date": "2026-02-08T09:49:16.840179+00:00",
+      "description": "Initial Closed Beta 2 Data"
+    }
+  ],
+  "damage": 25,
+  "health": 300,
+  "range": 80
 }

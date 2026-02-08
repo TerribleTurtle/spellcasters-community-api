@@ -1,25 +1,22 @@
 {
-  "$schema": "../../schemas/v1/unit.schema.json",
-  "game_version": "0.0.1",
   "entity_id": "lizard_archer",
   "name": "Lizard Archer",
   "category": "Creature",
   "magic_school": "War",
-  "health": 850,
-  "damage": 8,
-  "attack_speed": 1.0,
-  "movement_speed": 3,
-  "range": 35,
-  "movement_type": "Ground",
+  "rank": "I",
+  "description": "Long-range fighter that deals bonus damage to flying enemies.",
+  "image_required": true,
+  "last_modified": "2026-02-08T09:49:16.837714+00:00",
   "tags": [],
-  "description": "Long-range fighter that deals bonus damage to flying enemies",
-  "card_config": {
-    "rank": "I",
-    "cost_population": 1,
-    "cost_charges": 1,
-    "initial_charges": 10,
-    "charge_time": 10,
-    "cast_time": 2.0
-  },
-  "last_modified": "2026-02-04T15:27:05.224550Z"
+  "changelog": [
+    {
+      "version": "0.0.1",
+      "date": "2026-02-08T09:49:16.837714+00:00",
+      "description": "Initial Closed Beta 2 Data"
+    }
+  ],
+  "damage": 8,
+  "health": 85,
+  "range": 36,
+  "movement_speed": 3
 }

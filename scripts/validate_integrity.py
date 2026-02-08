@@ -16,18 +16,21 @@ MAX_IMG_SIZE_KB = 100
 
 # Schema Filenames
 SCHEMA_FILES = {
-    "unit": "unit.schema.json",
-    "hero": "hero.schema.json",
+    "incantation": "incantation.schema.json",
+    "spellcaster": "spellcaster.schema.json",
     "consumable": "consumable.schema.json",
     "upgrade": "upgrade.schema.json",
     "deck": "deck.schema.json",
-    "game_info": "game_info.schema.json"
+    "game_info": "game_info.schema.json",
+    "titan": "titan.schema.json"
 }
 
 # Data Folder Mapping (Source -> Schema Type)
 FOLDER_TO_SCHEMA = {
-    "units": "unit",
-    "heroes": "hero",
+    "units": "incantation",
+    "spells": "incantation",
+    "titans": "titan",
+    "spellcasters": "spellcaster",
     "consumables": "consumable",
     "upgrades": "upgrade",
     "decks": "deck" # if decks existed
@@ -52,10 +55,13 @@ def load_schema(name):
 
 def check_asset_exists(category, entity_id, is_required):
     """Checks if assets/[category]/[entity_id].png exists and validates hygiene. Returns warning count."""
-    # Special handling for units in Unified Model: assets/units/{id}_card.png
+    # Special handling for units/spells/titans/spellcasters
+    # filename = f"{entity_id}.png"
+    # if category in ["units", "spells", "titans", "spellcasters"]:
+    #    filename = f"{entity_id}_card.png"
+    
+    # Unified Model - All assets are just {entity_id}.png
     filename = f"{entity_id}.png"
-    if category == "units":
-        filename = f"{entity_id}_card.png"
 
     path = os.path.join(ASSETS_DIR, category, filename)
     warnings = 0
@@ -104,43 +110,44 @@ def validate_decks(db):
             errors.append(f"[FAIL] Could not load deck {f}")
             continue
 
-        hero_id = data.get("hero_id")
+        spellcaster_id = data.get("spellcaster_id") or data.get("hero_id") # Support migration
         titan_id = data.get("titan_id")
         # In Unified Model, cards list contains unit_ids
         unit_ids = data.get("cards", [])
 
-        # Hero Check
-        if hero_id and hero_id not in db["heroes"]:
-            errors.append(f"[FAIL] Deck {f} references missing hero_id '{hero_id}'")
+        # Spellcaster Check
+        if spellcaster_id and spellcaster_id not in db["spellcasters"]:
+            errors.append(f"[FAIL] Deck {f} references missing spellcaster_id '{spellcaster_id}'")
         
         # Titan Check
         if titan_id:
-            # Titan ID is now a Unit ID (Unified)
-            if titan_id not in db["units"]:
-                errors.append(f"[FAIL] Deck {f} references missing titan_id '{titan_id}' (Unit not found)")
+            if titan_id not in db["titans"]:
+                errors.append(f"[FAIL] Deck {f} references missing titan_id '{titan_id}'")
             else:
-                unit = db["units"][titan_id]
-                if unit.get("category") != "Titan":
-                    errors.append(f"[FAIL] Deck {f} titan_id '{titan_id}' is NOT a Titan (Category: {unit.get('category')})")
-                if "card_config" not in unit:
-                     errors.append(f"[FAIL] Deck {f} titan_id '{titan_id}' is missing 'card_config' (Not playable)")
+                titan = db["titans"][titan_id]
+                # Titan validation is implicit by being in titans DB
 
-        # Cards Check (Units)
+        # Cards Check (Units/Spells)
         has_rank_1_or_2_creature = False
         for uid in unit_ids:
-            if uid not in db["units"]:
-                    errors.append(f"[FAIL] Deck {f} references missing unit_id '{uid}'")
+            # Check in Units or Spells
+            found = False
+            entity = None
+            
+            if uid in db["units"]:
+                entity = db["units"][uid]
+                found = True
+            elif uid in db["spells"]:
+                entity = db["spells"][uid]
+                found = True
+            
+            if not found:
+                errors.append(f"[FAIL] Deck {f} references missing card '{uid}'")
             else:
-                # MUST have card_config
-                unit = db["units"][uid]
-                if "card_config" not in unit:
-                    errors.append(f"[FAIL] Deck {f} references unit '{uid}' which is missing 'card_config' (Not playable)")
-                else:
-                    rank = unit["card_config"].get("rank")
-                    category = unit.get("category")
-                    if category == "Creature" and rank in ["I", "II"]:
-                        has_rank_1_or_2_creature = True
-
+                rank = entity.get("rank")
+                category = entity.get("category")
+                if category == "Creature" and rank in ["I", "II"]:
+                    has_rank_1_or_2_creature = True
 
         if not has_rank_1_or_2_creature:
             errors.append(f"[FAIL] Deck {f} must contain at least one Rank I or Rank II CREATURE card.")
@@ -155,7 +162,9 @@ def validate_integrity():
     # 1. Load All Data for Cross-Reference
     db = {
         "units": {},
-        "heroes": {},
+        "spells": {},
+        "titans": {},
+        "spellcasters": {},
         "consumables": {},
         "upgrades": {}
     }
@@ -169,9 +178,9 @@ def validate_integrity():
             
             # Identify ID field based on type
             id_field = "id" # default fallback
-            if key == "units": id_field = "entity_id"
-            elif key == "heroes": id_field = "hero_id"
-            elif key == "consumables": id_field = "consumable_id"
+            if key in ["units", "spells", "titans"]: id_field = "entity_id"
+            elif key == "spellcasters": id_field = "spellcaster_id"
+            elif key == "consumables": id_field = "entity_id"
             elif key == "upgrades": id_field = "upgrade_id"
             
             if id_field in data:
@@ -205,9 +214,10 @@ def validate_integrity():
             if data.get("image_required", True):
                 # deduce ID
                 obj_id = ""
-                if schema_key == "unit": obj_id = data.get("entity_id")
-                elif schema_key == "hero": obj_id = data.get("hero_id")
-                elif schema_key == "consumable": obj_id = data.get("consumable_id")
+                if schema_key == "incantation": obj_id = data.get("entity_id")
+                elif schema_key == "titan": obj_id = data.get("entity_id")
+                elif schema_key == "spellcaster": obj_id = data.get("spellcaster_id")
+                elif schema_key == "consumable": obj_id = data.get("entity_id")
                 
                 if obj_id:
                     warnings += check_asset_exists(folder, obj_id, True)

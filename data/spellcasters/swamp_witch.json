@@ -1,0 +1,45 @@
+{
+  "$schema": "../../schemas/v1/spellcaster.schema.json",
+  "spellcaster_id": "swamp_witch",
+  "name": "Swamp Witch",
+  "class": "Duelist",
+  "category": "Spellcaster",
+  "image_required": true,
+  "difficulty": 3,
+  "abilities": {
+    "passive": [
+      {
+        "name": "Pact of Sacrifice",
+        "description": "Killing Poisoned Creatures recharges Necromancy spells."
+      },
+      {
+        "name": "Brood Rite",
+        "description": "When a Swamp Witch’s creature is destroyed, her incantations and abilities recharge faster."
+      },
+      {
+        "name": "Swarm Dominance",
+        "description": "The Swamp Witch has more Rank I population, but less Rank II and Rank III population.  "
+      }
+    ],
+    "primary": {
+      "name": "Poison Strike",
+      "description": "Fire a barrage of projectiles that deal Poison damage."
+    },
+    "defense": {
+      "name": "Witchslip",
+      "description": "Performs an invincible dash in a chosen direction."
+    },
+    "ultimate": {
+      "name": "Dark Ascension",
+      "description": "Unleashes a demonic form that boosts all spell damage."
+    }
+  },
+  "last_modified": "2026-02-05T17:05:01.972347Z",
+  "changelog": [
+    {
+      "version": "0.0.1",
+      "date": "2026-02-05T17:05:01.972347Z",
+      "description": "Initial Closed Beta 2 Data"
+    }
+  ]
+}

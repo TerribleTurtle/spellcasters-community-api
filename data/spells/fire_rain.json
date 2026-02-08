@@ -1,0 +1,21 @@
+{
+  "entity_id": "fire_rain",
+  "name": "Fire Rain",
+  "category": "Spell",
+  "magic_school": "Elemental",
+  "rank": "IV",
+  "description": "Fire projectiles that deal continuous damage over a wide area.",
+  "image_required": true,
+  "last_modified": "2026-02-08T09:49:16.847017+00:00",
+  "tags": [],
+  "changelog": [
+    {
+      "version": "0.0.1",
+      "date": "2026-02-08T09:49:16.847017+00:00",
+      "description": "Initial Closed Beta 2 Data"
+    }
+  ],
+  "damage": 450,
+  "range": 45,
+  "duration": 12
+}

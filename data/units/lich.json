@@ -1,25 +1,21 @@
 {
-  "$schema": "../../schemas/v1/unit.schema.json",
-  "game_version": "0.0.1",
   "entity_id": "lich",
   "name": "Lich",
   "category": "Creature",
   "magic_school": "Necromancy",
-  "health": 500,
-  "damage": 5,
-  "attack_speed": 1.0,
-  "movement_speed": 5,
-  "range": 1,
-  "movement_type": "Ground",
+  "rank": "II",
+  "description": "Undead caster that inflicts curses to enemies, increasing the damage they take and reducing their movement speed.",
+  "image_required": true,
+  "last_modified": "2026-02-08T09:49:16.841271+00:00",
   "tags": [],
-  "description": "Undead caster that inflict curses to enemies, increasing the damage they take and reducing their movement speed.",
-  "card_config": {
-    "rank": "II",
-    "cost_population": 1,
-    "cost_charges": 1,
-    "initial_charges": 5,
-    "charge_time": 20,
-    "cast_time": 2.0
-  },
-  "last_modified": "2026-02-06T09:15:41.016146Z"
+  "changelog": [
+    {
+      "version": "0.0.1",
+      "date": "2026-02-08T09:49:16.841271+00:00",
+      "description": "Initial Closed Beta 2 Data"
+    }
+  ],
+  "damage": 5,
+  "health": 500,
+  "movement_speed": 5
 }

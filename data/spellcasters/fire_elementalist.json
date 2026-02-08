@@ -1,0 +1,45 @@
+{
+  "$schema": "../../schemas/v1/spellcaster.schema.json",
+  "spellcaster_id": "fire_elementalist",
+  "name": "Fire Elementalist",
+  "class": "Conqueror",
+  "category": "Spellcaster",
+  "image_required": true,
+  "difficulty": 1,
+  "abilities": {
+    "passive": [
+      {
+        "name": "Ignition Spark",
+        "description": "Allied creatures near the Fire Elementalist capture Altar faster."
+      },
+      {
+        "name": "Enduring Flame",
+        "description": "Damaging burning enemies heals the Fire Elementalist."
+      },
+      {
+        "name": "Blazing Momentum",
+        "description": "When you or your creatures kill a Burning enemy, recharge Elemental incantations."
+      }
+    ],
+    "primary": {
+      "name": "Flame Strikes",
+      "description": "Burns enemies with powerful Fire attacks."
+    },
+    "defense": {
+      "name": "Fiery Dash",
+      "description": "Performs an invincible dash in a chosen direction."
+    },
+    "ultimate": {
+      "name": "Burning Conquest",
+      "description": "Captures a territory, inflicts Fire damage and imbues allied units with Fire."
+    }
+  },
+  "last_modified": "2026-02-05T17:05:01.971147Z",
+  "changelog": [
+    {
+      "version": "0.0.1",
+      "date": "2026-02-05T17:05:01.971147Z",
+      "description": "Initial Closed Beta 2 Data"
+    }
+  ]
+}

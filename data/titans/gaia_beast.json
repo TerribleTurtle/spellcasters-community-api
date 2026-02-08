@@ -1,0 +1,22 @@
+{
+  "entity_id": "gaia_beast",
+  "name": "Gaia Beast",
+  "category": "Titan",
+  "magic_school": "Wild",
+  "rank": "V",
+  "description": "The Wild Titan. Crushes all structures as it marches toward the Lifestones.",
+  "image_required": true,
+  "last_modified": "2026-02-08T09:49:16.848523+00:00",
+  "tags": [],
+  "changelog": [
+    {
+      "version": "0.0.1",
+      "date": "2026-02-08T09:49:16.848523+00:00",
+      "description": "Initial Closed Beta 2 Data"
+    }
+  ],
+  "damage": 100,
+  "health": 20000,
+  "movement_speed": 4,
+  "heal_amount": 50
+}

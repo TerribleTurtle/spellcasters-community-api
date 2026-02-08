@@ -1,25 +1,21 @@
 {
-  "$schema": "../../schemas/v1/unit.schema.json",
-  "game_version": "0.0.1",
   "entity_id": "juggernaut",
   "name": "Juggernaut",
   "category": "Creature",
   "magic_school": "War",
-  "health": 10000,
-  "damage": 50,
-  "attack_speed": 1.0,
-  "movement_speed": 3,
-  "range": 1,
-  "movement_type": "Ground",
+  "rank": "IV",
+  "description": "Colossal creature that deals massive damage to structures.",
+  "image_required": true,
+  "last_modified": "2026-02-08T09:49:16.847802+00:00",
   "tags": [],
-  "description": "Colossal creature that deals massive damage to structures",
-  "card_config": {
-    "rank": "IV",
-    "cost_population": 1,
-    "cost_charges": 1,
-    "initial_charges": 1,
-    "charge_time": 60,
-    "cast_time": 2.0
-  },
-  "last_modified": "2026-02-04T15:27:05.224187Z"
+  "changelog": [
+    {
+      "version": "0.0.1",
+      "date": "2026-02-08T09:49:16.847802+00:00",
+      "description": "Initial Closed Beta 2 Data"
+    }
+  ],
+  "damage": 100,
+  "health": 10000,
+  "movement_speed": 3
 }

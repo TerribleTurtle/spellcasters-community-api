@@ -1,0 +1,19 @@
+{
+  "entity_id": "sacrifice",
+  "name": "Sacrifice",
+  "category": "Spell",
+  "magic_school": "Astral",
+  "rank": "I",
+  "description": "Dark ritual that recalls allies to recharge summons.",
+  "image_required": true,
+  "last_modified": "2026-02-08T09:49:16.838616+00:00",
+  "tags": [],
+  "changelog": [
+    {
+      "version": "0.0.1",
+      "date": "2026-02-08T09:49:16.838616+00:00",
+      "description": "Initial Closed Beta 2 Data"
+    }
+  ],
+  "damage": 90
+}

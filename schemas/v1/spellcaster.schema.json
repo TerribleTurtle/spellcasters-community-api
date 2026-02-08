@@ -1,0 +1,74 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Spellcaster",
+  "description": "Player Character definition including stats and fixed ability kit.",
+  "type": "object",
+  "required": [
+    "spellcaster_id",
+    "name",
+    "class",
+    "difficulty",
+    "abilities",
+    "changelog",
+    "last_modified",
+    "category"
+  ],
+  "properties": {
+    "$schema": { "type": "string" },
+    "last_modified": { "type": "string", "format": "date-time", "description": "UTC Timestamp of the last update" },
+    "changelog": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["date", "version", "description"],
+        "properties": {
+          "date": { "type": "string", "format": "date-time" },
+          "version": { "type": "string" },
+          "description": { "type": "string" }
+        }
+      }
+    },
+    "spellcaster_id": { "type": "string" },
+    "name": { "type": "string" },
+    "class": { 
+      "type": "string", 
+      "enum": ["Conqueror", "Duelist", "Enchanter"],
+      "description": "Intrinsic Spellcaster class that determines upgrade priorities"
+    },
+    "category": {
+      "type": "string",
+      "enum": ["Spellcaster"]
+    },
+    "image_required": { "type": "boolean", "default": true },
+    "difficulty": { 
+      "type": "integer", 
+      "minimum": 1, 
+      "maximum": 3,
+      "description": "Complexity rating from 1 (Easy) to 3 (Hard)" 
+    },
+    "abilities": {
+      "type": "object",
+      "properties": {
+        "passive": {
+          "type": "array",
+          "items": { "$ref": "#/definitions/ability_detail" }
+        },
+        "primary": { "$ref": "#/definitions/ability_detail" },
+        "defense": { "$ref": "#/definitions/ability_detail" },
+        "ultimate": { "$ref": "#/definitions/ability_detail" }
+      },
+      "required": ["passive", "primary", "defense", "ultimate"]
+    }
+  },
+  "definitions": {
+    "ability_detail": {
+      "type": "object",
+      "properties": {
+        "name": { "type": "string" },
+        "description": { "type": "string" }
+      },
+      "required": ["name", "description"]
+    }
+  },
+  "additionalProperties": false
+}

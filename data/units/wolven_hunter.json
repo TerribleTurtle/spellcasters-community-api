@@ -1,25 +1,22 @@
 {
-  "$schema": "../../schemas/v1/unit.schema.json",
-  "game_version": "0.0.1",
   "entity_id": "wolven_hunter",
   "name": "Wolven Hunter",
   "category": "Creature",
   "magic_school": "War",
-  "health": 340,
-  "damage": 16,
-  "attack_speed": 1.0,
-  "movement_speed": 3,
-  "range": 750,
-  "movement_type": "Ground",
+  "rank": "II",
+  "description": "Hunter unit that fires powerful long-range bolts.",
+  "image_required": true,
+  "last_modified": "2026-02-08T09:49:16.841893+00:00",
   "tags": [],
-  "description": "Hunter unit that fires powerful long-range bolts",
-  "card_config": {
-    "rank": "II",
-    "cost_population": 1,
-    "cost_charges": 1,
-    "initial_charges": 5,
-    "charge_time": 20,
-    "cast_time": 2.0
-  },
-  "last_modified": "2026-02-04T15:27:05.227094Z"
+  "changelog": [
+    {
+      "version": "0.0.1",
+      "date": "2026-02-08T09:49:16.841893+00:00",
+      "description": "Initial Closed Beta 2 Data"
+    }
+  ],
+  "damage": 16,
+  "health": 340,
+  "range": 75,
+  "movement_speed": 3
 }

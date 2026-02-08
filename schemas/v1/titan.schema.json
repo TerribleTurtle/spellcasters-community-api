@@ -1,0 +1,57 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Titan",
+  "description": "Unique Class-Ultimate entity.",
+  "type": "object",
+  "required": [
+    "entity_id",
+    "name",
+    "category",
+    "magic_school",
+    "changelog",
+    "last_modified"
+  ],
+  "properties": {
+    "$schema": { "type": "string" },
+    "last_modified": { "type": "string", "format": "date-time" },
+    "changelog": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["date", "version", "description"],
+        "properties": {
+          "date": { "type": "string", "format": "date-time" },
+          "version": { "type": "string" },
+          "description": { "type": "string" }
+        }
+      }
+    },
+    "entity_id": { "type": "string" },
+    "name": { "type": "string" },
+    "image_required": { "type": "boolean", "default": true },
+    "category": {
+      "type": "string",
+      "enum": ["Titan"]
+    },
+    "magic_school": {
+      "type": "string",
+      "enum": ["Elemental", "Wild", "War", "Astral", "Holy", "Technomancy", "Necromancy", "Titan", "Dark", "Frost", "Lightning"]
+    },
+    "description": { "type": "string" },
+    "tags": {
+      "type": "array",
+      "items": { "type": "string" }
+    },
+    "rank": {
+      "type": "string",
+      "enum": ["V"]
+    },
+    "health": { "type": "integer", "minimum": 0 },
+    "damage": { "type": "integer", "minimum": 0 },
+    "movement_speed": { "type": "integer", "minimum": 0 },
+    "range": { "type": "integer", "minimum": 0 },
+    "passive_health_regen": { "type": "integer", "minimum": 0 },
+    "heal_amount": { "type": "integer", "minimum": 0 }
+  },
+  "additionalProperties": false
+}

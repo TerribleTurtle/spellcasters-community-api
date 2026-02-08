@@ -1,31 +1,22 @@
 {
-  "$schema": "../../schemas/v1/unit.schema.json",
-  "game_version": "0.0.1",
   "entity_id": "steam_tank",
   "name": "Steam Tank",
   "category": "Creature",
   "magic_school": "Technomancy",
-  "health": 2500,
-  "damage": 120,
-  "attack_speed": 0.6,
-  "movement_speed": 180,
-  "range": 22,
-  "movement_type": "Ground",
-  "tags": [
-    "mechanical",
-    "siege",
-    "ranged"
-  ],
-  "description": "A heavily armored steam-powered war machine capable of crushing infantry and breaching walls.",
-  "collision_radius": 45,
+  "rank": "III",
+  "description": "Long-range unit that deals heavy damage to a target.",
   "image_required": true,
-  "card_config": {
-    "rank": "III",
-    "cost_population": 1,
-    "cost_charges": 1,
-    "initial_charges": 3,
-    "charge_time": 40,
-    "cast_time": 4.0
-  },
-  "last_modified": "2026-02-06T09:15:41.016802Z"
+  "last_modified": "2026-02-08T09:49:16.846123+00:00",
+  "tags": [],
+  "changelog": [
+    {
+      "version": "0.0.1",
+      "date": "2026-02-08T09:49:16.846123+00:00",
+      "description": "Initial Closed Beta 2 Data"
+    }
+  ],
+  "damage": 40,
+  "health": 130,
+  "range": 75,
+  "movement_speed": 3
 }

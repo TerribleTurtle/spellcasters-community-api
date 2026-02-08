@@ -1,25 +1,21 @@
 {
-  "$schema": "../../schemas/v1/unit.schema.json",
-  "game_version": "0.0.1",
   "entity_id": "giant_shielder",
   "name": "Giant Shielder",
   "category": "Creature",
   "magic_school": "Holy",
-  "health": 1500,
-  "damage": 30,
-  "attack_speed": 1.0,
-  "movement_speed": 3,
-  "range": 1,
-  "movement_type": "Ground",
+  "rank": "III",
+  "description": "Slow giant that protects allies with a massive shield.",
+  "image_required": true,
+  "last_modified": "2026-02-08T09:49:16.844628+00:00",
   "tags": [],
-  "description": "Slow giant that protects allies with a massive shield",
-  "card_config": {
-    "rank": "III",
-    "cost_population": 1,
-    "cost_charges": 1,
-    "initial_charges": 3,
-    "charge_time": 40,
-    "cast_time": 2.0
-  },
-  "last_modified": "2026-02-06T09:15:41.015737Z"
+  "changelog": [
+    {
+      "version": "0.0.1",
+      "date": "2026-02-08T09:49:16.844628+00:00",
+      "description": "Initial Closed Beta 2 Data"
+    }
+  ],
+  "damage": 30,
+  "health": 1800,
+  "movement_speed": 3
 }

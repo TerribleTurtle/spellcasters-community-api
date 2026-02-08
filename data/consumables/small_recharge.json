@@ -1,10 +1,18 @@
 {
   "$schema": "../../schemas/v1/consumable.schema.json",
-  "game_version": "0.0.1",
-  "consumable_id": "small_recharge",
+  "entity_id": "small_recharge",
   "name": "Small Recharge",
   "effect_type": "Charge_Refill",
   "value": 25,
-  "ttl": 30,
-  "last_modified": "2026-02-05T03:28:27.274024Z"
+  "last_modified": "2026-02-05T03:28:27.274024Z",
+  "changelog": [
+    {
+      "version": "0.0.1",
+      "date": "2026-02-05T03:28:27.274024Z",
+      "description": "Initial Closed Beta 2 Data"
+    }
+  ],
+  "category": "Consumable",
+  "image_required": false,
+  "duration": 30
 }

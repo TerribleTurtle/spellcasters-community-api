@@ -11,7 +11,7 @@ It is **free to use** and **open for anyone to contribute**.
 
 ## 📚 Documentation
 
-Please refer to [GUIDE.md](GUIDE.md) to learn how to:
+Please refer to [CONTRIBUTING.md](CONTRIBUTING.md) to learn how to:
 
 - Use this data in your own projects
 - Add new units or items
@@ -34,7 +34,7 @@ Developers should use this base URL to fetch data for their applications.
 - **Game Info:** [game_info.json](https://terribleturtle.github.io/spellcasters-community-api/api/v1/game_info.json)
 - **Units:** [units.json](https://terribleturtle.github.io/spellcasters-community-api/api/v1/units.json)
 
-Full endpoint documentation is available in [GUIDE.md](GUIDE.md).
+Full endpoint documentation is available in [CONTRIBUTING.md](CONTRIBUTING.md).
 
 ## 🚀 Quick Start (Local Build)
 

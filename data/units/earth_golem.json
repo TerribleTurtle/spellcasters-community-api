@@ -1,25 +1,21 @@
 {
-  "$schema": "../../schemas/v1/unit.schema.json",
-  "game_version": "0.0.1",
   "entity_id": "earth_golem",
   "name": "Earth Golem",
   "category": "Creature",
   "magic_school": "Elemental",
-  "health": 6500,
-  "damage": 25,
-  "attack_speed": 1.0,
-  "movement_speed": 2,
-  "range": 1,
-  "movement_type": "Ground",
+  "rank": "II",
+  "description": "Strong melee unit that resists damage from large enemies.",
+  "image_required": true,
+  "last_modified": "2026-02-08T09:49:16.840800+00:00",
   "tags": [],
-  "description": "Strong melee unit that resists damage from large enemies",
-  "card_config": {
-    "rank": "II",
-    "cost_population": 1,
-    "cost_charges": 1,
-    "initial_charges": 5,
-    "charge_time": 20,
-    "cast_time": 2.0
-  },
-  "last_modified": "2026-02-04T15:27:05.221175Z"
+  "changelog": [
+    {
+      "version": "0.0.1",
+      "date": "2026-02-08T09:49:16.840800+00:00",
+      "description": "Initial Closed Beta 2 Data"
+    }
+  ],
+  "damage": 25,
+  "health": 650,
+  "movement_speed": 2
 }
