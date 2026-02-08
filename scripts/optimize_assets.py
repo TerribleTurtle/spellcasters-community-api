@@ -35,13 +35,10 @@ def optimize_assets():
             print(f"Processing {filename}...")
             
             try:
-                # 1. Convert to WebP if missing
-                if not os.path.exists(webp_path):
-                    with Image.open(png_path) as img:
-                        img.save(webp_path, "WEBP", quality=90)
-                    print(f"  [+] Created {basename}.webp")
-                else:
-                    print(f"  [.] {basename}.webp already exists")
+                # 1. Convert to WebP (Always overwrite if PNG is new)
+                with Image.open(png_path) as img:
+                    img.save(webp_path, "WEBP", quality=90)
+                print(f"  [+] Updated {basename}.webp")
 
                 # 2. Archive the PNG
                 if os.path.exists(archive_path):
