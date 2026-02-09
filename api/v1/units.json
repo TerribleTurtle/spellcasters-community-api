@@ -1,5 +1,93 @@
 [
   {
+    "entity_id": "faerie",
+    "name": "Faerie",
+    "category": "Creature",
+    "magic_school": "Astral",
+    "rank": "I",
+    "description": "Stealthy flying ranged creature that turns invisible out of combat.",
+    "image_required": true,
+    "last_modified": "2026-02-09T00:35:17.665584+00:00",
+    "tags": [],
+    "changelog": [
+      {
+        "version": "0.0.1",
+        "date": "2026-02-08T09:49:16.836151+00:00",
+        "description": "Initial Closed Beta 2 Data"
+      }
+    ],
+    "damage": 9,
+    "health": 100,
+    "range": 25,
+    "movement_speed": 3,
+    "movement_type": "Flying"
+  },
+  {
+    "entity_id": "wolven_hunter",
+    "name": "Wolven Hunter",
+    "category": "Creature",
+    "magic_school": "War",
+    "rank": "II",
+    "description": "Hunter unit that fires powerful long-range bolts.",
+    "image_required": true,
+    "last_modified": "2026-02-09T00:35:17.667652+00:00",
+    "tags": [],
+    "changelog": [
+      {
+        "version": "0.0.1",
+        "date": "2026-02-08T09:49:16.841893+00:00",
+        "description": "Initial Closed Beta 2 Data"
+      }
+    ],
+    "damage": 16,
+    "health": 340,
+    "range": 75,
+    "movement_speed": 3,
+    "movement_type": "Ground"
+  },
+  {
+    "entity_id": "stone_behemoth",
+    "name": "Stone Behemoth",
+    "category": "Creature",
+    "magic_school": "Elemental",
+    "rank": "III",
+    "description": "Siege unit that hurls long-range boulders for heavy area damage.",
+    "image_required": true,
+    "last_modified": "2026-02-09T00:35:17.667469+00:00",
+    "tags": [],
+    "changelog": [
+      {
+        "version": "0.0.1",
+        "date": "2026-02-08T09:49:16.846434+00:00",
+        "description": "Initial Closed Beta 2 Data"
+      }
+    ],
+    "damage": 40,
+    "health": 210,
+    "range": 55,
+    "movement_speed": 2,
+    "movement_type": "Ground"
+  },
+  {
+    "entity_id": "rampart",
+    "name": "Rampart",
+    "category": "Building",
+    "magic_school": "Holy",
+    "rank": "II",
+    "description": "Defensive wall that blocks enemy paths.",
+    "image_required": true,
+    "last_modified": "2026-02-08T14:59:13.841416+00:00",
+    "tags": [],
+    "changelog": [
+      {
+        "version": "0.0.1",
+        "date": "2026-02-08T09:49:16.841572+00:00",
+        "description": "Initial Closed Beta 2 Data"
+      }
+    ],
+    "health": 250
+  },
+  {
     "entity_id": "astral_tower",
     "name": "Astral Tower",
     "category": "Building",
@@ -18,6 +106,223 @@
     ],
     "damage": 50,
     "health": 3500
+  },
+  {
+    "entity_id": "earth_golem",
+    "name": "Earth Golem",
+    "category": "Creature",
+    "magic_school": "Elemental",
+    "rank": "II",
+    "description": "Strong melee unit that resists damage from large enemies.",
+    "image_required": true,
+    "last_modified": "2026-02-09T00:35:17.665402+00:00",
+    "tags": [],
+    "changelog": [
+      {
+        "version": "0.0.1",
+        "date": "2026-02-08T09:49:16.840800+00:00",
+        "description": "Initial Closed Beta 2 Data"
+      }
+    ],
+    "damage": 25,
+    "health": 650,
+    "movement_speed": 2,
+    "movement_type": "Ground"
+  },
+  {
+    "entity_id": "lich",
+    "name": "Lich",
+    "category": "Creature",
+    "magic_school": "Necromancy",
+    "rank": "II",
+    "description": "Undead caster that inflicts curses to enemies, increasing the damage they take and reducing their movement speed.",
+    "image_required": true,
+    "last_modified": "2026-02-09T00:35:17.666304+00:00",
+    "tags": [],
+    "changelog": [
+      {
+        "version": "0.0.1",
+        "date": "2026-02-08T09:49:16.841271+00:00",
+        "description": "Initial Closed Beta 2 Data"
+      }
+    ],
+    "damage": 5,
+    "health": 500,
+    "movement_speed": 5,
+    "movement_type": "Flying"
+  },
+  {
+    "entity_id": "lizard_archer",
+    "name": "Lizard Archer",
+    "category": "Creature",
+    "magic_school": "War",
+    "rank": "I",
+    "description": "Long-range fighter that deals bonus damage to flying enemies.",
+    "image_required": true,
+    "last_modified": "2026-02-09T00:35:17.666468+00:00",
+    "tags": [],
+    "changelog": [
+      {
+        "version": "0.0.1",
+        "date": "2026-02-08T09:49:16.837714+00:00",
+        "description": "Initial Closed Beta 2 Data"
+      }
+    ],
+    "damage": 8,
+    "health": 85,
+    "range": 36,
+    "movement_speed": 3,
+    "movement_type": "Ground"
+  },
+  {
+    "entity_id": "harpy_nest",
+    "name": "Harpy Nest",
+    "category": "Building",
+    "magic_school": "Wild",
+    "rank": "III",
+    "description": "Nest that continuously spawns new Harpies.",
+    "image_required": true,
+    "last_modified": "2026-02-08T14:59:13.838778+00:00",
+    "tags": [],
+    "changelog": [
+      {
+        "version": "0.0.1",
+        "date": "2026-02-08T09:49:16.844994+00:00",
+        "description": "Initial Closed Beta 2 Data"
+      }
+    ],
+    "health": 750
+  },
+  {
+    "entity_id": "steam_tank",
+    "name": "Steam Tank",
+    "category": "Creature",
+    "magic_school": "Technomancy",
+    "rank": "III",
+    "description": "Long-range unit that deals heavy damage to a target.",
+    "image_required": true,
+    "last_modified": "2026-02-09T00:35:17.667303+00:00",
+    "tags": [],
+    "changelog": [
+      {
+        "version": "0.0.1",
+        "date": "2026-02-08T09:49:16.846123+00:00",
+        "description": "Initial Closed Beta 2 Data"
+      }
+    ],
+    "damage": 40,
+    "health": 130,
+    "range": 75,
+    "movement_speed": 3,
+    "movement_type": "Ground"
+  },
+  {
+    "entity_id": "ogre",
+    "name": "Ogre",
+    "category": "Creature",
+    "magic_school": "War",
+    "rank": "III",
+    "description": "Mighty warrior that crushes target areas with a hammer.",
+    "image_required": true,
+    "last_modified": "2026-02-09T00:35:17.666648+00:00",
+    "tags": [],
+    "changelog": [
+      {
+        "version": "0.0.1",
+        "date": "2026-02-08T09:49:16.845391+00:00",
+        "description": "Initial Closed Beta 2 Data"
+      }
+    ],
+    "damage": 70,
+    "health": 2300,
+    "movement_speed": 3,
+    "movement_type": "Ground"
+  },
+  {
+    "entity_id": "juggernaut",
+    "name": "Juggernaut",
+    "category": "Creature",
+    "magic_school": "War",
+    "rank": "IV",
+    "description": "Colossal creature that deals massive damage to structures.",
+    "image_required": true,
+    "last_modified": "2026-02-09T00:35:17.666132+00:00",
+    "tags": [],
+    "changelog": [
+      {
+        "version": "0.0.1",
+        "date": "2026-02-08T09:49:16.847802+00:00",
+        "description": "Initial Closed Beta 2 Data"
+      }
+    ],
+    "damage": 100,
+    "health": 10000,
+    "movement_speed": 3,
+    "movement_type": "Ground"
+  },
+  {
+    "entity_id": "dryad",
+    "name": "Dryad",
+    "category": "Creature",
+    "magic_school": "Holy",
+    "rank": "II",
+    "description": "Support creature that heals allies. Uses elemental attacks when infused.",
+    "image_required": true,
+    "last_modified": "2026-02-09T00:35:17.665222+00:00",
+    "tags": [],
+    "changelog": [
+      {
+        "version": "0.0.1",
+        "date": "2026-02-08T09:49:16.840490+00:00",
+        "description": "Initial Closed Beta 2 Data"
+      }
+    ],
+    "damage": 12,
+    "health": 225,
+    "movement_speed": 3,
+    "heal_amount": 150,
+    "movement_type": "Ground"
+  },
+  {
+    "entity_id": "crypt",
+    "name": "Crypt",
+    "category": "Building",
+    "magic_school": "Necromancy",
+    "rank": "III",
+    "description": "Shrine that continuously summons new Skeleton Warriors.",
+    "image_required": true,
+    "last_modified": "2026-02-08T14:59:13.836024+00:00",
+    "tags": [],
+    "changelog": [
+      {
+        "version": "0.0.1",
+        "date": "2026-02-08T09:49:16.843010+00:00",
+        "description": "Initial Closed Beta 2 Data"
+      }
+    ],
+    "health": 1000
+  },
+  {
+    "entity_id": "skeleton_warrior",
+    "name": "Skeleton Warrior",
+    "category": "Creature",
+    "magic_school": "Necromancy",
+    "rank": "I",
+    "description": "Undead soldier that captures altars quickly in large groups.",
+    "image_required": true,
+    "last_modified": "2026-02-09T00:35:17.667144+00:00",
+    "tags": [],
+    "changelog": [
+      {
+        "version": "0.0.1",
+        "date": "2026-02-08T09:49:16.838860+00:00",
+        "description": "Initial Closed Beta 2 Data"
+      }
+    ],
+    "damage": 15,
+    "health": 200,
+    "movement_speed": 3,
+    "movement_type": "Ground"
   },
   {
     "entity_id": "ballista",
@@ -41,91 +346,26 @@
     "range": 80
   },
   {
-    "entity_id": "crypt",
-    "name": "Crypt",
-    "category": "Building",
+    "entity_id": "ruin_spider",
+    "name": "Ruin Spider",
+    "category": "Creature",
     "magic_school": "Necromancy",
-    "rank": "III",
-    "description": "Shrine that continuously summons new Skeleton Warriors.",
-    "image_required": true,
-    "last_modified": "2026-02-08T14:59:13.836024+00:00",
-    "tags": [],
-    "changelog": [
-      {
-        "version": "0.0.1",
-        "date": "2026-02-08T09:49:16.843010+00:00",
-        "description": "Initial Closed Beta 2 Data"
-      }
-    ],
-    "health": 1000
-  },
-  {
-    "entity_id": "dryad",
-    "name": "Dryad",
-    "category": "Creature",
-    "magic_school": "Holy",
-    "rank": "II",
-    "description": "Support creature that heals allies. Uses elemental attacks when infused.",
-    "image_required": true,
-    "last_modified": "2026-02-08T14:59:13.836394+00:00",
-    "tags": [],
-    "changelog": [
-      {
-        "version": "0.0.1",
-        "date": "2026-02-08T09:49:16.840490+00:00",
-        "description": "Initial Closed Beta 2 Data"
-      }
-    ],
-    "damage": 12,
-    "health": 225,
-    "movement_speed": 3,
-    "heal_amount": 150,
-    "movement_type": "Ground"
-  },
-  {
-    "entity_id": "earth_golem",
-    "name": "Earth Golem",
-    "category": "Creature",
-    "magic_school": "Elemental",
-    "rank": "II",
-    "description": "Strong melee unit that resists damage from large enemies.",
-    "image_required": true,
-    "last_modified": "2026-02-08T14:59:13.836730+00:00",
-    "tags": [],
-    "changelog": [
-      {
-        "version": "0.0.1",
-        "date": "2026-02-08T09:49:16.840800+00:00",
-        "description": "Initial Closed Beta 2 Data"
-      }
-    ],
-    "damage": 25,
-    "health": 650,
-    "movement_speed": 2,
-    "movement_type": "Ground"
-  },
-  {
-    "entity_id": "faerie",
-    "name": "Faerie",
-    "category": "Creature",
-    "magic_school": "Astral",
     "rank": "I",
-    "description": "Stealthy flying ranged creature that turns invisible out of combat.",
+    "description": "Fast creature that explodes on contact, dealing bonus damage to structures.",
     "image_required": true,
-    "last_modified": "2026-02-08T14:59:13.837368+00:00",
+    "last_modified": "2026-02-09T00:35:17.666984+00:00",
     "tags": [],
     "changelog": [
       {
         "version": "0.0.1",
-        "date": "2026-02-08T09:49:16.836151+00:00",
+        "date": "2026-02-08T09:49:16.838362+00:00",
         "description": "Initial Closed Beta 2 Data"
       }
     ],
-    "damage": 9,
-    "health": 100,
-    "range": 25,
-    "movement_speed": 3,
-    "movement_type": "Flying"
+    "damage": 20,
+    "health": 85,
+    "movement_speed": 7,
+    "movement_type": "Ground"
   },
   {
     "entity_id": "giant_shielder",
@@ -135,7 +375,7 @@
     "rank": "III",
     "description": "Slow giant that protects allies with a massive shield.",
     "image_required": true,
-    "last_modified": "2026-02-08T14:59:13.837938+00:00",
+    "last_modified": "2026-02-09T00:35:17.665790+00:00",
     "tags": [],
     "changelog": [
       {
@@ -150,155 +390,6 @@
     "movement_type": "Ground"
   },
   {
-    "entity_id": "harpy",
-    "name": "Harpy",
-    "category": "Creature",
-    "magic_school": "Wild",
-    "rank": "I",
-    "description": "Agile flying creature that excels at defeating ground units.",
-    "image_required": true,
-    "last_modified": "2026-02-08T14:59:13.838375+00:00",
-    "tags": [],
-    "changelog": [
-      {
-        "version": "0.0.1",
-        "date": "2026-02-08T09:49:16.837000+00:00",
-        "description": "Initial Closed Beta 2 Data"
-      }
-    ],
-    "damage": 12,
-    "health": 100,
-    "movement_speed": 8,
-    "movement_type": "Flying"
-  },
-  {
-    "entity_id": "harpy_nest",
-    "name": "Harpy Nest",
-    "category": "Building",
-    "magic_school": "Wild",
-    "rank": "III",
-    "description": "Nest that continuously spawns new Harpies.",
-    "image_required": true,
-    "last_modified": "2026-02-08T14:59:13.838778+00:00",
-    "tags": [],
-    "changelog": [
-      {
-        "version": "0.0.1",
-        "date": "2026-02-08T09:49:16.844994+00:00",
-        "description": "Initial Closed Beta 2 Data"
-      }
-    ],
-    "health": 750
-  },
-  {
-    "entity_id": "juggernaut",
-    "name": "Juggernaut",
-    "category": "Creature",
-    "magic_school": "War",
-    "rank": "IV",
-    "description": "Colossal creature that deals massive damage to structures.",
-    "image_required": true,
-    "last_modified": "2026-02-08T14:59:13.839138+00:00",
-    "tags": [],
-    "changelog": [
-      {
-        "version": "0.0.1",
-        "date": "2026-02-08T09:49:16.847802+00:00",
-        "description": "Initial Closed Beta 2 Data"
-      }
-    ],
-    "damage": 100,
-    "health": 10000,
-    "movement_speed": 3,
-    "movement_type": "Ground"
-  },
-  {
-    "entity_id": "lich",
-    "name": "Lich",
-    "category": "Creature",
-    "magic_school": "Necromancy",
-    "rank": "II",
-    "description": "Undead caster that inflicts curses to enemies, increasing the damage they take and reducing their movement speed.",
-    "image_required": true,
-    "last_modified": "2026-02-08T14:59:13.839552+00:00",
-    "tags": [],
-    "changelog": [
-      {
-        "version": "0.0.1",
-        "date": "2026-02-08T09:49:16.841271+00:00",
-        "description": "Initial Closed Beta 2 Data"
-      }
-    ],
-    "damage": 5,
-    "health": 500,
-    "movement_speed": 5,
-    "movement_type": "Flying"
-  },
-  {
-    "entity_id": "lizard_archer",
-    "name": "Lizard Archer",
-    "category": "Creature",
-    "magic_school": "War",
-    "rank": "I",
-    "description": "Long-range fighter that deals bonus damage to flying enemies.",
-    "image_required": true,
-    "last_modified": "2026-02-08T14:59:13.840197+00:00",
-    "tags": [],
-    "changelog": [
-      {
-        "version": "0.0.1",
-        "date": "2026-02-08T09:49:16.837714+00:00",
-        "description": "Initial Closed Beta 2 Data"
-      }
-    ],
-    "damage": 8,
-    "health": 85,
-    "range": 36,
-    "movement_speed": 3,
-    "movement_type": "Ground"
-  },
-  {
-    "entity_id": "ogre",
-    "name": "Ogre",
-    "category": "Creature",
-    "magic_school": "War",
-    "rank": "III",
-    "description": "Mighty warrior that crushes target areas with a hammer.",
-    "image_required": true,
-    "last_modified": "2026-02-08T14:59:13.840915+00:00",
-    "tags": [],
-    "changelog": [
-      {
-        "version": "0.0.1",
-        "date": "2026-02-08T09:49:16.845391+00:00",
-        "description": "Initial Closed Beta 2 Data"
-      }
-    ],
-    "damage": 70,
-    "health": 2300,
-    "movement_speed": 3,
-    "movement_type": "Ground"
-  },
-  {
-    "entity_id": "rampart",
-    "name": "Rampart",
-    "category": "Building",
-    "magic_school": "Holy",
-    "rank": "II",
-    "description": "Defensive wall that blocks enemy paths.",
-    "image_required": true,
-    "last_modified": "2026-02-08T14:59:13.841416+00:00",
-    "tags": [],
-    "changelog": [
-      {
-        "version": "0.0.1",
-        "date": "2026-02-08T09:49:16.841572+00:00",
-        "description": "Initial Closed Beta 2 Data"
-      }
-    ],
-    "health": 250
-  },
-  {
     "entity_id": "rocket_soldier",
     "name": "Rocket Soldier",
     "category": "Creature",
@@ -306,7 +397,7 @@
     "rank": "I",
     "description": "Medium-range soldier that deals bonus damage to structures.",
     "image_required": true,
-    "last_modified": "2026-02-08T14:59:13.841782+00:00",
+    "last_modified": "2026-02-09T00:35:17.666812+00:00",
     "tags": [],
     "changelog": [
       {
@@ -322,117 +413,26 @@
     "movement_type": "Hover"
   },
   {
-    "entity_id": "ruin_spider",
-    "name": "Ruin Spider",
+    "entity_id": "harpy",
+    "name": "Harpy",
     "category": "Creature",
-    "magic_school": "Necromancy",
+    "magic_school": "Wild",
     "rank": "I",
-    "description": "Fast creature that explodes on contact, dealing bonus damage to structures.",
+    "description": "Agile flying creature that excels at defeating ground units.",
     "image_required": true,
-    "last_modified": "2026-02-08T14:59:13.842118+00:00",
+    "last_modified": "2026-02-09T00:35:17.665964+00:00",
     "tags": [],
     "changelog": [
       {
         "version": "0.0.1",
-        "date": "2026-02-08T09:49:16.838362+00:00",
+        "date": "2026-02-08T09:49:16.837000+00:00",
         "description": "Initial Closed Beta 2 Data"
       }
     ],
-    "damage": 20,
-    "health": 85,
-    "movement_speed": 7,
-    "movement_type": "Ground"
-  },
-  {
-    "entity_id": "skeleton_warrior",
-    "name": "Skeleton Warrior",
-    "category": "Creature",
-    "magic_school": "Necromancy",
-    "rank": "I",
-    "description": "Undead soldier that captures altars quickly in large groups.",
-    "image_required": true,
-    "last_modified": "2026-02-08T14:59:13.842631+00:00",
-    "tags": [],
-    "changelog": [
-      {
-        "version": "0.0.1",
-        "date": "2026-02-08T09:49:16.838860+00:00",
-        "description": "Initial Closed Beta 2 Data"
-      }
-    ],
-    "damage": 15,
-    "health": 200,
-    "movement_speed": 3,
-    "movement_type": "Ground"
-  },
-  {
-    "entity_id": "steam_tank",
-    "name": "Steam Tank",
-    "category": "Creature",
-    "magic_school": "Technomancy",
-    "rank": "III",
-    "description": "Long-range unit that deals heavy damage to a target.",
-    "image_required": true,
-    "last_modified": "2026-02-08T14:59:13.843278+00:00",
-    "tags": [],
-    "changelog": [
-      {
-        "version": "0.0.1",
-        "date": "2026-02-08T09:49:16.846123+00:00",
-        "description": "Initial Closed Beta 2 Data"
-      }
-    ],
-    "damage": 40,
-    "health": 130,
-    "range": 75,
-    "movement_speed": 3,
-    "movement_type": "Ground"
-  },
-  {
-    "entity_id": "stone_behemoth",
-    "name": "Stone Behemoth",
-    "category": "Creature",
-    "magic_school": "Elemental",
-    "rank": "III",
-    "description": "Siege unit that hurls long-range boulders for heavy area damage.",
-    "image_required": true,
-    "last_modified": "2026-02-08T14:59:13.843933+00:00",
-    "tags": [],
-    "changelog": [
-      {
-        "version": "0.0.1",
-        "date": "2026-02-08T09:49:16.846434+00:00",
-        "description": "Initial Closed Beta 2 Data"
-      }
-    ],
-    "damage": 40,
-    "health": 210,
-    "range": 55,
-    "movement_speed": 2,
-    "movement_type": "Ground"
-  },
-  {
-    "entity_id": "wolven_hunter",
-    "name": "Wolven Hunter",
-    "category": "Creature",
-    "magic_school": "War",
-    "rank": "II",
-    "description": "Hunter unit that fires powerful long-range bolts.",
-    "image_required": true,
-    "last_modified": "2026-02-08T14:59:13.844385+00:00",
-    "tags": [],
-    "changelog": [
-      {
-        "version": "0.0.1",
-        "date": "2026-02-08T09:49:16.841893+00:00",
-        "description": "Initial Closed Beta 2 Data"
-      }
-    ],
-    "damage": 16,
-    "health": 340,
-    "range": 75,
-    "movement_speed": 3,
-    "movement_type": "Ground"
+    "damage": 12,
+    "health": 100,
+    "movement_speed": 8,
+    "movement_type": "Flying"
   },
   {
     "entity_id": "wyvern",
@@ -442,7 +442,7 @@
     "rank": "II",
     "description": "Flying dragonkin that attacks with mid-range projectiles.",
     "image_required": true,
-    "last_modified": "2026-02-08T14:59:13.844760+00:00",
+    "last_modified": "2026-02-09T00:35:17.667820+00:00",
     "tags": [],
     "changelog": [
       {
