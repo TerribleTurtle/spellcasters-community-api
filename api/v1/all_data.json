@@ -1,7 +1,7 @@
 {
   "build_info": {
     "version": "0.0.1",
-    "generated_at": "2026-02-09T21:40:09.392139+00:00"
+    "generated_at": "2026-02-09T21:43:20.026334+00:00"
   },
   "spellcasters": [
     {
@@ -45,141 +45,6 @@
         {
           "version": "0.0.1",
           "date": "2026-02-05T18:34:05.939129Z",
-          "description": "Initial Closed Beta 2 Data"
-        }
-      ]
-    },
-    {
-      "$schema": "../../schemas/v1/spellcaster.schema.json",
-      "spellcaster_id": "fire_elementalist",
-      "name": "Fire Elementalist",
-      "class": "Conqueror",
-      "category": "Spellcaster",
-      "image_required": true,
-      "difficulty": 1,
-      "abilities": {
-        "passive": [
-          {
-            "name": "Ignition Spark",
-            "description": "Allied creatures near the Fire Elementalist capture Altar faster."
-          },
-          {
-            "name": "Enduring Flame",
-            "description": "Damaging burning enemies heals the Fire Elementalist."
-          },
-          {
-            "name": "Blazing Momentum",
-            "description": "When you or your creatures kill a Burning enemy, recharge Elemental incantations."
-          }
-        ],
-        "primary": {
-          "name": "Flame Strikes",
-          "description": "Burns enemies with powerful Fire attacks."
-        },
-        "defense": {
-          "name": "Fiery Dash",
-          "description": "Performs an invincible dash in a chosen direction."
-        },
-        "ultimate": {
-          "name": "Burning Conquest",
-          "description": "Captures a territory, inflicts Fire damage and imbues allied units with Fire."
-        }
-      },
-      "last_modified": "2026-02-08T14:59:13.845583+00:00",
-      "changelog": [
-        {
-          "version": "0.0.1",
-          "date": "2026-02-05T17:05:01.971147Z",
-          "description": "Initial Closed Beta 2 Data"
-        }
-      ]
-    },
-    {
-      "$schema": "../../schemas/v1/spellcaster.schema.json",
-      "spellcaster_id": "iron_sorcerer",
-      "name": "Iron Sorcerer",
-      "class": "Conqueror",
-      "category": "Spellcaster",
-      "image_required": true,
-      "difficulty": 1,
-      "abilities": {
-        "passive": [
-          {
-            "name": "Scourge of War",
-            "description": "Increases Rank III population, reduces Rank II population."
-          },
-          {
-            "name": "Forges of Valm",
-            "description": "Creatures spawned from Buildings have significantly more health."
-          },
-          {
-            "name": "Field Commander",
-            "description": "While on the ground, nearby creatures gain a strong defensive buff."
-          }
-        ],
-        "primary": {
-          "name": "Twin Strike",
-          "description": "Strike with powerful mid-range attacks that interrupt enemies."
-        },
-        "defense": {
-          "name": "Rune Shield",
-          "description": "Raise a shield that protects allies and reflects attacks."
-        },
-        "ultimate": {
-          "name": "Iron Tempest",
-          "description": "Unleash a metal vortex that deals heavy damage and knocks back enemies along its path."
-        }
-      },
-      "last_modified": "2026-02-09T00:35:17.664187+00:00",
-      "changelog": [
-        {
-          "version": "0.0.1",
-          "date": "2026-02-05T18:35:34.217480Z",
-          "description": "Initial Closed Beta 2 Data"
-        }
-      ]
-    },
-    {
-      "$schema": "../../schemas/v1/spellcaster.schema.json",
-      "spellcaster_id": "mystic_scribe",
-      "name": "Mystic Scribe",
-      "class": "Enchanter",
-      "category": "Spellcaster",
-      "image_required": true,
-      "difficulty": 2,
-      "abilities": {
-        "passive": [
-          {
-            "name": "Echo of Mercy",
-            "description": "While on the ground, the Mystic Scribe emits a healing aura."
-          },
-          {
-            "name": "Holy Magic Mastery",
-            "description": "All Holy incantations recharge faster."
-          },
-          {
-            "name": "Thousand Favors",
-            "description": "Healing recharges Rank I and II creatures."
-          }
-        ],
-        "primary": {
-          "name": "Brush Strike",
-          "description": "Strike with enchanted ink to damage enemies and boost allies\u2019 Max HP."
-        },
-        "defense": {
-          "name": "Scroll Barrier",
-          "description": "Creates a barrier that absorbs projectiles and reduces all damage."
-        },
-        "ultimate": {
-          "name": "Seal of Immortality",
-          "description": "Mark the ground with a massive healing seal."
-        }
-      },
-      "last_modified": "2026-02-08T14:59:13.847025+00:00",
-      "changelog": [
-        {
-          "version": "0.0.1",
-          "date": "2026-02-05T18:33:10.223377Z",
           "description": "Initial Closed Beta 2 Data"
         }
       ]
@@ -247,11 +112,146 @@
           }
         }
       },
-      "last_modified": "2026-02-09T03:08:09.010676+00:00",
+      "last_modified": "2026-02-09T21:43:19.928610+00:00",
       "changelog": [
         {
           "version": "0.0.1",
           "date": "2026-02-05T18:35:34.217480Z",
+          "description": "Initial Closed Beta 2 Data"
+        }
+      ]
+    },
+    {
+      "$schema": "../../schemas/v1/spellcaster.schema.json",
+      "spellcaster_id": "mystic_scribe",
+      "name": "Mystic Scribe",
+      "class": "Enchanter",
+      "category": "Spellcaster",
+      "image_required": true,
+      "difficulty": 2,
+      "abilities": {
+        "passive": [
+          {
+            "name": "Echo of Mercy",
+            "description": "While on the ground, the Mystic Scribe emits a healing aura."
+          },
+          {
+            "name": "Holy Magic Mastery",
+            "description": "All Holy incantations recharge faster."
+          },
+          {
+            "name": "Thousand Favors",
+            "description": "Healing recharges Rank I and II creatures."
+          }
+        ],
+        "primary": {
+          "name": "Brush Strike",
+          "description": "Strike with enchanted ink to damage enemies and boost allies\u2019 Max HP."
+        },
+        "defense": {
+          "name": "Scroll Barrier",
+          "description": "Creates a barrier that absorbs projectiles and reduces all damage."
+        },
+        "ultimate": {
+          "name": "Seal of Immortality",
+          "description": "Mark the ground with a massive healing seal."
+        }
+      },
+      "last_modified": "2026-02-08T14:59:13.847025+00:00",
+      "changelog": [
+        {
+          "version": "0.0.1",
+          "date": "2026-02-05T18:33:10.223377Z",
+          "description": "Initial Closed Beta 2 Data"
+        }
+      ]
+    },
+    {
+      "$schema": "../../schemas/v1/spellcaster.schema.json",
+      "spellcaster_id": "iron_sorcerer",
+      "name": "Iron Sorcerer",
+      "class": "Conqueror",
+      "category": "Spellcaster",
+      "image_required": true,
+      "difficulty": 1,
+      "abilities": {
+        "passive": [
+          {
+            "name": "Scourge of War",
+            "description": "Increases Rank III population, reduces Rank II population."
+          },
+          {
+            "name": "Forges of Valm",
+            "description": "Creatures spawned from Buildings have significantly more health."
+          },
+          {
+            "name": "Field Commander",
+            "description": "While on the ground, nearby creatures gain a strong defensive buff."
+          }
+        ],
+        "primary": {
+          "name": "Twin Strike",
+          "description": "Strike with powerful mid-range attacks that interrupt enemies."
+        },
+        "defense": {
+          "name": "Rune Shield",
+          "description": "Raise a shield that protects allies and reflects attacks."
+        },
+        "ultimate": {
+          "name": "Iron Tempest",
+          "description": "Unleash a metal vortex that deals heavy damage and knocks back enemies along its path."
+        }
+      },
+      "last_modified": "2026-02-09T21:43:19.928333+00:00",
+      "changelog": [
+        {
+          "version": "0.0.1",
+          "date": "2026-02-05T18:35:34.217480Z",
+          "description": "Initial Closed Beta 2 Data"
+        }
+      ]
+    },
+    {
+      "$schema": "../../schemas/v1/spellcaster.schema.json",
+      "spellcaster_id": "fire_elementalist",
+      "name": "Fire Elementalist",
+      "class": "Conqueror",
+      "category": "Spellcaster",
+      "image_required": true,
+      "difficulty": 1,
+      "abilities": {
+        "passive": [
+          {
+            "name": "Ignition Spark",
+            "description": "Allied creatures near the Fire Elementalist capture Altar faster."
+          },
+          {
+            "name": "Enduring Flame",
+            "description": "Damaging burning enemies heals the Fire Elementalist."
+          },
+          {
+            "name": "Blazing Momentum",
+            "description": "When you or your creatures kill a Burning enemy, recharge Elemental incantations."
+          }
+        ],
+        "primary": {
+          "name": "Flame Strikes",
+          "description": "Burns enemies with powerful Fire attacks."
+        },
+        "defense": {
+          "name": "Fiery Dash",
+          "description": "Performs an invincible dash in a chosen direction."
+        },
+        "ultimate": {
+          "name": "Burning Conquest",
+          "description": "Captures a territory, inflicts Fire damage and imbues allied units with Fire."
+        }
+      },
+      "last_modified": "2026-02-08T14:59:13.845583+00:00",
+      "changelog": [
+        {
+          "version": "0.0.1",
+          "date": "2026-02-05T17:05:01.971147Z",
           "description": "Initial Closed Beta 2 Data"
         }
       ]
@@ -305,15 +305,15 @@
   "consumables": [
     {
       "$schema": "../../schemas/v1/consumable.schema.json",
-      "entity_id": "light_heal",
-      "name": "Light Heal",
-      "effect_type": "Heal",
+      "entity_id": "small_recharge",
+      "name": "Small Recharge",
+      "effect_type": "Charge_Refill",
       "value": 25,
-      "last_modified": "2026-02-08T14:59:13.832656+00:00",
+      "last_modified": "2026-02-08T14:59:13.833884+00:00",
       "changelog": [
         {
           "version": "0.0.1",
-          "date": "2026-02-04T15:27:05.217337Z",
+          "date": "2026-02-05T03:28:27.274024Z",
           "description": "Initial Closed Beta 2 Data"
         }
       ],
@@ -341,6 +341,24 @@
     },
     {
       "$schema": "../../schemas/v1/consumable.schema.json",
+      "entity_id": "light_heal",
+      "name": "Light Heal",
+      "effect_type": "Heal",
+      "value": 25,
+      "last_modified": "2026-02-08T14:59:13.832656+00:00",
+      "changelog": [
+        {
+          "version": "0.0.1",
+          "date": "2026-02-04T15:27:05.217337Z",
+          "description": "Initial Closed Beta 2 Data"
+        }
+      ],
+      "category": "Consumable",
+      "image_required": false,
+      "duration": 30
+    },
+    {
+      "$schema": "../../schemas/v1/consumable.schema.json",
       "entity_id": "medium_recharge",
       "name": "Medium Recharge",
       "effect_type": "Charge_Refill",
@@ -356,28 +374,98 @@
       "category": "Consumable",
       "image_required": false,
       "duration": 30
-    },
-    {
-      "$schema": "../../schemas/v1/consumable.schema.json",
-      "entity_id": "small_recharge",
-      "name": "Small Recharge",
-      "effect_type": "Charge_Refill",
-      "value": 25,
-      "last_modified": "2026-02-08T14:59:13.833884+00:00",
-      "changelog": [
-        {
-          "version": "0.0.1",
-          "date": "2026-02-05T03:28:27.274024Z",
-          "description": "Initial Closed Beta 2 Data"
-        }
-      ],
-      "category": "Consumable",
-      "image_required": false,
-      "duration": 30
     }
   ],
   "upgrades": [],
   "units": [
+    {
+      "entity_id": "faerie",
+      "name": "Faerie",
+      "category": "Creature",
+      "magic_school": "Astral",
+      "rank": "I",
+      "description": "Stealthy flying ranged creature that turns invisible out of combat.",
+      "image_required": true,
+      "last_modified": "2026-02-09T00:35:17.665584+00:00",
+      "tags": [],
+      "changelog": [
+        {
+          "version": "0.0.1",
+          "date": "2026-02-08T09:49:16.836151+00:00",
+          "description": "Initial Closed Beta 2 Data"
+        }
+      ],
+      "damage": 9,
+      "health": 100,
+      "range": 25,
+      "movement_speed": 3,
+      "movement_type": "Flying"
+    },
+    {
+      "entity_id": "wolven_hunter",
+      "name": "Wolven Hunter",
+      "category": "Creature",
+      "magic_school": "War",
+      "rank": "II",
+      "description": "Hunter unit that fires powerful long-range bolts.",
+      "image_required": true,
+      "last_modified": "2026-02-09T00:35:17.667652+00:00",
+      "tags": [],
+      "changelog": [
+        {
+          "version": "0.0.1",
+          "date": "2026-02-08T09:49:16.841893+00:00",
+          "description": "Initial Closed Beta 2 Data"
+        }
+      ],
+      "damage": 16,
+      "health": 340,
+      "range": 75,
+      "movement_speed": 3,
+      "movement_type": "Ground"
+    },
+    {
+      "entity_id": "stone_behemoth",
+      "name": "Stone Behemoth",
+      "category": "Creature",
+      "magic_school": "Elemental",
+      "rank": "III",
+      "description": "Siege unit that hurls long-range boulders for heavy area damage.",
+      "image_required": true,
+      "last_modified": "2026-02-09T00:35:17.667469+00:00",
+      "tags": [],
+      "changelog": [
+        {
+          "version": "0.0.1",
+          "date": "2026-02-08T09:49:16.846434+00:00",
+          "description": "Initial Closed Beta 2 Data"
+        }
+      ],
+      "damage": 40,
+      "health": 210,
+      "range": 55,
+      "movement_speed": 2,
+      "movement_type": "Ground"
+    },
+    {
+      "entity_id": "rampart",
+      "name": "Rampart",
+      "category": "Building",
+      "magic_school": "Holy",
+      "rank": "II",
+      "description": "Defensive wall that blocks enemy paths.",
+      "image_required": true,
+      "last_modified": "2026-02-08T14:59:13.841416+00:00",
+      "tags": [],
+      "changelog": [
+        {
+          "version": "0.0.1",
+          "date": "2026-02-08T09:49:16.841572+00:00",
+          "description": "Initial Closed Beta 2 Data"
+        }
+      ],
+      "health": 250
+    },
     {
       "entity_id": "astral_tower",
       "name": "Astral Tower",
@@ -386,7 +474,7 @@
       "rank": "III",
       "description": "A heavy defensive tower that targets enemies inside allied territory and can defend itself when attacked.",
       "image_required": true,
-      "last_modified": "2026-02-08T14:59:13.834801+00:00",
+      "last_modified": "2026-02-09T21:43:19.929641+00:00",
       "tags": [],
       "changelog": [
         {
@@ -399,96 +487,6 @@
       "health": 3500
     },
     {
-      "entity_id": "ballista",
-      "name": "Ballista",
-      "category": "Building",
-      "magic_school": "Technomancy",
-      "rank": "II",
-      "description": "Static weapon that targets enemies at long range.",
-      "image_required": true,
-      "last_modified": "2026-02-08T14:59:13.835524+00:00",
-      "tags": [],
-      "changelog": [
-        {
-          "version": "0.0.1",
-          "date": "2026-02-08T09:49:16.840179+00:00",
-          "description": "Initial Closed Beta 2 Data"
-        }
-      ],
-      "damage": 25,
-      "health": 300,
-      "range": 80
-    },
-    {
-      "entity_id": "crypt",
-      "name": "Crypt",
-      "category": "Building",
-      "magic_school": "Necromancy",
-      "rank": "III",
-      "description": "Shrine that continuously summons new Skeleton Warriors.",
-      "image_required": true,
-      "last_modified": "2026-02-08T14:59:13.836024+00:00",
-      "tags": [],
-      "changelog": [
-        {
-          "version": "0.0.1",
-          "date": "2026-02-08T09:49:16.843010+00:00",
-          "description": "Initial Closed Beta 2 Data"
-        }
-      ],
-      "mechanics": {
-        "spawner": [
-          {
-            "unit_id": "skeleton_warrior",
-            "count": 5,
-            "interval": 10.0,
-            "trigger": "Interval"
-          },
-          {
-            "unit_id": "skeleton_warrior",
-            "count": 10,
-            "trigger": "Death"
-          }
-        ]
-      },
-      "health": 1000
-    },
-    {
-      "entity_id": "dryad",
-      "name": "Dryad",
-      "category": "Creature",
-      "magic_school": "Holy",
-      "rank": "II",
-      "description": "Support creature that heals allies. Uses elemental attacks when infused.",
-      "image_required": true,
-      "last_modified": "2026-02-09T00:35:17.665222+00:00",
-      "tags": [],
-      "changelog": [
-        {
-          "version": "0.0.1",
-          "date": "2026-02-08T09:49:16.840490+00:00",
-          "description": "Initial Closed Beta 2 Data"
-        }
-      ],
-      "mechanics": {
-        "aura": [
-          {
-            "name": "Healing Aura",
-            "description": "Heals nearby allies.",
-            "radius": 8,
-            "value": 30,
-            "interval": 1.0,
-            "effect": "Heal",
-            "target_type": "Ally"
-          }
-        ]
-      },
-      "damage": 12,
-      "health": 225,
-      "movement_speed": 3,
-      "movement_type": "Ground"
-    },
-    {
       "entity_id": "earth_golem",
       "name": "Earth Golem",
       "category": "Creature",
@@ -496,7 +494,7 @@
       "rank": "II",
       "description": "Strong melee unit that resists damage from large enemies.",
       "image_required": true,
-      "last_modified": "2026-02-09T00:35:17.665402+00:00",
+      "last_modified": "2026-02-09T21:43:19.930152+00:00",
       "tags": [],
       "changelog": [
         {
@@ -523,152 +521,6 @@
       },
       "damage": 25,
       "health": 650,
-      "movement_speed": 2,
-      "movement_type": "Ground"
-    },
-    {
-      "entity_id": "faerie",
-      "name": "Faerie",
-      "category": "Creature",
-      "magic_school": "Astral",
-      "rank": "I",
-      "description": "Stealthy flying ranged creature that turns invisible out of combat.",
-      "image_required": true,
-      "last_modified": "2026-02-09T00:35:17.665584+00:00",
-      "tags": [],
-      "changelog": [
-        {
-          "version": "0.0.1",
-          "date": "2026-02-08T09:49:16.836151+00:00",
-          "description": "Initial Closed Beta 2 Data"
-        }
-      ],
-      "damage": 9,
-      "health": 100,
-      "range": 25,
-      "movement_speed": 3,
-      "movement_type": "Flying"
-    },
-    {
-      "entity_id": "giant_shielder",
-      "name": "Giant Shielder",
-      "category": "Creature",
-      "magic_school": "Holy",
-      "rank": "III",
-      "description": "Slow giant that protects allies with a massive shield.",
-      "image_required": true,
-      "last_modified": "2026-02-09T00:35:17.665790+00:00",
-      "tags": [],
-      "changelog": [
-        {
-          "version": "0.0.1",
-          "date": "2026-02-08T09:49:16.844628+00:00",
-          "description": "Initial Closed Beta 2 Data"
-        }
-      ],
-      "mechanics": {
-        "damage_modifiers": [
-          {
-            "target_type": "Creature",
-            "multiplier": 0.35,
-            "condition": "Always"
-          }
-        ]
-      },
-      "damage": 18,
-      "health": 900,
-      "movement_speed": 3,
-      "movement_type": "Ground"
-    },
-    {
-      "entity_id": "harpy",
-      "name": "Harpy",
-      "category": "Creature",
-      "magic_school": "Wild",
-      "rank": "I",
-      "description": "Agile flying creature that excels at defeating ground units.",
-      "image_required": true,
-      "last_modified": "2026-02-09T00:35:17.665964+00:00",
-      "tags": [],
-      "changelog": [
-        {
-          "version": "0.0.1",
-          "date": "2026-02-08T09:49:16.837000+00:00",
-          "description": "Initial Closed Beta 2 Data"
-        }
-      ],
-      "damage": 12,
-      "health": 100,
-      "movement_speed": 8,
-      "movement_type": "Flying"
-    },
-    {
-      "entity_id": "harpy_nest",
-      "name": "Harpy Nest",
-      "category": "Building",
-      "magic_school": "Wild",
-      "rank": "III",
-      "description": "Nest that continuously spawns new Harpies.",
-      "image_required": true,
-      "last_modified": "2026-02-08T14:59:13.838778+00:00",
-      "tags": [],
-      "changelog": [
-        {
-          "version": "0.0.1",
-          "date": "2026-02-08T09:49:16.844994+00:00",
-          "description": "Initial Closed Beta 2 Data"
-        }
-      ],
-      "mechanics": {
-        "spawner": [
-          {
-            "unit_id": "harpy",
-            "count": 5,
-            "interval": 10.0,
-            "trigger": "Interval"
-          },
-          {
-            "unit_id": "harpy",
-            "count": 10,
-            "trigger": "Death"
-          }
-        ]
-      },
-      "health": 750
-    },
-    {
-      "entity_id": "juggernaut",
-      "name": "Juggernaut",
-      "category": "Creature",
-      "magic_school": "War",
-      "rank": "IV",
-      "description": "Colossal creature that deals massive damage to structures.",
-      "image_required": true,
-      "last_modified": "2026-02-09T00:35:17.666132+00:00",
-      "tags": [],
-      "changelog": [
-        {
-          "version": "0.0.1",
-          "date": "2026-02-08T09:49:16.847802+00:00",
-          "description": "Initial Closed Beta 2 Data"
-        }
-      ],
-      "mechanics": {
-        "damage_modifiers": [
-          {
-            "target_type": "Lifestone",
-            "multiplier": 1.5,
-            "condition": "Always"
-          },
-          {
-            "target_type": "Building",
-            "multiplier": 2.0,
-            "condition": "Always"
-          }
-        ]
-      },
-      "damage": 220,
-      "health": 4000,
       "movement_speed": 2,
       "movement_type": "Ground"
     },
@@ -718,6 +570,63 @@
       "movement_type": "Ground"
     },
     {
+      "entity_id": "harpy_nest",
+      "name": "Harpy Nest",
+      "category": "Building",
+      "magic_school": "Wild",
+      "rank": "III",
+      "description": "Nest that continuously spawns new Harpies.",
+      "image_required": true,
+      "last_modified": "2026-02-09T21:43:19.930531+00:00",
+      "tags": [],
+      "changelog": [
+        {
+          "version": "0.0.1",
+          "date": "2026-02-08T09:49:16.844994+00:00",
+          "description": "Initial Closed Beta 2 Data"
+        }
+      ],
+      "mechanics": {
+        "spawner": [
+          {
+            "unit_id": "harpy",
+            "count": 5,
+            "interval": 10.0,
+            "trigger": "Interval"
+          },
+          {
+            "unit_id": "harpy",
+            "count": 10,
+            "trigger": "Death"
+          }
+        ]
+      },
+      "health": 750
+    },
+    {
+      "entity_id": "steam_tank",
+      "name": "Steam Tank",
+      "category": "Creature",
+      "magic_school": "Technomancy",
+      "rank": "III",
+      "description": "Long-range unit that deals heavy damage to a target.",
+      "image_required": true,
+      "last_modified": "2026-02-09T00:35:17.667303+00:00",
+      "tags": [],
+      "changelog": [
+        {
+          "version": "0.0.1",
+          "date": "2026-02-08T09:49:16.846123+00:00",
+          "description": "Initial Closed Beta 2 Data"
+        }
+      ],
+      "damage": 40,
+      "health": 130,
+      "range": 75,
+      "movement_speed": 3,
+      "movement_type": "Ground"
+    },
+    {
       "entity_id": "ogre",
       "name": "Ogre",
       "category": "Creature",
@@ -725,7 +634,7 @@
       "rank": "III",
       "description": "Mighty warrior that crushes target areas with a hammer.",
       "image_required": true,
-      "last_modified": "2026-02-09T00:35:17.666648+00:00",
+      "last_modified": "2026-02-09T21:43:19.930893+00:00",
       "tags": [],
       "changelog": [
         {
@@ -749,60 +658,167 @@
       "movement_type": "Ground"
     },
     {
-      "entity_id": "rampart",
-      "name": "Rampart",
-      "category": "Building",
-      "magic_school": "Holy",
-      "rank": "II",
-      "description": "Defensive wall that blocks enemy paths.",
-      "image_required": true,
-      "last_modified": "2026-02-08T14:59:13.841416+00:00",
-      "tags": [],
-      "changelog": [
-        {
-          "version": "0.0.1",
-          "date": "2026-02-08T09:49:16.841572+00:00",
-          "description": "Initial Closed Beta 2 Data"
-        }
-      ],
-      "health": 250
-    },
-    {
-      "entity_id": "rocket_soldier",
-      "name": "Rocket Soldier",
+      "entity_id": "juggernaut",
+      "name": "Juggernaut",
       "category": "Creature",
-      "magic_school": "Technomancy",
-      "rank": "I",
-      "description": "Medium-range soldier that deals bonus damage to structures.",
+      "magic_school": "War",
+      "rank": "IV",
+      "description": "Colossal creature that deals massive damage to structures.",
       "image_required": true,
-      "last_modified": "2026-02-09T00:35:17.666812+00:00",
+      "last_modified": "2026-02-09T21:43:19.930716+00:00",
       "tags": [],
       "changelog": [
         {
           "version": "0.0.1",
-          "date": "2026-02-08T09:49:16.838054+00:00",
+          "date": "2026-02-08T09:49:16.847802+00:00",
           "description": "Initial Closed Beta 2 Data"
         }
       ],
       "mechanics": {
         "damage_modifiers": [
           {
-            "target_type": "Unit",
-            "multiplier": 0.5,
+            "target_type": "Lifestone",
+            "multiplier": 1.5,
             "condition": "Always"
           },
           {
-            "target_type": "Spellcaster",
-            "multiplier": 0.5,
+            "target_type": "Building",
+            "multiplier": 2.0,
             "condition": "Always"
           }
         ]
       },
-      "damage": 35,
-      "health": 250,
-      "range": 22,
+      "damage": 220,
+      "health": 4000,
+      "movement_speed": 2,
+      "movement_type": "Ground"
+    },
+    {
+      "entity_id": "dryad",
+      "name": "Dryad",
+      "category": "Creature",
+      "magic_school": "Holy",
+      "rank": "II",
+      "description": "Support creature that heals allies. Uses elemental attacks when infused.",
+      "image_required": true,
+      "last_modified": "2026-02-09T21:43:19.929971+00:00",
+      "tags": [],
+      "changelog": [
+        {
+          "version": "0.0.1",
+          "date": "2026-02-08T09:49:16.840490+00:00",
+          "description": "Initial Closed Beta 2 Data"
+        }
+      ],
+      "mechanics": {
+        "aura": [
+          {
+            "name": "Healing Aura",
+            "description": "Heals nearby allies.",
+            "radius": 8,
+            "value": 30,
+            "interval": 1.0,
+            "effect": "Heal",
+            "target_type": "Ally"
+          }
+        ]
+      },
+      "damage": 12,
+      "health": 225,
       "movement_speed": 3,
-      "movement_type": "Hover"
+      "movement_type": "Ground"
+    },
+    {
+      "entity_id": "crypt",
+      "name": "Crypt",
+      "category": "Building",
+      "magic_school": "Necromancy",
+      "rank": "III",
+      "description": "Shrine that continuously summons new Skeleton Warriors.",
+      "image_required": true,
+      "last_modified": "2026-02-09T21:43:19.929783+00:00",
+      "tags": [],
+      "changelog": [
+        {
+          "version": "0.0.1",
+          "date": "2026-02-08T09:49:16.843010+00:00",
+          "description": "Initial Closed Beta 2 Data"
+        }
+      ],
+      "mechanics": {
+        "spawner": [
+          {
+            "unit_id": "skeleton_warrior",
+            "count": 5,
+            "interval": 10.0,
+            "trigger": "Interval"
+          },
+          {
+            "unit_id": "skeleton_warrior",
+            "count": 10,
+            "trigger": "Death"
+          }
+        ]
+      },
+      "health": 1000
+    },
+    {
+      "entity_id": "skeleton_warrior",
+      "name": "Skeleton Warrior",
+      "category": "Creature",
+      "magic_school": "Necromancy",
+      "rank": "I",
+      "description": "Undead soldier that captures altars quickly in large groups.",
+      "image_required": true,
+      "last_modified": "2026-02-09T21:43:19.931422+00:00",
+      "tags": [],
+      "changelog": [
+        {
+          "version": "0.0.1",
+          "date": "2026-02-08T09:49:16.838860+00:00",
+          "description": "Initial Closed Beta 2 Data"
+        }
+      ],
+      "mechanics": {
+        "capture_speed_modifier": 1.25,
+        "damage_modifiers": [
+          {
+            "target_type": "Creature",
+            "multiplier": 2.6,
+            "condition": "Always"
+          },
+          {
+            "target_type": "Building",
+            "multiplier": 0.9,
+            "condition": "Always"
+          }
+        ]
+      },
+      "damage": 15,
+      "health": 200,
+      "movement_speed": 3,
+      "movement_type": "Ground"
+    },
+    {
+      "entity_id": "ballista",
+      "name": "Ballista",
+      "category": "Building",
+      "magic_school": "Technomancy",
+      "rank": "II",
+      "description": "Static weapon that targets enemies at long range.",
+      "image_required": true,
+      "last_modified": "2026-02-08T14:59:13.835524+00:00",
+      "tags": [],
+      "changelog": [
+        {
+          "version": "0.0.1",
+          "date": "2026-02-08T09:49:16.840179+00:00",
+          "description": "Initial Closed Beta 2 Data"
+        }
+      ],
+      "damage": 25,
+      "health": 300,
+      "range": 80
     },
     {
       "entity_id": "ruin_spider",
@@ -812,7 +828,7 @@
       "rank": "I",
       "description": "Fast creature that explodes on contact, dealing bonus damage to structures.",
       "image_required": true,
-      "last_modified": "2026-02-09T00:35:17.666984+00:00",
+      "last_modified": "2026-02-09T21:43:19.931256+00:00",
       "tags": [],
       "changelog": [
         {
@@ -846,110 +862,94 @@
       "movement_type": "Ground"
     },
     {
-      "entity_id": "skeleton_warrior",
-      "name": "Skeleton Warrior",
+      "entity_id": "giant_shielder",
+      "name": "Giant Shielder",
       "category": "Creature",
-      "magic_school": "Necromancy",
-      "rank": "I",
-      "description": "Undead soldier that captures altars quickly in large groups.",
+      "magic_school": "Holy",
+      "rank": "III",
+      "description": "Slow giant that protects allies with a massive shield.",
       "image_required": true,
-      "last_modified": "2026-02-09T00:35:17.667144+00:00",
+      "last_modified": "2026-02-09T21:43:19.930354+00:00",
       "tags": [],
       "changelog": [
         {
           "version": "0.0.1",
-          "date": "2026-02-08T09:49:16.838860+00:00",
+          "date": "2026-02-08T09:49:16.844628+00:00",
           "description": "Initial Closed Beta 2 Data"
         }
       ],
       "mechanics": {
-        "capture_speed_modifier": 1.25,
         "damage_modifiers": [
           {
             "target_type": "Creature",
-            "multiplier": 2.6,
-            "condition": "Always"
-          },
-          {
-            "target_type": "Building",
-            "multiplier": 0.9,
+            "multiplier": 0.35,
             "condition": "Always"
           }
         ]
       },
-      "damage": 15,
-      "health": 200,
+      "damage": 18,
+      "health": 900,
       "movement_speed": 3,
       "movement_type": "Ground"
     },
     {
-      "entity_id": "steam_tank",
-      "name": "Steam Tank",
+      "entity_id": "rocket_soldier",
+      "name": "Rocket Soldier",
       "category": "Creature",
       "magic_school": "Technomancy",
-      "rank": "III",
-      "description": "Long-range unit that deals heavy damage to a target.",
+      "rank": "I",
+      "description": "Medium-range soldier that deals bonus damage to structures.",
       "image_required": true,
-      "last_modified": "2026-02-09T00:35:17.667303+00:00",
+      "last_modified": "2026-02-09T21:43:19.931070+00:00",
       "tags": [],
       "changelog": [
         {
           "version": "0.0.1",
-          "date": "2026-02-08T09:49:16.846123+00:00",
+          "date": "2026-02-08T09:49:16.838054+00:00",
           "description": "Initial Closed Beta 2 Data"
         }
       ],
-      "damage": 40,
-      "health": 130,
-      "range": 75,
+      "mechanics": {
+        "damage_modifiers": [
+          {
+            "target_type": "Unit",
+            "multiplier": 0.5,
+            "condition": "Always"
+          },
+          {
+            "target_type": "Spellcaster",
+            "multiplier": 0.5,
+            "condition": "Always"
+          }
+        ]
+      },
+      "damage": 35,
+      "health": 250,
+      "range": 22,
       "movement_speed": 3,
-      "movement_type": "Ground"
+      "movement_type": "Hover"
     },
     {
-      "entity_id": "stone_behemoth",
-      "name": "Stone Behemoth",
+      "entity_id": "harpy",
+      "name": "Harpy",
       "category": "Creature",
-      "magic_school": "Elemental",
-      "rank": "III",
-      "description": "Siege unit that hurls long-range boulders for heavy area damage.",
+      "magic_school": "Wild",
+      "rank": "I",
+      "description": "Agile flying creature that excels at defeating ground units.",
       "image_required": true,
-      "last_modified": "2026-02-09T00:35:17.667469+00:00",
+      "last_modified": "2026-02-09T00:35:17.665964+00:00",
       "tags": [],
       "changelog": [
         {
           "version": "0.0.1",
-          "date": "2026-02-08T09:49:16.846434+00:00",
+          "date": "2026-02-08T09:49:16.837000+00:00",
           "description": "Initial Closed Beta 2 Data"
         }
       ],
-      "damage": 40,
-      "health": 210,
-      "range": 55,
-      "movement_speed": 2,
-      "movement_type": "Ground"
-    },
-    {
-      "entity_id": "wolven_hunter",
-      "name": "Wolven Hunter",
-      "category": "Creature",
-      "magic_school": "War",
-      "rank": "II",
-      "description": "Hunter unit that fires powerful long-range bolts.",
-      "image_required": true,
-      "last_modified": "2026-02-09T00:35:17.667652+00:00",
-      "tags": [],
-      "changelog": [
-        {
-          "version": "0.0.1",
-          "date": "2026-02-08T09:49:16.841893+00:00",
-          "description": "Initial Closed Beta 2 Data"
-        }
-      ],
-      "damage": 16,
-      "health": 340,
-      "range": 75,
-      "movement_speed": 3,
-      "movement_type": "Ground"
+      "damage": 12,
+      "health": 100,
+      "movement_speed": 8,
+      "movement_type": "Flying"
     },
     {
       "entity_id": "wyvern",
@@ -959,7 +959,7 @@
       "rank": "II",
       "description": "Flying dragonkin that attacks with mid-range projectiles.",
       "image_required": true,
-      "last_modified": "2026-02-09T00:35:17.667820+00:00",
+      "last_modified": "2026-02-09T21:43:19.931585+00:00",
       "tags": [],
       "changelog": [
         {
@@ -1005,6 +1005,26 @@
       "range": 80
     },
     {
+      "entity_id": "fire_ray",
+      "name": "Fire Ray",
+      "category": "Spell",
+      "magic_school": "Elemental",
+      "rank": "I",
+      "description": "Focused beam that deals low Fire damage.",
+      "image_required": true,
+      "last_modified": "2026-02-08T14:59:13.827448+00:00",
+      "tags": [],
+      "changelog": [
+        {
+          "version": "0.0.1",
+          "date": "2026-02-08T09:49:16.836670+00:00",
+          "description": "Initial Closed Beta 2 Data"
+        }
+      ],
+      "damage": 70,
+      "range": 45
+    },
+    {
       "entity_id": "astral_shot",
       "name": "Astral Shot",
       "category": "Spell",
@@ -1028,54 +1048,43 @@
       "range": 80
     },
     {
-      "entity_id": "earthquake",
-      "name": "Earthquake",
+      "entity_id": "flame_surge",
+      "name": "Flame Surge",
       "category": "Spell",
-      "magic_school": "Wild",
+      "magic_school": "War",
       "rank": "III",
-      "description": "Ground shockwave that damages structures and staggers creatures significantly. Damage is split into 3 waves.",
+      "description": "Fire pulse that burns enemies and infuses nearby allies.",
       "image_required": true,
-      "last_modified": "2026-02-09T00:35:17.665004+00:00",
+      "last_modified": "2026-02-08T14:59:13.827871+00:00",
       "tags": [],
       "changelog": [
         {
           "version": "0.0.1",
-          "date": "2026-02-08T09:49:16.843317+00:00",
+          "date": "2026-02-08T09:49:16.843934+00:00",
           "description": "Initial Closed Beta 2 Data"
         }
       ],
-      "damage": 76,
-      "mechanics": {
-        "waves": 3,
-        "bonus_damage": [
-          {
-            "target_type": "Building",
-            "unit": "percent_max_hp",
-            "value": 0.3
-          }
-        ]
-      },
-      "range": 35
+      "range": 24
     },
     {
-      "entity_id": "fire_ball",
-      "name": "Fire Ball",
+      "entity_id": "heal_ray",
+      "name": "Heal Ray",
       "category": "Spell",
-      "magic_school": "Elemental",
-      "rank": "III",
-      "description": "Fast projectile that deals medium Fire damage to a target.",
+      "magic_school": "Holy",
+      "rank": "I",
+      "description": "Healing ray that can be aimed at the ground to restore allies in the area.",
       "image_required": true,
-      "last_modified": "2026-02-08T14:59:13.826195+00:00",
+      "last_modified": "2026-02-08T14:59:13.829193+00:00",
       "tags": [],
       "changelog": [
         {
           "version": "0.0.1",
-          "date": "2026-02-08T09:49:16.843620+00:00",
+          "date": "2026-02-08T09:49:16.837289+00:00",
           "description": "Initial Closed Beta 2 Data"
         }
       ],
-      "damage": 530,
-      "range": 80
+      "range": 45,
+      "heal_amount": 300
     },
     {
       "entity_id": "fire_rain",
@@ -1085,7 +1094,7 @@
       "rank": "IV",
       "description": "Fire projectiles that deal continuous damage over a wide area.",
       "image_required": true,
-      "last_modified": "2026-02-08T14:59:13.826727+00:00",
+      "last_modified": "2026-02-09T21:43:19.929048+00:00",
       "tags": [],
       "changelog": [
         {
@@ -1108,19 +1117,49 @@
       "duration": 12
     },
     {
-      "entity_id": "fire_ray",
-      "name": "Fire Ray",
+      "entity_id": "earthquake",
+      "name": "Earthquake",
       "category": "Spell",
-      "magic_school": "Elemental",
-      "rank": "I",
-      "description": "Focused beam that deals low Fire damage.",
+      "magic_school": "Wild",
+      "rank": "III",
+      "description": "Ground shockwave that damages structures and staggers creatures significantly. Damage is split into 3 waves.",
       "image_required": true,
-      "last_modified": "2026-02-08T14:59:13.827448+00:00",
+      "last_modified": "2026-02-09T21:43:19.928868+00:00",
       "tags": [],
       "changelog": [
         {
           "version": "0.0.1",
-          "date": "2026-02-08T09:49:16.836670+00:00",
+          "date": "2026-02-08T09:49:16.843317+00:00",
+          "description": "Initial Closed Beta 2 Data"
+        }
+      ],
+      "damage": 76,
+      "mechanics": {
+        "waves": 3,
+        "bonus_damage": [
+          {
+            "target_type": "Building",
+            "unit": "percent_max_hp",
+            "value": 0.3
+          }
+        ]
+      },
+      "range": 35
+    },
+    {
+      "entity_id": "thunder_ray",
+      "name": "Thunder Ray",
+      "category": "Spell",
+      "magic_school": "Technomancy",
+      "rank": "I",
+      "description": "Focused beam that deals low Lightning damage.",
+      "image_required": true,
+      "last_modified": "2026-02-08T14:59:13.831217+00:00",
+      "tags": [],
+      "changelog": [
+        {
+          "version": "0.0.1",
+          "date": "2026-02-08T09:49:16.839433+00:00",
           "description": "Initial Closed Beta 2 Data"
         }
       ],
@@ -1128,23 +1167,43 @@
       "range": 45
     },
     {
-      "entity_id": "flame_surge",
-      "name": "Flame Surge",
+      "entity_id": "resurrection",
+      "name": "Resurrection",
       "category": "Spell",
-      "magic_school": "War",
-      "rank": "III",
-      "description": "Fire pulse that burns enemies and infuses nearby allies.",
+      "magic_school": "Holy",
+      "rank": "IV",
+      "description": "Magic circle that resurrects creatures with partial health.",
       "image_required": true,
-      "last_modified": "2026-02-08T14:59:13.827871+00:00",
+      "last_modified": "2026-02-08T14:59:13.830451+00:00",
       "tags": [],
       "changelog": [
         {
           "version": "0.0.1",
-          "date": "2026-02-08T09:49:16.843934+00:00",
+          "date": "2026-02-08T09:49:16.848165+00:00",
           "description": "Initial Closed Beta 2 Data"
         }
       ],
-      "range": 24
+      "duration": 12
+    },
+    {
+      "entity_id": "fire_ball",
+      "name": "Fire Ball",
+      "category": "Spell",
+      "magic_school": "Elemental",
+      "rank": "III",
+      "description": "Fast projectile that deals medium Fire damage to a target.",
+      "image_required": true,
+      "last_modified": "2026-02-08T14:59:13.826195+00:00",
+      "tags": [],
+      "changelog": [
+        {
+          "version": "0.0.1",
+          "date": "2026-02-08T09:49:16.843620+00:00",
+          "description": "Initial Closed Beta 2 Data"
+        }
+      ],
+      "damage": 530,
+      "range": 80
     },
     {
       "entity_id": "frost_surge",
@@ -1164,46 +1223,6 @@
         }
       ],
       "range": 24
-    },
-    {
-      "entity_id": "grand_lightning",
-      "name": "Grand Lightning",
-      "category": "Spell",
-      "magic_school": "Technomancy",
-      "rank": "IV",
-      "description": "Thunderstrike that deals extreme Lightning damage to a target.",
-      "image_required": true,
-      "last_modified": "2026-02-08T14:59:13.828654+00:00",
-      "tags": [],
-      "changelog": [
-        {
-          "version": "0.0.1",
-          "date": "2026-02-08T09:49:16.847345+00:00",
-          "description": "Initial Closed Beta 2 Data"
-        }
-      ],
-      "damage": 3675,
-      "range": 36
-    },
-    {
-      "entity_id": "heal_ray",
-      "name": "Heal Ray",
-      "category": "Spell",
-      "magic_school": "Holy",
-      "rank": "I",
-      "description": "Healing ray that can be aimed at the ground to restore allies in the area.",
-      "image_required": true,
-      "last_modified": "2026-02-08T14:59:13.829193+00:00",
-      "tags": [],
-      "changelog": [
-        {
-          "version": "0.0.1",
-          "date": "2026-02-08T09:49:16.837289+00:00",
-          "description": "Initial Closed Beta 2 Data"
-        }
-      ],
-      "range": 45,
-      "heal_amount": 300
     },
     {
       "entity_id": "poison_grenade",
@@ -1227,25 +1246,6 @@
       "duration": 12
     },
     {
-      "entity_id": "resurrection",
-      "name": "Resurrection",
-      "category": "Spell",
-      "magic_school": "Holy",
-      "rank": "IV",
-      "description": "Magic circle that resurrects creatures with partial health.",
-      "image_required": true,
-      "last_modified": "2026-02-08T14:59:13.830451+00:00",
-      "tags": [],
-      "changelog": [
-        {
-          "version": "0.0.1",
-          "date": "2026-02-08T09:49:16.848165+00:00",
-          "description": "Initial Closed Beta 2 Data"
-        }
-      ],
-      "duration": 12
-    },
-    {
       "entity_id": "sacrifice",
       "name": "Sacrifice",
       "category": "Spell",
@@ -1265,24 +1265,24 @@
       "damage": 90
     },
     {
-      "entity_id": "thunder_ray",
-      "name": "Thunder Ray",
+      "entity_id": "grand_lightning",
+      "name": "Grand Lightning",
       "category": "Spell",
       "magic_school": "Technomancy",
-      "rank": "I",
-      "description": "Focused beam that deals low Lightning damage.",
+      "rank": "IV",
+      "description": "Thunderstrike that deals extreme Lightning damage to a target.",
       "image_required": true,
-      "last_modified": "2026-02-08T14:59:13.831217+00:00",
+      "last_modified": "2026-02-08T14:59:13.828654+00:00",
       "tags": [],
       "changelog": [
         {
           "version": "0.0.1",
-          "date": "2026-02-08T09:49:16.839433+00:00",
+          "date": "2026-02-08T09:49:16.847345+00:00",
           "description": "Initial Closed Beta 2 Data"
         }
       ],
-      "damage": 70,
-      "range": 45
+      "damage": 3675,
+      "range": 36
     }
   ],
   "titans": [
@@ -1294,7 +1294,7 @@
       "rank": "V",
       "description": "The Wild Titan. Crushes all structures as it marches toward the Lifestones. Destroys and captures altars instantly.",
       "image_required": true,
-      "last_modified": "2026-02-08T14:59:13.831661+00:00",
+      "last_modified": "2026-02-09T21:43:19.929258+00:00",
       "tags": [],
       "changelog": [
         {
@@ -1330,7 +1330,7 @@
       "rank": "V",
       "description": "The Titan of Death. Weakens all nearby enemies and retaliates against Spellcasters.",
       "image_required": true,
-      "last_modified": "2026-02-08T14:59:13.832063+00:00",
+      "last_modified": "2026-02-09T21:43:19.929453+00:00",
       "tags": [],
       "changelog": [
         {

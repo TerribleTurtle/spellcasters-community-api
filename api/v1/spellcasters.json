@@ -46,141 +46,6 @@
   },
   {
     "$schema": "../../schemas/v1/spellcaster.schema.json",
-    "spellcaster_id": "fire_elementalist",
-    "name": "Fire Elementalist",
-    "class": "Conqueror",
-    "category": "Spellcaster",
-    "image_required": true,
-    "difficulty": 1,
-    "abilities": {
-      "passive": [
-        {
-          "name": "Ignition Spark",
-          "description": "Allied creatures near the Fire Elementalist capture Altar faster."
-        },
-        {
-          "name": "Enduring Flame",
-          "description": "Damaging burning enemies heals the Fire Elementalist."
-        },
-        {
-          "name": "Blazing Momentum",
-          "description": "When you or your creatures kill a Burning enemy, recharge Elemental incantations."
-        }
-      ],
-      "primary": {
-        "name": "Flame Strikes",
-        "description": "Burns enemies with powerful Fire attacks."
-      },
-      "defense": {
-        "name": "Fiery Dash",
-        "description": "Performs an invincible dash in a chosen direction."
-      },
-      "ultimate": {
-        "name": "Burning Conquest",
-        "description": "Captures a territory, inflicts Fire damage and imbues allied units with Fire."
-      }
-    },
-    "last_modified": "2026-02-08T14:59:13.845583+00:00",
-    "changelog": [
-      {
-        "version": "0.0.1",
-        "date": "2026-02-05T17:05:01.971147Z",
-        "description": "Initial Closed Beta 2 Data"
-      }
-    ]
-  },
-  {
-    "$schema": "../../schemas/v1/spellcaster.schema.json",
-    "spellcaster_id": "iron_sorcerer",
-    "name": "Iron Sorcerer",
-    "class": "Conqueror",
-    "category": "Spellcaster",
-    "image_required": true,
-    "difficulty": 1,
-    "abilities": {
-      "passive": [
-        {
-          "name": "Scourge of War",
-          "description": "Increases Rank III population, reduces Rank II population."
-        },
-        {
-          "name": "Forges of Valm",
-          "description": "Creatures spawned from Buildings have significantly more health."
-        },
-        {
-          "name": "Field Commander",
-          "description": "While on the ground, nearby creatures gain a strong defensive buff."
-        }
-      ],
-      "primary": {
-        "name": "Twin Strike",
-        "description": "Strike with powerful mid-range attacks that interrupt enemies."
-      },
-      "defense": {
-        "name": "Rune Shield",
-        "description": "Raise a shield that protects allies and reflects attacks."
-      },
-      "ultimate": {
-        "name": "Iron Tempest",
-        "description": "Unleash a metal vortex that deals heavy damage and knocks back enemies along its path."
-      }
-    },
-    "last_modified": "2026-02-09T00:35:17.664187+00:00",
-    "changelog": [
-      {
-        "version": "0.0.1",
-        "date": "2026-02-05T18:35:34.217480Z",
-        "description": "Initial Closed Beta 2 Data"
-      }
-    ]
-  },
-  {
-    "$schema": "../../schemas/v1/spellcaster.schema.json",
-    "spellcaster_id": "mystic_scribe",
-    "name": "Mystic Scribe",
-    "class": "Enchanter",
-    "category": "Spellcaster",
-    "image_required": true,
-    "difficulty": 2,
-    "abilities": {
-      "passive": [
-        {
-          "name": "Echo of Mercy",
-          "description": "While on the ground, the Mystic Scribe emits a healing aura."
-        },
-        {
-          "name": "Holy Magic Mastery",
-          "description": "All Holy incantations recharge faster."
-        },
-        {
-          "name": "Thousand Favors",
-          "description": "Healing recharges Rank I and II creatures."
-        }
-      ],
-      "primary": {
-        "name": "Brush Strike",
-        "description": "Strike with enchanted ink to damage enemies and boost allies\u2019 Max HP."
-      },
-      "defense": {
-        "name": "Scroll Barrier",
-        "description": "Creates a barrier that absorbs projectiles and reduces all damage."
-      },
-      "ultimate": {
-        "name": "Seal of Immortality",
-        "description": "Mark the ground with a massive healing seal."
-      }
-    },
-    "last_modified": "2026-02-08T14:59:13.847025+00:00",
-    "changelog": [
-      {
-        "version": "0.0.1",
-        "date": "2026-02-05T18:33:10.223377Z",
-        "description": "Initial Closed Beta 2 Data"
-      }
-    ]
-  },
-  {
-    "$schema": "../../schemas/v1/spellcaster.schema.json",
     "spellcaster_id": "stone_shaman",
     "name": "Stone Shaman",
     "class": "Enchanter",
@@ -242,11 +107,146 @@
         }
       }
     },
-    "last_modified": "2026-02-09T03:08:09.010676+00:00",
+    "last_modified": "2026-02-09T21:43:19.928610+00:00",
     "changelog": [
       {
         "version": "0.0.1",
         "date": "2026-02-05T18:35:34.217480Z",
+        "description": "Initial Closed Beta 2 Data"
+      }
+    ]
+  },
+  {
+    "$schema": "../../schemas/v1/spellcaster.schema.json",
+    "spellcaster_id": "mystic_scribe",
+    "name": "Mystic Scribe",
+    "class": "Enchanter",
+    "category": "Spellcaster",
+    "image_required": true,
+    "difficulty": 2,
+    "abilities": {
+      "passive": [
+        {
+          "name": "Echo of Mercy",
+          "description": "While on the ground, the Mystic Scribe emits a healing aura."
+        },
+        {
+          "name": "Holy Magic Mastery",
+          "description": "All Holy incantations recharge faster."
+        },
+        {
+          "name": "Thousand Favors",
+          "description": "Healing recharges Rank I and II creatures."
+        }
+      ],
+      "primary": {
+        "name": "Brush Strike",
+        "description": "Strike with enchanted ink to damage enemies and boost allies\u2019 Max HP."
+      },
+      "defense": {
+        "name": "Scroll Barrier",
+        "description": "Creates a barrier that absorbs projectiles and reduces all damage."
+      },
+      "ultimate": {
+        "name": "Seal of Immortality",
+        "description": "Mark the ground with a massive healing seal."
+      }
+    },
+    "last_modified": "2026-02-08T14:59:13.847025+00:00",
+    "changelog": [
+      {
+        "version": "0.0.1",
+        "date": "2026-02-05T18:33:10.223377Z",
+        "description": "Initial Closed Beta 2 Data"
+      }
+    ]
+  },
+  {
+    "$schema": "../../schemas/v1/spellcaster.schema.json",
+    "spellcaster_id": "iron_sorcerer",
+    "name": "Iron Sorcerer",
+    "class": "Conqueror",
+    "category": "Spellcaster",
+    "image_required": true,
+    "difficulty": 1,
+    "abilities": {
+      "passive": [
+        {
+          "name": "Scourge of War",
+          "description": "Increases Rank III population, reduces Rank II population."
+        },
+        {
+          "name": "Forges of Valm",
+          "description": "Creatures spawned from Buildings have significantly more health."
+        },
+        {
+          "name": "Field Commander",
+          "description": "While on the ground, nearby creatures gain a strong defensive buff."
+        }
+      ],
+      "primary": {
+        "name": "Twin Strike",
+        "description": "Strike with powerful mid-range attacks that interrupt enemies."
+      },
+      "defense": {
+        "name": "Rune Shield",
+        "description": "Raise a shield that protects allies and reflects attacks."
+      },
+      "ultimate": {
+        "name": "Iron Tempest",
+        "description": "Unleash a metal vortex that deals heavy damage and knocks back enemies along its path."
+      }
+    },
+    "last_modified": "2026-02-09T21:43:19.928333+00:00",
+    "changelog": [
+      {
+        "version": "0.0.1",
+        "date": "2026-02-05T18:35:34.217480Z",
+        "description": "Initial Closed Beta 2 Data"
+      }
+    ]
+  },
+  {
+    "$schema": "../../schemas/v1/spellcaster.schema.json",
+    "spellcaster_id": "fire_elementalist",
+    "name": "Fire Elementalist",
+    "class": "Conqueror",
+    "category": "Spellcaster",
+    "image_required": true,
+    "difficulty": 1,
+    "abilities": {
+      "passive": [
+        {
+          "name": "Ignition Spark",
+          "description": "Allied creatures near the Fire Elementalist capture Altar faster."
+        },
+        {
+          "name": "Enduring Flame",
+          "description": "Damaging burning enemies heals the Fire Elementalist."
+        },
+        {
+          "name": "Blazing Momentum",
+          "description": "When you or your creatures kill a Burning enemy, recharge Elemental incantations."
+        }
+      ],
+      "primary": {
+        "name": "Flame Strikes",
+        "description": "Burns enemies with powerful Fire attacks."
+      },
+      "defense": {
+        "name": "Fiery Dash",
+        "description": "Performs an invincible dash in a chosen direction."
+      },
+      "ultimate": {
+        "name": "Burning Conquest",
+        "description": "Captures a territory, inflicts Fire damage and imbues allied units with Fire."
+      }
+    },
+    "last_modified": "2026-02-08T14:59:13.845583+00:00",
+    "changelog": [
+      {
+        "version": "0.0.1",
+        "date": "2026-02-05T17:05:01.971147Z",
         "description": "Initial Closed Beta 2 Data"
       }
     ]
