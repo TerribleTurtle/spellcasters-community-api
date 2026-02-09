@@ -31,7 +31,7 @@
         },
         {
           "name": "Building Enchant",
-          "description": "Attacks now enchant ally buildings, enabling them to emit a healing aura"
+          "description": "Attacks enchant ally buildings, enabling them to emit a healing aura"
         }
       ]
     },

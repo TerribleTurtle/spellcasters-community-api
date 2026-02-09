@@ -1,15 +1,15 @@
 [
   {
     "$schema": "../../schemas/v1/consumable.schema.json",
-    "entity_id": "small_recharge",
-    "name": "Small Recharge",
-    "effect_type": "Charge_Refill",
+    "entity_id": "light_heal",
+    "name": "Light Heal",
+    "effect_type": "Heal",
     "value": 25,
-    "last_modified": "2026-02-08T14:59:13.833884+00:00",
+    "last_modified": "2026-02-08T14:59:13.832656+00:00",
     "changelog": [
       {
         "version": "0.0.1",
-        "date": "2026-02-05T03:28:27.274024Z",
+        "date": "2026-02-04T15:27:05.217337Z",
         "description": "Initial Closed Beta 2 Data"
       }
     ],
@@ -37,24 +37,6 @@
   },
   {
     "$schema": "../../schemas/v1/consumable.schema.json",
-    "entity_id": "light_heal",
-    "name": "Light Heal",
-    "effect_type": "Heal",
-    "value": 25,
-    "last_modified": "2026-02-08T14:59:13.832656+00:00",
-    "changelog": [
-      {
-        "version": "0.0.1",
-        "date": "2026-02-04T15:27:05.217337Z",
-        "description": "Initial Closed Beta 2 Data"
-      }
-    ],
-    "category": "Consumable",
-    "image_required": false,
-    "duration": 30
-  },
-  {
-    "$schema": "../../schemas/v1/consumable.schema.json",
     "entity_id": "medium_recharge",
     "name": "Medium Recharge",
     "effect_type": "Charge_Refill",
@@ -64,6 +46,24 @@
       {
         "version": "0.0.1",
         "date": "2026-02-04T15:27:05.217979Z",
+        "description": "Initial Closed Beta 2 Data"
+      }
+    ],
+    "category": "Consumable",
+    "image_required": false,
+    "duration": 30
+  },
+  {
+    "$schema": "../../schemas/v1/consumable.schema.json",
+    "entity_id": "small_recharge",
+    "name": "Small Recharge",
+    "effect_type": "Charge_Refill",
+    "value": 25,
+    "last_modified": "2026-02-08T14:59:13.833884+00:00",
+    "changelog": [
+      {
+        "version": "0.0.1",
+        "date": "2026-02-05T03:28:27.274024Z",
         "description": "Initial Closed Beta 2 Data"
       }
     ],

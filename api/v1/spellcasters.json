@@ -46,104 +46,45 @@
   },
   {
     "$schema": "../../schemas/v1/spellcaster.schema.json",
-    "spellcaster_id": "stone_shaman",
-    "name": "Stone Shaman",
-    "class": "Enchanter",
+    "spellcaster_id": "fire_elementalist",
+    "name": "Fire Elementalist",
+    "class": "Conqueror",
     "category": "Spellcaster",
     "image_required": true,
-    "difficulty": 2,
+    "difficulty": 1,
     "abilities": {
       "passive": [
         {
-          "name": "Mountain\u2019s Favor",
-          "description": "The Stone Shaman\u2019s attacks deal double damage to buildings."
+          "name": "Ignition Spark",
+          "description": "Allied creatures near the Fire Elementalist capture Altar faster."
         },
         {
-          "name": "Child of the Titans",
-          "description": "Increases Rank II and Rank III population while reducing Rank I population."
+          "name": "Enduring Flame",
+          "description": "Damaging burning enemies heals the Fire Elementalist."
         },
         {
-          "name": "Pathfinder",
-          "description": "While on the ground, the Shaman recharges Wild incantations much faster."
+          "name": "Blazing Momentum",
+          "description": "When you or your creatures kill a Burning enemy, recharge Elemental incantations."
         }
       ],
       "primary": {
-        "name": "Mountain Staff",
-        "description": "Swing your catalyst to deal heavy melee damage and interrupt enemies.",
-        "mechanics": [
-          {
-            "name": "Interruption",
-            "description": "Successfully hitting a Spellcaster twice interrupts their actions."
-          }
-        ]
+        "name": "Flame Strikes",
+        "description": "Burns enemies with powerful Fire attacks."
       },
       "defense": {
-        "name": "Wind Shield",
-        "description": "Conjure a protective wind barrier that deals damage on contact.",
-        "stats": {
-          "charges": null,
-          "duration": null
-        }
+        "name": "Fiery Dash",
+        "description": "Performs an invincible dash in a chosen direction."
       },
       "ultimate": {
-        "name": "Wall of Kamazad",
-        "description": "Deploys a colossal wall capable of blocking Titans.",
-        "stats": {
-          "duration": null,
-          "damage": null
-        }
+        "name": "Burning Conquest",
+        "description": "Captures a territory, inflicts Fire damage and imbues allied units with Fire."
       }
     },
-    "last_modified": "2026-02-09T00:35:17.664688+00:00",
+    "last_modified": "2026-02-08T14:59:13.845583+00:00",
     "changelog": [
       {
         "version": "0.0.1",
-        "date": "2026-02-05T18:35:34.217480Z",
-        "description": "Initial Closed Beta 2 Data"
-      }
-    ]
-  },
-  {
-    "$schema": "../../schemas/v1/spellcaster.schema.json",
-    "spellcaster_id": "mystic_scribe",
-    "name": "Mystic Scribe",
-    "class": "Enchanter",
-    "category": "Spellcaster",
-    "image_required": true,
-    "difficulty": 2,
-    "abilities": {
-      "passive": [
-        {
-          "name": "Echo of Mercy",
-          "description": "While on the ground, the Mystic Scribe emits a healing aura."
-        },
-        {
-          "name": "Holy Magic Mastery",
-          "description": "All Holy incantations recharge faster."
-        },
-        {
-          "name": "Thousand Favors",
-          "description": "Healing recharges Rank I and II creatures."
-        }
-      ],
-      "primary": {
-        "name": "Brush Strike",
-        "description": "Strike with enchanted ink to damage enemies and boost allies\u2019 Max HP."
-      },
-      "defense": {
-        "name": "Scroll Barrier",
-        "description": "Creates a barrier that absorbs projectiles and reduces all damage."
-      },
-      "ultimate": {
-        "name": "Seal of Immortality",
-        "description": "Mark the ground with a massive healing seal."
-      }
-    },
-    "last_modified": "2026-02-08T14:59:13.847025+00:00",
-    "changelog": [
-      {
-        "version": "0.0.1",
-        "date": "2026-02-05T18:33:10.223377Z",
+        "date": "2026-02-05T17:05:01.971147Z",
         "description": "Initial Closed Beta 2 Data"
       }
     ]
@@ -195,45 +136,108 @@
   },
   {
     "$schema": "../../schemas/v1/spellcaster.schema.json",
-    "spellcaster_id": "fire_elementalist",
-    "name": "Fire Elementalist",
-    "class": "Conqueror",
+    "spellcaster_id": "mystic_scribe",
+    "name": "Mystic Scribe",
+    "class": "Enchanter",
     "category": "Spellcaster",
     "image_required": true,
-    "difficulty": 1,
+    "difficulty": 2,
     "abilities": {
       "passive": [
         {
-          "name": "Ignition Spark",
-          "description": "Allied creatures near the Fire Elementalist capture Altar faster."
+          "name": "Echo of Mercy",
+          "description": "While on the ground, the Mystic Scribe emits a healing aura."
         },
         {
-          "name": "Enduring Flame",
-          "description": "Damaging burning enemies heals the Fire Elementalist."
+          "name": "Holy Magic Mastery",
+          "description": "All Holy incantations recharge faster."
         },
         {
-          "name": "Blazing Momentum",
-          "description": "When you or your creatures kill a Burning enemy, recharge Elemental incantations."
+          "name": "Thousand Favors",
+          "description": "Healing recharges Rank I and II creatures."
         }
       ],
       "primary": {
-        "name": "Flame Strikes",
-        "description": "Burns enemies with powerful Fire attacks."
+        "name": "Brush Strike",
+        "description": "Strike with enchanted ink to damage enemies and boost allies\u2019 Max HP."
       },
       "defense": {
-        "name": "Fiery Dash",
-        "description": "Performs an invincible dash in a chosen direction."
+        "name": "Scroll Barrier",
+        "description": "Creates a barrier that absorbs projectiles and reduces all damage."
       },
       "ultimate": {
-        "name": "Burning Conquest",
-        "description": "Captures a territory, inflicts Fire damage and imbues allied units with Fire."
+        "name": "Seal of Immortality",
+        "description": "Mark the ground with a massive healing seal."
       }
     },
-    "last_modified": "2026-02-08T14:59:13.845583+00:00",
+    "last_modified": "2026-02-08T14:59:13.847025+00:00",
     "changelog": [
       {
         "version": "0.0.1",
-        "date": "2026-02-05T17:05:01.971147Z",
+        "date": "2026-02-05T18:33:10.223377Z",
+        "description": "Initial Closed Beta 2 Data"
+      }
+    ]
+  },
+  {
+    "$schema": "../../schemas/v1/spellcaster.schema.json",
+    "spellcaster_id": "stone_shaman",
+    "name": "Stone Shaman",
+    "class": "Enchanter",
+    "category": "Spellcaster",
+    "image_required": true,
+    "difficulty": 2,
+    "abilities": {
+      "passive": [
+        {
+          "name": "Mountain\u2019s Favor",
+          "description": "The Stone Shaman\u2019s attacks deal double damage to buildings."
+        },
+        {
+          "name": "Child of the Titans",
+          "description": "Increases Rank II and Rank III population while reducing Rank I population."
+        },
+        {
+          "name": "Pathfinder",
+          "description": "While on the ground, the Shaman recharges Wild incantations much faster."
+        }
+      ],
+      "primary": {
+        "name": "Mountain Staff",
+        "description": "Swing your catalyst to deal heavy melee damage and interrupt enemies.",
+        "mechanics": [
+          {
+            "name": "Interruption",
+            "description": "Successfully hitting a Spellcaster twice interrupts their actions."
+          },
+          {
+            "name": "Building Enchant",
+            "description": "Attacks now enchant ally buildings, enabling them to emit a healing aura"
+          }
+        ]
+      },
+      "defense": {
+        "name": "Wind Shield",
+        "description": "Conjure a protective wind barrier that deals damage on contact.",
+        "stats": {
+          "charges": null,
+          "duration": null
+        }
+      },
+      "ultimate": {
+        "name": "Wall of Kamazad",
+        "description": "Deploys a colossal wall capable of blocking Titans.",
+        "stats": {
+          "duration": null,
+          "damage": null
+        }
+      }
+    },
+    "last_modified": "2026-02-09T00:35:17.664688+00:00",
+    "changelog": [
+      {
+        "version": "0.0.1",
+        "date": "2026-02-05T18:35:34.217480Z",
         "description": "Initial Closed Beta 2 Data"
       }
     ]
