@@ -28,6 +28,10 @@
         {
           "name": "Interruption",
           "description": "Successfully hitting a Spellcaster twice interrupts their actions."
+        },
+        {
+          "name": "Building Enchant",
+          "description": "Attacks now enchant ally buildings, enabling them to emit a healing aura"
         }
       ]
     },
