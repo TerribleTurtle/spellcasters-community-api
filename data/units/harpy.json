@@ -17,5 +17,6 @@
   ],
   "damage": 12,
   "health": 100,
-  "movement_speed": 8
+  "movement_speed": 8,
+  "movement_type": "Flying"
 }

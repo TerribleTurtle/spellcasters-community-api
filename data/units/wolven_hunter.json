@@ -18,5 +18,6 @@
   "damage": 16,
   "health": 340,
   "range": 75,
-  "movement_speed": 3
+  "movement_speed": 3,
+  "movement_type": "Ground"
 }

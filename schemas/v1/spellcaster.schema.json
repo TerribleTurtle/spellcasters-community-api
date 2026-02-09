@@ -65,7 +65,28 @@
       "type": "object",
       "properties": {
         "name": { "type": "string" },
-        "description": { "type": "string" }
+        "description": { "type": "string" },
+        "stats": {
+          "type": "object",
+          "properties": {
+            "damage": { "type": ["integer", "null"], "description": "Base damage amount" },
+            "duration": { "type": ["number", "null"], "description": "Duration in seconds" },
+            "charges": { "type": ["integer", "null"], "description": "Number of uses/stacks" },
+            "cooldown": { "type": ["number", "null"], "description": "Cooldown in seconds" },
+            "range": { "type": ["integer", "null"], "description": "Range in units" }
+          }
+        },
+        "mechanics": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "name": { "type": "string" },
+              "description": { "type": "string" }
+            },
+            "required": ["name", "description"]
+          }
+        }
       },
       "required": ["name", "description"]
     }

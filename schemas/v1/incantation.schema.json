@@ -36,11 +36,64 @@
     },
     "magic_school": {
       "type": "string",
-      "enum": ["Elemental", "Wild", "War", "Astral", "Holy", "Technomancy", "Necromancy", "Titan", "Dark", "Frost", "Lightning"]
+      "enum": [
+        "Elemental",
+        "Wild",
+        "War",
+        "Astral",
+        "Holy",
+        "Technomancy",
+        "Necromancy",
+        "Titan",
+        "Dark",
+        "Frost",
+        "Lightning"
+      ]
     },
     "rank": {
       "type": "string",
       "enum": ["I", "II", "III", "IV", "V"]
+    },
+    "movement_type": {
+      "type": "string",
+      "enum": ["Ground", "Flying", "Hover"],
+      "default": "Ground"
+    },
+    "mechanics": {
+      "type": "object",
+      "properties": {
+        "waves": {
+          "type": "integer",
+          "minimum": 1,
+          "description": "Number of pulses for Wave based spells"
+        },
+        "interval": {
+          "type": "number",
+          "minimum": 0,
+          "description": "Delay between pulses in seconds"
+        },
+        "bonus_damage": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": ["value", "unit", "target_type"],
+            "properties": {
+              "value": {
+                "type": "number",
+                "description": "Multiplier or Flat amount"
+              },
+              "unit": {
+                "type": "string",
+                "enum": ["flat", "percent_max_hp", "percent_current_hp"]
+              },
+              "target_type": {
+                "type": "string",
+                "enum": ["Building", "Creature", "All"]
+              }
+            }
+          }
+        }
+      }
     },
     "description": { "type": "string" },
     "tags": {

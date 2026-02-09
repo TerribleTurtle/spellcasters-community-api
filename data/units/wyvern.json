@@ -18,5 +18,6 @@
   "damage": 19,
   "health": 220,
   "range": 36,
-  "movement_speed": 7
+  "movement_speed": 7,
+  "movement_type": "Flying"
 }

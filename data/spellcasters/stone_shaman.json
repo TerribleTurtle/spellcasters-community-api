@@ -19,23 +19,33 @@
       {
         "name": "Pathfinder",
         "description": "While on the ground, the Shaman recharges Wild incantations much faster."
-      },
-      {
-        "name": "Spellcaster Interruption",
-        "description": "Successfully hitting a Spellcaster twice interrupts their actions."
       }
     ],
     "primary": {
       "name": "Mountain Staff",
-      "description": "Swing your catalyst to deal heavy melee damage and interrupt enemies."
+      "description": "Swing your catalyst to deal heavy melee damage and interrupt enemies.",
+      "mechanics": [
+        {
+          "name": "Interruption",
+          "description": "Successfully hitting a Spellcaster twice interrupts their actions."
+        }
+      ]
     },
     "defense": {
       "name": "Wind Shield",
-      "description": "Conjure a protective wind barrier that deals damage on contact."
+      "description": "Conjure a protective wind barrier that deals damage on contact.",
+      "stats": {
+        "charges": null,
+        "duration": null
+      }
     },
     "ultimate": {
       "name": "Wall of Kamazad",
-      "description": "Deploys a colossal wall capable of blocking Titans."
+      "description": "Deploys a colossal wall capable of blocking Titans.",
+      "stats": {
+        "duration": null,
+        "damage": null
+      }
     }
   },
   "last_modified": "2026-02-08T14:59:13.847479+00:00",

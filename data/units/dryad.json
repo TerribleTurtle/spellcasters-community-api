@@ -18,5 +18,6 @@
   "damage": 12,
   "health": 225,
   "movement_speed": 3,
-  "heal_amount": 150
+  "heal_amount": 150,
+  "movement_type": "Ground"
 }

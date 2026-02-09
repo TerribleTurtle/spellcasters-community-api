@@ -79,7 +79,8 @@
     "damage": 12,
     "health": 225,
     "movement_speed": 3,
-    "heal_amount": 150
+    "heal_amount": 150,
+    "movement_type": "Ground"
   },
   {
     "entity_id": "earth_golem",
@@ -100,7 +101,8 @@
     ],
     "damage": 25,
     "health": 650,
-    "movement_speed": 2
+    "movement_speed": 2,
+    "movement_type": "Ground"
   },
   {
     "entity_id": "faerie",
@@ -122,7 +124,8 @@
     "damage": 9,
     "health": 100,
     "range": 25,
-    "movement_speed": 3
+    "movement_speed": 3,
+    "movement_type": "Flying"
   },
   {
     "entity_id": "giant_shielder",
@@ -143,7 +146,8 @@
     ],
     "damage": 30,
     "health": 1800,
-    "movement_speed": 3
+    "movement_speed": 3,
+    "movement_type": "Ground"
   },
   {
     "entity_id": "harpy",
@@ -164,7 +168,8 @@
     ],
     "damage": 12,
     "health": 100,
-    "movement_speed": 8
+    "movement_speed": 8,
+    "movement_type": "Flying"
   },
   {
     "entity_id": "harpy_nest",
@@ -204,7 +209,8 @@
     ],
     "damage": 100,
     "health": 10000,
-    "movement_speed": 3
+    "movement_speed": 3,
+    "movement_type": "Ground"
   },
   {
     "entity_id": "lich",
@@ -225,7 +231,8 @@
     ],
     "damage": 5,
     "health": 500,
-    "movement_speed": 5
+    "movement_speed": 5,
+    "movement_type": "Flying"
   },
   {
     "entity_id": "lizard_archer",
@@ -247,7 +254,8 @@
     "damage": 8,
     "health": 85,
     "range": 36,
-    "movement_speed": 3
+    "movement_speed": 3,
+    "movement_type": "Ground"
   },
   {
     "entity_id": "ogre",
@@ -268,7 +276,8 @@
     ],
     "damage": 70,
     "health": 2300,
-    "movement_speed": 3
+    "movement_speed": 3,
+    "movement_type": "Ground"
   },
   {
     "entity_id": "rampart",
@@ -309,7 +318,8 @@
     "damage": 10,
     "health": 220,
     "range": 16,
-    "movement_speed": 4
+    "movement_speed": 4,
+    "movement_type": "Hover"
   },
   {
     "entity_id": "ruin_spider",
@@ -330,7 +340,8 @@
     ],
     "damage": 20,
     "health": 85,
-    "movement_speed": 7
+    "movement_speed": 7,
+    "movement_type": "Ground"
   },
   {
     "entity_id": "skeleton_warrior",
@@ -351,7 +362,8 @@
     ],
     "damage": 15,
     "health": 200,
-    "movement_speed": 3
+    "movement_speed": 3,
+    "movement_type": "Ground"
   },
   {
     "entity_id": "steam_tank",
@@ -373,7 +385,8 @@
     "damage": 40,
     "health": 130,
     "range": 75,
-    "movement_speed": 3
+    "movement_speed": 3,
+    "movement_type": "Ground"
   },
   {
     "entity_id": "stone_behemoth",
@@ -395,7 +408,8 @@
     "damage": 40,
     "health": 210,
     "range": 55,
-    "movement_speed": 2
+    "movement_speed": 2,
+    "movement_type": "Ground"
   },
   {
     "entity_id": "wolven_hunter",
@@ -417,7 +431,8 @@
     "damage": 16,
     "health": 340,
     "range": 75,
-    "movement_speed": 3
+    "movement_speed": 3,
+    "movement_type": "Ground"
   },
   {
     "entity_id": "wyvern",
@@ -439,6 +454,7 @@
     "damage": 19,
     "health": 220,
     "range": 36,
-    "movement_speed": 7
+    "movement_speed": 7,
+    "movement_type": "Flying"
   }
 ]

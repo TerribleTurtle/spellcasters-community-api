@@ -18,5 +18,6 @@
   "damage": 10,
   "health": 220,
   "range": 16,
-  "movement_speed": 4
+  "movement_speed": 4,
+  "movement_type": "Hover"
 }

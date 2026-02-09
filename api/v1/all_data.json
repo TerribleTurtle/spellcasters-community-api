@@ -1,7 +1,7 @@
 {
   "build_info": {
     "version": "0.0.1",
-    "generated_at": "2026-02-08T19:39:49.328152+00:00"
+    "generated_at": "2026-02-09T00:34:17.368074+00:00"
   },
   "spellcasters": [
     {
@@ -205,23 +205,33 @@
           {
             "name": "Pathfinder",
             "description": "While on the ground, the Shaman recharges Wild incantations much faster."
-          },
-          {
-            "name": "Spellcaster Interruption",
-            "description": "Successfully hitting a Spellcaster twice interrupts their actions."
           }
         ],
         "primary": {
           "name": "Mountain Staff",
-          "description": "Swing your catalyst to deal heavy melee damage and interrupt enemies."
+          "description": "Swing your catalyst to deal heavy melee damage and interrupt enemies.",
+          "mechanics": [
+            {
+              "name": "Interruption",
+              "description": "Successfully hitting a Spellcaster twice interrupts their actions."
+            }
+          ]
         },
         "defense": {
           "name": "Wind Shield",
-          "description": "Conjure a protective wind barrier that deals damage on contact."
+          "description": "Conjure a protective wind barrier that deals damage on contact.",
+          "stats": {
+            "charges": null,
+            "duration": null
+          }
         },
         "ultimate": {
           "name": "Wall of Kamazad",
-          "description": "Deploys a colossal wall capable of blocking Titans."
+          "description": "Deploys a colossal wall capable of blocking Titans.",
+          "stats": {
+            "duration": null,
+            "damage": null
+          }
         }
       },
       "last_modified": "2026-02-08T14:59:13.847479+00:00",
@@ -435,7 +445,8 @@
       "damage": 12,
       "health": 225,
       "movement_speed": 3,
-      "heal_amount": 150
+      "heal_amount": 150,
+      "movement_type": "Ground"
     },
     {
       "entity_id": "earth_golem",
@@ -456,7 +467,8 @@
       ],
       "damage": 25,
       "health": 650,
-      "movement_speed": 2
+      "movement_speed": 2,
+      "movement_type": "Ground"
     },
     {
       "entity_id": "faerie",
@@ -478,7 +490,8 @@
       "damage": 9,
       "health": 100,
       "range": 25,
-      "movement_speed": 3
+      "movement_speed": 3,
+      "movement_type": "Flying"
     },
     {
       "entity_id": "giant_shielder",
@@ -499,7 +512,8 @@
       ],
       "damage": 30,
       "health": 1800,
-      "movement_speed": 3
+      "movement_speed": 3,
+      "movement_type": "Ground"
     },
     {
       "entity_id": "harpy",
@@ -520,7 +534,8 @@
       ],
       "damage": 12,
       "health": 100,
-      "movement_speed": 8
+      "movement_speed": 8,
+      "movement_type": "Flying"
     },
     {
       "entity_id": "harpy_nest",
@@ -560,7 +575,8 @@
       ],
       "damage": 100,
       "health": 10000,
-      "movement_speed": 3
+      "movement_speed": 3,
+      "movement_type": "Ground"
     },
     {
       "entity_id": "lich",
@@ -581,7 +597,8 @@
       ],
       "damage": 5,
       "health": 500,
-      "movement_speed": 5
+      "movement_speed": 5,
+      "movement_type": "Flying"
     },
     {
       "entity_id": "lizard_archer",
@@ -603,7 +620,8 @@
       "damage": 8,
       "health": 85,
       "range": 36,
-      "movement_speed": 3
+      "movement_speed": 3,
+      "movement_type": "Ground"
     },
     {
       "entity_id": "ogre",
@@ -624,7 +642,8 @@
       ],
       "damage": 70,
       "health": 2300,
-      "movement_speed": 3
+      "movement_speed": 3,
+      "movement_type": "Ground"
     },
     {
       "entity_id": "rampart",
@@ -665,7 +684,8 @@
       "damage": 10,
       "health": 220,
       "range": 16,
-      "movement_speed": 4
+      "movement_speed": 4,
+      "movement_type": "Hover"
     },
     {
       "entity_id": "ruin_spider",
@@ -686,7 +706,8 @@
       ],
       "damage": 20,
       "health": 85,
-      "movement_speed": 7
+      "movement_speed": 7,
+      "movement_type": "Ground"
     },
     {
       "entity_id": "skeleton_warrior",
@@ -707,7 +728,8 @@
       ],
       "damage": 15,
       "health": 200,
-      "movement_speed": 3
+      "movement_speed": 3,
+      "movement_type": "Ground"
     },
     {
       "entity_id": "steam_tank",
@@ -729,7 +751,8 @@
       "damage": 40,
       "health": 130,
       "range": 75,
-      "movement_speed": 3
+      "movement_speed": 3,
+      "movement_type": "Ground"
     },
     {
       "entity_id": "stone_behemoth",
@@ -751,7 +774,8 @@
       "damage": 40,
       "health": 210,
       "range": 55,
-      "movement_speed": 2
+      "movement_speed": 2,
+      "movement_type": "Ground"
     },
     {
       "entity_id": "wolven_hunter",
@@ -773,7 +797,8 @@
       "damage": 16,
       "health": 340,
       "range": 75,
-      "movement_speed": 3
+      "movement_speed": 3,
+      "movement_type": "Ground"
     },
     {
       "entity_id": "wyvern",
@@ -795,7 +820,8 @@
       "damage": 19,
       "health": 220,
       "range": 36,
-      "movement_speed": 7
+      "movement_speed": 7,
+      "movement_type": "Flying"
     }
   ],
   "spells": [
@@ -845,9 +871,9 @@
       "category": "Spell",
       "magic_school": "Wild",
       "rank": "III",
-      "description": "Ground shockwave that damages structures and staggers creatures.",
+      "description": "Ground shockwave that damages structures and staggers creatures. Damage is split into 3 waves.",
       "image_required": true,
-      "last_modified": "2026-02-08T14:59:13.825640+00:00",
+      "last_modified": "2026-02-08T18:48:00.000000+00:00",
       "tags": [],
       "changelog": [
         {
@@ -856,7 +882,17 @@
           "description": "Initial Closed Beta 2 Data"
         }
       ],
-      "damage": 230,
+      "damage": 76,
+      "mechanics": {
+        "waves": 3,
+        "bonus_damage": [
+          {
+            "target_type": "Building",
+            "unit": "percent_max_hp",
+            "value": 0.3
+          }
+        ]
+      },
       "range": 35
     },
     {
