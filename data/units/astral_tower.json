@@ -4,7 +4,7 @@
   "category": "Building",
   "magic_school": "Astral",
   "rank": "III",
-  "description": "Heavy defensive tower that targets enemies at medium range.",
+  "description": "A heavy defensive tower that targets enemies inside allied territory and can defend itself when attacked.",
   "image_required": true,
   "last_modified": "2026-02-08T14:59:13.834801+00:00",
   "tags": [],

@@ -15,9 +15,17 @@
       "description": "Initial Closed Beta 2 Data"
     }
   ],
-  "damage": 19,
-  "health": 220,
-  "range": 36,
-  "movement_speed": 7,
+  "damage": 45,
+  "mechanics": {
+    "damage_modifiers": [
+      {
+        "target_type": "Building",
+        "multiplier": 0.9,
+        "condition": "Always"
+      }
+    ]
+  },
+  "health": 350,
+  "movement_speed": 4,
   "movement_type": "Flying"
 }

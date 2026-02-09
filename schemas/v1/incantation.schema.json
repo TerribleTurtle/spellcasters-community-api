@@ -72,6 +72,91 @@
           "minimum": 0,
           "description": "Delay between pulses in seconds"
         },
+        "capture_speed_modifier": {
+          "type": "number",
+          "description": "Multiplier for capture rate (e.g. 1.25 for +25%)"
+        },
+        "aura": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "name": { "type": "string" },
+              "description": { "type": "string" },
+              "radius": { "type": "number" },
+              "value": {
+                "type": "number",
+                "description": "Amount per tick (Heal/Damage)"
+              },
+              "interval": { "type": "number" },
+              "effect": {
+                "type": "string",
+                "enum": ["Heal", "Damage", "Buff", "Debuff"]
+              },
+              "target_type": {
+                "type": "string",
+                "enum": ["Ally", "Enemy", "All", "Building", "Creature"]
+              }
+            },
+            "required": ["effect", "target_type"]
+          }
+        },
+        "spawner": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "unit_id": { "type": "string" },
+              "count": { "type": "integer" },
+              "interval": { "type": "number" },
+              "trigger": {
+                "type": "string",
+                "enum": ["Interval", "Death", "Spawn"]
+              }
+            },
+            "required": ["unit_id", "count", "trigger"]
+          }
+        },
+        "damage_modifiers": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": ["target_type", "multiplier"],
+            "properties": {
+              "target_type": {
+                "type": "string",
+                "enum": [
+                  "Building",
+                  "Creature",
+                  "Spellcaster",
+                  "Unit",
+                  "All",
+                  "Lifestone"
+                ]
+              },
+              "multiplier": {
+                "type": "number",
+                "description": "Damage Multiplier (e.g. 1.5 = 150%)"
+              },
+              "condition": { "type": "string" }
+            }
+          }
+        },
+        "damage_reduction": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": ["source_type", "multiplier"],
+            "properties": {
+              "source_type": { "type": "string" },
+              "multiplier": {
+                "type": "number",
+                "description": "Incoming Damage Multiplier (e.g. 0.5 = 50% damage taken)"
+              },
+              "condition": { "type": "string" }
+            }
+          }
+        },
         "bonus_damage": {
           "type": "array",
           "items": {

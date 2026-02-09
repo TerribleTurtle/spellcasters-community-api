@@ -2,9 +2,9 @@
   "entity_id": "thanatos",
   "name": "Thanatos",
   "category": "Titan",
-  "magic_school": "Necromancy",
+  "magic_school": "Titan",
   "rank": "V",
-  "description": "The Titan of Death. Weakens all nearby enemies as it advances.",
+  "description": "The Titan of Death. Weakens all nearby enemies and retaliates against Spellcasters.",
   "image_required": true,
   "last_modified": "2026-02-08T14:59:13.832063+00:00",
   "tags": [],
@@ -15,6 +15,19 @@
       "description": "Initial Closed Beta 2 Data"
     }
   ],
+  "mechanics": {
+    "aura": [
+      {
+        "name": "Aura of Decay",
+        "description": "Reduces damage of nearby spellcasters.",
+        "radius": 15,
+        "value": 0.5,
+        "interval": 1.0,
+        "effect": "Debuff",
+        "target_type": "Enemy"
+      }
+    ]
+  },
   "damage": 125,
   "health": 15000,
   "movement_speed": 4

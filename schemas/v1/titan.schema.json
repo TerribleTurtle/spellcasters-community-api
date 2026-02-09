@@ -51,7 +51,46 @@
     "movement_speed": { "type": "integer", "minimum": 0 },
     "range": { "type": "integer", "minimum": 0 },
     "passive_health_regen": { "type": "integer", "minimum": 0 },
-    "heal_amount": { "type": "integer", "minimum": 0 }
+    "heal_amount": { "type": "integer", "minimum": 0 },
+    "mechanics": {
+      "type": "object",
+      "properties": {
+        "aura": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "name": { "type": "string" },
+              "description": { "type": "string" },
+              "radius": { "type": "number" },
+              "value": { "type": "number", "description": "Amount per tick (Heal/Damage)" },
+              "interval": { "type": "number" },
+              "effect": { "type": "string", "enum": ["Heal", "Damage", "Buff", "Debuff"] },
+              "target_type": { "type": "string", "enum": ["Ally", "Enemy", "All", "Building", "Creature"] }
+            },
+            "required": ["effect", "target_type"]
+          }
+        },
+        "damage_modifiers": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "required": ["target_type", "multiplier"],
+              "properties": {
+                "target_type": {
+                  "type": "string",
+                  "enum": ["Building", "Creature", "Spellcaster", "Unit", "All", "Lifestone"]
+                },
+                "multiplier": {
+                  "type": "number",
+                  "description": "Damage Multiplier (e.g. 1.5 = 150%)"
+                },
+                "condition": { "type": "string" }
+              }
+            }
+          }
+      }
+    }
   },
   "additionalProperties": false
 }

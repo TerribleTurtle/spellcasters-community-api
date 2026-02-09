@@ -18,7 +18,7 @@
       },
       {
         "name": "Field Commander",
-        "description": "While on the ground, nearby WAR creatures gain a strong defensive buff."
+        "description": "While on the ground, nearby creatures gain a strong defensive buff."
       }
     ],
     "primary": {
@@ -34,11 +34,11 @@
       "description": "Unleash a metal vortex that deals heavy damage and knocks back enemies along its path."
     }
   },
-  "last_modified": "2026-02-08T14:59:13.846219+00:00",
+  "last_modified": "2026-02-09T00:35:17.664187+00:00",
   "changelog": [
     {
       "version": "0.0.1",
-      "date": "2026-02-05T18:34:58.970266Z",
+      "date": "2026-02-05T18:35:34.217480Z",
       "description": "Initial Closed Beta 2 Data"
     }
   ]

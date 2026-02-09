@@ -15,8 +15,17 @@
       "description": "Initial Closed Beta 2 Data"
     }
   ],
-  "damage": 30,
-  "health": 1800,
+  "mechanics": {
+    "damage_modifiers": [
+      {
+        "target_type": "Creature",
+        "multiplier": 0.35,
+        "condition": "Always"
+      }
+    ]
+  },
+  "damage": 18,
+  "health": 900,
   "movement_speed": 3,
   "movement_type": "Ground"
 }

@@ -15,9 +15,21 @@
       "description": "Initial Closed Beta 2 Data"
     }
   ],
+  "mechanics": {
+    "aura": [
+      {
+        "name": "Healing Aura",
+        "description": "Heals nearby allies.",
+        "radius": 8,
+        "value": 30,
+        "interval": 1.0,
+        "effect": "Heal",
+        "target_type": "Ally"
+      }
+    ]
+  },
   "damage": 12,
   "health": 225,
   "movement_speed": 3,
-  "heal_amount": 150,
   "movement_type": "Ground"
 }

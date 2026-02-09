@@ -15,6 +15,15 @@
       "description": "Initial Closed Beta 2 Data"
     }
   ],
+  "mechanics": {
+    "damage_modifiers": [
+      {
+        "target_type": "Creature",
+        "multiplier": 2.2,
+        "condition": "Always"
+      }
+    ]
+  },
   "damage": 450,
   "range": 45,
   "duration": 12

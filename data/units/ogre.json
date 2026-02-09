@@ -15,6 +15,15 @@
       "description": "Initial Closed Beta 2 Data"
     }
   ],
+  "mechanics": {
+    "damage_modifiers": [
+      {
+        "target_type": "Building",
+        "multiplier": 5.0,
+        "condition": "Always"
+      }
+    ]
+  },
   "damage": 70,
   "health": 2300,
   "movement_speed": 3,

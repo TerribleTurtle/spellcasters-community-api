@@ -4,7 +4,7 @@
   "category": "Spell",
   "magic_school": "Wild",
   "rank": "III",
-  "description": "Ground shockwave that damages structures and staggers creatures. Damage is split into 3 waves.",
+  "description": "Ground shockwave that damages structures and staggers creatures significantly. Damage is split into 3 waves.",
   "image_required": true,
   "last_modified": "2026-02-09T00:35:17.665004+00:00",
   "tags": [],

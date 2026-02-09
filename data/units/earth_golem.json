@@ -15,6 +15,22 @@
       "description": "Initial Closed Beta 2 Data"
     }
   ],
+  "mechanics": {
+    "damage_modifiers": [
+      {
+        "target_type": "Unit",
+        "multiplier": 1.75,
+        "condition": "Rank >= 3"
+      }
+    ],
+    "damage_reduction": [
+      {
+        "source_type": "Unit",
+        "multiplier": 0.75,
+        "condition": "Rank >= 3"
+      }
+    ]
+  },
   "damage": 25,
   "health": 650,
   "movement_speed": 2,

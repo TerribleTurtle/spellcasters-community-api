@@ -73,7 +73,10 @@
             "duration": { "type": ["number", "null"], "description": "Duration in seconds" },
             "charges": { "type": ["integer", "null"], "description": "Number of uses/stacks" },
             "cooldown": { "type": ["number", "null"], "description": "Cooldown in seconds" },
-            "range": { "type": ["integer", "null"], "description": "Range in units" }
+            "range": { "type": ["integer", "null"], "description": "Range in units" },
+            "value": { "type": ["number", "null"], "description": "Primary Value (Heal/Damage Amount)" },
+            "radius": { "type": ["number", "null"], "description": "Radius of effect" },
+            "interval": { "type": ["number", "null"], "description": "Tick interval in seconds" }
           }
         },
         "mechanics": {
@@ -82,7 +85,20 @@
             "type": "object",
             "properties": {
               "name": { "type": "string" },
-              "description": { "type": "string" }
+              "description": { "type": "string" },
+              "value": { "type": "number" },
+              "radius": { "type": "number" },
+              "interval": { "type": "number" },
+              "aura": {
+                "type": "object",
+                "properties": {
+                   "radius": { "type": "number" },
+                   "value": { "type": "number" },
+                   "interval": { "type": "number" },
+                   "effect": { "type": "string" },
+                   "target_type": { "type": "string" }
+                }
+              }
             },
             "required": ["name", "description"]
           }

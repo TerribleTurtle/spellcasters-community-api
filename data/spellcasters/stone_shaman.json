@@ -31,7 +31,16 @@
         },
         {
           "name": "Building Enchant",
-          "description": "Attacks enchant ally buildings, enabling them to emit a healing aura"
+          "description": "Attacks enchant ally buildings, enabling them to emit a healing aura.",
+          "aura": {
+            "name": "Stone Mending",
+            "description": "Heals nearby allies.",
+            "radius": 8,
+            "value": 7,
+            "interval": 1.0,
+            "effect": "Heal",
+            "target_type": "Ally"
+          }
         }
       ]
     },

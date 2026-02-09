@@ -15,9 +15,23 @@
       "description": "Initial Closed Beta 2 Data"
     }
   ],
-  "damage": 10,
-  "health": 220,
-  "range": 16,
-  "movement_speed": 4,
+  "mechanics": {
+    "damage_modifiers": [
+      {
+        "target_type": "Unit",
+        "multiplier": 0.5,
+        "condition": "Always"
+      },
+      {
+        "target_type": "Spellcaster",
+        "multiplier": 0.5,
+        "condition": "Always"
+      }
+    ]
+  },
+  "damage": 35,
+  "health": 250,
+  "range": 22,
+  "movement_speed": 3,
   "movement_type": "Hover"
 }

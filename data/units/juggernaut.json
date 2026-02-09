@@ -15,8 +15,22 @@
       "description": "Initial Closed Beta 2 Data"
     }
   ],
-  "damage": 100,
-  "health": 10000,
-  "movement_speed": 3,
+  "mechanics": {
+    "damage_modifiers": [
+      {
+        "target_type": "Lifestone",
+        "multiplier": 1.5,
+        "condition": "Always"
+      },
+      {
+        "target_type": "Building",
+        "multiplier": 2.0,
+        "condition": "Always"
+      }
+    ]
+  },
+  "damage": 220,
+  "health": 4000,
+  "movement_speed": 2,
   "movement_type": "Ground"
 }
