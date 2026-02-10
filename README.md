@@ -54,7 +54,7 @@ Full endpoint documentation is available in [docs/CONTRIBUTING.md](docs/CONTRIBU
     verify.bat
 
     # Mac/Linux
-    python scripts/build_api.py
+    python -m pytest && python scripts/build_api.py
     ```
 
     See `api/v1/units.json`

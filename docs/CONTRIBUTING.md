@@ -125,10 +125,11 @@ verify.bat
 **Mac/Linux:**
 
 ```bash
-python scripts/validate_integrity.py && python scripts/build_api.py
+python -m pytest
 ```
 
-If the script passes without errors, your data is valid!
+If the tests pass without errors, your data is valid!
+(Note: `verify.bat` will also rebuild the API files for you.)
 
 ## 🛡️ Safety Systems
 

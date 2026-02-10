@@ -3,10 +3,10 @@ echo ==========================================
 echo      Spellcasters API Verification
 echo ==========================================
 
-echo [1/2] Running Integrity Validation...
-python scripts/validate_integrity.py
+echo [1/2] Running Test Suite (Pytest)...
+python -m pytest
 if %ERRORLEVEL% NEQ 0 (
-    echo [ERROR] Integrity Validation Failed!
+    echo [ERROR] Tests Failed!
     exit /b %ERRORLEVEL%
 )
 
