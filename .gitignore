@@ -39,3 +39,6 @@ Thumbs.db
 
 # Project State
 active_state.md
+
+# Build Artifacts
+api/v1/
