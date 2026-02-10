@@ -4,6 +4,7 @@
   "name": "Swamp Witch",
   "class": "Duelist",
   "category": "Spellcaster",
+  "movement_type": "Ground",
   "image_required": true,
   "difficulty": 3,
   "abilities": {

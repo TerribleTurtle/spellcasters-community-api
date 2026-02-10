@@ -4,6 +4,7 @@
   "name": "Fire Elementalist",
   "class": "Conqueror",
   "category": "Spellcaster",
+  "movement_type": "Ground",
   "image_required": true,
   "difficulty": 1,
   "abilities": {

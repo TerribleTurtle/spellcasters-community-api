@@ -4,6 +4,7 @@
   "name": "Stone Shaman",
   "class": "Enchanter",
   "category": "Spellcaster",
+  "movement_type": "Ground",
   "image_required": true,
   "difficulty": 2,
   "abilities": {
@@ -24,25 +25,25 @@
     "primary": {
       "name": "Mountain Staff",
       "description": "Swing your catalyst to deal heavy melee damage and interrupt enemies.",
-      "mechanics": [
-        {
-          "name": "Interruption",
-          "description": "Successfully hitting a Spellcaster twice interrupts their actions."
-        },
-        {
-          "name": "Building Enchant",
-          "description": "Attacks enchant ally buildings, enabling them to emit a healing aura.",
-          "aura": {
-            "name": "Stone Mending",
-            "description": "Heals nearby allies.",
+      "mechanics": {
+        "features": [
+          {
+            "name": "Interruption",
+            "description": "Successfully hitting a Spellcaster twice interrupts their actions."
+          }
+        ],
+        "aura": [
+          {
+            "name": "Building Enchant",
+            "description": "Attacks enchant ally buildings, enabling them to emit a healing aura.",
             "radius": 8,
             "value": 7,
-            "interval": 1.0,
             "effect": "Heal",
-            "target_type": "Ally"
+            "target_type": "Ally",
+            "interval": 1.0
           }
-        }
-      ]
+        ]
+      }
     },
     "defense": {
       "name": "Wind Shield",

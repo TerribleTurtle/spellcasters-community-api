@@ -5,6 +5,7 @@
     "name": "Astral Monk",
     "class": "Duelist",
     "category": "Spellcaster",
+    "movement_type": "Ground",
     "image_required": true,
     "difficulty": 3,
     "abilities": {
@@ -46,172 +47,11 @@
   },
   {
     "$schema": "../../schemas/v1/spellcaster.schema.json",
-    "spellcaster_id": "stone_shaman",
-    "name": "Stone Shaman",
-    "class": "Enchanter",
-    "category": "Spellcaster",
-    "image_required": true,
-    "difficulty": 2,
-    "abilities": {
-      "passive": [
-        {
-          "name": "Mountain\u2019s Favor",
-          "description": "The Stone Shaman\u2019s attacks deal double damage to buildings."
-        },
-        {
-          "name": "Child of the Titans",
-          "description": "Increases Rank II and Rank III population while reducing Rank I population."
-        },
-        {
-          "name": "Pathfinder",
-          "description": "While on the ground, the Shaman recharges Wild incantations much faster."
-        }
-      ],
-      "primary": {
-        "name": "Mountain Staff",
-        "description": "Swing your catalyst to deal heavy melee damage and interrupt enemies.",
-        "mechanics": [
-          {
-            "name": "Interruption",
-            "description": "Successfully hitting a Spellcaster twice interrupts their actions."
-          },
-          {
-            "name": "Building Enchant",
-            "description": "Attacks enchant ally buildings, enabling them to emit a healing aura.",
-            "aura": {
-              "name": "Stone Mending",
-              "description": "Heals nearby allies.",
-              "radius": 8,
-              "value": 7,
-              "interval": 1.0,
-              "effect": "Heal",
-              "target_type": "Ally"
-            }
-          }
-        ]
-      },
-      "defense": {
-        "name": "Wind Shield",
-        "description": "Conjure a protective wind barrier that deals damage on contact.",
-        "stats": {
-          "charges": null,
-          "duration": null
-        }
-      },
-      "ultimate": {
-        "name": "Wall of Kamazad",
-        "description": "Deploys a colossal wall capable of blocking Titans.",
-        "stats": {
-          "duration": null,
-          "damage": null
-        }
-      }
-    },
-    "last_modified": "2026-02-09T21:43:19.928610+00:00",
-    "changelog": [
-      {
-        "version": "0.0.1",
-        "date": "2026-02-05T18:35:34.217480Z",
-        "description": "Initial Closed Beta 2 Data"
-      }
-    ]
-  },
-  {
-    "$schema": "../../schemas/v1/spellcaster.schema.json",
-    "spellcaster_id": "mystic_scribe",
-    "name": "Mystic Scribe",
-    "class": "Enchanter",
-    "category": "Spellcaster",
-    "image_required": true,
-    "difficulty": 2,
-    "abilities": {
-      "passive": [
-        {
-          "name": "Echo of Mercy",
-          "description": "While on the ground, the Mystic Scribe emits a healing aura."
-        },
-        {
-          "name": "Holy Magic Mastery",
-          "description": "All Holy incantations recharge faster."
-        },
-        {
-          "name": "Thousand Favors",
-          "description": "Healing recharges Rank I and II creatures."
-        }
-      ],
-      "primary": {
-        "name": "Brush Strike",
-        "description": "Strike with enchanted ink to damage enemies and boost allies\u2019 Max HP."
-      },
-      "defense": {
-        "name": "Scroll Barrier",
-        "description": "Creates a barrier that absorbs projectiles and reduces all damage."
-      },
-      "ultimate": {
-        "name": "Seal of Immortality",
-        "description": "Mark the ground with a massive healing seal."
-      }
-    },
-    "last_modified": "2026-02-08T14:59:13.847025+00:00",
-    "changelog": [
-      {
-        "version": "0.0.1",
-        "date": "2026-02-05T18:33:10.223377Z",
-        "description": "Initial Closed Beta 2 Data"
-      }
-    ]
-  },
-  {
-    "$schema": "../../schemas/v1/spellcaster.schema.json",
-    "spellcaster_id": "iron_sorcerer",
-    "name": "Iron Sorcerer",
-    "class": "Conqueror",
-    "category": "Spellcaster",
-    "image_required": true,
-    "difficulty": 1,
-    "abilities": {
-      "passive": [
-        {
-          "name": "Scourge of War",
-          "description": "Increases Rank III population, reduces Rank II population."
-        },
-        {
-          "name": "Forges of Valm",
-          "description": "Creatures spawned from Buildings have significantly more health."
-        },
-        {
-          "name": "Field Commander",
-          "description": "While on the ground, nearby creatures gain a strong defensive buff."
-        }
-      ],
-      "primary": {
-        "name": "Twin Strike",
-        "description": "Strike with powerful mid-range attacks that interrupt enemies."
-      },
-      "defense": {
-        "name": "Rune Shield",
-        "description": "Raise a shield that protects allies and reflects attacks."
-      },
-      "ultimate": {
-        "name": "Iron Tempest",
-        "description": "Unleash a metal vortex that deals heavy damage and knocks back enemies along its path."
-      }
-    },
-    "last_modified": "2026-02-09T21:43:19.928333+00:00",
-    "changelog": [
-      {
-        "version": "0.0.1",
-        "date": "2026-02-05T18:35:34.217480Z",
-        "description": "Initial Closed Beta 2 Data"
-      }
-    ]
-  },
-  {
-    "$schema": "../../schemas/v1/spellcaster.schema.json",
     "spellcaster_id": "fire_elementalist",
     "name": "Fire Elementalist",
     "class": "Conqueror",
     "category": "Spellcaster",
+    "movement_type": "Ground",
     "image_required": true,
     "difficulty": 1,
     "abilities": {
@@ -253,10 +93,176 @@
   },
   {
     "$schema": "../../schemas/v1/spellcaster.schema.json",
+    "spellcaster_id": "iron_sorcerer",
+    "name": "Iron Sorcerer",
+    "class": "Conqueror",
+    "category": "Spellcaster",
+    "movement_type": "Ground",
+    "image_required": true,
+    "difficulty": 1,
+    "abilities": {
+      "passive": [
+        {
+          "name": "Scourge of War",
+          "description": "Increases Rank III population, reduces Rank II population."
+        },
+        {
+          "name": "Forges of Valm",
+          "description": "Creatures spawned from Buildings have significantly more health."
+        },
+        {
+          "name": "Field Commander",
+          "description": "While on the ground, nearby creatures gain a strong defensive buff."
+        }
+      ],
+      "primary": {
+        "name": "Twin Strike",
+        "description": "Strike with powerful mid-range attacks that interrupt enemies."
+      },
+      "defense": {
+        "name": "Rune Shield",
+        "description": "Raise a shield that protects allies and reflects attacks."
+      },
+      "ultimate": {
+        "name": "Iron Tempest",
+        "description": "Unleash a metal vortex that deals heavy damage and knocks back enemies along its path."
+      }
+    },
+    "last_modified": "2026-02-09T21:43:19.928333+00:00",
+    "changelog": [
+      {
+        "version": "0.0.1",
+        "date": "2026-02-05T18:35:34.217480Z",
+        "description": "Initial Closed Beta 2 Data"
+      }
+    ]
+  },
+  {
+    "$schema": "../../schemas/v1/spellcaster.schema.json",
+    "spellcaster_id": "mystic_scribe",
+    "name": "Mystic Scribe",
+    "class": "Enchanter",
+    "category": "Spellcaster",
+    "movement_type": "Ground",
+    "image_required": true,
+    "difficulty": 2,
+    "abilities": {
+      "passive": [
+        {
+          "name": "Echo of Mercy",
+          "description": "While on the ground, the Mystic Scribe emits a healing aura."
+        },
+        {
+          "name": "Holy Magic Mastery",
+          "description": "All Holy incantations recharge faster."
+        },
+        {
+          "name": "Thousand Favors",
+          "description": "Healing recharges Rank I and II creatures."
+        }
+      ],
+      "primary": {
+        "name": "Brush Strike",
+        "description": "Strike with enchanted ink to damage enemies and boost allies\u2019 Max HP."
+      },
+      "defense": {
+        "name": "Scroll Barrier",
+        "description": "Creates a barrier that absorbs projectiles and reduces all damage."
+      },
+      "ultimate": {
+        "name": "Seal of Immortality",
+        "description": "Mark the ground with a massive healing seal."
+      }
+    },
+    "last_modified": "2026-02-08T14:59:13.847025+00:00",
+    "changelog": [
+      {
+        "version": "0.0.1",
+        "date": "2026-02-05T18:33:10.223377Z",
+        "description": "Initial Closed Beta 2 Data"
+      }
+    ]
+  },
+  {
+    "$schema": "../../schemas/v1/spellcaster.schema.json",
+    "spellcaster_id": "stone_shaman",
+    "name": "Stone Shaman",
+    "class": "Enchanter",
+    "category": "Spellcaster",
+    "movement_type": "Ground",
+    "image_required": true,
+    "difficulty": 2,
+    "abilities": {
+      "passive": [
+        {
+          "name": "Mountain\u2019s Favor",
+          "description": "The Stone Shaman\u2019s attacks deal double damage to buildings."
+        },
+        {
+          "name": "Child of the Titans",
+          "description": "Increases Rank II and Rank III population while reducing Rank I population."
+        },
+        {
+          "name": "Pathfinder",
+          "description": "While on the ground, the Shaman recharges Wild incantations much faster."
+        }
+      ],
+      "primary": {
+        "name": "Mountain Staff",
+        "description": "Swing your catalyst to deal heavy melee damage and interrupt enemies.",
+        "mechanics": {
+          "features": [
+            {
+              "name": "Interruption",
+              "description": "Successfully hitting a Spellcaster twice interrupts their actions."
+            }
+          ],
+          "aura": [
+            {
+              "name": "Building Enchant",
+              "description": "Attacks enchant ally buildings, enabling them to emit a healing aura.",
+              "radius": 8,
+              "value": 7,
+              "effect": "Heal",
+              "target_type": "Ally",
+              "interval": 1.0
+            }
+          ]
+        }
+      },
+      "defense": {
+        "name": "Wind Shield",
+        "description": "Conjure a protective wind barrier that deals damage on contact.",
+        "stats": {
+          "charges": null,
+          "duration": null
+        }
+      },
+      "ultimate": {
+        "name": "Wall of Kamazad",
+        "description": "Deploys a colossal wall capable of blocking Titans.",
+        "stats": {
+          "duration": null,
+          "damage": null
+        }
+      }
+    },
+    "last_modified": "2026-02-09T21:43:19.928610+00:00",
+    "changelog": [
+      {
+        "version": "0.0.1",
+        "date": "2026-02-05T18:35:34.217480Z",
+        "description": "Initial Closed Beta 2 Data"
+      }
+    ]
+  },
+  {
+    "$schema": "../../schemas/v1/spellcaster.schema.json",
     "spellcaster_id": "swamp_witch",
     "name": "Swamp Witch",
     "class": "Duelist",
     "category": "Spellcaster",
+    "movement_type": "Ground",
     "image_required": true,
     "difficulty": 3,
     "abilities": {

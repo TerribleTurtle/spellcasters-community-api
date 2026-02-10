@@ -131,7 +131,9 @@
                   "Spellcaster",
                   "Unit",
                   "All",
-                  "Lifestone"
+                  "Lifestone",
+                  "Flying",
+                  "Ground"
                 ]
               },
               "multiplier": {
@@ -175,6 +177,17 @@
                 "type": "string",
                 "enum": ["Building", "Creature", "All"]
               }
+            }
+          }
+        },
+        "features": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": ["name"],
+            "properties": {
+              "name": { "type": "string" },
+              "description": { "type": "string" }
             }
           }
         }

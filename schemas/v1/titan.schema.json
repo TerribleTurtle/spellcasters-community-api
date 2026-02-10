@@ -71,7 +71,7 @@
             "required": ["effect", "target_type"]
           }
         },
-        "damage_modifiers": {
+            "damage_modifiers": {
             "type": "array",
             "items": {
               "type": "object",
@@ -79,7 +79,7 @@
               "properties": {
                 "target_type": {
                   "type": "string",
-                  "enum": ["Building", "Creature", "Spellcaster", "Unit", "All", "Lifestone"]
+                  "enum": ["Building", "Creature", "Spellcaster", "Unit", "All", "Lifestone", "Flying", "Ground"]
                 },
                 "multiplier": {
                   "type": "number",
@@ -88,7 +88,18 @@
                 "condition": { "type": "string" }
               }
             }
+          },
+        "features": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": ["name"],
+            "properties": {
+              "name": { "type": "string" },
+              "description": { "type": "string" }
+            }
           }
+        }
       }
     }
   },

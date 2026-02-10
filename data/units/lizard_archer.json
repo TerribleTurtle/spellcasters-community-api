@@ -15,6 +15,15 @@
       "description": "Initial Closed Beta 2 Data"
     }
   ],
+  "mechanics": {
+    "damage_modifiers": [
+      {
+        "target_type": "Flying",
+        "multiplier": 1.375,
+        "condition": "Always"
+      }
+    ]
+  },
   "damage": 8,
   "health": 85,
   "range": 36,

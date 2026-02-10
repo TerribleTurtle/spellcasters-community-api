@@ -39,6 +39,11 @@
       "type": "string",
       "enum": ["Spellcaster"]
     },
+    "movement_type": {
+      "type": "string",
+      "enum": ["Ground", "Flying", "Hover"],
+      "default": "Ground"
+    },
     "image_required": { "type": "boolean", "default": true },
     "difficulty": { 
       "type": "integer", 
@@ -71,6 +76,7 @@
           "properties": {
             "damage": { "type": ["integer", "null"], "description": "Base damage amount" },
             "duration": { "type": ["number", "null"], "description": "Duration in seconds" },
+            "stacks": { "type": ["integer", "null"], "description": "Max stacks/charges for effect" },
             "charges": { "type": ["integer", "null"], "description": "Number of uses/stacks" },
             "cooldown": { "type": ["number", "null"], "description": "Cooldown in seconds" },
             "range": { "type": ["integer", "null"], "description": "Range in units" },
@@ -80,27 +86,137 @@
           }
         },
         "mechanics": {
-          "type": "array",
-          "items": {
-            "type": "object",
-            "properties": {
-              "name": { "type": "string" },
-              "description": { "type": "string" },
-              "value": { "type": "number" },
-              "radius": { "type": "number" },
-              "interval": { "type": "number" },
-              "aura": {
+          "type": "object",
+          "properties": {
+            "waves": {
+              "type": "integer",
+              "minimum": 1,
+              "description": "Number of pulses for Wave based spells"
+            },
+            "interval": {
+              "type": "number",
+              "minimum": 0,
+              "description": "Delay between pulses in seconds"
+            },
+            "capture_speed_modifier": {
+              "type": "number",
+              "description": "Multiplier for capture rate (e.g. 1.25 for +25%)"
+            },
+            "aura": {
+              "type": "array",
+              "items": {
                 "type": "object",
                 "properties": {
-                   "radius": { "type": "number" },
-                   "value": { "type": "number" },
-                   "interval": { "type": "number" },
-                   "effect": { "type": "string" },
-                   "target_type": { "type": "string" }
+                  "name": { "type": "string" },
+                  "description": { "type": "string" },
+                  "radius": { "type": "number" },
+                  "value": {
+                    "type": "number",
+                    "description": "Amount per tick (Heal/Damage)"
+                  },
+                  "interval": { "type": "number" },
+                  "effect": {
+                    "type": "string",
+                    "enum": ["Heal", "Damage", "Buff", "Debuff"]
+                  },
+                  "target_type": {
+                    "type": "string",
+                    "enum": ["Ally", "Enemy", "All", "Building", "Creature"]
+                  }
+                },
+                "required": ["effect", "target_type"]
+              }
+            },
+            "spawner": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "properties": {
+                  "unit_id": { "type": "string" },
+                  "count": { "type": "integer" },
+                  "interval": { "type": "number" },
+                  "trigger": {
+                    "type": "string",
+                    "enum": ["Interval", "Death", "Spawn"]
+                  }
+                },
+                "required": ["unit_id", "count", "trigger"]
+              }
+            },
+            "damage_modifiers": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "required": ["target_type", "multiplier"],
+                "properties": {
+                  "target_type": {
+                    "type": "string",
+                    "enum": [
+                      "Building",
+                      "Creature",
+                      "Spellcaster",
+                      "Unit",
+                      "All",
+                      "Lifestone",
+                      "Flying",
+                      "Ground"
+                    ]
+                  },
+                  "multiplier": {
+                    "type": "number",
+                    "description": "Damage Multiplier (e.g. 1.5 = 150%)"
+                  },
+                  "condition": { "type": "string" }
                 }
               }
             },
-            "required": ["name", "description"]
+            "damage_reduction": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "required": ["source_type", "multiplier"],
+                "properties": {
+                  "source_type": { "type": "string" },
+                  "multiplier": {
+                    "type": "number",
+                    "description": "Incoming Damage Multiplier (e.g. 0.5 = 50% damage taken)"
+                  },
+                  "condition": { "type": "string" }
+                }
+              }
+            },
+            "bonus_damage": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "required": ["value", "unit", "target_type"],
+                "properties": {
+                  "value": {
+                    "type": "number",
+                    "description": "Multiplier or Flat amount"
+                  },
+                  "unit": {
+                    "type": "string",
+                    "enum": ["flat", "percent_max_hp", "percent_current_hp"]
+                  },
+                  "target_type": {
+                    "type": "string",
+                    "enum": ["Building", "Creature", "All"]
+                  }
+                }
+              }
+            },
+            "features": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "required": ["name"],
+                "properties": {
+                  "name": { "type": "string" },
+                  "description": { "type": "string" }
+                }
+              }
+            }
           }
         }
       },

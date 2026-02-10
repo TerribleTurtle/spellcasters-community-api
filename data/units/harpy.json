@@ -16,6 +16,15 @@
     }
   ],
   "damage": 12,
+  "mechanics": {
+    "damage_modifiers": [
+      {
+        "target_type": "Ground",
+        "multiplier": 1.5,
+        "condition": "Always"
+      }
+    ]
+  },
   "health": 100,
   "movement_speed": 8,
   "movement_type": "Flying"

@@ -68,6 +68,43 @@ Unique class-ultimate entities.
 
 Loot items found in chests.
 
+### 📈 Data Standards (v1.1)
+
+#### 1. Multipliers (Percentage Values)
+
+To avoid ambiguity between "Increased By" vs "Total", we use standard **Multipliers**:
+
+- **1.0** = 100% (Base Damage).
+- **1.5** = 150% (Deals 1.5x Damage). "Strong vs X".
+- **0.5** = 50% (Deals 0.5x Damage). "Weak vs X".
+- **2.6** = 260% (Deals 2.6x Damage).
+
+**Rule of Thumb**:
+
+- "Deals X% Damage" -> `Multiplier = X / 100`.
+- "Deals X% **Increased** Damage" -> `Multiplier = 1 + (X / 100)`.
+
+#### 2. Handling Unknown Values (Beta Data)
+
+Since we are in Beta, some exact numbers may be missing.
+
+**Standard**: Use **`-1.0`** as a **Sentinel Value** for "Unknown/To Be Verified".
+
+- **Description Field**: Append `(UNKNOWN)` to the condition so it's searchable.
+- **Example**:
+  ```json
+  "multiplier": -1.0,
+  "condition": "MovementType == Flying (UNKNOWN)"
+  ```
+
+#### 3. Complex Mechanics
+
+We use a `mechanics` object to store advanced logic, keeping the root object clean.
+
+- **`aura`**: Radius, Value (Heal/Damage), Interval.
+- **`damage_modifiers`**: Target Type, Multiplier, Condition.
+- **`spawner`**: Unit ID, Count, Trigger (Death/Interval).
+
 ### 2. Updating Existing Data
 
 1.  Modify the fields in the existing JSON file.

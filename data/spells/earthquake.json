@@ -18,6 +18,13 @@
   "damage": 76,
   "mechanics": {
     "waves": 3,
+    "damage_modifiers": [
+      {
+        "target_type": "Flying",
+        "multiplier": 0,
+        "condition": "Always"
+      }
+    ],
     "bonus_damage": [
       {
         "target_type": "Building",

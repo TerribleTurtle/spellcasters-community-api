@@ -4,6 +4,7 @@
   "name": "Mystic Scribe",
   "class": "Enchanter",
   "category": "Spellcaster",
+  "movement_type": "Ground",
   "image_required": true,
   "difficulty": 2,
   "abilities": {

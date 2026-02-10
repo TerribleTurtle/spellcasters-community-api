@@ -20,26 +20,6 @@
     "range": 80
   },
   {
-    "entity_id": "fire_ray",
-    "name": "Fire Ray",
-    "category": "Spell",
-    "magic_school": "Elemental",
-    "rank": "I",
-    "description": "Focused beam that deals low Fire damage.",
-    "image_required": true,
-    "last_modified": "2026-02-08T14:59:13.827448+00:00",
-    "tags": [],
-    "changelog": [
-      {
-        "version": "0.0.1",
-        "date": "2026-02-08T09:49:16.836670+00:00",
-        "description": "Initial Closed Beta 2 Data"
-      }
-    ],
-    "damage": 70,
-    "range": 45
-  },
-  {
     "entity_id": "astral_shot",
     "name": "Astral Shot",
     "category": "Spell",
@@ -63,43 +43,61 @@
     "range": 80
   },
   {
-    "entity_id": "flame_surge",
-    "name": "Flame Surge",
+    "entity_id": "earthquake",
+    "name": "Earthquake",
     "category": "Spell",
-    "magic_school": "War",
+    "magic_school": "Wild",
     "rank": "III",
-    "description": "Fire pulse that burns enemies and infuses nearby allies.",
+    "description": "Ground shockwave that damages structures and staggers creatures significantly. Damage is split into 3 waves.",
     "image_required": true,
-    "last_modified": "2026-02-08T14:59:13.827871+00:00",
+    "last_modified": "2026-02-09T21:43:19.928868+00:00",
     "tags": [],
     "changelog": [
       {
         "version": "0.0.1",
-        "date": "2026-02-08T09:49:16.843934+00:00",
+        "date": "2026-02-08T09:49:16.843317+00:00",
         "description": "Initial Closed Beta 2 Data"
       }
     ],
-    "range": 24
+    "damage": 76,
+    "mechanics": {
+      "waves": 3,
+      "damage_modifiers": [
+        {
+          "target_type": "Flying",
+          "multiplier": 0,
+          "condition": "Always"
+        }
+      ],
+      "bonus_damage": [
+        {
+          "target_type": "Building",
+          "unit": "percent_max_hp",
+          "value": 0.3
+        }
+      ]
+    },
+    "range": 35
   },
   {
-    "entity_id": "heal_ray",
-    "name": "Heal Ray",
+    "entity_id": "fire_ball",
+    "name": "Fire Ball",
     "category": "Spell",
-    "magic_school": "Holy",
-    "rank": "I",
-    "description": "Healing ray that can be aimed at the ground to restore allies in the area.",
+    "magic_school": "Elemental",
+    "rank": "III",
+    "description": "Fast projectile that deals medium Fire damage to a target.",
     "image_required": true,
-    "last_modified": "2026-02-08T14:59:13.829193+00:00",
+    "last_modified": "2026-02-08T14:59:13.826195+00:00",
     "tags": [],
     "changelog": [
       {
         "version": "0.0.1",
-        "date": "2026-02-08T09:49:16.837289+00:00",
+        "date": "2026-02-08T09:49:16.843620+00:00",
         "description": "Initial Closed Beta 2 Data"
       }
     ],
-    "range": 45,
-    "heal_amount": 300
+    "damage": 530,
+    "range": 80
   },
   {
     "entity_id": "fire_rain",
@@ -132,49 +130,19 @@
     "duration": 12
   },
   {
-    "entity_id": "earthquake",
-    "name": "Earthquake",
+    "entity_id": "fire_ray",
+    "name": "Fire Ray",
     "category": "Spell",
-    "magic_school": "Wild",
-    "rank": "III",
-    "description": "Ground shockwave that damages structures and staggers creatures significantly. Damage is split into 3 waves.",
-    "image_required": true,
-    "last_modified": "2026-02-09T21:43:19.928868+00:00",
-    "tags": [],
-    "changelog": [
-      {
-        "version": "0.0.1",
-        "date": "2026-02-08T09:49:16.843317+00:00",
-        "description": "Initial Closed Beta 2 Data"
-      }
-    ],
-    "damage": 76,
-    "mechanics": {
-      "waves": 3,
-      "bonus_damage": [
-        {
-          "target_type": "Building",
-          "unit": "percent_max_hp",
-          "value": 0.3
-        }
-      ]
-    },
-    "range": 35
-  },
-  {
-    "entity_id": "thunder_ray",
-    "name": "Thunder Ray",
-    "category": "Spell",
-    "magic_school": "Technomancy",
+    "magic_school": "Elemental",
     "rank": "I",
-    "description": "Focused beam that deals low Lightning damage.",
+    "description": "Focused beam that deals low Fire damage.",
     "image_required": true,
-    "last_modified": "2026-02-08T14:59:13.831217+00:00",
+    "last_modified": "2026-02-08T14:59:13.827448+00:00",
     "tags": [],
     "changelog": [
       {
         "version": "0.0.1",
-        "date": "2026-02-08T09:49:16.839433+00:00",
+        "date": "2026-02-08T09:49:16.836670+00:00",
         "description": "Initial Closed Beta 2 Data"
       }
     ],
@@ -182,43 +150,23 @@
     "range": 45
   },
   {
-    "entity_id": "resurrection",
-    "name": "Resurrection",
+    "entity_id": "flame_surge",
+    "name": "Flame Surge",
     "category": "Spell",
-    "magic_school": "Holy",
-    "rank": "IV",
-    "description": "Magic circle that resurrects creatures with partial health.",
-    "image_required": true,
-    "last_modified": "2026-02-08T14:59:13.830451+00:00",
-    "tags": [],
-    "changelog": [
-      {
-        "version": "0.0.1",
-        "date": "2026-02-08T09:49:16.848165+00:00",
-        "description": "Initial Closed Beta 2 Data"
-      }
-    ],
-    "duration": 12
-  },
-  {
-    "entity_id": "fire_ball",
-    "name": "Fire Ball",
-    "category": "Spell",
-    "magic_school": "Elemental",
+    "magic_school": "War",
     "rank": "III",
-    "description": "Fast projectile that deals medium Fire damage to a target.",
+    "description": "Fire pulse that burns enemies and infuses nearby allies.",
     "image_required": true,
-    "last_modified": "2026-02-08T14:59:13.826195+00:00",
+    "last_modified": "2026-02-08T14:59:13.827871+00:00",
     "tags": [],
     "changelog": [
       {
         "version": "0.0.1",
-        "date": "2026-02-08T09:49:16.843620+00:00",
+        "date": "2026-02-08T09:49:16.843934+00:00",
         "description": "Initial Closed Beta 2 Data"
       }
     ],
-    "damage": 530,
-    "range": 80
+    "range": 24
   },
   {
     "entity_id": "frost_surge",
@@ -238,6 +186,46 @@
       }
     ],
     "range": 24
+  },
+  {
+    "entity_id": "grand_lightning",
+    "name": "Grand Lightning",
+    "category": "Spell",
+    "magic_school": "Technomancy",
+    "rank": "IV",
+    "description": "Thunderstrike that deals extreme Lightning damage to a target.",
+    "image_required": true,
+    "last_modified": "2026-02-08T14:59:13.828654+00:00",
+    "tags": [],
+    "changelog": [
+      {
+        "version": "0.0.1",
+        "date": "2026-02-08T09:49:16.847345+00:00",
+        "description": "Initial Closed Beta 2 Data"
+      }
+    ],
+    "damage": 3675,
+    "range": 36
+  },
+  {
+    "entity_id": "heal_ray",
+    "name": "Heal Ray",
+    "category": "Spell",
+    "magic_school": "Holy",
+    "rank": "I",
+    "description": "Healing ray that can be aimed at the ground to restore allies in the area.",
+    "image_required": true,
+    "last_modified": "2026-02-08T14:59:13.829193+00:00",
+    "tags": [],
+    "changelog": [
+      {
+        "version": "0.0.1",
+        "date": "2026-02-08T09:49:16.837289+00:00",
+        "description": "Initial Closed Beta 2 Data"
+      }
+    ],
+    "range": 45,
+    "heal_amount": 300
   },
   {
     "entity_id": "poison_grenade",
@@ -261,6 +249,25 @@
     "duration": 12
   },
   {
+    "entity_id": "resurrection",
+    "name": "Resurrection",
+    "category": "Spell",
+    "magic_school": "Holy",
+    "rank": "IV",
+    "description": "Magic circle that resurrects creatures with partial health.",
+    "image_required": true,
+    "last_modified": "2026-02-08T14:59:13.830451+00:00",
+    "tags": [],
+    "changelog": [
+      {
+        "version": "0.0.1",
+        "date": "2026-02-08T09:49:16.848165+00:00",
+        "description": "Initial Closed Beta 2 Data"
+      }
+    ],
+    "duration": 12
+  },
+  {
     "entity_id": "sacrifice",
     "name": "Sacrifice",
     "category": "Spell",
@@ -280,23 +287,23 @@
     "damage": 90
   },
   {
-    "entity_id": "grand_lightning",
-    "name": "Grand Lightning",
+    "entity_id": "thunder_ray",
+    "name": "Thunder Ray",
     "category": "Spell",
     "magic_school": "Technomancy",
-    "rank": "IV",
-    "description": "Thunderstrike that deals extreme Lightning damage to a target.",
+    "rank": "I",
+    "description": "Focused beam that deals low Lightning damage.",
     "image_required": true,
-    "last_modified": "2026-02-08T14:59:13.828654+00:00",
+    "last_modified": "2026-02-08T14:59:13.831217+00:00",
     "tags": [],
     "changelog": [
       {
         "version": "0.0.1",
-        "date": "2026-02-08T09:49:16.847345+00:00",
+        "date": "2026-02-08T09:49:16.839433+00:00",
         "description": "Initial Closed Beta 2 Data"
       }
     ],
-    "damage": 3675,
-    "range": 36
+    "damage": 70,
+    "range": 45
   }
 ]
