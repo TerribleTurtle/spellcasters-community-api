@@ -76,7 +76,7 @@ jobs:
         run: python scripts/build_api.py
 
       - name: Upload Artifact
-        uses: actions/upload-pages-artifact@v3
+        uses: actions/upload-pages-artifact@v4
         with:
           path: "."
 
