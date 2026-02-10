@@ -28,7 +28,7 @@
     },
     "defense": {
       "name": "Scroll Barrier",
-      "description": "Creates a barrier that absorbs projectiles and reduces all damage."
+      "description": "Creates a barrier that absorbs projectiles and reduces all damage. Absorbing projectiles refreshes Holy spells."
     },
     "ultimate": {
       "name": "Seal of Immortality",

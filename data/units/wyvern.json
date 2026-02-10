@@ -27,5 +27,6 @@
   },
   "health": 350,
   "movement_speed": 4,
-  "movement_type": "Flying"
+  "movement_type": "Flying",
+  "range": 36
 }

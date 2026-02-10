@@ -28,11 +28,17 @@
     },
     "defense": {
       "name": "Witchslip",
-      "description": "Performs an invincible dash in a chosen direction."
+      "description": "Performs an invincible dash in a chosen direction.",
+      "stats": {
+        "charges": 2
+      }
     },
     "ultimate": {
       "name": "Dark Ascension",
-      "description": "Unleashes a demonic form that boosts all spell damage."
+      "description": "Unleashes a demonic form that boosts all spell damage.",
+      "stats": {
+        "duration": 15
+      }
     }
   },
   "last_modified": "2026-02-10T00:28:41.370501+00:00",

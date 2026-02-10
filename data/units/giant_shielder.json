@@ -20,7 +20,7 @@
       {
         "target_type": "Creature",
         "multiplier": 0.35,
-        "condition": "Always"
+        "condition": "Always - DATA NOT CONFIRMED"
       }
     ]
   },

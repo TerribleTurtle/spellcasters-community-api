@@ -32,7 +32,7 @@
     },
     "ultimate": {
       "name": "Dimension of Varani",
-      "description": "Conjures a time bubble that freezes enemy projectiles and creatures inside it."
+      "description": "Conjures a time bubble that freezes enemy projectiles and creatures inside it. The Ultimate is destroyed by Lifestone Large Shots (3 hits)."
     }
   },
   "last_modified": "2026-02-10T00:28:41.369403+00:00",

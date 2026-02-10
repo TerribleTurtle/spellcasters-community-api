@@ -32,7 +32,10 @@
     },
     "ultimate": {
       "name": "Iron Tempest",
-      "description": "Unleash a metal vortex that deals heavy damage and knocks back enemies along its path."
+      "description": "Unleash a metal vortex that deals heavy damage, staggers/knocks back all creatures inside.",
+      "stats": {
+        "duration": 3
+      }
     }
   },
   "last_modified": "2026-02-10T00:28:41.369890+00:00",
