@@ -15,5 +15,9 @@
       "description": "Initial Closed Beta 2 Data"
     }
   ],
-  "damage": 90
+  "mechanics": {
+    "waves": 5,
+    "interval": 1
+  },
+  "damage": 18
 }
