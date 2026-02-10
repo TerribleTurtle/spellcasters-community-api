@@ -6,7 +6,7 @@
   "rank": "I",
   "description": "Agile flying creature that excels at defeating ground units.",
   "image_required": true,
-  "last_modified": "2026-02-09T21:55:00.000000+00:00",
+  "last_modified": "2026-02-10T03:12:45.174300+00:00",
   "tags": [],
   "changelog": [
     {
@@ -19,7 +19,10 @@
   "mechanics": {
     "damage_modifiers": [
       {
-        "target_type": ["Ground", "Hover"],
+        "target_type": [
+          "Ground",
+          "Hover"
+        ],
         "multiplier": 1.19,
         "condition": "Always"
       },
