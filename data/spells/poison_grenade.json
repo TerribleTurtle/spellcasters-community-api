@@ -17,5 +17,13 @@
   ],
   "damage": 25,
   "range": 40,
-  "duration": 12
+  "duration": 12,
+  "mechanics": {
+    "damage_modifiers": [
+      {
+        "target_type": "Building",
+        "multiplier": 0.0
+      }
+    ]
+  }
 }

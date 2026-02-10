@@ -28,7 +28,11 @@
     },
     "defense": {
       "name": "Rune Shield",
-      "description": "Raise a shield that protects allies and reflects attacks."
+      "description": "Raise a shield that protects allies and reflects attacks.",
+      "stats": {
+        "charges": 4,
+        "duration": 0.5
+      }
     },
     "ultimate": {
       "name": "Iron Tempest",

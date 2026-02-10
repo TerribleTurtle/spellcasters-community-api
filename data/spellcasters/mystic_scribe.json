@@ -28,11 +28,18 @@
     },
     "defense": {
       "name": "Scroll Barrier",
-      "description": "Creates a barrier that absorbs projectiles and reduces all damage. Absorbing projectiles refreshes Holy spells."
+      "description": "Creates a barrier that absorbs projectiles and reduces all damage. Absorbing Spellcaster projectiles refreshes Holy spells.",
+      "stats": {
+        "charges": 1,
+        "duration": 2
+      }
     },
     "ultimate": {
       "name": "Seal of Immortality",
-      "description": "Mark the ground with a massive healing seal."
+      "description": "Mark the ground with a massive healing seal.",
+      "stats": {
+        "duration": 30
+      }
     }
   },
   "last_modified": "2026-02-10T02:13:29.491541+00:00",

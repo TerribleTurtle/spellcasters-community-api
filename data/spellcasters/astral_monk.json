@@ -28,7 +28,10 @@
     },
     "defense": {
       "name": "Veil Shift",
-      "description": "Turns invisible and move faster."
+      "description": "Turns invisible and move faster.",
+      "stats": {
+        "charges": 2
+      }
     },
     "ultimate": {
       "name": "Dimension of Varani",

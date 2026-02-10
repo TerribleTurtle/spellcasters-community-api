@@ -35,7 +35,21 @@
     },
     "ultimate": {
       "name": "Dark Ascension",
-      "description": "Unleashes a demonic form that boosts all spell damage.",
+      "description": "Unleashes a demonic form that boosts all spell damage by 150%. Poison Strike fires 2 extra projectiles that deal +285% damage.",
+      "mechanics": {
+        "damage_modifiers": [
+          {
+            "target_type": "All",
+            "multiplier": 2.5
+          }
+        ],
+        "features": [
+          {
+            "name": "Empowered Poison Strike",
+            "description": "Poison Strike gains 2 extra projectiles dealing +285% damage."
+          }
+        ]
+      },
       "stats": {
         "duration": 15
       }

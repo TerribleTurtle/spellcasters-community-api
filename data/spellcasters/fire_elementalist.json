@@ -28,7 +28,10 @@
     },
     "defense": {
       "name": "Fiery Dash",
-      "description": "Performs an invincible dash in a chosen direction."
+      "description": "Performs an invincible dash in a chosen direction.",
+      "stats": {
+        "charges": 2
+      }
     },
     "ultimate": {
       "name": "Burning Conquest",
