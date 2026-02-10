@@ -39,5 +39,7 @@
   },
   "damage": 125,
   "health": 15000,
-  "movement_speed": 4
+  "movement_speed": 4,
+  "dps": 125,
+  "attack_interval": 1.0
 }

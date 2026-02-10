@@ -20,12 +20,14 @@
       {
         "target_type": "Creature",
         "multiplier": 0.35,
-        "condition": "Always - DATA NOT CONFIRMED"
+        "condition": "Always"
       }
     ]
   },
   "damage": 30,
   "health": 1800,
   "movement_speed": 3,
-  "movement_type": "Ground"
+  "movement_type": "Ground",
+  "dps": 30,
+  "attack_interval": 1.0
 }

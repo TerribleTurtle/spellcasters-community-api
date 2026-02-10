@@ -16,5 +16,7 @@
     }
   ],
   "damage": 50,
-  "health": 3500
+  "health": 3500,
+  "dps": 50,
+  "attack_interval": 1.0
 }

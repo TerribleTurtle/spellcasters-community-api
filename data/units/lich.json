@@ -18,5 +18,7 @@
   "damage": 5,
   "health": 500,
   "movement_speed": 5,
-  "movement_type": "Flying"
+  "movement_type": "Flying",
+  "dps": 5,
+  "attack_interval": 1.0
 }

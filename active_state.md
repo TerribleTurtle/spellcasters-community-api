@@ -152,6 +152,11 @@ Validating Migrated Data & Populating Missing Content (Consumables, Upgrades).
 - [x] **Documentation Update (2026-02-10):**
   - [x] Added schema instability warning to `README.md` and `SCHEMA_CHANGELOG.md` (Effective until Feb 26th).
 
+- [x] **Damage Refactor (2026-02-10):**
+  - [x] **Schema:** `incantation` and `titan` schemas now support `dps` and `attack_interval`.
+  - [x] **Data:** Migrated all Units/Titans to include `dps` (cloned from damage) and `attack_interval` (1.0).
+  - [x] **Integrity:** Verified all data files and ran build validation.
+
 ## Logic & Constraints
 
 - **Single Source of Truth:** `data/` folder JSON files.

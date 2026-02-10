@@ -19,5 +19,7 @@
   "health": 130,
   "range": 75,
   "movement_speed": 3,
-  "movement_type": "Ground"
+  "movement_type": "Ground",
+  "dps": 40,
+  "attack_interval": 1.0
 }

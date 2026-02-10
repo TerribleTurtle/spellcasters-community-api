@@ -48,6 +48,8 @@
     },
     "health": { "type": "integer", "minimum": 0 },
     "damage": { "type": "integer", "minimum": 0 },
+    "dps": { "type": "number", "minimum": 0 },
+    "attack_interval": { "type": "number", "minimum": 0 },
     "movement_speed": { "type": "integer", "minimum": 0 },
     "range": { "type": "integer", "minimum": 0 },
     "passive_health_regen": { "type": "integer", "minimum": 0 },

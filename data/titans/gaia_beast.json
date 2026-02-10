@@ -33,5 +33,7 @@
   "health": 20000,
   "movement_speed": 4,
   "passive_health_regen": 50,
-  "heal_amount": 0
+  "heal_amount": 0,
+  "dps": 100,
+  "attack_interval": 1.0
 }

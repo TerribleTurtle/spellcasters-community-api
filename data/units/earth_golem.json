@@ -34,5 +34,7 @@
   "damage": 25,
   "health": 650,
   "movement_speed": 2,
-  "movement_type": "Ground"
+  "movement_type": "Ground",
+  "dps": 25,
+  "attack_interval": 1.0
 }
