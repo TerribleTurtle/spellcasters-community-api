@@ -52,22 +52,34 @@ def load_schema(name):
         print(f"[FATAL] Could not load schema {name}: {e}")
         sys.exit(1)
 
-def check_asset_exists(category, entity_id, is_required):
+CACHE_FILE = ".asset_cache.json"
+
+def load_cache():
+    """Loads the asset validation cache."""
+    if os.path.exists(CACHE_FILE):
+        try:
+            with open(CACHE_FILE, 'r', encoding='utf-8') as f:
+                return json.load(f)
+        except Exception:
+            return {}
+    return {}
+
+def save_cache(cache):
+    """Saves the asset validation cache."""
+    try:
+        with open(CACHE_FILE, 'w', encoding='utf-8') as f:
+            json.dump(cache, f, indent=0)
+    except Exception as e:
+        print(f"[WARN] Could not save cache: {e}")
+
+def check_asset_exists(category, entity_id, is_required, cache):
     """Checks if assets/[category]/[entity_id].png exists and validates hygiene. Returns warning count."""
-    # Special handling for units/spells/titans/spellcasters
-    # filename = f"{entity_id}.png"
-    # if category in ["units", "spells", "titans", "spellcasters"]:
-    #    filename = f"{entity_id}_card.png"
-    
-    # Unified Model - All assets are just {entity_id}.png or {entity_id}.webp
-    # Prioritize WebP for production, but PNG is also valid.
     warnings = 0
     
     path_webp = os.path.join(ASSETS_DIR, category, f"{entity_id}.webp")
     path_png = os.path.join(ASSETS_DIR, category, f"{entity_id}.png")
     
     final_path = None
-    
     if os.path.exists(path_webp):
         final_path = path_webp
     elif os.path.exists(path_png):
@@ -80,31 +92,42 @@ def check_asset_exists(category, entity_id, is_required):
         return 0
         
     # Asset Exists - Perform Hygiene Check
-    path = final_path
-        
-    # Asset Exists - Perform Hygiene Check
     try:
-        # Check File Size
-        size_kb = os.path.getsize(path) / 1024
+        stat = os.stat(final_path)
+        mtime = stat.st_mtime
+        size = stat.st_size
+        
+        # Check Cache
+        if final_path in cache:
+            entry = cache[final_path]
+            if entry.get("mtime") == mtime and entry.get("size") == size:
+                # Cache Hit - Return stored valid state (assuming 0 warnings if cached)
+                return 0
+
+        # Cache Miss - Validate
+        size_kb = size / 1024
         if size_kb > MAX_IMG_SIZE_KB:
-            print(f"[WARN] Hygiene: {path} is {size_kb:.1f}KB (Max: {MAX_IMG_SIZE_KB}KB)")
+            print(f"[WARN] Hygiene: {final_path} is {size_kb:.1f}KB (Max: {MAX_IMG_SIZE_KB}KB)")
             warnings += 1
             
-        # Check Dimensions
-        with Image.open(path) as img:
+        with Image.open(final_path) as img:
             width, height = img.size
             if width > MAX_IMG_DIMENSION or height > MAX_IMG_DIMENSION:
-                 print(f"[WARN] Hygiene: {path} is {width}x{height} (Max: {MAX_IMG_DIMENSION}x{MAX_IMG_DIMENSION})")
+                 print(f"[WARN] Hygiene: {final_path} is {width}x{height} (Max: {MAX_IMG_DIMENSION}x{MAX_IMG_DIMENSION})")
                  warnings += 1
-                 
+
+        # Update Cache only if valid (no warnings)
+        if warnings == 0:
+            cache[final_path] = {"mtime": mtime, "size": size}
+
     except Exception as e:
-        print(f"[WARN] Could not validate image {path}: {e}")
+        print(f"[WARN] Could not validate image {final_path}: {e}")
         warnings += 1
         
     return warnings
 
 
-def validate_entry_assets(data, schema_key, folder):
+def validate_entry_assets(data, schema_key, folder, cache):
     """Checks if required assets exist for a data entry. Returns warning count."""
     if not data.get("image_required", True):
         return 0
@@ -117,7 +140,7 @@ def validate_entry_assets(data, schema_key, folder):
     elif schema_key == "consumable": obj_id = data.get("entity_id")
     
     if obj_id:
-        return check_asset_exists(folder, obj_id, True)
+        return check_asset_exists(folder, obj_id, True, cache)
     return 0
 
 def validate_integrity():
@@ -133,37 +156,38 @@ def validate_integrity():
     errors = 0
     warnings = 0
     
-    # 1. Load All Data for Cross-Reference
-    # 1. Load All Data for Cross-Reference
+    # 1. Load All Data for Cross-Reference & Validation
     db = {}
+    cache = load_cache()
     
     # Pre-load DB dynamically based on config
+    print("Loading data into memory...")
     for folder, schema_key in FOLDER_TO_SCHEMA.items():
         if folder not in db:
             db[folder] = {}
             
-        files = glob.glob(os.path.join(DATA_DIR, folder, "*.json"))
+        path_pattern = os.path.join(DATA_DIR, folder, "*.json")
+        files = glob.glob(path_pattern)
+        
         for f in files:
             data = load_json(f)
-            if not data: continue
+            if not data: 
+                errors += 1
+                continue
             
-            # Identify ID field based on type - heuristic or explicit config?
-            # For now, let's keep the heuristic but make it generic if possible
-            # or continue to map schema_key
-            
-            id_field = "id" # default fallback
-            
-            if schema_key == "incantation": id_field = "entity_id"
-            elif schema_key == "titan": id_field = "entity_id"
-            elif schema_key == "spellcaster": id_field = "spellcaster_id"
-            elif schema_key == "consumable": id_field = "entity_id"
-            elif schema_key == "upgrade": id_field = "upgrade_id"
-            elif schema_key == "deck": id_field = "id" # New deck schema
-             
-            if id_field in data:
-                db[folder][data[id_field]] = data
+            # Store with filename as key for easy reference logic, or ID?
+            # Storing by filename for now to match old logic's ability to identify source
+            db[folder][f] = data
 
-    # 2. Iterate and Validate
+    # 2. Pre-calculate Global Sets for O(1) Lookups
+    print("Building reference indices...")
+    all_game_tags = set()
+    if "units" in db:
+        for f, u in db["units"].items():
+            for t in u.get("tags", []): 
+                all_game_tags.add(t)
+
+    # 3. Iterate and Validate (InMemory)
     schemas = {}
     for k, v in SCHEMA_FILES.items():
         schemas[k] = load_schema(k)
@@ -171,36 +195,27 @@ def validate_integrity():
     # Validate Folders
     for folder, schema_key in FOLDER_TO_SCHEMA.items():
         print(f"Validating {folder}...")
-        files = glob.glob(os.path.join(DATA_DIR, folder, "*.json"))
         
-        for f in files:
-            data = load_json(f)
-            if not data:
-                errors += 1
-                continue
-
+        if folder not in db: continue
+        
+        for filepath, data in db[folder].items():
             # Schema Validation
             try:
                 jsonschema.validate(instance=data, schema=schemas[schema_key])
             except jsonschema.ValidationError as e:
-                print(f"[FAIL] Schema Error in {f}: {e.message}")
+                print(f"[FAIL] Schema Error in {filepath}: {e.message}")
                 errors += 1
                 continue
             
             # Asset Check
-            warnings += validate_entry_assets(data, schema_key, folder)
+            warnings += validate_entry_assets(data, schema_key, folder, cache)
             
-            # Logic: Upgrade -> Tags
+            # Logic: Upgrade -> Tags (Optimized O(N))
             if schema_key == "upgrade":
                 targets = data.get("target_tags", [])
-                # Collect all unique tags in DB
-                all_tags = set()
-                for u in db["units"].values():
-                    for t in u.get("tags", []): all_tags.add(t)
-                
                 for t in targets:
-                    if t not in all_tags:
-                        print(f"[WARN] Upgrade {f} targets tag '{t}' which no unit possesses.")
+                    if t not in all_game_tags:
+                        print(f"[WARN] Upgrade {os.path.basename(filepath)} targets tag '{t}' which no unit possesses.")
                         warnings += 1
 
 
@@ -214,6 +229,9 @@ def validate_integrity():
             print(f"[FAIL] Game Info Schema Error: {e.message}")
             errors += 1
             
+    # Save Cache
+    save_cache(cache)
+    
     print(f"Validation Complete. Errors: {errors}, Warnings: {warnings}")
     if errors > 0:
         sys.exit(1)

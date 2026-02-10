@@ -42,3 +42,6 @@ active_state.md
 
 # Build Artifacts
 api/v1/
+
+# Caches
+.asset_cache.json
