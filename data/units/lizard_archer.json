@@ -21,6 +21,11 @@
         "target_type": "Flying",
         "multiplier": 1.375,
         "condition": "Always"
+      },
+      {
+        "target_type": "Building",
+        "multiplier": 0.9,
+        "condition": "Always"
       }
     ]
   },

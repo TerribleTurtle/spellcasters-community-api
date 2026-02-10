@@ -25,6 +25,15 @@
         "interval": 1.0,
         "effect": "Debuff",
         "target_type": "Enemy"
+      },
+      {
+        "name": "Death's Retaliation",
+        "description": "Retaliates against Spellcasters after receiving >4000 damage.",
+        "radius": 100,
+        "value": 0,
+        "interval": 0,
+        "effect": "Damage",
+        "target_type": "Enemy"
       }
     ]
   },

@@ -19,7 +19,7 @@
     "damage_modifiers": [
       {
         "target_type": "Creature",
-        "multiplier": 2.2,
+        "multiplier": 1.2,
         "condition": "Always"
       }
     ]

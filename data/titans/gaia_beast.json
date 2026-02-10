@@ -26,7 +26,8 @@
         "effect": "Damage",
         "target_type": "Enemy"
       }
-    ]
+    ],
+    "auto_capture_altars": true
   },
   "damage": 100,
   "health": 20000,

@@ -27,7 +27,7 @@
       {
         "source_type": "Unit",
         "multiplier": 0.75,
-        "condition": "Rank >= 3"
+        "condition": "Rank >= 3  THIS INFORMATION IS UNCONFIRMED"
       }
     ]
   },

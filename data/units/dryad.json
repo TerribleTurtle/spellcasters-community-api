@@ -19,7 +19,7 @@
     "aura": [
       {
         "name": "Healing Aura",
-        "description": "Heals nearby allies.",
+        "description": "Heals nearby allies. Healing is reduced when multiple Dryads stack.",
         "radius": 8,
         "value": 30,
         "interval": 1.0,

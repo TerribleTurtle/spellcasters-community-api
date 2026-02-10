@@ -18,7 +18,7 @@
   "mechanics": {
     "damage_modifiers": [
       {
-        "target_type": "Unit",
+        "target_type": "Creature",
         "multiplier": 0.5,
         "condition": "Always"
       },

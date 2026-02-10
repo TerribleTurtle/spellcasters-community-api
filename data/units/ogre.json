@@ -20,7 +20,7 @@
       {
         "target_type": "Building",
         "multiplier": 5.0,
-        "condition": "Always"
+        "condition": "Always - UNCONFIRMED NUMBER"
       }
     ]
   },
