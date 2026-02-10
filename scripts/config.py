@@ -1,4 +1,12 @@
 # Common Configuration for Spellcasters API Scripts
+"""
+Shared configuration module for Spellcasters API scripts.
+
+This module defines:
+- Directory paths (DATA_DIR, ASSETS_DIR, etc.)
+- Schema mappings (SCHEMA_FILES)
+- Helper functions (load_json)
+"""
 
 import os
 import json
@@ -38,6 +46,15 @@ FOLDER_TO_SCHEMA = {
 }
 
 def load_json(path):
+    """
+    Safely loads a JSON file.
+    
+    Args:
+        path (str): Absolute path to the JSON file.
+        
+    Returns:
+        dict: The parsed JSON data, or None if loading failed.
+    """
     try:
         with open(path, 'r', encoding='utf-8') as f:
             return json.load(f)

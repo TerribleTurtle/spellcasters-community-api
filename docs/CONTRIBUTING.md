@@ -38,7 +38,8 @@ To add a new Spellcaster, Unit, Spell, Titan, or Consumable:
 4.  **Add Assets:**
     - **Production:** Add the image to `assets/[category]/[id].webp`.
     - **Archive:** Source PNGs should be stored in `assets/_archive/[category]/[id].png`.
-    - **Automatic:** Place `.png` files in the main folder and run `python scripts/optimize_assets.py`. This script will generate the `.webp` and archive the `.png` for you.
+    - **Automatic:** Place `.webp` files directly in `assets/[category]/[id].webp`.
+      - **Note:** We no longer support automatic PNG-to-WebP conversion. Please use an external tool to convert your images before submitting.
 
 ### 📚 Data Reference & Hierarchy
 

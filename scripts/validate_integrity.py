@@ -7,6 +7,16 @@ from PIL import Image
 import config
 from config import load_json
 
+"""
+Data Integrity Validator
+
+This script performs strict validation on the project data:
+1. Schema Validation: Checks all JSON files against schemas in `schemas/v1/`.
+2. Asset Hygiene: checks if required images exist and meet size/dimension limits.
+3. Reference Integrity: Ensures logical consistency (e.g., Upgrade tags exist).
+"""
+
+
 # Configuration
 SCHEMAS_DIR = config.SCHEMAS_DIR
 DATA_DIR = config.DATA_DIR
@@ -25,6 +35,15 @@ FOLDER_TO_SCHEMA = config.FOLDER_TO_SCHEMA
 
 
 def load_schema(name):
+    """
+    Loads a JSON schema by its friendly name key (e.g., 'incantation').
+
+    Args:
+        name (str): Key matching an entry in config.SCHEMA_FILES.
+
+    Returns:
+        dict: The parsed JSON schema.
+    """
     path = os.path.join(SCHEMAS_DIR, SCHEMA_FILES[name])
     try:
         with open(path, 'r', encoding='utf-8') as f:
@@ -102,6 +121,14 @@ def validate_entry_assets(data, schema_key, folder):
     return 0
 
 def validate_integrity():
+    """
+    Main validation routine.
+    
+    Orchestrates the validation process:
+    1. Loads all data into a memory DB for cross-reference.
+    2. Validates each file against its JSON schema.
+    3. Checks for missing or invalid assets.
+    """
     print("Starting Integrity Validation...")
     errors = 0
     warnings = 0

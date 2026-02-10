@@ -8,6 +8,16 @@ from datetime import datetime, timezone
 import config
 from config import load_json
 
+"""
+API Builder Script
+
+This script aggregates individual JSON data files from `data/` into consolidated
+API response files in `api/v1/`. It generates:
+- Collection files (e.g., units.json, spells.json)
+- A master all_data.json file
+"""
+
+
 # Configuration
 VERSION_API = "v1"
 OUTPUT_DIR = config.OUTPUT_DIR
@@ -30,11 +40,19 @@ SINGLE_FILES = {
 }
 
 def ensure_output_dir():
+    """Creates the output directory if it does not exist."""
     if not os.path.exists(OUTPUT_DIR):
         os.makedirs(OUTPUT_DIR)
         print(f"Created output directory: {OUTPUT_DIR}")
 
 def save_json(filename, data):
+    """
+    Saves data to a JSON file in the output directory.
+
+    Args:
+        filename (str): The name of the file (e.g., 'units.json').
+        data (dict | list): The data to serialize.
+    """
     path = os.path.join(OUTPUT_DIR, filename)
     with open(path, 'w', encoding='utf-8') as f:
         json.dump(data, f, indent=2)
