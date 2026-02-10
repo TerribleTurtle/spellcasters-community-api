@@ -132,6 +132,8 @@ Validating Migrated Data & Populating Missing Content (Consumables, Upgrades).
   - [x] **Governance:** Added `docs/SECURITY.md` and configured Dependabot.
   - [x] **Hardening:** Implemented recursive XSS sanitization in `build_api.py`.
   - [x] **Verification:** Validated that legitimate content (quotes, >) is preserved while scripts are neutralized.
+  - [x] **Dependency Fix (2026-02-10):**
+    - [x] Downgraded `jsonschema` to v4.25.1 to resolve installation error (v4.26.0 unavailable).
 
 - [x] **Performance Optimization (2026-02-10):**
   - [x] **Algorithmic:** Fixed O(N^2) loop in `validate_integrity.py` (Upgrade Tags).
