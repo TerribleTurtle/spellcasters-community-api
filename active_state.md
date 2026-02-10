@@ -134,6 +134,7 @@ Validating Migrated Data & Populating Missing Content (Consumables, Upgrades).
   - [x] **Verification:** Validated that legitimate content (quotes, >) is preserved while scripts are neutralized.
   - [x] **Dependency Fix (2026-02-10):**
     - [x] Downgraded `jsonschema` to v4.25.1 to resolve installation error (v4.26.0 unavailable).
+    - [x] Upgraded CI workflows to Python 3.11 to support `Pillow==12.1.0`.
 
 - [x] **Performance Optimization (2026-02-10):**
   - [x] **Algorithmic:** Fixed O(N^2) loop in `validate_integrity.py` (Upgrade Tags).
