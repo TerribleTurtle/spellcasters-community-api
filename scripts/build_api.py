@@ -1,5 +1,6 @@
 import json
 import os
+import html
 import glob
 import sys
 import hashlib
@@ -59,6 +60,26 @@ def save_json(filename, data):
     print(f"[OK] Generated {path} ({len(data)} items)")
 
 
+def sanitize_recursive(data):
+    """
+    Recursively escapes HTML characters in strings to prevent XSS.
+    
+    Args:
+        data (dict | list | str | any): The data to sanitize.
+        
+    Returns:
+        The sanitized data structure.
+    """
+    if isinstance(data, str):
+        # Only escape < to prevent tag injection, preserving > and quotes for readability and game math
+        return data.replace("<", "&lt;")
+    elif isinstance(data, dict):
+        return {k: sanitize_recursive(v) for k, v in data.items()}
+    elif isinstance(data, list):
+        return [sanitize_recursive(v) for v in data]
+    return data
+
+
 
 def main():
     print(f"Building API {VERSION_API}...")
@@ -89,6 +110,7 @@ def main():
         for file in files:
             content = load_json(file)
             if content:
+                content = sanitize_recursive(content)
                 collection.append(content)
             else:
                 errors += 1
@@ -104,6 +126,7 @@ def main():
         if os.path.exists(path):
             content = load_json(path)
             if content:
+                content = sanitize_recursive(content)
                 save_json(f"{key}.json", content)
                 all_data[key] = content
             else:

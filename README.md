@@ -89,6 +89,11 @@ This project is a community-maintained tool and is **not** affiliated with, endo
 
 While we strive for accuracy, this API is maintained by volunteers. Data is entered manually and may contain errors. **Do not** use this data for financial decisions or competitive play without verifying it in-game.
 
+### 🛡️ Security Disclaimer
+
+This API provides **raw data** from community contributions.
+**Developers:** You MUST sanitize this data before rendering it in your applications. Treating descriptions or text fields as trusted HTML may expose your users to Cross-Site Scripting (XSS) attacks.
+
 ## 📂 Structure
 
 - `data/`: Source JSON files.

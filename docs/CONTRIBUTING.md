@@ -141,6 +141,11 @@ This project uses an automated **Safety System** to prevent accidental damage. W
 > [!TIP]
 > If your PR fails a check, click "Details" next to the failure to see exactly what went wrong.
 
+## 🛡️ Security
+
+If you discover a security vulnerability, please **DO NOT** open a public issue.
+Refer to our [Security Policy](SECURITY.md) for reporting instructions.
+
 ## Reporting Bugs
 
 Please use the GitHub Issues tab to report:
