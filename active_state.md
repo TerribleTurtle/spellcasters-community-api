@@ -144,6 +144,9 @@ Validating Migrated Data & Populating Missing Content (Consumables, Upgrades).
 - [x] **Security Patch (2026-03-15):**
   - [x] **Dependency:** Upgraded `tj-actions/changed-files` to v46.0.1 to mitigate supply chain vulnerability.
 
+- [x] **Documentation Update (2026-02-10):**
+  - [x] Added schema instability warning to `README.md` and `SCHEMA_CHANGELOG.md` (Effective until Feb 26th).
+
 ## Logic & Constraints
 
 - **Single Source of Truth:** `data/` folder JSON files.

@@ -1,3 +1,6 @@
+> [!CAUTION]
+> **UNSTABLE SCHEMA:** The schema is currently in flux. Breaking changes may occur without notice until the Early Access launch on **Feb 26th**.
+
 # Schema Changelog - v1.1 Movement Update
 
 ## Overview

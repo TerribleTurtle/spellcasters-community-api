@@ -5,6 +5,8 @@
 > [!WARNING]
 > **BETA NOTICE:** Current data reflects the **Closed Beta**.
 > We will begin manual updates for **Early Access** on and after **Feb 26th**.
+>
+> **SCHEMA ALERT:** The JSON schema is volatile and may change without notice until **Feb 26th**.
 
 This project is a collaborative tool for **developers** (building apps/tools) and the **community** (wiki editors/fans).
 It is **free to use** and **open for anyone to contribute**.
