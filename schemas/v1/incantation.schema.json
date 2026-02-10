@@ -124,16 +124,38 @@
             "required": ["target_type", "multiplier"],
             "properties": {
               "target_type": {
-                "type": "string",
-                "enum": [
-                  "Building",
-                  "Creature",
-                  "Spellcaster",
-                  "Unit",
-                  "All",
-                  "Lifestone",
-                  "Flying",
-                  "Ground"
+                "oneOf": [
+                  {
+                    "type": "string",
+                    "enum": [
+                      "Building",
+                      "Creature",
+                      "Spellcaster",
+                      "Unit",
+                      "All",
+                      "Lifestone",
+                      "Flying",
+                      "Ground",
+                      "Hover"
+                    ]
+                  },
+                  {
+                    "type": "array",
+                    "items": {
+                      "type": "string",
+                      "enum": [
+                        "Building",
+                        "Creature",
+                        "Spellcaster",
+                        "Unit",
+                        "All",
+                        "Lifestone",
+                        "Flying",
+                        "Ground",
+                        "Hover"
+                      ]
+                    }
+                  }
                 ]
               },
               "multiplier": {
@@ -190,6 +212,21 @@
               "description": { "type": "string" }
             }
           }
+        },
+        "initial_attack": {
+          "type": "object",
+          "properties": {
+            "damage_flat": { "type": "integer" },
+            "target_types": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "enum": ["Ground", "Hover", "Flying", "Building", "Creature", "Spellcaster", "Unit", "All"]
+              }
+            },
+            "description": { "type": "string" }
+          },
+          "required": ["damage_flat", "target_types"]
         }
       }
     },

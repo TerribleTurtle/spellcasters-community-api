@@ -3,9 +3,11 @@ import shutil
 import glob
 from PIL import Image
 
+import config
+
 # Configuration
-ASSETS_DIR = "assets"
-ARCHIVE_DIR = os.path.join(ASSETS_DIR, "_archive")
+ASSETS_DIR = config.ASSETS_DIR
+SOURCE_DIR_NAME = "source"
 CATEGORIES = ["units", "spells", "titans", "spellcasters", "consumables"]
 
 def optimize_assets():
@@ -14,14 +16,14 @@ def optimize_assets():
     
     for category in CATEGORIES:
         src_dir = os.path.join(ASSETS_DIR, category)
-        archive_category_dir = os.path.join(ARCHIVE_DIR, category)
+        source_category_dir = os.path.join(src_dir, SOURCE_DIR_NAME)
         
         if not os.path.exists(src_dir):
             continue
             
-        # Ensure archive dir exists
-        if not os.path.exists(archive_category_dir):
-            os.makedirs(archive_category_dir)
+        # Ensure source dir exists
+        if not os.path.exists(source_category_dir):
+            os.makedirs(source_category_dir)
 
         # Find all PNGs in the main folder (newly added ones)
         png_files = glob.glob(os.path.join(src_dir, "*.png"))
@@ -30,7 +32,7 @@ def optimize_assets():
             filename = os.path.basename(png_path)
             basename = os.path.splitext(filename)[0]
             webp_path = os.path.join(src_dir, f"{basename}.webp")
-            archive_path = os.path.join(archive_category_dir, filename)
+            source_path = os.path.join(source_category_dir, filename)
             
             print(f"Processing {filename}...")
             
@@ -40,13 +42,13 @@ def optimize_assets():
                     img.save(webp_path, "WEBP", quality=90)
                 print(f"  [+] Updated {basename}.webp")
 
-                # 2. Archive the PNG
-                if os.path.exists(archive_path):
-                    # versioning collision? - overwrite for now as per "update" logic
-                    os.remove(archive_path)
+                # 2. Move original to source folder
+                if os.path.exists(source_path):
+                    # overwritten if exists
+                    os.remove(source_path)
                 
-                shutil.move(png_path, archive_path)
-                print(f"  [>] Archived to {archive_path}")
+                shutil.move(png_path, source_path)
+                print(f"  [>] Moved source to {source_path}")
                 converted_count += 1
                 
             except Exception as e:

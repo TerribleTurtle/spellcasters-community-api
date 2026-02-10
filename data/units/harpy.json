@@ -6,7 +6,7 @@
   "rank": "I",
   "description": "Agile flying creature that excels at defeating ground units.",
   "image_required": true,
-  "last_modified": "2026-02-10T00:28:41.370879+00:00",
+  "last_modified": "2026-02-09T21:55:00.000000+00:00",
   "tags": [],
   "changelog": [
     {
@@ -19,11 +19,24 @@
   "mechanics": {
     "damage_modifiers": [
       {
-        "target_type": "Ground",
-        "multiplier": 1.5,
+        "target_type": ["Ground", "Hover"],
+        "multiplier": 1.19,
+        "condition": "Always"
+      },
+      {
+        "target_type": "Building",
+        "multiplier": 0.65,
         "condition": "Always"
       }
-    ]
+    ],
+    "initial_attack": {
+      "damage_flat": 30,
+      "target_types": [
+        "Ground",
+        "Hover"
+      ],
+      "description": "Deals 30 increased damage on pouncing initial attack on grounded and hovering units."
+    }
   },
   "health": 100,
   "movement_speed": 8,

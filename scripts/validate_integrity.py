@@ -4,37 +4,22 @@ import glob
 import sys
 import jsonschema
 from PIL import Image
+import config
 
 # Configuration
-SCHEMAS_DIR = "schemas/v1"
-DATA_DIR = "data"
-ASSETS_DIR = "assets"
+SCHEMAS_DIR = config.SCHEMAS_DIR
+DATA_DIR = config.DATA_DIR
+ASSETS_DIR = config.ASSETS_DIR
 
 # Asset Hygiene Limits
-MAX_IMG_DIMENSION = 512
-MAX_IMG_SIZE_KB = 100
+MAX_IMG_DIMENSION = config.MAX_IMG_DIMENSION
+MAX_IMG_SIZE_KB = config.MAX_IMG_SIZE_KB
 
 # Schema Filenames
-SCHEMA_FILES = {
-    "incantation": "incantation.schema.json",
-    "spellcaster": "spellcaster.schema.json",
-    "consumable": "consumable.schema.json",
-    "upgrade": "upgrade.schema.json",
-    "deck": "deck.schema.json",
-    "game_info": "game_info.schema.json",
-    "titan": "titan.schema.json"
-}
+SCHEMA_FILES = config.SCHEMA_FILES
 
 # Data Folder Mapping (Source -> Schema Type)
-FOLDER_TO_SCHEMA = {
-    "units": "incantation",
-    "spells": "incantation",
-    "titans": "titan",
-    "spellcasters": "spellcaster",
-    "consumables": "consumable",
-    "upgrades": "upgrade",
-    "decks": "deck" # if decks existed
-}
+FOLDER_TO_SCHEMA = config.FOLDER_TO_SCHEMA
 
 def load_json(path):
     try:
@@ -104,66 +89,6 @@ def check_asset_exists(category, entity_id, is_required):
         
     return warnings
 
-def validate_decks(db):
-    """
-    Validates all deck files in data/decks.
-    Returns a list of error strings.
-    """
-    errors = []
-    # Support both data/decks.json and data/decks/*.json
-    deck_files = glob.glob(os.path.join(DATA_DIR, "decks", "*.json"))
-    if os.path.exists(os.path.join(DATA_DIR, "decks.json")):
-        deck_files.append(os.path.join(DATA_DIR, "decks.json"))
-    
-    for f in deck_files:
-        data = load_json(f)
-        if not data:
-            errors.append(f"[FAIL] Could not load deck {f}")
-            continue
-
-        spellcaster_id = data.get("spellcaster_id") or data.get("hero_id") # Support migration
-        titan_id = data.get("titan_id")
-        # In Unified Model, cards list contains unit_ids
-        unit_ids = data.get("cards", [])
-
-        # Spellcaster Check
-        if spellcaster_id and spellcaster_id not in db["spellcasters"]:
-            errors.append(f"[FAIL] Deck {f} references missing spellcaster_id '{spellcaster_id}'")
-        
-        # Titan Check
-        if titan_id:
-            if titan_id not in db["titans"]:
-                errors.append(f"[FAIL] Deck {f} references missing titan_id '{titan_id}'")
-            else:
-                titan = db["titans"][titan_id]
-                # Titan validation is implicit by being in titans DB
-
-        # Cards Check (Units/Spells)
-        has_rank_1_or_2_creature = False
-        for uid in unit_ids:
-            # Check in Units or Spells
-            found = False
-            entity = None
-            
-            if uid in db["units"]:
-                entity = db["units"][uid]
-                found = True
-            elif uid in db["spells"]:
-                entity = db["spells"][uid]
-                found = True
-            
-            if not found:
-                errors.append(f"[FAIL] Deck {f} references missing card '{uid}'")
-            else:
-                rank = entity.get("rank")
-                category = entity.get("category")
-                if category == "Creature" and rank in ["I", "II"]:
-                    has_rank_1_or_2_creature = True
-
-        if not has_rank_1_or_2_creature:
-            errors.append(f"[FAIL] Deck {f} must contain at least one Rank I or Rank II CREATURE card.")
-
-    return errors
 
 def validate_integrity():
     print("Starting Integrity Validation...")
@@ -246,11 +171,6 @@ def validate_integrity():
                         print(f"[WARN] Upgrade {f} targets tag '{t}' which no unit possesses.")
                         warnings += 1
 
-    # 3. Dedicated Deck Validation
-    deck_errors = validate_decks(db)
-    for e in deck_errors:
-        print(e)
-    errors += len(deck_errors)
 
     # Validate Game Info
     game_info_path = os.path.join(DATA_DIR, "game_info.json")

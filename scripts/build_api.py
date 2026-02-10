@@ -5,10 +5,12 @@ import sys
 import hashlib
 from datetime import datetime, timezone
 
+import config
+
 # Configuration
 VERSION_API = "v1"
-OUTPUT_DIR = f"api/{VERSION_API}"
-DATA_DIR = "data"
+OUTPUT_DIR = config.OUTPUT_DIR
+DATA_DIR = config.DATA_DIR
 
 # Schema to Data Directory Map
 # Output FilenameBase -> Source Directory
