@@ -15,7 +15,7 @@
       "description": "Initial Closed Beta 2 Data"
     }
   ],
-  "damage": 45,
+  "damage": 19,
   "mechanics": {
     "damage_modifiers": [
       {
@@ -25,8 +25,8 @@
       }
     ]
   },
-  "health": 350,
-  "movement_speed": 4,
+  "health": 220,
+  "movement_speed": 7,
   "movement_type": "Flying",
   "range": 36
 }
