@@ -5,6 +5,7 @@ import sys
 import jsonschema
 from PIL import Image
 import config
+from config import load_json
 
 # Configuration
 SCHEMAS_DIR = config.SCHEMAS_DIR
@@ -21,13 +22,7 @@ SCHEMA_FILES = config.SCHEMA_FILES
 # Data Folder Mapping (Source -> Schema Type)
 FOLDER_TO_SCHEMA = config.FOLDER_TO_SCHEMA
 
-def load_json(path):
-    try:
-        with open(path, 'r', encoding='utf-8') as f:
-            return json.load(f)
-    except Exception as e:
-        print(f"[ERROR] Invalid JSON in {path}: {e}")
-        return None
+
 
 def load_schema(name):
     path = os.path.join(SCHEMAS_DIR, SCHEMA_FILES[name])
@@ -90,6 +85,22 @@ def check_asset_exists(category, entity_id, is_required):
     return warnings
 
 
+def validate_entry_assets(data, schema_key, folder):
+    """Checks if required assets exist for a data entry. Returns warning count."""
+    if not data.get("image_required", True):
+        return 0
+
+    # Deduce ID based on schema key
+    obj_id = ""
+    if schema_key == "incantation": obj_id = data.get("entity_id")
+    elif schema_key == "titan": obj_id = data.get("entity_id")
+    elif schema_key == "spellcaster": obj_id = data.get("spellcaster_id")
+    elif schema_key == "consumable": obj_id = data.get("entity_id")
+    
+    if obj_id:
+        return check_asset_exists(folder, obj_id, True)
+    return 0
+
 def validate_integrity():
     print("Starting Integrity Validation...")
     errors = 0
@@ -147,16 +158,7 @@ def validate_integrity():
                 continue
             
             # Asset Check
-            if data.get("image_required", True):
-                # deduce ID
-                obj_id = ""
-                if schema_key == "incantation": obj_id = data.get("entity_id")
-                elif schema_key == "titan": obj_id = data.get("entity_id")
-                elif schema_key == "spellcaster": obj_id = data.get("spellcaster_id")
-                elif schema_key == "consumable": obj_id = data.get("entity_id")
-                
-                if obj_id:
-                    warnings += check_asset_exists(folder, obj_id, True)
+            warnings += validate_entry_assets(data, schema_key, folder)
             
             # Logic: Upgrade -> Tags
             if schema_key == "upgrade":

@@ -42,11 +42,6 @@ jobs:
         run: |
           python scripts/update_timestamps.py ${{ steps.changed-files.outputs.all_changed_files }}
 
-      - name: Build API
-        if: steps.changed-files.outputs.any_changed == 'true'
-        run: |
-          python scripts/build_api.py
-
       - name: Commit and Push changes
         if: steps.changed-files.outputs.any_changed == 'true'
         run: |

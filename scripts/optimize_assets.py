@@ -11,7 +11,7 @@ SOURCE_DIR_NAME = "source"
 CATEGORIES = ["units", "spells", "titans", "spellcasters", "consumables"]
 
 def optimize_assets():
-    print("Starting Asset Optimization...")
+    print("[INFO] Starting Asset Optimization...")
     converted_count = 0
     
     for category in CATEGORIES:
@@ -34,7 +34,7 @@ def optimize_assets():
             webp_path = os.path.join(src_dir, f"{basename}.webp")
             source_path = os.path.join(source_category_dir, filename)
             
-            print(f"Processing {filename}...")
+            print(f"[INFO] Processing {filename}...")
             
             try:
                 # 1. Convert to WebP (Always overwrite if PNG is new)
@@ -52,9 +52,9 @@ def optimize_assets():
                 converted_count += 1
                 
             except Exception as e:
-                print(f"  [!] Failed to process {filename}: {e}")
+                print(f"[ERROR] Failed to process {filename}: {e}")
 
-    print(f"\nOptimization Complete. Processed {converted_count} files.")
+    print(f"\n[INFO] Optimization Complete. Processed {converted_count} files.")
 
 if __name__ == "__main__":
     optimize_assets()

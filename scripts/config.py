@@ -1,6 +1,7 @@
 # Common Configuration for Spellcasters API Scripts
 
 import os
+import json
 
 # Base Directories
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -32,3 +33,11 @@ FOLDER_TO_SCHEMA = {
     "consumables": "consumable",
     "upgrades": "upgrade"
 }
+
+def load_json(path):
+    try:
+        with open(path, 'r', encoding='utf-8') as f:
+            return json.load(f)
+    except Exception as e:
+        print(f"[ERROR] Invalid JSON in {path}: {e}")
+        return None

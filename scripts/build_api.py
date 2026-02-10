@@ -6,6 +6,7 @@ import hashlib
 from datetime import datetime, timezone
 
 import config
+from config import load_json
 
 # Configuration
 VERSION_API = "v1"
@@ -33,24 +34,13 @@ def ensure_output_dir():
         os.makedirs(OUTPUT_DIR)
         print(f"Created output directory: {OUTPUT_DIR}")
 
-def load_json(path):
-    try:
-        with open(path, 'r', encoding='utf-8') as f:
-            return json.load(f)
-    except Exception as e:
-        print(f"[ERROR] Failed to read {path}: {e}")
-        return None
-
 def save_json(filename, data):
     path = os.path.join(OUTPUT_DIR, filename)
     with open(path, 'w', encoding='utf-8') as f:
         json.dump(data, f, indent=2)
     print(f"[OK] Generated {path} ({len(data)} items)")
 
-def generate_checksum(data):
-    """Generates a simple hash for versioning/checking."""
-    s = json.dumps(data, sort_keys=True)
-    return hashlib.md5(s.encode('utf-8')).hexdigest()
+
 
 def main():
     print(f"Building API {VERSION_API}...")
