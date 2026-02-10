@@ -25,7 +25,7 @@
     ]
   },
   "damage": 30,
-  "health": 1500,
+  "health": 1800,
   "movement_speed": 3,
   "movement_type": "Ground"
 }
