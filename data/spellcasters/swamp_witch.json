@@ -24,7 +24,20 @@
     ],
     "primary": {
       "name": "Poison Strike",
-      "description": "Fire a barrage of projectiles that deal Poison damage."
+      "description": "Fire a barrage of projectiles that deal Poison damage.",
+      "stats": {
+        "damage": 21,
+        "projectiles": 2,
+        "interval": null
+      },
+      "mechanics": {
+        "features": [
+          {
+            "name": "Homing",
+            "description": "Projectiles seek targets."
+          }
+        ]
+      }
     },
     "defense": {
       "name": "Witchslip",

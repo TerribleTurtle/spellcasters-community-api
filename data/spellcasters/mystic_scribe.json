@@ -24,7 +24,23 @@
     ],
     "primary": {
       "name": "Brush Strike",
-      "description": "Strike with enchanted ink to damage enemies and boost allies\u2019 Max HP."
+      "description": "Strike with enchanted ink to damage enemies and boost allies\u2019 Max HP.",
+      "stats": {
+        "damage": 23,
+        "interval": null
+      },
+      "mechanics": {
+        "features": [
+          {
+            "name": "Cleave",
+            "description": "Attacks hit multiple enemies in an arc."
+          },
+          {
+            "name": "Knockback",
+            "description": "Knocks back small units."
+          }
+        ]
+      }
     },
     "defense": {
       "name": "Scroll Barrier",

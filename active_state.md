@@ -136,6 +136,11 @@ Validating Migrated Data & Populating Missing Content (Consumables, Upgrades).
     - [x] Downgraded `jsonschema` to v4.25.1 to resolve installation error (v4.26.0 unavailable).
     - [x] Upgraded CI workflows to Python 3.11 to support `Pillow==12.1.0`.
 
+- [x] **Spellcaster Stats Update (2026-02-10):**
+  - [x] **Schema:** Added `projectiles` field to `stats` object in `spellcaster.schema.json`.
+  - [x] **Data:** Updated primary attack stats for all 6 Spellcasters (Damage, Mechanics).
+  - [x] **Docs:** Created `docs/updates/2026-02-10_spellcaster_stats_update.md`.
+
 - [x] **Performance Optimization (2026-02-10):**
   - [x] **Algorithmic:** Fixed O(N^2) loop in `validate_integrity.py` (Upgrade Tags).
   - [x] **I/O:** Implemented single-pass data loading and asset caching (`.asset_cache.json`).

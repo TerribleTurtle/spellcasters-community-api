@@ -82,7 +82,8 @@
             "range": { "type": ["integer", "null"], "description": "Range in units" },
             "value": { "type": ["number", "null"], "description": "Primary Value (Heal/Damage Amount)" },
             "radius": { "type": ["number", "null"], "description": "Radius of effect" },
-            "interval": { "type": ["number", "null"], "description": "Tick interval in seconds" }
+            "interval": { "type": ["number", "null"], "description": "Tick interval in seconds" },
+            "projectiles": { "type": ["integer", "null"], "description": "Number of projectiles per attack (e.g. 2 for 21x2)" }
           }
         },
         "mechanics": {

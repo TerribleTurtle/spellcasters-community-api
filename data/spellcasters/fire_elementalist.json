@@ -24,7 +24,19 @@
     ],
     "primary": {
       "name": "Flame Strikes",
-      "description": "Burns enemies with powerful Fire attacks."
+      "description": "Burns enemies with powerful Fire attacks.",
+      "stats": {
+        "damage": 28,
+        "interval": null
+      },
+      "mechanics": {
+        "features": [
+          {
+            "name": "Cleave",
+            "description": "Attacks hit multiple enemies in an arc."
+          }
+        ]
+      }
     },
     "defense": {
       "name": "Fiery Dash",

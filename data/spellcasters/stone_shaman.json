@@ -25,11 +25,19 @@
     "primary": {
       "name": "Mountain Staff",
       "description": "Swing your catalyst to deal heavy melee damage and interrupt enemies.",
+      "stats": {
+        "damage": 42,
+        "interval": null
+      },
       "mechanics": {
         "features": [
           {
             "name": "Interruption",
             "description": "Successfully hitting a Spellcaster twice interrupts their actions."
+          },
+          {
+            "name": "Cleave",
+            "description": "Attacks hit multiple enemies in an arc."
           }
         ],
         "aura": [

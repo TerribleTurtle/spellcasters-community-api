@@ -24,7 +24,19 @@
     ],
     "primary": {
       "name": "Twin Strike",
-      "description": "Strike with powerful mid-range attacks that interrupt enemies."
+      "description": "Strike with powerful mid-range attacks that interrupt enemies.",
+      "stats": {
+        "damage": 35,
+        "interval": null
+      },
+      "mechanics": {
+        "features": [
+          {
+            "name": "Cleave",
+            "description": "Attacks hit multiple enemies in an arc."
+          }
+        ]
+      }
     },
     "defense": {
       "name": "Rune Shield",
