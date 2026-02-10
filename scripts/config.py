@@ -21,7 +21,8 @@ SCHEMA_FILES = {
     "consumable": "consumable.schema.json",
     "upgrade": "upgrade.schema.json",
     "game_info": "game_info.schema.json",
-    "titan": "titan.schema.json"
+    "titan": "titan.schema.json",
+    "deck": "deck.schema.json"
 }
 
 # Data Folder to Schema Mapping (Folder Name -> Schema Key)
@@ -31,7 +32,9 @@ FOLDER_TO_SCHEMA = {
     "titans": "titan",
     "spellcasters": "spellcaster",
     "consumables": "consumable",
-    "upgrades": "upgrade"
+    "consumables": "consumable",
+    "upgrades": "upgrade",
+    "decks": "deck"
 }
 
 def load_json(path):

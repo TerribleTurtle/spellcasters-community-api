@@ -107,31 +107,34 @@ def validate_integrity():
     warnings = 0
     
     # 1. Load All Data for Cross-Reference
-    db = {
-        "units": {},
-        "spells": {},
-        "titans": {},
-        "spellcasters": {},
-        "consumables": {},
-        "upgrades": {}
-    }
+    # 1. Load All Data for Cross-Reference
+    db = {}
     
-    # Pre-load DB
-    for key in db.keys():
-        files = glob.glob(os.path.join(DATA_DIR, key, "*.json"))
+    # Pre-load DB dynamically based on config
+    for folder, schema_key in FOLDER_TO_SCHEMA.items():
+        if folder not in db:
+            db[folder] = {}
+            
+        files = glob.glob(os.path.join(DATA_DIR, folder, "*.json"))
         for f in files:
             data = load_json(f)
             if not data: continue
             
-            # Identify ID field based on type
-            id_field = "id" # default fallback
-            if key in ["units", "spells", "titans"]: id_field = "entity_id"
-            elif key == "spellcasters": id_field = "spellcaster_id"
-            elif key == "consumables": id_field = "entity_id"
-            elif key == "upgrades": id_field = "upgrade_id"
+            # Identify ID field based on type - heuristic or explicit config?
+            # For now, let's keep the heuristic but make it generic if possible
+            # or continue to map schema_key
             
+            id_field = "id" # default fallback
+            
+            if schema_key == "incantation": id_field = "entity_id"
+            elif schema_key == "titan": id_field = "entity_id"
+            elif schema_key == "spellcaster": id_field = "spellcaster_id"
+            elif schema_key == "consumable": id_field = "entity_id"
+            elif schema_key == "upgrade": id_field = "upgrade_id"
+            elif schema_key == "deck": id_field = "id" # New deck schema
+             
             if id_field in data:
-                db[key][data[id_field]] = data
+                db[folder][data[id_field]] = data
 
     # 2. Iterate and Validate
     schemas = {}
