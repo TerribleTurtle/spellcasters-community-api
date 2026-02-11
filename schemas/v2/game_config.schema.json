@@ -4,7 +4,7 @@
   "title": "Game Info",
   "description": "General information about the game.",
   "type": "object",
-  "required": ["name", "version", "developer", "publisher", "genre", "links", "description", "last_modified"],
+  "required": ["name", "version", "developer", "publisher", "genre", "links", "description"],
   "unevaluatedProperties": false,
   "allOf": [
     { "$ref": "definitions/core.schema.json#/definitions/meta" }

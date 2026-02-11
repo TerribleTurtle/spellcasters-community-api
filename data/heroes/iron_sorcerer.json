@@ -1,6 +1,5 @@
 {
   "$schema": "../../schemas/v2/heroes.schema.json",
-
   "name": "Iron Sorcerer",
   "class": "Conqueror",
   "category": "Spellcaster",
@@ -51,7 +50,6 @@
       "duration": 3
     }
   },
-  "last_modified": "2026-02-11T01:13:54.454807+00:00",
   "changelog": [
     {
       "version": "0.0.1",

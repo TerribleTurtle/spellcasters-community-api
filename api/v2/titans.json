@@ -8,7 +8,6 @@
     "rank": "V",
     "description": "The Wild Titan. Crushes all structures as it marches toward the Lifestones. Destroys and captures altars instantly.",
     "image_required": true,
-    "last_modified": "2026-02-11T02:15:23.318022+00:00",
     "tags": [],
     "changelog": [
       {
@@ -43,7 +42,8 @@
     "charges": 1,
     "recharge_time": 10,
     "cast_time": 0,
-    "population": 0
+    "population": 0,
+    "last_modified": "2026-02-11T10:37:29-05:00"
   },
   {
     "$schema": "../../schemas/v2/titans.schema.json",
@@ -54,7 +54,6 @@
     "rank": "V",
     "description": "The Titan of Death. Weakens all nearby enemies and retaliates against Spellcasters.",
     "image_required": true,
-    "last_modified": "2026-02-11T02:15:23.318636+00:00",
     "tags": [],
     "changelog": [
       {
@@ -97,6 +96,7 @@
     "charges": 1,
     "recharge_time": 10,
     "cast_time": 0,
-    "population": 0
+    "population": 0,
+    "last_modified": "2026-02-11T10:37:29-05:00"
   }
 ]

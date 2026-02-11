@@ -1,7 +1,7 @@
 {
   "build_info": {
     "version": "0.0.1",
-    "generated_at": "2026-02-11T15:22:17.885340+00:00"
+    "generated_at": "2026-02-11T15:59:31.311818+00:00"
   },
   "heroes": [
     {
@@ -56,7 +56,6 @@
           "description": "Conjures a time bubble that freezes enemy projectiles and creatures inside it. The Ultimate is destroyed by Lifestone Large Shots (3 hits)."
         }
       },
-      "last_modified": "2026-02-10T23:44:30.961685+00:00",
       "changelog": [
         {
           "version": "0.0.1",
@@ -65,7 +64,8 @@
         }
       ],
       "entity_id": "astral_monk",
-      "description": "A Duelist who strikes from the shadows with fast astral fists and time-bending abilities."
+      "description": "A Duelist who strikes from the shadows with fast astral fists and time-bending abilities.",
+      "last_modified": "2026-02-11T10:37:29-05:00"
     },
     {
       "$schema": "../../schemas/v2/heroes.schema.json",
@@ -120,7 +120,6 @@
           "description": "Captures a territory, inflicts Fire damage and fully infuses allied units and Titans with Fire."
         }
       },
-      "last_modified": "2026-02-10T23:44:30.961961+00:00",
       "changelog": [
         {
           "version": "0.0.1",
@@ -129,7 +128,8 @@
         }
       ],
       "entity_id": "fire_elementalist",
-      "description": "A Conqueror who burns enemies with powerful fire attacks, cleaving through ranks and empowering allies."
+      "description": "A Conqueror who burns enemies with powerful fire attacks, cleaving through ranks and empowering allies.",
+      "last_modified": "2026-02-11T10:37:29-05:00"
     },
     {
       "$schema": "../../schemas/v2/heroes.schema.json",
@@ -183,7 +183,6 @@
           "duration": 3
         }
       },
-      "last_modified": "2026-02-10T23:44:30.962194+00:00",
       "changelog": [
         {
           "version": "0.0.1",
@@ -192,7 +191,8 @@
         }
       ],
       "entity_id": "iron_sorcerer",
-      "description": "A Conqueror who dominates the battlefield with heavy melee strikes, protective runes, and a metal vortex."
+      "description": "A Conqueror who dominates the battlefield with heavy melee strikes, protective runes, and a metal vortex.",
+      "last_modified": "2026-02-11T10:37:29-05:00"
     },
     {
       "$schema": "../../schemas/v2/heroes.schema.json",
@@ -250,7 +250,6 @@
           "duration": 30
         }
       },
-      "last_modified": "2026-02-10T23:44:30.962408+00:00",
       "changelog": [
         {
           "version": "0.0.1",
@@ -259,7 +258,8 @@
         }
       ],
       "entity_id": "mystic_scribe",
-      "description": "An Enchanter who uses magical ink to damage enemies, heal allies, and create protective barriers."
+      "description": "An Enchanter who uses magical ink to damage enemies, heal allies, and create protective barriers.",
+      "last_modified": "2026-02-11T10:37:29-05:00"
     },
     {
       "$schema": "../../schemas/v2/heroes.schema.json",
@@ -330,7 +330,6 @@
           "health": 15000
         }
       },
-      "last_modified": "2026-02-10T23:44:30.962676+00:00",
       "changelog": [
         {
           "version": "0.0.1",
@@ -339,7 +338,8 @@
         }
       ],
       "entity_id": "stone_shaman",
-      "description": "An Enchanter who channels the power of earth to deal heavy damage, interrupt spellcasters, and fortify buildings."
+      "description": "An Enchanter who channels the power of earth to deal heavy damage, interrupt spellcasters, and fortify buildings.",
+      "last_modified": "2026-02-11T10:37:29-05:00"
     },
     {
       "$schema": "../../schemas/v2/heroes.schema.json",
@@ -409,7 +409,6 @@
           "duration": 15
         }
       },
-      "last_modified": "2026-02-10T23:44:30.962925+00:00",
       "changelog": [
         {
           "version": "0.0.1",
@@ -418,7 +417,8 @@
         }
       ],
       "entity_id": "swamp_witch",
-      "description": "A Duelist who commands poison and swarms, sacrificing minions to fuel powerful necromancy spells."
+      "description": "A Duelist who commands poison and swarms, sacrificing minions to fuel powerful necromancy spells.",
+      "last_modified": "2026-02-11T10:37:29-05:00"
     }
   ],
   "consumables": [
@@ -428,7 +428,6 @@
       "name": "Light Heal",
       "effect_type": "Heal",
       "value": 25,
-      "last_modified": "2026-02-08T14:59:13.832656+00:00",
       "changelog": [
         {
           "version": "0.0.1",
@@ -440,7 +439,8 @@
       "image_required": false,
       "duration": 30,
       "description": "Restores 25 Health to the Spellcaster.",
-      "tags": []
+      "tags": [],
+      "last_modified": "2026-02-11T10:37:29-05:00"
     },
     {
       "$schema": "../../schemas/v2/consumables.schema.json",
@@ -448,7 +448,6 @@
       "name": "Medium Heal",
       "effect_type": "Heal",
       "value": 50,
-      "last_modified": "2026-02-08T14:59:13.833121+00:00",
       "changelog": [
         {
           "version": "0.0.1",
@@ -460,7 +459,8 @@
       "image_required": false,
       "duration": 30,
       "description": "Restores 50 Health to the Spellcaster.",
-      "tags": []
+      "tags": [],
+      "last_modified": "2026-02-11T10:37:29-05:00"
     },
     {
       "$schema": "../../schemas/v2/consumables.schema.json",
@@ -468,7 +468,6 @@
       "name": "Medium Recharge",
       "effect_type": "Charge_Refill",
       "value": 50,
-      "last_modified": "2026-02-08T14:59:13.833502+00:00",
       "changelog": [
         {
           "version": "0.0.1",
@@ -480,7 +479,8 @@
       "image_required": false,
       "duration": 30,
       "description": "Restores 50 Charges to the Spellcaster.",
-      "tags": []
+      "tags": [],
+      "last_modified": "2026-02-11T10:37:29-05:00"
     },
     {
       "$schema": "../../schemas/v2/consumables.schema.json",
@@ -488,7 +488,6 @@
       "name": "Small Recharge",
       "effect_type": "Charge_Refill",
       "value": 25,
-      "last_modified": "2026-02-08T14:59:13.833884+00:00",
       "changelog": [
         {
           "version": "0.0.1",
@@ -500,7 +499,8 @@
       "image_required": false,
       "duration": 30,
       "description": "Restores 25 Charges to the Spellcaster.",
-      "tags": []
+      "tags": [],
+      "last_modified": "2026-02-11T10:37:29-05:00"
     }
   ],
   "upgrades": [],
@@ -514,7 +514,6 @@
       "rank": "III",
       "description": "A heavy defensive tower that targets enemies inside allied territory and can defend itself when attacked.",
       "image_required": true,
-      "last_modified": "2026-02-11T02:15:23.288258+00:00",
       "tags": [],
       "changelog": [
         {
@@ -530,7 +529,8 @@
       "charges": 1,
       "recharge_time": 10.0,
       "cast_time": 0.0,
-      "population": 0
+      "population": 0,
+      "last_modified": "2026-02-11T10:37:29-05:00"
     },
     {
       "$schema": "../../schemas/v2/units.schema.json",
@@ -541,7 +541,6 @@
       "rank": "II",
       "description": "Static weapon that targets enemies at long range.",
       "image_required": true,
-      "last_modified": "2026-02-11T02:15:23.288971+00:00",
       "tags": [],
       "changelog": [
         {
@@ -558,7 +557,8 @@
       "charges": 1,
       "recharge_time": 10.0,
       "cast_time": 0.0,
-      "population": 0
+      "population": 0,
+      "last_modified": "2026-02-11T10:37:29-05:00"
     },
     {
       "$schema": "../../schemas/v2/units.schema.json",
@@ -569,7 +569,6 @@
       "rank": "III",
       "description": "Shrine that continuously summons new Skeleton Warriors.",
       "image_required": true,
-      "last_modified": "2026-02-11T02:15:23.289725+00:00",
       "tags": [],
       "changelog": [
         {
@@ -597,7 +596,8 @@
       "charges": 1,
       "recharge_time": 10.0,
       "cast_time": 0.0,
-      "population": 0
+      "population": 0,
+      "last_modified": "2026-02-11T10:37:29-05:00"
     },
     {
       "$schema": "../../schemas/v2/units.schema.json",
@@ -608,7 +608,6 @@
       "rank": "II",
       "description": "Support creature that heals allies. Uses elemental attacks when infused.",
       "image_required": true,
-      "last_modified": "2026-02-11T02:15:23.290334+00:00",
       "tags": [],
       "changelog": [
         {
@@ -641,7 +640,8 @@
       "charges": 1,
       "recharge_time": 10,
       "cast_time": 0,
-      "population": 0
+      "population": 0,
+      "last_modified": "2026-02-11T10:37:29-05:00"
     },
     {
       "$schema": "../../schemas/v2/units.schema.json",
@@ -652,7 +652,6 @@
       "rank": "II",
       "description": "Strong melee unit that resists damage from large enemies.",
       "image_required": true,
-      "last_modified": "2026-02-11T02:15:23.290892+00:00",
       "tags": [],
       "changelog": [
         {
@@ -688,7 +687,8 @@
       "charges": 1,
       "recharge_time": 10,
       "cast_time": 0,
-      "population": 0
+      "population": 0,
+      "last_modified": "2026-02-11T10:37:29-05:00"
     },
     {
       "$schema": "../../schemas/v2/units.schema.json",
@@ -699,7 +699,6 @@
       "rank": "I",
       "description": "Stealthy flying ranged creature that turns invisible out of combat.",
       "image_required": true,
-      "last_modified": "2026-02-11T02:15:23.291396+00:00",
       "tags": [],
       "changelog": [
         {
@@ -718,7 +717,8 @@
       "charges": 1,
       "recharge_time": 10.0,
       "cast_time": 0.0,
-      "population": 0
+      "population": 0,
+      "last_modified": "2026-02-11T10:37:29-05:00"
     },
     {
       "$schema": "../../schemas/v2/units.schema.json",
@@ -729,7 +729,6 @@
       "rank": "III",
       "description": "Slow giant that protects allies with a massive shield.",
       "image_required": true,
-      "last_modified": "2026-02-11T02:15:23.293363+00:00",
       "tags": [],
       "changelog": [
         {
@@ -758,7 +757,8 @@
       "charges": 1,
       "recharge_time": 10,
       "cast_time": 0,
-      "population": 0
+      "population": 0,
+      "last_modified": "2026-02-11T10:37:29-05:00"
     },
     {
       "$schema": "../../schemas/v2/units.schema.json",
@@ -769,7 +769,6 @@
       "rank": "I",
       "description": "Agile flying creature that excels at defeating ground units.",
       "image_required": true,
-      "last_modified": "2026-02-11T02:15:23.294078+00:00",
       "tags": [],
       "changelog": [
         {
@@ -814,7 +813,8 @@
       "charges": 1,
       "recharge_time": 10,
       "cast_time": 0,
-      "population": 0
+      "population": 0,
+      "last_modified": "2026-02-11T10:37:29-05:00"
     },
     {
       "$schema": "../../schemas/v2/units.schema.json",
@@ -825,7 +825,6 @@
       "rank": "III",
       "description": "Nest that continuously spawns new Harpies.",
       "image_required": true,
-      "last_modified": "2026-02-11T02:15:23.295095+00:00",
       "tags": [],
       "changelog": [
         {
@@ -853,7 +852,8 @@
       "charges": 1,
       "recharge_time": 10.0,
       "cast_time": 0.0,
-      "population": 0
+      "population": 0,
+      "last_modified": "2026-02-11T10:37:29-05:00"
     },
     {
       "$schema": "../../schemas/v2/units.schema.json",
@@ -864,7 +864,6 @@
       "rank": "IV",
       "description": "Colossal creature that deals massive damage to structures.",
       "image_required": true,
-      "last_modified": "2026-02-11T02:15:23.296050+00:00",
       "tags": [],
       "changelog": [
         {
@@ -900,7 +899,8 @@
       "charges": 1,
       "recharge_time": 10,
       "cast_time": 0,
-      "population": 0
+      "population": 0,
+      "last_modified": "2026-02-11T10:37:29-05:00"
     },
     {
       "$schema": "../../schemas/v2/units.schema.json",
@@ -911,7 +911,6 @@
       "rank": "II",
       "description": "Undead caster that inflicts curses to enemies, increasing the damage they take and reducing their movement speed.",
       "image_required": true,
-      "last_modified": "2026-02-11T02:15:23.296958+00:00",
       "tags": [],
       "changelog": [
         {
@@ -929,7 +928,8 @@
       "charges": 1,
       "recharge_time": 10.0,
       "cast_time": 0.0,
-      "population": 0
+      "population": 0,
+      "last_modified": "2026-02-11T10:37:29-05:00"
     },
     {
       "$schema": "../../schemas/v2/units.schema.json",
@@ -940,7 +940,6 @@
       "rank": "I",
       "description": "Long-range fighter that deals bonus damage to flying enemies.",
       "image_required": true,
-      "last_modified": "2026-02-11T02:15:23.297645+00:00",
       "tags": [],
       "changelog": [
         {
@@ -977,7 +976,8 @@
       "charges": 1,
       "recharge_time": 10,
       "cast_time": 0,
-      "population": 0
+      "population": 0,
+      "last_modified": "2026-02-11T10:37:29-05:00"
     },
     {
       "$schema": "../../schemas/v2/units.schema.json",
@@ -988,7 +988,6 @@
       "rank": "III",
       "description": "Mighty warrior that crushes target areas with a hammer.",
       "image_required": true,
-      "last_modified": "2026-02-11T02:15:23.298804+00:00",
       "tags": [],
       "changelog": [
         {
@@ -1017,7 +1016,8 @@
       "charges": 1,
       "recharge_time": 10,
       "cast_time": 0,
-      "population": 0
+      "population": 0,
+      "last_modified": "2026-02-11T10:37:29-05:00"
     },
     {
       "$schema": "../../schemas/v2/units.schema.json",
@@ -1028,7 +1028,6 @@
       "rank": "II",
       "description": "Defensive wall that blocks enemy paths.",
       "image_required": true,
-      "last_modified": "2026-02-11T02:15:23.299780+00:00",
       "tags": [],
       "changelog": [
         {
@@ -1041,7 +1040,8 @@
       "charges": 1,
       "recharge_time": 10.0,
       "cast_time": 0.0,
-      "population": 0
+      "population": 0,
+      "last_modified": "2026-02-11T10:37:29-05:00"
     },
     {
       "$schema": "../../schemas/v2/units.schema.json",
@@ -1052,7 +1052,6 @@
       "rank": "I",
       "description": "Medium-range soldier that deals bonus damage to structures.",
       "image_required": true,
-      "last_modified": "2026-02-11T02:15:23.300473+00:00",
       "tags": [],
       "changelog": [
         {
@@ -1089,7 +1088,8 @@
       "charges": 1,
       "recharge_time": 10,
       "cast_time": 0,
-      "population": 0
+      "population": 0,
+      "last_modified": "2026-02-11T10:37:29-05:00"
     },
     {
       "$schema": "../../schemas/v2/units.schema.json",
@@ -1100,7 +1100,6 @@
       "rank": "I",
       "description": "Fast creature that explodes on contact, dealing bonus damage to structures.",
       "image_required": true,
-      "last_modified": "2026-02-11T02:15:23.301737+00:00",
       "tags": [],
       "changelog": [
         {
@@ -1143,7 +1142,8 @@
       "charges": 1,
       "recharge_time": 10,
       "cast_time": 0,
-      "population": 0
+      "population": 0,
+      "last_modified": "2026-02-11T10:37:29-05:00"
     },
     {
       "$schema": "../../schemas/v2/units.schema.json",
@@ -1154,7 +1154,6 @@
       "rank": "I",
       "description": "Undead soldier that captures altars quickly in large groups.",
       "image_required": true,
-      "last_modified": "2026-02-11T02:15:23.302566+00:00",
       "tags": [],
       "changelog": [
         {
@@ -1191,7 +1190,8 @@
       "charges": 1,
       "recharge_time": 10,
       "cast_time": 0,
-      "population": 0
+      "population": 0,
+      "last_modified": "2026-02-11T10:37:29-05:00"
     },
     {
       "$schema": "../../schemas/v2/units.schema.json",
@@ -1202,7 +1202,6 @@
       "rank": "III",
       "description": "Long-range unit that deals heavy damage to a target.",
       "image_required": true,
-      "last_modified": "2026-02-11T02:15:23.303541+00:00",
       "tags": [],
       "changelog": [
         {
@@ -1221,7 +1220,8 @@
       "charges": 1,
       "recharge_time": 10.0,
       "cast_time": 0.0,
-      "population": 0
+      "population": 0,
+      "last_modified": "2026-02-11T10:37:29-05:00"
     },
     {
       "$schema": "../../schemas/v2/units.schema.json",
@@ -1232,7 +1232,6 @@
       "rank": "III",
       "description": "Siege unit that hurls long-range boulders for heavy area damage.",
       "image_required": true,
-      "last_modified": "2026-02-11T02:15:23.304488+00:00",
       "tags": [],
       "changelog": [
         {
@@ -1251,7 +1250,8 @@
       "charges": 1,
       "recharge_time": 10.0,
       "cast_time": 0.0,
-      "population": 0
+      "population": 0,
+      "last_modified": "2026-02-11T10:37:29-05:00"
     },
     {
       "$schema": "../../schemas/v2/units.schema.json",
@@ -1262,7 +1262,6 @@
       "rank": "II",
       "description": "Hunter unit that fires powerful long-range bolts.",
       "image_required": true,
-      "last_modified": "2026-02-11T02:15:23.305204+00:00",
       "tags": [],
       "changelog": [
         {
@@ -1281,7 +1280,8 @@
       "charges": 1,
       "recharge_time": 10.0,
       "cast_time": 0.0,
-      "population": 0
+      "population": 0,
+      "last_modified": "2026-02-11T10:37:29-05:00"
     },
     {
       "$schema": "../../schemas/v2/units.schema.json",
@@ -1292,7 +1292,6 @@
       "rank": "II",
       "description": "Flying dragonkin that attacks with mid-range projectiles.",
       "image_required": true,
-      "last_modified": "2026-02-11T02:15:23.305930+00:00",
       "tags": [],
       "changelog": [
         {
@@ -1322,7 +1321,8 @@
       "charges": 1,
       "recharge_time": 10,
       "cast_time": 0,
-      "population": 0
+      "population": 0,
+      "last_modified": "2026-02-11T10:37:29-05:00"
     }
   ],
   "spells": [
@@ -1335,7 +1335,6 @@
       "rank": "IV",
       "description": "Massive projectile that deals heavy damage on impact.",
       "image_required": true,
-      "last_modified": "2026-02-11T02:15:23.307103+00:00",
       "tags": [],
       "changelog": [
         {
@@ -1348,7 +1347,8 @@
       "range": 80,
       "charges": 1,
       "recharge_time": 10.0,
-      "cast_time": 0.0
+      "cast_time": 0.0,
+      "last_modified": "2026-02-11T10:37:29-05:00"
     },
     {
       "$schema": "../../schemas/v2/spells.schema.json",
@@ -1359,7 +1359,6 @@
       "rank": "II",
       "description": "Rapid burst of projectiles.",
       "image_required": true,
-      "last_modified": "2026-02-11T02:15:23.307711+00:00",
       "tags": [],
       "changelog": [
         {
@@ -1375,7 +1374,8 @@
       "range": 80,
       "charges": 1,
       "recharge_time": 10.0,
-      "cast_time": 0.0
+      "cast_time": 0.0,
+      "last_modified": "2026-02-11T10:37:29-05:00"
     },
     {
       "$schema": "../../schemas/v2/spells.schema.json",
@@ -1386,7 +1386,6 @@
       "rank": "III",
       "description": "Ground shockwave that damages structures and staggers creatures significantly. Damage is split into 3 waves.",
       "image_required": true,
-      "last_modified": "2026-02-11T02:15:23.308203+00:00",
       "tags": [],
       "changelog": [
         {
@@ -1428,7 +1427,8 @@
       "range": 35,
       "charges": 1,
       "recharge_time": 10,
-      "cast_time": 0
+      "cast_time": 0,
+      "last_modified": "2026-02-11T10:37:29-05:00"
     },
     {
       "$schema": "../../schemas/v2/spells.schema.json",
@@ -1439,7 +1439,6 @@
       "rank": "III",
       "description": "Fast projectile that deals medium Fire damage to a target.",
       "image_required": true,
-      "last_modified": "2026-02-11T02:15:23.308710+00:00",
       "tags": [],
       "changelog": [
         {
@@ -1452,7 +1451,8 @@
       "range": 80,
       "charges": 1,
       "recharge_time": 10.0,
-      "cast_time": 0.0
+      "cast_time": 0.0,
+      "last_modified": "2026-02-11T10:37:29-05:00"
     },
     {
       "$schema": "../../schemas/v2/spells.schema.json",
@@ -1463,7 +1463,6 @@
       "rank": "IV",
       "description": "Fire projectiles that deal continuous damage over a wide area.",
       "image_required": true,
-      "last_modified": "2026-02-11T02:15:23.309734+00:00",
       "tags": [],
       "changelog": [
         {
@@ -1488,7 +1487,8 @@
       "duration": 12,
       "charges": 1,
       "recharge_time": 10,
-      "cast_time": 0
+      "cast_time": 0,
+      "last_modified": "2026-02-11T10:37:29-05:00"
     },
     {
       "$schema": "../../schemas/v2/spells.schema.json",
@@ -1499,7 +1499,6 @@
       "rank": "I",
       "description": "Focused beam that deals low Fire damage.",
       "image_required": true,
-      "last_modified": "2026-02-11T02:15:23.310528+00:00",
       "tags": [],
       "changelog": [
         {
@@ -1516,7 +1515,8 @@
       "range": 45,
       "charges": 1,
       "recharge_time": 10.0,
-      "cast_time": 0.0
+      "cast_time": 0.0,
+      "last_modified": "2026-02-11T10:37:29-05:00"
     },
     {
       "$schema": "../../schemas/v2/spells.schema.json",
@@ -1527,7 +1527,6 @@
       "rank": "III",
       "description": "Fire pulse that burns enemies and infuses nearby allies.",
       "image_required": true,
-      "last_modified": "2026-02-11T02:15:23.311057+00:00",
       "tags": [],
       "changelog": [
         {
@@ -1539,7 +1538,8 @@
       "range": 24,
       "charges": 1,
       "recharge_time": 10.0,
-      "cast_time": 0.0
+      "cast_time": 0.0,
+      "last_modified": "2026-02-11T10:37:29-05:00"
     },
     {
       "$schema": "../../schemas/v2/spells.schema.json",
@@ -1550,7 +1550,6 @@
       "rank": "III",
       "description": "Ice pulse that freezes enemies and infuses nearby allies.",
       "image_required": true,
-      "last_modified": "2026-02-11T02:15:23.311669+00:00",
       "tags": [],
       "changelog": [
         {
@@ -1562,7 +1561,8 @@
       "range": 24,
       "charges": 1,
       "recharge_time": 10.0,
-      "cast_time": 0.0
+      "cast_time": 0.0,
+      "last_modified": "2026-02-11T10:37:29-05:00"
     },
     {
       "$schema": "../../schemas/v2/spells.schema.json",
@@ -1573,7 +1573,6 @@
       "rank": "IV",
       "description": "Thunderstrike that deals extreme Lightning damage to a target.",
       "image_required": true,
-      "last_modified": "2026-02-11T02:15:23.312373+00:00",
       "tags": [],
       "changelog": [
         {
@@ -1586,7 +1585,8 @@
       "range": 36,
       "charges": 1,
       "recharge_time": 10.0,
-      "cast_time": 0.0
+      "cast_time": 0.0,
+      "last_modified": "2026-02-11T10:37:29-05:00"
     },
     {
       "$schema": "../../schemas/v2/spells.schema.json",
@@ -1597,7 +1597,6 @@
       "rank": "I",
       "description": "Healing ray that can be aimed at the ground to restore allies in the area.",
       "image_required": true,
-      "last_modified": "2026-02-11T02:15:23.313243+00:00",
       "tags": [],
       "changelog": [
         {
@@ -1610,7 +1609,8 @@
       "value": 300,
       "charges": 1,
       "recharge_time": 10.0,
-      "cast_time": 0.0
+      "cast_time": 0.0,
+      "last_modified": "2026-02-11T10:37:29-05:00"
     },
     {
       "$schema": "../../schemas/v2/spells.schema.json",
@@ -1621,7 +1621,6 @@
       "rank": "III",
       "description": "Grenade that creates a Poison cloud over the target area.",
       "image_required": true,
-      "last_modified": "2026-02-11T02:15:23.314081+00:00",
       "tags": [],
       "changelog": [
         {
@@ -1645,7 +1644,8 @@
       },
       "charges": 1,
       "recharge_time": 10,
-      "cast_time": 0
+      "cast_time": 0,
+      "last_modified": "2026-02-11T10:37:29-05:00"
     },
     {
       "$schema": "../../schemas/v2/spells.schema.json",
@@ -1656,7 +1656,6 @@
       "rank": "IV",
       "description": "Magic circle that resurrects creatures with partial health.",
       "image_required": true,
-      "last_modified": "2026-02-11T02:15:23.315249+00:00",
       "tags": [],
       "changelog": [
         {
@@ -1668,7 +1667,8 @@
       "duration": 12,
       "charges": 1,
       "recharge_time": 10.0,
-      "cast_time": 0.0
+      "cast_time": 0.0,
+      "last_modified": "2026-02-11T10:37:29-05:00"
     },
     {
       "$schema": "../../schemas/v2/spells.schema.json",
@@ -1679,7 +1679,6 @@
       "rank": "I",
       "description": "Dark ritual that recalls allies to recharge summons.",
       "image_required": true,
-      "last_modified": "2026-02-11T02:15:23.316280+00:00",
       "tags": [],
       "changelog": [
         {
@@ -1695,7 +1694,8 @@
       "damage": 18,
       "charges": 1,
       "recharge_time": 10.0,
-      "cast_time": 0.0
+      "cast_time": 0.0,
+      "last_modified": "2026-02-11T10:37:29-05:00"
     },
     {
       "$schema": "../../schemas/v2/spells.schema.json",
@@ -1706,7 +1706,6 @@
       "rank": "I",
       "description": "Focused beam that deals low Lightning damage.",
       "image_required": true,
-      "last_modified": "2026-02-11T02:15:23.317054+00:00",
       "tags": [],
       "changelog": [
         {
@@ -1723,7 +1722,8 @@
       "range": 45,
       "charges": 1,
       "recharge_time": 10.0,
-      "cast_time": 0.0
+      "cast_time": 0.0,
+      "last_modified": "2026-02-11T10:37:29-05:00"
     }
   ],
   "titans": [
@@ -1736,7 +1736,6 @@
       "rank": "V",
       "description": "The Wild Titan. Crushes all structures as it marches toward the Lifestones. Destroys and captures altars instantly.",
       "image_required": true,
-      "last_modified": "2026-02-11T02:15:23.318022+00:00",
       "tags": [],
       "changelog": [
         {
@@ -1771,7 +1770,8 @@
       "charges": 1,
       "recharge_time": 10,
       "cast_time": 0,
-      "population": 0
+      "population": 0,
+      "last_modified": "2026-02-11T10:37:29-05:00"
     },
     {
       "$schema": "../../schemas/v2/titans.schema.json",
@@ -1782,7 +1782,6 @@
       "rank": "V",
       "description": "The Titan of Death. Weakens all nearby enemies and retaliates against Spellcasters.",
       "image_required": true,
-      "last_modified": "2026-02-11T02:15:23.318636+00:00",
       "tags": [],
       "changelog": [
         {
@@ -1825,7 +1824,8 @@
       "charges": 1,
       "recharge_time": 10,
       "cast_time": 0,
-      "population": 0
+      "population": 0,
+      "last_modified": "2026-02-11T10:37:29-05:00"
     }
   ],
   "decks": [],
@@ -1842,7 +1842,6 @@
       "steam": "https://store.steampowered.com/app/2458470/Spellcasters_Chronicles/"
     },
     "status": "Dev",
-    "last_modified": "2026-02-08T14:59:13.834248+00:00",
     "changelog": [
       {
         "version": "0.0.1",
@@ -1850,6 +1849,7 @@
         "description": "Initial Closed Beta 2 Data"
       }
     ],
-    "$schema": "../schemas/v2/game_config.schema.json"
+    "$schema": "../schemas/v2/game_config.schema.json",
+    "last_modified": "2026-02-11T10:37:29-05:00"
   }
 }

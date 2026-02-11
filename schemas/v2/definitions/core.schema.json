@@ -45,7 +45,6 @@
         "meta": {
             "type": "object",
             "required": [
-                "last_modified",
                 "changelog"
             ],
             "properties": {

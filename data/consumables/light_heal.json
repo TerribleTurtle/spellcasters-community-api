@@ -4,7 +4,6 @@
   "name": "Light Heal",
   "effect_type": "Heal",
   "value": 25,
-  "last_modified": "2026-02-08T14:59:13.832656+00:00",
   "changelog": [
     {
       "version": "0.0.1",

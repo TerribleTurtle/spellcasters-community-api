@@ -4,7 +4,6 @@
   "name": "Small Recharge",
   "effect_type": "Charge_Refill",
   "value": 25,
-  "last_modified": "2026-02-08T14:59:13.833884+00:00",
   "changelog": [
     {
       "version": "0.0.1",

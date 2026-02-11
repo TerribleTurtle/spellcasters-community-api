@@ -8,7 +8,6 @@
     "rank": "IV",
     "description": "Massive projectile that deals heavy damage on impact.",
     "image_required": true,
-    "last_modified": "2026-02-11T02:15:23.307103+00:00",
     "tags": [],
     "changelog": [
       {
@@ -21,7 +20,8 @@
     "range": 80,
     "charges": 1,
     "recharge_time": 10.0,
-    "cast_time": 0.0
+    "cast_time": 0.0,
+    "last_modified": "2026-02-11T10:37:29-05:00"
   },
   {
     "$schema": "../../schemas/v2/spells.schema.json",
@@ -32,7 +32,6 @@
     "rank": "II",
     "description": "Rapid burst of projectiles.",
     "image_required": true,
-    "last_modified": "2026-02-11T02:15:23.307711+00:00",
     "tags": [],
     "changelog": [
       {
@@ -48,7 +47,8 @@
     "range": 80,
     "charges": 1,
     "recharge_time": 10.0,
-    "cast_time": 0.0
+    "cast_time": 0.0,
+    "last_modified": "2026-02-11T10:37:29-05:00"
   },
   {
     "$schema": "../../schemas/v2/spells.schema.json",
@@ -59,7 +59,6 @@
     "rank": "III",
     "description": "Ground shockwave that damages structures and staggers creatures significantly. Damage is split into 3 waves.",
     "image_required": true,
-    "last_modified": "2026-02-11T02:15:23.308203+00:00",
     "tags": [],
     "changelog": [
       {
@@ -101,7 +100,8 @@
     "range": 35,
     "charges": 1,
     "recharge_time": 10,
-    "cast_time": 0
+    "cast_time": 0,
+    "last_modified": "2026-02-11T10:37:29-05:00"
   },
   {
     "$schema": "../../schemas/v2/spells.schema.json",
@@ -112,7 +112,6 @@
     "rank": "III",
     "description": "Fast projectile that deals medium Fire damage to a target.",
     "image_required": true,
-    "last_modified": "2026-02-11T02:15:23.308710+00:00",
     "tags": [],
     "changelog": [
       {
@@ -125,7 +124,8 @@
     "range": 80,
     "charges": 1,
     "recharge_time": 10.0,
-    "cast_time": 0.0
+    "cast_time": 0.0,
+    "last_modified": "2026-02-11T10:37:29-05:00"
   },
   {
     "$schema": "../../schemas/v2/spells.schema.json",
@@ -136,7 +136,6 @@
     "rank": "IV",
     "description": "Fire projectiles that deal continuous damage over a wide area.",
     "image_required": true,
-    "last_modified": "2026-02-11T02:15:23.309734+00:00",
     "tags": [],
     "changelog": [
       {
@@ -161,7 +160,8 @@
     "duration": 12,
     "charges": 1,
     "recharge_time": 10,
-    "cast_time": 0
+    "cast_time": 0,
+    "last_modified": "2026-02-11T10:37:29-05:00"
   },
   {
     "$schema": "../../schemas/v2/spells.schema.json",
@@ -172,7 +172,6 @@
     "rank": "I",
     "description": "Focused beam that deals low Fire damage.",
     "image_required": true,
-    "last_modified": "2026-02-11T02:15:23.310528+00:00",
     "tags": [],
     "changelog": [
       {
@@ -189,7 +188,8 @@
     "range": 45,
     "charges": 1,
     "recharge_time": 10.0,
-    "cast_time": 0.0
+    "cast_time": 0.0,
+    "last_modified": "2026-02-11T10:37:29-05:00"
   },
   {
     "$schema": "../../schemas/v2/spells.schema.json",
@@ -200,7 +200,6 @@
     "rank": "III",
     "description": "Fire pulse that burns enemies and infuses nearby allies.",
     "image_required": true,
-    "last_modified": "2026-02-11T02:15:23.311057+00:00",
     "tags": [],
     "changelog": [
       {
@@ -212,7 +211,8 @@
     "range": 24,
     "charges": 1,
     "recharge_time": 10.0,
-    "cast_time": 0.0
+    "cast_time": 0.0,
+    "last_modified": "2026-02-11T10:37:29-05:00"
   },
   {
     "$schema": "../../schemas/v2/spells.schema.json",
@@ -223,7 +223,6 @@
     "rank": "III",
     "description": "Ice pulse that freezes enemies and infuses nearby allies.",
     "image_required": true,
-    "last_modified": "2026-02-11T02:15:23.311669+00:00",
     "tags": [],
     "changelog": [
       {
@@ -235,7 +234,8 @@
     "range": 24,
     "charges": 1,
     "recharge_time": 10.0,
-    "cast_time": 0.0
+    "cast_time": 0.0,
+    "last_modified": "2026-02-11T10:37:29-05:00"
   },
   {
     "$schema": "../../schemas/v2/spells.schema.json",
@@ -246,7 +246,6 @@
     "rank": "IV",
     "description": "Thunderstrike that deals extreme Lightning damage to a target.",
     "image_required": true,
-    "last_modified": "2026-02-11T02:15:23.312373+00:00",
     "tags": [],
     "changelog": [
       {
@@ -259,7 +258,8 @@
     "range": 36,
     "charges": 1,
     "recharge_time": 10.0,
-    "cast_time": 0.0
+    "cast_time": 0.0,
+    "last_modified": "2026-02-11T10:37:29-05:00"
   },
   {
     "$schema": "../../schemas/v2/spells.schema.json",
@@ -270,7 +270,6 @@
     "rank": "I",
     "description": "Healing ray that can be aimed at the ground to restore allies in the area.",
     "image_required": true,
-    "last_modified": "2026-02-11T02:15:23.313243+00:00",
     "tags": [],
     "changelog": [
       {
@@ -283,7 +282,8 @@
     "value": 300,
     "charges": 1,
     "recharge_time": 10.0,
-    "cast_time": 0.0
+    "cast_time": 0.0,
+    "last_modified": "2026-02-11T10:37:29-05:00"
   },
   {
     "$schema": "../../schemas/v2/spells.schema.json",
@@ -294,7 +294,6 @@
     "rank": "III",
     "description": "Grenade that creates a Poison cloud over the target area.",
     "image_required": true,
-    "last_modified": "2026-02-11T02:15:23.314081+00:00",
     "tags": [],
     "changelog": [
       {
@@ -318,7 +317,8 @@
     },
     "charges": 1,
     "recharge_time": 10,
-    "cast_time": 0
+    "cast_time": 0,
+    "last_modified": "2026-02-11T10:37:29-05:00"
   },
   {
     "$schema": "../../schemas/v2/spells.schema.json",
@@ -329,7 +329,6 @@
     "rank": "IV",
     "description": "Magic circle that resurrects creatures with partial health.",
     "image_required": true,
-    "last_modified": "2026-02-11T02:15:23.315249+00:00",
     "tags": [],
     "changelog": [
       {
@@ -341,7 +340,8 @@
     "duration": 12,
     "charges": 1,
     "recharge_time": 10.0,
-    "cast_time": 0.0
+    "cast_time": 0.0,
+    "last_modified": "2026-02-11T10:37:29-05:00"
   },
   {
     "$schema": "../../schemas/v2/spells.schema.json",
@@ -352,7 +352,6 @@
     "rank": "I",
     "description": "Dark ritual that recalls allies to recharge summons.",
     "image_required": true,
-    "last_modified": "2026-02-11T02:15:23.316280+00:00",
     "tags": [],
     "changelog": [
       {
@@ -368,7 +367,8 @@
     "damage": 18,
     "charges": 1,
     "recharge_time": 10.0,
-    "cast_time": 0.0
+    "cast_time": 0.0,
+    "last_modified": "2026-02-11T10:37:29-05:00"
   },
   {
     "$schema": "../../schemas/v2/spells.schema.json",
@@ -379,7 +379,6 @@
     "rank": "I",
     "description": "Focused beam that deals low Lightning damage.",
     "image_required": true,
-    "last_modified": "2026-02-11T02:15:23.317054+00:00",
     "tags": [],
     "changelog": [
       {
@@ -396,6 +395,7 @@
     "range": 45,
     "charges": 1,
     "recharge_time": 10.0,
-    "cast_time": 0.0
+    "cast_time": 0.0,
+    "last_modified": "2026-02-11T10:37:29-05:00"
   }
 ]

@@ -51,7 +51,6 @@
         "description": "Conjures a time bubble that freezes enemy projectiles and creatures inside it. The Ultimate is destroyed by Lifestone Large Shots (3 hits)."
       }
     },
-    "last_modified": "2026-02-10T23:44:30.961685+00:00",
     "changelog": [
       {
         "version": "0.0.1",
@@ -60,7 +59,8 @@
       }
     ],
     "entity_id": "astral_monk",
-    "description": "A Duelist who strikes from the shadows with fast astral fists and time-bending abilities."
+    "description": "A Duelist who strikes from the shadows with fast astral fists and time-bending abilities.",
+    "last_modified": "2026-02-11T10:37:29-05:00"
   },
   {
     "$schema": "../../schemas/v2/heroes.schema.json",
@@ -115,7 +115,6 @@
         "description": "Captures a territory, inflicts Fire damage and fully infuses allied units and Titans with Fire."
       }
     },
-    "last_modified": "2026-02-10T23:44:30.961961+00:00",
     "changelog": [
       {
         "version": "0.0.1",
@@ -124,7 +123,8 @@
       }
     ],
     "entity_id": "fire_elementalist",
-    "description": "A Conqueror who burns enemies with powerful fire attacks, cleaving through ranks and empowering allies."
+    "description": "A Conqueror who burns enemies with powerful fire attacks, cleaving through ranks and empowering allies.",
+    "last_modified": "2026-02-11T10:37:29-05:00"
   },
   {
     "$schema": "../../schemas/v2/heroes.schema.json",
@@ -178,7 +178,6 @@
         "duration": 3
       }
     },
-    "last_modified": "2026-02-10T23:44:30.962194+00:00",
     "changelog": [
       {
         "version": "0.0.1",
@@ -187,7 +186,8 @@
       }
     ],
     "entity_id": "iron_sorcerer",
-    "description": "A Conqueror who dominates the battlefield with heavy melee strikes, protective runes, and a metal vortex."
+    "description": "A Conqueror who dominates the battlefield with heavy melee strikes, protective runes, and a metal vortex.",
+    "last_modified": "2026-02-11T10:37:29-05:00"
   },
   {
     "$schema": "../../schemas/v2/heroes.schema.json",
@@ -245,7 +245,6 @@
         "duration": 30
       }
     },
-    "last_modified": "2026-02-10T23:44:30.962408+00:00",
     "changelog": [
       {
         "version": "0.0.1",
@@ -254,7 +253,8 @@
       }
     ],
     "entity_id": "mystic_scribe",
-    "description": "An Enchanter who uses magical ink to damage enemies, heal allies, and create protective barriers."
+    "description": "An Enchanter who uses magical ink to damage enemies, heal allies, and create protective barriers.",
+    "last_modified": "2026-02-11T10:37:29-05:00"
   },
   {
     "$schema": "../../schemas/v2/heroes.schema.json",
@@ -325,7 +325,6 @@
         "health": 15000
       }
     },
-    "last_modified": "2026-02-10T23:44:30.962676+00:00",
     "changelog": [
       {
         "version": "0.0.1",
@@ -334,7 +333,8 @@
       }
     ],
     "entity_id": "stone_shaman",
-    "description": "An Enchanter who channels the power of earth to deal heavy damage, interrupt spellcasters, and fortify buildings."
+    "description": "An Enchanter who channels the power of earth to deal heavy damage, interrupt spellcasters, and fortify buildings.",
+    "last_modified": "2026-02-11T10:37:29-05:00"
   },
   {
     "$schema": "../../schemas/v2/heroes.schema.json",
@@ -404,7 +404,6 @@
         "duration": 15
       }
     },
-    "last_modified": "2026-02-10T23:44:30.962925+00:00",
     "changelog": [
       {
         "version": "0.0.1",
@@ -413,6 +412,7 @@
       }
     ],
     "entity_id": "swamp_witch",
-    "description": "A Duelist who commands poison and swarms, sacrificing minions to fuel powerful necromancy spells."
+    "description": "A Duelist who commands poison and swarms, sacrificing minions to fuel powerful necromancy spells.",
+    "last_modified": "2026-02-11T10:37:29-05:00"
   }
 ]

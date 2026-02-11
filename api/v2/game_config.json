@@ -11,7 +11,6 @@
     "steam": "https://store.steampowered.com/app/2458470/Spellcasters_Chronicles/"
   },
   "status": "Dev",
-  "last_modified": "2026-02-08T14:59:13.834248+00:00",
   "changelog": [
     {
       "version": "0.0.1",
@@ -19,5 +18,6 @@
       "description": "Initial Closed Beta 2 Data"
     }
   ],
-  "$schema": "../schemas/v2/game_config.schema.json"
+  "$schema": "../schemas/v2/game_config.schema.json",
+  "last_modified": "2026-02-11T10:37:29-05:00"
 }

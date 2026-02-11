@@ -1,6 +1,5 @@
 {
   "$schema": "../../schemas/v2/heroes.schema.json",
-
   "name": "Mystic Scribe",
   "class": "Enchanter",
   "category": "Spellcaster",
@@ -55,7 +54,6 @@
       "duration": 30
     }
   },
-  "last_modified": "2026-02-11T01:13:54.455013+00:00",
   "changelog": [
     {
       "version": "0.0.1",
