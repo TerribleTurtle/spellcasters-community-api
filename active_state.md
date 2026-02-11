@@ -39,3 +39,4 @@ Successfully restored data values from `V1_all_data.json` to the V2 data structu
 - [x] Master Health Report Generated.
 - [x] Legacy Script Cleanup.
 - [x] API Verification (Build Passed).
+- [x] Added Pierce mechanic to Astral Monk.

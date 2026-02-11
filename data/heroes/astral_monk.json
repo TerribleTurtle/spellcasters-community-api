@@ -34,6 +34,10 @@
           {
             "name": "Combo Sequence",
             "description": "Alternates between Palm Strike (32) and Power Punch (47)."
+          },
+          {
+            "name": "Pierce",
+            "description": "Attacks pierce through enemies."
           }
         ]
       }
