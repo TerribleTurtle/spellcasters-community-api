@@ -1,0 +1,47 @@
+{
+  "$schema": "https://json-schema.org/draft/2019-09/schema",
+  "$id": "https://spellcasters.gg/schemas/v2/spells.schema.json",
+  "title": "Spell",
+  "description": "Definition for Spells.",
+  "type": "object",
+  "allOf": [
+    { "$ref": "definitions/core.schema.json#/definitions/identity" },
+    { "$ref": "definitions/core.schema.json#/definitions/meta" },
+    { "$ref": "definitions/core.schema.json#/definitions/assets" },
+    { "$ref": "definitions/magic.schema.json#/definitions/magic_props" },
+    { "$ref": "definitions/resource.schema.json#/definitions/cost" },
+    { "$ref": "definitions/stats.schema.json#/definitions/ability_stats" }
+  ],
+  "properties": {
+    "category": {
+      "$ref": "definitions/enums.schema.json#/definitions/category_enum"
+    },
+    "mechanics": { "$ref": "definitions/mechanics.schema.json#/definitions/mechanics" }
+  },
+  "examples": [
+    {
+      "entity_id": "fire_ball",
+      "name": "Fire Ball",
+      "description": "Hurls a ball of fire that explodes on impact.",
+      "category": "Spell",
+      "magic_school": "Elemental",
+      "rank": "I",
+      "image_required": true,
+      "cooldown": 1.5,
+      "damage": 150,
+      "mechanics": {
+        "features": [
+          {
+            "name": "Explosion",
+            "description": "Deals damage in a radius."
+          }
+        ]
+      },
+      "last_modified": "2026-02-11T00:00:00Z",
+      "changelog": [],
+      "game_version": "0.0.1"
+    }
+  ],
+  "required": ["category"],
+  "unevaluatedProperties": false
+}

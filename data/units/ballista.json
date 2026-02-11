@@ -1,5 +1,5 @@
 {
-  "$schema": "../../schemas/v1/unit.schema.json",
+  "$schema": "../../schemas/v2/units.schema.json",
   "entity_id": "ballista",
   "name": "Ballista",
   "category": "Building",
@@ -7,7 +7,7 @@
   "rank": "II",
   "description": "Static weapon that targets enemies at long range.",
   "image_required": true,
-  "last_modified": "2026-02-11T00:26:48.725275+00:00",
+  "last_modified": "2026-02-11T02:15:23.288971+00:00",
   "tags": [],
   "changelog": [
     {
@@ -20,5 +20,9 @@
   "health": 300,
   "range": 80,
   "dps": 25,
-  "attack_interval": 1.0
+  "attack_interval": 1.0,
+  "charges": 1,
+  "recharge_time": 10.0,
+  "cast_time": 0.0,
+  "population": 0
 }

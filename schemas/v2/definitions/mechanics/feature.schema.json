@@ -1,0 +1,20 @@
+{
+  "$schema": "https://json-schema.org/draft/2019-09/schema",
+  "$id": "https://spellcasters.gg/schemas/v2/definitions/mechanics/feature.schema.json",
+  "title": "Feature",
+  "description": "Generic feature with name and description.",
+  "definitions": {
+    "features": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["name"],
+        "properties": {
+          "name": { "$ref": "../core.schema.json#/definitions/identity/properties/name" },
+          "description": { "$ref": "../core.schema.json#/definitions/identity/properties/description" }
+        },
+        "additionalProperties": false
+      }
+    }
+  }
+}

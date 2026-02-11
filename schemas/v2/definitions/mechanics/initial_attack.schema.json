@@ -1,0 +1,22 @@
+{
+  "$schema": "https://json-schema.org/draft/2019-09/schema",
+  "$id": "https://spellcasters.gg/schemas/v2/definitions/mechanics/initial_attack.schema.json",
+  "title": "Initial Attack",
+  "description": "Damage or effect applied immediately upon spawn or impact.",
+  "definitions": {
+    "initial_attack": {
+      "type": "object",
+      "properties": {
+        "damage_flat": { "type": "integer", "description": "Flat damage applied on spawn/impact." },
+        "target_types": {
+          "type": "array",
+          "items": { "$ref": "../enums.schema.json#/definitions/target_type_enum" },
+          "description": "Valid targets for the initial attack."
+        },
+        "description": { "type": "string", "description": "Text description of the effect." }
+      },
+      "required": ["damage_flat", "target_types"],
+      "additionalProperties": false
+    }
+  }
+}

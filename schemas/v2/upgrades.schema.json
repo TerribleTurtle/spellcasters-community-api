@@ -1,0 +1,32 @@
+{
+  "$schema": "https://json-schema.org/draft/2019-09/schema",
+  "$id": "https://spellcasters.gg/schemas/v2/upgrades.schema.json",
+  "title": "Upgrade",
+  "description": "RNG Level-up bonus options.",
+  "type": "object",
+  "allOf": [
+    { "$ref": "definitions/core.schema.json#/definitions/meta" }
+  ],
+  "properties": {
+    "upgrade_id": { "type": "string" },
+    "$schema": { "$ref": "definitions/core.schema.json#/definitions/meta/properties/$schema" },
+    "last_modified": { "$ref": "definitions/core.schema.json#/definitions/meta/properties/last_modified" },
+    "changelog": { "$ref": "definitions/core.schema.json#/definitions/meta/properties/changelog" },
+    "game_version": { "$ref": "definitions/core.schema.json#/definitions/meta/properties/game_version" },
+    "entity_id": { "$ref": "definitions/core.schema.json#/definitions/identity/properties/entity_id" },
+    "name": { "$ref": "definitions/core.schema.json#/definitions/identity/properties/name" },
+    "description": { "type": "string", "description": "User-facing text." },
+    "target_tags": {
+      "type": "array",
+      "items": { "type": "string" },
+      "description": "Tags of units this upgrade applies to."
+    },
+    "effect": {
+      "type": "object",
+      "description": "Key-value pairs of stats to modify.",
+      "additionalProperties": true
+    }
+  },
+  "required": ["upgrade_id", "description", "target_tags", "effect"],
+  "additionalProperties": false
+}

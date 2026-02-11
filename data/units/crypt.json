@@ -1,5 +1,5 @@
 {
-  "$schema": "../../schemas/v1/unit.schema.json",
+  "$schema": "../../schemas/v2/units.schema.json",
   "entity_id": "crypt",
   "name": "Crypt",
   "category": "Building",
@@ -7,7 +7,7 @@
   "rank": "III",
   "description": "Shrine that continuously summons new Skeleton Warriors.",
   "image_required": true,
-  "last_modified": "2026-02-11T00:26:48.725379+00:00",
+  "last_modified": "2026-02-11T02:15:23.289725+00:00",
   "tags": [],
   "changelog": [
     {
@@ -31,5 +31,9 @@
       }
     ]
   },
-  "health": 1000
+  "health": 1000,
+  "charges": 1,
+  "recharge_time": 10.0,
+  "cast_time": 0.0,
+  "population": 0
 }

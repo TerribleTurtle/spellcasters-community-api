@@ -1,5 +1,5 @@
 {
-  "$schema": "../../schemas/v1/consumable.schema.json",
+  "$schema": "../../schemas/v2/consumables.schema.json",
   "entity_id": "medium_heal",
   "name": "Medium Heal",
   "effect_type": "Heal",
@@ -14,5 +14,7 @@
   ],
   "category": "Consumable",
   "image_required": false,
-  "duration": 30
+  "duration": 30,
+  "description": "Restores 50 Health to the Spellcaster.",
+  "tags": []
 }

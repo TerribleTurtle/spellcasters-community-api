@@ -1,5 +1,5 @@
 {
-  "$schema": "../../schemas/v1/unit.schema.json",
+  "$schema": "../../schemas/v2/units.schema.json",
   "entity_id": "ogre",
   "name": "Ogre",
   "category": "Creature",
@@ -7,7 +7,7 @@
   "rank": "III",
   "description": "Mighty warrior that crushes target areas with a hammer.",
   "image_required": true,
-  "last_modified": "2026-02-11T00:26:48.727647+00:00",
+  "last_modified": "2026-02-11T02:15:23.298804+00:00",
   "tags": [],
   "changelog": [
     {
@@ -19,9 +19,11 @@
   "mechanics": {
     "damage_modifiers": [
       {
-        "target_type": "Building",
         "multiplier": 5.0,
-        "condition": "Always - UNCONFIRMED NUMBER"
+        "condition": "Always - UNCONFIRMED NUMBER",
+        "target_types": [
+          "Building"
+        ]
       }
     ]
   },
@@ -30,5 +32,9 @@
   "movement_speed": 3,
   "movement_type": "Ground",
   "dps": 70,
-  "attack_interval": 1.0
+  "attack_interval": 1.0,
+  "charges": 1,
+  "recharge_time": 10,
+  "cast_time": 0,
+  "population": 0
 }

@@ -1,5 +1,5 @@
 {
-  "$schema": "../../schemas/v1/unit.schema.json",
+  "$schema": "../../schemas/v2/units.schema.json",
   "entity_id": "earth_golem",
   "name": "Earth Golem",
   "category": "Creature",
@@ -7,7 +7,7 @@
   "rank": "II",
   "description": "Strong melee unit that resists damage from large enemies.",
   "image_required": true,
-  "last_modified": "2026-02-11T00:26:48.725666+00:00",
+  "last_modified": "2026-02-11T02:15:23.290892+00:00",
   "tags": [],
   "changelog": [
     {
@@ -19,9 +19,11 @@
   "mechanics": {
     "damage_modifiers": [
       {
-        "target_type": "Unit",
         "multiplier": 1.75,
-        "condition": "Rank >= 3"
+        "condition": "Rank >= 3",
+        "target_types": [
+          "Unit"
+        ]
       }
     ],
     "damage_reduction": [
@@ -37,5 +39,9 @@
   "movement_speed": 2,
   "movement_type": "Ground",
   "dps": 25,
-  "attack_interval": 1.0
+  "attack_interval": 1.0,
+  "charges": 1,
+  "recharge_time": 10,
+  "cast_time": 0,
+  "population": 0
 }

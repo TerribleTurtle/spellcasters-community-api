@@ -20,24 +20,25 @@ API response files in `api/v1/`. It generates:
 
 
 # Configuration
-VERSION_API = "v1"
+VERSION_API = "v2"
 OUTPUT_DIR = config.OUTPUT_DIR
 DATA_DIR = config.DATA_DIR
 
 # Schema to Data Directory Map
 # Output FilenameBase -> Source Directory
 AGGREGATION_MAP = {
-    "spellcasters": "spellcasters",
+    "heroes": "heroes",
     "consumables": "consumables",
     "upgrades": "upgrades",
     "units": "units",
     "spells": "spells",
-    "titans": "titans"
+    "titans": "titans",
+    "decks": "decks"
 }
 
 # Single File Copy
 SINGLE_FILES = {
-    "game_info": "game_info.json"
+    "game_config": "game_config.json"
 }
 
 def ensure_output_dir():
@@ -45,6 +46,11 @@ def ensure_output_dir():
     if not os.path.exists(OUTPUT_DIR):
         os.makedirs(OUTPUT_DIR)
         print(f"Created output directory: {OUTPUT_DIR}")
+    
+    # Cleanup old files
+    for f in glob.glob(os.path.join(OUTPUT_DIR, "*.json")):
+        os.remove(f)
+    print(f"Cleaned up output directory: {OUTPUT_DIR}")
 
 def save_json(filename, data):
     """
@@ -81,8 +87,19 @@ def sanitize_recursive(data):
 
 
 
+from validate_integrity import validate_integrity
+
 def main():
     print(f"Building API {VERSION_API}...")
+    
+    # 1. Safety Lock: Validate Integrity
+    try:
+        validate_integrity()
+    except SystemExit as e:
+        if e.code != 0:
+            print("[FATAL] Validation failed. Build aborted.")
+            sys.exit(1)
+    
     ensure_output_dir()
     
     all_data = {

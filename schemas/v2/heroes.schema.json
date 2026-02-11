@@ -1,0 +1,62 @@
+{
+  "$schema": "https://json-schema.org/draft/2019-09/schema",
+  "$id": "https://spellcasters.gg/schemas/v2/heroes.schema.json",
+  "title": "Hero",
+  "description": "Player Character definition.",
+  "type": "object",
+  "allOf": [
+    { "$ref": "definitions/core.schema.json#/definitions/identity" },
+    { "$ref": "definitions/core.schema.json#/definitions/meta" },
+    { "$ref": "definitions/core.schema.json#/definitions/assets" },
+    { "$ref": "definitions/stats.schema.json#/definitions/base_stats" }
+  ],
+  "properties": {
+    "category": {
+      "$ref": "definitions/enums.schema.json#/definitions/category_enum"
+    },
+    "class": {
+      "$ref": "definitions/enums.schema.json#/definitions/class_enum"
+    },
+    "difficulty": { "type": "integer", "minimum": 1, "maximum": 3 },
+    
+    "movement_type": { "$ref": "definitions/enums.schema.json#/definitions/movement_type" },
+    "population": { "$ref": "definitions/resource.schema.json#/definitions/cost/properties/population" },
+
+    "abilities": {
+      "type": "object",
+      "properties": {
+        "passive": { "type": "array", "items": { "$ref": "#/definitions/ability_detail" } },
+        "primary": { "$ref": "#/definitions/ability_detail" },
+        "defense": { "$ref": "#/definitions/ability_detail" },
+        "ultimate": { "$ref": "#/definitions/ability_detail" }
+      },
+      "required": ["passive", "primary", "defense", "ultimate"]
+    }
+  },
+  "required": ["category", "class", "difficulty", "abilities"],
+  "examples": [
+    {
+      "entity_id": "generic_hero",
+      "name": "Generic Hero",
+      "category": "Spellcaster",
+      "class": "Conqueror",
+      "difficulty": 1,
+      "health": 1000,
+      "movement_speed": 6,
+      "movement_type": "Ground",
+      "population": 0,
+      "abilities": {
+        "passive": [],
+        "primary": { "name": "Attack", "description": "Basic attack", "damage": 10 },
+        "defense": { "name": "Block", "description": "Blocks damage" },
+        "ultimate": { "name": "Win", "description": "Wins the game" }
+      }
+    }
+  ],
+  "unevaluatedProperties": false,
+  "definitions": {
+    "ability_detail": {
+      "$ref": "definitions/ability.schema.json#/definitions/ability_detail"
+    }
+  }
+}

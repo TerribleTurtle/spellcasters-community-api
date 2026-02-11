@@ -1,0 +1,401 @@
+[
+  {
+    "$schema": "../../schemas/v2/spells.schema.json",
+    "entity_id": "astral_nova",
+    "name": "Astral Nova",
+    "category": "Spell",
+    "magic_school": "Astral",
+    "rank": "IV",
+    "description": "Massive projectile that deals heavy damage on impact.",
+    "image_required": true,
+    "last_modified": "2026-02-11T02:15:23.307103+00:00",
+    "tags": [],
+    "changelog": [
+      {
+        "version": "0.0.1",
+        "date": "2026-02-08T09:49:16.846742+00:00",
+        "description": "Initial Closed Beta 2 Data"
+      }
+    ],
+    "damage": 4200,
+    "range": 80,
+    "charges": 1,
+    "recharge_time": 10.0,
+    "cast_time": 0.0
+  },
+  {
+    "$schema": "../../schemas/v2/spells.schema.json",
+    "entity_id": "astral_shot",
+    "name": "Astral Shot",
+    "category": "Spell",
+    "magic_school": "Astral",
+    "rank": "II",
+    "description": "Rapid burst of projectiles.",
+    "image_required": true,
+    "last_modified": "2026-02-11T02:15:23.307711+00:00",
+    "tags": [],
+    "changelog": [
+      {
+        "version": "0.0.1",
+        "date": "2026-02-08T09:49:16.839777+00:00",
+        "description": "Initial Closed Beta 2 Data"
+      }
+    ],
+    "damage": 40,
+    "mechanics": {
+      "waves": 4
+    },
+    "range": 80,
+    "charges": 1,
+    "recharge_time": 10.0,
+    "cast_time": 0.0
+  },
+  {
+    "$schema": "../../schemas/v2/spells.schema.json",
+    "entity_id": "earthquake",
+    "name": "Earthquake",
+    "category": "Spell",
+    "magic_school": "Wild",
+    "rank": "III",
+    "description": "Ground shockwave that damages structures and staggers creatures significantly. Damage is split into 3 waves.",
+    "image_required": true,
+    "last_modified": "2026-02-11T02:15:23.308203+00:00",
+    "tags": [],
+    "changelog": [
+      {
+        "version": "0.0.1",
+        "date": "2026-02-08T09:49:16.843317+00:00",
+        "description": "Initial Closed Beta 2 Data"
+      }
+    ],
+    "damage": 76,
+    "mechanics": {
+      "waves": 3,
+      "stagger_modifier": true,
+      "damage_modifiers": [
+        {
+          "multiplier": 0,
+          "condition": "Always",
+          "target_types": [
+            "Flying"
+          ]
+        },
+        {
+          "multiplier": 1.3,
+          "condition": "Always",
+          "target_types": [
+            "Building"
+          ]
+        }
+      ],
+      "bonus_damage": [
+        {
+          "unit": "percent_max_hp",
+          "value": 0.3,
+          "target_types": [
+            "Building"
+          ]
+        }
+      ]
+    },
+    "range": 35,
+    "charges": 1,
+    "recharge_time": 10,
+    "cast_time": 0
+  },
+  {
+    "$schema": "../../schemas/v2/spells.schema.json",
+    "entity_id": "fire_ball",
+    "name": "Fire Ball",
+    "category": "Spell",
+    "magic_school": "Elemental",
+    "rank": "III",
+    "description": "Fast projectile that deals medium Fire damage to a target.",
+    "image_required": true,
+    "last_modified": "2026-02-11T02:15:23.308710+00:00",
+    "tags": [],
+    "changelog": [
+      {
+        "version": "0.0.1",
+        "date": "2026-02-08T09:49:16.843620+00:00",
+        "description": "Initial Closed Beta 2 Data"
+      }
+    ],
+    "damage": 530,
+    "range": 80,
+    "charges": 1,
+    "recharge_time": 10.0,
+    "cast_time": 0.0
+  },
+  {
+    "$schema": "../../schemas/v2/spells.schema.json",
+    "entity_id": "fire_rain",
+    "name": "Fire Rain",
+    "category": "Spell",
+    "magic_school": "Elemental",
+    "rank": "IV",
+    "description": "Fire projectiles that deal continuous damage over a wide area.",
+    "image_required": true,
+    "last_modified": "2026-02-11T02:15:23.309734+00:00",
+    "tags": [],
+    "changelog": [
+      {
+        "version": "0.0.1",
+        "date": "2026-02-08T09:49:16.847017+00:00",
+        "description": "Initial Closed Beta 2 Data"
+      }
+    ],
+    "mechanics": {
+      "damage_modifiers": [
+        {
+          "multiplier": 1.2,
+          "condition": "Always",
+          "target_types": [
+            "Creature"
+          ]
+        }
+      ]
+    },
+    "damage": 450,
+    "range": 45,
+    "duration": 12,
+    "charges": 1,
+    "recharge_time": 10,
+    "cast_time": 0
+  },
+  {
+    "$schema": "../../schemas/v2/spells.schema.json",
+    "entity_id": "fire_ray",
+    "name": "Fire Ray",
+    "category": "Spell",
+    "magic_school": "Elemental",
+    "rank": "I",
+    "description": "Focused beam that deals low Fire damage.",
+    "image_required": true,
+    "last_modified": "2026-02-11T02:15:23.310528+00:00",
+    "tags": [],
+    "changelog": [
+      {
+        "version": "0.0.1",
+        "date": "2026-02-08T09:49:16.836670+00:00",
+        "description": "Initial Closed Beta 2 Data"
+      }
+    ],
+    "mechanics": {
+      "waves": 5,
+      "interval": 1
+    },
+    "damage": 14,
+    "range": 45,
+    "charges": 1,
+    "recharge_time": 10.0,
+    "cast_time": 0.0
+  },
+  {
+    "$schema": "../../schemas/v2/spells.schema.json",
+    "entity_id": "flame_surge",
+    "name": "Flame Surge",
+    "category": "Spell",
+    "magic_school": "War",
+    "rank": "III",
+    "description": "Fire pulse that burns enemies and infuses nearby allies.",
+    "image_required": true,
+    "last_modified": "2026-02-11T02:15:23.311057+00:00",
+    "tags": [],
+    "changelog": [
+      {
+        "version": "0.0.1",
+        "date": "2026-02-08T09:49:16.843934+00:00",
+        "description": "Initial Closed Beta 2 Data"
+      }
+    ],
+    "range": 24,
+    "charges": 1,
+    "recharge_time": 10.0,
+    "cast_time": 0.0
+  },
+  {
+    "$schema": "../../schemas/v2/spells.schema.json",
+    "entity_id": "frost_surge",
+    "name": "Frost Surge",
+    "category": "Spell",
+    "magic_school": "Wild",
+    "rank": "III",
+    "description": "Ice pulse that freezes enemies and infuses nearby allies.",
+    "image_required": true,
+    "last_modified": "2026-02-11T02:15:23.311669+00:00",
+    "tags": [],
+    "changelog": [
+      {
+        "version": "0.0.1",
+        "date": "2026-02-08T09:49:16.844303+00:00",
+        "description": "Initial Closed Beta 2 Data"
+      }
+    ],
+    "range": 24,
+    "charges": 1,
+    "recharge_time": 10.0,
+    "cast_time": 0.0
+  },
+  {
+    "$schema": "../../schemas/v2/spells.schema.json",
+    "entity_id": "grand_lightning",
+    "name": "Grand Lightning",
+    "category": "Spell",
+    "magic_school": "Technomancy",
+    "rank": "IV",
+    "description": "Thunderstrike that deals extreme Lightning damage to a target.",
+    "image_required": true,
+    "last_modified": "2026-02-11T02:15:23.312373+00:00",
+    "tags": [],
+    "changelog": [
+      {
+        "version": "0.0.1",
+        "date": "2026-02-08T09:49:16.847345+00:00",
+        "description": "Initial Closed Beta 2 Data"
+      }
+    ],
+    "damage": 3675,
+    "range": 36,
+    "charges": 1,
+    "recharge_time": 10.0,
+    "cast_time": 0.0
+  },
+  {
+    "$schema": "../../schemas/v2/spells.schema.json",
+    "entity_id": "heal_ray",
+    "name": "Heal Ray",
+    "category": "Spell",
+    "magic_school": "Holy",
+    "rank": "I",
+    "description": "Healing ray that can be aimed at the ground to restore allies in the area.",
+    "image_required": true,
+    "last_modified": "2026-02-11T02:15:23.313243+00:00",
+    "tags": [],
+    "changelog": [
+      {
+        "version": "0.0.1",
+        "date": "2026-02-08T09:49:16.837289+00:00",
+        "description": "Initial Closed Beta 2 Data"
+      }
+    ],
+    "range": 45,
+    "value": 300,
+    "charges": 1,
+    "recharge_time": 10.0,
+    "cast_time": 0.0
+  },
+  {
+    "$schema": "../../schemas/v2/spells.schema.json",
+    "entity_id": "poison_grenade",
+    "name": "Poison Grenade",
+    "category": "Spell",
+    "magic_school": "Necromancy",
+    "rank": "III",
+    "description": "Grenade that creates a Poison cloud over the target area.",
+    "image_required": true,
+    "last_modified": "2026-02-11T02:15:23.314081+00:00",
+    "tags": [],
+    "changelog": [
+      {
+        "version": "0.0.1",
+        "date": "2026-02-08T09:49:16.845763+00:00",
+        "description": "Initial Closed Beta 2 Data"
+      }
+    ],
+    "damage": 25,
+    "range": 40,
+    "duration": 12,
+    "mechanics": {
+      "damage_modifiers": [
+        {
+          "multiplier": 0.0,
+          "target_types": [
+            "Building"
+          ]
+        }
+      ]
+    },
+    "charges": 1,
+    "recharge_time": 10,
+    "cast_time": 0
+  },
+  {
+    "$schema": "../../schemas/v2/spells.schema.json",
+    "entity_id": "resurrection",
+    "name": "Resurrection",
+    "category": "Spell",
+    "magic_school": "Holy",
+    "rank": "IV",
+    "description": "Magic circle that resurrects creatures with partial health.",
+    "image_required": true,
+    "last_modified": "2026-02-11T02:15:23.315249+00:00",
+    "tags": [],
+    "changelog": [
+      {
+        "version": "0.0.1",
+        "date": "2026-02-08T09:49:16.848165+00:00",
+        "description": "Initial Closed Beta 2 Data"
+      }
+    ],
+    "duration": 12,
+    "charges": 1,
+    "recharge_time": 10.0,
+    "cast_time": 0.0
+  },
+  {
+    "$schema": "../../schemas/v2/spells.schema.json",
+    "entity_id": "sacrifice",
+    "name": "Sacrifice",
+    "category": "Spell",
+    "magic_school": "Astral",
+    "rank": "I",
+    "description": "Dark ritual that recalls allies to recharge summons.",
+    "image_required": true,
+    "last_modified": "2026-02-11T02:15:23.316280+00:00",
+    "tags": [],
+    "changelog": [
+      {
+        "version": "0.0.1",
+        "date": "2026-02-08T09:49:16.838616+00:00",
+        "description": "Initial Closed Beta 2 Data"
+      }
+    ],
+    "mechanics": {
+      "waves": 5,
+      "interval": 1
+    },
+    "damage": 18,
+    "charges": 1,
+    "recharge_time": 10.0,
+    "cast_time": 0.0
+  },
+  {
+    "$schema": "../../schemas/v2/spells.schema.json",
+    "entity_id": "thunder_ray",
+    "name": "Thunder Ray",
+    "category": "Spell",
+    "magic_school": "Technomancy",
+    "rank": "I",
+    "description": "Focused beam that deals low Lightning damage.",
+    "image_required": true,
+    "last_modified": "2026-02-11T02:15:23.317054+00:00",
+    "tags": [],
+    "changelog": [
+      {
+        "version": "0.0.1",
+        "date": "2026-02-08T09:49:16.839433+00:00",
+        "description": "Initial Closed Beta 2 Data"
+      }
+    ],
+    "mechanics": {
+      "waves": 5,
+      "interval": 1
+    },
+    "damage": 14,
+    "range": 45,
+    "charges": 1,
+    "recharge_time": 10.0,
+    "cast_time": 0.0
+  }
+]

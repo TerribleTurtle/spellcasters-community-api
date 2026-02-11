@@ -1,0 +1,47 @@
+{
+  "$schema": "https://json-schema.org/draft/2019-09/schema",
+  "$id": "https://spellcasters.gg/schemas/v2/definitions/magic.schema.json",
+  "title": "Magic Definitions",
+  "description": "Magic properties, schools, and classification.",
+  "definitions": {
+    "magic_props": {
+      "type": "object",
+      "properties": {
+        "magic_school": {
+          "$ref": "#/definitions/magic_school"
+        },
+        "rank": {
+          "$ref": "#/definitions/rank"
+        }
+      }
+    },
+    "magic_school": {
+      "type": "string",
+      "description": "The school of magic the entity belongs to.",
+      "enum": [
+        "Elemental",
+        "Wild",
+        "War",
+        "Astral",
+        "Holy",
+        "Technomancy",
+        "Necromancy",
+        "Titan",
+        "Dark",
+        "Frost",
+        "Lightning"
+      ]
+    },
+    "rank": {
+      "type": "string",
+      "description": "The power tier of the entity, from I to V.",
+      "enum": [
+        "I",
+        "II",
+        "III",
+        "IV",
+        "V"
+      ]
+    }
+  }
+}

@@ -1,5 +1,5 @@
 {
-  "$schema": "../../schemas/v1/unit.schema.json",
+  "$schema": "../../schemas/v2/units.schema.json",
   "entity_id": "harpy_nest",
   "name": "Harpy Nest",
   "category": "Building",
@@ -7,7 +7,7 @@
   "rank": "III",
   "description": "Nest that continuously spawns new Harpies.",
   "image_required": true,
-  "last_modified": "2026-02-11T00:26:48.727137+00:00",
+  "last_modified": "2026-02-11T02:15:23.295095+00:00",
   "tags": [],
   "changelog": [
     {
@@ -31,5 +31,9 @@
       }
     ]
   },
-  "health": 750
+  "health": 750,
+  "charges": 1,
+  "recharge_time": 10.0,
+  "cast_time": 0.0,
+  "population": 0
 }

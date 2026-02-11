@@ -1,5 +1,5 @@
 {
-  "$schema": "../../schemas/v1/spell.schema.json",
+  "$schema": "../../schemas/v2/spells.schema.json",
   "entity_id": "astral_shot",
   "name": "Astral Shot",
   "category": "Spell",
@@ -7,7 +7,7 @@
   "rank": "II",
   "description": "Rapid burst of projectiles.",
   "image_required": true,
-  "last_modified": "2026-02-11T00:26:48.723755+00:00",
+  "last_modified": "2026-02-11T02:15:23.307711+00:00",
   "tags": [],
   "changelog": [
     {
@@ -20,5 +20,8 @@
   "mechanics": {
     "waves": 4
   },
-  "range": 80
+  "range": 80,
+  "charges": 1,
+  "recharge_time": 10.0,
+  "cast_time": 0.0
 }

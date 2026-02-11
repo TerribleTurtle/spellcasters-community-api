@@ -1,5 +1,5 @@
 {
-  "$schema": "../../schemas/v1/spell.schema.json",
+  "$schema": "../../schemas/v2/spells.schema.json",
   "entity_id": "astral_nova",
   "name": "Astral Nova",
   "category": "Spell",
@@ -7,7 +7,7 @@
   "rank": "IV",
   "description": "Massive projectile that deals heavy damage on impact.",
   "image_required": true,
-  "last_modified": "2026-02-11T00:26:48.723552+00:00",
+  "last_modified": "2026-02-11T02:15:23.307103+00:00",
   "tags": [],
   "changelog": [
     {
@@ -17,5 +17,8 @@
     }
   ],
   "damage": 4200,
-  "range": 80
+  "range": 80,
+  "charges": 1,
+  "recharge_time": 10.0,
+  "cast_time": 0.0
 }

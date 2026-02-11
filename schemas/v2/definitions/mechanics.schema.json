@@ -1,0 +1,82 @@
+{
+  "$schema": "https://json-schema.org/draft/2019-09/schema",
+  "$id": "https://spellcasters.gg/schemas/v2/definitions/mechanics.schema.json",
+  "title": "Mechanics Definitions",
+  "description": "Complex mechanics and interactions.",
+  "definitions": {
+    "mechanics": {
+      "type": "object",
+      "properties": {
+        "features": { 
+            "$ref": "mechanics/feature.schema.json#/definitions/features",
+            "description": "List of passive features or abilities."
+        },
+        "aura": { 
+            "$ref": "mechanics/aura.schema.json#/definitions/aura",
+            "description": "List of area-of-effect auras."
+        },
+        "damage_modifiers": { 
+            "$ref": "mechanics/damage_modifier.schema.json#/definitions/damage_modifiers",
+            "description": "Conditional multipliers applied to outgoing damage."
+        },
+        "damage_reduction": { 
+            "$ref": "mechanics/damage_reduction.schema.json#/definitions/damage_reduction",
+            "description": "Rules for reducing incoming damage."
+        },
+        "bonus_damage": { 
+            "$ref": "mechanics/bonus_damage.schema.json#/definitions/bonus_damage",
+            "description": "Extra damage dealt against specific targets."
+        },
+        "spawner": { 
+            "$ref": "mechanics/spawner.schema.json#/definitions/spawner",
+            "description": "Configuration for spawning other units."
+        },
+        "death_rattle": { 
+            "$ref": "mechanics/feature.schema.json#/definitions/features",
+            "description": "Features triggered upon death."
+        },
+        "battle_cry": { 
+            "$ref": "mechanics/feature.schema.json#/definitions/features",
+            "description": "Features triggered upon spawning/placement."
+        },
+        
+        "capture_speed_modifier": { "type": "number", "description": "Multiplier for altar capture speed (e.g., 1.5 is 50% faster)." },
+        "auto_capture_altars": { "type": "boolean", "description": "If true, unit captures altars automatically/instantly." },
+        "stagger_modifier": { 
+          "type": "boolean", 
+          "description": "If true, applies stagger effect." 
+        },
+        "waves": { "type": "integer", "description": "Number of shockwaves/pulses." },
+        "interval": { "type": "number", "description": "Time between mechanics ticks (seconds)." },
+        "initial_attack": {
+            "$ref": "mechanics/initial_attack.schema.json#/definitions/initial_attack",
+            "description": "Damage or effect applied immediately upon spawn or impact."
+        }
+      },
+      "examples": [
+        {
+          "aura": [
+            {
+              "name": "Healing Aura",
+              "description": "Heals allies in range.",
+              "radius": 5,
+              "value": 10,
+              "effect": "Heal",
+              "target_types": ["Ally"],
+              "interval": 1
+            }
+          ],
+          "features": [
+            {
+              "name": "Cleave",
+              "description": "Attacks hit multiple enemies."
+            }
+          ],
+          "capture_speed_modifier": 1.5,
+          "auto_capture_altars": true
+        }
+      ],
+      "additionalProperties": false
+    }
+  }
+}

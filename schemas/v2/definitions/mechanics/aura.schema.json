@@ -1,0 +1,28 @@
+{
+  "$schema": "https://json-schema.org/draft/2019-09/schema",
+  "$id": "https://spellcasters.gg/schemas/v2/definitions/mechanics/aura.schema.json",
+  "title": "Aura",
+  "description": "Area of effect passive mechanic.",
+  "definitions": {
+    "aura": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "name": { "$ref": "../core.schema.json#/definitions/identity/properties/name" },
+          "description": { "$ref": "../core.schema.json#/definitions/identity/properties/description" },
+          "radius": { "$ref": "../stats.schema.json#/definitions/ability_stats/properties/radius" },
+          "value": { "$ref": "../stats.schema.json#/definitions/stat_value" },
+          "interval": { "type": "number", "minimum": 0 },
+          "effect": { "$ref": "../enums.schema.json#/definitions/aura_effect_enum" },
+          "target_types": {
+            "type": "array",
+            "items": { "$ref": "../enums.schema.json#/definitions/target_type_enum" }
+          }
+        },
+        "additionalProperties": false,
+        "required": ["effect", "target_types"]
+      }
+    }
+  }
+}

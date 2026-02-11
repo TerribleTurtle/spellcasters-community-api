@@ -1,5 +1,5 @@
 {
-  "$schema": "../../schemas/v1/unit.schema.json",
+  "$schema": "../../schemas/v2/units.schema.json",
   "entity_id": "wyvern",
   "name": "Wyvern",
   "category": "Creature",
@@ -7,7 +7,7 @@
   "rank": "II",
   "description": "Flying dragonkin that attacks with mid-range projectiles.",
   "image_required": true,
-  "last_modified": "2026-02-11T00:26:48.728547+00:00",
+  "last_modified": "2026-02-11T02:15:23.305930+00:00",
   "tags": [],
   "changelog": [
     {
@@ -20,9 +20,11 @@
   "mechanics": {
     "damage_modifiers": [
       {
-        "target_type": "Building",
         "multiplier": 0.9,
-        "condition": "Always"
+        "condition": "Always",
+        "target_types": [
+          "Building"
+        ]
       }
     ]
   },
@@ -31,5 +33,9 @@
   "movement_type": "Flying",
   "range": 36,
   "dps": 19,
-  "attack_interval": 1.0
+  "attack_interval": 1.0,
+  "charges": 1,
+  "recharge_time": 10,
+  "cast_time": 0,
+  "population": 0
 }

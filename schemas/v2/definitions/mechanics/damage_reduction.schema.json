@@ -1,0 +1,45 @@
+{
+  "$schema": "https://json-schema.org/draft/2019-09/schema",
+  "$id": "https://spellcasters.gg/schemas/v2/definitions/mechanics/damage_reduction.schema.json",
+  "title": "Damage Reduction",
+  "description": "Damage mitigation logic.",
+  "definitions": {
+    "damage_reduction": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["source_type", "multiplier"],
+        "properties": {
+          "source_type": { "$ref": "../enums.schema.json#/definitions/source_type_enum" },
+          "multiplier": { "type": "number", "minimum": 0 },
+          "condition": {
+            "oneOf": [
+              { 
+                "type": "string",
+                "description": "Legacy string condition (Deprecated)."
+              },
+              {
+                "type": "object",
+                "required": ["field", "operator", "value"],
+                "properties": {
+                  "field": { "type": "string" },
+                  "operator": { "$ref": "../enums.schema.json#/definitions/comparison_operator_enum" },
+                  "value": {} 
+                },
+                "additionalProperties": false
+              }
+            ]
+          }
+        },
+        "examples": [
+          {
+            "source_type": "Spell",
+            "multiplier": 0.5,
+            "condition": "element == 'Fire'"
+          }
+        ],
+        "additionalProperties": false
+      }
+    }
+  }
+}

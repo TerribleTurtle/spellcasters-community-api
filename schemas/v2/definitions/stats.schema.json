@@ -1,0 +1,91 @@
+{
+  "$schema": "https://json-schema.org/draft/2019-09/schema",
+  "$id": "https://spellcasters.gg/schemas/v2/definitions/stats.schema.json",
+  "title": "Stats Definitions",
+  "description": "Shared statistical definitions.",
+  "definitions": {
+    "stat_value": {
+      "type": "number",
+      "minimum": 0,
+      "description": "A non-negative numerical value representing a base statistic."
+    },
+    "percentage_value": {
+      "type": "number",
+      "description": "A value representing a percentage modifier (e.g., 1.5 = +50%)."
+    },
+    "duration_value": {
+      "type": "number",
+      "minimum": 0,
+      "description": "Time duration in seconds."
+    },
+    "common_combat_props": {
+      "type": "object",
+      "properties": {
+        "damage": { 
+          "allOf": [{ "$ref": "#/definitions/stat_value" }],
+          "description": "Damage dealt."
+        },
+        "range": { 
+          "allOf": [{ "$ref": "#/definitions/stat_value" }],
+          "description": "Range in tiles."
+        }
+      }
+    },
+    "base_stats": {
+      "type": "object",
+      "properties": {
+        "health": { 
+          "allOf": [{ "$ref": "#/definitions/stat_value" }],
+          "description": "Hit Points. When this reaches 0, the unit dies."
+        },
+        "movement_speed": { 
+          "allOf": [{ "$ref": "#/definitions/stat_value" }],
+          "description": "Speed in tiles per second."
+        },
+        "population": { "$ref": "resource.schema.json#/definitions/population_cost" }
+      }
+    },
+    "ability_stats": {
+      "type": "object",
+      "allOf": [{ "$ref": "#/definitions/common_combat_props" }],
+      "properties": {
+        "value": { 
+          "allOf": [{ "$ref": "#/definitions/stat_value" }],
+          "description": "Generic magnitude (e.g. heal amount, shield strength)."
+        },
+        "radius": { 
+          "allOf": [{ "$ref": "#/definitions/stat_value" }],
+          "description": "Area of effect radius in tiles."
+        },
+        "duration": { 
+          "allOf": [{ "$ref": "#/definitions/duration_value" }],
+          "description": "Effect duration in seconds."
+        },
+        "cooldown": { 
+          "allOf": [{ "$ref": "#/definitions/duration_value" }],
+          "description": "Cooldown time in seconds."
+        }
+      }
+    },
+    "combat_stats": {
+      "type": "object",
+      "allOf": [{ "$ref": "#/definitions/common_combat_props" }],
+      "properties": {
+        "dps": { 
+          "allOf": [{ "$ref": "#/definitions/stat_value" }],
+          "description": "Damage Per Second (calculated)."
+        },
+        "attack_interval": { 
+          "allOf": [{ "$ref": "#/definitions/duration_value" }],
+          "description": "Time between attacks in seconds."
+        }
+      }
+    },
+    "stats": {
+      "allOf": [
+        { "$ref": "#/definitions/base_stats" },
+        { "$ref": "#/definitions/combat_stats" }
+      ]
+    }
+  }
+}

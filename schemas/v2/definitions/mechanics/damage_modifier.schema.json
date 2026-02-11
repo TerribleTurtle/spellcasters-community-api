@@ -1,0 +1,54 @@
+{
+  "$schema": "https://json-schema.org/draft/2019-09/schema",
+  "$id": "https://spellcasters.gg/schemas/v2/definitions/mechanics/damage_modifier.schema.json",
+  "title": "Damage Modifier",
+  "description": "Conditional damage multipliers.",
+  "definitions": {
+    "damage_modifiers": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["target_types", "multiplier"],
+        "properties": {
+          "target_types": {
+            "type": "array", 
+            "items": { "$ref": "../enums.schema.json#/definitions/target_type_enum" }
+          },
+          "multiplier": { "type": "number" },
+          "condition": {
+            "oneOf": [
+              { 
+                "type": "string",
+                "description": "Legacy string condition (Deprecated)."
+              },
+              {
+                "type": "object",
+                "required": ["field", "operator", "value"],
+                "properties": {
+                  "field": { "type": "string" },
+                  "operator": { "$ref": "../enums.schema.json#/definitions/comparison_operator_enum" },
+                  "value": {
+                    "oneOf": [
+                      { "type": "string" },
+                      { "type": "number" },
+                      { "type": "boolean" }
+                    ]
+                  } 
+                },
+                "additionalProperties": false
+              }
+            ]
+          }
+        },
+        "examples": [
+          {
+            "target_types": ["Building"],
+            "multiplier": 1.5,
+            "condition": "target.is_burning"
+          }
+        ],
+        "additionalProperties": false
+      }
+    }
+  }
+}

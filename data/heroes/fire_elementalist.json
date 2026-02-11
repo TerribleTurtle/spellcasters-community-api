@@ -1,0 +1,64 @@
+{
+  "$schema": "../../schemas/v2/heroes.schema.json",
+  "name": "Fire Elementalist",
+  "class": "Conqueror",
+  "category": "Spellcaster",
+  "movement_type": "Ground",
+  "health": 800,
+  "movement_speed": 7,
+  "population": 0,
+  "image_required": true,
+  "difficulty": 1,
+  "tags": [],
+  "abilities": {
+    "passive": [
+      {
+        "name": "Ignition Spark",
+        "description": "Allied creatures near the Fire Elementalist capture Altar faster."
+      },
+      {
+        "name": "Enduring Flame",
+        "description": "Damaging burning enemies heals the Fire Elementalist."
+      },
+      {
+        "name": "Blazing Momentum",
+        "description": "When you or your creatures kill a Burning enemy, recharge Elemental spells."
+      }
+    ],
+    "primary": {
+      "name": "Flame Strikes",
+      "description": "Burns enemies with powerful Fire attacks.",
+      "damage": 28,
+      "mechanics": {
+        "features": [
+          {
+            "name": "Cleave",
+            "description": "Attacks hit multiple enemies in an arc."
+          }
+        ]
+      }
+    },
+    "defense": {
+      "name": "Fiery Dash",
+      "description": "Performs an invincible dash in a chosen direction.",
+      "duration": 5,
+      "damage": 10,
+      "interval": 0.5,
+      "charges": 2
+    },
+    "ultimate": {
+      "name": "Burning Conquest",
+      "description": "Captures a territory, inflicts Fire damage and fully infuses allied units and Titans with Fire."
+    }
+  },
+  "last_modified": "2026-02-11T01:13:54.454597+00:00",
+  "changelog": [
+    {
+      "version": "0.0.1",
+      "date": "2026-02-05T17:05:01.971147Z",
+      "description": "Initial Closed Beta 2 Data"
+    }
+  ],
+  "entity_id": "fire_elementalist",
+  "description": "A Conqueror who burns enemies with powerful fire attacks, cleaving through ranks and empowering allies."
+}

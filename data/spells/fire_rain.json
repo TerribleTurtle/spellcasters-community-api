@@ -1,5 +1,5 @@
 {
-  "$schema": "../../schemas/v1/spell.schema.json",
+  "$schema": "../../schemas/v2/spells.schema.json",
   "entity_id": "fire_rain",
   "name": "Fire Rain",
   "category": "Spell",
@@ -7,7 +7,7 @@
   "rank": "IV",
   "description": "Fire projectiles that deal continuous damage over a wide area.",
   "image_required": true,
-  "last_modified": "2026-02-11T00:26:48.724146+00:00",
+  "last_modified": "2026-02-11T02:15:23.309734+00:00",
   "tags": [],
   "changelog": [
     {
@@ -19,13 +19,18 @@
   "mechanics": {
     "damage_modifiers": [
       {
-        "target_type": "Creature",
         "multiplier": 1.2,
-        "condition": "Always"
+        "condition": "Always",
+        "target_types": [
+          "Creature"
+        ]
       }
     ]
   },
   "damage": 450,
   "range": 45,
-  "duration": 12
+  "duration": 12,
+  "charges": 1,
+  "recharge_time": 10,
+  "cast_time": 0
 }

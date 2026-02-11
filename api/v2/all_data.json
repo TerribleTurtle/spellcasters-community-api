@@ -1,0 +1,1855 @@
+{
+  "build_info": {
+    "version": "0.0.1",
+    "generated_at": "2026-02-11T15:22:17.885340+00:00"
+  },
+  "heroes": [
+    {
+      "$schema": "../../schemas/v2/heroes.schema.json",
+      "name": "Astral Monk",
+      "class": "Duelist",
+      "category": "Spellcaster",
+      "movement_type": "Ground",
+      "health": 1000,
+      "movement_speed": 6,
+      "population": 0,
+      "image_required": true,
+      "difficulty": 2,
+      "tags": [],
+      "abilities": {
+        "passive": [
+          {
+            "name": "Arcane Alignment",
+            "description": "All Astral spells recharge faster."
+          },
+          {
+            "name": "Last Light",
+            "description": "All damage dealt is increased against targets below half health."
+          },
+          {
+            "name": "Cosmic Air",
+            "description": "All flying creatures summoned by the Astral Monk are invisible."
+          }
+        ],
+        "primary": {
+          "name": "Astral Fists",
+          "description": "Pierces through enemies with colossal astral fists.",
+          "damage": 32,
+          "mechanics": {
+            "features": [
+              {
+                "name": "Combo Sequence",
+                "description": "Alternates between Palm Strike (32) and Power Punch (47)."
+              }
+            ]
+          }
+        },
+        "defense": {
+          "name": "Veil Shift",
+          "description": "Turns invisible and move faster.",
+          "charges": 2,
+          "duration": 1.5,
+          "cooldown": 8
+        },
+        "ultimate": {
+          "name": "Dimension of Varani",
+          "description": "Conjures a time bubble that freezes enemy projectiles and creatures inside it. The Ultimate is destroyed by Lifestone Large Shots (3 hits)."
+        }
+      },
+      "last_modified": "2026-02-10T23:44:30.961685+00:00",
+      "changelog": [
+        {
+          "version": "0.0.1",
+          "date": "2026-02-05T18:34:05.939129Z",
+          "description": "Initial Closed Beta 2 Data"
+        }
+      ],
+      "entity_id": "astral_monk",
+      "description": "A Duelist who strikes from the shadows with fast astral fists and time-bending abilities."
+    },
+    {
+      "$schema": "../../schemas/v2/heroes.schema.json",
+      "name": "Fire Elementalist",
+      "class": "Conqueror",
+      "category": "Spellcaster",
+      "movement_type": "Ground",
+      "health": 800,
+      "movement_speed": 7,
+      "population": 0,
+      "image_required": true,
+      "difficulty": 1,
+      "tags": [],
+      "abilities": {
+        "passive": [
+          {
+            "name": "Ignition Spark",
+            "description": "Allied creatures near the Fire Elementalist capture Altar faster."
+          },
+          {
+            "name": "Enduring Flame",
+            "description": "Damaging burning enemies heals the Fire Elementalist."
+          },
+          {
+            "name": "Blazing Momentum",
+            "description": "When you or your creatures kill a Burning enemy, recharge Elemental spells."
+          }
+        ],
+        "primary": {
+          "name": "Flame Strikes",
+          "description": "Burns enemies with powerful Fire attacks.",
+          "damage": 28,
+          "mechanics": {
+            "features": [
+              {
+                "name": "Cleave",
+                "description": "Attacks hit multiple enemies in an arc."
+              }
+            ]
+          }
+        },
+        "defense": {
+          "name": "Fiery Dash",
+          "description": "Performs an invincible dash in a chosen direction.",
+          "duration": 5,
+          "damage": 10,
+          "interval": 0.5,
+          "charges": 2
+        },
+        "ultimate": {
+          "name": "Burning Conquest",
+          "description": "Captures a territory, inflicts Fire damage and fully infuses allied units and Titans with Fire."
+        }
+      },
+      "last_modified": "2026-02-10T23:44:30.961961+00:00",
+      "changelog": [
+        {
+          "version": "0.0.1",
+          "date": "2026-02-05T17:05:01.971147Z",
+          "description": "Initial Closed Beta 2 Data"
+        }
+      ],
+      "entity_id": "fire_elementalist",
+      "description": "A Conqueror who burns enemies with powerful fire attacks, cleaving through ranks and empowering allies."
+    },
+    {
+      "$schema": "../../schemas/v2/heroes.schema.json",
+      "name": "Iron Sorcerer",
+      "class": "Conqueror",
+      "category": "Spellcaster",
+      "movement_type": "Ground",
+      "health": 1200,
+      "movement_speed": 5,
+      "population": 0,
+      "image_required": true,
+      "difficulty": 1,
+      "tags": [],
+      "abilities": {
+        "passive": [
+          {
+            "name": "Scourge of War",
+            "description": "Increases Rank III population, reduces Rank II population."
+          },
+          {
+            "name": "Forges of Valm",
+            "description": "Creatures spawned from Buildings have significantly more health."
+          },
+          {
+            "name": "Field Commander",
+            "description": "While on the ground, nearby creatures gain a strong defensive buff."
+          }
+        ],
+        "primary": {
+          "name": "Twin Strike",
+          "description": "Strike with powerful mid-range attacks that interrupt enemies.",
+          "damage": 35,
+          "mechanics": {
+            "features": [
+              {
+                "name": "Cleave",
+                "description": "Attacks hit multiple enemies in an arc."
+              }
+            ]
+          }
+        },
+        "defense": {
+          "name": "Rune Shield",
+          "description": "Raise a shield that protects allies and reflects attacks.",
+          "charges": 4,
+          "duration": 0.5
+        },
+        "ultimate": {
+          "name": "Iron Tempest",
+          "description": "Unleash a metal vortex that deals heavy damage, staggers/knocks back all creatures inside.",
+          "duration": 3
+        }
+      },
+      "last_modified": "2026-02-10T23:44:30.962194+00:00",
+      "changelog": [
+        {
+          "version": "0.0.1",
+          "date": "2026-02-05T18:35:34.217480Z",
+          "description": "Initial Closed Beta 2 Data"
+        }
+      ],
+      "entity_id": "iron_sorcerer",
+      "description": "A Conqueror who dominates the battlefield with heavy melee strikes, protective runes, and a metal vortex."
+    },
+    {
+      "$schema": "../../schemas/v2/heroes.schema.json",
+      "name": "Mystic Scribe",
+      "class": "Enchanter",
+      "category": "Spellcaster",
+      "movement_type": "Ground",
+      "health": 900,
+      "movement_speed": 6,
+      "population": 0,
+      "image_required": true,
+      "difficulty": 2,
+      "tags": [],
+      "abilities": {
+        "passive": [
+          {
+            "name": "Echo of Mercy",
+            "description": "While on the ground, the Mystic Scribe emits a healing aura."
+          },
+          {
+            "name": "Holy Magic Mastery",
+            "description": "All Holy spells recharge faster."
+          },
+          {
+            "name": "Thousand Favors",
+            "description": "Healing recharges Rank I and II creatures."
+          }
+        ],
+        "primary": {
+          "name": "Brush Strike",
+          "description": "Strike with enchanted ink to damage enemies and boost allies\u2019 Max HP.",
+          "damage": 23,
+          "mechanics": {
+            "features": [
+              {
+                "name": "Cleave",
+                "description": "Attacks hit multiple enemies in an arc."
+              },
+              {
+                "name": "Knockback",
+                "description": "Knocks back small units."
+              }
+            ]
+          }
+        },
+        "defense": {
+          "name": "Scroll Barrier",
+          "description": "Creates a barrier that absorbs projectiles and reduces all damage. Absorbing Spellcaster projectiles refreshes Holy spells.",
+          "charges": 1,
+          "duration": 2
+        },
+        "ultimate": {
+          "name": "Seal of Immortality",
+          "description": "Mark the ground with a massive healing seal.",
+          "duration": 30
+        }
+      },
+      "last_modified": "2026-02-10T23:44:30.962408+00:00",
+      "changelog": [
+        {
+          "version": "0.0.1",
+          "date": "2026-02-05T18:33:10.223377Z",
+          "description": "Initial Closed Beta 2 Data"
+        }
+      ],
+      "entity_id": "mystic_scribe",
+      "description": "An Enchanter who uses magical ink to damage enemies, heal allies, and create protective barriers."
+    },
+    {
+      "$schema": "../../schemas/v2/heroes.schema.json",
+      "name": "Stone Shaman",
+      "class": "Enchanter",
+      "category": "Spellcaster",
+      "movement_type": "Ground",
+      "health": 1300,
+      "movement_speed": 5,
+      "population": 0,
+      "image_required": true,
+      "difficulty": 2,
+      "tags": [],
+      "abilities": {
+        "passive": [
+          {
+            "name": "Mountain\u2019s Favor",
+            "description": "The Stone Shaman\u2019s attacks deal double damage to buildings."
+          },
+          {
+            "name": "Child of the Titans",
+            "description": "Increases Rank II and Rank III population while reducing Rank I population."
+          },
+          {
+            "name": "Pathfinder",
+            "description": "While on the ground, the Shaman recharges Wild spells much faster."
+          }
+        ],
+        "primary": {
+          "name": "Mountain Staff",
+          "description": "Swing your catalyst to deal heavy melee damage and interrupt enemies.",
+          "damage": 42,
+          "mechanics": {
+            "features": [
+              {
+                "name": "Interruption",
+                "description": "Successfully hitting a Spellcaster twice interrupts their actions."
+              },
+              {
+                "name": "Cleave",
+                "description": "Attacks hit multiple enemies in an arc."
+              }
+            ],
+            "aura": [
+              {
+                "name": "Building Enchant",
+                "description": "Attacks enchant ally buildings, enabling them to emit a healing aura.",
+                "radius": 8,
+                "value": 7,
+                "effect": "Heal",
+                "interval": 1.0,
+                "target_types": [
+                  "Ally"
+                ]
+              }
+            ]
+          }
+        },
+        "defense": {
+          "name": "Wind Shield",
+          "description": "Conjure a protective wind barrier that deals damage on contact.",
+          "charges": 1,
+          "duration": 3
+        },
+        "ultimate": {
+          "name": "Wall of Kamazad",
+          "description": "Deploys a colossal wall capable of blocking Titans. The wall has 15000 Health and deals % damage to enemies in its path.",
+          "health": 15000
+        }
+      },
+      "last_modified": "2026-02-10T23:44:30.962676+00:00",
+      "changelog": [
+        {
+          "version": "0.0.1",
+          "date": "2026-02-05T18:35:34.217480Z",
+          "description": "Initial Closed Beta 2 Data"
+        }
+      ],
+      "entity_id": "stone_shaman",
+      "description": "An Enchanter who channels the power of earth to deal heavy damage, interrupt spellcasters, and fortify buildings."
+    },
+    {
+      "$schema": "../../schemas/v2/heroes.schema.json",
+      "name": "Swamp Witch",
+      "class": "Duelist",
+      "category": "Spellcaster",
+      "movement_type": "Ground",
+      "health": 750,
+      "movement_speed": 6,
+      "population": 0,
+      "image_required": true,
+      "difficulty": 3,
+      "tags": [],
+      "abilities": {
+        "passive": [
+          {
+            "name": "Pact of Sacrifice",
+            "description": "Killing Poisoned Creatures recharges Necromancy spells."
+          },
+          {
+            "name": "Brood Rite",
+            "description": "When a Swamp Witch\u2019s creature is destroyed, her spells and abilities recharge faster."
+          },
+          {
+            "name": "Swarm Dominance",
+            "description": "The Swamp Witch has more Rank I population, but less Rank II and Rank III population.  "
+          }
+        ],
+        "primary": {
+          "name": "Poison Strike",
+          "description": "Fire a barrage of projectiles that deal Poison damage.",
+          "damage": 21,
+          "projectiles": 2,
+          "mechanics": {
+            "features": [
+              {
+                "name": "Homing",
+                "description": "Projectiles seek targets."
+              }
+            ]
+          }
+        },
+        "defense": {
+          "name": "Witchslip",
+          "description": "Performs an invincible dash in a chosen direction.",
+          "charges": 2
+        },
+        "ultimate": {
+          "name": "Dark Ascension",
+          "description": "Unleashes a demonic form that boosts all spell damage by 150%. Poison Strike fires 2 extra projectiles that deal +285% damage.",
+          "mechanics": {
+            "damage_modifiers": [
+              {
+                "multiplier": 2.5,
+                "target_types": [
+                  "All"
+                ]
+              }
+            ],
+            "features": [
+              {
+                "name": "Empowered Poison Strike",
+                "description": "Poison Strike gains 2 extra projectiles dealing +285% damage."
+              }
+            ]
+          },
+          "duration": 15
+        }
+      },
+      "last_modified": "2026-02-10T23:44:30.962925+00:00",
+      "changelog": [
+        {
+          "version": "0.0.1",
+          "date": "2026-02-05T17:05:01.972347Z",
+          "description": "Initial Closed Beta 2 Data"
+        }
+      ],
+      "entity_id": "swamp_witch",
+      "description": "A Duelist who commands poison and swarms, sacrificing minions to fuel powerful necromancy spells."
+    }
+  ],
+  "consumables": [
+    {
+      "$schema": "../../schemas/v2/consumables.schema.json",
+      "entity_id": "light_heal",
+      "name": "Light Heal",
+      "effect_type": "Heal",
+      "value": 25,
+      "last_modified": "2026-02-08T14:59:13.832656+00:00",
+      "changelog": [
+        {
+          "version": "0.0.1",
+          "date": "2026-02-04T15:27:05.217337Z",
+          "description": "Initial Closed Beta 2 Data"
+        }
+      ],
+      "category": "Consumable",
+      "image_required": false,
+      "duration": 30,
+      "description": "Restores 25 Health to the Spellcaster.",
+      "tags": []
+    },
+    {
+      "$schema": "../../schemas/v2/consumables.schema.json",
+      "entity_id": "medium_heal",
+      "name": "Medium Heal",
+      "effect_type": "Heal",
+      "value": 50,
+      "last_modified": "2026-02-08T14:59:13.833121+00:00",
+      "changelog": [
+        {
+          "version": "0.0.1",
+          "date": "2026-02-04T15:27:05.217803Z",
+          "description": "Initial Closed Beta 2 Data"
+        }
+      ],
+      "category": "Consumable",
+      "image_required": false,
+      "duration": 30,
+      "description": "Restores 50 Health to the Spellcaster.",
+      "tags": []
+    },
+    {
+      "$schema": "../../schemas/v2/consumables.schema.json",
+      "entity_id": "medium_recharge",
+      "name": "Medium Recharge",
+      "effect_type": "Charge_Refill",
+      "value": 50,
+      "last_modified": "2026-02-08T14:59:13.833502+00:00",
+      "changelog": [
+        {
+          "version": "0.0.1",
+          "date": "2026-02-04T15:27:05.217979Z",
+          "description": "Initial Closed Beta 2 Data"
+        }
+      ],
+      "category": "Consumable",
+      "image_required": false,
+      "duration": 30,
+      "description": "Restores 50 Charges to the Spellcaster.",
+      "tags": []
+    },
+    {
+      "$schema": "../../schemas/v2/consumables.schema.json",
+      "entity_id": "small_recharge",
+      "name": "Small Recharge",
+      "effect_type": "Charge_Refill",
+      "value": 25,
+      "last_modified": "2026-02-08T14:59:13.833884+00:00",
+      "changelog": [
+        {
+          "version": "0.0.1",
+          "date": "2026-02-05T03:28:27.274024Z",
+          "description": "Initial Closed Beta 2 Data"
+        }
+      ],
+      "category": "Consumable",
+      "image_required": false,
+      "duration": 30,
+      "description": "Restores 25 Charges to the Spellcaster.",
+      "tags": []
+    }
+  ],
+  "upgrades": [],
+  "units": [
+    {
+      "$schema": "../../schemas/v2/units.schema.json",
+      "entity_id": "astral_tower",
+      "name": "Astral Tower",
+      "category": "Building",
+      "magic_school": "Astral",
+      "rank": "III",
+      "description": "A heavy defensive tower that targets enemies inside allied territory and can defend itself when attacked.",
+      "image_required": true,
+      "last_modified": "2026-02-11T02:15:23.288258+00:00",
+      "tags": [],
+      "changelog": [
+        {
+          "version": "0.0.1",
+          "date": "2026-02-08T09:49:16.842699+00:00",
+          "description": "Initial Closed Beta 2 Data"
+        }
+      ],
+      "damage": 50,
+      "health": 3500,
+      "dps": 50,
+      "attack_interval": 1.0,
+      "charges": 1,
+      "recharge_time": 10.0,
+      "cast_time": 0.0,
+      "population": 0
+    },
+    {
+      "$schema": "../../schemas/v2/units.schema.json",
+      "entity_id": "ballista",
+      "name": "Ballista",
+      "category": "Building",
+      "magic_school": "Technomancy",
+      "rank": "II",
+      "description": "Static weapon that targets enemies at long range.",
+      "image_required": true,
+      "last_modified": "2026-02-11T02:15:23.288971+00:00",
+      "tags": [],
+      "changelog": [
+        {
+          "version": "0.0.1",
+          "date": "2026-02-08T09:49:16.840179+00:00",
+          "description": "Initial Closed Beta 2 Data"
+        }
+      ],
+      "damage": 25,
+      "health": 300,
+      "range": 80,
+      "dps": 25,
+      "attack_interval": 1.0,
+      "charges": 1,
+      "recharge_time": 10.0,
+      "cast_time": 0.0,
+      "population": 0
+    },
+    {
+      "$schema": "../../schemas/v2/units.schema.json",
+      "entity_id": "crypt",
+      "name": "Crypt",
+      "category": "Building",
+      "magic_school": "Necromancy",
+      "rank": "III",
+      "description": "Shrine that continuously summons new Skeleton Warriors.",
+      "image_required": true,
+      "last_modified": "2026-02-11T02:15:23.289725+00:00",
+      "tags": [],
+      "changelog": [
+        {
+          "version": "0.0.1",
+          "date": "2026-02-08T09:49:16.843010+00:00",
+          "description": "Initial Closed Beta 2 Data"
+        }
+      ],
+      "mechanics": {
+        "spawner": [
+          {
+            "unit_id": "skeleton_warrior",
+            "count": 5,
+            "interval": 10.0,
+            "trigger": "Interval"
+          },
+          {
+            "unit_id": "skeleton_warrior",
+            "count": 10,
+            "trigger": "Death"
+          }
+        ]
+      },
+      "health": 1000,
+      "charges": 1,
+      "recharge_time": 10.0,
+      "cast_time": 0.0,
+      "population": 0
+    },
+    {
+      "$schema": "../../schemas/v2/units.schema.json",
+      "entity_id": "dryad",
+      "name": "Dryad",
+      "category": "Creature",
+      "magic_school": "Holy",
+      "rank": "II",
+      "description": "Support creature that heals allies. Uses elemental attacks when infused.",
+      "image_required": true,
+      "last_modified": "2026-02-11T02:15:23.290334+00:00",
+      "tags": [],
+      "changelog": [
+        {
+          "version": "0.0.1",
+          "date": "2026-02-08T09:49:16.840490+00:00",
+          "description": "Initial Closed Beta 2 Data"
+        }
+      ],
+      "mechanics": {
+        "aura": [
+          {
+            "name": "Healing Aura",
+            "description": "Heals nearby allies. Healing is reduced when multiple Dryads stack.",
+            "radius": 8,
+            "value": 30,
+            "interval": 1.0,
+            "effect": "Heal",
+            "target_types": [
+              "Ally"
+            ]
+          }
+        ]
+      },
+      "damage": 12,
+      "health": 225,
+      "movement_speed": 3,
+      "movement_type": "Ground",
+      "dps": 12,
+      "attack_interval": 1.0,
+      "charges": 1,
+      "recharge_time": 10,
+      "cast_time": 0,
+      "population": 0
+    },
+    {
+      "$schema": "../../schemas/v2/units.schema.json",
+      "entity_id": "earth_golem",
+      "name": "Earth Golem",
+      "category": "Creature",
+      "magic_school": "Elemental",
+      "rank": "II",
+      "description": "Strong melee unit that resists damage from large enemies.",
+      "image_required": true,
+      "last_modified": "2026-02-11T02:15:23.290892+00:00",
+      "tags": [],
+      "changelog": [
+        {
+          "version": "0.0.1",
+          "date": "2026-02-08T09:49:16.840800+00:00",
+          "description": "Initial Closed Beta 2 Data"
+        }
+      ],
+      "mechanics": {
+        "damage_modifiers": [
+          {
+            "multiplier": 1.75,
+            "condition": "Rank >= 3",
+            "target_types": [
+              "Unit"
+            ]
+          }
+        ],
+        "damage_reduction": [
+          {
+            "source_type": "Unit",
+            "multiplier": 0.75,
+            "condition": "Rank >= 3  THIS INFORMATION IS UNCONFIRMED"
+          }
+        ]
+      },
+      "damage": 25,
+      "health": 650,
+      "movement_speed": 2,
+      "movement_type": "Ground",
+      "dps": 25,
+      "attack_interval": 1.0,
+      "charges": 1,
+      "recharge_time": 10,
+      "cast_time": 0,
+      "population": 0
+    },
+    {
+      "$schema": "../../schemas/v2/units.schema.json",
+      "entity_id": "faerie",
+      "name": "Faerie",
+      "category": "Creature",
+      "magic_school": "Astral",
+      "rank": "I",
+      "description": "Stealthy flying ranged creature that turns invisible out of combat.",
+      "image_required": true,
+      "last_modified": "2026-02-11T02:15:23.291396+00:00",
+      "tags": [],
+      "changelog": [
+        {
+          "version": "0.0.1",
+          "date": "2026-02-08T09:49:16.836151+00:00",
+          "description": "Initial Closed Beta 2 Data"
+        }
+      ],
+      "damage": 9,
+      "health": 100,
+      "range": 25,
+      "movement_speed": 3,
+      "movement_type": "Flying",
+      "dps": 9,
+      "attack_interval": 1.0,
+      "charges": 1,
+      "recharge_time": 10.0,
+      "cast_time": 0.0,
+      "population": 0
+    },
+    {
+      "$schema": "../../schemas/v2/units.schema.json",
+      "entity_id": "giant_shielder",
+      "name": "Giant Shielder",
+      "category": "Creature",
+      "magic_school": "Holy",
+      "rank": "III",
+      "description": "Slow giant that protects allies with a massive shield.",
+      "image_required": true,
+      "last_modified": "2026-02-11T02:15:23.293363+00:00",
+      "tags": [],
+      "changelog": [
+        {
+          "version": "0.0.1",
+          "date": "2026-02-08T09:49:16.844628+00:00",
+          "description": "Initial Closed Beta 2 Data"
+        }
+      ],
+      "mechanics": {
+        "damage_modifiers": [
+          {
+            "multiplier": 0.35,
+            "condition": "Always",
+            "target_types": [
+              "Creature"
+            ]
+          }
+        ]
+      },
+      "damage": 30,
+      "health": 1800,
+      "movement_speed": 3,
+      "movement_type": "Ground",
+      "dps": 30,
+      "attack_interval": 1.0,
+      "charges": 1,
+      "recharge_time": 10,
+      "cast_time": 0,
+      "population": 0
+    },
+    {
+      "$schema": "../../schemas/v2/units.schema.json",
+      "entity_id": "harpy",
+      "name": "Harpy",
+      "category": "Creature",
+      "magic_school": "Wild",
+      "rank": "I",
+      "description": "Agile flying creature that excels at defeating ground units.",
+      "image_required": true,
+      "last_modified": "2026-02-11T02:15:23.294078+00:00",
+      "tags": [],
+      "changelog": [
+        {
+          "version": "0.0.1",
+          "date": "2026-02-08T09:49:16.837000+00:00",
+          "description": "Initial Closed Beta 2 Data"
+        }
+      ],
+      "damage": 12,
+      "mechanics": {
+        "damage_modifiers": [
+          {
+            "multiplier": 1.19,
+            "condition": "Always",
+            "target_types": [
+              "Ground",
+              "Hover"
+            ]
+          },
+          {
+            "multiplier": 0.65,
+            "condition": "Always",
+            "target_types": [
+              "Building"
+            ]
+          }
+        ],
+        "initial_attack": {
+          "damage_flat": 30,
+          "target_types": [
+            "Ground",
+            "Hover"
+          ],
+          "description": "Deals 30 increased damage on pouncing initial attack on grounded and hovering units."
+        }
+      },
+      "health": 100,
+      "movement_speed": 8,
+      "movement_type": "Flying",
+      "dps": 12,
+      "attack_interval": 1.0,
+      "charges": 1,
+      "recharge_time": 10,
+      "cast_time": 0,
+      "population": 0
+    },
+    {
+      "$schema": "../../schemas/v2/units.schema.json",
+      "entity_id": "harpy_nest",
+      "name": "Harpy Nest",
+      "category": "Building",
+      "magic_school": "Wild",
+      "rank": "III",
+      "description": "Nest that continuously spawns new Harpies.",
+      "image_required": true,
+      "last_modified": "2026-02-11T02:15:23.295095+00:00",
+      "tags": [],
+      "changelog": [
+        {
+          "version": "0.0.1",
+          "date": "2026-02-08T09:49:16.844994+00:00",
+          "description": "Initial Closed Beta 2 Data"
+        }
+      ],
+      "mechanics": {
+        "spawner": [
+          {
+            "unit_id": "harpy",
+            "count": 5,
+            "interval": 10.0,
+            "trigger": "Interval"
+          },
+          {
+            "unit_id": "harpy",
+            "count": 10,
+            "trigger": "Death"
+          }
+        ]
+      },
+      "health": 750,
+      "charges": 1,
+      "recharge_time": 10.0,
+      "cast_time": 0.0,
+      "population": 0
+    },
+    {
+      "$schema": "../../schemas/v2/units.schema.json",
+      "entity_id": "juggernaut",
+      "name": "Juggernaut",
+      "category": "Creature",
+      "magic_school": "War",
+      "rank": "IV",
+      "description": "Colossal creature that deals massive damage to structures.",
+      "image_required": true,
+      "last_modified": "2026-02-11T02:15:23.296050+00:00",
+      "tags": [],
+      "changelog": [
+        {
+          "version": "0.0.1",
+          "date": "2026-02-08T09:49:16.847802+00:00",
+          "description": "Initial Closed Beta 2 Data"
+        }
+      ],
+      "mechanics": {
+        "damage_modifiers": [
+          {
+            "multiplier": 1.5,
+            "condition": "Always",
+            "target_types": [
+              "Lifestone"
+            ]
+          },
+          {
+            "multiplier": 2.0,
+            "condition": "Always",
+            "target_types": [
+              "Building"
+            ]
+          }
+        ]
+      },
+      "damage": 100,
+      "health": 4000,
+      "movement_speed": 3,
+      "movement_type": "Ground",
+      "dps": 100,
+      "attack_interval": 1.0,
+      "charges": 1,
+      "recharge_time": 10,
+      "cast_time": 0,
+      "population": 0
+    },
+    {
+      "$schema": "../../schemas/v2/units.schema.json",
+      "entity_id": "lich",
+      "name": "Lich",
+      "category": "Creature",
+      "magic_school": "Necromancy",
+      "rank": "II",
+      "description": "Undead caster that inflicts curses to enemies, increasing the damage they take and reducing their movement speed.",
+      "image_required": true,
+      "last_modified": "2026-02-11T02:15:23.296958+00:00",
+      "tags": [],
+      "changelog": [
+        {
+          "version": "0.0.1",
+          "date": "2026-02-08T09:49:16.841271+00:00",
+          "description": "Initial Closed Beta 2 Data"
+        }
+      ],
+      "damage": 5,
+      "health": 500,
+      "movement_speed": 5,
+      "movement_type": "Flying",
+      "dps": 5,
+      "attack_interval": 1.0,
+      "charges": 1,
+      "recharge_time": 10.0,
+      "cast_time": 0.0,
+      "population": 0
+    },
+    {
+      "$schema": "../../schemas/v2/units.schema.json",
+      "entity_id": "lizard_archer",
+      "name": "Lizard Archer",
+      "category": "Creature",
+      "magic_school": "War",
+      "rank": "I",
+      "description": "Long-range fighter that deals bonus damage to flying enemies.",
+      "image_required": true,
+      "last_modified": "2026-02-11T02:15:23.297645+00:00",
+      "tags": [],
+      "changelog": [
+        {
+          "version": "0.0.1",
+          "date": "2026-02-08T09:49:16.837714+00:00",
+          "description": "Initial Closed Beta 2 Data"
+        }
+      ],
+      "mechanics": {
+        "damage_modifiers": [
+          {
+            "multiplier": 1.375,
+            "condition": "Always",
+            "target_types": [
+              "Flying"
+            ]
+          },
+          {
+            "multiplier": 0.9,
+            "condition": "Always",
+            "target_types": [
+              "Building"
+            ]
+          }
+        ]
+      },
+      "damage": 8,
+      "health": 85,
+      "range": 36,
+      "movement_speed": 3,
+      "movement_type": "Ground",
+      "dps": 8,
+      "attack_interval": 1.0,
+      "charges": 1,
+      "recharge_time": 10,
+      "cast_time": 0,
+      "population": 0
+    },
+    {
+      "$schema": "../../schemas/v2/units.schema.json",
+      "entity_id": "ogre",
+      "name": "Ogre",
+      "category": "Creature",
+      "magic_school": "War",
+      "rank": "III",
+      "description": "Mighty warrior that crushes target areas with a hammer.",
+      "image_required": true,
+      "last_modified": "2026-02-11T02:15:23.298804+00:00",
+      "tags": [],
+      "changelog": [
+        {
+          "version": "0.0.1",
+          "date": "2026-02-08T09:49:16.845391+00:00",
+          "description": "Initial Closed Beta 2 Data"
+        }
+      ],
+      "mechanics": {
+        "damage_modifiers": [
+          {
+            "multiplier": 5.0,
+            "condition": "Always - UNCONFIRMED NUMBER",
+            "target_types": [
+              "Building"
+            ]
+          }
+        ]
+      },
+      "damage": 70,
+      "health": 2300,
+      "movement_speed": 3,
+      "movement_type": "Ground",
+      "dps": 70,
+      "attack_interval": 1.0,
+      "charges": 1,
+      "recharge_time": 10,
+      "cast_time": 0,
+      "population": 0
+    },
+    {
+      "$schema": "../../schemas/v2/units.schema.json",
+      "entity_id": "rampart",
+      "name": "Rampart",
+      "category": "Building",
+      "magic_school": "Holy",
+      "rank": "II",
+      "description": "Defensive wall that blocks enemy paths.",
+      "image_required": true,
+      "last_modified": "2026-02-11T02:15:23.299780+00:00",
+      "tags": [],
+      "changelog": [
+        {
+          "version": "0.0.1",
+          "date": "2026-02-08T09:49:16.841572+00:00",
+          "description": "Initial Closed Beta 2 Data"
+        }
+      ],
+      "health": 2500,
+      "charges": 1,
+      "recharge_time": 10.0,
+      "cast_time": 0.0,
+      "population": 0
+    },
+    {
+      "$schema": "../../schemas/v2/units.schema.json",
+      "entity_id": "rocket_soldier",
+      "name": "Rocket Soldier",
+      "category": "Creature",
+      "magic_school": "Technomancy",
+      "rank": "I",
+      "description": "Medium-range soldier that deals bonus damage to structures.",
+      "image_required": true,
+      "last_modified": "2026-02-11T02:15:23.300473+00:00",
+      "tags": [],
+      "changelog": [
+        {
+          "version": "0.0.1",
+          "date": "2026-02-08T09:49:16.838054+00:00",
+          "description": "Initial Closed Beta 2 Data"
+        }
+      ],
+      "mechanics": {
+        "damage_modifiers": [
+          {
+            "multiplier": 0.5,
+            "condition": "Always",
+            "target_types": [
+              "Creature"
+            ]
+          },
+          {
+            "multiplier": 0.5,
+            "condition": "Always",
+            "target_types": [
+              "Spellcaster"
+            ]
+          }
+        ]
+      },
+      "damage": 10,
+      "health": 250,
+      "range": 22,
+      "movement_speed": 3,
+      "movement_type": "Hover",
+      "dps": 10,
+      "attack_interval": 1.0,
+      "charges": 1,
+      "recharge_time": 10,
+      "cast_time": 0,
+      "population": 0
+    },
+    {
+      "$schema": "../../schemas/v2/units.schema.json",
+      "entity_id": "ruin_spider",
+      "name": "Ruin Spider",
+      "category": "Creature",
+      "magic_school": "Necromancy",
+      "rank": "I",
+      "description": "Fast creature that explodes on contact, dealing bonus damage to structures.",
+      "image_required": true,
+      "last_modified": "2026-02-11T02:15:23.301737+00:00",
+      "tags": [],
+      "changelog": [
+        {
+          "version": "0.0.1",
+          "date": "2026-02-08T09:49:16.838362+00:00",
+          "description": "Initial Closed Beta 2 Data"
+        }
+      ],
+      "mechanics": {
+        "damage_modifiers": [
+          {
+            "multiplier": 0.5,
+            "condition": "Always",
+            "target_types": [
+              "Creature"
+            ]
+          },
+          {
+            "multiplier": 0.5,
+            "condition": "Always",
+            "target_types": [
+              "Spellcaster"
+            ]
+          },
+          {
+            "multiplier": 2.5,
+            "condition": "Always",
+            "target_types": [
+              "Building"
+            ]
+          }
+        ]
+      },
+      "damage": 20,
+      "health": 85,
+      "movement_speed": 7,
+      "movement_type": "Ground",
+      "dps": 20,
+      "attack_interval": 1.0,
+      "charges": 1,
+      "recharge_time": 10,
+      "cast_time": 0,
+      "population": 0
+    },
+    {
+      "$schema": "../../schemas/v2/units.schema.json",
+      "entity_id": "skeleton_warrior",
+      "name": "Skeleton Warrior",
+      "category": "Creature",
+      "magic_school": "Necromancy",
+      "rank": "I",
+      "description": "Undead soldier that captures altars quickly in large groups.",
+      "image_required": true,
+      "last_modified": "2026-02-11T02:15:23.302566+00:00",
+      "tags": [],
+      "changelog": [
+        {
+          "version": "0.0.1",
+          "date": "2026-02-08T09:49:16.838860+00:00",
+          "description": "Initial Closed Beta 2 Data"
+        }
+      ],
+      "mechanics": {
+        "capture_speed_modifier": 1.25,
+        "damage_modifiers": [
+          {
+            "multiplier": 1.6,
+            "condition": "Always",
+            "target_types": [
+              "Creature"
+            ]
+          },
+          {
+            "multiplier": 0.9,
+            "condition": "Always",
+            "target_types": [
+              "Building"
+            ]
+          }
+        ]
+      },
+      "damage": 15,
+      "health": 200,
+      "movement_speed": 3,
+      "movement_type": "Ground",
+      "dps": 15,
+      "attack_interval": 1.0,
+      "charges": 1,
+      "recharge_time": 10,
+      "cast_time": 0,
+      "population": 0
+    },
+    {
+      "$schema": "../../schemas/v2/units.schema.json",
+      "entity_id": "steam_tank",
+      "name": "Steam Tank",
+      "category": "Creature",
+      "magic_school": "Technomancy",
+      "rank": "III",
+      "description": "Long-range unit that deals heavy damage to a target.",
+      "image_required": true,
+      "last_modified": "2026-02-11T02:15:23.303541+00:00",
+      "tags": [],
+      "changelog": [
+        {
+          "version": "0.0.1",
+          "date": "2026-02-08T09:49:16.846123+00:00",
+          "description": "Initial Closed Beta 2 Data"
+        }
+      ],
+      "damage": 40,
+      "health": 130,
+      "range": 75,
+      "movement_speed": 3,
+      "movement_type": "Ground",
+      "dps": 40,
+      "attack_interval": 1.0,
+      "charges": 1,
+      "recharge_time": 10.0,
+      "cast_time": 0.0,
+      "population": 0
+    },
+    {
+      "$schema": "../../schemas/v2/units.schema.json",
+      "entity_id": "stone_behemoth",
+      "name": "Stone Behemoth",
+      "category": "Creature",
+      "magic_school": "Elemental",
+      "rank": "III",
+      "description": "Siege unit that hurls long-range boulders for heavy area damage.",
+      "image_required": true,
+      "last_modified": "2026-02-11T02:15:23.304488+00:00",
+      "tags": [],
+      "changelog": [
+        {
+          "version": "0.0.1",
+          "date": "2026-02-08T09:49:16.846434+00:00",
+          "description": "Initial Closed Beta 2 Data"
+        }
+      ],
+      "damage": 40,
+      "health": 210,
+      "range": 55,
+      "movement_speed": 2,
+      "movement_type": "Ground",
+      "dps": 40,
+      "attack_interval": 1.0,
+      "charges": 1,
+      "recharge_time": 10.0,
+      "cast_time": 0.0,
+      "population": 0
+    },
+    {
+      "$schema": "../../schemas/v2/units.schema.json",
+      "entity_id": "wolven_hunter",
+      "name": "Wolven Hunter",
+      "category": "Creature",
+      "magic_school": "War",
+      "rank": "II",
+      "description": "Hunter unit that fires powerful long-range bolts.",
+      "image_required": true,
+      "last_modified": "2026-02-11T02:15:23.305204+00:00",
+      "tags": [],
+      "changelog": [
+        {
+          "version": "0.0.1",
+          "date": "2026-02-08T09:49:16.841893+00:00",
+          "description": "Initial Closed Beta 2 Data"
+        }
+      ],
+      "damage": 16,
+      "health": 340,
+      "range": 75,
+      "movement_speed": 3,
+      "movement_type": "Ground",
+      "dps": 16,
+      "attack_interval": 1.0,
+      "charges": 1,
+      "recharge_time": 10.0,
+      "cast_time": 0.0,
+      "population": 0
+    },
+    {
+      "$schema": "../../schemas/v2/units.schema.json",
+      "entity_id": "wyvern",
+      "name": "Wyvern",
+      "category": "Creature",
+      "magic_school": "Wild",
+      "rank": "II",
+      "description": "Flying dragonkin that attacks with mid-range projectiles.",
+      "image_required": true,
+      "last_modified": "2026-02-11T02:15:23.305930+00:00",
+      "tags": [],
+      "changelog": [
+        {
+          "version": "0.0.1",
+          "date": "2026-02-08T09:49:16.842389+00:00",
+          "description": "Initial Closed Beta 2 Data"
+        }
+      ],
+      "damage": 19,
+      "mechanics": {
+        "damage_modifiers": [
+          {
+            "multiplier": 0.9,
+            "condition": "Always",
+            "target_types": [
+              "Building"
+            ]
+          }
+        ]
+      },
+      "health": 220,
+      "movement_speed": 7,
+      "movement_type": "Flying",
+      "range": 36,
+      "dps": 19,
+      "attack_interval": 1.0,
+      "charges": 1,
+      "recharge_time": 10,
+      "cast_time": 0,
+      "population": 0
+    }
+  ],
+  "spells": [
+    {
+      "$schema": "../../schemas/v2/spells.schema.json",
+      "entity_id": "astral_nova",
+      "name": "Astral Nova",
+      "category": "Spell",
+      "magic_school": "Astral",
+      "rank": "IV",
+      "description": "Massive projectile that deals heavy damage on impact.",
+      "image_required": true,
+      "last_modified": "2026-02-11T02:15:23.307103+00:00",
+      "tags": [],
+      "changelog": [
+        {
+          "version": "0.0.1",
+          "date": "2026-02-08T09:49:16.846742+00:00",
+          "description": "Initial Closed Beta 2 Data"
+        }
+      ],
+      "damage": 4200,
+      "range": 80,
+      "charges": 1,
+      "recharge_time": 10.0,
+      "cast_time": 0.0
+    },
+    {
+      "$schema": "../../schemas/v2/spells.schema.json",
+      "entity_id": "astral_shot",
+      "name": "Astral Shot",
+      "category": "Spell",
+      "magic_school": "Astral",
+      "rank": "II",
+      "description": "Rapid burst of projectiles.",
+      "image_required": true,
+      "last_modified": "2026-02-11T02:15:23.307711+00:00",
+      "tags": [],
+      "changelog": [
+        {
+          "version": "0.0.1",
+          "date": "2026-02-08T09:49:16.839777+00:00",
+          "description": "Initial Closed Beta 2 Data"
+        }
+      ],
+      "damage": 40,
+      "mechanics": {
+        "waves": 4
+      },
+      "range": 80,
+      "charges": 1,
+      "recharge_time": 10.0,
+      "cast_time": 0.0
+    },
+    {
+      "$schema": "../../schemas/v2/spells.schema.json",
+      "entity_id": "earthquake",
+      "name": "Earthquake",
+      "category": "Spell",
+      "magic_school": "Wild",
+      "rank": "III",
+      "description": "Ground shockwave that damages structures and staggers creatures significantly. Damage is split into 3 waves.",
+      "image_required": true,
+      "last_modified": "2026-02-11T02:15:23.308203+00:00",
+      "tags": [],
+      "changelog": [
+        {
+          "version": "0.0.1",
+          "date": "2026-02-08T09:49:16.843317+00:00",
+          "description": "Initial Closed Beta 2 Data"
+        }
+      ],
+      "damage": 76,
+      "mechanics": {
+        "waves": 3,
+        "stagger_modifier": true,
+        "damage_modifiers": [
+          {
+            "multiplier": 0,
+            "condition": "Always",
+            "target_types": [
+              "Flying"
+            ]
+          },
+          {
+            "multiplier": 1.3,
+            "condition": "Always",
+            "target_types": [
+              "Building"
+            ]
+          }
+        ],
+        "bonus_damage": [
+          {
+            "unit": "percent_max_hp",
+            "value": 0.3,
+            "target_types": [
+              "Building"
+            ]
+          }
+        ]
+      },
+      "range": 35,
+      "charges": 1,
+      "recharge_time": 10,
+      "cast_time": 0
+    },
+    {
+      "$schema": "../../schemas/v2/spells.schema.json",
+      "entity_id": "fire_ball",
+      "name": "Fire Ball",
+      "category": "Spell",
+      "magic_school": "Elemental",
+      "rank": "III",
+      "description": "Fast projectile that deals medium Fire damage to a target.",
+      "image_required": true,
+      "last_modified": "2026-02-11T02:15:23.308710+00:00",
+      "tags": [],
+      "changelog": [
+        {
+          "version": "0.0.1",
+          "date": "2026-02-08T09:49:16.843620+00:00",
+          "description": "Initial Closed Beta 2 Data"
+        }
+      ],
+      "damage": 530,
+      "range": 80,
+      "charges": 1,
+      "recharge_time": 10.0,
+      "cast_time": 0.0
+    },
+    {
+      "$schema": "../../schemas/v2/spells.schema.json",
+      "entity_id": "fire_rain",
+      "name": "Fire Rain",
+      "category": "Spell",
+      "magic_school": "Elemental",
+      "rank": "IV",
+      "description": "Fire projectiles that deal continuous damage over a wide area.",
+      "image_required": true,
+      "last_modified": "2026-02-11T02:15:23.309734+00:00",
+      "tags": [],
+      "changelog": [
+        {
+          "version": "0.0.1",
+          "date": "2026-02-08T09:49:16.847017+00:00",
+          "description": "Initial Closed Beta 2 Data"
+        }
+      ],
+      "mechanics": {
+        "damage_modifiers": [
+          {
+            "multiplier": 1.2,
+            "condition": "Always",
+            "target_types": [
+              "Creature"
+            ]
+          }
+        ]
+      },
+      "damage": 450,
+      "range": 45,
+      "duration": 12,
+      "charges": 1,
+      "recharge_time": 10,
+      "cast_time": 0
+    },
+    {
+      "$schema": "../../schemas/v2/spells.schema.json",
+      "entity_id": "fire_ray",
+      "name": "Fire Ray",
+      "category": "Spell",
+      "magic_school": "Elemental",
+      "rank": "I",
+      "description": "Focused beam that deals low Fire damage.",
+      "image_required": true,
+      "last_modified": "2026-02-11T02:15:23.310528+00:00",
+      "tags": [],
+      "changelog": [
+        {
+          "version": "0.0.1",
+          "date": "2026-02-08T09:49:16.836670+00:00",
+          "description": "Initial Closed Beta 2 Data"
+        }
+      ],
+      "mechanics": {
+        "waves": 5,
+        "interval": 1
+      },
+      "damage": 14,
+      "range": 45,
+      "charges": 1,
+      "recharge_time": 10.0,
+      "cast_time": 0.0
+    },
+    {
+      "$schema": "../../schemas/v2/spells.schema.json",
+      "entity_id": "flame_surge",
+      "name": "Flame Surge",
+      "category": "Spell",
+      "magic_school": "War",
+      "rank": "III",
+      "description": "Fire pulse that burns enemies and infuses nearby allies.",
+      "image_required": true,
+      "last_modified": "2026-02-11T02:15:23.311057+00:00",
+      "tags": [],
+      "changelog": [
+        {
+          "version": "0.0.1",
+          "date": "2026-02-08T09:49:16.843934+00:00",
+          "description": "Initial Closed Beta 2 Data"
+        }
+      ],
+      "range": 24,
+      "charges": 1,
+      "recharge_time": 10.0,
+      "cast_time": 0.0
+    },
+    {
+      "$schema": "../../schemas/v2/spells.schema.json",
+      "entity_id": "frost_surge",
+      "name": "Frost Surge",
+      "category": "Spell",
+      "magic_school": "Wild",
+      "rank": "III",
+      "description": "Ice pulse that freezes enemies and infuses nearby allies.",
+      "image_required": true,
+      "last_modified": "2026-02-11T02:15:23.311669+00:00",
+      "tags": [],
+      "changelog": [
+        {
+          "version": "0.0.1",
+          "date": "2026-02-08T09:49:16.844303+00:00",
+          "description": "Initial Closed Beta 2 Data"
+        }
+      ],
+      "range": 24,
+      "charges": 1,
+      "recharge_time": 10.0,
+      "cast_time": 0.0
+    },
+    {
+      "$schema": "../../schemas/v2/spells.schema.json",
+      "entity_id": "grand_lightning",
+      "name": "Grand Lightning",
+      "category": "Spell",
+      "magic_school": "Technomancy",
+      "rank": "IV",
+      "description": "Thunderstrike that deals extreme Lightning damage to a target.",
+      "image_required": true,
+      "last_modified": "2026-02-11T02:15:23.312373+00:00",
+      "tags": [],
+      "changelog": [
+        {
+          "version": "0.0.1",
+          "date": "2026-02-08T09:49:16.847345+00:00",
+          "description": "Initial Closed Beta 2 Data"
+        }
+      ],
+      "damage": 3675,
+      "range": 36,
+      "charges": 1,
+      "recharge_time": 10.0,
+      "cast_time": 0.0
+    },
+    {
+      "$schema": "../../schemas/v2/spells.schema.json",
+      "entity_id": "heal_ray",
+      "name": "Heal Ray",
+      "category": "Spell",
+      "magic_school": "Holy",
+      "rank": "I",
+      "description": "Healing ray that can be aimed at the ground to restore allies in the area.",
+      "image_required": true,
+      "last_modified": "2026-02-11T02:15:23.313243+00:00",
+      "tags": [],
+      "changelog": [
+        {
+          "version": "0.0.1",
+          "date": "2026-02-08T09:49:16.837289+00:00",
+          "description": "Initial Closed Beta 2 Data"
+        }
+      ],
+      "range": 45,
+      "value": 300,
+      "charges": 1,
+      "recharge_time": 10.0,
+      "cast_time": 0.0
+    },
+    {
+      "$schema": "../../schemas/v2/spells.schema.json",
+      "entity_id": "poison_grenade",
+      "name": "Poison Grenade",
+      "category": "Spell",
+      "magic_school": "Necromancy",
+      "rank": "III",
+      "description": "Grenade that creates a Poison cloud over the target area.",
+      "image_required": true,
+      "last_modified": "2026-02-11T02:15:23.314081+00:00",
+      "tags": [],
+      "changelog": [
+        {
+          "version": "0.0.1",
+          "date": "2026-02-08T09:49:16.845763+00:00",
+          "description": "Initial Closed Beta 2 Data"
+        }
+      ],
+      "damage": 25,
+      "range": 40,
+      "duration": 12,
+      "mechanics": {
+        "damage_modifiers": [
+          {
+            "multiplier": 0.0,
+            "target_types": [
+              "Building"
+            ]
+          }
+        ]
+      },
+      "charges": 1,
+      "recharge_time": 10,
+      "cast_time": 0
+    },
+    {
+      "$schema": "../../schemas/v2/spells.schema.json",
+      "entity_id": "resurrection",
+      "name": "Resurrection",
+      "category": "Spell",
+      "magic_school": "Holy",
+      "rank": "IV",
+      "description": "Magic circle that resurrects creatures with partial health.",
+      "image_required": true,
+      "last_modified": "2026-02-11T02:15:23.315249+00:00",
+      "tags": [],
+      "changelog": [
+        {
+          "version": "0.0.1",
+          "date": "2026-02-08T09:49:16.848165+00:00",
+          "description": "Initial Closed Beta 2 Data"
+        }
+      ],
+      "duration": 12,
+      "charges": 1,
+      "recharge_time": 10.0,
+      "cast_time": 0.0
+    },
+    {
+      "$schema": "../../schemas/v2/spells.schema.json",
+      "entity_id": "sacrifice",
+      "name": "Sacrifice",
+      "category": "Spell",
+      "magic_school": "Astral",
+      "rank": "I",
+      "description": "Dark ritual that recalls allies to recharge summons.",
+      "image_required": true,
+      "last_modified": "2026-02-11T02:15:23.316280+00:00",
+      "tags": [],
+      "changelog": [
+        {
+          "version": "0.0.1",
+          "date": "2026-02-08T09:49:16.838616+00:00",
+          "description": "Initial Closed Beta 2 Data"
+        }
+      ],
+      "mechanics": {
+        "waves": 5,
+        "interval": 1
+      },
+      "damage": 18,
+      "charges": 1,
+      "recharge_time": 10.0,
+      "cast_time": 0.0
+    },
+    {
+      "$schema": "../../schemas/v2/spells.schema.json",
+      "entity_id": "thunder_ray",
+      "name": "Thunder Ray",
+      "category": "Spell",
+      "magic_school": "Technomancy",
+      "rank": "I",
+      "description": "Focused beam that deals low Lightning damage.",
+      "image_required": true,
+      "last_modified": "2026-02-11T02:15:23.317054+00:00",
+      "tags": [],
+      "changelog": [
+        {
+          "version": "0.0.1",
+          "date": "2026-02-08T09:49:16.839433+00:00",
+          "description": "Initial Closed Beta 2 Data"
+        }
+      ],
+      "mechanics": {
+        "waves": 5,
+        "interval": 1
+      },
+      "damage": 14,
+      "range": 45,
+      "charges": 1,
+      "recharge_time": 10.0,
+      "cast_time": 0.0
+    }
+  ],
+  "titans": [
+    {
+      "$schema": "../../schemas/v2/titans.schema.json",
+      "entity_id": "gaia_beast",
+      "name": "Gaia Beast",
+      "category": "Titan",
+      "magic_school": "Titan",
+      "rank": "V",
+      "description": "The Wild Titan. Crushes all structures as it marches toward the Lifestones. Destroys and captures altars instantly.",
+      "image_required": true,
+      "last_modified": "2026-02-11T02:15:23.318022+00:00",
+      "tags": [],
+      "changelog": [
+        {
+          "version": "0.0.1",
+          "date": "2026-02-08T09:49:16.848523+00:00",
+          "description": "Initial Closed Beta 2 Data"
+        }
+      ],
+      "mechanics": {
+        "aura": [
+          {
+            "name": "Thorn Retaliation",
+            "description": "Retaliates against Spellcasters after receiving >4000 damage.",
+            "radius": 100,
+            "value": 0,
+            "interval": 0,
+            "effect": "Damage",
+            "target_types": [
+              "Enemy"
+            ]
+          }
+        ],
+        "auto_capture_altars": true
+      },
+      "damage": 100,
+      "health": 20000,
+      "movement_speed": 4,
+      "passive_health_regen": 50,
+      "heal_amount": 0,
+      "dps": 100,
+      "attack_interval": 1.0,
+      "charges": 1,
+      "recharge_time": 10,
+      "cast_time": 0,
+      "population": 0
+    },
+    {
+      "$schema": "../../schemas/v2/titans.schema.json",
+      "entity_id": "thanatos",
+      "name": "Thanatos",
+      "category": "Titan",
+      "magic_school": "Titan",
+      "rank": "V",
+      "description": "The Titan of Death. Weakens all nearby enemies and retaliates against Spellcasters.",
+      "image_required": true,
+      "last_modified": "2026-02-11T02:15:23.318636+00:00",
+      "tags": [],
+      "changelog": [
+        {
+          "version": "0.0.1",
+          "date": "2026-02-08T09:49:16.848821+00:00",
+          "description": "Initial Closed Beta 2 Data"
+        }
+      ],
+      "mechanics": {
+        "aura": [
+          {
+            "name": "Aura of Decay",
+            "description": "Reduces damage of nearby spellcasters.",
+            "radius": 15,
+            "value": 0.5,
+            "interval": 1.0,
+            "effect": "Debuff",
+            "target_types": [
+              "Enemy"
+            ]
+          },
+          {
+            "name": "Death's Retaliation",
+            "description": "Retaliates against Spellcasters after receiving >4000 damage.",
+            "radius": 100,
+            "value": 0,
+            "interval": 0,
+            "effect": "Damage",
+            "target_types": [
+              "Enemy"
+            ]
+          }
+        ]
+      },
+      "damage": 125,
+      "health": 15000,
+      "movement_speed": 4,
+      "dps": 125,
+      "attack_interval": 1.0,
+      "charges": 1,
+      "recharge_time": 10,
+      "cast_time": 0,
+      "population": 0
+    }
+  ],
+  "decks": [],
+  "game_config": {
+    "name": "Spellcasters Chronicles",
+    "version": "0.0.1",
+    "developer": "Quantic Dream",
+    "publisher": "Quantic Dream",
+    "genre": "3v3 Deckbuilder RTS MOBA",
+    "monetization": "Free to Play (Cosmetic Microtransactions)",
+    "description": "Spellcasters Chronicles is a 3v3 Deckbuilder RTS MOBA where players create decks of Spellcasters, Titans, and cards (Spells, Buildings, Creatures) to battle for control of the lanes.",
+    "links": {
+      "homepage": "https://www.spellcasterschronicles.com/en-US",
+      "steam": "https://store.steampowered.com/app/2458470/Spellcasters_Chronicles/"
+    },
+    "status": "Dev",
+    "last_modified": "2026-02-08T14:59:13.834248+00:00",
+    "changelog": [
+      {
+        "version": "0.0.1",
+        "date": "2026-02-04T15:25:39.104407Z",
+        "description": "Initial Closed Beta 2 Data"
+      }
+    ],
+    "$schema": "../schemas/v2/game_config.schema.json"
+  }
+}

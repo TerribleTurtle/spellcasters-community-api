@@ -1,5 +1,5 @@
 {
-  "$schema": "../../schemas/v1/unit.schema.json",
+  "$schema": "../../schemas/v2/units.schema.json",
   "entity_id": "lich",
   "name": "Lich",
   "category": "Creature",
@@ -7,7 +7,7 @@
   "rank": "II",
   "description": "Undead caster that inflicts curses to enemies, increasing the damage they take and reducing their movement speed.",
   "image_required": true,
-  "last_modified": "2026-02-11T00:26:48.727386+00:00",
+  "last_modified": "2026-02-11T02:15:23.296958+00:00",
   "tags": [],
   "changelog": [
     {
@@ -21,5 +21,9 @@
   "movement_speed": 5,
   "movement_type": "Flying",
   "dps": 5,
-  "attack_interval": 1.0
+  "attack_interval": 1.0,
+  "charges": 1,
+  "recharge_time": 10.0,
+  "cast_time": 0.0,
+  "population": 0
 }

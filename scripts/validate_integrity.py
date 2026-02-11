@@ -2,20 +2,26 @@ import json
 import os
 import glob
 import sys
-import jsonschema
 from PIL import Image
 import config
-from config import load_json
+from pathlib import Path
+
+# Try to import modern JSON schema libraries
+try:
+    from jsonschema import validators, ValidationError
+    from referencing import Registry, Resource
+except ImportError:
+    print("CRITICAL: 'jsonschema' (>=4.18) or 'referencing' library not found.")
+    sys.exit(1)
 
 """
 Data Integrity Validator
 
 This script performs strict validation on the project data:
-1. Schema Validation: Checks all JSON files against schemas in `schemas/v1/`.
+1. Schema Validation: Checks all JSON files against schemas in `schemas/v2/`.
 2. Asset Hygiene: checks if required images exist and meet size/dimension limits.
 3. Reference Integrity: Ensures logical consistency (e.g., Upgrade tags exist).
 """
-
 
 # Configuration
 SCHEMAS_DIR = config.SCHEMAS_DIR
@@ -32,27 +38,50 @@ SCHEMA_FILES = config.SCHEMA_FILES
 # Data Folder Mapping (Source -> Schema Type)
 FOLDER_TO_SCHEMA = config.FOLDER_TO_SCHEMA
 
+CACHE_FILE = ".asset_cache.json"
 
-
-def load_schema(name):
-    """
-    Loads a JSON schema by its friendly name key (e.g., 'incantation').
-
-    Args:
-        name (str): Key matching an entry in config.SCHEMA_FILES.
-
-    Returns:
-        dict: The parsed JSON schema.
-    """
-    path = os.path.join(SCHEMAS_DIR, SCHEMA_FILES[name])
+def load_json(filepath):
     try:
-        with open(path, 'r', encoding='utf-8') as f:
+        with open(filepath, 'r', encoding='utf-8') as f:
             return json.load(f)
     except Exception as e:
-        print(f"[FATAL] Could not load schema {name}: {e}")
-        sys.exit(1)
+        print(f"[FATAL] Could not load JSON {filepath}: {e}")
+        return None
 
-CACHE_FILE = ".asset_cache.json"
+def create_registry(schemas_dir):
+    """
+    Creates a referencing.Registry populated with all schemas from the directory.
+    Returns: (registry, schemas_map) where schemas_map maps filename -> URI.
+    """
+    registry = Registry()
+    schemas_map = {}
+    
+    # Walk all files, preserving structure
+    for root, _, files in os.walk(schemas_dir):
+        for file in files:
+            if file.endswith(".json"): # simple and schema.json
+                path = Path(os.path.join(root, file))
+                try:
+                    schema = load_json(path)
+                    if not schema: continue
+                    
+                    resource = Resource.from_contents(schema)
+                    
+                    # Register by absolute URI (standard)
+                    registry = registry.with_resource(path.as_uri(), resource)
+                    
+                    # Store filename lookup (e.g., "heroes.schema.json" -> URI)
+                    schemas_map[file] = path.as_uri()
+                    
+                    # Store relative key lookup (e.g., "definitions/core.schema.json")
+                    # This helps map config keys to URIs
+                    rel_key = os.path.relpath(path, schemas_dir).replace(os.sep, '/')
+                    schemas_map[rel_key] = path.as_uri()
+                    
+                except Exception as e:
+                    print(f"Error loading schema {file}: {e}")
+    
+    return registry, schemas_map
 
 def load_cache():
     """Loads the asset validation cache."""
@@ -101,7 +130,7 @@ def check_asset_exists(category, entity_id, is_required, cache):
         if final_path in cache:
             entry = cache[final_path]
             if entry.get("mtime") == mtime and entry.get("size") == size:
-                # Cache Hit - Return stored valid state (assuming 0 warnings if cached)
+                # Cache Hit - Return stored valid state
                 return 0
 
         # Cache Miss - Validate
@@ -126,7 +155,6 @@ def check_asset_exists(category, entity_id, is_required, cache):
         
     return warnings
 
-
 def validate_entry_assets(data, schema_key, folder, cache):
     """Checks if required assets exist for a data entry. Returns warning count."""
     if not data.get("image_required", True):
@@ -134,33 +162,80 @@ def validate_entry_assets(data, schema_key, folder, cache):
 
     # Deduce ID based on schema key
     obj_id = ""
-    if schema_key in ["unit", "spell", "titan", "consumable", "incantation"]:
+    if schema_key in ["unit", "spell", "titan", "consumable", "deck"]:
         obj_id = data.get("entity_id")
-    elif schema_key == "spellcaster":
-        obj_id = data.get("spellcaster_id")
+    elif schema_key == "hero":
+        obj_id = data.get("entity_id", data.get("spellcaster_id")) 
     
     if obj_id:
         return check_asset_exists(folder, obj_id, True, cache)
     return 0
 
+def validate_logic(db):
+    """Executes higher-order logic checks that validation schemas cannot express."""
+    warnings = 0
+    errors = 0
+    
+    # 1. Deck Validation: Must have at least 1 Rank I or II Creature
+    if "decks" in db and "units" in db:
+        print("Validating Deck Logic...")
+        units_db = {}
+        # Index units by ID for quick lookup
+        for f, data in db["units"].items():
+            if "entity_id" in data:
+                units_db[data["entity_id"]] = data
+        
+        for f, deck in db["decks"].items():
+            valid_starter = False
+            cards = deck.get("cards", [])
+            
+            for card_id in cards:
+                if card_id in units_db:
+                    unit = units_db[card_id]
+                    # Check if Creature and Rank I/II
+                    if unit.get("category") == "Creature":
+                        rank = unit.get("rank")
+                        if rank in ["I", "II"]:
+                            valid_starter = True
+                            break
+            
+            if not valid_starter:
+                print(f"[FAIL] Deck {os.path.basename(f)} invalid: Must contain at least one Rank I or II Creature.")
+                errors += 1
+            
+            # 2. Hero Validation: spellcaster_id must exist
+            sid = deck.get("spellcaster_id")
+            if sid:
+                # We need a set of valid hero IDs.
+                # iterate db["heroes"] to find match.
+                # Note: heroes db might be empty if no heroes loaded, but we checked logic only if "decks" and "units" exist.
+                # Let's verify heroes exist too.
+                hero_found = False
+                if "heroes" in db:
+                    for hf, hdata in db["heroes"].items():
+                        # Hero ID can be entity_id or spellcaster_id (legacy)
+                        if hdata.get("entity_id") == sid or hdata.get("spellcaster_id") == sid:
+                            hero_found = True
+                            break
+                
+                if not hero_found:
+                    print(f"[FAIL] Deck {os.path.basename(f)} invalid: spellcaster_id '{sid}' does not match any Hero.")
+                    errors += 1
+
+    return errors, warnings
+
 def validate_integrity():
     """
     Main validation routine.
-    
-    Orchestrates the validation process:
-    1. Loads all data into a memory DB for cross-reference.
-    2. Validates each file against its JSON schema.
-    3. Checks for missing or invalid assets.
     """
-    print("Starting Integrity Validation...")
+    print("Starting Integrity Validation (Robust Mode)...")
     errors = 0
     warnings = 0
     
-    # 1. Load All Data for Cross-Reference & Validation
+    # 1. Load All Data
     db = {}
     cache = load_cache()
     
-    # Pre-load DB dynamically based on config
     print("Loading data into memory...")
     for folder, schema_key in FOLDER_TO_SCHEMA.items():
         if folder not in db:
@@ -174,12 +249,13 @@ def validate_integrity():
             if not data: 
                 errors += 1
                 continue
-            
-            # Store with filename as key for easy reference logic, or ID?
-            # Storing by filename for now to match old logic's ability to identify source
             db[folder][f] = data
 
-    # 2. Pre-calculate Global Sets for O(1) Lookups
+    # 2. Build Schema Registry
+    print("Building Schema Registry...")
+    registry, schemas_map = create_registry(SCHEMAS_DIR)
+    
+    # 3. Pre-calculate Global Sets
     print("Building reference indices...")
     all_game_tags = set()
     if "units" in db:
@@ -187,42 +263,54 @@ def validate_integrity():
             for t in u.get("tags", []): 
                 all_game_tags.add(t)
 
-    # 3. Iterate and Validate (InMemory)
-    schemas = {}
-    for k, v in SCHEMA_FILES.items():
-        schemas[k] = load_schema(k)
-
-    # Create a resolver for local schema references (like common.schema.json)
-    # We point it to the schemas directory
-    base_uri = f"file:///{SCHEMAS_DIR.replace(os.sep, '/')}/"
-    
-    # Pre-test load common schema to ensure it exists
-    common_schema = schemas.get("common")
-    
-    # Validate Folders
+    # 4. Iterate and Validate
     for folder, schema_key in FOLDER_TO_SCHEMA.items():
         print(f"Validating {folder}...")
         
         if folder not in db: continue
         
-        target_schema = schemas[schema_key]
-        resolver = jsonschema.RefResolver(base_uri, target_schema, store=schemas)
+        # Get target schema URI
+        # Config uses simple keys. We need to map them to filenames -> URIs.
+        # SCHEMA_FILES maps 'hero' -> 'heroes.schema.json'
+        filename = SCHEMA_FILES.get(schema_key)
+        if not filename:
+            print(f"[WARN] No schema config found for key {schema_key}")
+            continue
+            
+        target_uri = schemas_map.get(filename)
+        if not target_uri:
+            print(f"[FATAL] Schema file {filename} not found in registry.")
+            errors += 1
+            continue
+
+        # Prepare Validator
+        resolver = registry.resolver()
+        resolved_schema = resolver.lookup(target_uri)
+        schema_obj = resolved_schema.contents
+        
+        # Inject $id if missing for relative resolution
+        if "$id" not in schema_obj:
+            schema_obj["$id"] = target_uri
+
+        ValidatorClass = validators.validator_for(schema_obj)
+        validator = ValidatorClass(schema_obj, registry=registry)
 
         for filepath, data in db[folder].items():
             # Schema Validation
             try:
-                # We use specific Validator class to allow passing resolver
-                validator = jsonschema.Draft7Validator(target_schema, resolver=resolver)
                 validator.validate(data)
-            except jsonschema.ValidationError as e:
-                print(f"[FAIL] Schema Error in {filepath}: {e.message}")
+            except ValidationError as e:
+                print(f"[FAIL] Schema Error in {os.path.basename(filepath)}: {e.message}")
+                print(f"  -> Path: {e.json_path}")
                 errors += 1
-                continue
+            except Exception as e:
+                print(f"[FAIL] validation exception {os.path.basename(filepath)}: {e}")
+                errors += 1
             
             # Asset Check
             warnings += validate_entry_assets(data, schema_key, folder, cache)
             
-            # Logic: Upgrade -> Tags (Optimized O(N))
+            # Logic: Upgrade -> Tags
             if schema_key == "upgrade":
                 targets = data.get("target_tags", [])
                 for t in targets:
@@ -230,17 +318,28 @@ def validate_integrity():
                         print(f"[WARN] Upgrade {os.path.basename(filepath)} targets tag '{t}' which no unit possesses.")
                         warnings += 1
 
+    # 5. Logic Validation
+    l_err, l_warn = validate_logic(db)
+    errors += l_err
+    warnings += l_warn
 
-    # Validate Game Info
-    game_info_path = os.path.join(DATA_DIR, "game_info.json")
-    if os.path.exists(game_info_path):
-        data = load_json(game_info_path)
-        try:
-            jsonschema.validate(instance=data, schema=schemas["game_info"])
-        except jsonschema.ValidationError as e:
-            print(f"[FAIL] Game Info Schema Error: {e.message}")
-            errors += 1
-            
+    # Validate Game Config
+    game_config_path = os.path.join(DATA_DIR, "game_config.json")
+    if os.path.exists(game_config_path):
+        data = load_json(game_config_path)
+        if data:
+            uri = schemas_map.get("game_config.schema.json")
+            if uri:
+                try:
+                    resolved = registry.resolver().lookup(uri)
+                    s_obj = resolved.contents
+                    if "$id" not in s_obj: s_obj["$id"] = uri
+                    v = validators.validator_for(s_obj)(s_obj, registry=registry)
+                    v.validate(data)
+                except ValidationError as e:
+                     print(f"[FAIL] Game Config Schema Error: {e.message}")
+                     errors += 1
+
     # Save Cache
     save_cache(cache)
     

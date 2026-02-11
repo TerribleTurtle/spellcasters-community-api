@@ -1,0 +1,60 @@
+{
+  "$schema": "https://json-schema.org/draft/2019-09/schema",
+  "$id": "https://spellcasters.gg/schemas/v2/units.schema.json",
+  "title": "Unit",
+  "description": "Definition for Creatures and Buildings.",
+  "type": "object",
+  "allOf": [
+    { "$ref": "definitions/core.schema.json#/definitions/identity" },
+    { "$ref": "definitions/core.schema.json#/definitions/meta" },
+    { "$ref": "definitions/core.schema.json#/definitions/assets" },
+    { "$ref": "definitions/magic.schema.json#/definitions/magic_props" },
+    { "$ref": "definitions/stats.schema.json#/definitions/stats" },
+    { "$ref": "definitions/resource.schema.json#/definitions/cost" }
+  ],
+  "properties": {
+    "category": {
+      "$ref": "definitions/enums.schema.json#/definitions/category_enum"
+    },
+    
+    "size": { "$ref": "definitions/enums.schema.json#/definitions/size_enum" },
+    "movement_type": { "$ref": "definitions/enums.schema.json#/definitions/movement_type" },
+
+
+    "mechanics": { "$ref": "definitions/mechanics.schema.json#/definitions/mechanics" }
+  },
+  "if": {
+    "properties": { "category": { "const": "Building" } }
+  },
+  "then": {
+    "properties": {
+      "movement_speed": { "const": 0 }
+    }
+  },
+  "else": {
+    "required": ["movement_type", "movement_speed"]
+  },
+  "required": ["category"],
+  "examples": [
+    {
+      "entity_id": "goblin_grunt",
+      "name": "Goblin Grunt",
+      "description": "A small green creature.",
+      "tags": ["minion"],
+      "last_modified": "2026-02-11T00:00:00Z",
+      "changelog": [],
+      "category": "Creature",
+      "magic_school": "Wild",
+      "rank": "I",
+      "size": "Small",
+      "health": 50,
+      "damage": 5,
+      "attack_interval": 1.2,
+      "range": 1,
+      "movement_speed": 6,
+      "movement_type": "Ground",
+      "population": 1
+    }
+  ],
+  "unevaluatedProperties": false
+}

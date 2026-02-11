@@ -15,7 +15,7 @@ pip install -r requirements.txt
 ### `build_api.py`
 
 **Usage:** `python scripts/build_api.py`
-Aggregates individual JSON files from `data/` into consolidated API responses in `api/v1/`.
+Aggregates individual JSON files from `data/` into consolidated API responses in `api/v2/`.
 
 - Generates collection files (e.g., `units.json`, `spells.json`).
 - Generates a master `all_data.json`.
@@ -25,7 +25,7 @@ Aggregates individual JSON files from `data/` into consolidated API responses in
 **Usage:** `python scripts/validate_integrity.py`
 Performs strict validation on the data to ensure API quality.
 
-- **Schema Validation:** Checks every JSON file against its schema in `schemas/v1/`.
+- **Schema Validation:** Checks every JSON file against its schema in `schemas/v2/`.
 - **Reference Integrity:** Ensures logical links are valid (e.g., Decks reference existing Cards).
 - **Asset Hygiene:** Checks for missing images and warns if images are too large (>100KB) or have incorrect dimensions.
 
@@ -33,6 +33,11 @@ Performs strict validation on the data to ensure API quality.
 
 **Usage:** `python scripts/update_timestamps.py`
 Automatically updates the `last_modified` timestamp in JSON files that have changed in git. This is typically run by CI/CD workflows but can be run locally before committing.
+
+### `audit_v2.py`
+
+**Usage:** `python scripts/audit_v2.py`
+Tools for performing deep audits of the data and schema layers. These are typically run during major refactors or prior to a release to catch subtle logical errors.
 
 ### `config.py`
 

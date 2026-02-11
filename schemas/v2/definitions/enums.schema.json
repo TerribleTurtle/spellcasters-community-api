@@ -1,0 +1,68 @@
+{
+  "$schema": "https://json-schema.org/draft/2019-09/schema",
+  "$id": "https://spellcasters.gg/schemas/v2/definitions/enums.schema.json",
+  "title": "Shared Enums",
+  "description": "Shared enumeration definitions.",
+  "definitions": {
+    "movement_type": {
+        "type": "string",
+        "description": "Movement classification used for targeting rules. 'Ground' is default, 'Flying' ignores terrain, 'Hover' ignores liquids.",
+        "enum": ["Ground", "Flying", "Hover"]
+    },
+    "target_type_enum": {
+      "type": "string",
+      "description": "Valid target categories.",
+      "enum": ["Building", "Creature", "Spellcaster", "Unit", "All", "Lifestone", "Flying", "Ground", "Hover", "Ally", "Enemy"]
+    },
+    "source_type_enum": {
+      "type": "string",
+      "description": "Origin of damage or effect. Used for filtering damage reduction modifiers.",
+      "enum": ["Attack", "Spell", "Tower", "Unit", "Effect"]
+    },
+    "category_enum": {
+      "type": "string",
+      "description": "Top-level entity category.",
+      "enum": ["Spellcaster", "Creature", "Building", "Spell", "Titan", "Consumable"]
+    },
+    "consumable_effect_enum": {
+      "type": "string",
+      "description": "Effect type for consumables.",
+      "enum": ["Heal", "Charge_Refill"]
+    },
+    "spawner_trigger_enum": {
+      "type": "string",
+      "description": "Event that triggers a spawner.",
+      "enum": ["Interval", "Death", "Spawn"]
+    },
+    "comparison_operator_enum": {
+      "type": "string",
+      "description": "Mathematical comparison operators.",
+      "enum": [">", ">=", "<", "<=", "==", "!="]
+    },
+    "aura_effect_enum": {
+      "type": "string",
+      "description": "Type of effect applied by an aura.",
+      "enum": ["Heal", "Damage", "Buff", "Debuff"]
+    },
+    "calculation_unit_enum": {
+      "type": "string",
+      "description": "Unit of measurement for value calculation.",
+      "enum": ["flat", "percent_max_hp", "percent_current_hp"]
+    },
+    "class_enum": {
+      "type": "string",
+      "description": "Hero class archetype.",
+      "enum": ["Conqueror", "Duelist", "Enchanter"]
+    },
+    "size_enum": {
+      "type": "string",
+      "description": "Unit physical size category.",
+      "enum": ["Small", "Medium", "Large"]
+    },
+    "game_status_enum": {
+      "type": "string",
+      "description": "Development or live status of the game.",
+      "enum": ["Live", "Beta", "Alpha", "Dev", "In Development"]
+    }
+  }
+}

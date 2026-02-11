@@ -1,0 +1,31 @@
+{
+  "$schema": "https://json-schema.org/draft/2019-09/schema",
+  "$id": "https://spellcasters.gg/schemas/v2/titans.schema.json",
+  "title": "Titan",
+  "description": "Unique Class-Ultimate entity.",
+  "type": "object",
+  "allOf": [
+    { "$ref": "definitions/core.schema.json#/definitions/identity" },
+    { "$ref": "definitions/core.schema.json#/definitions/meta" },
+    { "$ref": "definitions/core.schema.json#/definitions/assets" },
+    { "$ref": "definitions/magic.schema.json#/definitions/magic_props" },
+    { "$ref": "definitions/stats.schema.json#/definitions/stats" },
+    { "$ref": "definitions/resource.schema.json#/definitions/cost" }
+  ],
+  "properties": {
+    "category": {
+      "$ref": "definitions/enums.schema.json#/definitions/category_enum"
+    },
+    
+    "passive_health_regen": { "type": "integer", "minimum": 0 },
+    "heal_amount": { "type": "integer", "minimum": 0 },
+    "healing_bonus": { "type": "integer", "minimum": 0 },
+    "mechanics": {
+      "allOf": [
+        { "$ref": "definitions/mechanics.schema.json#/definitions/mechanics" }
+      ]
+    }
+  },
+  "required": ["category"],
+  "unevaluatedProperties": false
+}

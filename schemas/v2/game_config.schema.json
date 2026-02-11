@@ -1,0 +1,31 @@
+{
+  "$schema": "https://json-schema.org/draft/2019-09/schema",
+  "$id": "https://spellcasters.gg/schemas/v2/game_config.schema.json",
+  "title": "Game Info",
+  "description": "General information about the game.",
+  "type": "object",
+  "required": ["name", "version", "developer", "publisher", "genre", "links", "description", "last_modified"],
+  "unevaluatedProperties": false,
+  "allOf": [
+    { "$ref": "definitions/core.schema.json#/definitions/meta" }
+  ],
+  "properties": {
+    "version": { "type": "string", "pattern": "^\\d+\\.\\d+\\.\\d+$" },
+    "name": { "$ref": "definitions/core.schema.json#/definitions/identity/properties/name" },
+    "developer": { "type": "string" },
+    "publisher": { "type": "string" },
+    "genre": { "type": "string" },
+    "monetization": { "type": "string", "description": "e.g., F2P, Subscription, Box Price" },
+    "status": { "$ref": "definitions/enums.schema.json#/definitions/game_status_enum" },
+    "description": { "$ref": "definitions/core.schema.json#/definitions/identity/properties/description" },
+    "links": {
+      "type": "object",
+      "properties": {
+        "homepage": { "type": "string", "format": "uri" },
+        "steam": { "type": "string", "format": "uri" },
+        "discord": { "type": "string", "format": "uri" }
+      },
+      "additionalProperties": false
+    }
+  }
+}

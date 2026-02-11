@@ -1,5 +1,5 @@
 {
-  "$schema": "../../schemas/v1/spell.schema.json",
+  "$schema": "../../schemas/v2/spells.schema.json",
   "entity_id": "earthquake",
   "name": "Earthquake",
   "category": "Spell",
@@ -7,7 +7,7 @@
   "rank": "III",
   "description": "Ground shockwave that damages structures and staggers creatures significantly. Damage is split into 3 waves.",
   "image_required": true,
-  "last_modified": "2026-02-11T00:26:48.723883+00:00",
+  "last_modified": "2026-02-11T02:15:23.308203+00:00",
   "tags": [],
   "changelog": [
     {
@@ -19,26 +19,35 @@
   "damage": 76,
   "mechanics": {
     "waves": 3,
-    "stagger_modifier": "High",
+    "stagger_modifier": true,
     "damage_modifiers": [
       {
-        "target_type": "Flying",
         "multiplier": 0,
-        "condition": "Always"
+        "condition": "Always",
+        "target_types": [
+          "Flying"
+        ]
       },
       {
-        "target_type": "Building",
         "multiplier": 1.3,
-        "condition": "Always"
+        "condition": "Always",
+        "target_types": [
+          "Building"
+        ]
       }
     ],
     "bonus_damage": [
       {
-        "target_type": "Building",
         "unit": "percent_max_hp",
-        "value": 0.3
+        "value": 0.3,
+        "target_types": [
+          "Building"
+        ]
       }
     ]
   },
-  "range": 35
+  "range": 35,
+  "charges": 1,
+  "recharge_time": 10,
+  "cast_time": 0
 }

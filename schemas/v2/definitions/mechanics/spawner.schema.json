@@ -1,0 +1,22 @@
+{
+  "$schema": "https://json-schema.org/draft/2019-09/schema",
+  "$id": "https://spellcasters.gg/schemas/v2/definitions/mechanics/spawner.schema.json",
+  "title": "Spawner",
+  "description": "Mechanic that spawns other units.",
+  "definitions": {
+    "spawner": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+            "unit_id": { "type": "string", "pattern": "^[a-z0-9_]+$" },
+            "count": { "type": "integer", "minimum": 1 },
+            "interval": { "type": "number", "minimum": 0 },
+            "trigger": { "$ref": "../enums.schema.json#/definitions/spawner_trigger_enum" }
+        },
+        "additionalProperties": false,
+        "required": ["unit_id", "count", "trigger"]
+      }
+    }
+  }
+}

@@ -1,5 +1,5 @@
 {
-  "$schema": "../../schemas/v1/spell.schema.json",
+  "$schema": "../../schemas/v2/spells.schema.json",
   "entity_id": "resurrection",
   "name": "Resurrection",
   "category": "Spell",
@@ -7,7 +7,7 @@
   "rank": "IV",
   "description": "Magic circle that resurrects creatures with partial health.",
   "image_required": true,
-  "last_modified": "2026-02-11T00:26:48.724883+00:00",
+  "last_modified": "2026-02-11T02:15:23.315249+00:00",
   "tags": [],
   "changelog": [
     {
@@ -16,5 +16,8 @@
       "description": "Initial Closed Beta 2 Data"
     }
   ],
-  "duration": 12
+  "duration": 12,
+  "charges": 1,
+  "recharge_time": 10.0,
+  "cast_time": 0.0
 }

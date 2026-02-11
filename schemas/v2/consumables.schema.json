@@ -1,0 +1,24 @@
+{
+  "$schema": "https://json-schema.org/draft/2019-09/schema",
+  "$id": "https://spellcasters.gg/schemas/v2/consumables.schema.json",
+  "title": "Consumable",
+  "description": "Items found in chests.",
+  "type": "object",
+  "allOf": [
+    { "$ref": "definitions/core.schema.json#/definitions/identity" },
+    { "$ref": "definitions/core.schema.json#/definitions/meta" },
+    { "$ref": "definitions/core.schema.json#/definitions/assets" }
+  ],
+  "properties": {
+    "category": {
+      "$ref": "definitions/enums.schema.json#/definitions/category_enum"
+    },
+    
+    "effect_type": { "$ref": "definitions/enums.schema.json#/definitions/consumable_effect_enum" },
+    "value": { "type": "integer" },
+    "duration": { "type": "number", "minimum": 0 },
+    "stack_size": { "type": "integer", "minimum": 1 }
+  },
+  "required": ["category"],
+  "unevaluatedProperties": false
+}

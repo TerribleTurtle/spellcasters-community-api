@@ -59,20 +59,20 @@ def test_upgrade_target_tags(data_loader):
                 
     assert len(errors) == 0, "\n".join(errors)
 
-def test_spellcaster_id_matches_filename(data_loader):
+def test_entity_id_matches_filename(data_loader):
     """
-    Ensures that the 'spellcaster_id' matches the filename (without extension).
+    Ensures that the 'entity_id' matches the filename (without extension).
     """
     errors = []
     
-    for caster in data_loader.get("spellcasters", []):
+    for caster in data_loader.get("heroes", []):
         filename = caster.get("_filename", "")
         # Remove extension
         basename = os.path.splitext(filename)[0]
         
-        sc_id = caster.get("spellcaster_id")
+        ent_id = caster.get("entity_id")
         
-        if sc_id != basename:
-            errors.append(f"[{filename}] spellcaster_id '{sc_id}' does not match filename '{basename}'")
+        if ent_id != basename:
+            errors.append(f"[{filename}] entity_id '{ent_id}' does not match filename '{basename}'")
             
     assert len(errors) == 0, "\n".join(errors)

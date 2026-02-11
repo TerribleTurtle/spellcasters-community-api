@@ -1,5 +1,5 @@
 {
-  "$schema": "../../schemas/v1/titan.schema.json",
+  "$schema": "../../schemas/v2/titans.schema.json",
   "entity_id": "thanatos",
   "name": "Thanatos",
   "category": "Titan",
@@ -7,7 +7,7 @@
   "rank": "V",
   "description": "The Titan of Death. Weakens all nearby enemies and retaliates against Spellcasters.",
   "image_required": true,
-  "last_modified": "2026-02-11T01:13:54.455821+00:00",
+  "last_modified": "2026-02-11T02:15:23.318636+00:00",
   "tags": [],
   "changelog": [
     {
@@ -25,7 +25,9 @@
         "value": 0.5,
         "interval": 1.0,
         "effect": "Debuff",
-        "target_type": "Enemy"
+        "target_types": [
+          "Enemy"
+        ]
       },
       {
         "name": "Death's Retaliation",
@@ -34,7 +36,9 @@
         "value": 0,
         "interval": 0,
         "effect": "Damage",
-        "target_type": "Enemy"
+        "target_types": [
+          "Enemy"
+        ]
       }
     ]
   },
@@ -42,5 +46,9 @@
   "health": 15000,
   "movement_speed": 4,
   "dps": 125,
-  "attack_interval": 1.0
+  "attack_interval": 1.0,
+  "charges": 1,
+  "recharge_time": 10,
+  "cast_time": 0,
+  "population": 0
 }

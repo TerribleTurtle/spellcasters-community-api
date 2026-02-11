@@ -1,0 +1,44 @@
+{
+  "$schema": "https://json-schema.org/draft/2019-09/schema",
+  "$id": "https://spellcasters.gg/schemas/v2/definitions/resource.schema.json",
+  "title": "Resource Definitions",
+  "description": "Costs, charges, and cooldown mechanics.",
+  "definitions": {
+    "cost": {
+      "type": "object",
+      "properties": {
+        "charges": {
+          "type": "integer",
+          "minimum": 0,
+          "default": 1,
+          "description": "Number of uses before recharge."
+        },
+        "recharge_time": {
+          "type": "number",
+          "minimum": 0,
+          "default": 10.0,
+          "description": "Time in seconds to restore one charge."
+        },
+        "cast_time": {
+          "type": "number",
+          "minimum": 0,
+          "default": 0.0,
+          "description": "Time in seconds to activate/spawn."
+        },
+        "population": {
+          "$ref": "#/definitions/population_cost"
+        }
+      },
+      "required": [
+        "charges",
+        "recharge_time"
+      ]
+    },
+    "population_cost": {
+      "type": "integer",
+      "minimum": 0,
+      "default": 0,
+      "description": "Population cost (Units only)."
+    }
+  }
+}

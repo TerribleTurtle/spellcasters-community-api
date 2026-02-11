@@ -36,7 +36,7 @@ def test_build_api_generates_files(temp_output_dir):
         "all_data.json",
         "units.json",
         "spells.json",
-        "game_info.json"
+        "game_config.json"
     ]
     
     for fname in expected_files:

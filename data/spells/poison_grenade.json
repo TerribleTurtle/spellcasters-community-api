@@ -1,5 +1,5 @@
 {
-  "$schema": "../../schemas/v1/spell.schema.json",
+  "$schema": "../../schemas/v2/spells.schema.json",
   "entity_id": "poison_grenade",
   "name": "Poison Grenade",
   "category": "Spell",
@@ -7,7 +7,7 @@
   "rank": "III",
   "description": "Grenade that creates a Poison cloud over the target area.",
   "image_required": true,
-  "last_modified": "2026-02-11T00:26:48.724775+00:00",
+  "last_modified": "2026-02-11T02:15:23.314081+00:00",
   "tags": [],
   "changelog": [
     {
@@ -22,9 +22,14 @@
   "mechanics": {
     "damage_modifiers": [
       {
-        "target_type": "Building",
-        "multiplier": 0.0
+        "multiplier": 0.0,
+        "target_types": [
+          "Building"
+        ]
       }
     ]
-  }
+  },
+  "charges": 1,
+  "recharge_time": 10,
+  "cast_time": 0
 }

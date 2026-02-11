@@ -1,5 +1,5 @@
 {
-  "$schema": "../../schemas/v1/unit.schema.json",
+  "$schema": "../../schemas/v2/units.schema.json",
   "entity_id": "ruin_spider",
   "name": "Ruin Spider",
   "category": "Creature",
@@ -7,7 +7,7 @@
   "rank": "I",
   "description": "Fast creature that explodes on contact, dealing bonus damage to structures.",
   "image_required": true,
-  "last_modified": "2026-02-11T00:26:48.727988+00:00",
+  "last_modified": "2026-02-11T02:15:23.301737+00:00",
   "tags": [],
   "changelog": [
     {
@@ -19,19 +19,25 @@
   "mechanics": {
     "damage_modifiers": [
       {
-        "target_type": "Creature",
         "multiplier": 0.5,
-        "condition": "Always"
+        "condition": "Always",
+        "target_types": [
+          "Creature"
+        ]
       },
       {
-        "target_type": "Spellcaster",
         "multiplier": 0.5,
-        "condition": "Always"
+        "condition": "Always",
+        "target_types": [
+          "Spellcaster"
+        ]
       },
       {
-        "target_type": "Building",
         "multiplier": 2.5,
-        "condition": "Always"
+        "condition": "Always",
+        "target_types": [
+          "Building"
+        ]
       }
     ]
   },
@@ -40,5 +46,9 @@
   "movement_speed": 7,
   "movement_type": "Ground",
   "dps": 20,
-  "attack_interval": 1.0
+  "attack_interval": 1.0,
+  "charges": 1,
+  "recharge_time": 10,
+  "cast_time": 0,
+  "population": 0
 }

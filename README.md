@@ -13,7 +13,7 @@ It is **free to use** and **open for anyone to contribute**.
 
 ## 📚 Documentation
 
-Please refer to [docs/CONTRIBUTING.md](docs/CONTRIBUTING.md) to learn how to:
+Please refer to [CONTRIBUTING.md](CONTRIBUTING.md) to learn how to:
 
 - Use this data in your own projects
 - Add new units or items
@@ -24,23 +24,23 @@ Please refer to [docs/CONTRIBUTING.md](docs/CONTRIBUTING.md) to learn how to:
 This project is a fan-made initiative.
 
 - **Looking for the game devs?** [Join the Official Game Discord](https://discord.com/invite/spellcasters-chronicles-1425209254847058003).
-- **Want to help with this API?** Check out [docs/CONTRIBUTING.md](docs/CONTRIBUTING.md).
+- **Want to help with this API?** Check out [CONTRIBUTING.md](CONTRIBUTING.md).
 
 ## 🌐 Live API Usage
 
-**Base URL:** `https://terribleturtle.github.io/spellcasters-community-api/api/v1/`
+**Base URL:** `https://terribleturtle.github.io/spellcasters-community-api/api/v2/`
 
 Developers should use this base URL to fetch data for their applications.
 
 - **Landing Page:** [View Live Site](https://terribleturtle.github.io/spellcasters-community-api/)
-- **Game Info:** [game_info.json](https://terribleturtle.github.io/spellcasters-community-api/api/v1/game_info.json)
-- **Units:** [units.json](https://terribleturtle.github.io/spellcasters-community-api/api/v1/units.json)
+- **Game Info:** [game_config.json](https://terribleturtle.github.io/spellcasters-community-api/api/v2/game_config.json)
+- **Units:** [units.json](https://terribleturtle.github.io/spellcasters-community-api/api/v2/units.json)
 
 ### 🌟 API in Action
 
 Check out [SpellcastersDB](https://www.spellcastersdb.com/), a community-built database and deckbuilder powered by this API!
 
-Full endpoint documentation is available in [docs/CONTRIBUTING.md](docs/CONTRIBUTING.md).
+Full endpoint documentation is available in [CONTRIBUTING.md](CONTRIBUTING.md).
 
 ## 🚀 Quick Start (Local Build)
 
@@ -52,23 +52,19 @@ Full endpoint documentation is available in [docs/CONTRIBUTING.md](docs/CONTRIBU
 3.  **Build & Verify:**
 
     ```bash
-    # Windows
-    verify.bat
-
-    # Mac/Linux
-    python -m pytest && python scripts/build_api.py
+    python scripts/validate_integrity.py
     ```
 
-    See `api/v1/units.json`
+    See `api/v2/units.json`
 
 ## 🤝 Contributing
 
 This project is built by the community, for the community. **Anyone is free to contribute!**
 
-Please read [docs/CONTRIBUTING.md](docs/CONTRIBUTING.md) for details.
+Please read [CONTRIBUTING.md](CONTRIBUTING.md) for details.
 
-- **Found a typo?** Reference the [Quick Fix Guide](docs/CONTRIBUTING.md#%E2%9A%A1-quick-fix-typos--small-edits).
-- **Adding data?** See the [Advanced Guide](docs/CONTRIBUTING.md#%F0%9F%9B%A0%EF%B8%8F-advanced-adding-new-data).
+- **Found a typo?** Reference the [Quick Fix Guide](CONTRIBUTING.md#%E2%9A%A1-quick-fix-typos--small-edits).
+- **Adding data?** See the [Advanced Guide](CONTRIBUTING.md#%F0%9F%9B%A0%EF%B8%8F-advanced-adding-new-data).
 
 ## 📄 License
 

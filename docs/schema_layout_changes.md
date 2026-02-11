@@ -7,11 +7,11 @@ This document outlines the changes made during the recent Schema Integrity & Val
 
 ## 1. Centralized Schema Definitions (DRY)
 
-Commonly used enum values and property definitions have been moved to `schemas/v1/common.schema.json` to prevent duplication and ensure consistency.
+Commonly used enum values and property definitions have been moved to `schemas/v2/definitions/*.schema.json` to prevent duplication and ensure consistency.
 
 ### New Shared Definitions:
 
-- **`magic_school`**: Enum of all magic schools (Elemental, Wild, War, etc.)
+- **`magic_school`**: Enum of all magic schools (Elemental, Wild, War, etc.) -> `magic.schema.json`
 - **`rank`**: Enum of ranks (I, II, III, IV, V)
 - **`movement_type`**: Enum of movement types (Ground, Flying, Hover)
 - **`image_required`**: Boolean flag (default: true)
@@ -22,7 +22,7 @@ Commonly used enum values and property definitions have been moved to `schemas/v
 **Example Usage:**
 
 ```json
-"magic_school": { "$ref": "common.schema.json#/definitions/magic_school" }
+"magic_school": { "$ref": "definitions/magic.schema.json#/definitions/magic_school" }
 ```
 
 ## 2. Strict Typing Enforcement
@@ -52,7 +52,7 @@ Titan data files (`gaia_beast.json`, `thanatos.json`) now require a `$schema` re
 **Required Schema Reference:**
 
 ```json
-"$schema": "../../schemas/v1/titan.schema.json"
+"$schema": "../../schemas/v2/titan.schema.json"
 ```
 
 ## 6. Validation Script

@@ -1,5 +1,5 @@
 {
-  "$schema": "../../schemas/v1/unit.schema.json",
+  "$schema": "../../schemas/v2/units.schema.json",
   "entity_id": "harpy",
   "name": "Harpy",
   "category": "Creature",
@@ -7,7 +7,7 @@
   "rank": "I",
   "description": "Agile flying creature that excels at defeating ground units.",
   "image_required": true,
-  "last_modified": "2026-02-11T00:26:48.726972+00:00",
+  "last_modified": "2026-02-11T02:15:23.294078+00:00",
   "tags": [],
   "changelog": [
     {
@@ -20,17 +20,19 @@
   "mechanics": {
     "damage_modifiers": [
       {
-        "target_type": [
+        "multiplier": 1.19,
+        "condition": "Always",
+        "target_types": [
           "Ground",
           "Hover"
-        ],
-        "multiplier": 1.19,
-        "condition": "Always"
+        ]
       },
       {
-        "target_type": "Building",
         "multiplier": 0.65,
-        "condition": "Always"
+        "condition": "Always",
+        "target_types": [
+          "Building"
+        ]
       }
     ],
     "initial_attack": {
@@ -46,5 +48,9 @@
   "movement_speed": 8,
   "movement_type": "Flying",
   "dps": 12,
-  "attack_interval": 1.0
+  "attack_interval": 1.0,
+  "charges": 1,
+  "recharge_time": 10,
+  "cast_time": 0,
+  "population": 0
 }

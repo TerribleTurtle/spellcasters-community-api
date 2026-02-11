@@ -1,0 +1,39 @@
+{
+  "$schema": "https://json-schema.org/draft/2019-09/schema",
+  "$id": "https://spellcasters.gg/schemas/v2/decks.schema.json",
+  "title": "Deck",
+  "description": "A collection of cards associated with a Spellcaster.",
+  "type": "object",
+  "allOf": [
+    { "$ref": "definitions/core.schema.json#/definitions/identity" },
+    { "$ref": "definitions/core.schema.json#/definitions/meta" }
+  ],
+  "properties": {
+    "entity_id": { "$ref": "definitions/core.schema.json#/definitions/identity/properties/entity_id" },
+    "name": { "$ref": "definitions/core.schema.json#/definitions/identity/properties/name" },
+    "description": { "$ref": "definitions/core.schema.json#/definitions/identity/properties/description" },
+    "tags": { "$ref": "definitions/core.schema.json#/definitions/identity/properties/tags" },
+    "guid": { "$ref": "definitions/core.schema.json#/definitions/identity/properties/guid" },
+    "$schema": { "$ref": "definitions/core.schema.json#/definitions/meta/properties/$schema" },
+    "last_modified": { "$ref": "definitions/core.schema.json#/definitions/meta/properties/last_modified" },
+    "changelog": { "$ref": "definitions/core.schema.json#/definitions/meta/properties/changelog" },
+    "game_version": { "$ref": "definitions/core.schema.json#/definitions/meta/properties/game_version" },
+    
+    "spellcaster_id": { 
+      "type": "string",
+      "description": "ID of the Hero/Spellcaster this deck belongs to."
+    },
+    "cards": {
+      "type": "array",
+      "items": { 
+        "type": "string",
+        "pattern": "^[a-z0-9_]+$"
+      },
+      "minItems": 8,
+      "maxItems": 8,
+      "description": "List of Unit/Spell IDs in the deck (Must be exactly 8)."
+    }
+  },
+  "required": ["spellcaster_id", "cards"],
+  "additionalProperties": false
+}

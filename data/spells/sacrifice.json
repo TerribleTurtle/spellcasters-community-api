@@ -1,5 +1,5 @@
 {
-  "$schema": "../../schemas/v1/spell.schema.json",
+  "$schema": "../../schemas/v2/spells.schema.json",
   "entity_id": "sacrifice",
   "name": "Sacrifice",
   "category": "Spell",
@@ -7,7 +7,7 @@
   "rank": "I",
   "description": "Dark ritual that recalls allies to recharge summons.",
   "image_required": true,
-  "last_modified": "2026-02-11T00:26:48.724983+00:00",
+  "last_modified": "2026-02-11T02:15:23.316280+00:00",
   "tags": [],
   "changelog": [
     {
@@ -20,5 +20,8 @@
     "waves": 5,
     "interval": 1
   },
-  "damage": 18
+  "damage": 18,
+  "charges": 1,
+  "recharge_time": 10.0,
+  "cast_time": 0.0
 }

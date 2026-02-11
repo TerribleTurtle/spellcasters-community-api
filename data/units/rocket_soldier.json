@@ -1,5 +1,5 @@
 {
-  "$schema": "../../schemas/v1/unit.schema.json",
+  "$schema": "../../schemas/v2/units.schema.json",
   "entity_id": "rocket_soldier",
   "name": "Rocket Soldier",
   "category": "Creature",
@@ -7,7 +7,7 @@
   "rank": "I",
   "description": "Medium-range soldier that deals bonus damage to structures.",
   "image_required": true,
-  "last_modified": "2026-02-11T00:26:48.727864+00:00",
+  "last_modified": "2026-02-11T02:15:23.300473+00:00",
   "tags": [],
   "changelog": [
     {
@@ -19,14 +19,18 @@
   "mechanics": {
     "damage_modifiers": [
       {
-        "target_type": "Creature",
         "multiplier": 0.5,
-        "condition": "Always"
+        "condition": "Always",
+        "target_types": [
+          "Creature"
+        ]
       },
       {
-        "target_type": "Spellcaster",
         "multiplier": 0.5,
-        "condition": "Always"
+        "condition": "Always",
+        "target_types": [
+          "Spellcaster"
+        ]
       }
     ]
   },
@@ -36,5 +40,9 @@
   "movement_speed": 3,
   "movement_type": "Hover",
   "dps": 10,
-  "attack_interval": 1.0
+  "attack_interval": 1.0,
+  "charges": 1,
+  "recharge_time": 10,
+  "cast_time": 0,
+  "population": 0
 }
