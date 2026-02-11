@@ -1,4 +1,5 @@
 {
+  "$schema": "../../schemas/v1/unit.schema.json",
   "entity_id": "earth_golem",
   "name": "Earth Golem",
   "category": "Creature",

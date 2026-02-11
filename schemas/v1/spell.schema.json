@@ -1,0 +1,87 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Spell",
+  "description": "Definition for Spells (actions not units).",
+  "type": "object",
+  "required": [
+    "entity_id",
+    "name",
+    "category",
+    "magic_school",
+    "rank",
+    "changelog",
+    "last_modified"
+  ],
+  "properties": {
+    "$schema": { "type": "string" },
+    "last_modified": { "type": "string", "format": "date-time" },
+    "changelog": { "$ref": "common.schema.json#/definitions/changelog" },
+    "entity_id": { "type": "string" },
+    "name": { "type": "string" },
+    "image_required": { "type": "boolean", "default": true },
+    "category": {
+      "type": "string",
+      "enum": ["Spell"]
+    },
+    "magic_school": {
+      "type": "string",
+      "enum": [
+        "Elemental",
+        "Wild",
+        "War",
+        "Astral",
+        "Holy",
+        "Technomancy",
+        "Necromancy",
+        "Titan",
+        "Dark",
+        "Frost",
+        "Lightning"
+      ]
+    },
+    "rank": {
+      "type": "string",
+      "enum": ["I", "II", "III", "IV", "V"]
+    },
+    "mechanics": {
+      "type": "object",
+      "properties": {
+        "waves": {
+          "type": "integer",
+          "minimum": 1,
+          "description": "Number of pulses for Wave based spells"
+        },
+        "interval": {
+          "type": "number",
+          "minimum": 0,
+          "description": "Delay between pulses in seconds"
+        },
+        "stagger_modifier": {
+          "type": "string",
+          "enum": ["None", "Light", "Medium", "High"]
+        },
+        "capture_speed_modifier": {
+          "type": "number",
+          "description": "Multiplier for capture rate (e.g. 1.25 for +25%)"
+        },
+        "aura": { "$ref": "common.schema.json#/definitions/aura" },
+        "spawner": { "$ref": "common.schema.json#/definitions/spawner" },
+        "damage_modifiers": { "$ref": "common.schema.json#/definitions/damage_modifiers" },
+        "damage_reduction": { "$ref": "common.schema.json#/definitions/damage_reduction" },
+        "bonus_damage": { "$ref": "common.schema.json#/definitions/bonus_damage" },
+        "features": { "$ref": "common.schema.json#/definitions/features" }
+      },
+      "additionalProperties": false
+    },
+    "description": { "type": "string" },
+    "tags": {
+      "type": "array",
+      "items": { "type": "string" }
+    },
+    "damage": { "type": "integer", "minimum": 0 },
+    "range": { "type": "integer", "minimum": 0 },
+    "heal_amount": { "type": "integer", "minimum": 0 },
+    "duration": { "type": "number", "minimum": 0 }
+  },
+  "additionalProperties": false
+}

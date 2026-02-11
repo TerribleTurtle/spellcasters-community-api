@@ -50,14 +50,15 @@ Refers to the player-controlled character (previously "Hero").
 - **Schema**: `spellcaster.schema.json`
 - **Key Fields**: `class` (Conqueror/Duelist/Enchanter), `difficulty` (1-3).
 
-#### 2. Incantations
+#### 2. Units (`data/units`)
 
-The base type for all deck-able items.
+- **Schema**: `unit.schema.json`
+- **Description**: Physical entities with health, collision, and movement. (Creatures & Buildings)
 
-- **Schema**: `incantation.schema.json`
-- **Sub-types**:
-  - **Units** (`data/units`): Physical entities with `health`, `collision_radius`.
-  - **Spells** (`data/spells`): Instant actions or effects.
+#### 3. Spells (`data/spells`)
+
+- **Schema**: `spell.schema.json`
+- **Description**: Instant actions or effects.
 
 #### 3. Titans (`data/titans`)
 

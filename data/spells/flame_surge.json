@@ -1,4 +1,5 @@
 {
+  "$schema": "../../schemas/v1/spell.schema.json",
   "entity_id": "flame_surge",
   "name": "Flame Surge",
   "category": "Spell",

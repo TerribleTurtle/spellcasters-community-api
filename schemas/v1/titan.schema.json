@@ -14,18 +14,7 @@
   "properties": {
     "$schema": { "type": "string" },
     "last_modified": { "type": "string", "format": "date-time" },
-    "changelog": {
-      "type": "array",
-      "items": {
-        "type": "object",
-        "required": ["date", "version", "description"],
-        "properties": {
-          "date": { "type": "string", "format": "date-time" },
-          "version": { "type": "string" },
-          "description": { "type": "string" }
-        }
-      }
-    },
+    "changelog": { "$ref": "common.schema.json#/definitions/changelog" },
     "entity_id": { "type": "string" },
     "name": { "type": "string" },
     "image_required": { "type": "boolean", "default": true },
@@ -57,52 +46,12 @@
     "mechanics": {
       "type": "object",
       "properties": {
-        "aura": {
-          "type": "array",
-          "items": {
-            "type": "object",
-            "properties": {
-              "name": { "type": "string" },
-              "description": { "type": "string" },
-              "radius": { "type": "number" },
-              "value": { "type": "number", "description": "Amount per tick (Heal/Damage)" },
-              "interval": { "type": "number" },
-              "effect": { "type": "string", "enum": ["Heal", "Damage", "Buff", "Debuff"] },
-              "target_type": { "type": "string", "enum": ["Ally", "Enemy", "All", "Building", "Creature"] }
-            },
-            "required": ["effect", "target_type"]
-          }
-        },
-            "damage_modifiers": {
-            "type": "array",
-            "items": {
-              "type": "object",
-              "required": ["target_type", "multiplier"],
-              "properties": {
-                "target_type": {
-                  "type": "string",
-                  "enum": ["Building", "Creature", "Spellcaster", "Unit", "All", "Lifestone", "Flying", "Ground"]
-                },
-                "multiplier": {
-                  "type": "number",
-                  "description": "Damage Multiplier (e.g. 1.5 = 150%)"
-                },
-                "condition": { "type": "string" }
-              }
-            }
-          },
-        "features": {
-          "type": "array",
-          "items": {
-            "type": "object",
-            "required": ["name"],
-            "properties": {
-              "name": { "type": "string" },
-              "description": { "type": "string" }
-            }
-          }
-        }
-      }
+        "auto_capture_altars": { "type": "boolean" },
+        "aura": { "$ref": "common.schema.json#/definitions/aura" },
+        "damage_modifiers": { "$ref": "common.schema.json#/definitions/damage_modifiers" },
+        "features": { "$ref": "common.schema.json#/definitions/features" }
+      },
+      "additionalProperties": false
     }
   },
   "additionalProperties": false

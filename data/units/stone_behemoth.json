@@ -1,4 +1,5 @@
 {
+  "$schema": "../../schemas/v1/unit.schema.json",
   "entity_id": "stone_behemoth",
   "name": "Stone Behemoth",
   "category": "Creature",

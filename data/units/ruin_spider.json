@@ -1,4 +1,5 @@
 {
+  "$schema": "../../schemas/v1/unit.schema.json",
   "entity_id": "ruin_spider",
   "name": "Ruin Spider",
   "category": "Creature",

@@ -23,8 +23,11 @@ MAX_IMG_DIMENSION = 512
 MAX_IMG_SIZE_KB = 100
 
 # Schema Filenames mapping (Schema Key -> Filename)
+# Schema Filenames mapping (Schema Key -> Filename)
 SCHEMA_FILES = {
-    "incantation": "incantation.schema.json",
+    "spell": "spell.schema.json",
+    "unit": "unit.schema.json",
+    "common": "common.schema.json",
     "spellcaster": "spellcaster.schema.json",
     "consumable": "consumable.schema.json",
     "upgrade": "upgrade.schema.json",
@@ -35,11 +38,10 @@ SCHEMA_FILES = {
 
 # Data Folder to Schema Mapping (Folder Name -> Schema Key)
 FOLDER_TO_SCHEMA = {
-    "units": "incantation",
-    "spells": "incantation",
+    "units": "unit",
+    "spells": "spell",
     "titans": "titan",
     "spellcasters": "spellcaster",
-    "consumables": "consumable",
     "consumables": "consumable",
     "upgrades": "upgrade",
     "decks": "deck"

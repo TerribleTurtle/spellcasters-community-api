@@ -1,0 +1,97 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Unit",
+  "description": "Definition for Creatures and Buildings.",
+  "type": "object",
+  "required": [
+    "entity_id",
+    "name",
+    "category",
+    "magic_school",
+    "rank",
+    "changelog",
+    "last_modified"
+  ],
+  "properties": {
+    "$schema": { "type": "string" },
+    "last_modified": { "type": "string", "format": "date-time" },
+    "changelog": { "$ref": "common.schema.json#/definitions/changelog" },
+    "entity_id": { "type": "string" },
+    "name": { "type": "string" },
+    "image_required": { "type": "boolean", "default": true },
+    "category": {
+      "type": "string",
+      "enum": ["Creature", "Building"]
+    },
+    "magic_school": {
+      "type": "string",
+      "enum": [
+        "Elemental",
+        "Wild",
+        "War",
+        "Astral",
+        "Holy",
+        "Technomancy",
+        "Necromancy",
+        "Titan",
+        "Dark",
+        "Frost",
+        "Lightning"
+      ]
+    },
+    "rank": {
+      "type": "string",
+      "enum": ["I", "II", "III", "IV", "V"]
+    },
+    "movement_type": {
+      "type": "string",
+      "enum": ["Ground", "Flying", "Hover"],
+      "default": "Ground"
+    },
+    "mechanics": {
+      "type": "object",
+      "properties": {
+        "aura": { "$ref": "common.schema.json#/definitions/aura" },
+        "capture_speed_modifier": {
+          "type": "number",
+          "description": "Multiplier for capture rate (e.g. 1.25 for +25%)"
+        },
+        "spawner": { "$ref": "common.schema.json#/definitions/spawner" },
+        "damage_modifiers": { "$ref": "common.schema.json#/definitions/damage_modifiers" },
+        "damage_reduction": { "$ref": "common.schema.json#/definitions/damage_reduction" },
+        "bonus_damage": { "$ref": "common.schema.json#/definitions/bonus_damage" },
+        "features": { "$ref": "common.schema.json#/definitions/features" },
+        "initial_attack": {
+          "type": "object",
+          "properties": {
+            "damage_flat": { "type": "integer" },
+            "target_types": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "enum": ["Ground", "Hover", "Flying", "Building", "Creature", "Spellcaster", "Unit", "All"]
+              }
+            },
+            "description": { "type": "string" }
+          },
+          "required": ["damage_flat", "target_types"]
+        }
+      },
+      "additionalProperties": false
+    },
+    "description": { "type": "string" },
+    "tags": {
+      "type": "array",
+      "items": { "type": "string" }
+    },
+    "health": { "type": "integer", "minimum": 0 },
+    "damage": { "type": "integer", "minimum": 0 },
+    "dps": { "type": "number", "minimum": 0 },
+    "attack_interval": { "type": "number", "minimum": 0 },
+    "movement_speed": { "type": "integer", "minimum": 0 },
+    "range": { "type": "integer", "minimum": 0 },
+    "heal_amount": { "type": "integer", "minimum": 0 },
+    "duration": { "type": "number", "minimum": 0 }
+  },
+  "additionalProperties": false
+}

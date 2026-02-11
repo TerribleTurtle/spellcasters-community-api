@@ -1,4 +1,5 @@
 {
+  "$schema": "../../schemas/v1/unit.schema.json",
   "entity_id": "dryad",
   "name": "Dryad",
   "category": "Creature",

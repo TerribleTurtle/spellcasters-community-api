@@ -134,10 +134,10 @@ def validate_entry_assets(data, schema_key, folder, cache):
 
     # Deduce ID based on schema key
     obj_id = ""
-    if schema_key == "incantation": obj_id = data.get("entity_id")
-    elif schema_key == "titan": obj_id = data.get("entity_id")
-    elif schema_key == "spellcaster": obj_id = data.get("spellcaster_id")
-    elif schema_key == "consumable": obj_id = data.get("entity_id")
+    if schema_key in ["unit", "spell", "titan", "consumable", "incantation"]:
+        obj_id = data.get("entity_id")
+    elif schema_key == "spellcaster":
+        obj_id = data.get("spellcaster_id")
     
     if obj_id:
         return check_asset_exists(folder, obj_id, True, cache)
@@ -192,16 +192,28 @@ def validate_integrity():
     for k, v in SCHEMA_FILES.items():
         schemas[k] = load_schema(k)
 
+    # Create a resolver for local schema references (like common.schema.json)
+    # We point it to the schemas directory
+    base_uri = f"file:///{SCHEMAS_DIR.replace(os.sep, '/')}/"
+    
+    # Pre-test load common schema to ensure it exists
+    common_schema = schemas.get("common")
+    
     # Validate Folders
     for folder, schema_key in FOLDER_TO_SCHEMA.items():
         print(f"Validating {folder}...")
         
         if folder not in db: continue
         
+        target_schema = schemas[schema_key]
+        resolver = jsonschema.RefResolver(base_uri, target_schema, store=schemas)
+
         for filepath, data in db[folder].items():
             # Schema Validation
             try:
-                jsonschema.validate(instance=data, schema=schemas[schema_key])
+                # We use specific Validator class to allow passing resolver
+                validator = jsonschema.Draft7Validator(target_schema, resolver=resolver)
+                validator.validate(data)
             except jsonschema.ValidationError as e:
                 print(f"[FAIL] Schema Error in {filepath}: {e.message}")
                 errors += 1

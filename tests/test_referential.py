@@ -20,9 +20,9 @@ def test_spawner_referential_integrity(data_loader):
             valid_unit_ids.add(unit["entity_id"])
             
     # 2. Check Spells and Units for Spawner mechanics
-    # Spawners can be in 'incantations' (units, spells) or 'spellcasters' (abilities)
+    # Spawners can be in 'units', 'spells', or 'spellcasters' (abilities)
     
-    # Check Incantations (Units & Spells)
+    # Check Units & Spells
     for folder in ["units", "spells"]:
         for item in data_loader.get(folder, []):
             filename = item.get("_filename", "unknown")

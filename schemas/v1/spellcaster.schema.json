@@ -16,18 +16,7 @@
   "properties": {
     "$schema": { "type": "string" },
     "last_modified": { "type": "string", "format": "date-time", "description": "UTC Timestamp of the last update" },
-    "changelog": {
-      "type": "array",
-      "items": {
-        "type": "object",
-        "required": ["date", "version", "description"],
-        "properties": {
-          "date": { "type": "string", "format": "date-time" },
-          "version": { "type": "string" },
-          "description": { "type": "string" }
-        }
-      }
-    },
+    "changelog": { "$ref": "common.schema.json#/definitions/changelog" },
     "spellcaster_id": { "type": "string" },
     "name": { "type": "string" },
     "class": { 
@@ -103,121 +92,12 @@
               "type": "number",
               "description": "Multiplier for capture rate (e.g. 1.25 for +25%)"
             },
-            "aura": {
-              "type": "array",
-              "items": {
-                "type": "object",
-                "properties": {
-                  "name": { "type": "string" },
-                  "description": { "type": "string" },
-                  "radius": { "type": "number" },
-                  "value": {
-                    "type": "number",
-                    "description": "Amount per tick (Heal/Damage)"
-                  },
-                  "interval": { "type": "number" },
-                  "effect": {
-                    "type": "string",
-                    "enum": ["Heal", "Damage", "Buff", "Debuff"]
-                  },
-                  "target_type": {
-                    "type": "string",
-                    "enum": ["Ally", "Enemy", "All", "Building", "Creature"]
-                  }
-                },
-                "required": ["effect", "target_type"]
-              }
-            },
-            "spawner": {
-              "type": "array",
-              "items": {
-                "type": "object",
-                "properties": {
-                  "unit_id": { "type": "string" },
-                  "count": { "type": "integer" },
-                  "interval": { "type": "number" },
-                  "trigger": {
-                    "type": "string",
-                    "enum": ["Interval", "Death", "Spawn"]
-                  }
-                },
-                "required": ["unit_id", "count", "trigger"]
-              }
-            },
-            "damage_modifiers": {
-              "type": "array",
-              "items": {
-                "type": "object",
-                "required": ["target_type", "multiplier"],
-                "properties": {
-                  "target_type": {
-                    "type": "string",
-                    "enum": [
-                      "Building",
-                      "Creature",
-                      "Spellcaster",
-                      "Unit",
-                      "All",
-                      "Lifestone",
-                      "Flying",
-                      "Ground"
-                    ]
-                  },
-                  "multiplier": {
-                    "type": "number",
-                    "description": "Damage Multiplier (e.g. 1.5 = 150%)"
-                  },
-                  "condition": { "type": "string" }
-                }
-              }
-            },
-            "damage_reduction": {
-              "type": "array",
-              "items": {
-                "type": "object",
-                "required": ["source_type", "multiplier"],
-                "properties": {
-                  "source_type": { "type": "string" },
-                  "multiplier": {
-                    "type": "number",
-                    "description": "Incoming Damage Multiplier (e.g. 0.5 = 50% damage taken)"
-                  },
-                  "condition": { "type": "string" }
-                }
-              }
-            },
-            "bonus_damage": {
-              "type": "array",
-              "items": {
-                "type": "object",
-                "required": ["value", "unit", "target_type"],
-                "properties": {
-                  "value": {
-                    "type": "number",
-                    "description": "Multiplier or Flat amount"
-                  },
-                  "unit": {
-                    "type": "string",
-                    "enum": ["flat", "percent_max_hp", "percent_current_hp"]
-                  },
-                  "target_type": {
-                    "type": "string",
-                    "enum": ["Building", "Creature", "All"]
-                  }
-                }
-              }
-            },
-            "features": {
-              "type": "array",
-              "items": {
-                "type": "object",
-                "required": ["name"],
-                "properties": {
-                  "name": { "type": "string" },
-                  "description": { "type": "string" }
-                }
-              }
-            }
+            "aura": { "$ref": "common.schema.json#/definitions/aura" },
+            "spawner": { "$ref": "common.schema.json#/definitions/spawner" },
+            "damage_modifiers": { "$ref": "common.schema.json#/definitions/damage_modifiers" },
+            "damage_reduction": { "$ref": "common.schema.json#/definitions/damage_reduction" },
+            "bonus_damage": { "$ref": "common.schema.json#/definitions/bonus_damage" },
+            "features": { "$ref": "common.schema.json#/definitions/features" }
           }
         }
       },

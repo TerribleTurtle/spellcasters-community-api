@@ -1,4 +1,5 @@
 {
+  "$schema": "../../schemas/v1/spell.schema.json",
   "entity_id": "thunder_ray",
   "name": "Thunder Ray",
   "category": "Spell",
