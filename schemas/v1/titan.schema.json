@@ -9,7 +9,8 @@
     "category",
     "magic_school",
     "changelog",
-    "last_modified"
+    "last_modified",
+    "tags"
   ],
   "properties": {
     "$schema": { "type": "string" },
@@ -17,24 +18,18 @@
     "changelog": { "$ref": "common.schema.json#/definitions/changelog" },
     "entity_id": { "type": "string" },
     "name": { "type": "string" },
-    "image_required": { "type": "boolean", "default": true },
+    "image_required": { "$ref": "common.schema.json#/definitions/image_required" },
     "category": {
       "type": "string",
       "enum": ["Titan"]
     },
-    "magic_school": {
-      "type": "string",
-      "enum": ["Elemental", "Wild", "War", "Astral", "Holy", "Technomancy", "Necromancy", "Titan", "Dark", "Frost", "Lightning"]
-    },
+    "magic_school": { "$ref": "common.schema.json#/definitions/magic_school" },
     "description": { "type": "string" },
     "tags": {
       "type": "array",
       "items": { "type": "string" }
     },
-    "rank": {
-      "type": "string",
-      "enum": ["V"]
-    },
+    "rank": { "$ref": "common.schema.json#/definitions/rank" },
     "health": { "type": "integer", "minimum": 0 },
     "damage": { "type": "integer", "minimum": 0 },
     "dps": { "type": "number", "minimum": 0 },

@@ -7,6 +7,7 @@
   "movement_type": "Ground",
   "image_required": true,
   "difficulty": 1,
+  "tags": [],
   "abilities": {
     "passive": [
       {
@@ -26,8 +27,7 @@
       "name": "Twin Strike",
       "description": "Strike with powerful mid-range attacks that interrupt enemies.",
       "stats": {
-        "damage": 35,
-        "interval": null
+        "damage": 35
       },
       "mechanics": {
         "features": [

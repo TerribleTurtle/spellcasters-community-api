@@ -1,4 +1,5 @@
 {
+  "$schema": "../../schemas/v1/titan.schema.json",
   "entity_id": "thanatos",
   "name": "Thanatos",
   "category": "Titan",

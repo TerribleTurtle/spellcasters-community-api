@@ -7,6 +7,7 @@
   "movement_type": "Ground",
   "image_required": true,
   "difficulty": 2,
+  "tags": [],
   "abilities": {
     "passive": [
       {
@@ -15,7 +16,7 @@
       },
       {
         "name": "Holy Magic Mastery",
-        "description": "All Holy incantations recharge faster."
+        "description": "All Holy spells recharge faster."
       },
       {
         "name": "Thousand Favors",
@@ -26,8 +27,7 @@
       "name": "Brush Strike",
       "description": "Strike with enchanted ink to damage enemies and boost allies\u2019 Max HP.",
       "stats": {
-        "damage": 23,
-        "interval": null
+        "damage": 23
       },
       "mechanics": {
         "features": [

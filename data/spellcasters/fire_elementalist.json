@@ -7,6 +7,7 @@
   "movement_type": "Ground",
   "image_required": true,
   "difficulty": 1,
+  "tags": [],
   "abilities": {
     "passive": [
       {
@@ -19,15 +20,14 @@
       },
       {
         "name": "Blazing Momentum",
-        "description": "When you or your creatures kill a Burning enemy, recharge Elemental incantations."
+        "description": "When you or your creatures kill a Burning enemy, recharge Elemental spells."
       }
     ],
     "primary": {
       "name": "Flame Strikes",
       "description": "Burns enemies with powerful Fire attacks.",
       "stats": {
-        "damage": 28,
-        "interval": null
+        "damage": 28
       },
       "mechanics": {
         "features": [

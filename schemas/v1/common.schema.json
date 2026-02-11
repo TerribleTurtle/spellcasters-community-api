@@ -3,6 +3,34 @@
   "title": "Common Definitions",
   "description": "Shared definitions for Spellcasters Community API schemas.",
   "definitions": {
+    "magic_school": {
+      "type": "string",
+      "enum": [
+        "Elemental",
+        "Wild",
+        "War",
+        "Astral",
+        "Holy",
+        "Technomancy",
+        "Necromancy",
+        "Titan",
+        "Dark",
+        "Frost",
+        "Lightning"
+      ]
+    },
+    "rank": {
+      "type": "string",
+      "enum": ["I", "II", "III", "IV", "V"]
+    },
+    "movement_type": {
+        "type": "string",
+        "enum": ["Ground", "Flying", "Hover"]
+    },
+    "image_required": { 
+      "type": "boolean", 
+      "default": true 
+    },
     "changelog": {
       "type": "array",
       "items": {

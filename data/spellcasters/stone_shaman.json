@@ -7,6 +7,7 @@
   "movement_type": "Ground",
   "image_required": true,
   "difficulty": 2,
+  "tags": [],
   "abilities": {
     "passive": [
       {
@@ -19,15 +20,14 @@
       },
       {
         "name": "Pathfinder",
-        "description": "While on the ground, the Shaman recharges Wild incantations much faster."
+        "description": "While on the ground, the Shaman recharges Wild spells much faster."
       }
     ],
     "primary": {
       "name": "Mountain Staff",
       "description": "Swing your catalyst to deal heavy melee damage and interrupt enemies.",
       "stats": {
-        "damage": 42,
-        "interval": null
+        "damage": 42
       },
       "mechanics": {
         "features": [
@@ -65,8 +65,6 @@
       "name": "Wall of Kamazad",
       "description": "Deploys a colossal wall capable of blocking Titans. The wall has 15000 Health and deals % damage to enemies in its path.",
       "stats": {
-        "duration": null,
-        "damage": null,
         "health": 15000
       }
     }

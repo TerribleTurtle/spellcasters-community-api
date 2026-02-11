@@ -7,6 +7,7 @@
   "movement_type": "Ground",
   "image_required": true,
   "difficulty": 3,
+  "tags": [],
   "abilities": {
     "passive": [
       {
@@ -15,7 +16,7 @@
       },
       {
         "name": "Brood Rite",
-        "description": "When a Swamp Witch\u2019s creature is destroyed, her incantations and abilities recharge faster."
+        "description": "When a Swamp Witch\u2019s creature is destroyed, her spells and abilities recharge faster."
       },
       {
         "name": "Swarm Dominance",
@@ -27,8 +28,7 @@
       "description": "Fire a barrage of projectiles that deal Poison damage.",
       "stats": {
         "damage": 21,
-        "projectiles": 2,
-        "interval": null
+        "projectiles": 2
       },
       "mechanics": {
         "features": [

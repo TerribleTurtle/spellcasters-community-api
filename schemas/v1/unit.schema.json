@@ -10,7 +10,8 @@
     "magic_school",
     "rank",
     "changelog",
-    "last_modified"
+    "last_modified",
+    "tags"
   ],
   "properties": {
     "$schema": { "type": "string" },
@@ -18,36 +19,14 @@
     "changelog": { "$ref": "common.schema.json#/definitions/changelog" },
     "entity_id": { "type": "string" },
     "name": { "type": "string" },
-    "image_required": { "type": "boolean", "default": true },
+    "image_required": { "$ref": "common.schema.json#/definitions/image_required" },
     "category": {
       "type": "string",
       "enum": ["Creature", "Building"]
     },
-    "magic_school": {
-      "type": "string",
-      "enum": [
-        "Elemental",
-        "Wild",
-        "War",
-        "Astral",
-        "Holy",
-        "Technomancy",
-        "Necromancy",
-        "Titan",
-        "Dark",
-        "Frost",
-        "Lightning"
-      ]
-    },
-    "rank": {
-      "type": "string",
-      "enum": ["I", "II", "III", "IV", "V"]
-    },
-    "movement_type": {
-      "type": "string",
-      "enum": ["Ground", "Flying", "Hover"],
-      "default": "Ground"
-    },
+    "magic_school": { "$ref": "common.schema.json#/definitions/magic_school" },
+    "rank": { "$ref": "common.schema.json#/definitions/rank" },
+    "movement_type": { "$ref": "common.schema.json#/definitions/movement_type" },
     "mechanics": {
       "type": "object",
       "properties": {

@@ -6,7 +6,8 @@
   "category": "Spellcaster",
   "movement_type": "Ground",
   "image_required": true,
-  "difficulty": 3,
+  "difficulty": 2,
+  "tags": [],
   "abilities": {
     "passive": [
       {
@@ -26,8 +27,7 @@
       "name": "Astral Fists",
       "description": "Pierces through enemies with colossal astral fists.",
       "stats": {
-        "damage": 32,
-        "interval": null
+        "damage": 32
       },
       "mechanics": {
         "features": [
