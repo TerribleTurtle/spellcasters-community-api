@@ -1,0 +1,19 @@
+{
+  "$schema": "../../schemas/v2/consumables.schema.json",
+  "entity_id": "charge_orb_1",
+  "name": "Charge Orb I",
+  "description": "Small Recharge. Restores 5 Energy (5x Rank I, 1x Rank II).",
+  "effect_type": "Charge_Refill",
+  "category": "Consumable",
+  "value": 5,
+  "stack_size": 1,
+  "image_required": true,
+  "tags": ["charge", "orb"],
+  "changelog": [
+    {
+      "version": "0.0.1",
+      "date": "2026-02-11T00:00:00Z",
+      "description": "Created new consumable"
+    }
+  ]
+}

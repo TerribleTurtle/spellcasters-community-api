@@ -27,7 +27,7 @@
     "consumable_effect_enum": {
       "type": "string",
       "description": "Effect type for consumables.",
-      "enum": ["Heal", "Charge_Refill"]
+      "enum": ["Heal", "Charge_Refill", "Buff", "Capture"]
     },
     "spawner_trigger_enum": {
       "type": "string",

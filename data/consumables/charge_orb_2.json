@@ -1,0 +1,19 @@
+{
+  "$schema": "../../schemas/v2/consumables.schema.json",
+  "entity_id": "charge_orb_2",
+  "name": "Charge Orb II",
+  "description": "Medium Recharge. Restores 15 Energy (15x Rank I, 3x Rank II, 1x Rank III).",
+  "effect_type": "Charge_Refill",
+  "category": "Consumable",
+  "value": 15,
+  "stack_size": 1,
+  "image_required": true,
+  "tags": ["charge", "orb"],
+  "changelog": [
+    {
+      "version": "0.0.1",
+      "date": "2026-02-11T00:00:00Z",
+      "description": "Created new consumable"
+    }
+  ]
+}

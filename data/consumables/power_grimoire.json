@@ -1,0 +1,21 @@
+{
+  "$schema": "../../schemas/v2/consumables.schema.json",
+  "entity_id": "power_grimoire",
+  "name": "Power Grimoire",
+  "description": "Increases Damage by 10%.",
+  "effect_type": "Buff",
+  "category": "Consumable",
+  "value": 10,
+  "duration": 30,
+  "buff_target": "Damage",
+  "stack_size": 1,
+  "image_required": true,
+  "tags": ["buff", "damage", "grimoire"],
+  "changelog": [
+    {
+      "version": "0.0.1",
+      "date": "2026-02-11T00:00:00Z",
+      "description": "Created new consumable"
+    }
+  ]
+}

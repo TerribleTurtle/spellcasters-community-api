@@ -1,0 +1,21 @@
+{
+  "$schema": "../../schemas/v2/consumables.schema.json",
+  "entity_id": "protection_grimoire",
+  "name": "Protection Grimoire",
+  "description": "Increases Defense by 10%.",
+  "effect_type": "Buff",
+  "category": "Consumable",
+  "value": 10,
+  "duration": 30,
+  "buff_target": "Defense",
+  "stack_size": 1,
+  "image_required": true,
+  "tags": ["buff", "defense", "grimoire"],
+  "changelog": [
+    {
+      "version": "0.0.1",
+      "date": "2026-02-11T00:00:00Z",
+      "description": "Created new consumable"
+    }
+  ]
+}

@@ -1,0 +1,20 @@
+{
+  "$schema": "../../schemas/v2/consumables.schema.json",
+  "entity_id": "healing_grimoire_1",
+  "name": "Healing Grimoire I",
+  "description": "Light Heal. Restores 25 Health to the Spellcaster.",
+  "effect_type": "Heal",
+  "category": "Consumable",
+  "value": 25,
+  "duration": 0,
+  "stack_size": 1,
+  "image_required": true,
+  "tags": ["heal", "grimoire"],
+  "changelog": [
+    {
+      "version": "0.0.1",
+      "date": "2026-02-11T00:00:00Z",
+      "description": "Renamed from light_heal and updated"
+    }
+  ]
+}
