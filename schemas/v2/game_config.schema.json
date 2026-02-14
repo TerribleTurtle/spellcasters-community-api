@@ -26,6 +26,18 @@
         "discord": { "type": "string", "format": "uri" }
       },
       "additionalProperties": false
+    },
+    "changelog": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["version", "date", "description"],
+        "properties": {
+          "version": { "type": "string" },
+          "date": { "type": "string", "format": "date-time" },
+          "description": { "type": "string" }
+        }
+      }
     }
   }
 }

@@ -43,7 +43,7 @@
     "recharge_time": 10,
     "cast_time": 0,
     "population": 0,
-    "last_modified": "2026-02-11T10:37:29-05:00"
+    "last_modified": "2026-02-11T11:00:20-05:00"
   },
   {
     "$schema": "../../schemas/v2/titans.schema.json",
@@ -97,6 +97,6 @@
     "recharge_time": 10,
     "cast_time": 0,
     "population": 0,
-    "last_modified": "2026-02-11T10:37:29-05:00"
+    "last_modified": "2026-02-11T11:00:20-05:00"
   }
 ]

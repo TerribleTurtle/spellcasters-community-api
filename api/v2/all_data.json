@@ -1,7 +1,7 @@
 {
   "build_info": {
     "version": "0.0.1",
-    "generated_at": "2026-02-11T15:59:31.311818+00:00"
+    "generated_at": "2026-02-14T16:50:44.701985+00:00"
   },
   "heroes": [
     {
@@ -40,6 +40,10 @@
               {
                 "name": "Combo Sequence",
                 "description": "Alternates between Palm Strike (32) and Power Punch (47)."
+              },
+              {
+                "name": "Pierce",
+                "description": "Attacks pierce through enemies."
               }
             ]
           }
@@ -65,7 +69,7 @@
       ],
       "entity_id": "astral_monk",
       "description": "A Duelist who strikes from the shadows with fast astral fists and time-bending abilities.",
-      "last_modified": "2026-02-11T10:37:29-05:00"
+      "last_modified": "2026-02-11T11:59:51-05:00"
     },
     {
       "$schema": "../../schemas/v2/heroes.schema.json",
@@ -129,7 +133,7 @@
       ],
       "entity_id": "fire_elementalist",
       "description": "A Conqueror who burns enemies with powerful fire attacks, cleaving through ranks and empowering allies.",
-      "last_modified": "2026-02-11T10:37:29-05:00"
+      "last_modified": "2026-02-11T11:00:20-05:00"
     },
     {
       "$schema": "../../schemas/v2/heroes.schema.json",
@@ -192,7 +196,7 @@
       ],
       "entity_id": "iron_sorcerer",
       "description": "A Conqueror who dominates the battlefield with heavy melee strikes, protective runes, and a metal vortex.",
-      "last_modified": "2026-02-11T10:37:29-05:00"
+      "last_modified": "2026-02-11T11:00:20-05:00"
     },
     {
       "$schema": "../../schemas/v2/heroes.schema.json",
@@ -259,7 +263,7 @@
       ],
       "entity_id": "mystic_scribe",
       "description": "An Enchanter who uses magical ink to damage enemies, heal allies, and create protective barriers.",
-      "last_modified": "2026-02-11T10:37:29-05:00"
+      "last_modified": "2026-02-11T11:00:20-05:00"
     },
     {
       "$schema": "../../schemas/v2/heroes.schema.json",
@@ -339,7 +343,7 @@
       ],
       "entity_id": "stone_shaman",
       "description": "An Enchanter who channels the power of earth to deal heavy damage, interrupt spellcasters, and fortify buildings.",
-      "last_modified": "2026-02-11T10:37:29-05:00"
+      "last_modified": "2026-02-11T11:00:20-05:00"
     },
     {
       "$schema": "../../schemas/v2/heroes.schema.json",
@@ -418,89 +422,206 @@
       ],
       "entity_id": "swamp_witch",
       "description": "A Duelist who commands poison and swarms, sacrificing minions to fuel powerful necromancy spells.",
-      "last_modified": "2026-02-11T10:37:29-05:00"
+      "last_modified": "2026-02-11T11:00:20-05:00"
     }
   ],
   "consumables": [
     {
       "$schema": "../../schemas/v2/consumables.schema.json",
-      "entity_id": "light_heal",
-      "name": "Light Heal",
-      "effect_type": "Heal",
-      "value": 25,
-      "changelog": [
-        {
-          "version": "0.0.1",
-          "date": "2026-02-04T15:27:05.217337Z",
-          "description": "Initial Closed Beta 2 Data"
-        }
-      ],
-      "category": "Consumable",
-      "image_required": false,
-      "duration": 30,
-      "description": "Restores 25 Health to the Spellcaster.",
-      "tags": [],
-      "last_modified": "2026-02-11T10:37:29-05:00"
-    },
-    {
-      "$schema": "../../schemas/v2/consumables.schema.json",
-      "entity_id": "medium_heal",
-      "name": "Medium Heal",
-      "effect_type": "Heal",
-      "value": 50,
-      "changelog": [
-        {
-          "version": "0.0.1",
-          "date": "2026-02-04T15:27:05.217803Z",
-          "description": "Initial Closed Beta 2 Data"
-        }
-      ],
-      "category": "Consumable",
-      "image_required": false,
-      "duration": 30,
-      "description": "Restores 50 Health to the Spellcaster.",
-      "tags": [],
-      "last_modified": "2026-02-11T10:37:29-05:00"
-    },
-    {
-      "$schema": "../../schemas/v2/consumables.schema.json",
-      "entity_id": "medium_recharge",
-      "name": "Medium Recharge",
+      "entity_id": "charge_orb_1",
+      "name": "Charge Orb I",
+      "description": "Small Recharge. Restores 5 Energy (5x Rank I, 1x Rank II).",
       "effect_type": "Charge_Refill",
-      "value": 50,
+      "category": "Consumable",
+      "value": 5,
+      "stack_size": 1,
+      "image_required": true,
+      "tags": [
+        "charge",
+        "orb"
+      ],
       "changelog": [
         {
           "version": "0.0.1",
-          "date": "2026-02-04T15:27:05.217979Z",
-          "description": "Initial Closed Beta 2 Data"
+          "date": "2026-02-11T00:00:00Z",
+          "description": "Created new consumable"
         }
       ],
-      "category": "Consumable",
-      "image_required": false,
-      "duration": 30,
-      "description": "Restores 50 Charges to the Spellcaster.",
-      "tags": [],
-      "last_modified": "2026-02-11T10:37:29-05:00"
+      "last_modified": "2026-02-12T00:43:11-05:00"
     },
     {
       "$schema": "../../schemas/v2/consumables.schema.json",
-      "entity_id": "small_recharge",
-      "name": "Small Recharge",
+      "entity_id": "charge_orb_2",
+      "name": "Charge Orb II",
+      "description": "Medium Recharge. Restores 15 Energy (15x Rank I, 3x Rank II, 1x Rank III).",
       "effect_type": "Charge_Refill",
-      "value": 25,
+      "category": "Consumable",
+      "value": 15,
+      "stack_size": 1,
+      "image_required": true,
+      "tags": [
+        "charge",
+        "orb"
+      ],
       "changelog": [
         {
           "version": "0.0.1",
-          "date": "2026-02-05T03:28:27.274024Z",
-          "description": "Initial Closed Beta 2 Data"
+          "date": "2026-02-11T00:00:00Z",
+          "description": "Created new consumable"
         }
       ],
+      "last_modified": "2026-02-12T00:43:11-05:00"
+    },
+    {
+      "$schema": "../../schemas/v2/consumables.schema.json",
+      "entity_id": "conquest_banner",
+      "name": "Conquest Banner",
+      "description": "Captures an enemy territory and refill all charges.",
+      "effect_type": "Capture",
       "category": "Consumable",
-      "image_required": false,
+      "value": 0,
+      "duration": 0,
+      "stack_size": 1,
+      "image_required": true,
+      "tags": [
+        "capture",
+        "banner"
+      ],
+      "mechanics": {
+        "auto_capture_altars": true
+      },
+      "changelog": [
+        {
+          "version": "0.0.1",
+          "date": "2026-02-11T00:00:00Z",
+          "description": "Created new consumable"
+        }
+      ],
+      "last_modified": "2026-02-12T00:43:11-05:00"
+    },
+    {
+      "$schema": "../../schemas/v2/consumables.schema.json",
+      "entity_id": "healing_grimoire_1",
+      "name": "Healing Grimoire I",
+      "description": "Light Heal. Restores 25 Health to the Spellcaster.",
+      "effect_type": "Heal",
+      "category": "Consumable",
+      "value": 25,
+      "duration": 0,
+      "stack_size": 1,
+      "image_required": true,
+      "tags": [
+        "heal",
+        "grimoire"
+      ],
+      "changelog": [
+        {
+          "version": "0.0.1",
+          "date": "2026-02-11T00:00:00Z",
+          "description": "Renamed from light_heal and updated"
+        }
+      ],
+      "last_modified": "2026-02-12T00:43:11-05:00"
+    },
+    {
+      "$schema": "../../schemas/v2/consumables.schema.json",
+      "entity_id": "healing_grimoire_2",
+      "name": "Healing Grimoire II",
+      "description": "Medium Heal. Restores 75 Health to the Spellcaster.",
+      "effect_type": "Heal",
+      "category": "Consumable",
+      "value": 75,
+      "duration": 0,
+      "stack_size": 1,
+      "image_required": true,
+      "tags": [
+        "heal",
+        "grimoire"
+      ],
+      "changelog": [
+        {
+          "version": "0.0.1",
+          "date": "2026-02-11T00:00:00Z",
+          "description": "Renamed from medium_heal and updated"
+        }
+      ],
+      "last_modified": "2026-02-12T00:43:11-05:00"
+    },
+    {
+      "$schema": "../../schemas/v2/consumables.schema.json",
+      "entity_id": "healing_grimoire_3",
+      "name": "Healing Grimoire III",
+      "description": "Major Heal. Restores 150 Health to the Spellcaster.",
+      "effect_type": "Heal",
+      "category": "Consumable",
+      "value": 150,
+      "duration": 0,
+      "stack_size": 1,
+      "image_required": true,
+      "tags": [
+        "heal",
+        "grimoire"
+      ],
+      "changelog": [
+        {
+          "version": "0.0.1",
+          "date": "2026-02-11T00:00:00Z",
+          "description": "Created new consumable"
+        }
+      ],
+      "last_modified": "2026-02-12T00:43:11-05:00"
+    },
+    {
+      "$schema": "../../schemas/v2/consumables.schema.json",
+      "entity_id": "power_grimoire",
+      "name": "Power Grimoire",
+      "description": "Increases Damage by 10%.",
+      "effect_type": "Buff",
+      "category": "Consumable",
+      "value": 10,
       "duration": 30,
-      "description": "Restores 25 Charges to the Spellcaster.",
-      "tags": [],
-      "last_modified": "2026-02-11T10:37:29-05:00"
+      "buff_target": "Damage",
+      "stack_size": 1,
+      "image_required": true,
+      "tags": [
+        "buff",
+        "damage",
+        "grimoire"
+      ],
+      "changelog": [
+        {
+          "version": "0.0.1",
+          "date": "2026-02-11T00:00:00Z",
+          "description": "Created new consumable"
+        }
+      ],
+      "last_modified": "2026-02-12T00:43:11-05:00"
+    },
+    {
+      "$schema": "../../schemas/v2/consumables.schema.json",
+      "entity_id": "protection_grimoire",
+      "name": "Protection Grimoire",
+      "description": "Increases Defense by 10%.",
+      "effect_type": "Buff",
+      "category": "Consumable",
+      "value": 10,
+      "duration": 30,
+      "buff_target": "Defense",
+      "stack_size": 1,
+      "image_required": true,
+      "tags": [
+        "buff",
+        "defense",
+        "grimoire"
+      ],
+      "changelog": [
+        {
+          "version": "0.0.1",
+          "date": "2026-02-11T00:00:00Z",
+          "description": "Created new consumable"
+        }
+      ],
+      "last_modified": "2026-02-12T00:43:11-05:00"
     }
   ],
   "upgrades": [],
@@ -530,7 +651,7 @@
       "recharge_time": 10.0,
       "cast_time": 0.0,
       "population": 0,
-      "last_modified": "2026-02-11T10:37:29-05:00"
+      "last_modified": "2026-02-11T11:00:20-05:00"
     },
     {
       "$schema": "../../schemas/v2/units.schema.json",
@@ -558,7 +679,7 @@
       "recharge_time": 10.0,
       "cast_time": 0.0,
       "population": 0,
-      "last_modified": "2026-02-11T10:37:29-05:00"
+      "last_modified": "2026-02-11T11:00:20-05:00"
     },
     {
       "$schema": "../../schemas/v2/units.schema.json",
@@ -597,7 +718,7 @@
       "recharge_time": 10.0,
       "cast_time": 0.0,
       "population": 0,
-      "last_modified": "2026-02-11T10:37:29-05:00"
+      "last_modified": "2026-02-11T11:00:20-05:00"
     },
     {
       "$schema": "../../schemas/v2/units.schema.json",
@@ -641,7 +762,7 @@
       "recharge_time": 10,
       "cast_time": 0,
       "population": 0,
-      "last_modified": "2026-02-11T10:37:29-05:00"
+      "last_modified": "2026-02-11T11:00:20-05:00"
     },
     {
       "$schema": "../../schemas/v2/units.schema.json",
@@ -688,7 +809,7 @@
       "recharge_time": 10,
       "cast_time": 0,
       "population": 0,
-      "last_modified": "2026-02-11T10:37:29-05:00"
+      "last_modified": "2026-02-11T11:00:20-05:00"
     },
     {
       "$schema": "../../schemas/v2/units.schema.json",
@@ -718,7 +839,7 @@
       "recharge_time": 10.0,
       "cast_time": 0.0,
       "population": 0,
-      "last_modified": "2026-02-11T10:37:29-05:00"
+      "last_modified": "2026-02-11T11:00:20-05:00"
     },
     {
       "$schema": "../../schemas/v2/units.schema.json",
@@ -758,7 +879,7 @@
       "recharge_time": 10,
       "cast_time": 0,
       "population": 0,
-      "last_modified": "2026-02-11T10:37:29-05:00"
+      "last_modified": "2026-02-11T11:00:20-05:00"
     },
     {
       "$schema": "../../schemas/v2/units.schema.json",
@@ -814,7 +935,7 @@
       "recharge_time": 10,
       "cast_time": 0,
       "population": 0,
-      "last_modified": "2026-02-11T10:37:29-05:00"
+      "last_modified": "2026-02-11T11:00:20-05:00"
     },
     {
       "$schema": "../../schemas/v2/units.schema.json",
@@ -853,7 +974,7 @@
       "recharge_time": 10.0,
       "cast_time": 0.0,
       "population": 0,
-      "last_modified": "2026-02-11T10:37:29-05:00"
+      "last_modified": "2026-02-11T11:00:20-05:00"
     },
     {
       "$schema": "../../schemas/v2/units.schema.json",
@@ -900,7 +1021,7 @@
       "recharge_time": 10,
       "cast_time": 0,
       "population": 0,
-      "last_modified": "2026-02-11T10:37:29-05:00"
+      "last_modified": "2026-02-11T11:00:20-05:00"
     },
     {
       "$schema": "../../schemas/v2/units.schema.json",
@@ -929,7 +1050,7 @@
       "recharge_time": 10.0,
       "cast_time": 0.0,
       "population": 0,
-      "last_modified": "2026-02-11T10:37:29-05:00"
+      "last_modified": "2026-02-11T11:00:20-05:00"
     },
     {
       "$schema": "../../schemas/v2/units.schema.json",
@@ -977,7 +1098,7 @@
       "recharge_time": 10,
       "cast_time": 0,
       "population": 0,
-      "last_modified": "2026-02-11T10:37:29-05:00"
+      "last_modified": "2026-02-11T11:00:20-05:00"
     },
     {
       "$schema": "../../schemas/v2/units.schema.json",
@@ -1017,7 +1138,7 @@
       "recharge_time": 10,
       "cast_time": 0,
       "population": 0,
-      "last_modified": "2026-02-11T10:37:29-05:00"
+      "last_modified": "2026-02-11T11:00:20-05:00"
     },
     {
       "$schema": "../../schemas/v2/units.schema.json",
@@ -1041,7 +1162,7 @@
       "recharge_time": 10.0,
       "cast_time": 0.0,
       "population": 0,
-      "last_modified": "2026-02-11T10:37:29-05:00"
+      "last_modified": "2026-02-11T11:00:20-05:00"
     },
     {
       "$schema": "../../schemas/v2/units.schema.json",
@@ -1089,7 +1210,7 @@
       "recharge_time": 10,
       "cast_time": 0,
       "population": 0,
-      "last_modified": "2026-02-11T10:37:29-05:00"
+      "last_modified": "2026-02-11T11:00:20-05:00"
     },
     {
       "$schema": "../../schemas/v2/units.schema.json",
@@ -1143,7 +1264,7 @@
       "recharge_time": 10,
       "cast_time": 0,
       "population": 0,
-      "last_modified": "2026-02-11T10:37:29-05:00"
+      "last_modified": "2026-02-11T11:00:20-05:00"
     },
     {
       "$schema": "../../schemas/v2/units.schema.json",
@@ -1191,7 +1312,7 @@
       "recharge_time": 10,
       "cast_time": 0,
       "population": 0,
-      "last_modified": "2026-02-11T10:37:29-05:00"
+      "last_modified": "2026-02-11T11:00:20-05:00"
     },
     {
       "$schema": "../../schemas/v2/units.schema.json",
@@ -1221,7 +1342,7 @@
       "recharge_time": 10.0,
       "cast_time": 0.0,
       "population": 0,
-      "last_modified": "2026-02-11T10:37:29-05:00"
+      "last_modified": "2026-02-11T11:00:20-05:00"
     },
     {
       "$schema": "../../schemas/v2/units.schema.json",
@@ -1251,7 +1372,7 @@
       "recharge_time": 10.0,
       "cast_time": 0.0,
       "population": 0,
-      "last_modified": "2026-02-11T10:37:29-05:00"
+      "last_modified": "2026-02-11T11:00:20-05:00"
     },
     {
       "$schema": "../../schemas/v2/units.schema.json",
@@ -1281,7 +1402,7 @@
       "recharge_time": 10.0,
       "cast_time": 0.0,
       "population": 0,
-      "last_modified": "2026-02-11T10:37:29-05:00"
+      "last_modified": "2026-02-11T11:00:20-05:00"
     },
     {
       "$schema": "../../schemas/v2/units.schema.json",
@@ -1322,7 +1443,7 @@
       "recharge_time": 10,
       "cast_time": 0,
       "population": 0,
-      "last_modified": "2026-02-11T10:37:29-05:00"
+      "last_modified": "2026-02-11T11:00:20-05:00"
     }
   ],
   "spells": [
@@ -1348,7 +1469,7 @@
       "charges": 1,
       "recharge_time": 10.0,
       "cast_time": 0.0,
-      "last_modified": "2026-02-11T10:37:29-05:00"
+      "last_modified": "2026-02-11T11:00:20-05:00"
     },
     {
       "$schema": "../../schemas/v2/spells.schema.json",
@@ -1375,7 +1496,7 @@
       "charges": 1,
       "recharge_time": 10.0,
       "cast_time": 0.0,
-      "last_modified": "2026-02-11T10:37:29-05:00"
+      "last_modified": "2026-02-11T11:00:20-05:00"
     },
     {
       "$schema": "../../schemas/v2/spells.schema.json",
@@ -1428,7 +1549,7 @@
       "charges": 1,
       "recharge_time": 10,
       "cast_time": 0,
-      "last_modified": "2026-02-11T10:37:29-05:00"
+      "last_modified": "2026-02-11T11:00:20-05:00"
     },
     {
       "$schema": "../../schemas/v2/spells.schema.json",
@@ -1452,7 +1573,7 @@
       "charges": 1,
       "recharge_time": 10.0,
       "cast_time": 0.0,
-      "last_modified": "2026-02-11T10:37:29-05:00"
+      "last_modified": "2026-02-11T11:00:20-05:00"
     },
     {
       "$schema": "../../schemas/v2/spells.schema.json",
@@ -1488,7 +1609,7 @@
       "charges": 1,
       "recharge_time": 10,
       "cast_time": 0,
-      "last_modified": "2026-02-11T10:37:29-05:00"
+      "last_modified": "2026-02-11T11:00:20-05:00"
     },
     {
       "$schema": "../../schemas/v2/spells.schema.json",
@@ -1516,7 +1637,7 @@
       "charges": 1,
       "recharge_time": 10.0,
       "cast_time": 0.0,
-      "last_modified": "2026-02-11T10:37:29-05:00"
+      "last_modified": "2026-02-11T11:00:20-05:00"
     },
     {
       "$schema": "../../schemas/v2/spells.schema.json",
@@ -1539,7 +1660,7 @@
       "charges": 1,
       "recharge_time": 10.0,
       "cast_time": 0.0,
-      "last_modified": "2026-02-11T10:37:29-05:00"
+      "last_modified": "2026-02-11T11:00:20-05:00"
     },
     {
       "$schema": "../../schemas/v2/spells.schema.json",
@@ -1562,7 +1683,7 @@
       "charges": 1,
       "recharge_time": 10.0,
       "cast_time": 0.0,
-      "last_modified": "2026-02-11T10:37:29-05:00"
+      "last_modified": "2026-02-11T11:00:20-05:00"
     },
     {
       "$schema": "../../schemas/v2/spells.schema.json",
@@ -1586,7 +1707,7 @@
       "charges": 1,
       "recharge_time": 10.0,
       "cast_time": 0.0,
-      "last_modified": "2026-02-11T10:37:29-05:00"
+      "last_modified": "2026-02-11T11:00:20-05:00"
     },
     {
       "$schema": "../../schemas/v2/spells.schema.json",
@@ -1610,7 +1731,7 @@
       "charges": 1,
       "recharge_time": 10.0,
       "cast_time": 0.0,
-      "last_modified": "2026-02-11T10:37:29-05:00"
+      "last_modified": "2026-02-11T11:00:20-05:00"
     },
     {
       "$schema": "../../schemas/v2/spells.schema.json",
@@ -1645,7 +1766,7 @@
       "charges": 1,
       "recharge_time": 10,
       "cast_time": 0,
-      "last_modified": "2026-02-11T10:37:29-05:00"
+      "last_modified": "2026-02-11T11:00:20-05:00"
     },
     {
       "$schema": "../../schemas/v2/spells.schema.json",
@@ -1668,7 +1789,7 @@
       "charges": 1,
       "recharge_time": 10.0,
       "cast_time": 0.0,
-      "last_modified": "2026-02-11T10:37:29-05:00"
+      "last_modified": "2026-02-11T11:00:20-05:00"
     },
     {
       "$schema": "../../schemas/v2/spells.schema.json",
@@ -1695,7 +1816,7 @@
       "charges": 1,
       "recharge_time": 10.0,
       "cast_time": 0.0,
-      "last_modified": "2026-02-11T10:37:29-05:00"
+      "last_modified": "2026-02-11T11:00:20-05:00"
     },
     {
       "$schema": "../../schemas/v2/spells.schema.json",
@@ -1723,7 +1844,7 @@
       "charges": 1,
       "recharge_time": 10.0,
       "cast_time": 0.0,
-      "last_modified": "2026-02-11T10:37:29-05:00"
+      "last_modified": "2026-02-11T11:00:20-05:00"
     }
   ],
   "titans": [
@@ -1771,7 +1892,7 @@
       "recharge_time": 10,
       "cast_time": 0,
       "population": 0,
-      "last_modified": "2026-02-11T10:37:29-05:00"
+      "last_modified": "2026-02-11T11:00:20-05:00"
     },
     {
       "$schema": "../../schemas/v2/titans.schema.json",
@@ -1825,7 +1946,7 @@
       "recharge_time": 10,
       "cast_time": 0,
       "population": 0,
-      "last_modified": "2026-02-11T10:37:29-05:00"
+      "last_modified": "2026-02-11T11:00:20-05:00"
     }
   ],
   "decks": [],
@@ -1850,6 +1971,6 @@
       }
     ],
     "$schema": "../schemas/v2/game_config.schema.json",
-    "last_modified": "2026-02-11T10:37:29-05:00"
+    "last_modified": "2026-02-11T11:00:20-05:00"
   }
 }

@@ -129,9 +129,14 @@ def main():
     
     ensure_output_dir()
     
+    # Load Game Config for Version
+    game_config_path = os.path.join(DATA_DIR, "game_config.json")
+    game_config = load_json(game_config_path)
+    version = game_config.get("version", "0.0.1") if game_config else "0.0.1"
+    
     all_data = {
         "build_info": {
-            "version": "0.0.1",
+            "version": version,
             "generated_at": datetime.now(timezone.utc).isoformat()
         }
     }
@@ -199,6 +204,20 @@ def main():
         print(f"[FAIL] Build failed with {errors} errors.")
         sys.exit(1)
         
+    # Generate Status/Upgrade Endpoint (Placeholder)
+    print("Generating status.json...")
+    status_data = {
+        "status": "online",
+        "environment": "dev",
+        "maintenance": False,
+        "valid_versions": [version],
+        "min_client_version": "0.0.0",
+        "upgrade_required": False,
+        "message": "Development Server Online",
+        "generated_at": datetime.now(timezone.utc).isoformat()
+    }
+    save_json("status.json", status_data)
+
     print("Build Complete.")
 
 if __name__ == "__main__":

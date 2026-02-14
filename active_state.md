@@ -29,6 +29,9 @@ Successfully restored data values from `V1_all_data.json` to the V2 data structu
 - [x] **Documentation Audit**
   - [x] Verified script references (Fixed `scripts/README.md`).
   - [x] Verified "stats" object removal.
+- [x] **API Enhancements**
+  - [x] Implemented `status.json` placeholder endpoint.
+  - [x] Verified `upgrades.json` generation.
 
 ## Completed
 
@@ -41,3 +44,4 @@ Successfully restored data values from `V1_all_data.json` to the V2 data structu
 - [x] API Verification (Build Passed).
 - [x] Added Pierce mechanic to Astral Monk.
 - [x] Updated Dependencies (Pillow, pytest, jsonschema, Actions).
+- [x] Pushed changes to remote (Commit: `feat: implement new consumables and update dependencies`).
