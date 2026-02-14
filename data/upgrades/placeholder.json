@@ -7,7 +7,6 @@
   "effect": {
     "dev_mode": 1
   },
-  "image_required": false,
   "changelog": [
     {
       "version": "0.0.1",

@@ -1,1 +1,20 @@
-[]
+[
+  {
+    "$schema": "../../schemas/v2/upgrades.schema.json",
+    "upgrade_id": "dev_placeholder",
+    "name": "Dev Placeholder",
+    "description": "Placeholder content to prevent 404s on the upgrades endpoint.",
+    "target_tags": [],
+    "effect": {
+      "dev_mode": 1
+    },
+    "changelog": [
+      {
+        "version": "0.0.1",
+        "date": "2026-02-14T12:00:00Z",
+        "description": "Initial placeholder"
+      }
+    ],
+    "last_modified": "2026-02-14T11:55:47-05:00"
+  }
+]
