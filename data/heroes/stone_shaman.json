@@ -5,7 +5,6 @@
   "category": "Spellcaster",
   "movement_type": "Ground",
   "health": 600,
-  "movement_speed": 5,
   "population": 0,
   "image_required": true,
   "difficulty": 2,
@@ -37,7 +36,6 @@
           }
         ],
         "cleave": true,
-
         "aura": [
           {
             "name": "Building Enchant",

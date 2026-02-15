@@ -1,7 +1,7 @@
 {
   "build_info": {
     "version": "0.0.1",
-    "generated_at": "2026-02-15T06:37:10.732035+00:00"
+    "generated_at": "2026-02-15T09:23:01.882644+00:00"
   },
   "heroes": [
     {
@@ -10,8 +10,7 @@
       "class": "Duelist",
       "category": "Spellcaster",
       "movement_type": "Ground",
-      "health": 1000,
-      "movement_speed": 6,
+      "health": 300,
       "population": 0,
       "image_required": true,
       "difficulty": 2,
@@ -72,7 +71,7 @@
       ],
       "entity_id": "astral_monk",
       "description": "A Duelist who strikes from the shadows with fast astral fists and time-bending abilities.",
-      "last_modified": "2026-02-14T21:28:43-05:00"
+      "last_modified": "2026-02-15T04:03:35-05:00"
     },
     {
       "$schema": "../../schemas/v2/heroes.schema.json",
@@ -80,8 +79,7 @@
       "class": "Conqueror",
       "category": "Spellcaster",
       "movement_type": "Ground",
-      "health": 800,
-      "movement_speed": 7,
+      "health": 340,
       "population": 0,
       "image_required": true,
       "difficulty": 1,
@@ -131,7 +129,7 @@
       ],
       "entity_id": "fire_elementalist",
       "description": "A Conqueror who burns enemies with powerful fire attacks, cleaving through ranks and empowering allies.",
-      "last_modified": "2026-02-15T00:17:47-05:00"
+      "last_modified": "2026-02-15T04:03:35-05:00"
     },
     {
       "$schema": "../../schemas/v2/heroes.schema.json",
@@ -139,8 +137,7 @@
       "class": "Conqueror",
       "category": "Spellcaster",
       "movement_type": "Ground",
-      "health": 1200,
-      "movement_speed": 5,
+      "health": 450,
       "population": 0,
       "image_required": true,
       "difficulty": 1,
@@ -189,7 +186,7 @@
       ],
       "entity_id": "iron_sorcerer",
       "description": "A Conqueror who dominates the battlefield with heavy melee strikes, protective runes, and a metal vortex.",
-      "last_modified": "2026-02-15T00:17:47-05:00"
+      "last_modified": "2026-02-15T04:03:35-05:00"
     },
     {
       "$schema": "../../schemas/v2/heroes.schema.json",
@@ -197,8 +194,7 @@
       "class": "Enchanter",
       "category": "Spellcaster",
       "movement_type": "Ground",
-      "health": 900,
-      "movement_speed": 6,
+      "health": 440,
       "population": 0,
       "image_required": true,
       "difficulty": 2,
@@ -253,7 +249,7 @@
       ],
       "entity_id": "mystic_scribe",
       "description": "An Enchanter who uses magical ink to damage enemies, heal allies, and create protective barriers.",
-      "last_modified": "2026-02-15T00:17:47-05:00"
+      "last_modified": "2026-02-15T04:03:35-05:00"
     },
     {
       "$schema": "../../schemas/v2/heroes.schema.json",
@@ -261,8 +257,7 @@
       "class": "Enchanter",
       "category": "Spellcaster",
       "movement_type": "Ground",
-      "health": 1300,
-      "movement_speed": 5,
+      "health": 600,
       "population": 0,
       "image_required": true,
       "difficulty": 2,
@@ -330,7 +325,7 @@
       ],
       "entity_id": "stone_shaman",
       "description": "An Enchanter who channels the power of earth to deal heavy damage, interrupt spellcasters, and fortify buildings.",
-      "last_modified": "2026-02-15T00:17:47-05:00"
+      "last_modified": "2026-02-15T04:03:35-05:00"
     },
     {
       "$schema": "../../schemas/v2/heroes.schema.json",
@@ -338,8 +333,7 @@
       "class": "Duelist",
       "category": "Spellcaster",
       "movement_type": "Ground",
-      "health": 750,
-      "movement_speed": 6,
+      "health": 350,
       "population": 0,
       "image_required": true,
       "difficulty": 3,
@@ -409,7 +403,7 @@
       ],
       "entity_id": "swamp_witch",
       "description": "A Duelist who commands poison and swarms, sacrificing minions to fuel powerful necromancy spells.",
-      "last_modified": "2026-02-11T11:00:20-05:00"
+      "last_modified": "2026-02-15T04:03:35-05:00"
     }
   ],
   "consumables": [
@@ -654,10 +648,10 @@
       "dps": 50,
       "attack_interval": 1.0,
       "charges": 1,
-      "recharge_time": 10.0,
+      "recharge_time": 50,
       "cast_time": 0.0,
       "population": 0,
-      "last_modified": "2026-02-11T11:00:20-05:00"
+      "last_modified": "2026-02-15T03:54:40-05:00"
     },
     {
       "$schema": "../../schemas/v2/units.schema.json",
@@ -682,10 +676,10 @@
       "dps": 25,
       "attack_interval": 1.0,
       "charges": 1,
-      "recharge_time": 10.0,
+      "recharge_time": 25,
       "cast_time": 0.0,
       "population": 0,
-      "last_modified": "2026-02-11T11:00:20-05:00"
+      "last_modified": "2026-02-15T03:54:40-05:00"
     },
     {
       "$schema": "../../schemas/v2/units.schema.json",
@@ -721,10 +715,10 @@
       },
       "health": 1000,
       "charges": 1,
-      "recharge_time": 10.0,
+      "recharge_time": 50,
       "cast_time": 0.0,
       "population": 0,
-      "last_modified": "2026-02-11T11:00:20-05:00"
+      "last_modified": "2026-02-15T03:54:40-05:00"
     },
     {
       "$schema": "../../schemas/v2/units.schema.json",
@@ -765,10 +759,10 @@
       "dps": 12,
       "attack_interval": 1.0,
       "charges": 1,
-      "recharge_time": 10,
+      "recharge_time": 25,
       "cast_time": 0,
       "population": 0,
-      "last_modified": "2026-02-11T11:00:20-05:00"
+      "last_modified": "2026-02-15T03:54:40-05:00"
     },
     {
       "$schema": "../../schemas/v2/units.schema.json",
@@ -821,10 +815,10 @@
       "dps": 25,
       "attack_interval": 1.0,
       "charges": 1,
-      "recharge_time": 10,
+      "recharge_time": 25,
       "cast_time": 0,
       "population": 0,
-      "last_modified": "2026-02-14T21:28:43-05:00"
+      "last_modified": "2026-02-15T03:54:40-05:00"
     },
     {
       "$schema": "../../schemas/v2/units.schema.json",
@@ -857,10 +851,10 @@
       "dps": 9,
       "attack_interval": 1.0,
       "charges": 1,
-      "recharge_time": 10.0,
+      "recharge_time": 5,
       "cast_time": 0.0,
       "population": 0,
-      "last_modified": "2026-02-14T21:28:43-05:00"
+      "last_modified": "2026-02-15T03:54:40-05:00"
     },
     {
       "$schema": "../../schemas/v2/units.schema.json",
@@ -896,10 +890,10 @@
       "dps": 30,
       "attack_interval": 1.0,
       "charges": 1,
-      "recharge_time": 10,
+      "recharge_time": 50,
       "cast_time": 0,
       "population": 0,
-      "last_modified": "2026-02-14T21:28:43-05:00"
+      "last_modified": "2026-02-15T03:54:40-05:00"
     },
     {
       "$schema": "../../schemas/v2/units.schema.json",
@@ -950,10 +944,10 @@
       "dps": 12,
       "attack_interval": 1.0,
       "charges": 1,
-      "recharge_time": 10,
+      "recharge_time": 5,
       "cast_time": 0,
       "population": 0,
-      "last_modified": "2026-02-14T21:28:43-05:00"
+      "last_modified": "2026-02-15T03:54:40-05:00"
     },
     {
       "$schema": "../../schemas/v2/units.schema.json",
@@ -989,10 +983,10 @@
       },
       "health": 750,
       "charges": 1,
-      "recharge_time": 10.0,
+      "recharge_time": 50,
       "cast_time": 0.0,
       "population": 0,
-      "last_modified": "2026-02-11T11:00:20-05:00"
+      "last_modified": "2026-02-15T03:54:40-05:00"
     },
     {
       "$schema": "../../schemas/v2/units.schema.json",
@@ -1034,10 +1028,10 @@
       "dps": 100,
       "attack_interval": 1.0,
       "charges": 1,
-      "recharge_time": 10,
+      "recharge_time": 120,
       "cast_time": 0,
       "population": 0,
-      "last_modified": "2026-02-14T21:28:43-05:00"
+      "last_modified": "2026-02-15T03:54:40-05:00"
     },
     {
       "$schema": "../../schemas/v2/units.schema.json",
@@ -1063,10 +1057,10 @@
       "dps": 5,
       "attack_interval": 1.0,
       "charges": 1,
-      "recharge_time": 10.0,
+      "recharge_time": 25,
       "cast_time": 0.0,
       "population": 0,
-      "last_modified": "2026-02-11T11:00:20-05:00"
+      "last_modified": "2026-02-15T03:54:40-05:00"
     },
     {
       "$schema": "../../schemas/v2/units.schema.json",
@@ -1109,10 +1103,10 @@
       "dps": 8,
       "attack_interval": 1.0,
       "charges": 1,
-      "recharge_time": 10,
+      "recharge_time": 5,
       "cast_time": 0,
       "population": 0,
-      "last_modified": "2026-02-14T21:28:43-05:00"
+      "last_modified": "2026-02-15T03:54:40-05:00"
     },
     {
       "$schema": "../../schemas/v2/units.schema.json",
@@ -1148,10 +1142,10 @@
       "dps": 70,
       "attack_interval": 1.0,
       "charges": 1,
-      "recharge_time": 10,
+      "recharge_time": 50,
       "cast_time": 0,
       "population": 0,
-      "last_modified": "2026-02-14T21:28:43-05:00"
+      "last_modified": "2026-02-15T03:54:40-05:00"
     },
     {
       "$schema": "../../schemas/v2/units.schema.json",
@@ -1172,10 +1166,10 @@
       ],
       "health": 2500,
       "charges": 1,
-      "recharge_time": 10.0,
+      "recharge_time": 25,
       "cast_time": 0.0,
       "population": 0,
-      "last_modified": "2026-02-11T11:00:20-05:00"
+      "last_modified": "2026-02-15T03:54:40-05:00"
     },
     {
       "$schema": "../../schemas/v2/units.schema.json",
@@ -1218,10 +1212,10 @@
       "dps": 10,
       "attack_interval": 1.0,
       "charges": 1,
-      "recharge_time": 10,
+      "recharge_time": 5,
       "cast_time": 0,
       "population": 0,
-      "last_modified": "2026-02-14T21:28:43-05:00"
+      "last_modified": "2026-02-15T03:54:40-05:00"
     },
     {
       "$schema": "../../schemas/v2/units.schema.json",
@@ -1269,10 +1263,10 @@
       "dps": 20,
       "attack_interval": 1.0,
       "charges": 1,
-      "recharge_time": 10,
+      "recharge_time": 5,
       "cast_time": 0,
       "population": 0,
-      "last_modified": "2026-02-14T21:28:43-05:00"
+      "last_modified": "2026-02-15T03:54:40-05:00"
     },
     {
       "$schema": "../../schemas/v2/units.schema.json",
@@ -1315,10 +1309,10 @@
       "dps": 15,
       "attack_interval": 1.0,
       "charges": 1,
-      "recharge_time": 10,
+      "recharge_time": 5,
       "cast_time": 0,
       "population": 0,
-      "last_modified": "2026-02-14T21:28:43-05:00"
+      "last_modified": "2026-02-15T03:54:40-05:00"
     },
     {
       "$schema": "../../schemas/v2/units.schema.json",
@@ -1338,17 +1332,17 @@
         }
       ],
       "damage": 40,
-      "health": 130,
+      "health": 1300,
       "range": 75,
       "movement_speed": 3,
       "movement_type": "Ground",
       "dps": 40,
       "attack_interval": 1.0,
       "charges": 1,
-      "recharge_time": 10.0,
+      "recharge_time": 50,
       "cast_time": 0.0,
       "population": 0,
-      "last_modified": "2026-02-11T11:00:20-05:00"
+      "last_modified": "2026-02-15T03:54:40-05:00"
     },
     {
       "$schema": "../../schemas/v2/units.schema.json",
@@ -1368,17 +1362,17 @@
         }
       ],
       "damage": 40,
-      "health": 210,
+      "health": 2100,
       "range": 55,
       "movement_speed": 2,
       "movement_type": "Ground",
       "dps": 40,
       "attack_interval": 1.0,
       "charges": 1,
-      "recharge_time": 10.0,
+      "recharge_time": 50,
       "cast_time": 0.0,
       "population": 0,
-      "last_modified": "2026-02-11T11:00:20-05:00"
+      "last_modified": "2026-02-15T03:54:40-05:00"
     },
     {
       "$schema": "../../schemas/v2/units.schema.json",
@@ -1405,10 +1399,10 @@
       "dps": 16,
       "attack_interval": 1.0,
       "charges": 1,
-      "recharge_time": 10.0,
+      "recharge_time": 25,
       "cast_time": 0.0,
       "population": 0,
-      "last_modified": "2026-02-11T11:00:20-05:00"
+      "last_modified": "2026-02-15T03:54:40-05:00"
     },
     {
       "$schema": "../../schemas/v2/units.schema.json",
@@ -1445,10 +1439,10 @@
       "dps": 19,
       "attack_interval": 1.0,
       "charges": 1,
-      "recharge_time": 10,
+      "recharge_time": 25,
       "cast_time": 0,
       "population": 0,
-      "last_modified": "2026-02-14T21:28:43-05:00"
+      "last_modified": "2026-02-15T03:54:40-05:00"
     }
   ],
   "spells": [
@@ -1472,9 +1466,9 @@
       "damage": 4200,
       "range": 80,
       "charges": 1,
-      "recharge_time": 10.0,
+      "recharge_time": 120,
       "cast_time": 0.0,
-      "last_modified": "2026-02-11T11:00:20-05:00"
+      "last_modified": "2026-02-15T03:54:40-05:00"
     },
     {
       "$schema": "../../schemas/v2/spells.schema.json",
@@ -1499,9 +1493,9 @@
       },
       "range": 80,
       "charges": 1,
-      "recharge_time": 10.0,
+      "recharge_time": 25,
       "cast_time": 0.0,
-      "last_modified": "2026-02-11T11:00:20-05:00"
+      "last_modified": "2026-02-15T03:54:40-05:00"
     },
     {
       "$schema": "../../schemas/v2/spells.schema.json",
@@ -1550,9 +1544,9 @@
       },
       "range": 35,
       "charges": 1,
-      "recharge_time": 10,
+      "recharge_time": 50,
       "cast_time": 0,
-      "last_modified": "2026-02-14T21:28:43-05:00"
+      "last_modified": "2026-02-15T03:54:40-05:00"
     },
     {
       "$schema": "../../schemas/v2/spells.schema.json",
@@ -1574,9 +1568,9 @@
       "damage": 530,
       "range": 80,
       "charges": 1,
-      "recharge_time": 10.0,
+      "recharge_time": 50,
       "cast_time": 0.0,
-      "last_modified": "2026-02-11T11:00:20-05:00"
+      "last_modified": "2026-02-15T03:54:40-05:00"
     },
     {
       "$schema": "../../schemas/v2/spells.schema.json",
@@ -1609,9 +1603,9 @@
       "range": 45,
       "duration": 12,
       "charges": 1,
-      "recharge_time": 10,
+      "recharge_time": 120,
       "cast_time": 0,
-      "last_modified": "2026-02-14T21:28:43-05:00"
+      "last_modified": "2026-02-15T03:54:40-05:00"
     },
     {
       "$schema": "../../schemas/v2/spells.schema.json",
@@ -1637,9 +1631,9 @@
       "damage": 14,
       "range": 45,
       "charges": 1,
-      "recharge_time": 10.0,
+      "recharge_time": 5,
       "cast_time": 0.0,
-      "last_modified": "2026-02-11T11:00:20-05:00"
+      "last_modified": "2026-02-15T03:54:40-05:00"
     },
     {
       "$schema": "../../schemas/v2/spells.schema.json",
@@ -1660,9 +1654,9 @@
       ],
       "range": 24,
       "charges": 1,
-      "recharge_time": 10.0,
+      "recharge_time": 50,
       "cast_time": 0.0,
-      "last_modified": "2026-02-11T11:00:20-05:00"
+      "last_modified": "2026-02-15T03:54:40-05:00"
     },
     {
       "$schema": "../../schemas/v2/spells.schema.json",
@@ -1683,9 +1677,9 @@
       ],
       "range": 24,
       "charges": 1,
-      "recharge_time": 10.0,
+      "recharge_time": 50,
       "cast_time": 0.0,
-      "last_modified": "2026-02-11T11:00:20-05:00"
+      "last_modified": "2026-02-15T03:54:40-05:00"
     },
     {
       "$schema": "../../schemas/v2/spells.schema.json",
@@ -1707,9 +1701,9 @@
       "damage": 3675,
       "range": 36,
       "charges": 1,
-      "recharge_time": 10.0,
+      "recharge_time": 120,
       "cast_time": 0.0,
-      "last_modified": "2026-02-11T11:00:20-05:00"
+      "last_modified": "2026-02-15T03:54:40-05:00"
     },
     {
       "$schema": "../../schemas/v2/spells.schema.json",
@@ -1731,9 +1725,9 @@
       "range": 45,
       "value": 300,
       "charges": 1,
-      "recharge_time": 10.0,
+      "recharge_time": 5,
       "cast_time": 0.0,
-      "last_modified": "2026-02-11T11:00:20-05:00"
+      "last_modified": "2026-02-15T03:54:40-05:00"
     },
     {
       "$schema": "../../schemas/v2/spells.schema.json",
@@ -1766,9 +1760,9 @@
         ]
       },
       "charges": 1,
-      "recharge_time": 10,
+      "recharge_time": 50,
       "cast_time": 0,
-      "last_modified": "2026-02-11T11:00:20-05:00"
+      "last_modified": "2026-02-15T03:54:40-05:00"
     },
     {
       "$schema": "../../schemas/v2/spells.schema.json",
@@ -1789,9 +1783,9 @@
       ],
       "duration": 12,
       "charges": 1,
-      "recharge_time": 10.0,
+      "recharge_time": 120,
       "cast_time": 0.0,
-      "last_modified": "2026-02-11T11:00:20-05:00"
+      "last_modified": "2026-02-15T03:54:40-05:00"
     },
     {
       "$schema": "../../schemas/v2/spells.schema.json",
@@ -1816,9 +1810,9 @@
       },
       "damage": 18,
       "charges": 1,
-      "recharge_time": 10.0,
+      "recharge_time": 5,
       "cast_time": 0.0,
-      "last_modified": "2026-02-11T11:00:20-05:00"
+      "last_modified": "2026-02-15T03:54:40-05:00"
     },
     {
       "$schema": "../../schemas/v2/spells.schema.json",
@@ -1844,9 +1838,9 @@
       "damage": 14,
       "range": 45,
       "charges": 1,
-      "recharge_time": 10.0,
+      "recharge_time": 5,
       "cast_time": 0.0,
-      "last_modified": "2026-02-11T11:00:20-05:00"
+      "last_modified": "2026-02-15T03:54:40-05:00"
     }
   ],
   "titans": [

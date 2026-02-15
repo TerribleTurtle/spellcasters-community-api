@@ -66,3 +66,26 @@ This update deprecates the monolithic `incantation` schema in favor of specific 
 
 - `damage_modifiers` now supports both single strings and arrays for `target_type` across all schemas.
 - `titan` and `spellcaster` schemas now reference `common.schema.json` for shared fields.
+
+# Schema Changes - v1.3 Hero Speed Cleanup
+
+## Overview
+
+This update removes the `movement_speed` attribute from Heroes to better reflect their gameplay implementation.
+
+## Changes
+
+### 1. `heroes.schema.json` Update
+
+- **Removed:** `movement_speed` property.
+- **Validation:** Presence of `movement_speed` is now forbidden.
+
+### 2. `stats.schema.json` Refactor
+
+- **New Definition:** `mobility_stats` (contains `movement_speed`).
+- **Refactor:** `base_stats` (used by Heroes) no longer includes `movement_speed`.
+- **Refactor:** `stats` (used by Units/Titans) includes `mobility_stats` via `allOf`.
+
+## Developer Action Required
+
+- Update Hero data parsers to ignore or remove `movement_speed`.

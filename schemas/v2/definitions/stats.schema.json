@@ -31,16 +31,21 @@
         }
       }
     },
+    "mobility_stats": {
+      "type": "object",
+      "properties": {
+        "movement_speed": { 
+          "allOf": [{ "$ref": "#/definitions/stat_value" }],
+          "description": "Speed in tiles per second."
+        }
+      }
+    },
     "base_stats": {
       "type": "object",
       "properties": {
         "health": { 
           "allOf": [{ "$ref": "#/definitions/stat_value" }],
           "description": "Hit Points. When this reaches 0, the unit dies."
-        },
-        "movement_speed": { 
-          "allOf": [{ "$ref": "#/definitions/stat_value" }],
-          "description": "Speed in tiles per second."
         },
         "population": { "$ref": "resource.schema.json#/definitions/population_cost" }
       }
@@ -84,7 +89,8 @@
     "stats": {
       "allOf": [
         { "$ref": "#/definitions/base_stats" },
-        { "$ref": "#/definitions/combat_stats" }
+        { "$ref": "#/definitions/combat_stats" },
+        { "$ref": "#/definitions/mobility_stats" }
       ]
     }
   }

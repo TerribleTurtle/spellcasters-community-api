@@ -19,9 +19,9 @@
     "damage": 4200,
     "range": 80,
     "charges": 1,
-    "recharge_time": 10.0,
+    "recharge_time": 120,
     "cast_time": 0.0,
-    "last_modified": "2026-02-11T11:00:20-05:00"
+    "last_modified": "2026-02-15T03:54:40-05:00"
   },
   {
     "$schema": "../../schemas/v2/spells.schema.json",
@@ -46,9 +46,9 @@
     },
     "range": 80,
     "charges": 1,
-    "recharge_time": 10.0,
+    "recharge_time": 25,
     "cast_time": 0.0,
-    "last_modified": "2026-02-11T11:00:20-05:00"
+    "last_modified": "2026-02-15T03:54:40-05:00"
   },
   {
     "$schema": "../../schemas/v2/spells.schema.json",
@@ -97,9 +97,9 @@
     },
     "range": 35,
     "charges": 1,
-    "recharge_time": 10,
+    "recharge_time": 50,
     "cast_time": 0,
-    "last_modified": "2026-02-14T21:28:43-05:00"
+    "last_modified": "2026-02-15T03:54:40-05:00"
   },
   {
     "$schema": "../../schemas/v2/spells.schema.json",
@@ -121,9 +121,9 @@
     "damage": 530,
     "range": 80,
     "charges": 1,
-    "recharge_time": 10.0,
+    "recharge_time": 50,
     "cast_time": 0.0,
-    "last_modified": "2026-02-11T11:00:20-05:00"
+    "last_modified": "2026-02-15T03:54:40-05:00"
   },
   {
     "$schema": "../../schemas/v2/spells.schema.json",
@@ -156,9 +156,9 @@
     "range": 45,
     "duration": 12,
     "charges": 1,
-    "recharge_time": 10,
+    "recharge_time": 120,
     "cast_time": 0,
-    "last_modified": "2026-02-14T21:28:43-05:00"
+    "last_modified": "2026-02-15T03:54:40-05:00"
   },
   {
     "$schema": "../../schemas/v2/spells.schema.json",
@@ -184,9 +184,9 @@
     "damage": 14,
     "range": 45,
     "charges": 1,
-    "recharge_time": 10.0,
+    "recharge_time": 5,
     "cast_time": 0.0,
-    "last_modified": "2026-02-11T11:00:20-05:00"
+    "last_modified": "2026-02-15T03:54:40-05:00"
   },
   {
     "$schema": "../../schemas/v2/spells.schema.json",
@@ -207,9 +207,9 @@
     ],
     "range": 24,
     "charges": 1,
-    "recharge_time": 10.0,
+    "recharge_time": 50,
     "cast_time": 0.0,
-    "last_modified": "2026-02-11T11:00:20-05:00"
+    "last_modified": "2026-02-15T03:54:40-05:00"
   },
   {
     "$schema": "../../schemas/v2/spells.schema.json",
@@ -230,9 +230,9 @@
     ],
     "range": 24,
     "charges": 1,
-    "recharge_time": 10.0,
+    "recharge_time": 50,
     "cast_time": 0.0,
-    "last_modified": "2026-02-11T11:00:20-05:00"
+    "last_modified": "2026-02-15T03:54:40-05:00"
   },
   {
     "$schema": "../../schemas/v2/spells.schema.json",
@@ -254,9 +254,9 @@
     "damage": 3675,
     "range": 36,
     "charges": 1,
-    "recharge_time": 10.0,
+    "recharge_time": 120,
     "cast_time": 0.0,
-    "last_modified": "2026-02-11T11:00:20-05:00"
+    "last_modified": "2026-02-15T03:54:40-05:00"
   },
   {
     "$schema": "../../schemas/v2/spells.schema.json",
@@ -278,9 +278,9 @@
     "range": 45,
     "value": 300,
     "charges": 1,
-    "recharge_time": 10.0,
+    "recharge_time": 5,
     "cast_time": 0.0,
-    "last_modified": "2026-02-11T11:00:20-05:00"
+    "last_modified": "2026-02-15T03:54:40-05:00"
   },
   {
     "$schema": "../../schemas/v2/spells.schema.json",
@@ -313,9 +313,9 @@
       ]
     },
     "charges": 1,
-    "recharge_time": 10,
+    "recharge_time": 50,
     "cast_time": 0,
-    "last_modified": "2026-02-11T11:00:20-05:00"
+    "last_modified": "2026-02-15T03:54:40-05:00"
   },
   {
     "$schema": "../../schemas/v2/spells.schema.json",
@@ -336,9 +336,9 @@
     ],
     "duration": 12,
     "charges": 1,
-    "recharge_time": 10.0,
+    "recharge_time": 120,
     "cast_time": 0.0,
-    "last_modified": "2026-02-11T11:00:20-05:00"
+    "last_modified": "2026-02-15T03:54:40-05:00"
   },
   {
     "$schema": "../../schemas/v2/spells.schema.json",
@@ -363,9 +363,9 @@
     },
     "damage": 18,
     "charges": 1,
-    "recharge_time": 10.0,
+    "recharge_time": 5,
     "cast_time": 0.0,
-    "last_modified": "2026-02-11T11:00:20-05:00"
+    "last_modified": "2026-02-15T03:54:40-05:00"
   },
   {
     "$schema": "../../schemas/v2/spells.schema.json",
@@ -391,8 +391,8 @@
     "damage": 14,
     "range": 45,
     "charges": 1,
-    "recharge_time": 10.0,
+    "recharge_time": 5,
     "cast_time": 0.0,
-    "last_modified": "2026-02-11T11:00:20-05:00"
+    "last_modified": "2026-02-15T03:54:40-05:00"
   }
 ]

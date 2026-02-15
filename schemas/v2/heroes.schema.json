@@ -42,7 +42,6 @@
       "class": "Conqueror",
       "difficulty": 1,
       "health": 1000,
-      "movement_speed": 6,
       "movement_type": "Ground",
       "population": 0,
       "abilities": {

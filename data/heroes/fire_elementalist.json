@@ -5,7 +5,6 @@
   "category": "Spellcaster",
   "movement_type": "Ground",
   "health": 340,
-  "movement_speed": 7,
   "population": 0,
   "image_required": true,
   "difficulty": 1,
