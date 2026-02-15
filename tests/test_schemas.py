@@ -51,7 +51,8 @@ def registry_and_schemas():  # pylint: disable=redefined-outer-name
     return registry, schemas_by_filename
 
 
-def test_json_schemas_robust(data_loader, registry_and_schemas):  # pylint: disable=redefined-outer-name, too-many-locals
+# pylint: disable=redefined-outer-name, too-many-locals
+def test_json_schemas_robust(data_loader, registry_and_schemas):
     """
     Validates every JSON file in the data directories against its assigned schema
     using the referencing library for robust local resolution.

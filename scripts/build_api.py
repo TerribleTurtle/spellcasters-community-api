@@ -18,8 +18,6 @@ import config
 from config import load_json
 from validate_integrity import validate_integrity
 
-
-
 # Configuration
 VERSION_API = "v2"
 OUTPUT_DIR = config.OUTPUT_DIR

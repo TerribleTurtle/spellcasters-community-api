@@ -23,8 +23,6 @@ except ImportError:
     print("CRITICAL: 'jsonschema' (>=4.18) or 'referencing' library not found.")
     sys.exit(1)
 
-
-
 # Configuration
 SCHEMAS_DIR = config.SCHEMAS_DIR
 DATA_DIR = config.DATA_DIR
