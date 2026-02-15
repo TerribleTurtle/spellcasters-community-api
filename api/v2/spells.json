@@ -99,7 +99,7 @@
     "charges": 1,
     "recharge_time": 10,
     "cast_time": 0,
-    "last_modified": "2026-02-11T11:00:20-05:00"
+    "last_modified": "2026-02-14T21:28:43-05:00"
   },
   {
     "$schema": "../../schemas/v2/spells.schema.json",
@@ -158,7 +158,7 @@
     "charges": 1,
     "recharge_time": 10,
     "cast_time": 0,
-    "last_modified": "2026-02-11T11:00:20-05:00"
+    "last_modified": "2026-02-14T21:28:43-05:00"
   },
   {
     "$schema": "../../schemas/v2/spells.schema.json",

@@ -36,7 +36,8 @@
             "description": "Successfully hitting a Spellcaster twice interrupts their actions."
           }
         ],
-        "cleave": { "damage_percent": 0.5, "radius": 2.5, "arc": 120 },
+        "cleave": true,
+
         "aura": [
           {
             "name": "Building Enchant",

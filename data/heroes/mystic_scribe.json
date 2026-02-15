@@ -37,7 +37,7 @@
             "description": "Knocks back small units."
           }
         ],
-        "cleave": { "damage_percent": 0.5, "radius": 2.5, "arc": 120 }
+        "cleave": true
       }
     },
     "defense": {

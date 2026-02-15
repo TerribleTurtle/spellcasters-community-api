@@ -106,7 +106,7 @@ We use strongly-typed objects for mechanics to ensure the game engine can read t
 
 - **`pierce`** (Boolean): Projectiles pass through enemies.
 - **`stealth`** (Object): Duration and break conditions.
-- **`cleave`** (Object): Radius, Arc, and Damage %.
+- **`cleave`** (Boolean | Object): Projectiles pass multiple targets. Object defines Radius, Arc, and Damage %.
 - **`damage_modifiers`** (Array):
   - **Match:** Target Type (e.g., "Building").
   - **Condition:** Structured logic (e.g., `{"field": "target.hp_percent", "op": "<", "val": 0.5}`).

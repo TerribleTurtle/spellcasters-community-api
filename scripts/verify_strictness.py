@@ -1,13 +1,12 @@
-import json
-import os
 import sys
 import copy
 from jsonschema import validators, ValidationError
 from validate_integrity import create_registry, SCHEMAS_DIR
 
+
 def main():
-    print("--- Starting Double Check Verification ---")
-    
+    print("--- Starting DoubleCheck Verification ---")
+
     # 1. Build Registry (Loads all schemas with correct IDs)
     try:
         registry, schemas_map = create_registry(SCHEMAS_DIR)
@@ -20,16 +19,16 @@ def main():
     if schema_filename not in schemas_map:
         print(f"CRITICAL: {schema_filename} not found in registry.")
         sys.exit(1)
-        
+
     hero_uri = schemas_map[schema_filename]
     resolver = registry.resolver()
     resolved = resolver.lookup(hero_uri)
     schema = resolved.contents
-    
+
     # 3. Setup Validator
     ValidatorClass = validators.validator_for(schema)
     validator = ValidatorClass(schema, registry=registry)
-    
+
     def validate(data):
         try:
             validator.validate(data)
@@ -53,9 +52,9 @@ def main():
         "tags": ["test"],
         "abilities": {
             "passive": [],
-            "primary": { "name": "Hit", "description": "Hits stuff", "damage": 10 },
-            "defense": { "name": "Block", "description": "Blocks stuff" },
-            "ultimate": { "name": "Win", "description": "Wins game" }
+            "primary": {"name": "Hit", "description": "Hits stuff", "damage": 10},
+            "defense": {"name": "Block", "description": "Blocks stuff"},
+            "ultimate": {"name": "Win", "description": "Wins game"}
         },
         "last_modified": "2026-01-01T00:00:00Z",
         "changelog": []
@@ -89,6 +88,7 @@ def main():
     print(f"Test 4 (Strictness - Bad ID Pattern): {'PASS' if not is_valid else 'FAIL'} - Expected Failure, Got: {msg}")
 
     print("--- Double Check Complete ---")
+
 
 if __name__ == "__main__":
     main()

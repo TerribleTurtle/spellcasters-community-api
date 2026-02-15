@@ -1,15 +1,13 @@
 import json
 import os
-import html
 import glob
 import sys
-import hashlib
 import subprocess
-
 from datetime import datetime, timezone
 
 import config
 from config import load_json
+from validate_integrity import validate_integrity
 
 """
 API Builder Script
@@ -42,16 +40,18 @@ SINGLE_FILES = {
     "game_config": "game_config.json"
 }
 
+
 def ensure_output_dir():
     """Creates the output directory if it does not exist."""
     if not os.path.exists(OUTPUT_DIR):
         os.makedirs(OUTPUT_DIR)
         print(f"Created output directory: {OUTPUT_DIR}")
-    
+
     # Cleanup old files
     for f in glob.glob(os.path.join(OUTPUT_DIR, "*.json")):
         os.remove(f)
     print(f"Cleaned up output directory: {OUTPUT_DIR}")
+
 
 def save_json(filename, data):
     """
@@ -86,19 +86,18 @@ def get_last_modified_date(filepath):
             return timestamp
     except Exception:
         pass
-    
+
     # Fallback: Use current time
     return datetime.now(timezone.utc).isoformat()
-
 
 
 def sanitize_recursive(data):
     """
     Recursively escapes HTML characters in strings to prevent XSS.
-    
+
     Args:
         data (dict | list | str | any): The data to sanitize.
-        
+
     Returns:
         The sanitized data structure.
     """
@@ -112,12 +111,9 @@ def sanitize_recursive(data):
     return data
 
 
-
-from validate_integrity import validate_integrity
-
 def main():
     print(f"Building API {VERSION_API}...")
-    
+
     # 1. Safety Lock: Validate Integrity
     try:
         validate_integrity()
@@ -125,21 +121,21 @@ def main():
         if e.code != 0:
             print("[FATAL] Validation failed. Build aborted.")
             sys.exit(1)
-    
+
     ensure_output_dir()
-    
+
     # Load Game Config for Version
     game_config_path = os.path.join(DATA_DIR, "game_config.json")
     game_config = load_json(game_config_path)
     version = game_config.get("version", "0.0.1") if game_config else "0.0.1"
-    
+
     all_data = {
         "build_info": {
             "version": version,
             "generated_at": datetime.now(timezone.utc).isoformat()
         }
     }
-    
+
     errors = 0
 
     # Aggregate Collections
@@ -147,7 +143,7 @@ def main():
         print(f"Aggregating {key} from data/{folder}...")
         collection = []
         source_path = os.path.join(DATA_DIR, folder)
-        
+
         if not os.path.exists(source_path):
             print(f"[WARN] Directory not found: {source_path}")
             all_data[key] = []
@@ -159,7 +155,7 @@ def main():
             content = load_json(file)
             if content:
                 content = sanitize_recursive(content)
-                
+
                 # Inject last_modified from git history if missing
                 if 'last_modified' not in content:
                     content['last_modified'] = get_last_modified_date(file)
@@ -167,7 +163,7 @@ def main():
                 collection.append(content)
             else:
                 errors += 1
-        
+
         # Save individual aggregation
         save_json(f"{key}.json", collection)
         all_data[key] = collection
@@ -180,7 +176,7 @@ def main():
             content = load_json(path)
             if content:
                 content = sanitize_recursive(content)
-                
+
                 # Inject last_modified from git history if missing
                 if 'last_modified' not in content:
                     content['last_modified'] = get_last_modified_date(path)
@@ -191,18 +187,14 @@ def main():
                 errors += 1
         else:
             print(f"[WARN] File not found: {path}")
-            # Optional file missing is not always a critical error depending on logic,
-            # but usually single files are expected.
-            # strict mode: errors += 1 (?) -> Let's keep it as warn for now unless critical.
-
 
     # Save Master File
     save_json("all_data.json", all_data)
-    
+
     if errors > 0:
         print(f"[FAIL] Build failed with {errors} errors.")
         sys.exit(1)
-        
+
     # Generate Status/Upgrade Endpoint (Placeholder)
     print("Generating status.json...")
     status_data = {
@@ -218,6 +210,7 @@ def main():
     save_json("status.json", status_data)
 
     print("Build Complete.")
+
 
 if __name__ == "__main__":
     main()

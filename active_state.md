@@ -2,9 +2,33 @@
 
 ## Current Focus
 
-**Deck Functionality Removal Complete**
+**Phase 4: CI/CD Remediation (Security & Performance)**
+
+Executing the Master Implementation Plan for CI/CD Hardening.
+
+- **Security:** Pinning actions to SHAs (✅ Complete).
+- **Performance:** implementing parallel job architecture ("Fan-Out") (✅ Complete).
+- **Efficiency:** Optimizing workflow triggers (✅ Complete).
+- **Verification:** Syntax and Logic checks (✅ Complete).
+- **Remediation:** Consolidated `main` branch workflows (✅ Complete).
+- **Status:** Ready for Push.
 
 Successfully removed all Deck-related validation logic, schemas, and data to refocus the API on Heroes, Units, and Items. The `data/decks` directory has been deleted, and the build pipeline no longer processes decks.
+
+**Deployment Status:** ✅ Ready (Locally Committed)
+
+- Linting/Tests: Passed
+- Build: Verified
+- Push: Pending User Action
+
+### CI/CD Audit Findings (New)
+
+Executed `/ci-audit` workflow.
+
+- **Security:** ✅ Excellent (Pinned SHAs, Strict Permissions).
+- **Speed:** 🟡 Redundant executions on `main` branch.
+- **Reliability:** 🟡 `deploy.yml` missing unit test validation.
+- **Action Required:** Consolidate `main` branch pipelines and add tests to deploy.
 
 Successfully restored data values from `V1_all_data.json` to the V2 data structure across Heroes, Units, Spells, Titans, and Consumables. The restoration process resolved data drift while maintaining strict V2 schema compliance.
 
@@ -72,4 +96,9 @@ Successfully restored data values from `V1_all_data.json` to the V2 data structu
 - [x] **Phase 4: CI/CD & Logic Verification**
   - [x] **Hardening:** Updated `damage_modifier` and `damage_reduction` schemas to strictly forbid string conditions.
   - [x] **Caught & Fixed:** `ruin_spider.json` failed new build, fixed by removing legacy "Always" condition.
+  - [x] **Hardening:** Updated `damage_modifier` and `damage_reduction` schemas to strictly forbid string conditions.
+  - [x] **Caught & Fixed:** `ruin_spider.json` failed new build, fixed by removing legacy "Always" condition.
   - [x] **Verified:** Full API build `scripts/build_api.py` passing.
+- [x] **Phase 5: Workflow Unification**
+  - [x] `ci.yml`: Stopped redundant runs on `main`.
+  - [x] `deploy.yml`: Added Linting & Testing gates before Build.

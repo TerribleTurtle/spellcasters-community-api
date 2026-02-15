@@ -55,14 +55,23 @@
           "description": "Entity becomes invisible to enemies."
         },
         "cleave": {
-          "type": "object",
-          "properties": {
-            "damage_percent": { "type": "number", "description": "Percentage of damage dealt to secondary targets (e.g. 0.5 for 50%)." },
-            "radius": { "type": "number", "description": "Radius of the cleave effect." },
-            "arc": { "type": "number", "description": "Cone angle in degrees (e.g. 180 for front semi-circle)." }
-          },
-          "required": ["damage_percent", "radius"],
-          "additionalProperties": false,
+          "oneOf": [
+            {
+              "type": "object",
+              "properties": {
+                "damage_percent": { "type": "number", "description": "Percentage of damage dealt to secondary targets (e.g. 0.5 for 50%)." },
+                "radius": { "type": "number", "description": "Radius of the cleave effect." },
+                "arc": { "type": "number", "description": "Cone angle in degrees (e.g. 180 for front semi-circle)." }
+              },
+              "required": ["damage_percent", "radius"],
+              "additionalProperties": false
+            },
+            {
+              "type": "boolean",
+              "const": true,
+              "description": "Indicates the mechanic is present with default/unknown values."
+            }
+          ],
           "description": "Attacks hit multiple enemies in an area."
         },
         "capture_speed_modifier": { "type": "number", "description": "Multiplier for altar capture speed (e.g., 1.5 is 50% faster)." },

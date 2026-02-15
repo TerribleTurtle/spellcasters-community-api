@@ -2,3 +2,5 @@ jsonschema==4.26.0
 Pillow==12.1.1
 pytest==9.0.2
 referencing>=0.31.0
+flake8==7.0.0
+pylint==3.0.3

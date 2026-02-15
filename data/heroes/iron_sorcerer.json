@@ -30,8 +30,7 @@
       "description": "Strike with powerful mid-range attacks that interrupt enemies.",
       "damage": 35,
       "mechanics": {
-
-        "cleave": { "damage_percent": 0.5, "radius": 2.5, "arc": 120 }
+        "cleave": true
       }
     },
     "defense": {

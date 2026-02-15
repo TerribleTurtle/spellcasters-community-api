@@ -67,7 +67,7 @@
     ],
     "entity_id": "astral_monk",
     "description": "A Duelist who strikes from the shadows with fast astral fists and time-bending abilities.",
-    "last_modified": "2026-02-11T11:59:51-05:00"
+    "last_modified": "2026-02-14T21:28:43-05:00"
   },
   {
     "$schema": "../../schemas/v2/heroes.schema.json",
@@ -101,11 +101,7 @@
         "description": "Burns enemies with powerful Fire attacks.",
         "damage": 28,
         "mechanics": {
-          "cleave": {
-            "damage_percent": 0.5,
-            "radius": 2.5,
-            "arc": 120
-          }
+          "cleave": true
         }
       },
       "defense": {
@@ -130,7 +126,7 @@
     ],
     "entity_id": "fire_elementalist",
     "description": "A Conqueror who burns enemies with powerful fire attacks, cleaving through ranks and empowering allies.",
-    "last_modified": "2026-02-11T11:00:20-05:00"
+    "last_modified": "2026-02-14T21:28:43-05:00"
   },
   {
     "$schema": "../../schemas/v2/heroes.schema.json",
@@ -164,11 +160,7 @@
         "description": "Strike with powerful mid-range attacks that interrupt enemies.",
         "damage": 35,
         "mechanics": {
-          "cleave": {
-            "damage_percent": 0.5,
-            "radius": 2.5,
-            "arc": 120
-          }
+          "cleave": true
         }
       },
       "defense": {
@@ -192,7 +184,7 @@
     ],
     "entity_id": "iron_sorcerer",
     "description": "A Conqueror who dominates the battlefield with heavy melee strikes, protective runes, and a metal vortex.",
-    "last_modified": "2026-02-11T11:00:20-05:00"
+    "last_modified": "2026-02-14T21:28:43-05:00"
   },
   {
     "$schema": "../../schemas/v2/heroes.schema.json",
@@ -232,11 +224,7 @@
               "description": "Knocks back small units."
             }
           ],
-          "cleave": {
-            "damage_percent": 0.5,
-            "radius": 2.5,
-            "arc": 120
-          }
+          "cleave": true
         }
       },
       "defense": {
@@ -260,7 +248,7 @@
     ],
     "entity_id": "mystic_scribe",
     "description": "An Enchanter who uses magical ink to damage enemies, heal allies, and create protective barriers.",
-    "last_modified": "2026-02-11T11:00:20-05:00"
+    "last_modified": "2026-02-14T21:28:43-05:00"
   },
   {
     "$schema": "../../schemas/v2/heroes.schema.json",
@@ -300,11 +288,7 @@
               "description": "Successfully hitting a Spellcaster twice interrupts their actions."
             }
           ],
-          "cleave": {
-            "damage_percent": 0.5,
-            "radius": 2.5,
-            "arc": 120
-          },
+          "cleave": true,
           "aura": [
             {
               "name": "Building Enchant",
@@ -341,7 +325,7 @@
     ],
     "entity_id": "stone_shaman",
     "description": "An Enchanter who channels the power of earth to deal heavy damage, interrupt spellcasters, and fortify buildings.",
-    "last_modified": "2026-02-11T11:00:20-05:00"
+    "last_modified": "2026-02-14T21:28:43-05:00"
   },
   {
     "$schema": "../../schemas/v2/heroes.schema.json",
