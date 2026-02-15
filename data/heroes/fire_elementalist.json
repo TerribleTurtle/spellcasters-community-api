@@ -4,7 +4,7 @@
   "class": "Conqueror",
   "category": "Spellcaster",
   "movement_type": "Ground",
-  "health": 800,
+  "health": 340,
   "movement_speed": 7,
   "population": 0,
   "image_required": true,

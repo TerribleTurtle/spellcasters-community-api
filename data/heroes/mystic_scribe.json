@@ -4,7 +4,7 @@
   "class": "Enchanter",
   "category": "Spellcaster",
   "movement_type": "Ground",
-  "health": 900,
+  "health": 440,
   "movement_speed": 6,
   "population": 0,
   "image_required": true,

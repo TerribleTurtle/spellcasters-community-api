@@ -4,7 +4,7 @@
   "class": "Duelist",
   "category": "Spellcaster",
   "movement_type": "Ground",
-  "health": 1000,
+  "health": 300,
   "movement_speed": 6,
   "population": 0,
   "image_required": true,
