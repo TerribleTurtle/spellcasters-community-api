@@ -20,7 +20,7 @@
   "dps": 50,
   "attack_interval": 1.0,
   "charges": 1,
-  "recharge_time": 10.0,
+  "recharge_time": 50,
   "cast_time": 0.0,
   "population": 0
 }

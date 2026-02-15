@@ -47,7 +47,7 @@
   "dps": 12,
   "attack_interval": 1.0,
   "charges": 1,
-  "recharge_time": 10,
+  "recharge_time": 5,
   "cast_time": 0,
   "population": 0
 }

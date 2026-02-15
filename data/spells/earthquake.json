@@ -45,6 +45,6 @@
   },
   "range": 35,
   "charges": 1,
-  "recharge_time": 10,
+  "recharge_time": 50,
   "cast_time": 0
 }

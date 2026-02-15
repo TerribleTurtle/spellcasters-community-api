@@ -22,6 +22,6 @@
   "damage": 14,
   "range": 45,
   "charges": 1,
-  "recharge_time": 10.0,
+  "recharge_time": 5,
   "cast_time": 0.0
 }

@@ -21,6 +21,6 @@
   },
   "range": 80,
   "charges": 1,
-  "recharge_time": 10.0,
+  "recharge_time": 25,
   "cast_time": 0.0
 }

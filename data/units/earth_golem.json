@@ -19,7 +19,11 @@
     "damage_modifiers": [
       {
         "multiplier": 1.75,
-        "condition": { "field": "target.rank", "operator": ">=", "value": 3 },
+        "condition": {
+          "field": "target.rank",
+          "operator": ">=",
+          "value": 3
+        },
         "target_types": [
           "Unit"
         ]
@@ -29,7 +33,11 @@
       {
         "source_type": "Unit",
         "multiplier": 0.75,
-        "condition": { "field": "target.rank", "operator": ">=", "value": 3 },
+        "condition": {
+          "field": "target.rank",
+          "operator": ">=",
+          "value": 3
+        },
         "_comment": "UNCONFIRMED - Logic assumes Rank >= 3 based on text"
       }
     ]
@@ -41,7 +49,7 @@
   "dps": 25,
   "attack_interval": 1.0,
   "charges": 1,
-  "recharge_time": 10,
+  "recharge_time": 25,
   "cast_time": 0,
   "population": 0
 }
