@@ -4,7 +4,7 @@ This directory contains Python scripts used for building, validating, and mainta
 
 ## 🛠️ Setup
 
-Ensure you have Python 3.9+ installed and install dependencies:
+Ensure you have Python 3.10+ installed and install dependencies:
 
 ```bash
 pip install -r requirements.txt

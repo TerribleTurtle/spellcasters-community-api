@@ -15,9 +15,9 @@ Executing the Master Implementation Plan for CI/CD Hardening.
 
 Successfully removed all Deck-related validation logic, schemas, and data to refocus the API on Heroes, Units, and Items. The `data/decks` directory has been deleted, and the build pipeline no longer processes decks.
 
-**Deployment Status:** ✅ GO - Ready for Deployment
+**Deployment Status:** ✅ Pushed (Commit: `7bce71b`)
 
-- Linting/Tests: Passed (Flake8 & Pylint 10/10)
+- Linting/Tests: Passed (Hotfix E303, E501 applied)
 - Build: Verified
 - Documentation: CHANGELOG.md created
 - Manifest: [Deployment Manifest](file:///C:/Users/evanw/.gemini/antigravity/brain/0865fabb-dd4d-4310-9a3f-6258a2a8fa77/deployment_manifest.md)
@@ -107,3 +107,10 @@ Successfully restored data values from `V1_all_data.json` to the V2 data structu
   - [x] Fixed all `flake8` errors in `scripts/`, `api/`, `tests/` (E302, E303, E402, W293, W391).
 - [x] **Deployment**
   - [x] Pushed `feat: Finalize CI/CD Remediation (Security & Performance) & API Enhancements` to `main`.
+  - [x] Pushed `feat: Finalize CI/CD Remediation (Security & Performance) & API Enhancements` to `main`.
+  - [x] Pushed `style: fix flake8 whitespace (E303) and line length (E501) errors` to `main`.
+- [x] **Dependency Upgrade (Security & Modernization)**
+  - [x] Upgraded `flake8` to 7.3.0.
+  - [x] Upgraded `pylint` to 4.0.4.
+  - [x] Updated `scripts/README.md` to require Python 3.10+.
+  - [x] Verified full build and test suite.
