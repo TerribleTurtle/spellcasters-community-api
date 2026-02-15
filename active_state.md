@@ -114,3 +114,4 @@ Successfully restored data values from `V1_all_data.json` to the V2 data structu
   - [x] Upgraded `pylint` to 4.0.4.
   - [x] Updated `scripts/README.md` to require Python 3.10+.
   - [x] Verified full build and test suite.
+  - [x] Rebuilt and pushed API artifacts (`all_data.json`, `status.json`).
