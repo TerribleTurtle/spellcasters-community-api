@@ -1,13 +1,15 @@
-import pytest
 import os
 import json
 import glob
 import sys
+import pytest
 
 # Ensure scripts module is found
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "..", "scripts")))
 
-import config
+# pylint: disable=wrong-import-position
+import config  # noqa: E402
+
 
 @pytest.fixture(scope="session")
 def schema_loader():
@@ -19,11 +21,12 @@ def schema_loader():
             schemas[name] = json.load(f)
     return schemas
 
+
 @pytest.fixture(scope="session")
 def data_loader():
     """Loads all data files into a dictionary keyed by folder."""
     data_store = {}
-    for folder in config.FOLDER_TO_SCHEMA.keys():
+    for folder in config.FOLDER_TO_SCHEMA:
         data_store[folder] = []
         path_pattern = os.path.join(config.DATA_DIR, folder, "*.json")
         for filepath in glob.glob(path_pattern):

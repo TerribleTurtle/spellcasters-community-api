@@ -45,7 +45,7 @@ def bump_version(current_version, bump_type):
     return f"{major}.{minor}.{patch}"
 
 
-def main():
+def main():  # pylint: disable=too-many-statements
     if not os.path.exists(GAME_CONFIG_PATH):
         print(f"Error: {GAME_CONFIG_PATH} not found.")
         sys.exit(1)

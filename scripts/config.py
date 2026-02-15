@@ -44,13 +44,14 @@ FOLDER_TO_SCHEMA = {
     "upgrades": "upgrade"
 }
 
+
 def load_json(path):
     """
     Safely loads a JSON file.
-    
+
     Args:
         path (str): Absolute path to the JSON file.
-        
+
     Returns:
         dict: The parsed JSON data, or None if loading failed.
     """

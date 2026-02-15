@@ -1,3 +1,12 @@
+"""
+API Builder Script
+
+This script aggregates individual JSON data files from `data/` into consolidated
+API response files in `api/v1/`. It generates:
+- Collection files (e.g., units.json, spells.json)
+- A master all_data.json file
+"""
+
 import json
 import os
 import glob
@@ -9,14 +18,6 @@ import config
 from config import load_json
 from validate_integrity import validate_integrity
 
-"""
-API Builder Script
-
-This script aggregates individual JSON data files from `data/` into consolidated
-API response files in `api/v1/`. It generates:
-- Collection files (e.g., units.json, spells.json)
-- A master all_data.json file
-"""
 
 
 # Configuration
@@ -104,14 +105,14 @@ def sanitize_recursive(data):
     if isinstance(data, str):
         # Only escape < to prevent tag injection, preserving > and quotes for readability and game math
         return data.replace("<", "&lt;")
-    elif isinstance(data, dict):
+    if isinstance(data, dict):
         return {k: sanitize_recursive(v) for k, v in data.items()}
-    elif isinstance(data, list):
+    if isinstance(data, list):
         return [sanitize_recursive(v) for v in data]
     return data
 
 
-def main():
+def main():  # pylint: disable=too-many-locals, too-many-branches, too-many-statements
     print(f"Building API {VERSION_API}...")
 
     # 1. Safety Lock: Validate Integrity

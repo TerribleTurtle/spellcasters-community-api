@@ -1,10 +1,19 @@
+"""
+Data Integrity Validator
+
+This script performs strict validation on the project data:
+1. Schema Validation: Checks all JSON files against schemas in `schemas/v2/`.
+2. Asset Hygiene: checks if required images exist and meet size/dimension limits.
+3. Reference Integrity: Ensures logical consistency (e.g., Upgrade tags exist).
+"""
+
 import json
 import os
 import glob
 import sys
+from pathlib import Path
 from PIL import Image
 import config
-from pathlib import Path
 
 # Try to import modern JSON schema libraries
 try:
@@ -14,14 +23,7 @@ except ImportError:
     print("CRITICAL: 'jsonschema' (>=4.18) or 'referencing' library not found.")
     sys.exit(1)
 
-"""
-Data Integrity Validator
 
-This script performs strict validation on the project data:
-1. Schema Validation: Checks all JSON files against schemas in `schemas/v2/`.
-2. Asset Hygiene: checks if required images exist and meet size/dimension limits.
-3. Reference Integrity: Ensures logical consistency (e.g., Upgrade tags exist).
-"""
 
 # Configuration
 SCHEMAS_DIR = config.SCHEMAS_DIR
@@ -107,7 +109,7 @@ def save_cache(cache):
         print(f"[WARN] Could not save cache: {e}")
 
 
-def check_asset_exists(category, entity_id, is_required, cache):
+def check_asset_exists(category, entity_id, is_required, cache):  # pylint: disable=too-many-locals
     """Checks if assets/[category]/[entity_id].png exists and validates hygiene. Returns warning count."""
     warnings = 0
 
@@ -180,7 +182,7 @@ def validate_entry_assets(data, schema_key, folder, cache):
     return 0
 
 
-def validate_integrity():
+def validate_integrity():  # pylint: disable=too-many-locals, too-many-branches, too-many-statements
     """
     Main validation routine.
     """

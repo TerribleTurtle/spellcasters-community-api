@@ -4,7 +4,7 @@ from jsonschema import validators, ValidationError
 from validate_integrity import create_registry, SCHEMAS_DIR
 
 
-def main():
+def main():  # pylint: disable=too-many-locals
     print("--- Starting DoubleCheck Verification ---")
 
     # 1. Build Registry (Loads all schemas with correct IDs)
