@@ -34,12 +34,9 @@
           {
             "name": "Interruption",
             "description": "Successfully hitting a Spellcaster twice interrupts their actions."
-          },
-          {
-            "name": "Cleave",
-            "description": "Attacks hit multiple enemies in an arc."
           }
         ],
+        "cleave": { "damage_percent": 0.5, "radius": 2.5, "arc": 120 },
         "aura": [
           {
             "name": "Building Enchant",

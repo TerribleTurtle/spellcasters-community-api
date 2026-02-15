@@ -13,23 +13,16 @@
           "source_type": { "$ref": "../enums.schema.json#/definitions/source_type_enum" },
           "multiplier": { "type": "number", "minimum": 0 },
           "condition": {
-            "oneOf": [
-              { 
-                "type": "string",
-                "description": "Legacy string condition (Deprecated)."
-              },
-              {
-                "type": "object",
-                "required": ["field", "operator", "value"],
-                "properties": {
-                  "field": { "type": "string" },
-                  "operator": { "$ref": "../enums.schema.json#/definitions/comparison_operator_enum" },
-                  "value": {} 
-                },
-                "additionalProperties": false
-              }
-            ]
-          }
+            "type": "object",
+            "required": ["field", "operator", "value"],
+            "properties": {
+              "field": { "type": "string" },
+              "operator": { "$ref": "../enums.schema.json#/definitions/comparison_operator_enum" },
+              "value": {} 
+            },
+            "additionalProperties": false
+          },
+          "_comment": { "type": "string", "description": "Internal notes (e.g., unconfirmed data)." }
         },
         "examples": [
           {

@@ -40,6 +40,31 @@
             "description": "Features triggered upon spawning/placement."
         },
         
+        "pierce": { 
+          "type": "boolean",
+          "description": "If true, projectiles pass through enemies." 
+        },
+        "stealth": {
+          "type": "object",
+          "properties": {
+            "duration": { "type": "number", "description": "Duration in seconds. Use -1 for infinite/until broken." },
+            "break_on_attack": { "type": "boolean", "default": true }
+          },
+          "required": ["duration"],
+          "additionalProperties": false,
+          "description": "Entity becomes invisible to enemies."
+        },
+        "cleave": {
+          "type": "object",
+          "properties": {
+            "damage_percent": { "type": "number", "description": "Percentage of damage dealt to secondary targets (e.g. 0.5 for 50%)." },
+            "radius": { "type": "number", "description": "Radius of the cleave effect." },
+            "arc": { "type": "number", "description": "Cone angle in degrees (e.g. 180 for front semi-circle)." }
+          },
+          "required": ["damage_percent", "radius"],
+          "additionalProperties": false,
+          "description": "Attacks hit multiple enemies in an area."
+        },
         "capture_speed_modifier": { "type": "number", "description": "Multiplier for altar capture speed (e.g., 1.5 is 50% faster)." },
         "auto_capture_altars": { "type": "boolean", "description": "If true, unit captures altars automatically/instantly." },
         "stagger_modifier": { 

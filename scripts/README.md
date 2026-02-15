@@ -29,10 +29,36 @@ Performs strict validation on the data to ensure API quality.
 - **Reference Integrity:** Ensures logical links are valid (e.g., Decks reference existing Cards).
 - **Asset Hygiene:** Checks for missing images and warns if images are too large (>100KB) or have incorrect dimensions.
 
-### `update_timestamps.py`
+### `check_data_consistency.py`
 
-**Usage:** `python scripts/update_timestamps.py`
-Automatically updates the `last_modified` timestamp in JSON files that have changed in git. This is typically run by CI/CD workflows but can be run locally before committing.
+**Usage:** `python scripts/check_data_consistency.py`
+Audits V2 data against the legacy V1 source of truth (`V1_all_data.json`) to control data migration quality.
+
+- Generates a `consistency_report.txt` detailing mismatches.
+
+### `release.py`
+
+**Usage:** `python scripts/release.py`
+Interactive CLI tool to handle version bumping and changelog generation.
+
+- Updates `game_config.json` version.
+- Prepends new entry to `CHANGELOG.md`.
+
+### `validate_schemas.py`
+
+**Usage:** `python scripts/validate_schemas.py`
+A lightweight, pure-schema validation tool.
+
+- Validates all data files against their schemas using `jsonschema` and `referencing`.
+- Useful for quick syntax checks without the full integrity logic of `validate_integrity.py`.
+
+### `verify_strictness.py`
+
+**Usage:** `python scripts/verify_strictness.py`
+Test suite for the schema system itself.
+
+- Verifies that schemas correctly reject invalid data (e.g., unknown properties, bad patterns).
+- Ensures "strict mode" is actually strict.
 
 ### `audit_v2.py`
 

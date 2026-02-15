@@ -16,6 +16,12 @@
     }
   ],
   "damage": 9,
+  "mechanics": {
+    "stealth": {
+      "duration": -1,
+      "break_on_attack": true
+    }
+  },
   "health": 100,
   "range": 25,
   "movement_speed": 3,

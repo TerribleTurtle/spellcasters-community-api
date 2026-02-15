@@ -162,7 +162,7 @@ def validate_entry_assets(data, schema_key, folder, cache):
 
     # Deduce ID based on schema key
     obj_id = ""
-    if schema_key in ["unit", "spell", "titan", "consumable", "deck"]:
+    if schema_key in ["unit", "spell", "titan", "consumable"]:
         obj_id = data.get("entity_id")
     elif schema_key == "hero":
         obj_id = data.get("entity_id", data.get("spellcaster_id")) 
@@ -171,58 +171,7 @@ def validate_entry_assets(data, schema_key, folder, cache):
         return check_asset_exists(folder, obj_id, True, cache)
     return 0
 
-def validate_logic(db):
-    """Executes higher-order logic checks that validation schemas cannot express."""
-    warnings = 0
-    errors = 0
-    
-    # 1. Deck Validation: Must have at least 1 Rank I or II Creature
-    if "decks" in db and "units" in db:
-        print("Validating Deck Logic...")
-        units_db = {}
-        # Index units by ID for quick lookup
-        for f, data in db["units"].items():
-            if "entity_id" in data:
-                units_db[data["entity_id"]] = data
-        
-        for f, deck in db["decks"].items():
-            valid_starter = False
-            cards = deck.get("cards", [])
-            
-            for card_id in cards:
-                if card_id in units_db:
-                    unit = units_db[card_id]
-                    # Check if Creature and Rank I/II
-                    if unit.get("category") == "Creature":
-                        rank = unit.get("rank")
-                        if rank in ["I", "II"]:
-                            valid_starter = True
-                            break
-            
-            if not valid_starter:
-                print(f"[FAIL] Deck {os.path.basename(f)} invalid: Must contain at least one Rank I or II Creature.")
-                errors += 1
-            
-            # 2. Hero Validation: spellcaster_id must exist
-            sid = deck.get("spellcaster_id")
-            if sid:
-                # We need a set of valid hero IDs.
-                # iterate db["heroes"] to find match.
-                # Note: heroes db might be empty if no heroes loaded, but we checked logic only if "decks" and "units" exist.
-                # Let's verify heroes exist too.
-                hero_found = False
-                if "heroes" in db:
-                    for hf, hdata in db["heroes"].items():
-                        # Hero ID can be entity_id or spellcaster_id (legacy)
-                        if hdata.get("entity_id") == sid or hdata.get("spellcaster_id") == sid:
-                            hero_found = True
-                            break
-                
-                if not hero_found:
-                    print(f"[FAIL] Deck {os.path.basename(f)} invalid: spellcaster_id '{sid}' does not match any Hero.")
-                    errors += 1
 
-    return errors, warnings
 
 def validate_integrity():
     """
@@ -318,10 +267,7 @@ def validate_integrity():
                         print(f"[WARN] Upgrade {os.path.basename(filepath)} targets tag '{t}' which no unit possesses.")
                         warnings += 1
 
-    # 5. Logic Validation
-    l_err, l_warn = validate_logic(db)
-    errors += l_err
-    warnings += l_warn
+
 
     # Validate Game Config
     game_config_path = os.path.join(DATA_DIR, "game_config.json")

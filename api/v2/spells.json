@@ -74,14 +74,12 @@
       "damage_modifiers": [
         {
           "multiplier": 0,
-          "condition": "Always",
           "target_types": [
             "Flying"
           ]
         },
         {
           "multiplier": 1.3,
-          "condition": "Always",
           "target_types": [
             "Building"
           ]
@@ -148,7 +146,6 @@
       "damage_modifiers": [
         {
           "multiplier": 1.2,
-          "condition": "Always",
           "target_types": [
             "Creature"
           ]

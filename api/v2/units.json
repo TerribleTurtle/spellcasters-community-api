@@ -158,7 +158,11 @@
       "damage_modifiers": [
         {
           "multiplier": 1.75,
-          "condition": "Rank >= 3",
+          "condition": {
+            "field": "target.rank",
+            "operator": ">=",
+            "value": 3
+          },
           "target_types": [
             "Unit"
           ]
@@ -168,7 +172,12 @@
         {
           "source_type": "Unit",
           "multiplier": 0.75,
-          "condition": "Rank >= 3  THIS INFORMATION IS UNCONFIRMED"
+          "condition": {
+            "field": "target.rank",
+            "operator": ">=",
+            "value": 3
+          },
+          "_comment": "UNCONFIRMED - Logic assumes Rank >= 3 based on text"
         }
       ]
     },
@@ -202,6 +211,12 @@
       }
     ],
     "damage": 9,
+    "mechanics": {
+      "stealth": {
+        "duration": -1,
+        "break_on_attack": true
+      }
+    },
     "health": 100,
     "range": 25,
     "movement_speed": 3,
@@ -235,7 +250,6 @@
       "damage_modifiers": [
         {
           "multiplier": 0.35,
-          "condition": "Always",
           "target_types": [
             "Creature"
           ]
@@ -276,7 +290,6 @@
       "damage_modifiers": [
         {
           "multiplier": 1.19,
-          "condition": "Always",
           "target_types": [
             "Ground",
             "Hover"
@@ -284,7 +297,6 @@
         },
         {
           "multiplier": 0.65,
-          "condition": "Always",
           "target_types": [
             "Building"
           ]
@@ -370,14 +382,12 @@
       "damage_modifiers": [
         {
           "multiplier": 1.5,
-          "condition": "Always",
           "target_types": [
             "Lifestone"
           ]
         },
         {
           "multiplier": 2.0,
-          "condition": "Always",
           "target_types": [
             "Building"
           ]
@@ -446,14 +456,12 @@
       "damage_modifiers": [
         {
           "multiplier": 1.375,
-          "condition": "Always",
           "target_types": [
             "Flying"
           ]
         },
         {
           "multiplier": 0.9,
-          "condition": "Always",
           "target_types": [
             "Building"
           ]
@@ -494,7 +502,6 @@
       "damage_modifiers": [
         {
           "multiplier": 5.0,
-          "condition": "Always - UNCONFIRMED NUMBER",
           "target_types": [
             "Building"
           ]
@@ -558,14 +565,12 @@
       "damage_modifiers": [
         {
           "multiplier": 0.5,
-          "condition": "Always",
           "target_types": [
             "Creature"
           ]
         },
         {
           "multiplier": 0.5,
-          "condition": "Always",
           "target_types": [
             "Spellcaster"
           ]
@@ -606,21 +611,18 @@
       "damage_modifiers": [
         {
           "multiplier": 0.5,
-          "condition": "Always",
           "target_types": [
             "Creature"
           ]
         },
         {
           "multiplier": 0.5,
-          "condition": "Always",
           "target_types": [
             "Spellcaster"
           ]
         },
         {
           "multiplier": 2.5,
-          "condition": "Always",
           "target_types": [
             "Building"
           ]
@@ -661,14 +663,12 @@
       "damage_modifiers": [
         {
           "multiplier": 1.6,
-          "condition": "Always",
           "target_types": [
             "Creature"
           ]
         },
         {
           "multiplier": 0.9,
-          "condition": "Always",
           "target_types": [
             "Building"
           ]
@@ -799,7 +799,6 @@
       "damage_modifiers": [
         {
           "multiplier": 0.9,
-          "condition": "Always",
           "target_types": [
             "Building"
           ]

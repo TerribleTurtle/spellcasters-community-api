@@ -27,7 +27,6 @@ HEURISTIC_MAP = {
     "starting_mana": "heroes.schema.json",
     "element": "titans.schema.json",
     "upgrade_type": "upgrades.schema.json",
-    "deck_id": "decks.schema.json"
 }
 
 def load_json(filepath):

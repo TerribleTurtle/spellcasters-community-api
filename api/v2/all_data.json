@@ -1,7 +1,7 @@
 {
   "build_info": {
     "version": "0.0.1",
-    "generated_at": "2026-02-14T16:50:44.701985+00:00"
+    "generated_at": "2026-02-15T02:27:27.077009+00:00"
   },
   "heroes": [
     {
@@ -40,12 +40,9 @@
               {
                 "name": "Combo Sequence",
                 "description": "Alternates between Palm Strike (32) and Power Punch (47)."
-              },
-              {
-                "name": "Pierce",
-                "description": "Attacks pierce through enemies."
               }
-            ]
+            ],
+            "pierce": true
           }
         },
         "defense": {
@@ -53,7 +50,13 @@
           "description": "Turns invisible and move faster.",
           "charges": 2,
           "duration": 1.5,
-          "cooldown": 8
+          "cooldown": 8,
+          "mechanics": {
+            "stealth": {
+              "duration": 1.5,
+              "break_on_attack": true
+            }
+          }
         },
         "ultimate": {
           "name": "Dimension of Varani",
@@ -103,12 +106,11 @@
           "description": "Burns enemies with powerful Fire attacks.",
           "damage": 28,
           "mechanics": {
-            "features": [
-              {
-                "name": "Cleave",
-                "description": "Attacks hit multiple enemies in an arc."
-              }
-            ]
+            "cleave": {
+              "damage_percent": 0.5,
+              "radius": 2.5,
+              "arc": 120
+            }
           }
         },
         "defense": {
@@ -167,12 +169,11 @@
           "description": "Strike with powerful mid-range attacks that interrupt enemies.",
           "damage": 35,
           "mechanics": {
-            "features": [
-              {
-                "name": "Cleave",
-                "description": "Attacks hit multiple enemies in an arc."
-              }
-            ]
+            "cleave": {
+              "damage_percent": 0.5,
+              "radius": 2.5,
+              "arc": 120
+            }
           }
         },
         "defense": {
@@ -232,14 +233,15 @@
           "mechanics": {
             "features": [
               {
-                "name": "Cleave",
-                "description": "Attacks hit multiple enemies in an arc."
-              },
-              {
                 "name": "Knockback",
                 "description": "Knocks back small units."
               }
-            ]
+            ],
+            "cleave": {
+              "damage_percent": 0.5,
+              "radius": 2.5,
+              "arc": 120
+            }
           }
         },
         "defense": {
@@ -301,12 +303,13 @@
               {
                 "name": "Interruption",
                 "description": "Successfully hitting a Spellcaster twice interrupts their actions."
-              },
-              {
-                "name": "Cleave",
-                "description": "Attacks hit multiple enemies in an arc."
               }
             ],
+            "cleave": {
+              "damage_percent": 0.5,
+              "radius": 2.5,
+              "arc": 120
+            },
             "aura": [
               {
                 "name": "Building Enchant",
@@ -624,7 +627,26 @@
       "last_modified": "2026-02-12T00:43:11-05:00"
     }
   ],
-  "upgrades": [],
+  "upgrades": [
+    {
+      "$schema": "../../schemas/v2/upgrades.schema.json",
+      "upgrade_id": "dev_placeholder",
+      "name": "Dev Placeholder",
+      "description": "Placeholder content to prevent 404s on the upgrades endpoint.",
+      "target_tags": [],
+      "effect": {
+        "dev_mode": 1
+      },
+      "changelog": [
+        {
+          "version": "0.0.1",
+          "date": "2026-02-14T12:00:00Z",
+          "description": "Initial placeholder"
+        }
+      ],
+      "last_modified": "2026-02-14T11:56:10-05:00"
+    }
+  ],
   "units": [
     {
       "$schema": "../../schemas/v2/units.schema.json",
@@ -785,7 +807,11 @@
         "damage_modifiers": [
           {
             "multiplier": 1.75,
-            "condition": "Rank >= 3",
+            "condition": {
+              "field": "target.rank",
+              "operator": ">=",
+              "value": 3
+            },
             "target_types": [
               "Unit"
             ]
@@ -795,7 +821,12 @@
           {
             "source_type": "Unit",
             "multiplier": 0.75,
-            "condition": "Rank >= 3  THIS INFORMATION IS UNCONFIRMED"
+            "condition": {
+              "field": "target.rank",
+              "operator": ">=",
+              "value": 3
+            },
+            "_comment": "UNCONFIRMED - Logic assumes Rank >= 3 based on text"
           }
         ]
       },
@@ -829,6 +860,12 @@
         }
       ],
       "damage": 9,
+      "mechanics": {
+        "stealth": {
+          "duration": -1,
+          "break_on_attack": true
+        }
+      },
       "health": 100,
       "range": 25,
       "movement_speed": 3,
@@ -862,7 +899,6 @@
         "damage_modifiers": [
           {
             "multiplier": 0.35,
-            "condition": "Always",
             "target_types": [
               "Creature"
             ]
@@ -903,7 +939,6 @@
         "damage_modifiers": [
           {
             "multiplier": 1.19,
-            "condition": "Always",
             "target_types": [
               "Ground",
               "Hover"
@@ -911,7 +946,6 @@
           },
           {
             "multiplier": 0.65,
-            "condition": "Always",
             "target_types": [
               "Building"
             ]
@@ -997,14 +1031,12 @@
         "damage_modifiers": [
           {
             "multiplier": 1.5,
-            "condition": "Always",
             "target_types": [
               "Lifestone"
             ]
           },
           {
             "multiplier": 2.0,
-            "condition": "Always",
             "target_types": [
               "Building"
             ]
@@ -1073,14 +1105,12 @@
         "damage_modifiers": [
           {
             "multiplier": 1.375,
-            "condition": "Always",
             "target_types": [
               "Flying"
             ]
           },
           {
             "multiplier": 0.9,
-            "condition": "Always",
             "target_types": [
               "Building"
             ]
@@ -1121,7 +1151,6 @@
         "damage_modifiers": [
           {
             "multiplier": 5.0,
-            "condition": "Always - UNCONFIRMED NUMBER",
             "target_types": [
               "Building"
             ]
@@ -1185,14 +1214,12 @@
         "damage_modifiers": [
           {
             "multiplier": 0.5,
-            "condition": "Always",
             "target_types": [
               "Creature"
             ]
           },
           {
             "multiplier": 0.5,
-            "condition": "Always",
             "target_types": [
               "Spellcaster"
             ]
@@ -1233,21 +1260,18 @@
         "damage_modifiers": [
           {
             "multiplier": 0.5,
-            "condition": "Always",
             "target_types": [
               "Creature"
             ]
           },
           {
             "multiplier": 0.5,
-            "condition": "Always",
             "target_types": [
               "Spellcaster"
             ]
           },
           {
             "multiplier": 2.5,
-            "condition": "Always",
             "target_types": [
               "Building"
             ]
@@ -1288,14 +1312,12 @@
         "damage_modifiers": [
           {
             "multiplier": 1.6,
-            "condition": "Always",
             "target_types": [
               "Creature"
             ]
           },
           {
             "multiplier": 0.9,
-            "condition": "Always",
             "target_types": [
               "Building"
             ]
@@ -1426,7 +1448,6 @@
         "damage_modifiers": [
           {
             "multiplier": 0.9,
-            "condition": "Always",
             "target_types": [
               "Building"
             ]
@@ -1522,14 +1543,12 @@
         "damage_modifiers": [
           {
             "multiplier": 0,
-            "condition": "Always",
             "target_types": [
               "Flying"
             ]
           },
           {
             "multiplier": 1.3,
-            "condition": "Always",
             "target_types": [
               "Building"
             ]
@@ -1596,7 +1615,6 @@
         "damage_modifiers": [
           {
             "multiplier": 1.2,
-            "condition": "Always",
             "target_types": [
               "Creature"
             ]
@@ -1949,7 +1967,6 @@
       "last_modified": "2026-02-11T11:00:20-05:00"
     }
   ],
-  "decks": [],
   "game_config": {
     "name": "Spellcasters Chronicles",
     "version": "0.0.1",

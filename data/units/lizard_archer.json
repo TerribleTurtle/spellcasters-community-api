@@ -19,14 +19,12 @@
     "damage_modifiers": [
       {
         "multiplier": 1.375,
-        "condition": "Always",
         "target_types": [
           "Flying"
         ]
       },
       {
         "multiplier": 0.9,
-        "condition": "Always",
         "target_types": [
           "Building"
         ]

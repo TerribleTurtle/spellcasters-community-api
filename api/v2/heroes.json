@@ -35,12 +35,9 @@
             {
               "name": "Combo Sequence",
               "description": "Alternates between Palm Strike (32) and Power Punch (47)."
-            },
-            {
-              "name": "Pierce",
-              "description": "Attacks pierce through enemies."
             }
-          ]
+          ],
+          "pierce": true
         }
       },
       "defense": {
@@ -48,7 +45,13 @@
         "description": "Turns invisible and move faster.",
         "charges": 2,
         "duration": 1.5,
-        "cooldown": 8
+        "cooldown": 8,
+        "mechanics": {
+          "stealth": {
+            "duration": 1.5,
+            "break_on_attack": true
+          }
+        }
       },
       "ultimate": {
         "name": "Dimension of Varani",
@@ -98,12 +101,11 @@
         "description": "Burns enemies with powerful Fire attacks.",
         "damage": 28,
         "mechanics": {
-          "features": [
-            {
-              "name": "Cleave",
-              "description": "Attacks hit multiple enemies in an arc."
-            }
-          ]
+          "cleave": {
+            "damage_percent": 0.5,
+            "radius": 2.5,
+            "arc": 120
+          }
         }
       },
       "defense": {
@@ -162,12 +164,11 @@
         "description": "Strike with powerful mid-range attacks that interrupt enemies.",
         "damage": 35,
         "mechanics": {
-          "features": [
-            {
-              "name": "Cleave",
-              "description": "Attacks hit multiple enemies in an arc."
-            }
-          ]
+          "cleave": {
+            "damage_percent": 0.5,
+            "radius": 2.5,
+            "arc": 120
+          }
         }
       },
       "defense": {
@@ -227,14 +228,15 @@
         "mechanics": {
           "features": [
             {
-              "name": "Cleave",
-              "description": "Attacks hit multiple enemies in an arc."
-            },
-            {
               "name": "Knockback",
               "description": "Knocks back small units."
             }
-          ]
+          ],
+          "cleave": {
+            "damage_percent": 0.5,
+            "radius": 2.5,
+            "arc": 120
+          }
         }
       },
       "defense": {
@@ -296,12 +298,13 @@
             {
               "name": "Interruption",
               "description": "Successfully hitting a Spellcaster twice interrupts their actions."
-            },
-            {
-              "name": "Cleave",
-              "description": "Attacks hit multiple enemies in an arc."
             }
           ],
+          "cleave": {
+            "damage_percent": 0.5,
+            "radius": 2.5,
+            "arc": 120
+          },
           "aura": [
             {
               "name": "Building Enchant",

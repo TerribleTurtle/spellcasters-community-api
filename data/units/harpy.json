@@ -20,7 +20,6 @@
     "damage_modifiers": [
       {
         "multiplier": 1.19,
-        "condition": "Always",
         "target_types": [
           "Ground",
           "Hover"
@@ -28,7 +27,6 @@
       },
       {
         "multiplier": 0.65,
-        "condition": "Always",
         "target_types": [
           "Building"
         ]

@@ -19,14 +19,12 @@
     "damage_modifiers": [
       {
         "multiplier": 1.5,
-        "condition": "Always",
         "target_types": [
           "Lifestone"
         ]
       },
       {
         "multiplier": 2.0,
-        "condition": "Always",
         "target_types": [
           "Building"
         ]

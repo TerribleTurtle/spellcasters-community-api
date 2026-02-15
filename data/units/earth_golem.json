@@ -19,7 +19,7 @@
     "damage_modifiers": [
       {
         "multiplier": 1.75,
-        "condition": "Rank >= 3",
+        "condition": { "field": "target.rank", "operator": ">=", "value": 3 },
         "target_types": [
           "Unit"
         ]
@@ -29,7 +29,8 @@
       {
         "source_type": "Unit",
         "multiplier": 0.75,
-        "condition": "Rank >= 3  THIS INFORMATION IS UNCONFIRMED"
+        "condition": { "field": "target.rank", "operator": ">=", "value": 3 },
+        "_comment": "UNCONFIRMED - Logic assumes Rank >= 3 based on text"
       }
     ]
   },

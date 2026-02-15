@@ -20,7 +20,6 @@
     "damage_modifiers": [
       {
         "multiplier": 0.9,
-        "condition": "Always",
         "target_types": [
           "Building"
         ]

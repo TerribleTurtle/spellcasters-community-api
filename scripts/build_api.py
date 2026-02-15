@@ -34,8 +34,7 @@ AGGREGATION_MAP = {
     "upgrades": "upgrades",
     "units": "units",
     "spells": "spells",
-    "titans": "titans",
-    "decks": "decks"
+    "titans": "titans"
 }
 
 # Single File Copy

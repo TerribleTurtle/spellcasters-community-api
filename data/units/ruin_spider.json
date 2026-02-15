@@ -19,21 +19,18 @@
     "damage_modifiers": [
       {
         "multiplier": 0.5,
-        "condition": "Always",
         "target_types": [
           "Creature"
         ]
       },
       {
         "multiplier": 0.5,
-        "condition": "Always",
         "target_types": [
           "Spellcaster"
         ]
       },
       {
         "multiplier": 2.5,
-        "condition": "Always",
         "target_types": [
           "Building"
         ]

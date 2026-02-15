@@ -33,8 +33,16 @@ This project is a fan-made initiative.
 Developers should use this base URL to fetch data for their applications.
 
 - **Landing Page:** [View Live Site](https://terribleturtle.github.io/spellcasters-community-api/)
-- **Game Info:** [game_config.json](https://terribleturtle.github.io/spellcasters-community-api/api/v2/game_config.json)
-- **Units:** [units.json](https://terribleturtle.github.io/spellcasters-community-api/api/v2/units.json)
+- **System:**
+  - [status.json](https://terribleturtle.github.io/spellcasters-community-api/api/v2/status.json) - API Health & Version Info
+  - [game_config.json](https://terribleturtle.github.io/spellcasters-community-api/api/v2/game_config.json) - Game Version & Metadata
+- **Collections:**
+  - [heroes.json](https://terribleturtle.github.io/spellcasters-community-api/api/v2/heroes.json)
+  - [units.json](https://terribleturtle.github.io/spellcasters-community-api/api/v2/units.json)
+  - [spells.json](https://terribleturtle.github.io/spellcasters-community-api/api/v2/spells.json)
+  - [titans.json](https://terribleturtle.github.io/spellcasters-community-api/api/v2/titans.json)
+  - [consumables.json](https://terribleturtle.github.io/spellcasters-community-api/api/v2/consumables.json)
+  - [upgrades.json](https://terribleturtle.github.io/spellcasters-community-api/api/v2/upgrades.json)
 
 ### 🌟 API in Action
 
@@ -91,6 +99,18 @@ While we strive for accuracy, this API is maintained by volunteers. Data is ente
 
 This API provides **raw data** from community contributions.
 **Developers:** You MUST sanitize this data before rendering it in your applications. Treating descriptions or text fields as trusted HTML may expose your users to Cross-Site Scripting (XSS) attacks.
+
+### 3. Complex Mechanics (v2)
+
+We use strongly-typed objects for mechanics to ensure the game engine can read them without parsing text.
+
+- **`pierce`** (Boolean): Projectiles pass through enemies.
+- **`stealth`** (Object): Duration and break conditions.
+- **`cleave`** (Object): Radius, Arc, and Damage %.
+- **`damage_modifiers`** (Array):
+  - **Match:** Target Type (e.g., "Building").
+  - **Condition:** Structured logic (e.g., `{"field": "target.hp_percent", "op": "<", "val": 0.5}`).
+    - _Note: Legacy string conditions (e.g., "Always") are strictly forbidden._
 
 ## 📂 Structure
 

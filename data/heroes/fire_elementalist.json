@@ -30,12 +30,8 @@
       "description": "Burns enemies with powerful Fire attacks.",
       "damage": 28,
       "mechanics": {
-        "features": [
-          {
-            "name": "Cleave",
-            "description": "Attacks hit multiple enemies in an arc."
-          }
-        ]
+
+        "cleave": { "damage_percent": 0.5, "radius": 2.5, "arc": 120 }
       }
     },
     "defense": {

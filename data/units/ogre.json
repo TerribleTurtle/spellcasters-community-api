@@ -19,7 +19,6 @@
     "damage_modifiers": [
       {
         "multiplier": 5.0,
-        "condition": "Always - UNCONFIRMED NUMBER",
         "target_types": [
           "Building"
         ]

@@ -20,14 +20,12 @@
     "damage_modifiers": [
       {
         "multiplier": 1.6,
-        "condition": "Always",
         "target_types": [
           "Creature"
         ]
       },
       {
         "multiplier": 0.9,
-        "condition": "Always",
         "target_types": [
           "Building"
         ]

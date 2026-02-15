@@ -41,6 +41,7 @@ To add a new Spellcaster, Unit, Spell, Titan, or Consumable:
 4.  **Add Assets:**
     - **Production:** Add the image to `assets/[category]/[id].webp`.
     - **Automatic:** Place `.webp` files directly in `assets/[category]/[id].webp`.
+      - **Constraints:** Max 512x512px, Max 100KB.
       - **Note:** We no longer support automatic PNG-to-WebP conversion. Please use an external tool to convert your images to WebP before submitting.
 
 ### 📚 Data Reference & Hierarchy
@@ -73,6 +74,23 @@ Unique class-ultimate entities.
 
 Loot items found in chests.
 
+#### 5. Consumables (`data/consumables`)
+
+Loot items found in chests.
+
+#### 6. Upgrades (`data/upgrades`)
+
+RNG Level-up bonus options.
+
+- **Schema**: `schemas/v2/upgrades.schema.json`
+- **Key Fields**:
+  - `target_tags`: Array of Unit tags this upgrade applies to (e.g., `["Construct", "Melee"]`).
+  - `effect`: Object defining stats to modify (e.g., `{"damage": 5}`).
+
+#### 7. Game Config (`data/game_config.json`)
+
+The single source of truth for the Game Version and global metadata.
+
 ### 📈 Data Standards (v1.1)
 
 #### 1. Multipliers (Percentage Values)
@@ -102,13 +120,17 @@ Since we are in Beta, some exact numbers may be missing.
   "condition": "MovementType == Flying (UNKNOWN)"
   ```
 
-#### 3. Complex Mechanics
+### 3. Complex Mechanics (v2)
 
-We use a `mechanics` object to store advanced logic, keeping the root object clean.
+We use strongly-typed objects for mechanics to ensure the game engine can read them without parsing text.
 
-- **`aura`**: Radius, Value (Heal/Damage), Interval.
-- **`damage_modifiers`**: Target Type, Multiplier, Condition.
-- **`spawner`**: Unit ID, Count, Trigger (Death/Interval).
+- **`pierce`** (Boolean): Projectiles pass through enemies.
+- **`stealth`** (Object): Duration and break conditions.
+- **`cleave`** (Object): Radius, Arc, and Damage %.
+- **`damage_modifiers`** (Array):
+  - **Match:** Target Type (e.g., "Building").
+  - **Condition:** Structured logic (e.g., `{"field": "target.hp_percent", "op": "<", "val": 0.5}`).
+    - _Note: Legacy string conditions (e.g., "Always") are strictly forbidden._
 
 ### 2. Updating Existing Data
 
@@ -129,6 +151,18 @@ python scripts/validate_integrity.py
 If the tests pass without errors, your data is valid!
 (Note: The validation script will also check asset integrity.)
 
+If the tests pass without errors, your data is valid!
+(Note: The validation script will also check asset integrity.)
+
+#### Logic Integrity Rules
+
+Beyond the schema, `validate_integrity.py` enforces strict logic compliance:
+
+1.  **Referential Integrity:**
+    - Upgrade targets MUST exist.
+2.  **Upgrade Targets:**
+    - Every tag listed in an Upgrade's `target_tags` MUST exist on at least one Unit in the database. You cannot target a tag that doesn't exist.
+
 ## 🛡️ Safety Systems
 
 This project uses an automated **Safety System** to prevent accidental damage. When you open a Pull Request, our robots will immediately check:
@@ -141,6 +175,15 @@ This project uses an automated **Safety System** to prevent accidental damage. W
 > If your PR fails a check, click "Details" next to the failure to see exactly what went wrong.
 
 ## 🛡️ Security
+
+### Data Sanitization (XSS Prevention)
+
+The API build pipeline (`scripts/build_api.py`) automatically sanitizes all string fields to prevent Cross-Site Scripting (XSS) attacks.
+
+- **Behavior:** All `<` characters are replaced with `&lt;`.
+- **Developer Note:** If you intend to render text from this API, strictly treat it as **text content**, not innerHTML. If you must render HTML, you are responsible for decoding and sanitizing it again in your application.
+
+### Vulnerability Reporting
 
 If you discover a security vulnerability, please **DO NOT** open a public issue.
 Refer to our [Security Policy](docs/SECURITY.md) for reporting instructions.
