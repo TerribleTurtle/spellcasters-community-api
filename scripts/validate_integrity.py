@@ -179,6 +179,47 @@ def validate_entry_assets(data, schema_key, folder, cache):
         return check_asset_exists(folder, obj_id, True, cache)
     return 0
 
+def validate_timeline_metadata(registry, schemas_map):
+    """Validates timeline files against the schema. Returns count of errors."""
+    errors = 0
+    timeline_dir = os.path.join(config.OUTPUT_DIR, config.PATCH_HISTORY_DIR)
+
+    if not os.path.exists(timeline_dir):
+        return 0
+
+    timeline_files = glob.glob(os.path.join(timeline_dir, "*.json"))
+    timeline_schema_name = "timeline_entry.schema.json"
+    timeline_uri = schemas_map.get(timeline_schema_name)
+
+    if not timeline_uri or not timeline_files:
+        return 0
+
+    try:
+        resolved = registry.resolver().lookup(timeline_uri)
+        s_obj = resolved.contents
+        if "$id" not in s_obj:
+            s_obj["$id"] = timeline_uri
+
+        ValidatorClass = validators.validator_for(s_obj)
+        v = ValidatorClass(s_obj, registry=registry)
+
+        for tf in timeline_files:
+            tdata = load_json(tf)
+            if tdata is None:
+                continue
+
+            try:
+                v.validate(tdata)
+                print(f"[OK] timeline/{os.path.basename(tf)}")
+            except ValidationError as e:
+                print(f"[FAIL] Timeline Schema Error in {os.path.basename(tf)}: {e.message}")
+                errors += 1
+
+    except Exception as e:
+        print(f"[WARN] Timeline validation setup failed: {e}")
+
+    return errors
+
 
 def validate_integrity():  # pylint: disable=too-many-locals, too-many-branches, too-many-statements
     """
@@ -325,29 +366,8 @@ def validate_integrity():  # pylint: disable=too-many-locals, too-many-branches,
                 errors += 1
 
     # Validate timeline files
-    timeline_dir = os.path.join(config.OUTPUT_DIR, config.PATCH_HISTORY_DIR)
-    timeline_schema_name = "timeline_entry.schema.json"
-    if os.path.exists(timeline_dir):
-        timeline_files = glob.glob(os.path.join(timeline_dir, "*.json"))
-        timeline_uri = schemas_map.get(timeline_schema_name)
-        if timeline_uri and timeline_files:
-            try:
-                resolved = registry.resolver().lookup(timeline_uri)
-                s_obj = resolved.contents
-                if "$id" not in s_obj:
-                    s_obj["$id"] = timeline_uri
-                v = validators.validator_for(s_obj)(s_obj, registry=registry)
-                for tf in timeline_files:
-                    tdata = load_json(tf)
-                    if tdata is not None:
-                        try:
-                            v.validate(tdata)
-                            print(f"[OK] timeline/{os.path.basename(tf)}")
-                        except ValidationError as e:
-                            print(f"[FAIL] Timeline Schema Error in {os.path.basename(tf)}: {e.message}")
-                            errors += 1
-            except Exception as e:
-                print(f"[WARN] Timeline validation setup failed: {e}")
+    errors += validate_timeline_metadata(registry, schemas_map)
+
 
     # Save Cache
     save_cache(cache)
