@@ -1,4 +1,37 @@
-> [!CAUTION]
+# Schema Changes - v1.4 Patch History System
+
+## Overview
+
+Adds JSON schemas and TypeScript types for the new patch history system. These define the shape of generated patch data served by the API.
+
+## Changes
+
+### 1. New Enum: `patch_type_enum`
+
+- **Location:** `definitions/enums.schema.json`
+- **Values:** `buff`, `nerf`, `rework`, `fix`, `new`
+- **Purpose:** Classifies balance changes for deckbuilder icons and patch displays.
+
+### 2. New Schemas
+
+- **`balance_index.schema.json`** — Validates `api/v2/balance_index.json`. Maps entity IDs to `patch_type_enum`.
+- **`changelog.schema.json`** — Validates `api/v2/changelog.json`. Array of patch entries with version, date, description, and affected entities.
+- **`timeline_entry.schema.json`** — Validates `api/v2/timeline/*.json`. Array of version snapshots with free-form entity state.
+
+### 3. New TypeScript Types
+
+- **`types/patch-history.d.ts`** — Consumer-facing type definitions: `PatchType`, `BalanceIndex`, `PatchEntry`, `Changelog`, `ChangelogLatest`, `TimelineEntry`, `EntityTimeline`.
+
+### 4. Validation Pipeline
+
+- `validate_integrity.py` now validates patch history files against their schemas.
+
+## Developer Action Required
+
+- None (additive change, no breaking changes).
+
+---
+
 > **UNSTABLE SCHEMA:** The schema is currently in flux. Breaking changes may occur without notice until the Early Access launch on **Feb 26th**.
 
 # Schema Changelog - v1.1 Movement Update

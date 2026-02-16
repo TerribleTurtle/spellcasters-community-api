@@ -22,6 +22,14 @@ OUTPUT_DIR = os.path.join(BASE_DIR, "api", "v2")
 MAX_IMG_DIMENSION = 512
 MAX_IMG_SIZE_KB = 100
 
+# Patch History Files (Preserved during build)
+PATCH_HISTORY_FILES = [
+    "balance_index.json",
+    "changelog.json",
+    "changelog_latest.json",
+]
+PATCH_HISTORY_DIR = "timeline"
+
 # Schema Filenames mapping (Schema Key -> Filename)
 # Schema Filenames mapping (Schema Key -> Filename)
 SCHEMA_FILES = {
@@ -31,7 +39,10 @@ SCHEMA_FILES = {
     "consumable": "consumables.schema.json",
     "upgrade": "upgrades.schema.json",
     "game_config": "game_config.schema.json",
-    "titan": "titans.schema.json"
+    "titan": "titans.schema.json",
+    "balance_index": "balance_index.schema.json",
+    "changelog": "changelog.schema.json",
+    "timeline_entry": "timeline_entry.schema.json"
 }
 
 # Data Folder to Schema Mapping (Folder Name -> Schema Key)

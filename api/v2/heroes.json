@@ -66,7 +66,7 @@
     ],
     "entity_id": "astral_monk",
     "description": "A Duelist who strikes from the shadows with fast astral fists and time-bending abilities.",
-    "last_modified": "2026-02-15T04:03:35-05:00"
+    "last_modified": "2026-02-15T04:51:06-05:00"
   },
   {
     "$schema": "../../schemas/v2/heroes.schema.json",
@@ -124,7 +124,7 @@
     ],
     "entity_id": "fire_elementalist",
     "description": "A Conqueror who burns enemies with powerful fire attacks, cleaving through ranks and empowering allies.",
-    "last_modified": "2026-02-15T04:03:35-05:00"
+    "last_modified": "2026-02-15T04:51:06-05:00"
   },
   {
     "$schema": "../../schemas/v2/heroes.schema.json",
@@ -181,7 +181,7 @@
     ],
     "entity_id": "iron_sorcerer",
     "description": "A Conqueror who dominates the battlefield with heavy melee strikes, protective runes, and a metal vortex.",
-    "last_modified": "2026-02-15T04:03:35-05:00"
+    "last_modified": "2026-02-15T04:51:06-05:00"
   },
   {
     "$schema": "../../schemas/v2/heroes.schema.json",
@@ -244,7 +244,7 @@
     ],
     "entity_id": "mystic_scribe",
     "description": "An Enchanter who uses magical ink to damage enemies, heal allies, and create protective barriers.",
-    "last_modified": "2026-02-15T04:03:35-05:00"
+    "last_modified": "2026-02-15T04:51:06-05:00"
   },
   {
     "$schema": "../../schemas/v2/heroes.schema.json",
@@ -320,7 +320,7 @@
     ],
     "entity_id": "stone_shaman",
     "description": "An Enchanter who channels the power of earth to deal heavy damage, interrupt spellcasters, and fortify buildings.",
-    "last_modified": "2026-02-15T04:03:35-05:00"
+    "last_modified": "2026-02-15T04:51:06-05:00"
   },
   {
     "$schema": "../../schemas/v2/heroes.schema.json",
@@ -398,6 +398,6 @@
     ],
     "entity_id": "swamp_witch",
     "description": "A Duelist who commands poison and swarms, sacrificing minions to fuel powerful necromancy spells.",
-    "last_modified": "2026-02-15T04:03:35-05:00"
+    "last_modified": "2026-02-15T04:51:06-05:00"
   }
 ]

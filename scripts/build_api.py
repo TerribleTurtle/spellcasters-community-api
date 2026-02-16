@@ -47,8 +47,25 @@ def ensure_output_dir():
         print(f"Created output directory: {OUTPUT_DIR}")
 
     # Cleanup old files
-    for f in glob.glob(os.path.join(OUTPUT_DIR, "*.json")):
-        os.remove(f)
+    # Only delete files we are about to regenerate to preserve patch history
+    # 1. Collection files
+    for key in AGGREGATION_MAP:
+        path = os.path.join(OUTPUT_DIR, f"{key}.json")
+        if os.path.exists(path):
+            os.remove(path)
+
+    # 2. Single files
+    for key in SINGLE_FILES:
+        path = os.path.join(OUTPUT_DIR, f"{key}.json")
+        if os.path.exists(path):
+            os.remove(path)
+
+    # 3. Master & Status
+    for fname in ["all_data.json", "status.json"]:
+        path = os.path.join(OUTPUT_DIR, fname)
+        if os.path.exists(path):
+            os.remove(path)
+
     print(f"Cleaned up output directory: {OUTPUT_DIR}")
 
 

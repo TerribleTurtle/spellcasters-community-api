@@ -1,0 +1,28 @@
+{
+  "$schema": "https://json-schema.org/draft/2019-09/schema",
+  "$id": "https://spellcasters.gg/schemas/v2/timeline_entry.schema.json",
+  "title": "Entity Timeline",
+  "description": "Per-entity history array stored in timeline/{entity_id}.json. Each entry captures the full entity state at a given patch version. Used for full card page stat comparison.",
+  "type": "array",
+  "items": {
+    "type": "object",
+    "required": ["version", "date", "snapshot"],
+    "additionalProperties": false,
+    "properties": {
+      "version": {
+        "type": "string",
+        "pattern": "^\\d+\\.\\d+\\.\\d+$",
+        "description": "Semantic version of the patch this snapshot was taken from."
+      },
+      "date": {
+        "type": "string",
+        "format": "date-time",
+        "description": "ISO 8601 timestamp of when the patch was published."
+      },
+      "snapshot": {
+        "type": "object",
+        "description": "Full entity state at this version. Shape varies by entity type (hero, unit, spell, etc.)."
+      }
+    }
+  }
+}

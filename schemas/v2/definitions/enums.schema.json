@@ -63,6 +63,11 @@
       "type": "string",
       "description": "Development or live status of the game.",
       "enum": ["Live", "Beta", "Alpha", "Dev", "In Development"]
+    },
+    "patch_type_enum": {
+      "type": "string",
+      "description": "Balance change classification for patch history.",
+      "enum": ["buff", "nerf", "rework", "fix", "new"]
     }
   }
 }

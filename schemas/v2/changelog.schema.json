@@ -1,0 +1,40 @@
+{
+  "$schema": "https://json-schema.org/draft/2019-09/schema",
+  "$id": "https://spellcasters.gg/schemas/v2/changelog.schema.json",
+  "title": "Patch Changelog",
+  "description": "Schema for the patch changelog array and individual patch entries. Used for card popups and full card page comparison.",
+  "definitions": {
+    "patch_entry": {
+      "type": "object",
+      "required": ["version", "date", "description", "entities"],
+      "additionalProperties": false,
+      "properties": {
+        "version": {
+          "type": "string",
+          "pattern": "^\\d+\\.\\d+\\.\\d+$",
+          "description": "Semantic version of this patch."
+        },
+        "date": {
+          "type": "string",
+          "format": "date-time",
+          "description": "ISO 8601 timestamp of when the patch was published."
+        },
+        "description": {
+          "type": "string",
+          "description": "Human-readable summary of the patch."
+        },
+        "entities": {
+          "type": "object",
+          "description": "Map of entity_id to balance change type for this patch.",
+          "additionalProperties": {
+            "$ref": "definitions/enums.schema.json#/definitions/patch_type_enum"
+          }
+        }
+      }
+    }
+  },
+  "type": "array",
+  "items": {
+    "$ref": "#/definitions/patch_entry"
+  }
+}

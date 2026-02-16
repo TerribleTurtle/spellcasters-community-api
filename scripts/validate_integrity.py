@@ -293,6 +293,62 @@ def validate_integrity():  # pylint: disable=too-many-locals, too-many-branches,
                     print(f"[FAIL] Game Config Schema Error: {e.message}")
                     errors += 1
 
+    # Validate Patch History Files (output files, not source data)
+    print("Validating patch history files...")
+    patch_files = {
+        "balance_index.json": "balance_index.schema.json",
+        "changelog.json": "changelog.schema.json",
+    }
+    for filename, schema_name in patch_files.items():
+        fpath = os.path.join(config.OUTPUT_DIR, filename)
+        if not os.path.exists(fpath):
+            print(f"[INFO] Patch file not found (OK for scaffolds): {filename}")
+            continue
+
+        data = load_json(fpath)
+        if data is None:
+            # null is valid for changelog_latest.json, skip others
+            continue
+
+        uri = schemas_map.get(schema_name)
+        if uri:
+            try:
+                resolved = registry.resolver().lookup(uri)
+                s_obj = resolved.contents
+                if "$id" not in s_obj:
+                    s_obj["$id"] = uri
+                v = validators.validator_for(s_obj)(s_obj, registry=registry)
+                v.validate(data)
+                print(f"[OK] {filename}")
+            except ValidationError as e:
+                print(f"[FAIL] Patch Schema Error in {filename}: {e.message}")
+                errors += 1
+
+    # Validate timeline files
+    timeline_dir = os.path.join(config.OUTPUT_DIR, config.PATCH_HISTORY_DIR)
+    timeline_schema_name = "timeline_entry.schema.json"
+    if os.path.exists(timeline_dir):
+        timeline_files = glob.glob(os.path.join(timeline_dir, "*.json"))
+        timeline_uri = schemas_map.get(timeline_schema_name)
+        if timeline_uri and timeline_files:
+            try:
+                resolved = registry.resolver().lookup(timeline_uri)
+                s_obj = resolved.contents
+                if "$id" not in s_obj:
+                    s_obj["$id"] = timeline_uri
+                v = validators.validator_for(s_obj)(s_obj, registry=registry)
+                for tf in timeline_files:
+                    tdata = load_json(tf)
+                    if tdata is not None:
+                        try:
+                            v.validate(tdata)
+                            print(f"[OK] timeline/{os.path.basename(tf)}")
+                        except ValidationError as e:
+                            print(f"[FAIL] Timeline Schema Error in {os.path.basename(tf)}: {e.message}")
+                            errors += 1
+            except Exception as e:
+                print(f"[WARN] Timeline validation setup failed: {e}")
+
     # Save Cache
     save_cache(cache)
 
