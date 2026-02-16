@@ -6,6 +6,8 @@ All notable changes to this project will be documented in this file.
 
 - chore: upgrade flake8 to 7.3.0 and pylint to 4.0.4
 - docs: update python requirement to 3.10+
+- style: implement dark mode for API documentation
+- ci: fix linting errors in migration scripts
 - feat: Finalize CI/CD Remediation (Security & Performance) & API Enhancements
 - chore: final cleanup, schema validation, and deck removal
 - fix: remove invalid image_required from placeholder upgrade

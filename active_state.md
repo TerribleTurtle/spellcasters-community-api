@@ -2,10 +2,13 @@
 
 ## Current Focus
 
-Implementing Patch History System (scaffold & build safety).
+Deployment Readiness & UI Polish.
 
 ## Recent Changes
 
+- **UI Polish:** Implemented Dark Mode for `index.html` documentation.
+- **CI/CD:** Fixed linting errors in `scripts/migration/remove_hero_speed.py`.
+- **Verification:** Passed `flake8`, `pytest`, and `validate_integrity.py`.
 - Added JSON schemas for patch history (`balance_index`, `changelog`, `timeline_entry`).
 - Added `patch_type_enum` to `enums.schema.json`.
 - Created TypeScript types: `types/patch-history.d.ts`.
