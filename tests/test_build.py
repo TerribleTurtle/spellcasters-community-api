@@ -19,21 +19,20 @@ def temp_output_dir(tmp_path):  # pylint: disable=redefined-outer-name
 
 
 @pytest.fixture
-def build_output(temp_output_dir, capsys):
+def build_output(temp_output_dir):  # pylint: disable=redefined-outer-name
     """
     Runs the build_api.main() once and returns the output directory.
-    Uses capsys to capture output instead of patching print.
     """
     with patch("build_api.OUTPUT_DIR", temp_output_dir):
         # Prevent sys.exit() from stopping the test runner if build fails
         with patch("sys.exit") as mock_exit:
             build_api.main()
-            
+
             # Ensure it didn't exit with error
             if mock_exit.called:
                 args = mock_exit.call_args[0]
                 assert args[0] == 0, f"Build script exited with error code {args[0]}"
-    
+
     return temp_output_dir
 
 

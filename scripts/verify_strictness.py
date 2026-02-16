@@ -44,7 +44,6 @@ def main():  # pylint: disable=too-many-locals
         "class": "Conqueror",
         "difficulty": 1,
         "health": 100,
-        "movement_speed": 5,
         "movement_type": "Ground",
         "population": 0,
         "image_required": False,
