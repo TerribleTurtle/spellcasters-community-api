@@ -18,22 +18,29 @@ def temp_output_dir(tmp_path):  # pylint: disable=redefined-outer-name
     return str(d)
 
 
-def test_build_api_generates_files(temp_output_dir):  # pylint: disable=redefined-outer-name
+@pytest.fixture
+def build_output(temp_output_dir, capsys):
     """
-    Runs the build_api script and verifies it generates the expected files.
+    Runs the build_api.main() once and returns the output directory.
+    Uses capsys to capture output instead of patching print.
     """
-    # Patch the OUTPUT_DIR in the build_api module
     with patch("build_api.OUTPUT_DIR", temp_output_dir):
         # Prevent sys.exit() from stopping the test runner if build fails
         with patch("sys.exit") as mock_exit:
             build_api.main()
-
+            
             # Ensure it didn't exit with error
             if mock_exit.called:
                 args = mock_exit.call_args[0]
                 assert args[0] == 0, f"Build script exited with error code {args[0]}"
+    
+    return temp_output_dir
 
-    # Verify key files exist
+
+def test_build_api_generates_files(build_output):  # pylint: disable=redefined-outer-name
+    """
+    Verifies that the build generated the expected key files.
+    """
     expected_files = [
         "all_data.json",
         "units.json",
@@ -42,7 +49,7 @@ def test_build_api_generates_files(temp_output_dir):  # pylint: disable=redefine
     ]
 
     for fname in expected_files:
-        path = os.path.join(temp_output_dir, fname)
+        path = os.path.join(build_output, fname)
         assert os.path.exists(path), f"Expected build artifact {fname} not found."
 
         # Verify valid JSON
@@ -51,16 +58,11 @@ def test_build_api_generates_files(temp_output_dir):  # pylint: disable=redefine
             assert content, f"{fname} is empty"
 
 
-def test_all_data_structure(temp_output_dir):  # pylint: disable=redefined-outer-name
+def test_all_data_structure(build_output):  # pylint: disable=redefined-outer-name
     """
     Verifies that all_data.json contains the aggregated keys.
     """
-    with patch("build_api.OUTPUT_DIR", temp_output_dir):
-        # Silence stdout
-        with patch("builtins.print"):
-            build_api.main()
-
-    all_data_path = os.path.join(temp_output_dir, "all_data.json")
+    all_data_path = os.path.join(build_output, "all_data.json")
     with open(all_data_path, 'r', encoding='utf-8') as f:
         data = json.load(f)
 
