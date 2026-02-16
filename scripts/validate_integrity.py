@@ -179,6 +179,7 @@ def validate_entry_assets(data, schema_key, folder, cache):
         return check_asset_exists(folder, obj_id, True, cache)
     return 0
 
+
 def validate_timeline_metadata(registry, schemas_map):
     """Validates timeline files against the schema. Returns count of errors."""
     errors = 0
@@ -367,7 +368,6 @@ def validate_integrity():  # pylint: disable=too-many-locals, too-many-branches,
 
     # Validate timeline files
     errors += validate_timeline_metadata(registry, schemas_map)
-
 
     # Save Cache
     save_cache(cache)
