@@ -19,7 +19,10 @@ Deployment Readiness & UI Polish.
 - Added Patch History documentation to `README.md` and `index.html`.
 - Removed `movement_speed` from Hero schema and data.
 - Updated `stats.schema.json` to decouple speed from base stats.
+- **Reverted to parity with remote:** Discarded local changes (Astral Monk edit) and untracked files. Match `origin/main`.
 
 ## Todo
 
+- **Deployment:** Verified and built v2 API artifacts.
 - [x] Build local artifacts (Current).
+- [ ] Monitor deployment status.

@@ -87,6 +87,19 @@ Please read [CONTRIBUTING.md](CONTRIBUTING.md) for details.
 - **Found a typo?** Reference the [Quick Fix Guide](CONTRIBUTING.md#%E2%9A%A1-quick-fix-typos--small-edits).
 - **Adding data?** See the [Advanced Guide](CONTRIBUTING.md#%F0%9F%9B%A0%EF%B8%8F-advanced-adding-new-data).
 
+## 🌐 Ecosystem
+
+This API is the data backbone for the Spellcasters community tools:
+
+| Project                        | Role                                        | Link                                                                                            |
+| ------------------------------ | ------------------------------------------- | ----------------------------------------------------------------------------------------------- |
+| **Spellcasters Community API** | Data source (this repo)                     | You are here                                                                                    |
+| **SpellcastersDB**             | Public database & deckbuilder               | [GitHub](https://github.com/TerribleTurtle/spellcastersdb) • [Live](https://spellcastersdb.com) |
+| **The Grimoire (Manager)**     | Operator tool — edit data & publish patches | [GitHub](https://github.com/TerribleTurtle/spellcasters-manager)                                |
+| **Spellcasters Bot**           | Discord bot — search & lookup commands      | [GitHub](https://github.com/TerribleTurtle/spellcasters-bot)                                    |
+
+**Data flows:** The Grimoire edits data and publishes to this API → SpellcastersDB and the Discord Bot consume this API for live data.
+
 ## 📄 License
 
 This project is open source under the [MIT License](LICENSE).
