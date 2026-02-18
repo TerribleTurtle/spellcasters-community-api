@@ -1,7 +1,7 @@
 {
   "build_info": {
     "version": "0.0.1",
-    "generated_at": "2026-02-18T07:54:48.521577+00:00"
+    "generated_at": "2026-02-18T14:36:02.139006+00:00"
   },
   "heroes": [
     {
@@ -14,13 +14,6 @@
       "health": 300,
       "movement_type": "Ground",
       "population": 0,
-      "changelog": [
-        {
-          "version": "0.0.1",
-          "date": "2026-02-05T18:34:05.939129Z",
-          "description": "Initial Closed Beta 2 Data"
-        }
-      ],
       "last_modified": "2026-02-18T07:17:33.470Z",
       "$schema": "../../schemas/v2/heroes.schema.json",
       "class": "Duelist",
@@ -83,13 +76,6 @@
       "health": 340,
       "movement_type": "Ground",
       "population": 0,
-      "changelog": [
-        {
-          "version": "0.0.1",
-          "date": "2026-02-05T17:05:01.971147Z",
-          "description": "Initial Closed Beta 2 Data"
-        }
-      ],
       "last_modified": "2026-02-18T07:20:18.153Z",
       "$schema": "../../schemas/v2/heroes.schema.json",
       "class": "Conqueror",
@@ -142,13 +128,6 @@
       "health": 450,
       "movement_type": "Ground",
       "population": 0,
-      "changelog": [
-        {
-          "version": "0.0.1",
-          "date": "2026-02-05T18:35:34.217480Z",
-          "description": "Initial Closed Beta 2 Data"
-        }
-      ],
       "last_modified": "2026-02-18T07:18:42.253Z",
       "$schema": "../../schemas/v2/heroes.schema.json",
       "class": "Conqueror",
@@ -199,13 +178,6 @@
       "health": 440,
       "movement_type": "Ground",
       "population": 0,
-      "changelog": [
-        {
-          "version": "0.0.1",
-          "date": "2026-02-05T18:33:10.223377Z",
-          "description": "Initial Closed Beta 2 Data"
-        }
-      ],
       "last_modified": "2026-02-18T07:21:26.945Z",
       "$schema": "../../schemas/v2/heroes.schema.json",
       "class": "Enchanter",
@@ -263,13 +235,6 @@
       "health": 600,
       "movement_type": "Ground",
       "population": 0,
-      "changelog": [
-        {
-          "version": "0.0.1",
-          "date": "2026-02-05T18:35:34.217480Z",
-          "description": "Initial Closed Beta 2 Data"
-        }
-      ],
       "last_modified": "2026-02-18T07:21:06.730Z",
       "$schema": "../../schemas/v2/heroes.schema.json",
       "class": "Enchanter",
@@ -340,13 +305,6 @@
       "health": 350,
       "movement_type": "Ground",
       "population": 0,
-      "changelog": [
-        {
-          "version": "0.0.1",
-          "date": "2026-02-05T17:05:01.972347Z",
-          "description": "Initial Closed Beta 2 Data"
-        }
-      ],
       "last_modified": "2026-02-18T07:20:50.326Z",
       "$schema": "../../schemas/v2/heroes.schema.json",
       "class": "Duelist",
@@ -424,13 +382,6 @@
       "tags": [
         "charge",
         "orb"
-      ],
-      "changelog": [
-        {
-          "version": "0.0.1",
-          "date": "2026-02-11T00:00:00Z",
-          "description": "Created new consumable"
-        }
       ]
     },
     {
@@ -446,13 +397,6 @@
       "tags": [
         "charge",
         "orb"
-      ],
-      "changelog": [
-        {
-          "version": "0.0.1",
-          "date": "2026-02-11T00:00:00Z",
-          "description": "Created new consumable"
-        }
       ]
     },
     {
@@ -472,14 +416,7 @@
       ],
       "mechanics": {
         "auto_capture_altars": true
-      },
-      "changelog": [
-        {
-          "version": "0.0.1",
-          "date": "2026-02-11T00:00:00Z",
-          "description": "Created new consumable"
-        }
-      ]
+      }
     },
     {
       "$schema": "../../schemas/v2/consumables.schema.json",
@@ -495,13 +432,6 @@
       "tags": [
         "heal",
         "grimoire"
-      ],
-      "changelog": [
-        {
-          "version": "0.0.1",
-          "date": "2026-02-11T00:00:00Z",
-          "description": "Renamed from light_heal and updated"
-        }
       ]
     },
     {
@@ -518,13 +448,6 @@
       "tags": [
         "heal",
         "grimoire"
-      ],
-      "changelog": [
-        {
-          "version": "0.0.1",
-          "date": "2026-02-11T00:00:00Z",
-          "description": "Renamed from medium_heal and updated"
-        }
       ]
     },
     {
@@ -541,13 +464,6 @@
       "tags": [
         "heal",
         "grimoire"
-      ],
-      "changelog": [
-        {
-          "version": "0.0.1",
-          "date": "2026-02-11T00:00:00Z",
-          "description": "Created new consumable"
-        }
       ]
     },
     {
@@ -566,13 +482,6 @@
         "buff",
         "damage",
         "grimoire"
-      ],
-      "changelog": [
-        {
-          "version": "0.0.1",
-          "date": "2026-02-11T00:00:00Z",
-          "description": "Created new consumable"
-        }
       ]
     },
     {
@@ -591,13 +500,6 @@
         "buff",
         "defense",
         "grimoire"
-      ],
-      "changelog": [
-        {
-          "version": "0.0.1",
-          "date": "2026-02-11T00:00:00Z",
-          "description": "Created new consumable"
-        }
       ]
     }
   ],
@@ -610,14 +512,7 @@
       "target_tags": [],
       "effect": {
         "dev_mode": 1
-      },
-      "changelog": [
-        {
-          "version": "0.0.1",
-          "date": "2026-02-14T12:00:00Z",
-          "description": "Initial placeholder"
-        }
-      ]
+      }
     }
   ],
   "units": [
@@ -631,20 +526,13 @@
       "description": "A heavy defensive tower that targets enemies inside allied territory and can defend itself when attacked.",
       "image_required": true,
       "tags": [],
-      "changelog": [
-        {
-          "version": "0.0.1",
-          "date": "2026-02-08T09:49:16.842699+00:00",
-          "description": "Initial Closed Beta 2 Data"
-        }
-      ],
       "damage": 50,
       "health": 3500,
       "dps": 50,
-      "attack_interval": 1.0,
+      "attack_interval": 1,
       "charges": 1,
       "recharge_time": 50,
-      "cast_time": 0.0,
+      "cast_time": 0,
       "population": 0
     },
     {
@@ -657,21 +545,14 @@
       "description": "Static weapon that targets enemies at long range.",
       "image_required": true,
       "tags": [],
-      "changelog": [
-        {
-          "version": "0.0.1",
-          "date": "2026-02-08T09:49:16.840179+00:00",
-          "description": "Initial Closed Beta 2 Data"
-        }
-      ],
       "damage": 25,
       "health": 300,
       "range": 80,
       "dps": 25,
-      "attack_interval": 1.0,
+      "attack_interval": 1,
       "charges": 1,
       "recharge_time": 25,
-      "cast_time": 0.0,
+      "cast_time": 0,
       "population": 0
     },
     {
@@ -684,19 +565,12 @@
       "description": "Shrine that continuously summons new Skeleton Warriors.",
       "image_required": true,
       "tags": [],
-      "changelog": [
-        {
-          "version": "0.0.1",
-          "date": "2026-02-08T09:49:16.843010+00:00",
-          "description": "Initial Closed Beta 2 Data"
-        }
-      ],
       "mechanics": {
         "spawner": [
           {
             "unit_id": "skeleton_warrior",
             "count": 5,
-            "interval": 10.0,
+            "interval": 10,
             "trigger": "Interval"
           },
           {
@@ -709,7 +583,7 @@
       "health": 1000,
       "charges": 1,
       "recharge_time": 50,
-      "cast_time": 0.0,
+      "cast_time": 0,
       "population": 0
     },
     {
@@ -722,13 +596,6 @@
       "description": "Support creature that heals allies. Uses elemental attacks when infused.",
       "image_required": true,
       "tags": [],
-      "changelog": [
-        {
-          "version": "0.0.1",
-          "date": "2026-02-08T09:49:16.840490+00:00",
-          "description": "Initial Closed Beta 2 Data"
-        }
-      ],
       "mechanics": {
         "aura": [
           {
@@ -736,7 +603,7 @@
             "description": "Heals nearby allies. Healing is reduced when multiple Dryads stack.",
             "radius": 8,
             "value": 30,
-            "interval": 1.0,
+            "interval": 1,
             "effect": "Heal",
             "target_types": [
               "Ally"
@@ -749,7 +616,7 @@
       "movement_speed": 3,
       "movement_type": "Ground",
       "dps": 12,
-      "attack_interval": 1.0,
+      "attack_interval": 1,
       "charges": 1,
       "recharge_time": 25,
       "cast_time": 0,
@@ -765,13 +632,6 @@
       "description": "Strong melee unit that resists damage from large enemies.",
       "image_required": true,
       "tags": [],
-      "changelog": [
-        {
-          "version": "0.0.1",
-          "date": "2026-02-08T09:49:16.840800+00:00",
-          "description": "Initial Closed Beta 2 Data"
-        }
-      ],
       "mechanics": {
         "damage_modifiers": [
           {
@@ -804,7 +664,7 @@
       "movement_speed": 2,
       "movement_type": "Ground",
       "dps": 25,
-      "attack_interval": 1.0,
+      "attack_interval": 1,
       "charges": 1,
       "recharge_time": 25,
       "cast_time": 0,
@@ -820,13 +680,6 @@
       "description": "Stealthy flying ranged creature that turns invisible out of combat.",
       "image_required": true,
       "tags": [],
-      "changelog": [
-        {
-          "version": "0.0.1",
-          "date": "2026-02-08T09:49:16.836151+00:00",
-          "description": "Initial Closed Beta 2 Data"
-        }
-      ],
       "damage": 9,
       "mechanics": {
         "stealth": {
@@ -839,10 +692,10 @@
       "movement_speed": 3,
       "movement_type": "Flying",
       "dps": 9,
-      "attack_interval": 1.0,
+      "attack_interval": 1,
       "charges": 1,
       "recharge_time": 5,
-      "cast_time": 0.0,
+      "cast_time": 0,
       "population": 0
     },
     {
@@ -855,13 +708,6 @@
       "description": "Slow giant that protects allies with a massive shield.",
       "image_required": true,
       "tags": [],
-      "changelog": [
-        {
-          "version": "0.0.1",
-          "date": "2026-02-08T09:49:16.844628+00:00",
-          "description": "Initial Closed Beta 2 Data"
-        }
-      ],
       "mechanics": {
         "damage_modifiers": [
           {
@@ -877,7 +723,7 @@
       "movement_speed": 3,
       "movement_type": "Ground",
       "dps": 30,
-      "attack_interval": 1.0,
+      "attack_interval": 1,
       "charges": 1,
       "recharge_time": 50,
       "cast_time": 0,
@@ -893,13 +739,6 @@
       "description": "Agile flying creature that excels at defeating ground units.",
       "image_required": true,
       "tags": [],
-      "changelog": [
-        {
-          "version": "0.0.1",
-          "date": "2026-02-08T09:49:16.837000+00:00",
-          "description": "Initial Closed Beta 2 Data"
-        }
-      ],
       "damage": 12,
       "mechanics": {
         "damage_modifiers": [
@@ -930,7 +769,7 @@
       "movement_speed": 8,
       "movement_type": "Flying",
       "dps": 12,
-      "attack_interval": 1.0,
+      "attack_interval": 1,
       "charges": 1,
       "recharge_time": 5,
       "cast_time": 0,
@@ -946,19 +785,12 @@
       "description": "Nest that continuously spawns new Harpies.",
       "image_required": true,
       "tags": [],
-      "changelog": [
-        {
-          "version": "0.0.1",
-          "date": "2026-02-08T09:49:16.844994+00:00",
-          "description": "Initial Closed Beta 2 Data"
-        }
-      ],
       "mechanics": {
         "spawner": [
           {
             "unit_id": "harpy",
             "count": 5,
-            "interval": 10.0,
+            "interval": 10,
             "trigger": "Interval"
           },
           {
@@ -971,7 +803,7 @@
       "health": 750,
       "charges": 1,
       "recharge_time": 50,
-      "cast_time": 0.0,
+      "cast_time": 0,
       "population": 0
     },
     {
@@ -984,13 +816,6 @@
       "description": "Colossal creature that deals massive damage to structures.",
       "image_required": true,
       "tags": [],
-      "changelog": [
-        {
-          "version": "0.0.1",
-          "date": "2026-02-08T09:49:16.847802+00:00",
-          "description": "Initial Closed Beta 2 Data"
-        }
-      ],
       "mechanics": {
         "damage_modifiers": [
           {
@@ -1000,7 +825,7 @@
             ]
           },
           {
-            "multiplier": 2.0,
+            "multiplier": 2,
             "target_types": [
               "Building"
             ]
@@ -1012,7 +837,7 @@
       "movement_speed": 3,
       "movement_type": "Ground",
       "dps": 100,
-      "attack_interval": 1.0,
+      "attack_interval": 1,
       "charges": 1,
       "recharge_time": 120,
       "cast_time": 0,
@@ -1023,28 +848,23 @@
       "entity_id": "lich",
       "name": "Lich",
       "category": "Creature",
-      "magic_school": "Necromancy",
-      "rank": "II",
-      "description": "Undead caster that inflicts curses to enemies, increasing the damage they take and reducing their movement speed.",
-      "image_required": true,
-      "tags": [],
-      "changelog": [
-        {
-          "version": "0.0.1",
-          "date": "2026-02-08T09:49:16.841271+00:00",
-          "description": "Initial Closed Beta 2 Data"
-        }
-      ],
+      "attack_interval": 1,
+      "cast_time": 0,
+      "charges": 1,
       "damage": 5,
+      "description": "Undead caster that inflicts curses to enemies, increasing the damage they take and reducing their movement speed.",
+      "dps": 5,
       "health": 500,
+      "image_required": true,
+      "magic_school": "Necromancy",
       "movement_speed": 5,
       "movement_type": "Flying",
-      "dps": 5,
-      "attack_interval": 1.0,
-      "charges": 1,
+      "population": 0,
+      "range": 25,
+      "rank": "II",
       "recharge_time": 25,
-      "cast_time": 0.0,
-      "population": 0
+      "tags": [],
+      "last_modified": "2026-02-18T08:10:21.047Z"
     },
     {
       "$schema": "../../schemas/v2/units.schema.json",
@@ -1056,13 +876,6 @@
       "description": "Long-range fighter that deals bonus damage to flying enemies.",
       "image_required": true,
       "tags": [],
-      "changelog": [
-        {
-          "version": "0.0.1",
-          "date": "2026-02-08T09:49:16.837714+00:00",
-          "description": "Initial Closed Beta 2 Data"
-        }
-      ],
       "mechanics": {
         "damage_modifiers": [
           {
@@ -1085,7 +898,7 @@
       "movement_speed": 3,
       "movement_type": "Ground",
       "dps": 8,
-      "attack_interval": 1.0,
+      "attack_interval": 1,
       "charges": 1,
       "recharge_time": 5,
       "cast_time": 0,
@@ -1101,17 +914,10 @@
       "description": "Mighty warrior that crushes target areas with a hammer.",
       "image_required": true,
       "tags": [],
-      "changelog": [
-        {
-          "version": "0.0.1",
-          "date": "2026-02-08T09:49:16.845391+00:00",
-          "description": "Initial Closed Beta 2 Data"
-        }
-      ],
       "mechanics": {
         "damage_modifiers": [
           {
-            "multiplier": 5.0,
+            "multiplier": 5,
             "target_types": [
               "Building"
             ]
@@ -1123,7 +929,7 @@
       "movement_speed": 3,
       "movement_type": "Ground",
       "dps": 70,
-      "attack_interval": 1.0,
+      "attack_interval": 1,
       "charges": 1,
       "recharge_time": 50,
       "cast_time": 0,
@@ -1139,17 +945,10 @@
       "description": "Defensive wall that blocks enemy paths.",
       "image_required": true,
       "tags": [],
-      "changelog": [
-        {
-          "version": "0.0.1",
-          "date": "2026-02-08T09:49:16.841572+00:00",
-          "description": "Initial Closed Beta 2 Data"
-        }
-      ],
       "health": 2500,
       "charges": 1,
       "recharge_time": 25,
-      "cast_time": 0.0,
+      "cast_time": 0,
       "population": 0
     },
     {
@@ -1188,13 +987,6 @@
           }
         ]
       },
-      "changelog": [
-        {
-          "version": "0.0.1",
-          "date": "2026-02-08T09:49:16.838054+00:00",
-          "description": "Initial Closed Beta 2 Data"
-        }
-      ],
       "last_modified": "2026-02-18T07:18:12.876Z",
       "$schema": "../../schemas/v2/units.schema.json"
     },
@@ -1239,13 +1031,6 @@
           }
         ]
       },
-      "changelog": [
-        {
-          "version": "0.0.1",
-          "date": "2026-02-08T09:49:16.838362+00:00",
-          "description": "Initial Closed Beta 2 Data"
-        }
-      ],
       "last_modified": "2026-02-18T07:21:50.210Z",
       "$schema": "../../schemas/v2/units.schema.json"
     },
@@ -1259,13 +1044,6 @@
       "description": "Undead soldier that captures altars quickly in large groups.",
       "image_required": true,
       "tags": [],
-      "changelog": [
-        {
-          "version": "0.0.1",
-          "date": "2026-02-08T09:49:16.838860+00:00",
-          "description": "Initial Closed Beta 2 Data"
-        }
-      ],
       "mechanics": {
         "capture_speed_modifier": 1.25,
         "damage_modifiers": [
@@ -1288,7 +1066,7 @@
       "movement_speed": 3,
       "movement_type": "Ground",
       "dps": 15,
-      "attack_interval": 1.0,
+      "attack_interval": 1,
       "charges": 1,
       "recharge_time": 5,
       "cast_time": 0,
@@ -1304,23 +1082,16 @@
       "description": "Long-range unit that deals heavy damage to a target.",
       "image_required": true,
       "tags": [],
-      "changelog": [
-        {
-          "version": "0.0.1",
-          "date": "2026-02-08T09:49:16.846123+00:00",
-          "description": "Initial Closed Beta 2 Data"
-        }
-      ],
       "damage": 40,
       "health": 1300,
       "range": 75,
       "movement_speed": 3,
       "movement_type": "Ground",
       "dps": 40,
-      "attack_interval": 1.0,
+      "attack_interval": 1,
       "charges": 1,
       "recharge_time": 50,
-      "cast_time": 0.0,
+      "cast_time": 0,
       "population": 0
     },
     {
@@ -1333,23 +1104,16 @@
       "description": "Siege unit that hurls long-range boulders for heavy area damage.",
       "image_required": true,
       "tags": [],
-      "changelog": [
-        {
-          "version": "0.0.1",
-          "date": "2026-02-08T09:49:16.846434+00:00",
-          "description": "Initial Closed Beta 2 Data"
-        }
-      ],
       "damage": 40,
       "health": 2100,
       "range": 55,
       "movement_speed": 2,
       "movement_type": "Ground",
       "dps": 40,
-      "attack_interval": 1.0,
+      "attack_interval": 1,
       "charges": 1,
       "recharge_time": 50,
-      "cast_time": 0.0,
+      "cast_time": 0,
       "population": 0
     },
     {
@@ -1362,23 +1126,16 @@
       "description": "Hunter unit that fires powerful long-range bolts.",
       "image_required": true,
       "tags": [],
-      "changelog": [
-        {
-          "version": "0.0.1",
-          "date": "2026-02-08T09:49:16.841893+00:00",
-          "description": "Initial Closed Beta 2 Data"
-        }
-      ],
       "damage": 16,
       "health": 340,
       "range": 75,
       "movement_speed": 3,
       "movement_type": "Ground",
       "dps": 16,
-      "attack_interval": 1.0,
+      "attack_interval": 1,
       "charges": 1,
       "recharge_time": 25,
-      "cast_time": 0.0,
+      "cast_time": 0,
       "population": 0
     },
     {
@@ -1391,13 +1148,6 @@
       "description": "Flying dragonkin that attacks with mid-range projectiles.",
       "image_required": true,
       "tags": [],
-      "changelog": [
-        {
-          "version": "0.0.1",
-          "date": "2026-02-08T09:49:16.842389+00:00",
-          "description": "Initial Closed Beta 2 Data"
-        }
-      ],
       "damage": 19,
       "mechanics": {
         "damage_modifiers": [
@@ -1414,7 +1164,7 @@
       "movement_type": "Flying",
       "range": 36,
       "dps": 19,
-      "attack_interval": 1.0,
+      "attack_interval": 1,
       "charges": 1,
       "recharge_time": 25,
       "cast_time": 0,
@@ -1432,18 +1182,11 @@
       "description": "Massive projectile that deals heavy damage on impact.",
       "image_required": true,
       "tags": [],
-      "changelog": [
-        {
-          "version": "0.0.1",
-          "date": "2026-02-08T09:49:16.846742+00:00",
-          "description": "Initial Closed Beta 2 Data"
-        }
-      ],
       "damage": 4200,
       "range": 80,
       "charges": 1,
       "recharge_time": 120,
-      "cast_time": 0.0
+      "cast_time": 0
     },
     {
       "entity_id": "astral_shot",
@@ -1457,13 +1200,6 @@
       "mechanics": {
         "waves": 4
       },
-      "changelog": [
-        {
-          "version": "0.0.1",
-          "date": "2026-02-08T09:49:16.839777+00:00",
-          "description": "Initial Closed Beta 2 Data"
-        }
-      ],
       "last_modified": "2026-02-18T07:17:45.455Z",
       "$schema": "../../schemas/v2/spells.schema.json",
       "magic_school": "Astral",
@@ -1484,13 +1220,6 @@
       "description": "Ground shockwave that damages structures and staggers creatures significantly. Damage is split into 3 waves.",
       "image_required": true,
       "tags": [],
-      "changelog": [
-        {
-          "version": "0.0.1",
-          "date": "2026-02-08T09:49:16.843317+00:00",
-          "description": "Initial Closed Beta 2 Data"
-        }
-      ],
       "damage": 76,
       "mechanics": {
         "waves": 3,
@@ -1533,13 +1262,6 @@
       "tags": [
         "homing"
       ],
-      "changelog": [
-        {
-          "version": "0.0.1",
-          "date": "2026-02-08T09:49:16.843620+00:00",
-          "description": "Initial Closed Beta 2 Data"
-        }
-      ],
       "last_modified": "2026-02-18T07:17:56.992Z",
       "$schema": "../../schemas/v2/spells.schema.json",
       "magic_school": "Elemental",
@@ -1560,13 +1282,6 @@
       "description": "Fire projectiles that deal continuous damage over a wide area.",
       "image_required": true,
       "tags": [],
-      "changelog": [
-        {
-          "version": "0.0.1",
-          "date": "2026-02-08T09:49:16.847017+00:00",
-          "description": "Initial Closed Beta 2 Data"
-        }
-      ],
       "mechanics": {
         "damage_modifiers": [
           {
@@ -1594,13 +1309,6 @@
       "description": "Focused beam that deals low Fire damage.",
       "image_required": true,
       "tags": [],
-      "changelog": [
-        {
-          "version": "0.0.1",
-          "date": "2026-02-08T09:49:16.836670+00:00",
-          "description": "Initial Closed Beta 2 Data"
-        }
-      ],
       "mechanics": {
         "waves": 5,
         "interval": 1
@@ -1609,7 +1317,7 @@
       "range": 45,
       "charges": 1,
       "recharge_time": 5,
-      "cast_time": 0.0
+      "cast_time": 0
     },
     {
       "$schema": "../../schemas/v2/spells.schema.json",
@@ -1621,17 +1329,10 @@
       "description": "Fire pulse that burns enemies and infuses nearby allies.",
       "image_required": true,
       "tags": [],
-      "changelog": [
-        {
-          "version": "0.0.1",
-          "date": "2026-02-08T09:49:16.843934+00:00",
-          "description": "Initial Closed Beta 2 Data"
-        }
-      ],
       "range": 24,
       "charges": 1,
       "recharge_time": 50,
-      "cast_time": 0.0
+      "cast_time": 0
     },
     {
       "$schema": "../../schemas/v2/spells.schema.json",
@@ -1643,17 +1344,10 @@
       "description": "Ice pulse that freezes enemies and infuses nearby allies.",
       "image_required": true,
       "tags": [],
-      "changelog": [
-        {
-          "version": "0.0.1",
-          "date": "2026-02-08T09:49:16.844303+00:00",
-          "description": "Initial Closed Beta 2 Data"
-        }
-      ],
       "range": 24,
       "charges": 1,
       "recharge_time": 50,
-      "cast_time": 0.0
+      "cast_time": 0
     },
     {
       "$schema": "../../schemas/v2/spells.schema.json",
@@ -1665,18 +1359,11 @@
       "description": "Thunderstrike that deals extreme Lightning damage to a target.",
       "image_required": true,
       "tags": [],
-      "changelog": [
-        {
-          "version": "0.0.1",
-          "date": "2026-02-08T09:49:16.847345+00:00",
-          "description": "Initial Closed Beta 2 Data"
-        }
-      ],
       "damage": 3675,
       "range": 36,
       "charges": 1,
       "recharge_time": 120,
-      "cast_time": 0.0
+      "cast_time": 0
     },
     {
       "$schema": "../../schemas/v2/spells.schema.json",
@@ -1688,18 +1375,11 @@
       "description": "Healing ray that can be aimed at the ground to restore allies in the area.",
       "image_required": true,
       "tags": [],
-      "changelog": [
-        {
-          "version": "0.0.1",
-          "date": "2026-02-08T09:49:16.837289+00:00",
-          "description": "Initial Closed Beta 2 Data"
-        }
-      ],
       "range": 45,
       "value": 300,
       "charges": 1,
       "recharge_time": 5,
-      "cast_time": 0.0
+      "cast_time": 0
     },
     {
       "$schema": "../../schemas/v2/spells.schema.json",
@@ -1711,20 +1391,13 @@
       "description": "Grenade that creates a Poison cloud over the target area.",
       "image_required": true,
       "tags": [],
-      "changelog": [
-        {
-          "version": "0.0.1",
-          "date": "2026-02-08T09:49:16.845763+00:00",
-          "description": "Initial Closed Beta 2 Data"
-        }
-      ],
       "damage": 25,
       "range": 40,
       "duration": 12,
       "mechanics": {
         "damage_modifiers": [
           {
-            "multiplier": 0.0,
+            "multiplier": 0,
             "target_types": [
               "Building"
             ]
@@ -1745,17 +1418,10 @@
       "description": "Magic circle that resurrects creatures with partial health.",
       "image_required": true,
       "tags": [],
-      "changelog": [
-        {
-          "version": "0.0.1",
-          "date": "2026-02-08T09:49:16.848165+00:00",
-          "description": "Initial Closed Beta 2 Data"
-        }
-      ],
       "duration": 12,
       "charges": 1,
       "recharge_time": 120,
-      "cast_time": 0.0
+      "cast_time": 0
     },
     {
       "$schema": "../../schemas/v2/spells.schema.json",
@@ -1767,13 +1433,6 @@
       "description": "Dark ritual that recalls allies to recharge summons.",
       "image_required": true,
       "tags": [],
-      "changelog": [
-        {
-          "version": "0.0.1",
-          "date": "2026-02-08T09:49:16.838616+00:00",
-          "description": "Initial Closed Beta 2 Data"
-        }
-      ],
       "mechanics": {
         "waves": 5,
         "interval": 1
@@ -1781,7 +1440,7 @@
       "damage": 18,
       "charges": 1,
       "recharge_time": 5,
-      "cast_time": 0.0
+      "cast_time": 0
     },
     {
       "$schema": "../../schemas/v2/spells.schema.json",
@@ -1793,13 +1452,6 @@
       "description": "Focused beam that deals low Lightning damage.",
       "image_required": true,
       "tags": [],
-      "changelog": [
-        {
-          "version": "0.0.1",
-          "date": "2026-02-08T09:49:16.839433+00:00",
-          "description": "Initial Closed Beta 2 Data"
-        }
-      ],
       "mechanics": {
         "waves": 5,
         "interval": 1
@@ -1808,7 +1460,7 @@
       "range": 45,
       "charges": 1,
       "recharge_time": 5,
-      "cast_time": 0.0
+      "cast_time": 0
     }
   ],
   "titans": [
@@ -1822,13 +1474,6 @@
       "description": "The Wild Titan. Crushes all structures as it marches toward the Lifestones. Destroys and captures altars instantly.",
       "image_required": true,
       "tags": [],
-      "changelog": [
-        {
-          "version": "0.0.1",
-          "date": "2026-02-08T09:49:16.848523+00:00",
-          "description": "Initial Closed Beta 2 Data"
-        }
-      ],
       "mechanics": {
         "aura": [
           {
@@ -1851,7 +1496,7 @@
       "passive_health_regen": 50,
       "heal_amount": 0,
       "dps": 100,
-      "attack_interval": 1.0,
+      "attack_interval": 1,
       "charges": 1,
       "recharge_time": 10,
       "cast_time": 0,
@@ -1867,13 +1512,6 @@
       "description": "The Titan of Death. Weakens all nearby enemies and retaliates against Spellcasters.",
       "image_required": true,
       "tags": [],
-      "changelog": [
-        {
-          "version": "0.0.1",
-          "date": "2026-02-08T09:49:16.848821+00:00",
-          "description": "Initial Closed Beta 2 Data"
-        }
-      ],
       "mechanics": {
         "aura": [
           {
@@ -1881,7 +1519,7 @@
             "description": "Reduces damage of nearby spellcasters.",
             "radius": 15,
             "value": 0.5,
-            "interval": 1.0,
+            "interval": 1,
             "effect": "Debuff",
             "target_types": [
               "Enemy"
@@ -1904,7 +1542,7 @@
       "health": 15000,
       "movement_speed": 4,
       "dps": 125,
-      "attack_interval": 1.0,
+      "attack_interval": 1,
       "charges": 1,
       "recharge_time": 10,
       "cast_time": 0,

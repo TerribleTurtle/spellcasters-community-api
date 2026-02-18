@@ -8,13 +8,6 @@
   "description": "Ground shockwave that damages structures and staggers creatures significantly. Damage is split into 3 waves.",
   "image_required": true,
   "tags": [],
-  "changelog": [
-    {
-      "version": "0.0.1",
-      "date": "2026-02-08T09:49:16.843317+00:00",
-      "description": "Initial Closed Beta 2 Data"
-    }
-  ],
   "damage": 76,
   "mechanics": {
     "waves": 3,

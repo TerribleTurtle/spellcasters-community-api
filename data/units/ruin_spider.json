@@ -39,13 +39,6 @@
       }
     ]
   },
-  "changelog": [
-    {
-      "version": "0.0.1",
-      "date": "2026-02-08T09:49:16.838362+00:00",
-      "description": "Initial Closed Beta 2 Data"
-    }
-  ],
   "last_modified": "2026-02-18T07:21:50.210Z",
   "$schema": "../../schemas/v2/units.schema.json"
 }

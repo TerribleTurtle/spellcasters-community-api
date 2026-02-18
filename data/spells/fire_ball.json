@@ -7,13 +7,6 @@
   "tags": [
     "homing"
   ],
-  "changelog": [
-    {
-      "version": "0.0.1",
-      "date": "2026-02-08T09:49:16.843620+00:00",
-      "description": "Initial Closed Beta 2 Data"
-    }
-  ],
   "last_modified": "2026-02-18T07:17:56.992Z",
   "$schema": "../../schemas/v2/spells.schema.json",
   "magic_school": "Elemental",

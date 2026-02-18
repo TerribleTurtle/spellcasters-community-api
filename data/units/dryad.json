@@ -8,13 +8,6 @@
   "description": "Support creature that heals allies. Uses elemental attacks when infused.",
   "image_required": true,
   "tags": [],
-  "changelog": [
-    {
-      "version": "0.0.1",
-      "date": "2026-02-08T09:49:16.840490+00:00",
-      "description": "Initial Closed Beta 2 Data"
-    }
-  ],
   "mechanics": {
     "aura": [
       {
@@ -22,7 +15,7 @@
         "description": "Heals nearby allies. Healing is reduced when multiple Dryads stack.",
         "radius": 8,
         "value": 30,
-        "interval": 1.0,
+        "interval": 1,
         "effect": "Heal",
         "target_types": [
           "Ally"
@@ -35,7 +28,7 @@
   "movement_speed": 3,
   "movement_type": "Ground",
   "dps": 12,
-  "attack_interval": 1.0,
+  "attack_interval": 1,
   "charges": 1,
   "recharge_time": 25,
   "cast_time": 0,

@@ -217,6 +217,14 @@ def build_patch_history():
         else:
             print(f"[WARN] Patch file not found: {src}")
 
+    # 1b. Copy paginated changelog pages (changelog_page_*.json)
+    for page_file in glob.glob(os.path.join(config.BASE_DIR, "changelog_page_*.json")):
+        filename = os.path.basename(page_file)
+        dst = os.path.join(OUTPUT_DIR, filename)
+        shutil.copy2(page_file, dst)
+        print(f"[OK] Copied {filename} -> {OUTPUT_DIR}")
+        copied += 1
+
     # 2. Copy timeline directory
     src_timeline = os.path.join(config.BASE_DIR, config.PATCH_HISTORY_DIR)
     dst_timeline = os.path.join(OUTPUT_DIR, config.PATCH_HISTORY_DIR)

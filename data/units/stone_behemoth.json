@@ -8,22 +8,15 @@
   "description": "Siege unit that hurls long-range boulders for heavy area damage.",
   "image_required": true,
   "tags": [],
-  "changelog": [
-    {
-      "version": "0.0.1",
-      "date": "2026-02-08T09:49:16.846434+00:00",
-      "description": "Initial Closed Beta 2 Data"
-    }
-  ],
   "damage": 40,
   "health": 2100,
   "range": 55,
   "movement_speed": 2,
   "movement_type": "Ground",
   "dps": 40,
-  "attack_interval": 1.0,
+  "attack_interval": 1,
   "charges": 1,
   "recharge_time": 50,
-  "cast_time": 0.0,
+  "cast_time": 0,
   "population": 0
 }

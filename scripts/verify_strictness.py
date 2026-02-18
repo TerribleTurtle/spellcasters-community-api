@@ -55,8 +55,7 @@ def main():  # pylint: disable=too-many-locals
             "defense": {"name": "Block", "description": "Blocks stuff"},
             "ultimate": {"name": "Win", "description": "Wins game"}
         },
-        "last_modified": "2026-01-01T00:00:00Z",
-        "changelog": []
+        "last_modified": "2026-01-01T00:00:00Z"
     }
 
     # Test 1: Baseline Validity

@@ -8,22 +8,15 @@
   "description": "Hunter unit that fires powerful long-range bolts.",
   "image_required": true,
   "tags": [],
-  "changelog": [
-    {
-      "version": "0.0.1",
-      "date": "2026-02-08T09:49:16.841893+00:00",
-      "description": "Initial Closed Beta 2 Data"
-    }
-  ],
   "damage": 16,
   "health": 340,
   "range": 75,
   "movement_speed": 3,
   "movement_type": "Ground",
   "dps": 16,
-  "attack_interval": 1.0,
+  "attack_interval": 1,
   "charges": 1,
   "recharge_time": 25,
-  "cast_time": 0.0,
+  "cast_time": 0,
   "population": 0
 }

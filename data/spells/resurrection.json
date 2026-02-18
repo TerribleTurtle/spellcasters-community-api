@@ -8,15 +8,8 @@
   "description": "Magic circle that resurrects creatures with partial health.",
   "image_required": true,
   "tags": [],
-  "changelog": [
-    {
-      "version": "0.0.1",
-      "date": "2026-02-08T09:49:16.848165+00:00",
-      "description": "Initial Closed Beta 2 Data"
-    }
-  ],
   "duration": 12,
   "charges": 1,
   "recharge_time": 120,
-  "cast_time": 0.0
+  "cast_time": 0
 }

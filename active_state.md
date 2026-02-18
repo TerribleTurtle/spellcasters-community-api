@@ -2,31 +2,25 @@
 
 ## Current Focus
 
-Deployment Verified — Ready to push to `main`.
+Deploy verification completed — **GO** for deployment.
 
 ## Status: DEPLOY READY
 
-- **Audit**: PASSED (0 Errors, 8 Warnings - known asset gaps).
 - **Lint**: Flake8 clean, Pylint 10/10.
-- **Tests**: All passing (pytest).
-- **Build**: API artifacts generated successfully (including patch history).
-- **CI/CD**: `deploy.yml` patched to include strictness check.
+- **Tests**: 6/6 passing (pytest).
+- **Integrity**: 0 Errors, 8 Warnings (known missing consumable assets).
+- **Strictness**: 4/4 passing (fixed stale `changelog` field in test payload).
+- **Build**: API v2 artifacts generated successfully (including patch history).
+- **Secrets**: No hardcoded credentials detected.
+- **CI/CD**: `deploy.yml` and `ci.yml` match current build commands.
 
 ## Recent Changes
 
-- **Build Script:**
-  - `build_api.py` now copies changelog + timeline data into `api/v2/`.
-  - Stale timeline files are cleaned before each copy.
-- **Data Fix:**
-  - Renamed `timeline/*.json.json` → `*.json` (double-extension bug from mock generation).
-- **Schema Refactor:**
-  - Deleted `balance_index` (Legacy).
-  - Added `changelog_index` (Pagination).
-  - Standardized Enums (`change_type`, `patch_category`).
-- **Validation:**
-  - `validate_integrity.py` now checks patch history scaffolds.
-- **Cleanup:**
-  - Removed stale references from all docs.
+- **Fix:** Removed invalid `changelog` property from `verify_strictness.py` test payload (caused baseline failure against `unevaluatedProperties: false`).
+- **Build Script:** `build_api.py` now copies changelog + timeline data into `api/v2/`.
+- **Data Fix:** Renamed `timeline/*.json.json` → `*.json` (double-extension bug).
+- **Schema Refactor:** Deleted `balance_index` (Legacy), added `changelog_index` (Pagination), standardized Enums.
+- **Validation:** `validate_integrity.py` now checks patch history scaffolds.
 
 ## Todo
 

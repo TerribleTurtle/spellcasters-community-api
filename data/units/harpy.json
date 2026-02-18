@@ -8,13 +8,6 @@
   "description": "Agile flying creature that excels at defeating ground units.",
   "image_required": true,
   "tags": [],
-  "changelog": [
-    {
-      "version": "0.0.1",
-      "date": "2026-02-08T09:49:16.837000+00:00",
-      "description": "Initial Closed Beta 2 Data"
-    }
-  ],
   "damage": 12,
   "mechanics": {
     "damage_modifiers": [
@@ -45,7 +38,7 @@
   "movement_speed": 8,
   "movement_type": "Flying",
   "dps": 12,
-  "attack_interval": 1.0,
+  "attack_interval": 1,
   "charges": 1,
   "recharge_time": 5,
   "cast_time": 0,

@@ -8,13 +8,6 @@
   "description": "Dark ritual that recalls allies to recharge summons.",
   "image_required": true,
   "tags": [],
-  "changelog": [
-    {
-      "version": "0.0.1",
-      "date": "2026-02-08T09:49:16.838616+00:00",
-      "description": "Initial Closed Beta 2 Data"
-    }
-  ],
   "mechanics": {
     "waves": 5,
     "interval": 1
@@ -22,5 +15,5 @@
   "damage": 18,
   "charges": 1,
   "recharge_time": 5,
-  "cast_time": 0.0
+  "cast_time": 0
 }

@@ -9,13 +9,6 @@
     "health": 300,
     "movement_type": "Ground",
     "population": 0,
-    "changelog": [
-      {
-        "version": "0.0.1",
-        "date": "2026-02-05T18:34:05.939129Z",
-        "description": "Initial Closed Beta 2 Data"
-      }
-    ],
     "last_modified": "2026-02-18T07:17:33.470Z",
     "$schema": "../../schemas/v2/heroes.schema.json",
     "class": "Duelist",
@@ -78,13 +71,6 @@
     "health": 340,
     "movement_type": "Ground",
     "population": 0,
-    "changelog": [
-      {
-        "version": "0.0.1",
-        "date": "2026-02-05T17:05:01.971147Z",
-        "description": "Initial Closed Beta 2 Data"
-      }
-    ],
     "last_modified": "2026-02-18T07:20:18.153Z",
     "$schema": "../../schemas/v2/heroes.schema.json",
     "class": "Conqueror",
@@ -137,13 +123,6 @@
     "health": 450,
     "movement_type": "Ground",
     "population": 0,
-    "changelog": [
-      {
-        "version": "0.0.1",
-        "date": "2026-02-05T18:35:34.217480Z",
-        "description": "Initial Closed Beta 2 Data"
-      }
-    ],
     "last_modified": "2026-02-18T07:18:42.253Z",
     "$schema": "../../schemas/v2/heroes.schema.json",
     "class": "Conqueror",
@@ -194,13 +173,6 @@
     "health": 440,
     "movement_type": "Ground",
     "population": 0,
-    "changelog": [
-      {
-        "version": "0.0.1",
-        "date": "2026-02-05T18:33:10.223377Z",
-        "description": "Initial Closed Beta 2 Data"
-      }
-    ],
     "last_modified": "2026-02-18T07:21:26.945Z",
     "$schema": "../../schemas/v2/heroes.schema.json",
     "class": "Enchanter",
@@ -258,13 +230,6 @@
     "health": 600,
     "movement_type": "Ground",
     "population": 0,
-    "changelog": [
-      {
-        "version": "0.0.1",
-        "date": "2026-02-05T18:35:34.217480Z",
-        "description": "Initial Closed Beta 2 Data"
-      }
-    ],
     "last_modified": "2026-02-18T07:21:06.730Z",
     "$schema": "../../schemas/v2/heroes.schema.json",
     "class": "Enchanter",
@@ -335,13 +300,6 @@
     "health": 350,
     "movement_type": "Ground",
     "population": 0,
-    "changelog": [
-      {
-        "version": "0.0.1",
-        "date": "2026-02-05T17:05:01.972347Z",
-        "description": "Initial Closed Beta 2 Data"
-      }
-    ],
     "last_modified": "2026-02-18T07:20:50.326Z",
     "$schema": "../../schemas/v2/heroes.schema.json",
     "class": "Duelist",

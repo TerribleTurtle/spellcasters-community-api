@@ -8,13 +8,6 @@
   "health": 440,
   "movement_type": "Ground",
   "population": 0,
-  "changelog": [
-    {
-      "version": "0.0.1",
-      "date": "2026-02-05T18:33:10.223377Z",
-      "description": "Initial Closed Beta 2 Data"
-    }
-  ],
   "last_modified": "2026-02-18T07:21:26.945Z",
   "$schema": "../../schemas/v2/heroes.schema.json",
   "class": "Enchanter",

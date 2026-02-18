@@ -1,1 +1,34 @@
-null
+{
+  "id": "patch_0_0_1",
+  "version": "0.0.1",
+  "date": "2026-02-18",
+  "type": "Hotfix",
+  "changes": [
+    {
+      "name": "Lich",
+      "category": "units",
+      "change_type": "edit",
+      "diffs": [
+        {
+          "kind": "N",
+          "path": [
+            "range"
+          ],
+          "rhs": 25
+        },
+        {
+          "kind": "N",
+          "path": [
+            "last_modified"
+          ],
+          "rhs": "2026-02-18T08:10:21.047Z"
+        }
+      ],
+      "field": "entity",
+      "target_id": "lich.json"
+    }
+  ],
+  "diff": " data/patches.json    | 36 +++++++++++++++++++++++++++++++++++-\n data/units/lich.json | 30 ++++++++++++++++--------------\n 2 files changed, 51 insertions(+), 15 deletions(-)\n",
+  "tags": [],
+  "title": "Hotfix 0.0.1"
+}

@@ -12,13 +12,6 @@
     "tags": [
       "charge",
       "orb"
-    ],
-    "changelog": [
-      {
-        "version": "0.0.1",
-        "date": "2026-02-11T00:00:00Z",
-        "description": "Created new consumable"
-      }
     ]
   },
   {
@@ -34,13 +27,6 @@
     "tags": [
       "charge",
       "orb"
-    ],
-    "changelog": [
-      {
-        "version": "0.0.1",
-        "date": "2026-02-11T00:00:00Z",
-        "description": "Created new consumable"
-      }
     ]
   },
   {
@@ -60,14 +46,7 @@
     ],
     "mechanics": {
       "auto_capture_altars": true
-    },
-    "changelog": [
-      {
-        "version": "0.0.1",
-        "date": "2026-02-11T00:00:00Z",
-        "description": "Created new consumable"
-      }
-    ]
+    }
   },
   {
     "$schema": "../../schemas/v2/consumables.schema.json",
@@ -83,13 +62,6 @@
     "tags": [
       "heal",
       "grimoire"
-    ],
-    "changelog": [
-      {
-        "version": "0.0.1",
-        "date": "2026-02-11T00:00:00Z",
-        "description": "Renamed from light_heal and updated"
-      }
     ]
   },
   {
@@ -106,13 +78,6 @@
     "tags": [
       "heal",
       "grimoire"
-    ],
-    "changelog": [
-      {
-        "version": "0.0.1",
-        "date": "2026-02-11T00:00:00Z",
-        "description": "Renamed from medium_heal and updated"
-      }
     ]
   },
   {
@@ -129,13 +94,6 @@
     "tags": [
       "heal",
       "grimoire"
-    ],
-    "changelog": [
-      {
-        "version": "0.0.1",
-        "date": "2026-02-11T00:00:00Z",
-        "description": "Created new consumable"
-      }
     ]
   },
   {
@@ -154,13 +112,6 @@
       "buff",
       "damage",
       "grimoire"
-    ],
-    "changelog": [
-      {
-        "version": "0.0.1",
-        "date": "2026-02-11T00:00:00Z",
-        "description": "Created new consumable"
-      }
     ]
   },
   {
@@ -179,13 +130,6 @@
       "buff",
       "defense",
       "grimoire"
-    ],
-    "changelog": [
-      {
-        "version": "0.0.1",
-        "date": "2026-02-11T00:00:00Z",
-        "description": "Created new consumable"
-      }
     ]
   }
 ]

@@ -8,16 +8,9 @@
   "description": "Healing ray that can be aimed at the ground to restore allies in the area.",
   "image_required": true,
   "tags": [],
-  "changelog": [
-    {
-      "version": "0.0.1",
-      "date": "2026-02-08T09:49:16.837289+00:00",
-      "description": "Initial Closed Beta 2 Data"
-    }
-  ],
   "range": 45,
   "value": 300,
   "charges": 1,
   "recharge_time": 5,
-  "cast_time": 0.0
+  "cast_time": 0
 }

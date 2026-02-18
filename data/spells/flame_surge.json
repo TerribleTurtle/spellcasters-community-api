@@ -8,15 +8,8 @@
   "description": "Fire pulse that burns enemies and infuses nearby allies.",
   "image_required": true,
   "tags": [],
-  "changelog": [
-    {
-      "version": "0.0.1",
-      "date": "2026-02-08T09:49:16.843934+00:00",
-      "description": "Initial Closed Beta 2 Data"
-    }
-  ],
   "range": 24,
   "charges": 1,
   "recharge_time": 50,
-  "cast_time": 0.0
+  "cast_time": 0
 }

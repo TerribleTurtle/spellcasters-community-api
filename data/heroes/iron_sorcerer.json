@@ -8,13 +8,6 @@
   "health": 450,
   "movement_type": "Ground",
   "population": 0,
-  "changelog": [
-    {
-      "version": "0.0.1",
-      "date": "2026-02-05T18:35:34.217480Z",
-      "description": "Initial Closed Beta 2 Data"
-    }
-  ],
   "last_modified": "2026-02-18T07:18:42.253Z",
   "$schema": "../../schemas/v2/heroes.schema.json",
   "class": "Conqueror",

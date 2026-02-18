@@ -8,19 +8,12 @@
   "description": "Nest that continuously spawns new Harpies.",
   "image_required": true,
   "tags": [],
-  "changelog": [
-    {
-      "version": "0.0.1",
-      "date": "2026-02-08T09:49:16.844994+00:00",
-      "description": "Initial Closed Beta 2 Data"
-    }
-  ],
   "mechanics": {
     "spawner": [
       {
         "unit_id": "harpy",
         "count": 5,
-        "interval": 10.0,
+        "interval": 10,
         "trigger": "Interval"
       },
       {
@@ -33,6 +26,6 @@
   "health": 750,
   "charges": 1,
   "recharge_time": 50,
-  "cast_time": 0.0,
+  "cast_time": 0,
   "population": 0
 }

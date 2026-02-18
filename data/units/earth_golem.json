@@ -8,13 +8,6 @@
   "description": "Strong melee unit that resists damage from large enemies.",
   "image_required": true,
   "tags": [],
-  "changelog": [
-    {
-      "version": "0.0.1",
-      "date": "2026-02-08T09:49:16.840800+00:00",
-      "description": "Initial Closed Beta 2 Data"
-    }
-  ],
   "mechanics": {
     "damage_modifiers": [
       {
@@ -47,7 +40,7 @@
   "movement_speed": 2,
   "movement_type": "Ground",
   "dps": 25,
-  "attack_interval": 1.0,
+  "attack_interval": 1,
   "charges": 1,
   "recharge_time": 25,
   "cast_time": 0,

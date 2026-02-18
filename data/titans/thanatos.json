@@ -8,13 +8,6 @@
   "description": "The Titan of Death. Weakens all nearby enemies and retaliates against Spellcasters.",
   "image_required": true,
   "tags": [],
-  "changelog": [
-    {
-      "version": "0.0.1",
-      "date": "2026-02-08T09:49:16.848821+00:00",
-      "description": "Initial Closed Beta 2 Data"
-    }
-  ],
   "mechanics": {
     "aura": [
       {
@@ -22,7 +15,7 @@
         "description": "Reduces damage of nearby spellcasters.",
         "radius": 15,
         "value": 0.5,
-        "interval": 1.0,
+        "interval": 1,
         "effect": "Debuff",
         "target_types": [
           "Enemy"
@@ -45,7 +38,7 @@
   "health": 15000,
   "movement_speed": 4,
   "dps": 125,
-  "attack_interval": 1.0,
+  "attack_interval": 1,
   "charges": 1,
   "recharge_time": 10,
   "cast_time": 0,
