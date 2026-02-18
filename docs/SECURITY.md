@@ -4,10 +4,11 @@
 
 This project is currently in **Data Collection Phase** (Beta).
 
-| Version | Supported          |
-| ------- | ------------------ |
-| v1.x    | :white_check_mark: |
-| < 1.0   | :x:                |
+| Version | Supported              |
+| ------- | ---------------------- |
+| v2.x    | :white_check_mark:     |
+| v1.x    | :warning: (Deprecated) |
+| < 1.0   | :x:                    |
 
 ## Reporting a Vulnerability
 

@@ -4,7 +4,7 @@ This directory contains Python scripts used for building, validating, and mainta
 
 ## 🛠️ Setup
 
-Ensure you have Python 3.10+ installed and install dependencies:
+Ensure you have Python 3.11+ installed and install dependencies:
 
 ```bash
 pip install -r requirements.txt
@@ -18,7 +18,18 @@ pip install -r requirements.txt
 Aggregates individual JSON files from `data/` into consolidated API responses in `api/v2/`.
 
 - Generates collection files (e.g., `units.json`, `spells.json`).
-- Generates a master `all_data.json`.
+- Generates a master `all_data.json` and `status.json`.
+- Copies Patch History endpoints (`changelog*.json`, `timeline/`).
+
+### `check.ps1`
+
+**Usage:** `.\scripts\check.ps1` (PowerShell)
+Local CI/CD runner that executes all checks sequentially:
+
+1. Flake8 & Pylint
+2. Unit Tests
+3. Integrity Validation
+4. Strictness Verification
 
 ### `validate_integrity.py`
 
@@ -26,7 +37,7 @@ Aggregates individual JSON files from `data/` into consolidated API responses in
 Performs strict validation on the data to ensure API quality.
 
 - **Schema Validation:** Checks every JSON file against its schema in `schemas/v2/`.
-- **Reference Integrity:** Ensures logical links are valid (e.g., Decks reference existing Cards).
+- **Reference Integrity:** Ensures logical links are valid (e.g., Upgrade targets reference existing Unit tags).
 - **Asset Hygiene:** Checks for missing images and warns if images are too large (>100KB) or have incorrect dimensions.
 
 ### `check_data_consistency.py`

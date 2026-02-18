@@ -16,6 +16,9 @@ Deploy verification completed — **GO** for deployment.
 
 ## Recent Changes
 
+- **Remediation:** Documentation Health Report findings resolved (18/18).
+- **Audit:** Documentation Health Report completed — 8 Drift, 6 Missing, 4 Style findings.
+
 - **Fix:** Removed invalid `changelog` property from `verify_strictness.py` test payload (caused baseline failure against `unevaluatedProperties: false`).
 - **Build Script:** `build_api.py` now copies changelog + timeline data into `api/v2/`.
 - **Data Fix:** Renamed `timeline/*.json.json` → `*.json` (double-extension bug).
@@ -25,5 +28,5 @@ Deploy verification completed — **GO** for deployment.
 ## Todo
 
 - [x] Run `/deploy` to confirm build artifacts.
-- [ ] Commit & push to trigger GitHub Pages deploy.
+- [x] Commit & push to trigger GitHub Pages deploy (`bb4b946`).
 - [ ] Wait for "Early Access" launch (Feb 26th).

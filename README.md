@@ -65,7 +65,7 @@ Full endpoint documentation is available in [CONTRIBUTING.md](CONTRIBUTING.md).
 
 ## 🚀 Quick Start (Local Build)
 
-1.  **Install Python 3.9+**
+1.  **Install Python 3.11+**
 2.  **Install Dependencies:**
     ```bash
     pip install -r requirements.txt
@@ -128,6 +128,10 @@ This API provides **raw data** from community contributions.
 
 ## 📂 Structure
 
-- `data/`: Source JSON files.
+- `data/`: Source JSON files (edits happen here).
 - `assets/`: Images.
 - `api/`: Generated API output (Do not edit manually).
+- `schemas/`: JSON Schemas (v2).
+- `scripts/`: Build and validation tools.
+- `docs/`: Guides and reference documentation.
+- `types/`: TypeScript definitions.
