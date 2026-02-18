@@ -1,23 +1,28 @@
 [
   {
+    "$schema": "../../schemas/v2/heroes.schema.json",
     "entity_id": "astral_monk",
     "name": "Astral Monk",
-    "category": "Spellcaster",
-    "description": "A Duelist who strikes from the shadows with fast astral fists and time-bending abilities.",
-    "image_required": true,
-    "tags": [],
-    "health": 300,
-    "movement_type": "Ground",
-    "population": 0,
-    "last_modified": "2026-02-18T07:17:33.470Z",
-    "$schema": "../../schemas/v2/heroes.schema.json",
     "class": "Duelist",
-    "difficulty": 2,
+    "category": "Spellcaster",
     "abilities": {
+      "defense": {
+        "name": "Veil Shift",
+        "charges": 2,
+        "cooldown": 10,
+        "description": "Turns invisible and move faster.",
+        "duration": 1.5,
+        "mechanics": {
+          "stealth": {
+            "break_on_attack": true,
+            "duration": 1.5
+          }
+        }
+      },
       "passive": [
         {
           "name": "Arcane Alignment",
-          "description": "All Astral incantations recharge faster."
+          "description": "All Astral spells recharge faster."
         },
         {
           "name": "Last Light",
@@ -30,8 +35,8 @@
       ],
       "primary": {
         "name": "Astral Fists",
-        "description": "Pierces through enemies with colossal astral fists.",
         "damage": 32,
+        "description": "Pierces through enemies with colossal astral fists.",
         "mechanics": {
           "features": [
             {
@@ -42,24 +47,19 @@
           "pierce": true
         }
       },
-      "defense": {
-        "name": "Veil Shift",
-        "description": "Turns invisible and move faster.",
-        "charges": 2,
-        "duration": 1.5,
-        "cooldown": 10,
-        "mechanics": {
-          "stealth": {
-            "duration": 1.5,
-            "break_on_attack": true
-          }
-        }
-      },
       "ultimate": {
         "name": "Dimension of Varani",
         "description": "Conjures a time bubble that freezes enemy projectiles and creatures inside it. The Ultimate is destroyed by Lifestone Large Shots (3 hits)."
       }
-    }
+    },
+    "description": "A Duelist who strikes from the shadows with fast astral fists and time-bending abilities.",
+    "difficulty": 2,
+    "health": 300,
+    "image_required": true,
+    "movement_type": "Ground",
+    "population": 0,
+    "tags": [],
+    "last_modified": "2026-02-18T23:16:34.612Z"
   },
   {
     "entity_id": "fire_elementalist",
