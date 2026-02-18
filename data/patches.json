@@ -27,9 +27,37 @@
         ],
         "field": "entity",
         "target_id": "lich.json"
+      },
+      {
+        "name": "Astral Monk",
+        "category": "heroes",
+        "change_type": "edit",
+        "diffs": [
+          {
+            "kind": "E",
+            "lhs": "2026-02-18T07:17:33.470Z",
+            "path": [
+              "last_modified"
+            ],
+            "rhs": "2026-02-18T23:16:34.612Z"
+          },
+          {
+            "kind": "E",
+            "lhs": "All Astral incantations recharge faster.",
+            "path": [
+              "abilities",
+              "passive",
+              0,
+              "description"
+            ],
+            "rhs": "All Astral spells recharge faster."
+          }
+        ],
+        "field": "entity",
+        "target_id": "astral_monk.json"
       }
     ],
-    "diff": " data/patches.json    | 36 +++++++++++++++++++++++++++++++++++-\n data/units/lich.json | 30 ++++++++++++++++--------------\n 2 files changed, 51 insertions(+), 15 deletions(-)\n",
+    "diff": " changelog.json               | 28 ++++++++++++++++++\n changelog_latest.json        | 28 ++++++++++++++++++\n changelog_page_1.json        | 28 ++++++++++++++++++\n data/heroes/astral_monk.json | 52 ++++++++++++++++-----------------\n data/patches.json            | 28 ++++++++++++++++++\n timeline/astral_monk.json    | 68 ++++++++++++++++++++++++++++++++++++++++++++\n 6 files changed, 206 insertions(+), 26 deletions(-)\n",
     "tags": [],
     "title": "Hotfix 0.0.1"
   }
