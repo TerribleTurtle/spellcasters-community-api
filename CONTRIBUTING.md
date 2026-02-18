@@ -151,7 +151,10 @@ We use strongly-typed objects for mechanics to ensure the game engine can read t
 
 1.  Modify the fields in the existing JSON file.
 2.  **Update `last_modified`** to the current timestamp.
-3.  Add a new entry to `api/v2/changelog_latest.json` or `changelog.json` via the management tools if the change is significant. (Manual editing of patch history is discouraged).
+3.  **Update Patch History:**
+    - If the change is significant (e.g., balance changes, new units), you must update the patch history files in `api/v2/`.
+    - **Recommendation:** Use the [Spellcasters Manager](https://github.com/TerribleTurtle/spellcasters-manager) tool to automatically generate these files.
+    - **Manual Warning:** Manual editing of `changelog.json` or `timeline/` files is **strongly discouraged** as it inevitably breaks pagination indices and strict schema validation.
 
 ### 3. Verification
 
