@@ -6,21 +6,21 @@ Adds JSON schemas and TypeScript types for the new patch history system. These d
 
 ## Changes
 
-### 1. New Enum: `patch_type_enum`
+### 1. New Enums: `change_type_enum` & `patch_category_enum`
 
 - **Location:** `definitions/enums.schema.json`
-- **Values:** `buff`, `nerf`, `rework`, `fix`, `new`
-- **Purpose:** Classifies balance changes for deckbuilder icons and patch displays.
+- **`change_type_enum`:** `add`, `edit`, `delete` — classifies per-entity changes.
+- **`patch_category_enum`:** `Patch`, `Hotfix`, `Content` — classifies patch type.
 
 ### 2. New Schemas
 
-- **`balance_index.schema.json`** — Validates `api/v2/balance_index.json`. Maps entity IDs to `patch_type_enum`.
-- **`changelog.schema.json`** — Validates `api/v2/changelog.json`. Array of patch entries with version, date, description, and affected entities.
+- **`changelog_index.schema.json`** — Validates `api/v2/changelog_index.json`. Pagination manifest for changelog pages.
+- **`changelog.schema.json`** — Validates paginated changelog pages. Array of patch entries with id, version, type, title, date, and changes array.
 - **`timeline_entry.schema.json`** — Validates `api/v2/timeline/*.json`. Array of version snapshots with free-form entity state.
 
 ### 3. New TypeScript Types
 
-- **`types/patch-history.d.ts`** — Consumer-facing type definitions: `PatchType`, `BalanceIndex`, `PatchEntry`, `Changelog`, `ChangelogLatest`, `TimelineEntry`, `EntityTimeline`.
+- **`types/patch-history.d.ts`** — Consumer-facing type definitions: `ChangeType`, `PatchCategory`, `ChangeEntry`, `PatchEntry`, `ChangelogPage`, `ChangelogLatest`, `ChangelogIndex`, `TimelineEntry`, `EntityTimeline`.
 
 ### 4. Validation Pipeline
 

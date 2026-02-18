@@ -20,8 +20,7 @@
     "range": 80,
     "charges": 1,
     "recharge_time": 120,
-    "cast_time": 0.0,
-    "last_modified": "2026-02-15T03:54:40-05:00"
+    "cast_time": 0.0
   },
   {
     "$schema": "../../schemas/v2/spells.schema.json",
@@ -47,8 +46,7 @@
     "range": 80,
     "charges": 1,
     "recharge_time": 25,
-    "cast_time": 0.0,
-    "last_modified": "2026-02-15T03:54:40-05:00"
+    "cast_time": 0.0
   },
   {
     "$schema": "../../schemas/v2/spells.schema.json",
@@ -98,8 +96,7 @@
     "range": 35,
     "charges": 1,
     "recharge_time": 50,
-    "cast_time": 0,
-    "last_modified": "2026-02-15T03:54:40-05:00"
+    "cast_time": 0
   },
   {
     "$schema": "../../schemas/v2/spells.schema.json",
@@ -122,8 +119,7 @@
     "range": 80,
     "charges": 1,
     "recharge_time": 50,
-    "cast_time": 0.0,
-    "last_modified": "2026-02-15T03:54:40-05:00"
+    "cast_time": 0.0
   },
   {
     "$schema": "../../schemas/v2/spells.schema.json",
@@ -157,8 +153,7 @@
     "duration": 12,
     "charges": 1,
     "recharge_time": 120,
-    "cast_time": 0,
-    "last_modified": "2026-02-15T03:54:40-05:00"
+    "cast_time": 0
   },
   {
     "$schema": "../../schemas/v2/spells.schema.json",
@@ -185,8 +180,7 @@
     "range": 45,
     "charges": 1,
     "recharge_time": 5,
-    "cast_time": 0.0,
-    "last_modified": "2026-02-15T03:54:40-05:00"
+    "cast_time": 0.0
   },
   {
     "$schema": "../../schemas/v2/spells.schema.json",
@@ -208,8 +202,7 @@
     "range": 24,
     "charges": 1,
     "recharge_time": 50,
-    "cast_time": 0.0,
-    "last_modified": "2026-02-15T03:54:40-05:00"
+    "cast_time": 0.0
   },
   {
     "$schema": "../../schemas/v2/spells.schema.json",
@@ -231,8 +224,7 @@
     "range": 24,
     "charges": 1,
     "recharge_time": 50,
-    "cast_time": 0.0,
-    "last_modified": "2026-02-15T03:54:40-05:00"
+    "cast_time": 0.0
   },
   {
     "$schema": "../../schemas/v2/spells.schema.json",
@@ -255,8 +247,7 @@
     "range": 36,
     "charges": 1,
     "recharge_time": 120,
-    "cast_time": 0.0,
-    "last_modified": "2026-02-15T03:54:40-05:00"
+    "cast_time": 0.0
   },
   {
     "$schema": "../../schemas/v2/spells.schema.json",
@@ -279,8 +270,7 @@
     "value": 300,
     "charges": 1,
     "recharge_time": 5,
-    "cast_time": 0.0,
-    "last_modified": "2026-02-15T03:54:40-05:00"
+    "cast_time": 0.0
   },
   {
     "$schema": "../../schemas/v2/spells.schema.json",
@@ -314,8 +304,7 @@
     },
     "charges": 1,
     "recharge_time": 50,
-    "cast_time": 0,
-    "last_modified": "2026-02-15T03:54:40-05:00"
+    "cast_time": 0
   },
   {
     "$schema": "../../schemas/v2/spells.schema.json",
@@ -337,8 +326,7 @@
     "duration": 12,
     "charges": 1,
     "recharge_time": 120,
-    "cast_time": 0.0,
-    "last_modified": "2026-02-15T03:54:40-05:00"
+    "cast_time": 0.0
   },
   {
     "$schema": "../../schemas/v2/spells.schema.json",
@@ -364,8 +352,7 @@
     "damage": 18,
     "charges": 1,
     "recharge_time": 5,
-    "cast_time": 0.0,
-    "last_modified": "2026-02-15T03:54:40-05:00"
+    "cast_time": 0.0
   },
   {
     "$schema": "../../schemas/v2/spells.schema.json",
@@ -392,7 +379,6 @@
     "range": 45,
     "charges": 1,
     "recharge_time": 5,
-    "cast_time": 0.0,
-    "last_modified": "2026-02-15T03:54:40-05:00"
+    "cast_time": 0.0
   }
 ]

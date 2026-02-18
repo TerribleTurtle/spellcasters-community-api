@@ -19,8 +19,7 @@
         "date": "2026-02-11T00:00:00Z",
         "description": "Created new consumable"
       }
-    ],
-    "last_modified": "2026-02-12T00:43:11-05:00"
+    ]
   },
   {
     "$schema": "../../schemas/v2/consumables.schema.json",
@@ -42,8 +41,7 @@
         "date": "2026-02-11T00:00:00Z",
         "description": "Created new consumable"
       }
-    ],
-    "last_modified": "2026-02-12T00:43:11-05:00"
+    ]
   },
   {
     "$schema": "../../schemas/v2/consumables.schema.json",
@@ -69,8 +67,7 @@
         "date": "2026-02-11T00:00:00Z",
         "description": "Created new consumable"
       }
-    ],
-    "last_modified": "2026-02-12T00:43:11-05:00"
+    ]
   },
   {
     "$schema": "../../schemas/v2/consumables.schema.json",
@@ -93,8 +90,7 @@
         "date": "2026-02-11T00:00:00Z",
         "description": "Renamed from light_heal and updated"
       }
-    ],
-    "last_modified": "2026-02-12T00:43:11-05:00"
+    ]
   },
   {
     "$schema": "../../schemas/v2/consumables.schema.json",
@@ -117,8 +113,7 @@
         "date": "2026-02-11T00:00:00Z",
         "description": "Renamed from medium_heal and updated"
       }
-    ],
-    "last_modified": "2026-02-12T00:43:11-05:00"
+    ]
   },
   {
     "$schema": "../../schemas/v2/consumables.schema.json",
@@ -141,8 +136,7 @@
         "date": "2026-02-11T00:00:00Z",
         "description": "Created new consumable"
       }
-    ],
-    "last_modified": "2026-02-12T00:43:11-05:00"
+    ]
   },
   {
     "$schema": "../../schemas/v2/consumables.schema.json",
@@ -167,8 +161,7 @@
         "date": "2026-02-11T00:00:00Z",
         "description": "Created new consumable"
       }
-    ],
-    "last_modified": "2026-02-12T00:43:11-05:00"
+    ]
   },
   {
     "$schema": "../../schemas/v2/consumables.schema.json",
@@ -193,7 +186,6 @@
         "date": "2026-02-11T00:00:00Z",
         "description": "Created new consumable"
       }
-    ],
-    "last_modified": "2026-02-12T00:43:11-05:00"
+    ]
   }
 ]

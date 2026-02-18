@@ -5,14 +5,26 @@
   "description": "Shared enumeration definitions.",
   "definitions": {
     "movement_type": {
-        "type": "string",
-        "description": "Movement classification used for targeting rules. 'Ground' is default, 'Flying' ignores terrain, 'Hover' ignores liquids.",
-        "enum": ["Ground", "Flying", "Hover"]
+      "type": "string",
+      "description": "Movement classification used for targeting rules. 'Ground' is default, 'Flying' ignores terrain, 'Hover' ignores liquids.",
+      "enum": ["Ground", "Flying", "Hover"]
     },
     "target_type_enum": {
       "type": "string",
       "description": "Valid target categories.",
-      "enum": ["Building", "Creature", "Spellcaster", "Unit", "All", "Lifestone", "Flying", "Ground", "Hover", "Ally", "Enemy"]
+      "enum": [
+        "Building",
+        "Creature",
+        "Spellcaster",
+        "Unit",
+        "All",
+        "Lifestone",
+        "Flying",
+        "Ground",
+        "Hover",
+        "Ally",
+        "Enemy"
+      ]
     },
     "source_type_enum": {
       "type": "string",
@@ -22,7 +34,14 @@
     "category_enum": {
       "type": "string",
       "description": "Top-level entity category.",
-      "enum": ["Spellcaster", "Creature", "Building", "Spell", "Titan", "Consumable"]
+      "enum": [
+        "Spellcaster",
+        "Creature",
+        "Building",
+        "Spell",
+        "Titan",
+        "Consumable"
+      ]
     },
     "consumable_effect_enum": {
       "type": "string",
@@ -64,10 +83,15 @@
       "description": "Development or live status of the game.",
       "enum": ["Live", "Beta", "Alpha", "Dev", "In Development"]
     },
-    "patch_type_enum": {
+    "change_type_enum": {
       "type": "string",
-      "description": "Balance change classification for patch history.",
-      "enum": ["buff", "nerf", "rework", "fix", "new"]
+      "description": "Type of change made to an entity.",
+      "enum": ["add", "edit", "delete"]
+    },
+    "patch_category_enum": {
+      "type": "string",
+      "description": "Patch classification.",
+      "enum": ["Patch", "Hotfix", "Content"]
     }
   }
 }

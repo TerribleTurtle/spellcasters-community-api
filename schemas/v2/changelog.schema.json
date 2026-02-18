@@ -1,34 +1,70 @@
 {
   "$schema": "https://json-schema.org/draft/2019-09/schema",
   "$id": "https://spellcasters.gg/schemas/v2/changelog.schema.json",
-  "title": "Patch Changelog",
-  "description": "Schema for the patch changelog array and individual patch entries. Used for card popups and full card page comparison.",
+  "title": "Changelog Page",
+  "description": "A single page of the paginated changelog. Each page contains an array of patch entries.",
   "definitions": {
+    "change_entry": {
+      "type": "object",
+      "required": ["target_id", "name", "field"],
+      "properties": {
+        "target_id": {
+          "type": "string",
+          "description": "Entity filename (e.g. 'knight.json')."
+        },
+        "name": {
+          "type": "string",
+          "description": "Human-readable entity name."
+        },
+        "field": {
+          "type": "string",
+          "description": "Which field was changed (e.g. 'entity', 'damage')."
+        },
+        "change_type": {
+          "$ref": "definitions/enums.schema.json#/definitions/change_type_enum"
+        },
+        "category": {
+          "type": "string",
+          "description": "Entity category (e.g. 'units', 'heroes')."
+        },
+        "diffs": {
+          "type": "array",
+          "description": "Field-level diffs (deep-diff format).",
+          "items": {}
+        }
+      }
+    },
     "patch_entry": {
       "type": "object",
-      "required": ["version", "date", "description", "entities"],
-      "additionalProperties": false,
+      "required": ["id", "version", "type", "title", "date", "changes"],
       "properties": {
+        "id": {
+          "type": "string",
+          "description": "Unique patch identifier."
+        },
         "version": {
           "type": "string",
-          "pattern": "^\\d+\\.\\d+\\.\\d+$",
           "description": "Semantic version of this patch."
+        },
+        "type": {
+          "$ref": "definitions/enums.schema.json#/definitions/patch_category_enum"
+        },
+        "title": {
+          "type": "string",
+          "description": "Human-readable patch title."
         },
         "date": {
           "type": "string",
           "format": "date-time",
-          "description": "ISO 8601 timestamp of when the patch was published."
+          "description": "ISO 8601 timestamp."
         },
-        "description": {
-          "type": "string",
-          "description": "Human-readable summary of the patch."
+        "tags": {
+          "type": "array",
+          "items": { "type": "string" }
         },
-        "entities": {
-          "type": "object",
-          "description": "Map of entity_id to balance change type for this patch.",
-          "additionalProperties": {
-            "$ref": "definitions/enums.schema.json#/definitions/patch_type_enum"
-          }
+        "changes": {
+          "type": "array",
+          "items": { "$ref": "#/definitions/change_entry" }
         }
       }
     }

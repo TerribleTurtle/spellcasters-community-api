@@ -23,8 +23,7 @@
     "charges": 1,
     "recharge_time": 50,
     "cast_time": 0.0,
-    "population": 0,
-    "last_modified": "2026-02-15T03:54:40-05:00"
+    "population": 0
   },
   {
     "$schema": "../../schemas/v2/units.schema.json",
@@ -51,8 +50,7 @@
     "charges": 1,
     "recharge_time": 25,
     "cast_time": 0.0,
-    "population": 0,
-    "last_modified": "2026-02-15T03:54:40-05:00"
+    "population": 0
   },
   {
     "$schema": "../../schemas/v2/units.schema.json",
@@ -90,8 +88,7 @@
     "charges": 1,
     "recharge_time": 50,
     "cast_time": 0.0,
-    "population": 0,
-    "last_modified": "2026-02-15T03:54:40-05:00"
+    "population": 0
   },
   {
     "$schema": "../../schemas/v2/units.schema.json",
@@ -134,8 +131,7 @@
     "charges": 1,
     "recharge_time": 25,
     "cast_time": 0,
-    "population": 0,
-    "last_modified": "2026-02-15T03:54:40-05:00"
+    "population": 0
   },
   {
     "$schema": "../../schemas/v2/units.schema.json",
@@ -190,8 +186,7 @@
     "charges": 1,
     "recharge_time": 25,
     "cast_time": 0,
-    "population": 0,
-    "last_modified": "2026-02-15T03:54:40-05:00"
+    "population": 0
   },
   {
     "$schema": "../../schemas/v2/units.schema.json",
@@ -226,8 +221,7 @@
     "charges": 1,
     "recharge_time": 5,
     "cast_time": 0.0,
-    "population": 0,
-    "last_modified": "2026-02-15T03:54:40-05:00"
+    "population": 0
   },
   {
     "$schema": "../../schemas/v2/units.schema.json",
@@ -265,8 +259,7 @@
     "charges": 1,
     "recharge_time": 50,
     "cast_time": 0,
-    "population": 0,
-    "last_modified": "2026-02-15T03:54:40-05:00"
+    "population": 0
   },
   {
     "$schema": "../../schemas/v2/units.schema.json",
@@ -319,8 +312,7 @@
     "charges": 1,
     "recharge_time": 5,
     "cast_time": 0,
-    "population": 0,
-    "last_modified": "2026-02-15T03:54:40-05:00"
+    "population": 0
   },
   {
     "$schema": "../../schemas/v2/units.schema.json",
@@ -358,8 +350,7 @@
     "charges": 1,
     "recharge_time": 50,
     "cast_time": 0.0,
-    "population": 0,
-    "last_modified": "2026-02-15T03:54:40-05:00"
+    "population": 0
   },
   {
     "$schema": "../../schemas/v2/units.schema.json",
@@ -403,8 +394,7 @@
     "charges": 1,
     "recharge_time": 120,
     "cast_time": 0,
-    "population": 0,
-    "last_modified": "2026-02-15T03:54:40-05:00"
+    "population": 0
   },
   {
     "$schema": "../../schemas/v2/units.schema.json",
@@ -432,8 +422,7 @@
     "charges": 1,
     "recharge_time": 25,
     "cast_time": 0.0,
-    "population": 0,
-    "last_modified": "2026-02-15T03:54:40-05:00"
+    "population": 0
   },
   {
     "$schema": "../../schemas/v2/units.schema.json",
@@ -478,8 +467,7 @@
     "charges": 1,
     "recharge_time": 5,
     "cast_time": 0,
-    "population": 0,
-    "last_modified": "2026-02-15T03:54:40-05:00"
+    "population": 0
   },
   {
     "$schema": "../../schemas/v2/units.schema.json",
@@ -517,8 +505,7 @@
     "charges": 1,
     "recharge_time": 50,
     "cast_time": 0,
-    "population": 0,
-    "last_modified": "2026-02-15T03:54:40-05:00"
+    "population": 0
   },
   {
     "$schema": "../../schemas/v2/units.schema.json",
@@ -541,8 +528,7 @@
     "charges": 1,
     "recharge_time": 25,
     "cast_time": 0.0,
-    "population": 0,
-    "last_modified": "2026-02-15T03:54:40-05:00"
+    "population": 0
   },
   {
     "$schema": "../../schemas/v2/units.schema.json",
@@ -587,8 +573,7 @@
     "charges": 1,
     "recharge_time": 5,
     "cast_time": 0,
-    "population": 0,
-    "last_modified": "2026-02-15T03:54:40-05:00"
+    "population": 0
   },
   {
     "$schema": "../../schemas/v2/units.schema.json",
@@ -638,8 +623,7 @@
     "charges": 1,
     "recharge_time": 5,
     "cast_time": 0,
-    "population": 0,
-    "last_modified": "2026-02-15T03:54:40-05:00"
+    "population": 0
   },
   {
     "$schema": "../../schemas/v2/units.schema.json",
@@ -684,8 +668,7 @@
     "charges": 1,
     "recharge_time": 5,
     "cast_time": 0,
-    "population": 0,
-    "last_modified": "2026-02-15T03:54:40-05:00"
+    "population": 0
   },
   {
     "$schema": "../../schemas/v2/units.schema.json",
@@ -714,8 +697,7 @@
     "charges": 1,
     "recharge_time": 50,
     "cast_time": 0.0,
-    "population": 0,
-    "last_modified": "2026-02-15T03:54:40-05:00"
+    "population": 0
   },
   {
     "$schema": "../../schemas/v2/units.schema.json",
@@ -744,8 +726,7 @@
     "charges": 1,
     "recharge_time": 50,
     "cast_time": 0.0,
-    "population": 0,
-    "last_modified": "2026-02-15T03:54:40-05:00"
+    "population": 0
   },
   {
     "$schema": "../../schemas/v2/units.schema.json",
@@ -774,8 +755,7 @@
     "charges": 1,
     "recharge_time": 25,
     "cast_time": 0.0,
-    "population": 0,
-    "last_modified": "2026-02-15T03:54:40-05:00"
+    "population": 0
   },
   {
     "$schema": "../../schemas/v2/units.schema.json",
@@ -814,7 +794,6 @@
     "charges": 1,
     "recharge_time": 25,
     "cast_time": 0,
-    "population": 0,
-    "last_modified": "2026-02-15T03:54:40-05:00"
+    "population": 0
   }
 ]

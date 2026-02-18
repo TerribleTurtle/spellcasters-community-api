@@ -2,7 +2,7 @@
 API Builder Script
 
 This script aggregates individual JSON data files from `data/` into consolidated
-API response files in `api/v1/`. It generates:
+API response files in `api/v2/`. It generates:
 - Collection files (e.g., units.json, spells.json)
 - A master all_data.json file
 """
@@ -11,7 +11,7 @@ import json
 import os
 import glob
 import sys
-import subprocess
+
 from datetime import datetime, timezone
 
 import config
@@ -83,30 +83,6 @@ def save_json(filename, data):
     print(f"[OK] Generated {path} ({len(data)} items)")
 
 
-def get_last_modified_date(filepath):
-    """
-    Gets the last commit date for a file from git history.
-    Fallback to OS modification time or current time if git fails.
-    """
-    try:
-        # Get ISO 8601 date from latest commit for this file
-        # %cI = committer date, strict ISO 8601 format
-        result = subprocess.run(
-            ['git', 'log', '-1', '--format=%cI', filepath],
-            capture_output=True,
-            text=True,
-            check=True
-        )
-        timestamp = result.stdout.strip()
-        if timestamp:
-            return timestamp
-    except Exception:
-        pass
-
-    # Fallback: Use current time
-    return datetime.now(timezone.utc).isoformat()
-
-
 def sanitize_recursive(data):
     """
     Recursively escapes HTML characters in strings to prevent XSS.
@@ -171,11 +147,6 @@ def main():  # pylint: disable=too-many-locals, too-many-branches, too-many-stat
             content = load_json(file)
             if content:
                 content = sanitize_recursive(content)
-
-                # Inject last_modified from git history if missing
-                if 'last_modified' not in content:
-                    content['last_modified'] = get_last_modified_date(file)
-
                 collection.append(content)
             else:
                 errors += 1
@@ -192,11 +163,6 @@ def main():  # pylint: disable=too-many-locals, too-many-branches, too-many-stat
             content = load_json(path)
             if content:
                 content = sanitize_recursive(content)
-
-                # Inject last_modified from git history if missing
-                if 'last_modified' not in content:
-                    content['last_modified'] = get_last_modified_date(path)
-
                 save_json(f"{key}.json", content)
                 all_data[key] = content
             else:

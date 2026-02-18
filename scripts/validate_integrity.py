@@ -338,7 +338,7 @@ def validate_integrity():  # pylint: disable=too-many-locals, too-many-branches,
     # Validate Patch History Files (output files, not source data)
     print("Validating patch history files...")
     patch_files = {
-        "balance_index.json": "balance_index.schema.json",
+        "changelog_index.json": "changelog_index.schema.json",
         "changelog.json": "changelog.schema.json",
     }
     for filename, schema_name in patch_files.items():

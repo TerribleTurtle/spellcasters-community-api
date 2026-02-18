@@ -2,128 +2,92 @@
  * Patch History Type Definitions
  *
  * TypeScript types for the Spellcasters Community API patch history system.
- * These mirror the JSON schemas in schemas/v2/ and are provided for
- * consumer convenience.
+ * These mirror the JSON schemas in schemas/v2/.
+ *
+ * Endpoints:
+ *   - changelog_index.json      → ChangelogIndex
+ *   - changelog_page_N.json     → ChangelogPage
+ *   - changelog_latest.json     → ChangelogLatest
+ *   - timeline/{entity_id}.json → EntityTimeline
  *
  * @module patch-history
- * @see {@link https://terribleturtle.github.io/spellcasters-community-api/api/v2/balance_index.json}
- * @see {@link https://terribleturtle.github.io/spellcasters-community-api/api/v2/changelog.json}
  */
 
 // ---------------------------------------------------------------------------
-// Enums
+// Changelog
 // ---------------------------------------------------------------------------
 
-/**
- * Balance change classification.
- *
- * - `buff`    — Stats or behaviour improved.
- * - `nerf`    — Stats or behaviour reduced.
- * - `rework`  — Significant mechanical redesign.
- * - `fix`     — Bug fix that altered effective stats.
- * - `new`     — Entity added in this patch.
- */
-export type PatchType = "buff" | "nerf" | "rework" | "fix" | "new";
+/** Type of change made to an entity. */
+export type ChangeType = "add" | "edit" | "delete";
 
-// ---------------------------------------------------------------------------
-// balance_index.json
-// ---------------------------------------------------------------------------
+/** Patch classification. */
+export type PatchCategory = "Patch" | "Hotfix" | "Content";
 
-/**
- * Lookup table for the most recent patch.
- * Maps entity IDs to their balance change type.
- *
- * **Consumer:** Deckbuilder (buff/nerf icons on cards).
- *
- * @example
- * ```ts
- * const res = await fetch(`${BASE}/api/v2/balance_index.json`);
- * const index: BalanceIndex = await res.json();
- * const changeType = index.entities["fire_imp_1"]; // "buff"
- * ```
- */
-export interface BalanceIndex {
-  /** Semantic version of the patch (e.g. "1.2.0"). */
-  patch_version: string;
-  /** ISO 8601 date, or empty string if no patch published yet. */
-  patch_date: string;
-  /** Map of entity_id → PatchType. */
-  entities: Record<string, PatchType>;
+/** A single entity change within a patch. */
+export interface ChangeEntry {
+  /** Entity filename (e.g. "knight.json"). */
+  target_id: string;
+  /** Human-readable entity name. */
+  name: string;
+  /** Which field/aspect was changed. */
+  field: string;
+  /** Type of change. */
+  change_type?: ChangeType;
+  /** Entity category (e.g. "units", "heroes"). */
+  category?: string;
+  /** Field-level diffs (deep-diff format). */
+  diffs?: unknown[];
 }
 
-// ---------------------------------------------------------------------------
-// changelog.json / changelog_latest.json
-// ---------------------------------------------------------------------------
-
-/**
- * A single published patch entry.
- *
- * **Consumer:**
- * - `changelog.json` — Full card page (patch-over-patch comparison).
- * - `changelog_latest.json` — Card popup (quick "what changed" summary).
- */
+/** A single patch entry with all its changes. */
 export interface PatchEntry {
+  /** Unique patch identifier. */
+  id: string;
   /** Semantic version (e.g. "1.2.0"). */
   version: string;
-  /** ISO 8601 timestamp of when the patch was published. */
+  /** Patch classification. */
+  type: PatchCategory;
+  /** Human-readable title. */
+  title: string;
+  /** ISO 8601 timestamp. */
   date: string;
-  /** Human-readable summary of the patch. */
-  description: string;
-  /** Map of entity_id → PatchType for entities affected by this patch. */
-  entities: Record<string, PatchType>;
+  /** Optional tags. */
+  tags?: string[];
+  /** All entity changes in this patch. */
+  changes: ChangeEntry[];
 }
 
-/**
- * The full changelog is an array of PatchEntry, newest first.
- *
- * @example
- * ```ts
- * const res = await fetch(`${BASE}/api/v2/changelog.json`);
- * const patches: Changelog = await res.json();
- * ```
- */
-export type Changelog = PatchEntry[];
+/** A single changelog page — array of patches. */
+export type ChangelogPage = PatchEntry[];
 
-/**
- * The latest changelog entry, or null if no patches exist.
- *
- * @example
- * ```ts
- * const res = await fetch(`${BASE}/api/v2/changelog_latest.json`);
- * const latest: ChangelogLatest = await res.json();
- * if (latest) { console.log(latest.version); }
- * ```
- */
+/** The latest patch entry, or null if none exist. */
 export type ChangelogLatest = PatchEntry | null;
 
+/** Pagination manifest for the changelog. */
+export interface ChangelogIndex {
+  /** Total number of patches across all pages. */
+  total_patches: number;
+  /** Maximum patches per page. */
+  page_size: number;
+  /** Number of page files. */
+  total_pages: number;
+  /** Ordered list of page filenames. */
+  pages: string[];
+}
+
 // ---------------------------------------------------------------------------
-// timeline/{entity_id}.json
+// Entity Timeline (GET /api/v2/timeline/{entity_id}.json)
 // ---------------------------------------------------------------------------
 
-/**
- * A single snapshot of an entity's state at a given patch version.
- *
- * The `snapshot` field contains the full entity object as it existed at
- * that version. The shape varies by entity type (hero, unit, spell, etc.).
- */
+/** A snapshot of an entity's stats at a specific patch version. */
 export interface TimelineEntry {
-  /** Semantic version of the patch this snapshot was taken from. */
+  /** Semantic version. */
   version: string;
-  /** ISO 8601 timestamp of when the patch was published. */
+  /** ISO 8601 timestamp. */
   date: string;
   /** Full entity state at this version. */
   snapshot: Record<string, unknown>;
 }
 
-/**
- * Per-entity timeline file. Array of snapshots, oldest first.
- *
- * **Consumer:** Full card page (stat comparison across patches).
- *
- * @example
- * ```ts
- * const res = await fetch(`${BASE}/api/v2/timeline/fire_imp_1.json`);
- * const history: EntityTimeline = await res.json();
- * ```
- */
+/** Per-entity timeline — array of snapshots, oldest first. */
 export type EntityTimeline = TimelineEntry[];

@@ -1,0 +1,33 @@
+{
+  "$schema": "https://json-schema.org/draft/2019-09/schema",
+  "$id": "https://spellcasters.gg/schemas/v2/changelog_index.schema.json",
+  "title": "Changelog Index",
+  "description": "Pagination manifest for the changelog. Points to individual changelog page files.",
+  "type": "object",
+  "required": ["total_patches", "page_size", "total_pages", "pages"],
+  "additionalProperties": false,
+  "properties": {
+    "total_patches": {
+      "type": "integer",
+      "minimum": 0,
+      "description": "Total number of patches across all pages."
+    },
+    "page_size": {
+      "type": "integer",
+      "minimum": 1,
+      "description": "Maximum patches per page."
+    },
+    "total_pages": {
+      "type": "integer",
+      "minimum": 0,
+      "description": "Number of page files."
+    },
+    "pages": {
+      "type": "array",
+      "description": "Ordered list of page filenames (e.g. ['changelog_page_1.json', ...]).",
+      "items": {
+        "type": "string"
+      }
+    }
+  }
+}
