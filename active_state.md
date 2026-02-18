@@ -8,12 +8,17 @@ Deployment Verified — Ready to push to `main`.
 
 - **Audit**: PASSED (0 Errors, 8 Warnings - known asset gaps).
 - **Lint**: Flake8 clean, Pylint 10/10.
-- **Tests**: All passing.
-- **Build**: API artifacts generated successfully.
-- **CI/CD**: Pipelines verified consistent with local toolchain.
+- **Tests**: All passing (pytest).
+- **Build**: API artifacts generated successfully (including patch history).
+- **CI/CD**: `deploy.yml` patched to include strictness check.
 
 ## Recent Changes
 
+- **Build Script:**
+  - `build_api.py` now copies changelog + timeline data into `api/v2/`.
+  - Stale timeline files are cleaned before each copy.
+- **Data Fix:**
+  - Renamed `timeline/*.json.json` → `*.json` (double-extension bug from mock generation).
 - **Schema Refactor:**
   - Deleted `balance_index` (Legacy).
   - Added `changelog_index` (Pagination).

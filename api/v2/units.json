@@ -531,7 +531,6 @@
     "population": 0
   },
   {
-    "$schema": "../../schemas/v2/units.schema.json",
     "entity_id": "rocket_soldier",
     "name": "Rocket Soldier",
     "category": "Creature",
@@ -540,13 +539,17 @@
     "description": "Medium-range soldier that deals bonus damage to structures.",
     "image_required": true,
     "tags": [],
-    "changelog": [
-      {
-        "version": "0.0.1",
-        "date": "2026-02-08T09:49:16.838054+00:00",
-        "description": "Initial Closed Beta 2 Data"
-      }
-    ],
+    "health": 220,
+    "damage": 10,
+    "range": 22,
+    "dps": 10,
+    "attack_interval": 1,
+    "movement_speed": 3,
+    "movement_type": "Hover",
+    "charges": 1,
+    "recharge_time": 5,
+    "cast_time": 0,
+    "population": 0,
     "mechanics": {
       "damage_modifiers": [
         {
@@ -563,20 +566,17 @@
         }
       ]
     },
-    "damage": 10,
-    "health": 250,
-    "range": 22,
-    "movement_speed": 3,
-    "movement_type": "Hover",
-    "dps": 10,
-    "attack_interval": 1.0,
-    "charges": 1,
-    "recharge_time": 5,
-    "cast_time": 0,
-    "population": 0
+    "changelog": [
+      {
+        "version": "0.0.1",
+        "date": "2026-02-08T09:49:16.838054+00:00",
+        "description": "Initial Closed Beta 2 Data"
+      }
+    ],
+    "last_modified": "2026-02-18T07:18:12.876Z",
+    "$schema": "../../schemas/v2/units.schema.json"
   },
   {
-    "$schema": "../../schemas/v2/units.schema.json",
     "entity_id": "ruin_spider",
     "name": "Ruin Spider",
     "category": "Creature",
@@ -585,13 +585,16 @@
     "description": "Fast creature that explodes on contact, dealing bonus damage to structures.",
     "image_required": true,
     "tags": [],
-    "changelog": [
-      {
-        "version": "0.0.1",
-        "date": "2026-02-08T09:49:16.838362+00:00",
-        "description": "Initial Closed Beta 2 Data"
-      }
-    ],
+    "health": 85,
+    "damage": 20,
+    "dps": 20,
+    "attack_interval": 1,
+    "movement_speed": 7,
+    "movement_type": "Ground",
+    "charges": 1,
+    "recharge_time": 5,
+    "cast_time": 0,
+    "population": 0,
     "mechanics": {
       "damage_modifiers": [
         {
@@ -607,23 +610,22 @@
           ]
         },
         {
-          "multiplier": 2.5,
+          "multiplier": 1.5,
           "target_types": [
             "Building"
           ]
         }
       ]
     },
-    "damage": 20,
-    "health": 85,
-    "movement_speed": 7,
-    "movement_type": "Ground",
-    "dps": 20,
-    "attack_interval": 1.0,
-    "charges": 1,
-    "recharge_time": 5,
-    "cast_time": 0,
-    "population": 0
+    "changelog": [
+      {
+        "version": "0.0.1",
+        "date": "2026-02-08T09:49:16.838362+00:00",
+        "description": "Initial Closed Beta 2 Data"
+      }
+    ],
+    "last_modified": "2026-02-18T07:21:50.210Z",
+    "$schema": "../../schemas/v2/units.schema.json"
   },
   {
     "$schema": "../../schemas/v2/units.schema.json",

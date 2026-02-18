@@ -10,6 +10,7 @@ API response files in `api/v2/`. It generates:
 import json
 import os
 import glob
+import shutil
 import sys
 
 from datetime import datetime, timezone
@@ -191,7 +192,57 @@ def main():  # pylint: disable=too-many-locals, too-many-branches, too-many-stat
     }
     save_json("status.json", status_data)
 
+    # Build Patch History Endpoints
+    build_patch_history()
+
     print("Build Complete.")
+
+
+def build_patch_history():
+    """
+    Copies changelog files and timeline snapshots from the project root
+    into the API output directory so they are served as endpoints.
+    """
+    print("Building patch history endpoints...")
+    copied = 0
+
+    # 1. Copy changelog JSON files (e.g. changelog_index.json, changelog.json, changelog_latest.json)
+    for filename in config.PATCH_HISTORY_FILES:
+        src = os.path.join(config.BASE_DIR, filename)
+        dst = os.path.join(OUTPUT_DIR, filename)
+        if os.path.exists(src):
+            shutil.copy2(src, dst)
+            print(f"[OK] Copied {filename} -> {OUTPUT_DIR}")
+            copied += 1
+        else:
+            print(f"[WARN] Patch file not found: {src}")
+
+    # 2. Copy timeline directory
+    src_timeline = os.path.join(config.BASE_DIR, config.PATCH_HISTORY_DIR)
+    dst_timeline = os.path.join(OUTPUT_DIR, config.PATCH_HISTORY_DIR)
+
+    if os.path.isdir(src_timeline):
+        # Clean stale files then ensure destination exists
+        if os.path.isdir(dst_timeline):
+            for stale in glob.glob(os.path.join(dst_timeline, "*.json")):
+                os.remove(stale)
+        os.makedirs(dst_timeline, exist_ok=True)
+
+        for entry in os.listdir(src_timeline):
+            if entry.startswith('.'):
+                continue  # skip dotfiles like .gitkeep
+            src_file = os.path.join(src_timeline, entry)
+            dst_file = os.path.join(dst_timeline, entry)
+            if os.path.isfile(src_file):
+                shutil.copy2(src_file, dst_file)
+                copied += 1
+
+        file_count = len([f for f in os.listdir(src_timeline) if not f.startswith('.')])
+        print(f"[OK] Copied {file_count} timeline snapshots -> {dst_timeline}")
+    else:
+        print(f"[WARN] Timeline directory not found: {src_timeline}")
+
+    print(f"Patch history: {copied} files copied.")
 
 
 if __name__ == "__main__":

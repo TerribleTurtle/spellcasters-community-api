@@ -5,6 +5,8 @@ All notable changes to this project will be documented in this file.
 ## [Unreleased]
 
 - chore: upgrade flake8 to 7.3.0 and pylint to 4.0.4
+- feat: integral patch history endpoints in build pipeline
+
 - docs: update python requirement to 3.10+
 - style: implement dark mode for API documentation
 - ci: fix linting errors in migration scripts
