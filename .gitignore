@@ -45,3 +45,9 @@ api/v1/
 
 # Caches
 .asset_cache.json
+
+# Backups and Logs
+backups/
+data/backups/
+data/queue_backups/
+data/audit.jsonl

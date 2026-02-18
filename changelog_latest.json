@@ -1,0 +1,313 @@
+{
+  "id": "patch_0_0_1",
+  "version": "0.0.1",
+  "type": "Hotfix",
+  "title": "Hotfix 0.0.1",
+  "date": "2026-02-18",
+  "tags": [
+    "Joker"
+  ],
+  "changes": [
+    {
+      "target_id": "astral_monk.json",
+      "name": "Astral Monk",
+      "field": "entity",
+      "change_type": "edit",
+      "diffs": [
+        {
+          "kind": "E",
+          "path": [
+            "abilities",
+            "passive",
+            0,
+            "description"
+          ],
+          "lhs": "All Astral spells recharge faster.",
+          "rhs": "All Astral incantations recharge faster."
+        },
+        {
+          "kind": "E",
+          "path": [
+            "abilities",
+            "defense",
+            "cooldown"
+          ],
+          "lhs": 8,
+          "rhs": 10
+        },
+        {
+          "kind": "N",
+          "path": [
+            "last_modified"
+          ],
+          "rhs": "2026-02-18T07:17:33.470Z"
+        }
+      ],
+      "category": "heroes"
+    },
+    {
+      "target_id": "astral_shot.json",
+      "name": "Astral Shot",
+      "field": "entity",
+      "change_type": "edit",
+      "diffs": [
+        {
+          "kind": "A",
+          "path": [
+            "tags"
+          ],
+          "index": 0,
+          "item": {
+            "kind": "N",
+            "rhs": "homing"
+          }
+        },
+        {
+          "kind": "N",
+          "path": [
+            "last_modified"
+          ],
+          "rhs": "2026-02-18T07:17:45.455Z"
+        }
+      ],
+      "category": "spells"
+    },
+    {
+      "target_id": "fire_ball.json",
+      "name": "Fire Ball",
+      "field": "entity",
+      "change_type": "edit",
+      "diffs": [
+        {
+          "kind": "A",
+          "path": [
+            "tags"
+          ],
+          "index": 0,
+          "item": {
+            "kind": "N",
+            "rhs": "homing"
+          }
+        },
+        {
+          "kind": "N",
+          "path": [
+            "last_modified"
+          ],
+          "rhs": "2026-02-18T07:17:56.992Z"
+        }
+      ],
+      "category": "spells"
+    },
+    {
+      "target_id": "rocket_soldier.json",
+      "name": "Rocket Soldier",
+      "field": "entity",
+      "change_type": "edit",
+      "diffs": [
+        {
+          "kind": "E",
+          "path": [
+            "health"
+          ],
+          "lhs": 250,
+          "rhs": 220
+        },
+        {
+          "kind": "N",
+          "path": [
+            "last_modified"
+          ],
+          "rhs": "2026-02-18T07:18:12.876Z"
+        }
+      ],
+      "category": "units"
+    },
+    {
+      "target_id": "fire_elementalist.json",
+      "name": "Fire Elementalist",
+      "field": "entity",
+      "change_type": "edit",
+      "diffs": [
+        {
+          "kind": "E",
+          "path": [
+            "abilities",
+            "passive",
+            2,
+            "description"
+          ],
+          "lhs": "When you or your creatures kill a Burning enemy, recharge Elemental spells.",
+          "rhs": "When you or your creatures kill a Burning enemy, recharge Elemental incantations."
+        },
+        {
+          "kind": "N",
+          "path": [
+            "abilities",
+            "defense",
+            "cooldown"
+          ],
+          "rhs": 10
+        },
+        {
+          "kind": "N",
+          "path": [
+            "last_modified"
+          ],
+          "rhs": "2026-02-18T07:20:18.153Z"
+        }
+      ],
+      "category": "heroes"
+    },
+    {
+      "target_id": "iron_sorcerer.json",
+      "name": "Iron Sorcerer",
+      "field": "entity",
+      "change_type": "edit",
+      "diffs": [
+        {
+          "kind": "N",
+          "path": [
+            "last_modified"
+          ],
+          "rhs": "2026-02-18T07:18:42.253Z"
+        }
+      ],
+      "category": "heroes"
+    },
+    {
+      "target_id": "mystic_scribe.json",
+      "name": "Mystic Scribe",
+      "field": "entity",
+      "change_type": "edit",
+      "diffs": [
+        {
+          "kind": "E",
+          "path": [
+            "abilities",
+            "defense",
+            "description"
+          ],
+          "lhs": "Creates a barrier that absorbs projectiles and reduces all damage. Absorbing Spellcaster projectiles refreshes Holy spells.",
+          "rhs": "Creates a barrier that absorbs projectiles and reduces all damage. Absorbing Spellcaster projectiles refreshes Holy incantations."
+        },
+        {
+          "kind": "N",
+          "path": [
+            "abilities",
+            "defense",
+            "cooldown"
+          ],
+          "rhs": 10
+        },
+        {
+          "kind": "N",
+          "path": [
+            "last_modified"
+          ],
+          "rhs": "2026-02-18T07:21:26.945Z"
+        }
+      ],
+      "category": "heroes"
+    },
+    {
+      "target_id": "stone_shaman.json",
+      "name": "Stone Shaman",
+      "field": "entity",
+      "change_type": "edit",
+      "diffs": [
+        {
+          "kind": "E",
+          "path": [
+            "abilities",
+            "passive",
+            2,
+            "description"
+          ],
+          "lhs": "While on the ground, the Shaman recharges Wild spells much faster.",
+          "rhs": "While on the ground, the Shaman recharges Wild incantations much faster."
+        },
+        {
+          "kind": "N",
+          "path": [
+            "abilities",
+            "defense",
+            "cooldown"
+          ],
+          "rhs": 13
+        },
+        {
+          "kind": "N",
+          "path": [
+            "last_modified"
+          ],
+          "rhs": "2026-02-18T07:21:06.730Z"
+        }
+      ],
+      "category": "heroes"
+    },
+    {
+      "target_id": "swamp_witch.json",
+      "name": "Swamp Witch",
+      "field": "entity",
+      "change_type": "edit",
+      "diffs": [
+        {
+          "kind": "E",
+          "path": [
+            "abilities",
+            "passive",
+            1,
+            "description"
+          ],
+          "lhs": "When a Swamp Witch’s creature is destroyed, her spells and abilities recharge faster.",
+          "rhs": "When a Swamp Witch’s creature is destroyed, her incantations and abilities recharge faster."
+        },
+        {
+          "kind": "N",
+          "path": [
+            "abilities",
+            "defense",
+            "cooldown"
+          ],
+          "rhs": 10
+        },
+        {
+          "kind": "N",
+          "path": [
+            "last_modified"
+          ],
+          "rhs": "2026-02-18T07:20:50.326Z"
+        }
+      ],
+      "category": "heroes"
+    },
+    {
+      "target_id": "ruin_spider.json",
+      "name": "Ruin Spider",
+      "field": "entity",
+      "change_type": "edit",
+      "diffs": [
+        {
+          "kind": "E",
+          "path": [
+            "mechanics",
+            "damage_modifiers",
+            2,
+            "multiplier"
+          ],
+          "lhs": 2.5,
+          "rhs": 1.5
+        },
+        {
+          "kind": "N",
+          "path": [
+            "last_modified"
+          ],
+          "rhs": "2026-02-18T07:21:50.210Z"
+        }
+      ],
+      "category": "units"
+    }
+  ]
+}

@@ -1,0 +1,85 @@
+[
+  {
+    "version": "0.0.1",
+    "date": "2026-02-18",
+    "snapshot": {
+      "entity_id": "swamp_witch",
+      "name": "Swamp Witch",
+      "category": "Spellcaster",
+      "description": "A Duelist who commands poison and swarms, sacrificing minions to fuel powerful necromancy spells.",
+      "image_required": true,
+      "tags": [],
+      "health": 350,
+      "movement_type": "Ground",
+      "population": 0,
+      "changelog": [
+        {
+          "version": "0.0.1",
+          "date": "2026-02-05T17:05:01.972347Z",
+          "description": "Initial Closed Beta 2 Data"
+        }
+      ],
+      "last_modified": "2026-02-18T07:20:50.326Z",
+      "$schema": "../../schemas/v2/heroes.schema.json",
+      "class": "Duelist",
+      "difficulty": 3,
+      "abilities": {
+        "passive": [
+          {
+            "name": "Pact of Sacrifice",
+            "description": "Killing Poisoned Creatures recharges Necromancy spells."
+          },
+          {
+            "name": "Brood Rite",
+            "description": "When a Swamp Witch’s creature is destroyed, her incantations and abilities recharge faster."
+          },
+          {
+            "name": "Swarm Dominance",
+            "description": "The Swamp Witch has more Rank I population, but less Rank II and Rank III population.  "
+          }
+        ],
+        "primary": {
+          "name": "Poison Strike",
+          "description": "Fire a barrage of projectiles that deal Poison damage.",
+          "damage": 21,
+          "projectiles": 2,
+          "mechanics": {
+            "features": [
+              {
+                "name": "Homing",
+                "description": "Projectiles seek targets."
+              }
+            ]
+          }
+        },
+        "defense": {
+          "name": "Witchslip",
+          "description": "Performs an invincible dash in a chosen direction.",
+          "charges": 2,
+          "cooldown": 10
+        },
+        "ultimate": {
+          "name": "Dark Ascension",
+          "description": "Unleashes a demonic form that boosts all spell damage by 150%. Poison Strike fires 2 extra projectiles that deal +285% damage.",
+          "mechanics": {
+            "damage_modifiers": [
+              {
+                "multiplier": 2.5,
+                "target_types": [
+                  "All"
+                ]
+              }
+            ],
+            "features": [
+              {
+                "name": "Empowered Poison Strike",
+                "description": "Poison Strike gains 2 extra projectiles dealing +285% damage."
+              }
+            ]
+          },
+          "duration": 15
+        }
+      }
+    }
+  }
+]

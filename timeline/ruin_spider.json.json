@@ -1,0 +1,57 @@
+[
+  {
+    "version": "0.0.1",
+    "date": "2026-02-18",
+    "snapshot": {
+      "entity_id": "ruin_spider",
+      "name": "Ruin Spider",
+      "category": "Creature",
+      "magic_school": "Necromancy",
+      "rank": "I",
+      "description": "Fast creature that explodes on contact, dealing bonus damage to structures.",
+      "image_required": true,
+      "tags": [],
+      "health": 85,
+      "damage": 20,
+      "dps": 20,
+      "attack_interval": 1,
+      "movement_speed": 7,
+      "movement_type": "Ground",
+      "charges": 1,
+      "recharge_time": 5,
+      "cast_time": 0,
+      "population": 0,
+      "mechanics": {
+        "damage_modifiers": [
+          {
+            "multiplier": 0.5,
+            "target_types": [
+              "Creature"
+            ]
+          },
+          {
+            "multiplier": 0.5,
+            "target_types": [
+              "Spellcaster"
+            ]
+          },
+          {
+            "multiplier": 1.5,
+            "target_types": [
+              "Building"
+            ]
+          }
+        ]
+      },
+      "changelog": [
+        {
+          "version": "0.0.1",
+          "date": "2026-02-08T09:49:16.838362+00:00",
+          "description": "Initial Closed Beta 2 Data"
+        }
+      ],
+      "last_modified": "2026-02-18T07:21:50.210Z",
+      "$schema": "../../schemas/v2/units.schema.json"
+    }
+  }
+]

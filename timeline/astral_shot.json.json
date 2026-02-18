@@ -1,0 +1,35 @@
+[
+  {
+    "version": "0.0.1",
+    "date": "2026-02-18",
+    "snapshot": {
+      "entity_id": "astral_shot",
+      "name": "Astral Shot",
+      "description": "Rapid burst of projectiles.",
+      "category": "Spell",
+      "image_required": true,
+      "tags": [
+        "homing"
+      ],
+      "mechanics": {
+        "waves": 4
+      },
+      "changelog": [
+        {
+          "version": "0.0.1",
+          "date": "2026-02-08T09:49:16.839777+00:00",
+          "description": "Initial Closed Beta 2 Data"
+        }
+      ],
+      "last_modified": "2026-02-18T07:17:45.455Z",
+      "$schema": "../../schemas/v2/spells.schema.json",
+      "magic_school": "Astral",
+      "rank": "II",
+      "damage": 40,
+      "range": 80,
+      "charges": 1,
+      "recharge_time": 25,
+      "cast_time": 0
+    }
+  }
+]
