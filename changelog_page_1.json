@@ -29,7 +29,6 @@
         "target_id": "lich.json"
       }
     ],
-    "diff": " data/patches.json    | 36 +++++++++++++++++++++++++++++++++++-\n data/units/lich.json | 30 ++++++++++++++++--------------\n 2 files changed, 51 insertions(+), 15 deletions(-)\n",
     "tags": [],
     "title": "Hotfix 0.0.1"
   }

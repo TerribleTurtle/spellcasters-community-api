@@ -1,6 +1,8 @@
 {
-  "total_patches": 0,
+  "total_patches": 1,
   "page_size": 50,
-  "total_pages": 0,
-  "pages": []
+  "total_pages": 1,
+  "pages": [
+    "changelog_page_1.json"
+  ]
 }
