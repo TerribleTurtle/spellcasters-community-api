@@ -1,19 +1,29 @@
 {
-  "$schema": "../../schemas/v2/heroes.schema.json",
+  "entity_id": "stone_shaman",
   "name": "Stone Shaman",
-  "class": "Enchanter",
   "category": "Spellcaster",
-  "movement_type": "Ground",
-  "health": 600,
-  "population": 0,
+  "description": "An Enchanter who channels the power of earth to deal heavy damage, interrupt spellcasters, and fortify buildings.",
   "image_required": true,
-  "difficulty": 2,
   "tags": [],
+  "health": 600,
+  "movement_type": "Ground",
+  "population": 0,
+  "changelog": [
+    {
+      "version": "0.0.1",
+      "date": "2026-02-05T18:35:34.217480Z",
+      "description": "Initial Closed Beta 2 Data"
+    }
+  ],
+  "last_modified": "2026-02-18T07:21:06.730Z",
+  "$schema": "../../schemas/v2/heroes.schema.json",
+  "class": "Enchanter",
+  "difficulty": 2,
   "abilities": {
     "passive": [
       {
-        "name": "Mountain\u2019s Favor",
-        "description": "The Stone Shaman\u2019s attacks deal double damage to buildings."
+        "name": "Mountain’s Favor",
+        "description": "The Stone Shaman’s attacks deal double damage to buildings."
       },
       {
         "name": "Child of the Titans",
@@ -21,7 +31,7 @@
       },
       {
         "name": "Pathfinder",
-        "description": "While on the ground, the Shaman recharges Wild spells much faster."
+        "description": "While on the ground, the Shaman recharges Wild incantations much faster."
       }
     ],
     "primary": {
@@ -43,7 +53,7 @@
             "radius": 8,
             "value": 7,
             "effect": "Heal",
-            "interval": 1.0,
+            "interval": 1,
             "target_types": [
               "Ally"
             ]
@@ -55,21 +65,13 @@
       "name": "Wind Shield",
       "description": "Conjure a protective wind barrier that deals damage on contact.",
       "charges": 1,
-      "duration": 3
+      "duration": 3,
+      "cooldown": 13
     },
     "ultimate": {
       "name": "Wall of Kamazad",
       "description": "Deploys a colossal wall capable of blocking Titans. The wall has 15000 Health and deals % damage to enemies in its path.",
       "health": 15000
     }
-  },
-  "changelog": [
-    {
-      "version": "0.0.1",
-      "date": "2026-02-05T18:35:34.217480Z",
-      "description": "Initial Closed Beta 2 Data"
-    }
-  ],
-  "entity_id": "stone_shaman",
-  "description": "An Enchanter who channels the power of earth to deal heavy damage, interrupt spellcasters, and fortify buildings."
+  }
 }

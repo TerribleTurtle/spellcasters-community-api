@@ -1,19 +1,29 @@
 {
-  "$schema": "../../schemas/v2/heroes.schema.json",
+  "entity_id": "astral_monk",
   "name": "Astral Monk",
-  "class": "Duelist",
   "category": "Spellcaster",
-  "movement_type": "Ground",
-  "health": 300,
-  "population": 0,
+  "description": "A Duelist who strikes from the shadows with fast astral fists and time-bending abilities.",
   "image_required": true,
-  "difficulty": 2,
   "tags": [],
+  "health": 300,
+  "movement_type": "Ground",
+  "population": 0,
+  "changelog": [
+    {
+      "version": "0.0.1",
+      "date": "2026-02-05T18:34:05.939129Z",
+      "description": "Initial Closed Beta 2 Data"
+    }
+  ],
+  "last_modified": "2026-02-18T07:17:33.470Z",
+  "$schema": "../../schemas/v2/heroes.schema.json",
+  "class": "Duelist",
+  "difficulty": 2,
   "abilities": {
     "passive": [
       {
         "name": "Arcane Alignment",
-        "description": "All Astral spells recharge faster."
+        "description": "All Astral incantations recharge faster."
       },
       {
         "name": "Last Light",
@@ -43,7 +53,7 @@
       "description": "Turns invisible and move faster.",
       "charges": 2,
       "duration": 1.5,
-      "cooldown": 8,
+      "cooldown": 10,
       "mechanics": {
         "stealth": {
           "duration": 1.5,
@@ -55,14 +65,5 @@
       "name": "Dimension of Varani",
       "description": "Conjures a time bubble that freezes enemy projectiles and creatures inside it. The Ultimate is destroyed by Lifestone Large Shots (3 hits)."
     }
-  },
-  "changelog": [
-    {
-      "version": "0.0.1",
-      "date": "2026-02-05T18:34:05.939129Z",
-      "description": "Initial Closed Beta 2 Data"
-    }
-  ],
-  "entity_id": "astral_monk",
-  "description": "A Duelist who strikes from the shadows with fast astral fists and time-bending abilities."
+  }
 }

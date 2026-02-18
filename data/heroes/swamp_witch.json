@@ -1,14 +1,24 @@
 {
-  "$schema": "../../schemas/v2/heroes.schema.json",
+  "entity_id": "swamp_witch",
   "name": "Swamp Witch",
-  "class": "Duelist",
   "category": "Spellcaster",
-  "movement_type": "Ground",
-  "health": 350,
-  "population": 0,
+  "description": "A Duelist who commands poison and swarms, sacrificing minions to fuel powerful necromancy spells.",
   "image_required": true,
-  "difficulty": 3,
   "tags": [],
+  "health": 350,
+  "movement_type": "Ground",
+  "population": 0,
+  "changelog": [
+    {
+      "version": "0.0.1",
+      "date": "2026-02-05T17:05:01.972347Z",
+      "description": "Initial Closed Beta 2 Data"
+    }
+  ],
+  "last_modified": "2026-02-18T07:20:50.326Z",
+  "$schema": "../../schemas/v2/heroes.schema.json",
+  "class": "Duelist",
+  "difficulty": 3,
   "abilities": {
     "passive": [
       {
@@ -17,7 +27,7 @@
       },
       {
         "name": "Brood Rite",
-        "description": "When a Swamp Witch\u2019s creature is destroyed, her spells and abilities recharge faster."
+        "description": "When a Swamp Witch’s creature is destroyed, her incantations and abilities recharge faster."
       },
       {
         "name": "Swarm Dominance",
@@ -41,7 +51,8 @@
     "defense": {
       "name": "Witchslip",
       "description": "Performs an invincible dash in a chosen direction.",
-      "charges": 2
+      "charges": 2,
+      "cooldown": 10
     },
     "ultimate": {
       "name": "Dark Ascension",
@@ -64,14 +75,5 @@
       },
       "duration": 15
     }
-  },
-  "changelog": [
-    {
-      "version": "0.0.1",
-      "date": "2026-02-05T17:05:01.972347Z",
-      "description": "Initial Closed Beta 2 Data"
-    }
-  ],
-  "entity_id": "swamp_witch",
-  "description": "A Duelist who commands poison and swarms, sacrificing minions to fuel powerful necromancy spells."
+  }
 }
