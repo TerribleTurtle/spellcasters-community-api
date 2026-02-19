@@ -1,18 +1,17 @@
 {
+  "$schema": "../../schemas/v2/heroes.schema.json",
   "entity_id": "mystic_scribe",
   "name": "Mystic Scribe",
-  "category": "Spellcaster",
-  "description": "An Enchanter who uses magical ink to damage enemies, heal allies, and create protective barriers.",
-  "image_required": true,
-  "tags": [],
-  "health": 440,
-  "movement_type": "Ground",
-  "population": 0,
-  "last_modified": "2026-02-18T07:21:26.945Z",
-  "$schema": "../../schemas/v2/heroes.schema.json",
   "class": "Enchanter",
-  "difficulty": 2,
+  "category": "Spellcaster",
   "abilities": {
+    "defense": {
+      "name": "Scroll Barrier",
+      "charges": 1,
+      "cooldown": 10,
+      "description": "Creates a barrier that absorbs projectiles and reduces all damage. Absorbing Spellcaster projectiles partially refresh Holy incantations.",
+      "duration": 2
+    },
     "passive": [
       {
         "name": "Echo of Mercy",
@@ -20,7 +19,7 @@
       },
       {
         "name": "Holy Magic Mastery",
-        "description": "All Holy spells recharge faster."
+        "description": "All Holy incantations recharge faster."
       },
       {
         "name": "Thousand Favors",
@@ -29,29 +28,30 @@
     ],
     "primary": {
       "name": "Brush Strike",
+      "damage": 25,
       "description": "Strike with enchanted ink to damage enemies and boost allies’ Max HP.",
-      "damage": 23,
       "mechanics": {
+        "cleave": true,
         "features": [
           {
             "name": "Knockback",
             "description": "Knocks back small units."
           }
-        ],
-        "cleave": true
+        ]
       }
-    },
-    "defense": {
-      "name": "Scroll Barrier",
-      "description": "Creates a barrier that absorbs projectiles and reduces all damage. Absorbing Spellcaster projectiles refreshes Holy incantations.",
-      "charges": 1,
-      "duration": 2,
-      "cooldown": 10
     },
     "ultimate": {
       "name": "Seal of Immortality",
       "description": "Mark the ground with a massive healing seal.",
       "duration": 30
     }
-  }
+  },
+  "description": "An Enchanter who uses magical ink to damage enemies, heal allies, and create protective barriers.",
+  "difficulty": 2,
+  "health": 440,
+  "image_required": true,
+  "movement_type": "Ground",
+  "population": 0,
+  "tags": [],
+  "last_modified": "2026-02-19T02:13:18.977Z"
 }

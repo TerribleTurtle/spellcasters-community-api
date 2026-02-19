@@ -1,5 +1,176 @@
 [
   {
+    "id": "patch_0_0_2",
+    "version": "0.0.2",
+    "date": "2026-02-19",
+    "type": "Hotfix",
+    "changes": [
+      {
+        "name": "Thunder Ray",
+        "category": "spells",
+        "change_type": "edit",
+        "diffs": [
+          {
+            "kind": "E",
+            "lhs": 5,
+            "path": [
+              "mechanics",
+              "waves"
+            ],
+            "rhs": 7
+          },
+          {
+            "kind": "E",
+            "lhs": 14,
+            "path": [
+              "damage"
+            ],
+            "rhs": 10
+          },
+          {
+            "kind": "N",
+            "path": [
+              "last_modified"
+            ],
+            "rhs": "2026-02-19T02:01:14.345Z"
+          }
+        ],
+        "field": "entity",
+        "target_id": "thunder_ray.json"
+      },
+      {
+        "name": "Stone Shaman",
+        "category": "heroes",
+        "change_type": "edit",
+        "diffs": [
+          {
+            "kind": "E",
+            "lhs": "2026-02-18T07:21:06.730Z",
+            "path": [
+              "last_modified"
+            ],
+            "rhs": "2026-02-19T02:04:38.362Z"
+          },
+          {
+            "kind": "E",
+            "lhs": "While on the ground, the Shaman recharges Wild incantations much faster.",
+            "path": [
+              "abilities",
+              "passive",
+              2,
+              "description"
+            ],
+            "rhs": "While on the ground, the Shaman recharges Wild spells and creatures much faster."
+          }
+        ],
+        "field": "entity",
+        "target_id": "stone_shaman.json"
+      },
+      {
+        "name": "Astral Shot",
+        "category": "spells",
+        "change_type": "edit",
+        "diffs": [
+          {
+            "kind": "E",
+            "lhs": "2026-02-18T07:17:45.455Z",
+            "path": [
+              "last_modified"
+            ],
+            "rhs": "2026-02-19T02:12:48.686Z"
+          },
+          {
+            "kind": "E",
+            "lhs": 40,
+            "path": [
+              "damage"
+            ],
+            "rhs": 32
+          }
+        ],
+        "field": "entity",
+        "target_id": "astral_shot.json"
+      },
+      {
+        "name": "Mystic Scribe",
+        "category": "heroes",
+        "change_type": "edit",
+        "diffs": [
+          {
+            "kind": "E",
+            "lhs": "2026-02-18T07:21:26.945Z",
+            "path": [
+              "last_modified"
+            ],
+            "rhs": "2026-02-19T02:13:18.977Z"
+          },
+          {
+            "kind": "E",
+            "lhs": "All Holy spells recharge faster.",
+            "path": [
+              "abilities",
+              "passive",
+              1,
+              "description"
+            ],
+            "rhs": "All Holy incantations recharge faster."
+          },
+          {
+            "kind": "E",
+            "lhs": 23,
+            "path": [
+              "abilities",
+              "primary",
+              "damage"
+            ],
+            "rhs": 25
+          },
+          {
+            "kind": "E",
+            "lhs": "Creates a barrier that absorbs projectiles and reduces all damage. Absorbing Spellcaster projectiles refreshes Holy incantations.",
+            "path": [
+              "abilities",
+              "defense",
+              "description"
+            ],
+            "rhs": "Creates a barrier that absorbs projectiles and reduces all damage. Absorbing Spellcaster projectiles partially refresh Holy incantations."
+          }
+        ],
+        "field": "entity",
+        "target_id": "mystic_scribe.json"
+      },
+      {
+        "name": "Iron Sorcerer",
+        "category": "heroes",
+        "change_type": "edit",
+        "diffs": [
+          {
+            "kind": "E",
+            "lhs": "2026-02-18T07:18:42.253Z",
+            "path": [
+              "last_modified"
+            ],
+            "rhs": "2026-02-19T02:14:50.854Z"
+          },
+          {
+            "kind": "N",
+            "path": [
+              "abilities",
+              "defense",
+              "cooldown"
+            ],
+            "rhs": 5
+          }
+        ],
+        "field": "entity",
+        "target_id": "iron_sorcerer.json"
+      }
+    ],
+    "diff": " changelog.json                 | 172 ++++++++++++++++++++++++++++++++++++++++-\n changelog_index.json           |   2 +-\n changelog_latest.json          | 137 +++++++++++++++++++++++++-------\n changelog_page_1.json          | 172 ++++++++++++++++++++++++++++++++++++++++-\n data/heroes/iron_sorcerer.json |  37 ++++-----\n data/heroes/mystic_scribe.json |  44 +++++------\n data/heroes/stone_shaman.json  |  60 +++++++-------\n data/patches.json              | 170 ++++++++++++++++++++++++++++++++++++++++\n data/spells/astral_shot.json   |  22 +++---\n data/spells/thunder_ray.json   |  17 ++--\n timeline/astral_shot.json      |  28 +++++++\n timeline/iron_sorcerer.json    |  57 ++++++++++++++\n timeline/mystic_scribe.json    |  63 +++++++++++++++\n timeline/stone_shaman.json     |  76 ++++++++++++++++++\n timeline/thunder_ray.json      |  27 +++++++\n 15 files changed, 964 insertions(+), 120 deletions(-)\n",
+    "tags": [],
+    "title": "Hotfix 0.0.2"
+  },
+  {
     "id": "patch_0_0_1",
     "version": "0.0.1",
     "date": "2026-02-19",

@@ -3,18 +3,19 @@
   "entity_id": "thunder_ray",
   "name": "Thunder Ray",
   "category": "Spell",
-  "magic_school": "Technomancy",
-  "rank": "I",
+  "cast_time": 0,
+  "charges": 1,
+  "damage": 10,
   "description": "Focused beam that deals low Lightning damage.",
   "image_required": true,
-  "tags": [],
+  "magic_school": "Technomancy",
   "mechanics": {
-    "waves": 5,
-    "interval": 1
+    "interval": 1,
+    "waves": 7
   },
-  "damage": 14,
   "range": 45,
-  "charges": 1,
+  "rank": "I",
   "recharge_time": 5,
-  "cast_time": 0
+  "tags": [],
+  "last_modified": "2026-02-19T02:01:14.345Z"
 }

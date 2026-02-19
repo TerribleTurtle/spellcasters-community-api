@@ -1,22 +1,22 @@
 {
+  "$schema": "../../schemas/v2/spells.schema.json",
   "entity_id": "astral_shot",
   "name": "Astral Shot",
-  "description": "Rapid burst of projectiles.",
   "category": "Spell",
+  "cast_time": 0,
+  "charges": 1,
+  "damage": 32,
+  "description": "Rapid burst of projectiles.",
   "image_required": true,
-  "tags": [
-    "homing"
-  ],
+  "magic_school": "Astral",
   "mechanics": {
     "waves": 4
   },
-  "last_modified": "2026-02-18T07:17:45.455Z",
-  "$schema": "../../schemas/v2/spells.schema.json",
-  "magic_school": "Astral",
-  "rank": "II",
-  "damage": 40,
   "range": 80,
-  "charges": 1,
+  "rank": "II",
   "recharge_time": 25,
-  "cast_time": 0
+  "tags": [
+    "homing"
+  ],
+  "last_modified": "2026-02-19T02:12:48.686Z"
 }
