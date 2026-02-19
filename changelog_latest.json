@@ -1,170 +1,107 @@
 {
-  "id": "patch_0_0_2",
-  "version": "0.0.2",
+  "id": "patch_0_0_3",
+  "version": "0.0.3",
   "date": "2026-02-19",
   "type": "Hotfix",
   "changes": [
     {
-      "name": "Thunder Ray",
-      "category": "spells",
+      "name": "Ogre",
+      "category": "units",
       "change_type": "edit",
       "diffs": [
         {
-          "kind": "E",
-          "lhs": 5,
+          "index": 1,
+          "item": {
+            "kind": "N",
+            "rhs": {
+              "multiplier": 1.75,
+              "target_types": [
+                "Creature"
+              ]
+            }
+          },
+          "kind": "A",
           "path": [
             "mechanics",
-            "waves"
-          ],
-          "rhs": 7
-        },
-        {
-          "kind": "E",
-          "lhs": 14,
-          "path": [
-            "damage"
-          ],
-          "rhs": 10
+            "damage_modifiers"
+          ]
         },
         {
           "kind": "N",
           "path": [
             "last_modified"
           ],
-          "rhs": "2026-02-19T02:01:14.345Z"
+          "rhs": "2026-02-19T05:08:34.477Z"
         }
       ],
       "field": "entity",
-      "target_id": "thunder_ray.json"
+      "target_id": "ogre.json"
     },
     {
-      "name": "Stone Shaman",
-      "category": "heroes",
-      "change_type": "edit",
-      "diffs": [
-        {
-          "kind": "E",
-          "lhs": "2026-02-18T07:21:06.730Z",
-          "path": [
-            "last_modified"
-          ],
-          "rhs": "2026-02-19T02:04:38.362Z"
-        },
-        {
-          "kind": "E",
-          "lhs": "While on the ground, the Shaman recharges Wild incantations much faster.",
-          "path": [
-            "abilities",
-            "passive",
-            2,
-            "description"
-          ],
-          "rhs": "While on the ground, the Shaman recharges Wild spells and creatures much faster."
-        }
-      ],
-      "field": "entity",
-      "target_id": "stone_shaman.json"
-    },
-    {
-      "name": "Astral Shot",
+      "name": "Fire Ball",
       "category": "spells",
       "change_type": "edit",
       "diffs": [
         {
           "kind": "E",
-          "lhs": "2026-02-18T07:17:45.455Z",
+          "lhs": "Fast projectile that deals medium Fire damage to a target.",
           "path": [
-            "last_modified"
-          ],
-          "rhs": "2026-02-19T02:12:48.686Z"
-        },
-        {
-          "kind": "E",
-          "lhs": 40,
-          "path": [
-            "damage"
-          ],
-          "rhs": 32
-        }
-      ],
-      "field": "entity",
-      "target_id": "astral_shot.json"
-    },
-    {
-      "name": "Mystic Scribe",
-      "category": "heroes",
-      "change_type": "edit",
-      "diffs": [
-        {
-          "kind": "E",
-          "lhs": "2026-02-18T07:21:26.945Z",
-          "path": [
-            "last_modified"
-          ],
-          "rhs": "2026-02-19T02:13:18.977Z"
-        },
-        {
-          "kind": "E",
-          "lhs": "All Holy spells recharge faster.",
-          "path": [
-            "abilities",
-            "passive",
-            1,
             "description"
           ],
-          "rhs": "All Holy incantations recharge faster."
+          "rhs": "Fast projectile emitting a burning aura that deals medium Fire damage to a target."
         },
         {
           "kind": "E",
-          "lhs": 23,
-          "path": [
-            "abilities",
-            "primary",
-            "damage"
-          ],
-          "rhs": 25
-        },
-        {
-          "kind": "E",
-          "lhs": "Creates a barrier that absorbs projectiles and reduces all damage. Absorbing Spellcaster projectiles refreshes Holy incantations.",
-          "path": [
-            "abilities",
-            "defense",
-            "description"
-          ],
-          "rhs": "Creates a barrier that absorbs projectiles and reduces all damage. Absorbing Spellcaster projectiles partially refresh Holy incantations."
-        }
-      ],
-      "field": "entity",
-      "target_id": "mystic_scribe.json"
-    },
-    {
-      "name": "Iron Sorcerer",
-      "category": "heroes",
-      "change_type": "edit",
-      "diffs": [
-        {
-          "kind": "E",
-          "lhs": "2026-02-18T07:18:42.253Z",
+          "lhs": "2026-02-18T07:17:56.992Z",
           "path": [
             "last_modified"
           ],
-          "rhs": "2026-02-19T02:14:50.854Z"
+          "rhs": "2026-02-19T05:10:47.465Z"
+        },
+        {
+          "kind": "E",
+          "lhs": 0,
+          "path": [
+            "cast_time"
+          ],
+          "rhs": 0.5
         },
         {
           "kind": "N",
           "path": [
-            "abilities",
-            "defense",
-            "cooldown"
+            "mechanics"
           ],
-          "rhs": 5
+          "rhs": {}
         }
       ],
       "field": "entity",
-      "target_id": "iron_sorcerer.json"
+      "target_id": "fire_ball.json"
+    },
+    {
+      "name": "Astral Nova",
+      "category": "spells",
+      "change_type": "edit",
+      "diffs": [
+        {
+          "kind": "E",
+          "lhs": "Massive projectile that deals heavy damage on impact.",
+          "path": [
+            "description"
+          ],
+          "rhs": "Massive projectile emitting a damaging aura that deals heavy damage on impact."
+        },
+        {
+          "kind": "N",
+          "path": [
+            "last_modified"
+          ],
+          "rhs": "2026-02-19T05:11:27.677Z"
+        }
+      ],
+      "field": "entity",
+      "target_id": "astral_nova.json"
     }
   ],
   "tags": [],
-  "title": "Hotfix 0.0.2"
+  "title": "Hotfix 0.0.3"
 }

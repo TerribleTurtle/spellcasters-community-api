@@ -3,14 +3,15 @@
   "entity_id": "astral_nova",
   "name": "Astral Nova",
   "category": "Spell",
-  "magic_school": "Astral",
-  "rank": "IV",
-  "description": "Massive projectile that deals heavy damage on impact.",
-  "image_required": true,
-  "tags": [],
-  "damage": 4200,
-  "range": 80,
+  "cast_time": 0,
   "charges": 1,
+  "damage": 4200,
+  "description": "Massive projectile emitting a damaging aura that deals heavy damage on impact.",
+  "image_required": true,
+  "magic_school": "Astral",
+  "range": 80,
+  "rank": "IV",
   "recharge_time": 120,
-  "cast_time": 0
+  "tags": [],
+  "last_modified": "2026-02-19T05:11:27.677Z"
 }

@@ -1,19 +1,20 @@
 {
+  "$schema": "../../schemas/v2/spells.schema.json",
   "entity_id": "fire_ball",
   "name": "Fire Ball",
-  "description": "Fast projectile that deals medium Fire damage to a target.",
   "category": "Spell",
+  "cast_time": 0.5,
+  "charges": 1,
+  "damage": 530,
+  "description": "Fast projectile emitting a burning aura that deals medium Fire damage to a target.",
   "image_required": true,
+  "magic_school": "Elemental",
+  "mechanics": {},
+  "range": 80,
+  "rank": "III",
+  "recharge_time": 50,
   "tags": [
     "homing"
   ],
-  "last_modified": "2026-02-18T07:17:56.992Z",
-  "$schema": "../../schemas/v2/spells.schema.json",
-  "magic_school": "Elemental",
-  "rank": "III",
-  "damage": 530,
-  "range": 80,
-  "charges": 1,
-  "recharge_time": 50,
-  "cast_time": 0
+  "last_modified": "2026-02-19T05:10:47.465Z"
 }

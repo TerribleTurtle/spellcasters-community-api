@@ -1,5 +1,113 @@
 [
   {
+    "id": "patch_0_0_3",
+    "version": "0.0.3",
+    "date": "2026-02-19",
+    "type": "Hotfix",
+    "changes": [
+      {
+        "name": "Ogre",
+        "category": "units",
+        "change_type": "edit",
+        "diffs": [
+          {
+            "index": 1,
+            "item": {
+              "kind": "N",
+              "rhs": {
+                "multiplier": 1.75,
+                "target_types": [
+                  "Creature"
+                ]
+              }
+            },
+            "kind": "A",
+            "path": [
+              "mechanics",
+              "damage_modifiers"
+            ]
+          },
+          {
+            "kind": "N",
+            "path": [
+              "last_modified"
+            ],
+            "rhs": "2026-02-19T05:08:34.477Z"
+          }
+        ],
+        "field": "entity",
+        "target_id": "ogre.json"
+      },
+      {
+        "name": "Fire Ball",
+        "category": "spells",
+        "change_type": "edit",
+        "diffs": [
+          {
+            "kind": "E",
+            "lhs": "Fast projectile that deals medium Fire damage to a target.",
+            "path": [
+              "description"
+            ],
+            "rhs": "Fast projectile emitting a burning aura that deals medium Fire damage to a target."
+          },
+          {
+            "kind": "E",
+            "lhs": "2026-02-18T07:17:56.992Z",
+            "path": [
+              "last_modified"
+            ],
+            "rhs": "2026-02-19T05:10:47.465Z"
+          },
+          {
+            "kind": "E",
+            "lhs": 0,
+            "path": [
+              "cast_time"
+            ],
+            "rhs": 0.5
+          },
+          {
+            "kind": "N",
+            "path": [
+              "mechanics"
+            ],
+            "rhs": {}
+          }
+        ],
+        "field": "entity",
+        "target_id": "fire_ball.json"
+      },
+      {
+        "name": "Astral Nova",
+        "category": "spells",
+        "change_type": "edit",
+        "diffs": [
+          {
+            "kind": "E",
+            "lhs": "Massive projectile that deals heavy damage on impact.",
+            "path": [
+              "description"
+            ],
+            "rhs": "Massive projectile emitting a damaging aura that deals heavy damage on impact."
+          },
+          {
+            "kind": "N",
+            "path": [
+              "last_modified"
+            ],
+            "rhs": "2026-02-19T05:11:27.677Z"
+          }
+        ],
+        "field": "entity",
+        "target_id": "astral_nova.json"
+      }
+    ],
+    "diff": " changelog.json               | 108 ++++++++++++++++++++++++++++++++\n changelog_index.json         |   2 +-\n changelog_latest.json        | 145 ++++++++++++-------------------------------\n changelog_page_1.json        | 108 ++++++++++++++++++++++++++++++++\n data/patches.json            | 107 +++++++++++++++++++++++++++++++\n data/spells/astral_nova.json |  15 ++---\n data/spells/fire_ball.json   |  21 ++++---\n data/units/ogre.json         |  27 +++++---\n timeline/astral_nova.json    |  23 +++++++\n timeline/fire_ball.json      |  26 ++++++++\n timeline/ogre.json           |  44 +++++++++++++\n 11 files changed, 494 insertions(+), 132 deletions(-)\n",
+    "tags": [],
+    "title": "Hotfix 0.0.3"
+  },
+  {
     "id": "patch_0_0_2",
     "version": "0.0.2",
     "date": "2026-02-19",
