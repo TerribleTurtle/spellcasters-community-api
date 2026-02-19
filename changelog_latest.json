@@ -1,7 +1,7 @@
 {
   "id": "patch_0_0_1",
   "version": "0.0.1",
-  "date": "2026-02-18",
+  "date": "2026-02-19",
   "type": "Hotfix",
   "changes": [
     {
@@ -54,9 +54,36 @@
       ],
       "field": "entity",
       "target_id": "astral_monk.json"
+    },
+    {
+      "name": "Earthquake",
+      "category": "spells",
+      "change_type": "edit",
+      "diffs": [
+        {
+          "kind": "E",
+          "lhs": 0.3,
+          "path": [
+            "mechanics",
+            "bonus_damage",
+            0,
+            "value"
+          ],
+          "rhs": 1.3
+        },
+        {
+          "kind": "N",
+          "path": [
+            "last_modified"
+          ],
+          "rhs": "2026-02-19T00:40:45.876Z"
+        }
+      ],
+      "field": "entity",
+      "target_id": "earthquake.json"
     }
   ],
-  "diff": " data/patches.json    | 36 +++++++++++++++++++++++++++++++++++-\n data/units/lich.json | 30 ++++++++++++++++--------------\n 2 files changed, 51 insertions(+), 15 deletions(-)\n",
+  "diff": " changelog.json               | 28 ++++++++++++++++++\n changelog_latest.json        | 28 ++++++++++++++++++\n changelog_page_1.json        | 28 ++++++++++++++++++\n data/heroes/astral_monk.json | 52 ++++++++++++++++-----------------\n data/patches.json            | 28 ++++++++++++++++++\n timeline/astral_monk.json    | 68 ++++++++++++++++++++++++++++++++++++++++++++\n 6 files changed, 206 insertions(+), 26 deletions(-)\n",
   "tags": [],
   "title": "Hotfix 0.0.1"
 }

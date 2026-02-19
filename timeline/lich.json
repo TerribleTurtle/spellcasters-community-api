@@ -1,7 +1,7 @@
 [
   {
     "version": "0.0.1",
-    "date": "2026-02-18",
+    "date": "2026-02-19",
     "snapshot": {
       "$schema": "../../schemas/v2/units.schema.json",
       "entity_id": "lich",
