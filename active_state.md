@@ -29,5 +29,5 @@ Deploy verification completed — **GO** for deployment.
 
 - [x] Run `/deploy` to confirm build artifacts.
 - [x] Commit & push to trigger GitHub Pages deploy (`bb4b946`).
-- [ ] Commit & push (latest build artifacts).
+- [x] Commit & push (latest build artifacts).
 - [ ] Wait for "Early Access" launch (Feb 26th).
