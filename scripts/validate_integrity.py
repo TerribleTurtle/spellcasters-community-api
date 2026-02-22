@@ -7,17 +7,18 @@ This script performs strict validation on the project data:
 3. Reference Integrity: Ensures logical consistency (e.g., Upgrade tags exist).
 """
 
+import glob
 import json
 import os
-import glob
 import sys
 from pathlib import Path
-from PIL import Image
+
 import config
+from PIL import Image
 
 # Try to import modern JSON schema libraries
 try:
-    from jsonschema import validators, ValidationError
+    from jsonschema import ValidationError, validators
     from referencing import Registry, Resource
 except ImportError:
     print("CRITICAL: 'jsonschema' (>=4.18) or 'referencing' library not found.")
@@ -43,7 +44,7 @@ CACHE_FILE = ".asset_cache.json"
 
 def load_json(filepath):
     try:
-        with open(filepath, 'r', encoding='utf-8') as f:
+        with open(filepath, encoding="utf-8") as f:
             return json.load(f)
     except Exception as e:
         print(f"[FATAL] Could not load JSON {filepath}: {e}")
@@ -78,7 +79,7 @@ def create_registry(schemas_dir):
 
                     # Store relative key lookup (e.g., "definitions/core.schema.json")
                     # This helps map config keys to URIs
-                    rel_key = os.path.relpath(path, schemas_dir).replace(os.sep, '/')
+                    rel_key = os.path.relpath(path, schemas_dir).replace(os.sep, "/")
                     schemas_map[rel_key] = path.as_uri()
 
                 except Exception as e:
@@ -91,7 +92,7 @@ def load_cache():
     """Loads the asset validation cache."""
     if os.path.exists(CACHE_FILE):
         try:
-            with open(CACHE_FILE, 'r', encoding='utf-8') as f:
+            with open(CACHE_FILE, encoding="utf-8") as f:
                 return json.load(f)
         except Exception:
             return {}
@@ -101,7 +102,7 @@ def load_cache():
 def save_cache(cache):
     """Saves the asset validation cache."""
     try:
-        with open(CACHE_FILE, 'w', encoding='utf-8') as f:
+        with open(CACHE_FILE, "w", encoding="utf-8") as f:
             json.dump(cache, f, indent=0)
     except Exception as e:
         print(f"[WARN] Could not save cache: {e}")
@@ -148,8 +149,9 @@ def check_asset_exists(category, entity_id, is_required, cache):  # pylint: disa
         with Image.open(final_path) as img:
             width, height = img.size
             if width > MAX_IMG_DIMENSION or height > MAX_IMG_DIMENSION:
-                print(f"[WARN] Hygiene: {final_path} is {width}x{height} "
-                      f"(Max: {MAX_IMG_DIMENSION}x{MAX_IMG_DIMENSION})")
+                print(
+                    f"[WARN] Hygiene: {final_path} is {width}x{height} (Max: {MAX_IMG_DIMENSION}x{MAX_IMG_DIMENSION})"
+                )
                 warnings += 1
 
         # Update Cache only if valid (no warnings)
@@ -235,7 +237,7 @@ def validate_integrity():  # pylint: disable=too-many-locals, too-many-branches,
     cache = load_cache()
 
     print("Loading data into memory...")
-    for folder, schema_key in FOLDER_TO_SCHEMA.items():
+    for folder, _schema_key in FOLDER_TO_SCHEMA.items():
         if folder not in db:
             db[folder] = {}
 
@@ -257,7 +259,7 @@ def validate_integrity():  # pylint: disable=too-many-locals, too-many-branches,
     print("Building reference indices...")
     all_game_tags = set()
     if "units" in db:
-        for f, u in db["units"].items():
+        for _f, u in db["units"].items():
             for t in u.get("tags", []):
                 all_game_tags.add(t)
 

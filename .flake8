@@ -1,7 +1,0 @@
-[flake8]
-max-line-length = 120
-extend-ignore = E203
-exclude = .git,__pycache__,build,dist,venv,env,scripts/check_data_consistency.py,scripts/audit_v2.py
-per-file-ignores =
-    # Imported but unused in __init__.py is okay
-    __init__.py: F401

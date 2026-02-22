@@ -1,7 +1,8 @@
-import os
-import json
 import glob
+import json
+import os
 import sys
+
 import pytest
 
 # Ensure scripts module is found
@@ -17,7 +18,7 @@ def schema_loader():
     schemas = {}
     for name, filename in config.SCHEMA_FILES.items():
         path = os.path.join(config.SCHEMAS_DIR, filename)
-        with open(path, 'r', encoding='utf-8') as f:
+        with open(path, encoding="utf-8") as f:
             schemas[name] = json.load(f)
     return schemas
 
@@ -31,7 +32,7 @@ def data_loader():
         path_pattern = os.path.join(config.DATA_DIR, folder, "*.json")
         for filepath in glob.glob(path_pattern):
             try:
-                with open(filepath, 'r', encoding='utf-8') as f:
+                with open(filepath, encoding="utf-8") as f:
                     content = json.load(f)
                     # Add metadata for easier debugging in tests
                     content["_filepath"] = filepath

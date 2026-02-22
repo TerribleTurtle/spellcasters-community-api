@@ -1,8 +1,9 @@
 import json
 import os
-import sys
 import re
-from datetime import datetime, timezone
+import sys
+from datetime import UTC, datetime
+
 import config
 
 DATA_DIR = config.DATA_DIR
@@ -11,20 +12,21 @@ CHANGELOG_PATH = os.path.join(config.BASE_DIR, "CHANGELOG.md")
 
 
 def load_json(path):
-    with open(path, 'r', encoding='utf-8') as f:
+    with open(path, encoding="utf-8") as f:
         return json.load(f)
 
 
 def save_json(path, data):
-    with open(path, 'w', encoding='utf-8') as f:
+    with open(path, "w", encoding="utf-8") as f:
         json.dump(data, f, indent=2)
 
 
 def bump_version(current_version, bump_type):
-    parts = current_version.split('.')
+    parts = current_version.split(".")
     if len(parts) != 3:
-        print(f"Warning: Current version '{current_version}' doesn't follow SemVer X.Y.Z. "
-              "Resetting to 0.0.1 if failed.")
+        print(
+            f"Warning: Current version '{current_version}' doesn't follow SemVer X.Y.Z. Resetting to 0.0.1 if failed."
+        )
         try:
             major, minor, patch = map(int, parts)
         except ValueError:
@@ -32,14 +34,14 @@ def bump_version(current_version, bump_type):
     else:
         major, minor, patch = map(int, parts)
 
-    if bump_type == 'major':
+    if bump_type == "major":
         major += 1
         minor = 0
         patch = 0
-    elif bump_type == 'minor':
+    elif bump_type == "minor":
         minor += 1
         patch = 0
-    elif bump_type == 'patch':
+    elif bump_type == "patch":
         patch += 1
 
     return f"{major}.{minor}.{patch}"
@@ -55,7 +57,7 @@ def main():  # pylint: disable=too-many-statements
     print(f"Current Version: {current_version}")
 
     bump_type = input("Bump type (major/minor/patch): ").strip().lower()
-    if bump_type not in ['major', 'minor', 'patch']:
+    if bump_type not in ["major", "minor", "patch"]:
         print("Invalid bump type. Aborting.")
         sys.exit(1)
 
@@ -77,11 +79,7 @@ def main():  # pylint: disable=too-many-statements
     # 1. Update Game Config JSON
     data["version"] = new_version
 
-    new_entry = {
-        "version": new_version,
-        "date": datetime.now(timezone.utc).isoformat(),
-        "description": notes
-    }
+    new_entry = {"version": new_version, "date": datetime.now(UTC).isoformat(), "description": notes}
 
     if "changelog" not in data:
         data["changelog"] = []
@@ -97,21 +95,21 @@ def main():  # pylint: disable=too-many-statements
 
     content = ""
     if os.path.exists(CHANGELOG_PATH):
-        with open(CHANGELOG_PATH, 'r', encoding='utf-8') as f:
+        with open(CHANGELOG_PATH, encoding="utf-8") as f:
             content = f.read()
     else:
         content = "# Changelog\n\nAll notable changes to this project will be documented in this file.\n\n"
         print(f"[INFO] Creating new {CHANGELOG_PATH}")
 
     # Insert logic: Find first version header "## [", insert before it.
-    match = re.search(r'^## \[', content, re.MULTILINE)
+    match = re.search(r"^## \[", content, re.MULTILINE)
 
     new_content = ""
     if match:
-        new_content = content[:match.start()] + changelog_entry + content[match.start():]
+        new_content = content[: match.start()] + changelog_entry + content[match.start() :]
     else:
         # If no versions exist yet, append after header or at end
-        header_match = re.search(r'^# Changelog.*$', content, re.MULTILINE)
+        header_match = re.search(r"^# Changelog.*$", content, re.MULTILINE)
         if header_match:
             end_pos = header_match.end()
             # Ensure proper spacing
@@ -120,7 +118,7 @@ def main():  # pylint: disable=too-many-statements
             # Just append if structure is unrecognizable
             new_content = content + "\n\n" + changelog_entry
 
-    with open(CHANGELOG_PATH, 'w', encoding='utf-8') as f:
+    with open(CHANGELOG_PATH, "w", encoding="utf-8") as f:
         f.write(new_content)
 
     print(f"[OK] Updated {CHANGELOG_PATH}")

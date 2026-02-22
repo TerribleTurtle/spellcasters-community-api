@@ -1,7 +1,8 @@
+import json
 import os
 import sys
-import json
 from unittest.mock import patch
+
 import pytest
 
 # Ensure scripts module is found
@@ -40,19 +41,14 @@ def test_build_api_generates_files(build_output):  # pylint: disable=redefined-o
     """
     Verifies that the build generated the expected key files.
     """
-    expected_files = [
-        "all_data.json",
-        "units.json",
-        "spells.json",
-        "game_config.json"
-    ]
+    expected_files = ["all_data.json", "units.json", "spells.json", "game_config.json"]
 
     for fname in expected_files:
         path = os.path.join(build_output, fname)
         assert os.path.exists(path), f"Expected build artifact {fname} not found."
 
         # Verify valid JSON
-        with open(path, 'r', encoding='utf-8') as f:
+        with open(path, encoding="utf-8") as f:
             content = json.load(f)
             assert content, f"{fname} is empty"
 
@@ -62,7 +58,7 @@ def test_all_data_structure(build_output):  # pylint: disable=redefined-outer-na
     Verifies that all_data.json contains the aggregated keys.
     """
     all_data_path = os.path.join(build_output, "all_data.json")
-    with open(all_data_path, 'r', encoding='utf-8') as f:
+    with open(all_data_path, encoding="utf-8") as f:
         data = json.load(f)
 
     assert "build_info" in data

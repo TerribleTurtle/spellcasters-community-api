@@ -34,11 +34,11 @@ jobs:
           python -m pip install --upgrade pip
           pip install -r requirements.txt
 
-      - name: Run Linting (Flake8)
-        run: python -m flake8 scripts/ api/ tests/
+      - name: Run Linting (Ruff Check)
+        run: python -m ruff check scripts/ api/ tests/
 
-      - name: Run Linting (Pylint)
-        run: python -m pylint scripts/ api/ tests/
+      - name: Run Linting (Ruff Format)
+        run: python -m ruff format --check scripts/ api/ tests/
 
   test:
     name: Unit Tests
@@ -71,6 +71,7 @@ jobs:
         uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5 # v4.1.1
         with:
           ref: main
+          fetch-depth: 2
 
       - name: Set up Python
         uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065 # v5.1.0
@@ -80,6 +81,7 @@ jobs:
 
       - name: Install Dependencies
         run: |
+          python -m pip install --upgrade pip
           pip install -r requirements.txt
 
       - name: Run Integrity Validation
@@ -88,19 +90,34 @@ jobs:
       - name: Run Strictness Verification
         run: python scripts/verify_strictness.py
 
+      - name: Generate Patches
+        run: python scripts/generate_patch.py
+
       - name: Run Build Script
         run: python scripts/build_api.py
+
+      - name: Assemble Public Directory
+        run: |
+          mkdir public
+          cp -r api public/
+          cp index.html public/
+          cp style.css public/
+          cp -r assets public/
+          cp .nojekyll public/
+          cp V1_all_data.json public/
+          cp *.json public/ 2>/dev/null || true
 
       - name: Upload Artifact
         uses: actions/upload-pages-artifact@7b1f4a764d45c48632c6b24a0339c27f5614fb0b # v3.0.1/v4
         with:
-          path: "."
+          path: "./public"
 
   deploy:
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
     runs-on: ubuntu-latest
+    timeout-minutes: 5
     needs: build
     steps:
       - name: Deploy to GitHub Pages
