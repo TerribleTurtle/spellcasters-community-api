@@ -1,5 +1,37 @@
 [
   {
+    "id": "patch_0_0_4",
+    "version": "0.0.4",
+    "date": "2026-02-22T21:50:12.230578+00:00",
+    "type": "Content",
+    "changes": [
+      {
+        "name": "Astral Monk",
+        "category": "heroes",
+        "change_type": "edit",
+        "diffs": [
+          {
+            "kind": "E",
+            "path": [
+              "abilities",
+              "passive",
+              0,
+              "description"
+            ],
+            "lhs": "All Astral spells recharge faster.",
+            "rhs": "All Astral spells recharge 32% faster."
+          }
+        ],
+        "field": "entity",
+        "target_id": "astral_monk.json"
+      }
+    ],
+    "tags": [
+      "contributor:AnonJoker-cloud"
+    ],
+    "title": "Update 0.0.4"
+  },
+  {
     "id": "patch_0_0_3",
     "version": "0.0.3",
     "date": "2026-02-19",
