@@ -46,16 +46,30 @@ def save_json(path, data):
 
 def get_git_diff_files():
     """Gets the list of changed files from git.
-    If running in CI, this gets files changed using github BEFORE_SHA and AFTER_SHA.
-    Locally, it falls back to HEAD~1 and HEAD."""
+    Dynamically determines the BEFORE_SHA based on the last commit that
+    modified data/patches.json, to ensure no changes are missed if
+    multiple PRs merge concurrently."""
     try:
-        before_sha = os.environ.get("BEFORE_SHA")
         after_sha = os.environ.get("AFTER_SHA")
-
-        # Fallback if env vars missing or if BEFORE_SHA is the zero-hash (new branch creation)
-        if not before_sha or not after_sha or before_sha.startswith("0000000"):
-            before_sha = "HEAD~1"
+        if not after_sha:
             after_sha = "HEAD"
+
+        try:
+            # Find the last commit where data/patches.json was modified.
+            # This is our reliable "last processed state" baseline.
+            result_last_patch = subprocess.run(
+                ["git", "log", "-1", "--format=%H", "data/patches.json"], capture_output=True, text=True, check=True
+            )
+            before_sha = result_last_patch.stdout.strip()
+        except subprocess.CalledProcessError:
+            before_sha = None
+
+        # Fallback if something went wrong finding BEFORE_SHA
+        if not before_sha:
+            before_sha = os.environ.get("BEFORE_SHA")
+
+        if not before_sha or before_sha.startswith("0000000"):
+            before_sha = "HEAD~1"
 
         print(f"Comparing diff between {before_sha} and {after_sha}")
 
