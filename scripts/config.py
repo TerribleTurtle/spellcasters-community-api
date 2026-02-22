@@ -8,8 +8,8 @@ This module defines:
 - Helper functions (load_json)
 """
 
-import os
 import json
+import os
 
 # Base Directories
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -42,7 +42,7 @@ SCHEMA_FILES = {
     "titan": "titans.schema.json",
     "changelog_index": "changelog_index.schema.json",
     "changelog": "changelog.schema.json",
-    "timeline_entry": "timeline_entry.schema.json"
+    "timeline_entry": "timeline_entry.schema.json",
 }
 
 # Data Folder to Schema Mapping (Folder Name -> Schema Key)
@@ -52,7 +52,7 @@ FOLDER_TO_SCHEMA = {
     "titans": "titan",
     "heroes": "hero",
     "consumables": "consumable",
-    "upgrades": "upgrade"
+    "upgrades": "upgrade",
 }
 
 
@@ -67,7 +67,7 @@ def load_json(path):
         dict: The parsed JSON data, or None if loading failed.
     """
     try:
-        with open(path, 'r', encoding='utf-8') as f:
+        with open(path, encoding="utf-8") as f:
             return json.load(f)
     except Exception as e:
         print(f"[ERROR] Invalid JSON in {path}: {e}")

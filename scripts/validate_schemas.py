@@ -4,7 +4,7 @@ import sys
 from pathlib import Path
 
 try:
-    from jsonschema import validators, ValidationError
+    from jsonschema import ValidationError, validators
     from referencing import Registry, Resource
 except ImportError:
     print("CRITICAL: 'jsonschema' (>=4.18) or 'referencing' library not found.")
@@ -16,7 +16,7 @@ SCHEMAS_DIR = os.path.join(PROJECT_ROOT, "schemas", "v2")
 
 
 def load_json(filepath):
-    with open(filepath, 'r', encoding='utf-8') as f:
+    with open(filepath, encoding="utf-8") as f:
         return json.load(f)
 
 
@@ -112,7 +112,7 @@ def main():  # pylint: disable=too-many-locals
                 print(f"ERROR: {rel_path}: {e}")
                 errors.append(f"{rel_path}: Runtime Error - {e}")
 
-    print("\n" + "="*30)
+    print("\n" + "=" * 30)
     print(f"Summary: {passed} passed, {len(errors)} failed.")
 
     if errors:

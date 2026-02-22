@@ -1,7 +1,8 @@
-import sys
 import copy
-from jsonschema import validators, ValidationError
-from validate_integrity import create_registry, SCHEMAS_DIR
+import sys
+
+from jsonschema import ValidationError, validators
+from validate_integrity import SCHEMAS_DIR, create_registry
 
 
 def main():  # pylint: disable=too-many-locals
@@ -53,9 +54,9 @@ def main():  # pylint: disable=too-many-locals
             "passive": [],
             "primary": {"name": "Hit", "description": "Hits stuff", "damage": 10},
             "defense": {"name": "Block", "description": "Blocks stuff"},
-            "ultimate": {"name": "Win", "description": "Wins game"}
+            "ultimate": {"name": "Win", "description": "Wins game"},
         },
-        "last_modified": "2026-01-01T00:00:00Z"
+        "last_modified": "2026-01-01T00:00:00Z",
     }
 
     # Test 1: Baseline Validity

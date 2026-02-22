@@ -7,13 +7,12 @@ API response files in `api/v2/`. It generates:
 - A master all_data.json file
 """
 
+import glob
 import json
 import os
-import glob
 import shutil
 import sys
-
-from datetime import datetime, timezone
+from datetime import UTC, datetime
 
 import config
 from config import load_json
@@ -32,13 +31,11 @@ AGGREGATION_MAP = {
     "upgrades": "upgrades",
     "units": "units",
     "spells": "spells",
-    "titans": "titans"
+    "titans": "titans",
 }
 
 # Single File Copy
-SINGLE_FILES = {
-    "game_config": "game_config.json"
-}
+SINGLE_FILES = {"game_config": "game_config.json"}
 
 
 def ensure_output_dir():
@@ -79,7 +76,7 @@ def save_json(filename, data):
         data (dict | list): The data to serialize.
     """
     path = os.path.join(OUTPUT_DIR, filename)
-    with open(path, 'w', encoding='utf-8') as f:
+    with open(path, "w", encoding="utf-8") as f:
         json.dump(data, f, indent=2)
     print(f"[OK] Generated {path} ({len(data)} items)")
 
@@ -122,12 +119,7 @@ def main():  # pylint: disable=too-many-locals, too-many-branches, too-many-stat
     game_config = load_json(game_config_path)
     version = game_config.get("version", "0.0.1") if game_config else "0.0.1"
 
-    all_data = {
-        "build_info": {
-            "version": version,
-            "generated_at": datetime.now(timezone.utc).isoformat()
-        }
-    }
+    all_data = {"build_info": {"version": version, "generated_at": datetime.now(UTC).isoformat()}}
 
     errors = 0
 
@@ -188,7 +180,7 @@ def main():  # pylint: disable=too-many-locals, too-many-branches, too-many-stat
         "min_client_version": "0.0.0",
         "upgrade_required": False,
         "message": "Development Server Online",
-        "generated_at": datetime.now(timezone.utc).isoformat()
+        "generated_at": datetime.now(UTC).isoformat(),
     }
     save_json("status.json", status_data)
 
@@ -237,7 +229,7 @@ def build_patch_history():
         os.makedirs(dst_timeline, exist_ok=True)
 
         for entry in os.listdir(src_timeline):
-            if entry.startswith('.'):
+            if entry.startswith("."):
                 continue  # skip dotfiles like .gitkeep
             src_file = os.path.join(src_timeline, entry)
             dst_file = os.path.join(dst_timeline, entry)
@@ -245,7 +237,7 @@ def build_patch_history():
                 shutil.copy2(src_file, dst_file)
                 copied += 1
 
-        file_count = len([f for f in os.listdir(src_timeline) if not f.startswith('.')])
+        file_count = len([f for f in os.listdir(src_timeline) if not f.startswith(".")])
         print(f"[OK] Copied {file_count} timeline snapshots -> {dst_timeline}")
     else:
         print(f"[WARN] Timeline directory not found: {src_timeline}")
