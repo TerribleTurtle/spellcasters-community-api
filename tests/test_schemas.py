@@ -1,9 +1,10 @@
+import json
 import os
 import sys
-import json
 from pathlib import Path
-import pytest
+
 import jsonschema
+import pytest
 from jsonschema import validators
 
 # Try to import referencing, if not available use legacy (but this project has it)
@@ -19,7 +20,7 @@ import config  # noqa: E402
 
 
 def load_json(filepath):
-    with open(filepath, 'r', encoding='utf-8') as f:
+    with open(filepath, encoding="utf-8") as f:
         return json.load(f)
 
 
