@@ -58,7 +58,6 @@ jobs:
     name: Unit Tests
     runs-on: ubuntu-latest
     timeout-minutes: 5
-    needs: lint
     steps:
       - name: Checkout
         uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5 # v4.1.1
@@ -81,7 +80,7 @@ jobs:
     name: Build & Validate
     runs-on: ubuntu-latest
     timeout-minutes: 5
-    needs: lint
+    needs: [lint, test]
     steps:
       - name: Checkout
         uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5 # v4.1.1
