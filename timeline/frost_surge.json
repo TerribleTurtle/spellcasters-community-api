@@ -1,0 +1,22 @@
+[
+  {
+    "version": "0.0.4",
+    "date": "2026-02-22",
+    "snapshot": {
+      "$schema": "../../schemas/v2/spells.schema.json",
+      "entity_id": "frost_surge",
+      "name": "Frost Surge",
+      "category": "Spell",
+      "magic_school": "Wild",
+      "rank": "III",
+      "description": "Ice pulse that freezes enemies and infuses nearby allies.",
+      "image_required": true,
+      "tags": [],
+      "range": 24,
+      "charges": 1,
+      "recharge_time": 60,
+      "cast_time": 0,
+      "last_modified": "2026-02-22T22:41:32.786312Z"
+    }
+  }
+]
