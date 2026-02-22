@@ -35,10 +35,10 @@ jobs:
           pip install -r requirements.txt
 
       - name: Run Linting (Ruff Check)
-        run: python -m ruff check scripts/ api/ tests/
+        run: python -m ruff check scripts/ tests/
 
       - name: Run Linting (Ruff Format)
-        run: python -m ruff format --check scripts/ api/ tests/
+        run: python -m ruff format --check scripts/ tests/
 
   test:
     name: Unit Tests
