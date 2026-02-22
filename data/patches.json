@@ -3,7 +3,7 @@
     "id": "patch_0_0_4",
     "version": "0.0.4",
     "date": "2026-02-22T22:08:21.304740+00:00",
-    "type": "Content",
+    "type": "Hotfix",
     "changes": [
       {
         "name": "Astral Monk",
@@ -12,20 +12,13 @@
         "diffs": [
           {
             "kind": "E",
-            "path": [
-              "abilities",
-              "passive",
-              0,
-              "description"
-            ],
+            "path": ["abilities", "passive", 0, "description"],
             "lhs": "All Astral spells recharge faster.",
             "rhs": "All Astral spells recharge 32% faster."
           },
           {
             "kind": "E",
-            "path": [
-              "last_modified"
-            ],
+            "path": ["last_modified"],
             "lhs": "2026-02-18T23:16:34.612Z",
             "rhs": "2026-02-22T21:56:56.000Z"
           }
@@ -40,16 +33,12 @@
         "diffs": [
           {
             "kind": "N",
-            "path": [
-              "last_modified"
-            ],
+            "path": ["last_modified"],
             "rhs": "2026-02-22T22:08:21.303020Z"
           },
           {
             "kind": "E",
-            "path": [
-              "recharge_time"
-            ],
+            "path": ["recharge_time"],
             "lhs": 50,
             "rhs": 60
           }
@@ -58,11 +47,8 @@
         "target_id": "poison_grenade.json"
       }
     ],
-    "tags": [
-      "contributor:AnonJoker-cloud",
-      "contributor:TerribleTurtles"
-    ],
-    "title": "Update 0.0.4"
+    "tags": ["contributor:AnonJoker-cloud", "contributor:TerribleTurtles"],
+    "title": "Hotfix 0.0.4"
   },
   {
     "id": "patch_0_0_3",
@@ -81,22 +67,15 @@
               "kind": "N",
               "rhs": {
                 "multiplier": 1.75,
-                "target_types": [
-                  "Creature"
-                ]
+                "target_types": ["Creature"]
               }
             },
             "kind": "A",
-            "path": [
-              "mechanics",
-              "damage_modifiers"
-            ]
+            "path": ["mechanics", "damage_modifiers"]
           },
           {
             "kind": "N",
-            "path": [
-              "last_modified"
-            ],
+            "path": ["last_modified"],
             "rhs": "2026-02-19T05:08:34.477Z"
           }
         ],
@@ -111,32 +90,24 @@
           {
             "kind": "E",
             "lhs": "Fast projectile that deals medium Fire damage to a target.",
-            "path": [
-              "description"
-            ],
+            "path": ["description"],
             "rhs": "Fast projectile emitting a burning aura that deals medium Fire damage to a target."
           },
           {
             "kind": "E",
             "lhs": "2026-02-18T07:17:56.992Z",
-            "path": [
-              "last_modified"
-            ],
+            "path": ["last_modified"],
             "rhs": "2026-02-19T05:10:47.465Z"
           },
           {
             "kind": "E",
             "lhs": 0,
-            "path": [
-              "cast_time"
-            ],
+            "path": ["cast_time"],
             "rhs": 0.5
           },
           {
             "kind": "N",
-            "path": [
-              "mechanics"
-            ],
+            "path": ["mechanics"],
             "rhs": {}
           }
         ],
@@ -151,16 +122,12 @@
           {
             "kind": "E",
             "lhs": "Massive projectile that deals heavy damage on impact.",
-            "path": [
-              "description"
-            ],
+            "path": ["description"],
             "rhs": "Massive projectile emitting a damaging aura that deals heavy damage on impact."
           },
           {
             "kind": "N",
-            "path": [
-              "last_modified"
-            ],
+            "path": ["last_modified"],
             "rhs": "2026-02-19T05:11:27.677Z"
           }
         ],
@@ -185,25 +152,18 @@
           {
             "kind": "E",
             "lhs": 5,
-            "path": [
-              "mechanics",
-              "waves"
-            ],
+            "path": ["mechanics", "waves"],
             "rhs": 7
           },
           {
             "kind": "E",
             "lhs": 14,
-            "path": [
-              "damage"
-            ],
+            "path": ["damage"],
             "rhs": 10
           },
           {
             "kind": "N",
-            "path": [
-              "last_modified"
-            ],
+            "path": ["last_modified"],
             "rhs": "2026-02-19T02:01:14.345Z"
           }
         ],
@@ -218,20 +178,13 @@
           {
             "kind": "E",
             "lhs": "2026-02-18T07:21:06.730Z",
-            "path": [
-              "last_modified"
-            ],
+            "path": ["last_modified"],
             "rhs": "2026-02-19T02:04:38.362Z"
           },
           {
             "kind": "E",
             "lhs": "While on the ground, the Shaman recharges Wild incantations much faster.",
-            "path": [
-              "abilities",
-              "passive",
-              2,
-              "description"
-            ],
+            "path": ["abilities", "passive", 2, "description"],
             "rhs": "While on the ground, the Shaman recharges Wild spells and creatures much faster."
           }
         ],
@@ -246,17 +199,13 @@
           {
             "kind": "E",
             "lhs": "2026-02-18T07:17:45.455Z",
-            "path": [
-              "last_modified"
-            ],
+            "path": ["last_modified"],
             "rhs": "2026-02-19T02:12:48.686Z"
           },
           {
             "kind": "E",
             "lhs": 40,
-            "path": [
-              "damage"
-            ],
+            "path": ["damage"],
             "rhs": 32
           }
         ],
@@ -271,40 +220,25 @@
           {
             "kind": "E",
             "lhs": "2026-02-18T07:21:26.945Z",
-            "path": [
-              "last_modified"
-            ],
+            "path": ["last_modified"],
             "rhs": "2026-02-19T02:13:18.977Z"
           },
           {
             "kind": "E",
             "lhs": "All Holy spells recharge faster.",
-            "path": [
-              "abilities",
-              "passive",
-              1,
-              "description"
-            ],
+            "path": ["abilities", "passive", 1, "description"],
             "rhs": "All Holy incantations recharge faster."
           },
           {
             "kind": "E",
             "lhs": 23,
-            "path": [
-              "abilities",
-              "primary",
-              "damage"
-            ],
+            "path": ["abilities", "primary", "damage"],
             "rhs": 25
           },
           {
             "kind": "E",
             "lhs": "Creates a barrier that absorbs projectiles and reduces all damage. Absorbing Spellcaster projectiles refreshes Holy incantations.",
-            "path": [
-              "abilities",
-              "defense",
-              "description"
-            ],
+            "path": ["abilities", "defense", "description"],
             "rhs": "Creates a barrier that absorbs projectiles and reduces all damage. Absorbing Spellcaster projectiles partially refresh Holy incantations."
           }
         ],
@@ -319,18 +253,12 @@
           {
             "kind": "E",
             "lhs": "2026-02-18T07:18:42.253Z",
-            "path": [
-              "last_modified"
-            ],
+            "path": ["last_modified"],
             "rhs": "2026-02-19T02:14:50.854Z"
           },
           {
             "kind": "N",
-            "path": [
-              "abilities",
-              "defense",
-              "cooldown"
-            ],
+            "path": ["abilities", "defense", "cooldown"],
             "rhs": 5
           }
         ],
@@ -354,16 +282,12 @@
         "diffs": [
           {
             "kind": "N",
-            "path": [
-              "range"
-            ],
+            "path": ["range"],
             "rhs": 25
           },
           {
             "kind": "N",
-            "path": [
-              "last_modified"
-            ],
+            "path": ["last_modified"],
             "rhs": "2026-02-18T08:10:21.047Z"
           }
         ],
@@ -378,20 +302,13 @@
           {
             "kind": "E",
             "lhs": "2026-02-18T07:17:33.470Z",
-            "path": [
-              "last_modified"
-            ],
+            "path": ["last_modified"],
             "rhs": "2026-02-18T23:16:34.612Z"
           },
           {
             "kind": "E",
             "lhs": "All Astral incantations recharge faster.",
-            "path": [
-              "abilities",
-              "passive",
-              0,
-              "description"
-            ],
+            "path": ["abilities", "passive", 0, "description"],
             "rhs": "All Astral spells recharge faster."
           }
         ],
@@ -406,19 +323,12 @@
           {
             "kind": "E",
             "lhs": 0.3,
-            "path": [
-              "mechanics",
-              "bonus_damage",
-              0,
-              "value"
-            ],
+            "path": ["mechanics", "bonus_damage", 0, "value"],
             "rhs": 1.3
           },
           {
             "kind": "N",
-            "path": [
-              "last_modified"
-            ],
+            "path": ["last_modified"],
             "rhs": "2026-02-19T00:40:45.876Z"
           }
         ],

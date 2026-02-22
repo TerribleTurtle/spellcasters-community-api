@@ -3,7 +3,7 @@
     "id": "patch_0_0_4",
     "version": "0.0.4",
     "date": "2026-02-22T22:08:21.304740+00:00",
-    "type": "Content",
+    "type": "Hotfix",
     "changes": [
       {
         "name": "Astral Monk",
@@ -62,7 +62,7 @@
       "contributor:AnonJoker-cloud",
       "contributor:TerribleTurtles"
     ],
-    "title": "Update 0.0.4"
+    "title": "Hotfix 0.0.4"
   },
   {
     "id": "patch_0_0_3",
