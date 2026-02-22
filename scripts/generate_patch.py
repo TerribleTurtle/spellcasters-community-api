@@ -118,9 +118,7 @@ def get_commit_author():
     """
     try:
         # Get the full commit body to look for Co-authored-by trailers
-        result = subprocess.run(
-            ["git", "log", "-1", "--format=%b"], capture_output=True, text=True, check=True
-        )
+        result = subprocess.run(["git", "log", "-1", "--format=%b"], capture_output=True, text=True, check=True)
         body = result.stdout.strip()
 
         # Parse Co-authored-by lines: "Co-authored-by: Name <email>"
@@ -134,9 +132,7 @@ def get_commit_author():
             return human_authors[0]
 
         # Fallback: use the commit author (for non-squash-merge commits)
-        result = subprocess.run(
-            ["git", "log", "-1", "--format=%an"], capture_output=True, text=True, check=True
-        )
+        result = subprocess.run(["git", "log", "-1", "--format=%an"], capture_output=True, text=True, check=True)
         return result.stdout.strip()
     except subprocess.CalledProcessError:
         return None
