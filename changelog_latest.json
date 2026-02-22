@@ -1,7 +1,7 @@
 {
   "id": "patch_0_0_4",
   "version": "0.0.4",
-  "date": "2026-02-22T22:41:32.808265+00:00",
+  "date": "2026-02-22T23:04:23.958478+00:00",
   "type": "Hotfix",
   "changes": [
     {
@@ -233,6 +233,59 @@
       ],
       "field": "entity",
       "target_id": "stone_behemoth.json"
+    },
+    {
+      "name": "Swamp Witch",
+      "category": "heroes",
+      "change_type": "edit",
+      "diffs": [
+        {
+          "kind": "E",
+          "path": [
+            "last_modified"
+          ],
+          "lhs": "2026-02-18T07:20:50.326Z",
+          "rhs": "2026-02-22T23:04:23.954069Z"
+        },
+        {
+          "kind": "E",
+          "path": [
+            "abilities",
+            "ultimate",
+            "description"
+          ],
+          "lhs": "Unleashes a demonic form that boosts all spell damage by 150%. Poison Strike fires 2 extra projectiles that deal +285% damage.",
+          "rhs": "Unleashes a demonic form that boosts all spell damage by +50%. Poison Strike fires 2 extra projectiles that deal +185% damage."
+        },
+        {
+          "kind": "E",
+          "path": [
+            "abilities",
+            "ultimate",
+            "mechanics",
+            "damage_modifiers",
+            0,
+            "multiplier"
+          ],
+          "lhs": 2.5,
+          "rhs": 1.5
+        },
+        {
+          "kind": "E",
+          "path": [
+            "abilities",
+            "ultimate",
+            "mechanics",
+            "features",
+            0,
+            "description"
+          ],
+          "lhs": "Poison Strike gains 2 extra projectiles dealing +285% damage.",
+          "rhs": "Poison Strike gains 2 extra projectiles dealing +185% damage."
+        }
+      ],
+      "field": "entity",
+      "target_id": "swamp_witch.json"
     }
   ],
   "tags": [
