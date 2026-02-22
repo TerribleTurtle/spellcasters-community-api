@@ -1,7 +1,7 @@
 {
   "build_info": {
-    "version": "0.0.1",
-    "generated_at": "2026-02-18T23:36:49.793841+00:00"
+    "version": "0.0.4",
+    "generated_at": "2026-02-22T21:26:10.520475+00:00"
   },
   "heroes": [
     {
@@ -119,20 +119,19 @@
       }
     },
     {
+      "$schema": "../../schemas/v2/heroes.schema.json",
       "entity_id": "iron_sorcerer",
       "name": "Iron Sorcerer",
-      "category": "Spellcaster",
-      "description": "A Conqueror who dominates the battlefield with heavy melee strikes, protective runes, and a metal vortex.",
-      "image_required": true,
-      "tags": [],
-      "health": 450,
-      "movement_type": "Ground",
-      "population": 0,
-      "last_modified": "2026-02-18T07:18:42.253Z",
-      "$schema": "../../schemas/v2/heroes.schema.json",
       "class": "Conqueror",
-      "difficulty": 1,
+      "category": "Spellcaster",
       "abilities": {
+        "defense": {
+          "name": "Rune Shield",
+          "charges": 4,
+          "cooldown": 5,
+          "description": "Raise a shield that protects allies and reflects attacks.",
+          "duration": 0.5
+        },
         "passive": [
           {
             "name": "Scourge of War",
@@ -149,40 +148,41 @@
         ],
         "primary": {
           "name": "Twin Strike",
-          "description": "Strike with powerful mid-range attacks that interrupt enemies.",
           "damage": 35,
+          "description": "Strike with powerful mid-range attacks that interrupt enemies.",
           "mechanics": {
             "cleave": true
           }
-        },
-        "defense": {
-          "name": "Rune Shield",
-          "description": "Raise a shield that protects allies and reflects attacks.",
-          "charges": 4,
-          "duration": 0.5
         },
         "ultimate": {
           "name": "Iron Tempest",
           "description": "Unleash a metal vortex that deals heavy damage, staggers/knocks back all creatures inside.",
           "duration": 3
         }
-      }
-    },
-    {
-      "entity_id": "mystic_scribe",
-      "name": "Mystic Scribe",
-      "category": "Spellcaster",
-      "description": "An Enchanter who uses magical ink to damage enemies, heal allies, and create protective barriers.",
+      },
+      "description": "A Conqueror who dominates the battlefield with heavy melee strikes, protective runes, and a metal vortex.",
+      "difficulty": 1,
+      "health": 450,
       "image_required": true,
-      "tags": [],
-      "health": 440,
       "movement_type": "Ground",
       "population": 0,
-      "last_modified": "2026-02-18T07:21:26.945Z",
+      "tags": [],
+      "last_modified": "2026-02-19T02:14:50.854Z"
+    },
+    {
       "$schema": "../../schemas/v2/heroes.schema.json",
+      "entity_id": "mystic_scribe",
+      "name": "Mystic Scribe",
       "class": "Enchanter",
-      "difficulty": 2,
+      "category": "Spellcaster",
       "abilities": {
+        "defense": {
+          "name": "Scroll Barrier",
+          "charges": 1,
+          "cooldown": 10,
+          "description": "Creates a barrier that absorbs projectiles and reduces all damage. Absorbing Spellcaster projectiles partially refresh Holy incantations.",
+          "duration": 2
+        },
         "passive": [
           {
             "name": "Echo of Mercy",
@@ -190,7 +190,7 @@
           },
           {
             "name": "Holy Magic Mastery",
-            "description": "All Holy spells recharge faster."
+            "description": "All Holy incantations recharge faster."
           },
           {
             "name": "Thousand Favors",
@@ -199,47 +199,47 @@
         ],
         "primary": {
           "name": "Brush Strike",
+          "damage": 25,
           "description": "Strike with enchanted ink to damage enemies and boost allies\u2019 Max HP.",
-          "damage": 23,
           "mechanics": {
+            "cleave": true,
             "features": [
               {
                 "name": "Knockback",
                 "description": "Knocks back small units."
               }
-            ],
-            "cleave": true
+            ]
           }
-        },
-        "defense": {
-          "name": "Scroll Barrier",
-          "description": "Creates a barrier that absorbs projectiles and reduces all damage. Absorbing Spellcaster projectiles refreshes Holy incantations.",
-          "charges": 1,
-          "duration": 2,
-          "cooldown": 10
         },
         "ultimate": {
           "name": "Seal of Immortality",
           "description": "Mark the ground with a massive healing seal.",
           "duration": 30
         }
-      }
-    },
-    {
-      "entity_id": "stone_shaman",
-      "name": "Stone Shaman",
-      "category": "Spellcaster",
-      "description": "An Enchanter who channels the power of earth to deal heavy damage, interrupt spellcasters, and fortify buildings.",
+      },
+      "description": "An Enchanter who uses magical ink to damage enemies, heal allies, and create protective barriers.",
+      "difficulty": 2,
+      "health": 440,
       "image_required": true,
-      "tags": [],
-      "health": 600,
       "movement_type": "Ground",
       "population": 0,
-      "last_modified": "2026-02-18T07:21:06.730Z",
+      "tags": [],
+      "last_modified": "2026-02-19T02:13:18.977Z"
+    },
+    {
       "$schema": "../../schemas/v2/heroes.schema.json",
+      "entity_id": "stone_shaman",
+      "name": "Stone Shaman",
       "class": "Enchanter",
-      "difficulty": 2,
+      "category": "Spellcaster",
       "abilities": {
+        "defense": {
+          "name": "Wind Shield",
+          "charges": 1,
+          "cooldown": 13,
+          "description": "Conjure a protective wind barrier that deals damage on contact.",
+          "duration": 3
+        },
         "passive": [
           {
             "name": "Mountain\u2019s Favor",
@@ -251,49 +251,50 @@
           },
           {
             "name": "Pathfinder",
-            "description": "While on the ground, the Shaman recharges Wild incantations much faster."
+            "description": "While on the ground, the Shaman recharges Wild spells and creatures much faster."
           }
         ],
         "primary": {
           "name": "Mountain Staff",
-          "description": "Swing your catalyst to deal heavy melee damage and interrupt enemies.",
           "damage": 42,
+          "description": "Swing your catalyst to deal heavy melee damage and interrupt enemies.",
           "mechanics": {
+            "aura": [
+              {
+                "name": "Building Enchant",
+                "description": "Attacks enchant ally buildings, enabling them to emit a healing aura.",
+                "effect": "Heal",
+                "interval": 1,
+                "radius": 8,
+                "target_types": [
+                  "Ally"
+                ],
+                "value": 7
+              }
+            ],
+            "cleave": true,
             "features": [
               {
                 "name": "Interruption",
                 "description": "Successfully hitting a Spellcaster twice interrupts their actions."
               }
-            ],
-            "cleave": true,
-            "aura": [
-              {
-                "name": "Building Enchant",
-                "description": "Attacks enchant ally buildings, enabling them to emit a healing aura.",
-                "radius": 8,
-                "value": 7,
-                "effect": "Heal",
-                "interval": 1,
-                "target_types": [
-                  "Ally"
-                ]
-              }
             ]
           }
-        },
-        "defense": {
-          "name": "Wind Shield",
-          "description": "Conjure a protective wind barrier that deals damage on contact.",
-          "charges": 1,
-          "duration": 3,
-          "cooldown": 13
         },
         "ultimate": {
           "name": "Wall of Kamazad",
           "description": "Deploys a colossal wall capable of blocking Titans. The wall has 15000 Health and deals % damage to enemies in its path.",
           "health": 15000
         }
-      }
+      },
+      "description": "An Enchanter who channels the power of earth to deal heavy damage, interrupt spellcasters, and fortify buildings.",
+      "difficulty": 2,
+      "health": 600,
+      "image_required": true,
+      "movement_type": "Ground",
+      "population": 0,
+      "tags": [],
+      "last_modified": "2026-02-19T02:04:38.362Z"
     },
     {
       "entity_id": "swamp_witch",
@@ -909,11 +910,15 @@
       "entity_id": "ogre",
       "name": "Ogre",
       "category": "Creature",
-      "magic_school": "War",
-      "rank": "III",
+      "attack_interval": 1,
+      "cast_time": 0,
+      "charges": 1,
+      "damage": 70,
       "description": "Mighty warrior that crushes target areas with a hammer.",
+      "dps": 70,
+      "health": 2300,
       "image_required": true,
-      "tags": [],
+      "magic_school": "War",
       "mechanics": {
         "damage_modifiers": [
           {
@@ -921,19 +926,22 @@
             "target_types": [
               "Building"
             ]
+          },
+          {
+            "multiplier": 1.75,
+            "target_types": [
+              "Creature"
+            ]
           }
         ]
       },
-      "damage": 70,
-      "health": 2300,
       "movement_speed": 3,
       "movement_type": "Ground",
-      "dps": 70,
-      "attack_interval": 1,
-      "charges": 1,
+      "population": 0,
+      "rank": "III",
       "recharge_time": 50,
-      "cast_time": 0,
-      "population": 0
+      "tags": [],
+      "last_modified": "2026-02-19T05:08:34.477Z"
     },
     {
       "$schema": "../../schemas/v2/units.schema.json",
@@ -1177,53 +1185,61 @@
       "entity_id": "astral_nova",
       "name": "Astral Nova",
       "category": "Spell",
-      "magic_school": "Astral",
-      "rank": "IV",
-      "description": "Massive projectile that deals heavy damage on impact.",
-      "image_required": true,
-      "tags": [],
-      "damage": 4200,
-      "range": 80,
+      "cast_time": 0,
       "charges": 1,
+      "damage": 4200,
+      "description": "Massive projectile emitting a damaging aura that deals heavy damage on impact.",
+      "image_required": true,
+      "magic_school": "Astral",
+      "range": 80,
+      "rank": "IV",
       "recharge_time": 120,
-      "cast_time": 0
+      "tags": [],
+      "last_modified": "2026-02-19T05:11:27.677Z"
     },
     {
+      "$schema": "../../schemas/v2/spells.schema.json",
       "entity_id": "astral_shot",
       "name": "Astral Shot",
-      "description": "Rapid burst of projectiles.",
       "category": "Spell",
+      "cast_time": 0,
+      "charges": 1,
+      "damage": 32,
+      "description": "Rapid burst of projectiles.",
       "image_required": true,
-      "tags": [
-        "homing"
-      ],
+      "magic_school": "Astral",
       "mechanics": {
         "waves": 4
       },
-      "last_modified": "2026-02-18T07:17:45.455Z",
-      "$schema": "../../schemas/v2/spells.schema.json",
-      "magic_school": "Astral",
-      "rank": "II",
-      "damage": 40,
       "range": 80,
-      "charges": 1,
+      "rank": "II",
       "recharge_time": 25,
-      "cast_time": 0
+      "tags": [
+        "homing"
+      ],
+      "last_modified": "2026-02-19T02:12:48.686Z"
     },
     {
       "$schema": "../../schemas/v2/spells.schema.json",
       "entity_id": "earthquake",
       "name": "Earthquake",
       "category": "Spell",
-      "magic_school": "Wild",
-      "rank": "III",
+      "cast_time": 0,
+      "charges": 1,
+      "damage": 76,
       "description": "Ground shockwave that damages structures and staggers creatures significantly. Damage is split into 3 waves.",
       "image_required": true,
-      "tags": [],
-      "damage": 76,
+      "magic_school": "Wild",
       "mechanics": {
-        "waves": 3,
-        "stagger_modifier": true,
+        "bonus_damage": [
+          {
+            "target_types": [
+              "Building"
+            ],
+            "unit": "percent_max_hp",
+            "value": 1.3
+          }
+        ],
         "damage_modifiers": [
           {
             "multiplier": 0,
@@ -1238,39 +1254,34 @@
             ]
           }
         ],
-        "bonus_damage": [
-          {
-            "unit": "percent_max_hp",
-            "value": 0.3,
-            "target_types": [
-              "Building"
-            ]
-          }
-        ]
+        "stagger_modifier": true,
+        "waves": 3
       },
       "range": 35,
-      "charges": 1,
+      "rank": "III",
       "recharge_time": 50,
-      "cast_time": 0
+      "tags": [],
+      "last_modified": "2026-02-19T00:40:45.876Z"
     },
     {
+      "$schema": "../../schemas/v2/spells.schema.json",
       "entity_id": "fire_ball",
       "name": "Fire Ball",
-      "description": "Fast projectile that deals medium Fire damage to a target.",
       "category": "Spell",
+      "cast_time": 0.5,
+      "charges": 1,
+      "damage": 530,
+      "description": "Fast projectile emitting a burning aura that deals medium Fire damage to a target.",
       "image_required": true,
+      "magic_school": "Elemental",
+      "mechanics": {},
+      "range": 80,
+      "rank": "III",
+      "recharge_time": 50,
       "tags": [
         "homing"
       ],
-      "last_modified": "2026-02-18T07:17:56.992Z",
-      "$schema": "../../schemas/v2/spells.schema.json",
-      "magic_school": "Elemental",
-      "rank": "III",
-      "damage": 530,
-      "range": 80,
-      "charges": 1,
-      "recharge_time": 50,
-      "cast_time": 0
+      "last_modified": "2026-02-19T05:10:47.465Z"
     },
     {
       "$schema": "../../schemas/v2/spells.schema.json",
@@ -1447,20 +1458,21 @@
       "entity_id": "thunder_ray",
       "name": "Thunder Ray",
       "category": "Spell",
-      "magic_school": "Technomancy",
-      "rank": "I",
+      "cast_time": 0,
+      "charges": 1,
+      "damage": 10,
       "description": "Focused beam that deals low Lightning damage.",
       "image_required": true,
-      "tags": [],
+      "magic_school": "Technomancy",
       "mechanics": {
-        "waves": 5,
-        "interval": 1
+        "interval": 1,
+        "waves": 7
       },
-      "damage": 14,
       "range": 45,
-      "charges": 1,
+      "rank": "I",
       "recharge_time": 5,
-      "cast_time": 0
+      "tags": [],
+      "last_modified": "2026-02-19T02:01:14.345Z"
     }
   ],
   "titans": [
@@ -1551,7 +1563,7 @@
   ],
   "game_config": {
     "name": "Spellcasters Chronicles",
-    "version": "0.0.1",
+    "version": "0.0.4",
     "developer": "Quantic Dream",
     "publisher": "Quantic Dream",
     "genre": "3v3 Deckbuilder RTS MOBA",
@@ -1570,5 +1582,372 @@
       }
     ],
     "$schema": "../schemas/v2/game_config.schema.json"
-  }
+  },
+  "patches": [
+    {
+      "id": "patch_0_0_3",
+      "version": "0.0.3",
+      "date": "2026-02-19",
+      "type": "Hotfix",
+      "changes": [
+        {
+          "name": "Ogre",
+          "category": "units",
+          "change_type": "edit",
+          "diffs": [
+            {
+              "index": 1,
+              "item": {
+                "kind": "N",
+                "rhs": {
+                  "multiplier": 1.75,
+                  "target_types": [
+                    "Creature"
+                  ]
+                }
+              },
+              "kind": "A",
+              "path": [
+                "mechanics",
+                "damage_modifiers"
+              ]
+            },
+            {
+              "kind": "N",
+              "path": [
+                "last_modified"
+              ],
+              "rhs": "2026-02-19T05:08:34.477Z"
+            }
+          ],
+          "field": "entity",
+          "target_id": "ogre.json"
+        },
+        {
+          "name": "Fire Ball",
+          "category": "spells",
+          "change_type": "edit",
+          "diffs": [
+            {
+              "kind": "E",
+              "lhs": "Fast projectile that deals medium Fire damage to a target.",
+              "path": [
+                "description"
+              ],
+              "rhs": "Fast projectile emitting a burning aura that deals medium Fire damage to a target."
+            },
+            {
+              "kind": "E",
+              "lhs": "2026-02-18T07:17:56.992Z",
+              "path": [
+                "last_modified"
+              ],
+              "rhs": "2026-02-19T05:10:47.465Z"
+            },
+            {
+              "kind": "E",
+              "lhs": 0,
+              "path": [
+                "cast_time"
+              ],
+              "rhs": 0.5
+            },
+            {
+              "kind": "N",
+              "path": [
+                "mechanics"
+              ],
+              "rhs": {}
+            }
+          ],
+          "field": "entity",
+          "target_id": "fire_ball.json"
+        },
+        {
+          "name": "Astral Nova",
+          "category": "spells",
+          "change_type": "edit",
+          "diffs": [
+            {
+              "kind": "E",
+              "lhs": "Massive projectile that deals heavy damage on impact.",
+              "path": [
+                "description"
+              ],
+              "rhs": "Massive projectile emitting a damaging aura that deals heavy damage on impact."
+            },
+            {
+              "kind": "N",
+              "path": [
+                "last_modified"
+              ],
+              "rhs": "2026-02-19T05:11:27.677Z"
+            }
+          ],
+          "field": "entity",
+          "target_id": "astral_nova.json"
+        }
+      ],
+      "tags": [],
+      "title": "Hotfix 0.0.3"
+    },
+    {
+      "id": "patch_0_0_2",
+      "version": "0.0.2",
+      "date": "2026-02-19",
+      "type": "Hotfix",
+      "changes": [
+        {
+          "name": "Thunder Ray",
+          "category": "spells",
+          "change_type": "edit",
+          "diffs": [
+            {
+              "kind": "E",
+              "lhs": 5,
+              "path": [
+                "mechanics",
+                "waves"
+              ],
+              "rhs": 7
+            },
+            {
+              "kind": "E",
+              "lhs": 14,
+              "path": [
+                "damage"
+              ],
+              "rhs": 10
+            },
+            {
+              "kind": "N",
+              "path": [
+                "last_modified"
+              ],
+              "rhs": "2026-02-19T02:01:14.345Z"
+            }
+          ],
+          "field": "entity",
+          "target_id": "thunder_ray.json"
+        },
+        {
+          "name": "Stone Shaman",
+          "category": "heroes",
+          "change_type": "edit",
+          "diffs": [
+            {
+              "kind": "E",
+              "lhs": "2026-02-18T07:21:06.730Z",
+              "path": [
+                "last_modified"
+              ],
+              "rhs": "2026-02-19T02:04:38.362Z"
+            },
+            {
+              "kind": "E",
+              "lhs": "While on the ground, the Shaman recharges Wild incantations much faster.",
+              "path": [
+                "abilities",
+                "passive",
+                2,
+                "description"
+              ],
+              "rhs": "While on the ground, the Shaman recharges Wild spells and creatures much faster."
+            }
+          ],
+          "field": "entity",
+          "target_id": "stone_shaman.json"
+        },
+        {
+          "name": "Astral Shot",
+          "category": "spells",
+          "change_type": "edit",
+          "diffs": [
+            {
+              "kind": "E",
+              "lhs": "2026-02-18T07:17:45.455Z",
+              "path": [
+                "last_modified"
+              ],
+              "rhs": "2026-02-19T02:12:48.686Z"
+            },
+            {
+              "kind": "E",
+              "lhs": 40,
+              "path": [
+                "damage"
+              ],
+              "rhs": 32
+            }
+          ],
+          "field": "entity",
+          "target_id": "astral_shot.json"
+        },
+        {
+          "name": "Mystic Scribe",
+          "category": "heroes",
+          "change_type": "edit",
+          "diffs": [
+            {
+              "kind": "E",
+              "lhs": "2026-02-18T07:21:26.945Z",
+              "path": [
+                "last_modified"
+              ],
+              "rhs": "2026-02-19T02:13:18.977Z"
+            },
+            {
+              "kind": "E",
+              "lhs": "All Holy spells recharge faster.",
+              "path": [
+                "abilities",
+                "passive",
+                1,
+                "description"
+              ],
+              "rhs": "All Holy incantations recharge faster."
+            },
+            {
+              "kind": "E",
+              "lhs": 23,
+              "path": [
+                "abilities",
+                "primary",
+                "damage"
+              ],
+              "rhs": 25
+            },
+            {
+              "kind": "E",
+              "lhs": "Creates a barrier that absorbs projectiles and reduces all damage. Absorbing Spellcaster projectiles refreshes Holy incantations.",
+              "path": [
+                "abilities",
+                "defense",
+                "description"
+              ],
+              "rhs": "Creates a barrier that absorbs projectiles and reduces all damage. Absorbing Spellcaster projectiles partially refresh Holy incantations."
+            }
+          ],
+          "field": "entity",
+          "target_id": "mystic_scribe.json"
+        },
+        {
+          "name": "Iron Sorcerer",
+          "category": "heroes",
+          "change_type": "edit",
+          "diffs": [
+            {
+              "kind": "E",
+              "lhs": "2026-02-18T07:18:42.253Z",
+              "path": [
+                "last_modified"
+              ],
+              "rhs": "2026-02-19T02:14:50.854Z"
+            },
+            {
+              "kind": "N",
+              "path": [
+                "abilities",
+                "defense",
+                "cooldown"
+              ],
+              "rhs": 5
+            }
+          ],
+          "field": "entity",
+          "target_id": "iron_sorcerer.json"
+        }
+      ],
+      "tags": [],
+      "title": "Hotfix 0.0.2"
+    },
+    {
+      "id": "patch_0_0_1",
+      "version": "0.0.1",
+      "date": "2026-02-19",
+      "type": "Hotfix",
+      "changes": [
+        {
+          "name": "Lich",
+          "category": "units",
+          "change_type": "edit",
+          "diffs": [
+            {
+              "kind": "N",
+              "path": [
+                "range"
+              ],
+              "rhs": 25
+            },
+            {
+              "kind": "N",
+              "path": [
+                "last_modified"
+              ],
+              "rhs": "2026-02-18T08:10:21.047Z"
+            }
+          ],
+          "field": "entity",
+          "target_id": "lich.json"
+        },
+        {
+          "name": "Astral Monk",
+          "category": "heroes",
+          "change_type": "edit",
+          "diffs": [
+            {
+              "kind": "E",
+              "lhs": "2026-02-18T07:17:33.470Z",
+              "path": [
+                "last_modified"
+              ],
+              "rhs": "2026-02-18T23:16:34.612Z"
+            },
+            {
+              "kind": "E",
+              "lhs": "All Astral incantations recharge faster.",
+              "path": [
+                "abilities",
+                "passive",
+                0,
+                "description"
+              ],
+              "rhs": "All Astral spells recharge faster."
+            }
+          ],
+          "field": "entity",
+          "target_id": "astral_monk.json"
+        },
+        {
+          "name": "Earthquake",
+          "category": "spells",
+          "change_type": "edit",
+          "diffs": [
+            {
+              "kind": "E",
+              "lhs": 0.3,
+              "path": [
+                "mechanics",
+                "bonus_damage",
+                0,
+                "value"
+              ],
+              "rhs": 1.3
+            },
+            {
+              "kind": "N",
+              "path": [
+                "last_modified"
+              ],
+              "rhs": "2026-02-19T00:40:45.876Z"
+            }
+          ],
+          "field": "entity",
+          "target_id": "earthquake.json"
+        }
+      ],
+      "tags": [],
+      "title": "Hotfix 0.0.1"
+    }
+  ]
 }

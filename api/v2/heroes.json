@@ -114,20 +114,19 @@
     }
   },
   {
+    "$schema": "../../schemas/v2/heroes.schema.json",
     "entity_id": "iron_sorcerer",
     "name": "Iron Sorcerer",
-    "category": "Spellcaster",
-    "description": "A Conqueror who dominates the battlefield with heavy melee strikes, protective runes, and a metal vortex.",
-    "image_required": true,
-    "tags": [],
-    "health": 450,
-    "movement_type": "Ground",
-    "population": 0,
-    "last_modified": "2026-02-18T07:18:42.253Z",
-    "$schema": "../../schemas/v2/heroes.schema.json",
     "class": "Conqueror",
-    "difficulty": 1,
+    "category": "Spellcaster",
     "abilities": {
+      "defense": {
+        "name": "Rune Shield",
+        "charges": 4,
+        "cooldown": 5,
+        "description": "Raise a shield that protects allies and reflects attacks.",
+        "duration": 0.5
+      },
       "passive": [
         {
           "name": "Scourge of War",
@@ -144,40 +143,41 @@
       ],
       "primary": {
         "name": "Twin Strike",
-        "description": "Strike with powerful mid-range attacks that interrupt enemies.",
         "damage": 35,
+        "description": "Strike with powerful mid-range attacks that interrupt enemies.",
         "mechanics": {
           "cleave": true
         }
-      },
-      "defense": {
-        "name": "Rune Shield",
-        "description": "Raise a shield that protects allies and reflects attacks.",
-        "charges": 4,
-        "duration": 0.5
       },
       "ultimate": {
         "name": "Iron Tempest",
         "description": "Unleash a metal vortex that deals heavy damage, staggers/knocks back all creatures inside.",
         "duration": 3
       }
-    }
-  },
-  {
-    "entity_id": "mystic_scribe",
-    "name": "Mystic Scribe",
-    "category": "Spellcaster",
-    "description": "An Enchanter who uses magical ink to damage enemies, heal allies, and create protective barriers.",
+    },
+    "description": "A Conqueror who dominates the battlefield with heavy melee strikes, protective runes, and a metal vortex.",
+    "difficulty": 1,
+    "health": 450,
     "image_required": true,
-    "tags": [],
-    "health": 440,
     "movement_type": "Ground",
     "population": 0,
-    "last_modified": "2026-02-18T07:21:26.945Z",
+    "tags": [],
+    "last_modified": "2026-02-19T02:14:50.854Z"
+  },
+  {
     "$schema": "../../schemas/v2/heroes.schema.json",
+    "entity_id": "mystic_scribe",
+    "name": "Mystic Scribe",
     "class": "Enchanter",
-    "difficulty": 2,
+    "category": "Spellcaster",
     "abilities": {
+      "defense": {
+        "name": "Scroll Barrier",
+        "charges": 1,
+        "cooldown": 10,
+        "description": "Creates a barrier that absorbs projectiles and reduces all damage. Absorbing Spellcaster projectiles partially refresh Holy incantations.",
+        "duration": 2
+      },
       "passive": [
         {
           "name": "Echo of Mercy",
@@ -185,7 +185,7 @@
         },
         {
           "name": "Holy Magic Mastery",
-          "description": "All Holy spells recharge faster."
+          "description": "All Holy incantations recharge faster."
         },
         {
           "name": "Thousand Favors",
@@ -194,47 +194,47 @@
       ],
       "primary": {
         "name": "Brush Strike",
+        "damage": 25,
         "description": "Strike with enchanted ink to damage enemies and boost allies\u2019 Max HP.",
-        "damage": 23,
         "mechanics": {
+          "cleave": true,
           "features": [
             {
               "name": "Knockback",
               "description": "Knocks back small units."
             }
-          ],
-          "cleave": true
+          ]
         }
-      },
-      "defense": {
-        "name": "Scroll Barrier",
-        "description": "Creates a barrier that absorbs projectiles and reduces all damage. Absorbing Spellcaster projectiles refreshes Holy incantations.",
-        "charges": 1,
-        "duration": 2,
-        "cooldown": 10
       },
       "ultimate": {
         "name": "Seal of Immortality",
         "description": "Mark the ground with a massive healing seal.",
         "duration": 30
       }
-    }
-  },
-  {
-    "entity_id": "stone_shaman",
-    "name": "Stone Shaman",
-    "category": "Spellcaster",
-    "description": "An Enchanter who channels the power of earth to deal heavy damage, interrupt spellcasters, and fortify buildings.",
+    },
+    "description": "An Enchanter who uses magical ink to damage enemies, heal allies, and create protective barriers.",
+    "difficulty": 2,
+    "health": 440,
     "image_required": true,
-    "tags": [],
-    "health": 600,
     "movement_type": "Ground",
     "population": 0,
-    "last_modified": "2026-02-18T07:21:06.730Z",
+    "tags": [],
+    "last_modified": "2026-02-19T02:13:18.977Z"
+  },
+  {
     "$schema": "../../schemas/v2/heroes.schema.json",
+    "entity_id": "stone_shaman",
+    "name": "Stone Shaman",
     "class": "Enchanter",
-    "difficulty": 2,
+    "category": "Spellcaster",
     "abilities": {
+      "defense": {
+        "name": "Wind Shield",
+        "charges": 1,
+        "cooldown": 13,
+        "description": "Conjure a protective wind barrier that deals damage on contact.",
+        "duration": 3
+      },
       "passive": [
         {
           "name": "Mountain\u2019s Favor",
@@ -246,49 +246,50 @@
         },
         {
           "name": "Pathfinder",
-          "description": "While on the ground, the Shaman recharges Wild incantations much faster."
+          "description": "While on the ground, the Shaman recharges Wild spells and creatures much faster."
         }
       ],
       "primary": {
         "name": "Mountain Staff",
-        "description": "Swing your catalyst to deal heavy melee damage and interrupt enemies.",
         "damage": 42,
+        "description": "Swing your catalyst to deal heavy melee damage and interrupt enemies.",
         "mechanics": {
+          "aura": [
+            {
+              "name": "Building Enchant",
+              "description": "Attacks enchant ally buildings, enabling them to emit a healing aura.",
+              "effect": "Heal",
+              "interval": 1,
+              "radius": 8,
+              "target_types": [
+                "Ally"
+              ],
+              "value": 7
+            }
+          ],
+          "cleave": true,
           "features": [
             {
               "name": "Interruption",
               "description": "Successfully hitting a Spellcaster twice interrupts their actions."
             }
-          ],
-          "cleave": true,
-          "aura": [
-            {
-              "name": "Building Enchant",
-              "description": "Attacks enchant ally buildings, enabling them to emit a healing aura.",
-              "radius": 8,
-              "value": 7,
-              "effect": "Heal",
-              "interval": 1,
-              "target_types": [
-                "Ally"
-              ]
-            }
           ]
         }
-      },
-      "defense": {
-        "name": "Wind Shield",
-        "description": "Conjure a protective wind barrier that deals damage on contact.",
-        "charges": 1,
-        "duration": 3,
-        "cooldown": 13
       },
       "ultimate": {
         "name": "Wall of Kamazad",
         "description": "Deploys a colossal wall capable of blocking Titans. The wall has 15000 Health and deals % damage to enemies in its path.",
         "health": 15000
       }
-    }
+    },
+    "description": "An Enchanter who channels the power of earth to deal heavy damage, interrupt spellcasters, and fortify buildings.",
+    "difficulty": 2,
+    "health": 600,
+    "image_required": true,
+    "movement_type": "Ground",
+    "population": 0,
+    "tags": [],
+    "last_modified": "2026-02-19T02:04:38.362Z"
   },
   {
     "entity_id": "swamp_witch",

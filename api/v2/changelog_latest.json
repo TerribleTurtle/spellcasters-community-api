@@ -1,62 +1,107 @@
 {
-  "id": "patch_0_0_1",
-  "version": "0.0.1",
-  "date": "2026-02-18",
+  "id": "patch_0_0_3",
+  "version": "0.0.3",
+  "date": "2026-02-19",
   "type": "Hotfix",
   "changes": [
     {
-      "name": "Lich",
+      "name": "Ogre",
       "category": "units",
       "change_type": "edit",
       "diffs": [
         {
-          "kind": "N",
+          "index": 1,
+          "item": {
+            "kind": "N",
+            "rhs": {
+              "multiplier": 1.75,
+              "target_types": [
+                "Creature"
+              ]
+            }
+          },
+          "kind": "A",
           "path": [
-            "range"
-          ],
-          "rhs": 25
+            "mechanics",
+            "damage_modifiers"
+          ]
         },
         {
           "kind": "N",
           "path": [
             "last_modified"
           ],
-          "rhs": "2026-02-18T08:10:21.047Z"
+          "rhs": "2026-02-19T05:08:34.477Z"
         }
       ],
       "field": "entity",
-      "target_id": "lich.json"
+      "target_id": "ogre.json"
     },
     {
-      "name": "Astral Monk",
-      "category": "heroes",
+      "name": "Fire Ball",
+      "category": "spells",
       "change_type": "edit",
       "diffs": [
         {
           "kind": "E",
-          "lhs": "2026-02-18T07:17:33.470Z",
+          "lhs": "Fast projectile that deals medium Fire damage to a target.",
           "path": [
-            "last_modified"
+            "description"
           ],
-          "rhs": "2026-02-18T23:16:34.612Z"
+          "rhs": "Fast projectile emitting a burning aura that deals medium Fire damage to a target."
         },
         {
           "kind": "E",
-          "lhs": "All Astral incantations recharge faster.",
+          "lhs": "2026-02-18T07:17:56.992Z",
           "path": [
-            "abilities",
-            "passive",
-            0,
-            "description"
+            "last_modified"
           ],
-          "rhs": "All Astral spells recharge faster."
+          "rhs": "2026-02-19T05:10:47.465Z"
+        },
+        {
+          "kind": "E",
+          "lhs": 0,
+          "path": [
+            "cast_time"
+          ],
+          "rhs": 0.5
+        },
+        {
+          "kind": "N",
+          "path": [
+            "mechanics"
+          ],
+          "rhs": {}
         }
       ],
       "field": "entity",
-      "target_id": "astral_monk.json"
+      "target_id": "fire_ball.json"
+    },
+    {
+      "name": "Astral Nova",
+      "category": "spells",
+      "change_type": "edit",
+      "diffs": [
+        {
+          "kind": "E",
+          "lhs": "Massive projectile that deals heavy damage on impact.",
+          "path": [
+            "description"
+          ],
+          "rhs": "Massive projectile emitting a damaging aura that deals heavy damage on impact."
+        },
+        {
+          "kind": "N",
+          "path": [
+            "last_modified"
+          ],
+          "rhs": "2026-02-19T05:11:27.677Z"
+        }
+      ],
+      "field": "entity",
+      "target_id": "astral_nova.json"
     }
   ],
-  "diff": " data/patches.json    | 36 +++++++++++++++++++++++++++++++++++-\n data/units/lich.json | 30 ++++++++++++++++--------------\n 2 files changed, 51 insertions(+), 15 deletions(-)\n",
   "tags": [],
-  "title": "Hotfix 0.0.1"
+  "title": "Hotfix 0.0.3"
 }

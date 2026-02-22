@@ -104,3 +104,6 @@ jobs:
 
       - name: Build API
         run: python scripts/build_api.py
+
+      - name: Validate Changelog Build
+        run: python scripts/build_changelogs.py
