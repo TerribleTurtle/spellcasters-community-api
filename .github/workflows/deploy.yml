@@ -100,7 +100,7 @@ jobs:
         run: python scripts/build_api.py
 
       - name: Commit Patches to Repository
-        uses: stefanzweifel/git-auto-commit-action@b863ae1933cb653a53c021fe36dbb774e1fb9403 # v5
+        uses: stefanzweifel/git-auto-commit-action@04702edda442b2e678b25b537cec683a1493fcb9 # v7.1.0
         with:
           commit_message: "chore: auto-commit updated patches and timeline [skip ci]"
           commit_user_name: "github-actions[bot]"
