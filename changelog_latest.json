@@ -1,7 +1,7 @@
 {
   "id": "patch_0_0_4",
   "version": "0.0.4",
-  "date": "2026-02-22T21:57:40.334480+00:00",
+  "date": "2026-02-22T22:08:21.304740+00:00",
   "type": "Content",
   "changes": [
     {
@@ -31,6 +31,30 @@
       ],
       "field": "entity",
       "target_id": "astral_monk.json"
+    },
+    {
+      "name": "Poison Grenade",
+      "category": "spells",
+      "change_type": "edit",
+      "diffs": [
+        {
+          "kind": "N",
+          "path": [
+            "last_modified"
+          ],
+          "rhs": "2026-02-22T22:08:21.303020Z"
+        },
+        {
+          "kind": "E",
+          "path": [
+            "recharge_time"
+          ],
+          "lhs": 50,
+          "rhs": 60
+        }
+      ],
+      "field": "entity",
+      "target_id": "poison_grenade.json"
     }
   ],
   "tags": [
