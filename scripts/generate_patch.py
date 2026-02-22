@@ -109,9 +109,34 @@ def get_file_content_at_commit(filepath, commit_hash="HEAD~1"):
 
 
 def get_commit_author():
-    """Gets the author name of the most recent commit."""
+    """Gets the original PR author from the squash merge commit.
+
+    GitHub squash merges include a 'Co-authored-by:' trailer with the
+    original PR author's name. We prefer that over the commit author
+    (which is the person who clicked 'merge').  Bot authors like
+    dependabot and github-actions are filtered out.
+    """
     try:
-        result = subprocess.run(["git", "log", "-1", "--format=%an"], capture_output=True, text=True, check=True)
+        # Get the full commit body to look for Co-authored-by trailers
+        result = subprocess.run(
+            ["git", "log", "-1", "--format=%b"], capture_output=True, text=True, check=True
+        )
+        body = result.stdout.strip()
+
+        # Parse Co-authored-by lines: "Co-authored-by: Name <email>"
+        co_authors = re.findall(r"Co-authored-by:\s*(.+?)\s*<", body)
+
+        # Filter out bots
+        bot_suffixes = ("[bot]",)
+        human_authors = [a.strip() for a in co_authors if not a.strip().endswith(bot_suffixes)]
+
+        if human_authors:
+            return human_authors[0]
+
+        # Fallback: use the commit author (for non-squash-merge commits)
+        result = subprocess.run(
+            ["git", "log", "-1", "--format=%an"], capture_output=True, text=True, check=True
+        )
         return result.stdout.strip()
     except subprocess.CalledProcessError:
         return None
