@@ -313,8 +313,8 @@ def generate_slim_change(filepath, status, current_version):
                 idx = diff_path.pop()
                 diffs.append({"kind": "A", "path": diff_path, "index": idx, "item": {"kind": "D", "lhs": val}})
 
-    # For additions, create a timeline baseline snapshot
-    if status == "A" and new_data:
+    # For additions and modifications, create/update timeline baseline snapshot
+    if status in ("A", "M") and new_data:
         _create_timeline_baseline(filepath, current_version, new_data)
 
     return {
