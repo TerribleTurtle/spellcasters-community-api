@@ -21,7 +21,7 @@
     "passive": [
       {
         "name": "Arcane Alignment",
-        "description": "All Astral spells recharge faster."
+        "description": "All Astral spells recharge 32% faster."
       },
       {
         "name": "Last Light",
