@@ -234,17 +234,14 @@ def generate_slim_change(filepath, status, current_version):
         full_path = os.path.join(config.BASE_DIR, filepath)
         new_data = load_json(full_path)
 
-    # Auto-update last_modified if it wasn't already updated in this commit
-    if status in ("A", "M") and new_data is not None and old_data is not None:
-        old_modified = old_data.get("last_modified") if isinstance(old_data, dict) else None
-        new_modified = new_data.get("last_modified")
-        if old_modified == new_modified:
-            new_time = datetime.now(UTC).isoformat()
-            if new_time.endswith("+00:00"):
-                new_time = new_time.replace("+00:00", "Z")  # format normalization
-            new_data["last_modified"] = new_time
-            save_json(os.path.join(config.BASE_DIR, filepath), new_data)
-            print(f"Auto-updated last_modified for {filename}")
+    # Always stamp last_modified for additions and modifications (authoritative server time)
+    if status in ("A", "M") and new_data is not None:
+        new_time = datetime.now(UTC).isoformat()
+        if new_time.endswith("+00:00"):
+            new_time = new_time.replace("+00:00", "Z")  # format normalization
+        new_data["last_modified"] = new_time
+        save_json(os.path.join(config.BASE_DIR, filepath), new_data)
+        print(f"Auto-updated last_modified for {filename}")
 
     change_type = "edit"
     if status == "A":
