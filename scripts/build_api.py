@@ -35,7 +35,7 @@ AGGREGATION_MAP = {
 }
 
 # Single File Copy
-SINGLE_FILES = {"game_config": "game_config.json"}
+SINGLE_FILES = {"game_config": "game_config.json", "patches": "patches.json"}
 
 
 def ensure_output_dir():
