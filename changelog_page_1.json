@@ -273,7 +273,6 @@
         "target_id": "iron_sorcerer.json"
       }
     ],
-    "diff": " changelog.json                 | 172 ++++++++++++++++++++++++++++++++++++++++-\n changelog_index.json           |   2 +-\n changelog_latest.json          | 137 +++++++++++++++++++++++++-------\n changelog_page_1.json          | 172 ++++++++++++++++++++++++++++++++++++++++-\n data/heroes/iron_sorcerer.json |  37 ++++-----\n data/heroes/mystic_scribe.json |  44 +++++------\n data/heroes/stone_shaman.json  |  60 +++++++-------\n data/patches.json              | 170 ++++++++++++++++++++++++++++++++++++++++\n data/spells/astral_shot.json   |  22 +++---\n data/spells/thunder_ray.json   |  17 ++--\n timeline/astral_shot.json      |  28 +++++++\n timeline/iron_sorcerer.json    |  57 ++++++++++++++\n timeline/mystic_scribe.json    |  63 +++++++++++++++\n timeline/stone_shaman.json     |  76 ++++++++++++++++++\n timeline/thunder_ray.json      |  27 +++++++\n 15 files changed, 964 insertions(+), 120 deletions(-)\n",
     "tags": [],
     "title": "Hotfix 0.0.2"
   },
@@ -362,7 +361,6 @@
         "target_id": "earthquake.json"
       }
     ],
-    "diff": " changelog.json              | 31 ++++++++++++++++++++++++++--\n changelog_latest.json       | 31 ++++++++++++++++++++++++++--\n changelog_page_1.json       | 31 ++++++++++++++++++++++++++--\n data/patches.json           | 29 +++++++++++++++++++++++++-\n data/spells/earthquake.json | 35 ++++++++++++++++---------------\n timeline/astral_monk.json   |  2 +-\n timeline/earthquake.json    | 50 +++++++++++++++++++++++++++++++++++++++++++++\n timeline/lich.json          |  2 +-\n 8 files changed, 185 insertions(+), 26 deletions(-)\n",
     "tags": [],
     "title": "Hotfix 0.0.1"
   }

@@ -21,7 +21,7 @@ from deepdiff import DeepDiff
 
 # Import local modules safely
 sys.path.append(os.path.dirname(os.path.abspath(__file__)))
-import build_api  # noqa: E402
+import build_changelogs  # noqa: E402
 import config  # noqa: E402
 
 DATA_DIR = config.DATA_DIR
@@ -421,11 +421,11 @@ def main():
     print("Saved patches.json")
 
     # Trigger static file builds
-    print("Triggering API build to update changelog and timeline endpoints...")
+    print("Generating paginated changelogs...")
     try:
-        build_api.main()
+        build_changelogs.main()
     except Exception as e:
-        print(f"Error building API: {e}")
+        print(f"Error building changelogs: {e}")
         sys.exit(1)
 
 
