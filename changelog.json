@@ -2,7 +2,7 @@
   {
     "id": "patch_0_0_4",
     "version": "0.0.4",
-    "date": "2026-02-22T21:50:12.230578+00:00",
+    "date": "2026-02-22T21:57:40.334480+00:00",
     "type": "Content",
     "changes": [
       {
@@ -20,6 +20,14 @@
             ],
             "lhs": "All Astral spells recharge faster.",
             "rhs": "All Astral spells recharge 32% faster."
+          },
+          {
+            "kind": "E",
+            "path": [
+              "last_modified"
+            ],
+            "lhs": "2026-02-18T23:16:34.612Z",
+            "rhs": "2026-02-22T21:56:56.000Z"
           }
         ],
         "field": "entity",
@@ -27,7 +35,8 @@
       }
     ],
     "tags": [
-      "contributor:AnonJoker-cloud"
+      "contributor:AnonJoker-cloud",
+      "contributor:TerribleTurtles"
     ],
     "title": "Update 0.0.4"
   },
