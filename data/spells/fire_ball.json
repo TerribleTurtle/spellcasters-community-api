@@ -12,7 +12,7 @@
   "mechanics": {},
   "range": 80,
   "rank": "III",
-  "recharge_time": 50,
+  "recharge_time": 60,
   "tags": [
     "homing"
   ],
