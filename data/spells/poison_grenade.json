@@ -22,6 +22,6 @@
     ]
   },
   "charges": 1,
-  "recharge_time": 50,
+  "recharge_time": 60,
   "cast_time": 0
 }
