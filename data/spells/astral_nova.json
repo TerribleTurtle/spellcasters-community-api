@@ -10,6 +10,16 @@
   "image_required": true,
   "magic_school": "Astral",
   "range": 80,
+    "mechanics": {
+    "damage_modifiers": [
+      {
+        "multiplier": 0.27,
+        "target_types": [
+          "Building"
+        ]
+      }
+    ]
+  },
   "rank": "IV",
   "recharge_time": 120,
   "tags": [],
