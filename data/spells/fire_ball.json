@@ -9,7 +9,16 @@
   "description": "Fast projectile emitting a burning aura that deals medium Fire damage to a target.",
   "image_required": true,
   "magic_school": "Elemental",
-  "mechanics": {},
+  "mechanics": {
+    "damage_modifiers": [
+      {
+        "multiplier": 0.73,
+        "target_types": [
+          "Spellcasters"
+        ]
+      }
+    ]
+  },
   "range": 80,
   "rank": "III",
   "recharge_time": 60,
@@ -17,4 +26,22 @@
     "homing"
   ],
   "last_modified": "2026-02-19T05:10:47.465Z"
+}
+
+
+  "range": 40,
+  "duration": 12,
+  "mechanics": {
+    "damage_modifiers": [
+      {
+        "multiplier": 0,
+        "target_types": [
+          "Building"
+        ]
+      }
+    ]
+  },
+  "charges": 1,
+  "recharge_time": 60,
+  "cast_time": 0
 }
