@@ -25,7 +25,7 @@
       },
       {
         "name": "Last Light",
-        "description": "All damage dealt is increased against targets below half health."
+        "description": "All damage dealt is increased by 47% against targets below half health."
       },
       {
         "name": "Cosmic Air",
@@ -39,10 +39,6 @@
       "mechanics": {
         "features": [
           {
-            "name": "Combo Sequence",
-            "description": "Alternates between Palm Strike (32) and Power Punch (47)."
-          }
-        ],
         "pierce": true
       }
     },
