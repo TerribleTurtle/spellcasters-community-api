@@ -113,8 +113,12 @@ jobs:
           mkdir public
           cp -r api public/
           cp -r timeline public/ || true
+          cp -r schemas public/
           cp index.html public/
           cp style.css public/
+          cp schema-validator.html public/
+          cp schema-validator.js public/
+          cp ajv2019.bundle.js public/
           cp -r assets public/
           cp .nojekyll public/
           cp V1_all_data.json public/
