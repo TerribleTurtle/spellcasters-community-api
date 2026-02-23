@@ -93,6 +93,8 @@ const dom = {
   textarea: document.getElementById("json-input"),
   validateBtn: document.getElementById("validate-btn"),
   uploadInput: document.getElementById("file-upload"),
+  urlInput: document.getElementById("url-input"),
+  fetchBtn: document.getElementById("fetch-btn"),
   resultsPanel: document.getElementById("results"),
   resultsTitle: document.getElementById("results-title"),
   errorList: document.getElementById("error-list"),
@@ -185,21 +187,23 @@ function stripUnevaluatedProperties(obj) {
 // ---------------------------------------------------------------------------
 
 /**
- * Checks for a `?url=` query parameter. If present, fetches the JSON
- * from that URL and auto-validates it. This enables direct PR integration
- * where a contributor can click a link to see why their PR failed.
+ * Fetches JSON from a URL and auto-validates it.
+ * Used for direct PR integration or the manual fetch input field.
  *
- * Example URL:
- *   schema-validator.html?url=https://raw.githubusercontent.com/.../lich.json
- *
+ * @param {string|null} overrideUrl - Direct URL to fetch. If null, checks `?url=` param.
  * @returns {Promise<void>}
  */
-async function checkUrlParam() {
-  const urlParams = new URLSearchParams(window.location.search);
-  const prUrl = urlParams.get("url");
+async function checkUrlParam(overrideUrl = null) {
+  let prUrl = overrideUrl;
+  
+  if (!prUrl) {
+    const urlParams = new URLSearchParams(window.location.search);
+    prUrl = urlParams.get("url");
+  }
 
   if (!prUrl) return;
 
+  dom.urlInput.value = prUrl;
   dom.textarea.value = "⏳ Fetching JSON from URL…\n" + prUrl;
   dom.validateBtn.disabled = true;
 
@@ -222,6 +226,14 @@ async function checkUrlParam() {
     dom.validateBtn.disabled = !schemasLoaded;
   }
 }
+
+/** Manual "Fetch" button click handler. */
+dom.fetchBtn.addEventListener("click", function() {
+  const url = dom.urlInput.value.trim();
+  if (url) {
+    checkUrlParam(url);
+  }
+});
 
 /**
  * Handles file upload via the <input type="file"> element.

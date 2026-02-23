@@ -114,6 +114,42 @@
         border-color: var(--text-secondary);
       }
 
+      .input-url {
+        flex: 1;
+        min-width: 200px;
+        background: var(--bg-primary);
+        color: var(--text-primary);
+        border: 1px solid var(--border);
+        padding: 8px 12px;
+        border-radius: 6px;
+        font-size: 14px;
+        font-family: inherit;
+      }
+
+      .input-url:focus {
+        outline: none;
+        border-color: var(--accent);
+      }
+
+      .btn-fetch {
+        display: inline-block;
+        background: var(--bg-primary);
+        color: var(--accent);
+        padding: 8px 16px;
+        border: 1px solid var(--border);
+        border-radius: 6px;
+        font-weight: 600;
+        font-family: inherit;
+        font-size: 14px;
+        cursor: pointer;
+        transition: 0.2s cubic-bezier(0.3, 0, 0.5, 1);
+      }
+
+      .btn-fetch:hover {
+        background: var(--border);
+        border-color: var(--accent);
+      }
+
       .action-group {
         margin-left: auto;
       }
@@ -266,8 +302,7 @@
     </p>
     
     <div style="background: rgba(88, 166, 255, 0.1); border-left: 3px solid var(--accent); padding: 12px; margin: 16px 0; font-size: 13px; color: var(--text-primary);">
-      <strong>🛠️ Checking a Pull Request:</strong> You can auto-fetch a file by adding <code>?url=</code> to this page's address.<br>
-      <span style="color: var(--text-secondary); margin-top: 4px; display: inline-block;">Example: <code>schema-validator.html?url=https://raw.githubusercontent.com/.../your-file.json</code></span>
+      <strong>🛠️ Checking a Pull Request:</strong> Paste the raw GitHub URL of your file into the "URL" box below, or append <code>?url=...</code> to this page's address.<br>
     </div>
 
     <p class="security-note">
@@ -289,12 +324,20 @@
         </select>
       </div>
 
-      <div class="upload-wrapper">
+      <div class="control-group" style="flex: 1;">
+        <label for="url-input">Fetch from URL</label>
+        <div style="display: flex; gap: 8px;">
+          <input type="text" id="url-input" class="input-url" placeholder="https://raw.githubusercontent.com/..." />
+          <button id="fetch-btn" class="btn-fetch">Fetch</button>
+        </div>
+      </div>
+
+      <div class="upload-wrapper" style="margin-top: 20px;">
         <button class="btn-upload">📂 Upload File</button>
         <input type="file" id="file-upload" accept=".json" />
       </div>
 
-      <div class="action-group">
+      <div class="action-group" style="margin-top: 20px;">
         <button id="validate-btn" class="btn-validate" disabled>
           ✅ Validate
         </button>
