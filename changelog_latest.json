@@ -1,7 +1,7 @@
 {
   "id": "patch_0_0_4",
   "version": "0.0.4",
-  "date": "2026-02-23T01:12:26.894063+00:00",
+  "date": "2026-02-23T01:15:43.750603+00:00",
   "type": "Hotfix",
   "changes": [
     {
@@ -305,6 +305,34 @@
       ],
       "field": "entity",
       "target_id": "iron_sorcerer.json"
+    },
+    {
+      "name": "Stone Shaman",
+      "category": "heroes",
+      "change_type": "edit",
+      "diffs": [
+        {
+          "kind": "E",
+          "path": [
+            "abilities",
+            "passive",
+            1,
+            "description"
+          ],
+          "lhs": "Increases Rank II and Rank III population while reducing Rank I population.",
+          "rhs": "Increases Rank II population by 5 and Rank III population by 1 while reducing Rank I population by 15."
+        },
+        {
+          "kind": "E",
+          "path": [
+            "last_modified"
+          ],
+          "lhs": "2026-02-19T02:04:38.362Z",
+          "rhs": "2026-02-23T01:15:43.746976Z"
+        }
+      ],
+      "field": "entity",
+      "target_id": "stone_shaman.json"
     }
   ],
   "tags": [
