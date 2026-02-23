@@ -3,21 +3,35 @@
   "entity_id": "lich",
   "name": "Lich",
   "category": "Creature",
-  "attack_interval": 1,
-  "cast_time": 0,
-  "charges": 1,
-  "damage": 5,
-  "description": "Undead caster that inflicts curses to enemies, increasing the damage they take and reducing their movement speed.",
-  "dps": 5,
-  "health": 500,
-  "image_required": true,
   "magic_school": "Necromancy",
+  "rank": "II",
+  "description": "Undead caster that inflicts curses to enemies, increasing the damage they take and reducing their movement speed.",
+  "image_required": true,
+  "tags": [],
+  "mechanics": {
+    "passive": [
+      {
+        "name": "Cursed Wounds",
+        "description": "Curses enemies when dealing damage, increasing the damage they take and reducing their movement speed.",
+        "damage taken": 1.32,
+        "speed": 0.4,
+        "radius": 3,
+        "duration": 1,
+        "effect": "Affliction",
+        "target_types": [
+          "Enemy"
+        ]
+      }
+    ]
+  },
+  "damage": 5,
+  "health": 500,
   "movement_speed": 5,
   "movement_type": "Flying",
-  "population": 0,
-  "range": 25,
-  "rank": "II",
+  "dps": 5,
+  "attack_interval": 1,
+  "charges": 1,
   "recharge_time": 25,
-  "tags": [],
-  "last_modified": "2026-02-18T08:10:21.047Z"
+  "cast_time": 0,
+  "population": 0
 }
