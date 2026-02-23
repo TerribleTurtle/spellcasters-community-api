@@ -2,7 +2,7 @@
   {
     "id": "patch_0_0_4",
     "version": "0.0.4",
-    "date": "2026-02-23T01:15:43.750603+00:00",
+    "date": "2026-02-23T13:02:35.368237+00:00",
     "type": "Hotfix",
     "changes": [
       {
@@ -273,7 +273,7 @@
             "path": [
               "last_modified"
             ],
-            "rhs": "2026-02-23T01:11:12.203914Z"
+            "rhs": "2026-02-23T13:02:35.363854Z"
           }
         ],
         "field": "entity",
@@ -326,14 +326,113 @@
           {
             "kind": "E",
             "path": [
+              "abilities",
+              "passive",
+              2,
+              "description"
+            ],
+            "lhs": "While on the ground, the Shaman recharges Wild spells and creatures much faster.",
+            "rhs": "While on the ground, the Shaman recharges Wild spells and creatures +58% faster."
+          },
+          {
+            "kind": "E",
+            "path": [
               "last_modified"
             ],
             "lhs": "2026-02-19T02:04:38.362Z",
-            "rhs": "2026-02-23T01:15:43.746976Z"
+            "rhs": "2026-02-23T13:02:35.357699Z"
           }
         ],
         "field": "entity",
         "target_id": "stone_shaman.json"
+      },
+      {
+        "name": "Fire Elementalist",
+        "category": "heroes",
+        "change_type": "edit",
+        "diffs": [
+          {
+            "kind": "E",
+            "path": [
+              "last_modified"
+            ],
+            "lhs": "2026-02-18T07:20:18.153Z",
+            "rhs": "2026-02-23T13:02:35.353978Z"
+          },
+          {
+            "kind": "E",
+            "path": [
+              "abilities",
+              "passive",
+              0,
+              "description"
+            ],
+            "lhs": "Allied creatures near the Fire Elementalist capture Altar faster.",
+            "rhs": "Allied creatures near the Fire Elementalist capture Altar +58% faster."
+          },
+          {
+            "kind": "E",
+            "path": [
+              "abilities",
+              "passive",
+              1,
+              "description"
+            ],
+            "lhs": "Damaging burning enemies heals the Fire Elementalist.",
+            "rhs": "Damaging burning enemies heals the Fire Elementalist for 10 Health."
+          }
+        ],
+        "field": "entity",
+        "target_id": "fire_elementalist.json"
+      },
+      {
+        "name": "Astral Nova",
+        "category": "spells",
+        "change_type": "edit",
+        "diffs": [
+          {
+            "kind": "N",
+            "path": [
+              "mechanics"
+            ],
+            "rhs": {
+              "damage_modifiers": [
+                {
+                  "multiplier": 0.27,
+                  "target_types": [
+                    "Building"
+                  ]
+                }
+              ]
+            }
+          },
+          {
+            "kind": "E",
+            "path": [
+              "last_modified"
+            ],
+            "lhs": "2026-02-19T05:11:27.677Z",
+            "rhs": "2026-02-23T13:02:35.361105Z"
+          }
+        ],
+        "field": "entity",
+        "target_id": "astral_nova.json"
+      },
+      {
+        "name": "Lizard Archer",
+        "category": "units",
+        "change_type": "edit",
+        "diffs": [
+          {
+            "kind": "N",
+            "path": [
+              "last_modified"
+            ],
+            "rhs": "2026-02-23T13:02:35.366982Z"
+          }
+        ],
+        "field": "entity",
+        "target_id": "lizard_archer.json"
       }
     ],
     "tags": [
