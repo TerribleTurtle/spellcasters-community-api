@@ -24,7 +24,7 @@
       },
       {
         "name": "Swarm Dominance",
-        "description": "The Swamp Witch has more Rank I population, but less Rank II and Rank III population.  "
+        "description": "The Swamp Witch increases Rank I population by 5, while reducing Rank II and Rank III population by 2."
       }
     ],
     "primary": {
