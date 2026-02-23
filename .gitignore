@@ -44,6 +44,9 @@ active_state.md
 api/v1/
 api/v2/
 
+# Node.js (ajv2019.bundle.js build tooling)
+node_modules/
+
 # Caches
 .asset_cache.json
 

@@ -1,0 +1,1 @@
+const Ajv2019 = require('ajv/dist/2019').default; const addFormats = require('ajv-formats').default; window.ajv2019 = { Ajv2019: function(opts) { const inst = new Ajv2019(opts); addFormats(inst); return inst; } };

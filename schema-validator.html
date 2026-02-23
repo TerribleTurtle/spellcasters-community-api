@@ -1,0 +1,332 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Validate your Spellcasters Community API JSON data against the official schemas before submitting a Pull Request."
+    />
+    <title>Schema Validator — Spellcasters Community API</title>
+    <link rel="stylesheet" href="style.css" />
+    <style>
+      /* ── Validator-Specific Styles ─────────────────────────────── */
+
+      .nav-back {
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+        margin-bottom: 16px;
+        font-size: 14px;
+      }
+
+      .intro {
+        color: var(--text-secondary);
+        margin-bottom: 8px;
+      }
+
+      .security-note {
+        font-size: 13px;
+        color: var(--text-secondary);
+        opacity: 0.7;
+        margin-bottom: 0;
+      }
+
+      /* ── Controls Bar ─────────────────────────────────────────── */
+
+      .validator-controls {
+        display: flex;
+        gap: 12px;
+        align-items: flex-end;
+        flex-wrap: wrap;
+        background: var(--bg-secondary);
+        padding: 16px;
+        border-radius: 6px;
+        border: 1px solid var(--border);
+        margin-top: 20px;
+      }
+
+      .control-group {
+        display: flex;
+        flex-direction: column;
+        gap: 4px;
+      }
+
+      .control-group label {
+        font-size: 12px;
+        font-weight: 600;
+        color: var(--text-secondary);
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+      }
+
+      select {
+        background: var(--bg-primary);
+        color: var(--text-primary);
+        border: 1px solid var(--border);
+        padding: 8px 12px;
+        border-radius: 6px;
+        font-size: 14px;
+        font-family: inherit;
+        cursor: pointer;
+        min-width: 200px;
+      }
+
+      select:focus {
+        outline: none;
+        border-color: var(--accent);
+      }
+
+      /* ── Upload Button ────────────────────────────────────────── */
+
+      .upload-wrapper {
+        position: relative;
+        overflow: hidden;
+        display: inline-block;
+      }
+
+      .upload-wrapper input[type="file"] {
+        position: absolute;
+        left: 0;
+        top: 0;
+        opacity: 0;
+        width: 100%;
+        height: 100%;
+        cursor: pointer;
+      }
+
+      .btn-upload {
+        display: inline-block;
+        background: var(--bg-primary);
+        color: var(--text-primary);
+        padding: 8px 16px;
+        border: 1px solid var(--border);
+        border-radius: 6px;
+        font-weight: 600;
+        font-family: inherit;
+        font-size: 14px;
+        cursor: pointer;
+        transition: 0.2s cubic-bezier(0.3, 0, 0.5, 1);
+      }
+
+      .btn-upload:hover {
+        background: var(--border);
+        border-color: var(--text-secondary);
+      }
+
+      .action-group {
+        margin-left: auto;
+      }
+
+      .btn-validate {
+        display: inline-block;
+        background: var(--btn-bg);
+        color: white;
+        padding: 8px 20px;
+        border: 1px solid rgba(240, 246, 252, 0.1);
+        border-radius: 6px;
+        font-weight: 600;
+        font-family: inherit;
+        font-size: 14px;
+        cursor: pointer;
+        transition: 0.2s cubic-bezier(0.3, 0, 0.5, 1);
+      }
+
+      .btn-validate:hover:not(:disabled) {
+        background: var(--btn-hover);
+      }
+
+      .btn-validate:disabled {
+        opacity: 0.5;
+        cursor: not-allowed;
+      }
+
+      /* ── Textarea ─────────────────────────────────────────────── */
+
+      textarea {
+        width: 100%;
+        height: 400px;
+        margin-top: 16px;
+        background: var(--code-bg);
+        color: var(--text-primary);
+        border: 1px solid var(--border);
+        border-radius: 6px;
+        padding: 16px;
+        font-family: ui-monospace, SFMono-Regular, SF Mono, Menlo, Consolas,
+          Liberation Mono, monospace;
+        font-size: 13px;
+        line-height: 1.5;
+        resize: vertical;
+        box-sizing: border-box;
+        tab-size: 2;
+      }
+
+      textarea:focus {
+        outline: none;
+        border-color: var(--accent);
+      }
+
+      /* ── Results Panel ────────────────────────────────────────── */
+
+      .results-panel {
+        margin-top: 16px;
+        padding: 20px;
+        border-radius: 6px;
+        border: 1px solid var(--border);
+        background: var(--bg-secondary);
+        display: none;
+      }
+
+      .results-panel.success {
+        border-color: #238636;
+        background: rgba(35, 134, 54, 0.08);
+      }
+
+      .results-panel.error {
+        border-color: #f85149;
+        background: rgba(248, 81, 73, 0.08);
+      }
+
+      .results-header {
+        font-weight: bold;
+        font-size: 16px;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+      }
+
+      .error-list {
+        margin: 12px 0 0 0;
+        padding: 0;
+        list-style: none;
+      }
+
+      .error-list li {
+        padding: 8px 12px;
+        margin-bottom: 6px;
+        background: rgba(0, 0, 0, 0.2);
+        border-radius: 4px;
+        font-size: 14px;
+        line-height: 1.5;
+        color: var(--text-primary);
+        display: block;
+      }
+
+      /* ── Loading Overlay ──────────────────────────────────────── */
+
+      #loading-overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: rgba(13, 17, 23, 0.85);
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        z-index: 1000;
+        font-size: 18px;
+        font-weight: bold;
+        gap: 12px;
+      }
+
+      #loading-overlay .spinner {
+        width: 32px;
+        height: 32px;
+        border: 3px solid var(--border);
+        border-top-color: var(--accent);
+        border-radius: 50%;
+        animation: spin 0.8s linear infinite;
+      }
+
+      @keyframes spin {
+        to {
+          transform: rotate(360deg);
+        }
+      }
+
+      .hidden {
+        display: none !important;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Loading overlay — visible until schemas are compiled -->
+    <div id="loading-overlay">
+      <div class="spinner"></div>
+      Loading Schemas…
+    </div>
+
+    <a href="index.html" class="nav-back">← Back to API</a>
+
+    <h1>🧪 Schema Validator</h1>
+    <p class="intro">
+      Validate your JSON data against the official schemas before submitting a
+      Pull Request. Paste your JSON, upload a file, or use a direct link.
+    </p>
+    <p class="security-note">
+      🔒 100% client-side — your data never leaves your browser.
+    </p>
+
+    <!-- Controls -->
+    <div class="validator-controls">
+      <div class="control-group">
+        <label for="schema-type">Entity Type</label>
+        <select id="schema-type">
+          <option value="units">Unit (Creature / Building)</option>
+          <option value="heroes">Hero (Spellcaster)</option>
+          <option value="spells">Spell</option>
+          <option value="titans">Titan</option>
+          <option value="consumables">Consumable</option>
+          <option value="upgrades">Upgrade</option>
+          <option value="game_config">Game Config</option>
+        </select>
+      </div>
+
+      <div class="upload-wrapper">
+        <button class="btn-upload">📂 Upload File</button>
+        <input type="file" id="file-upload" accept=".json" />
+      </div>
+
+      <div class="action-group">
+        <button id="validate-btn" class="btn-validate" disabled>
+          ✅ Validate
+        </button>
+      </div>
+    </div>
+
+    <!-- JSON Input -->
+    <textarea
+      id="json-input"
+      placeholder='Paste your JSON here…
+
+Example:
+{
+  "schema_version": "v2",
+  "entity_id": "my_unit",
+  "name": "My Unit",
+  "category": "Creature",
+  ...
+}'
+      spellcheck="false"
+    ></textarea>
+
+    <!-- Results -->
+    <div id="results" class="results-panel">
+      <div class="results-header" id="results-title"></div>
+      <ul class="error-list" id="error-list"></ul>
+    </div>
+
+    <div class="footer">
+      <p>
+        Powered by <a href="https://ajv.js.org/" target="_blank">Ajv</a> JSON
+        Schema Validator · Draft 2019-09
+      </p>
+    </div>
+
+    <!-- Scripts -->
+    <script src="ajv2019.bundle.js"></script>
+    <script src="schema-validator.js"></script>
+  </body>
+</html>
