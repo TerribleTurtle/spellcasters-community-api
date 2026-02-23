@@ -12,7 +12,7 @@ This project is currently in **Data Collection Phase** (Beta).
 
 ## Reporting a Vulnerability
 
-We take the security of this API serious. If you find a vulnerability, please follow these steps:
+We take the security of this API seriously. If you find a vulnerability, please follow these steps:
 
 1.  **Do NOT open a public issue.**
 2.  Email the maintainers at `terribleturtlesdev@gmail.com`.

@@ -1,3 +1,11 @@
+"""
+Data Audit Script (V2)
+
+Performs deep analytical audits of the JSON data layer. Validates balances,
+checks constraint logic, and calculates aggregate statistics on entities.
+Usually run before major releases.
+"""
+
 import json
 import os
 import statistics

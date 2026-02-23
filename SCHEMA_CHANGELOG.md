@@ -1,4 +1,6 @@
-# Schema Changes - v1.4 Patch History System
+# Schema Changelog
+
+## Schema Changes - v1.4 Patch History System
 
 ## Overview
 
@@ -34,7 +36,7 @@ Adds JSON schemas and TypeScript types for the new patch history system. These d
 
 > **UNSTABLE SCHEMA:** The schema is currently in flux. Breaking changes may occur without notice until the Early Access launch on **Feb 26th**.
 
-# Schema Changes - v1.3 Hero Speed Cleanup
+## Schema Changes - v1.3 Hero Speed Cleanup
 
 ## Overview
 
@@ -57,7 +59,7 @@ This update removes the `movement_speed` attribute from Heroes to better reflect
 
 - Update Hero data parsers to ignore or remove `movement_speed`.
 
-# Schema Changes - v1.2 Architecture Normalization
+## Schema Changes - v1.2 Architecture Normalization
 
 ## Overview
 
@@ -83,7 +85,7 @@ This update deprecates the monolithic `incantation` schema in favor of specific 
 - `damage_modifiers` now supports both single strings and arrays for `target_type` across all schemas.
 - `titan` and `spellcaster` schemas now reference `definitions/core.schema.json` for shared fields.
 
-# Schema Changes - v1.1 Movement Update
+## Schema Changes - v1.1 Movement Update
 
 ## Overview
 

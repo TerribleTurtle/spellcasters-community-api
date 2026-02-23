@@ -31,7 +31,6 @@ PATCH_HISTORY_FILES = [
 PATCH_HISTORY_DIR = "timeline"
 
 # Schema Filenames mapping (Schema Key -> Filename)
-# Schema Filenames mapping (Schema Key -> Filename)
 SCHEMA_FILES = {
     "spell": "spells.schema.json",
     "unit": "units.schema.json",

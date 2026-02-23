@@ -1,3 +1,10 @@
+"""
+Lightweight Schema Validator
+
+Validates all JSON data files against schemas in `schemas/v2/` using standard
+`jsonschema` library. Does not perform cross-file referential integrity checks.
+"""
+
 import json
 import os
 import sys
@@ -21,6 +28,10 @@ def load_json(filepath):
 
 
 def create_registry(schemas_dir):
+    """
+    Creates a referencing.Registry pre-loaded with all schema files.
+    Returns: (registry, schemas_map[filename -> uri])
+    """
     registry = Registry()
     schemas_map = {}
 
@@ -44,6 +55,10 @@ def create_registry(schemas_dir):
 
 
 def get_schema_for_file(filepath, data, schemas_map):
+    """
+    Heuristically determines the correct schema URI for a given JSON file
+    by checking explicit $schema properties or folder name conventions.
+    """
     # 1. Check explicit $schema
     if "$schema" in data:
         ref = data["$schema"]
@@ -61,7 +76,7 @@ def get_schema_for_file(filepath, data, schemas_map):
     return None
 
 
-def main():  # pylint: disable=too-many-locals
+def main():
     print("Initializing Schema Registry...")
     registry, schemas_map = create_registry(SCHEMAS_DIR)
     print(f"Loaded {len(schemas_map)} schemas.")

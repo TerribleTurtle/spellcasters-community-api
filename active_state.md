@@ -6,8 +6,8 @@ Deploy verification completed — **GO** for deployment.
 
 ## Status: DEPLOY READY
 
-- **Lint**: Flake8 clean, Pylint 10/10.
-- **Tests**: 6/6 passing (pytest).
+- **Lint**: Ruff clean.
+- **Tests**: All passing (pytest).
 - **Integrity**: 0 Errors, 8 Warnings (known missing consumable assets).
 - **Strictness**: 4/4 passing (fixed stale `changelog` field in test payload).
 - **Build**: API v2 artifacts generated successfully (including patch history).

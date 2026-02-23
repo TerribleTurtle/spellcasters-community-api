@@ -1,4 +1,4 @@
-# Project History & Changelog
+# Project History & Architecture Decisions
 
 ## 2026-02-10: v1.2 - Architecture Normalization & Strict Typing
 

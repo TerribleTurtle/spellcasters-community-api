@@ -7,12 +7,11 @@ import pytest
 
 # Ensure scripts module is found
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "..", "scripts")))
-# pylint: disable=wrong-import-position
 import build_api  # noqa: E402
 
 
 @pytest.fixture
-def temp_output_dir(tmp_path):  # pylint: disable=redefined-outer-name
+def temp_output_dir(tmp_path):
     """Creates a temporary directory for build output."""
     d = tmp_path / "api_v1"
     d.mkdir()
@@ -20,7 +19,7 @@ def temp_output_dir(tmp_path):  # pylint: disable=redefined-outer-name
 
 
 @pytest.fixture
-def build_output(temp_output_dir):  # pylint: disable=redefined-outer-name
+def build_output(temp_output_dir):
     """
     Runs the build_api.main() once and returns the output directory.
     """
@@ -37,7 +36,7 @@ def build_output(temp_output_dir):  # pylint: disable=redefined-outer-name
     return temp_output_dir
 
 
-def test_build_api_generates_files(build_output):  # pylint: disable=redefined-outer-name
+def test_build_api_generates_files(build_output):
     """
     Verifies that the build generated the expected key files.
     """
@@ -53,7 +52,7 @@ def test_build_api_generates_files(build_output):  # pylint: disable=redefined-o
             assert content, f"{fname} is empty"
 
 
-def test_all_data_structure(build_output):  # pylint: disable=redefined-outer-name
+def test_all_data_structure(build_output):
     """
     Verifies that all_data.json contains the aggregated keys.
     """

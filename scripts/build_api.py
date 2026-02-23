@@ -39,7 +39,10 @@ SINGLE_FILES = {"game_config": "game_config.json", "patches": "patches.json"}
 
 
 def ensure_output_dir():
-    """Creates the output directory if it does not exist."""
+    """
+    Creates the output directory if it does not exist.
+    Also cleans up existing generated JSON files to prevent stale data.
+    """
     if not os.path.exists(OUTPUT_DIR):
         os.makedirs(OUTPUT_DIR)
         print(f"Created output directory: {OUTPUT_DIR}")
@@ -101,7 +104,7 @@ def sanitize_recursive(data):
     return data
 
 
-def main():  # pylint: disable=too-many-locals, too-many-branches, too-many-statements
+def main():
     print(f"Building API {VERSION_API}...")
 
     # 1. Safety Lock: Validate Integrity

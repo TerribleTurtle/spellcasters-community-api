@@ -8,7 +8,6 @@ import pytest
 # Ensure scripts module is found
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "..", "scripts")))
 
-# pylint: disable=wrong-import-position
 import config  # noqa: E402
 
 

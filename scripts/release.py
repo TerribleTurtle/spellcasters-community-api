@@ -1,3 +1,10 @@
+"""
+Release Script
+
+Interactive CLI tool handling semantic version bumping and changelog formatting.
+Updates `data/game_config.json` and prepends to `CHANGELOG.md`.
+"""
+
 import json
 import os
 import re
@@ -22,6 +29,16 @@ def save_json(path, data):
 
 
 def bump_version(current_version, bump_type):
+    """
+    Computes the next semantic version string based on current and bump type.
+
+    Args:
+        current_version (str): The current X.Y.Z version string.
+        bump_type (str): "major", "minor", or "patch".
+
+    Returns:
+        str: The incremented version string.
+    """
     parts = current_version.split(".")
     if len(parts) != 3:
         print(
@@ -47,7 +64,7 @@ def bump_version(current_version, bump_type):
     return f"{major}.{minor}.{patch}"
 
 
-def main():  # pylint: disable=too-many-statements
+def main():
     if not os.path.exists(GAME_CONFIG_PATH):
         print(f"Error: {GAME_CONFIG_PATH} not found.")
         sys.exit(1)

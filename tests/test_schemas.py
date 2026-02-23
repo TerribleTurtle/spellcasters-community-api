@@ -15,7 +15,6 @@ except ImportError:
 
 # Ensure scripts module is found
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "..", "scripts")))
-# pylint: disable=wrong-import-position
 import config  # noqa: E402
 
 
@@ -25,7 +24,7 @@ def load_json(filepath):
 
 
 @pytest.fixture(scope="session")
-def registry_and_schemas():  # pylint: disable=redefined-outer-name
+def registry_and_schemas():
     """Builds a registry of all schemas in the V2 schema directory."""
     registry = Registry()
     schemas_by_filename = {}
@@ -52,7 +51,6 @@ def registry_and_schemas():  # pylint: disable=redefined-outer-name
     return registry, schemas_by_filename
 
 
-# pylint: disable=redefined-outer-name, too-many-locals
 def test_json_schemas_robust(data_loader, registry_and_schemas):
     """
     Validates every JSON file in the data directories against its assigned schema

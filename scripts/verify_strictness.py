@@ -1,3 +1,11 @@
+"""
+Schema Strictness Test Suite
+
+Verifies that the JSON schemas correctly reject invalid data payloads
+(e.g., catching property shadowing, empty strings, or bad ID formats)
+by enforcing unevaluatedProperties: false and other strict validation rules.
+"""
+
 import copy
 import sys
 
@@ -5,7 +13,7 @@ from jsonschema import ValidationError, validators
 from validate_integrity import SCHEMAS_DIR, create_registry
 
 
-def main():  # pylint: disable=too-many-locals
+def main():
     print("--- Starting DoubleCheck Verification ---")
 
     # 1. Build Registry (Loads all schemas with correct IDs)

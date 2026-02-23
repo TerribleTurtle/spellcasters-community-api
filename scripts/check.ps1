@@ -2,14 +2,14 @@ $ErrorActionPreference = "Stop"
 
 Write-Host "Starting Local CI/CD Checks..." -ForegroundColor Cyan
 
-# 1. Linting
-Write-Host "`n[1/5] Running Flake8..." -ForegroundColor Yellow
-python -m flake8 scripts/ api/ tests/
-if ($LASTEXITCODE -ne 0) { Write-Error "Flake8 failed!" }
+# 1. Linting & Formatting
+Write-Host "`n[1/5] Running Ruff Check..." -ForegroundColor Yellow
+python -m ruff check scripts/ tests/
+if ($LASTEXITCODE -ne 0) { Write-Error "Ruff Check failed!" }
 
-Write-Host "`n[2/5] Running Pylint..." -ForegroundColor Yellow
-python -m pylint scripts/ api/ tests/
-if ($LASTEXITCODE -ne 0) { Write-Error "Pylint failed!" }
+Write-Host "`n[2/5] Running Ruff Format..." -ForegroundColor Yellow
+python -m ruff format --check scripts/ tests/
+if ($LASTEXITCODE -ne 0) { Write-Error "Ruff Format failed!" }
 
 # 2. Unit Tests
 Write-Host "`n[3/5] Running Unit Tests..." -ForegroundColor Yellow

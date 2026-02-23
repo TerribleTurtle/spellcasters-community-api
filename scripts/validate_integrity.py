@@ -108,8 +108,8 @@ def save_cache(cache):
         print(f"[WARN] Could not save cache: {e}")
 
 
-def check_asset_exists(category, entity_id, is_required, cache):  # pylint: disable=too-many-locals
-    """Checks if assets/[category]/[entity_id].png exists and validates hygiene. Returns warning count."""
+def check_asset_exists(category, entity_id, is_required, cache):
+    """Checks if assets/[category]/[entity_id].webp (or .png fallback) exists and validates hygiene. Returns warning count."""
     warnings = 0
 
     path_webp = os.path.join(ASSETS_DIR, category, f"{entity_id}.webp")
@@ -224,7 +224,7 @@ def validate_timeline_metadata(registry, schemas_map):
     return errors
 
 
-def validate_integrity():  # pylint: disable=too-many-locals, too-many-branches, too-many-statements
+def validate_integrity():
     """
     Main validation routine.
     """

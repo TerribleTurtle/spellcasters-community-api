@@ -30,6 +30,7 @@ GAME_CONFIG_PATH = os.path.join(DATA_DIR, "game_config.json")
 
 
 def load_json(path):
+    """Loads and parses a JSON file. Returns None if the file is missing or invalid."""
     if not os.path.exists(path):
         return None
     with open(path, encoding="utf-8") as f:
@@ -40,6 +41,7 @@ def load_json(path):
 
 
 def save_json(path, data):
+    """Writes data to a JSON file with consistent formatting."""
     with open(path, "w", encoding="utf-8") as f:
         json.dump(data, f, indent=2)
 

@@ -1,3 +1,10 @@
+"""
+V1 to V2 Data Consistency Checker
+
+Audits the granular V2 JSON data against the legacy monolithic V1_all_data.json
+file. Identifies discrepancies and mapped field regressions during migration.
+"""
+
 import json
 import os
 

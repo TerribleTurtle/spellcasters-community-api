@@ -26,7 +26,7 @@ Aggregates individual JSON files from `data/` into consolidated API responses in
 **Usage:** `.\scripts\check.ps1` (PowerShell)
 Local CI/CD runner that executes all checks sequentially:
 
-1. Flake8 & Pylint
+1. Ruff Check & Format
 2. Unit Tests
 3. Integrity Validation
 4. Strictness Verification
@@ -55,6 +55,26 @@ Interactive CLI tool to handle version bumping and changelog generation.
 - Updates `game_config.json` version.
 - Prepends new entry to `CHANGELOG.md`.
 
+### `generate_patch.py`
+
+**Usage:** `python scripts/generate_patch.py`
+Computes differences for JSON files changed in the current git commit and automatically merges them into the current active patch block in `data/patches.json`.
+
+- Creates timeline snapshots for newly added entities.
+- Expects `BEFORE_SHA` and `AFTER_SHA` environment variables in CI (falls back to local `HEAD~1` and `HEAD`).
+
+### `build_changelogs.py`
+
+**Usage:** `python scripts/build_changelogs.py`
+Reads `data/patches.json` and generates API-consumable files in the repository root:
+
+- `changelog.json` — Full array of all patch entries.
+- `changelog_latest.json` — Single most-recent patch object.
+- `changelog_index.json` — Pagination manifest.
+- `changelog_page_N.json` — Paginated chunks.
+
+These root files are then copied into `api/v2/` by `build_api.py`.
+
 ### `validate_schemas.py`
 
 **Usage:** `python scripts/validate_schemas.py`
@@ -79,3 +99,13 @@ Tools for performing deep audits of the data and schema layers. These are typica
 ### `config.py`
 
 Shared configuration module containing paths, constants, and helper functions used by other scripts.
+
+## 🔑 CI/CD Environment Variables
+
+Some scripts rely on environment variables when running in GitHub Actions:
+
+- **`BEFORE_SHA`**: The commit SHA before the push. Used by `generate_patch.py` to diff changes. (Fallback: `HEAD~1`)
+- **`AFTER_SHA`**: The commit SHA after the push. Used by `generate_patch.py`. (Fallback: `HEAD`)
+
+> **Note:** The deploy workflow (`deploy.yml`) requires `contents:write`, `pages:write`, and `id-token:write` permissions.
+> **Local Development:** You do **not** need a `.env` file to run scripts locally. They will gracefully fall back to local git history (`HEAD~1` and `HEAD`).

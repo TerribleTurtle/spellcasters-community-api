@@ -52,3 +52,4 @@ backups/
 data/backups/
 data/queue_backups/
 data/audit.jsonl
+active_state.md
