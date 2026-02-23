@@ -1,0 +1,53 @@
+[
+  {
+    "version": "0.0.4",
+    "date": "2026-02-23",
+    "snapshot": {
+      "$schema": "../../schemas/v2/units.schema.json",
+      "entity_id": "harpy",
+      "name": "Harpy",
+      "category": "Creature",
+      "magic_school": "Wild",
+      "rank": "I",
+      "description": "Agile flying creature that excels at defeating ground units.",
+      "image_required": true,
+      "tags": [],
+      "damage": 12,
+      "mechanics": {
+        "damage_modifiers": [
+          {
+            "multiplier": 1.19,
+            "target_types": [
+              "Ground",
+              "Hover"
+            ]
+          },
+          {
+            "multiplier": 0.65,
+            "target_types": [
+              "Building"
+            ]
+          }
+        ],
+        "initial_attack": {
+          "damage_flat": 30,
+          "target_types": [
+            "Ground",
+            "Hover"
+          ],
+          "description": "Deals 30 increased damage on pouncing initial attack on grounded and hovering units."
+        }
+      },
+      "health": 150,
+      "movement_speed": 8,
+      "movement_type": "Flying",
+      "dps": 12,
+      "attack_interval": 1,
+      "charges": 1,
+      "recharge_time": 5,
+      "cast_time": 0,
+      "population": 0,
+      "last_modified": "2026-02-23T01:11:12.203914Z"
+    }
+  }
+]
