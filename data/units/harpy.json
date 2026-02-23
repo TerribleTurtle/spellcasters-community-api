@@ -34,7 +34,7 @@
       "description": "Deals 30 increased damage on pouncing initial attack on grounded and hovering units."
     }
   },
-  "health": 100,
+  "health": 150,
   "movement_speed": 8,
   "movement_type": "Flying",
   "dps": 12,
