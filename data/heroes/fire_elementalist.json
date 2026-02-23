@@ -16,11 +16,11 @@
     "passive": [
       {
         "name": "Ignition Spark",
-        "description": "Allied creatures near the Fire Elementalist capture Altar faster."
+        "description": "Allied creatures near the Fire Elementalist capture Altar +58% faster."
       },
       {
         "name": "Enduring Flame",
-        "description": "Damaging burning enemies heals the Fire Elementalist."
+        "description": "Damaging burning enemies heals the Fire Elementalist for 10 Health."
       },
       {
         "name": "Blazing Momentum",
