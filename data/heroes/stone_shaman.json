@@ -23,7 +23,7 @@
       },
       {
         "name": "Pathfinder",
-        "description": "While on the ground, the Shaman recharges Wild spells and creatures much faster."
+        "description": "While on the ground, the Shaman recharges Wild spells and creatures +58% faster."
       }
     ],
     "primary": {
