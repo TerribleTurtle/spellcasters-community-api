@@ -1,7 +1,7 @@
 {
   "id": "patch_0_0_4",
   "version": "0.0.4",
-  "date": "2026-02-23T01:11:12.205567+00:00",
+  "date": "2026-02-23T01:12:26.894063+00:00",
   "type": "Hotfix",
   "changes": [
     {
@@ -277,6 +277,34 @@
       ],
       "field": "entity",
       "target_id": "harpy.json"
+    },
+    {
+      "name": "Iron Sorcerer",
+      "category": "heroes",
+      "change_type": "edit",
+      "diffs": [
+        {
+          "kind": "E",
+          "path": [
+            "abilities",
+            "passive",
+            0,
+            "description"
+          ],
+          "lhs": "Increases Rank III population, reduces Rank II population.",
+          "rhs": "Increases Rank III population by 1, reduces Rank II population by 2."
+        },
+        {
+          "kind": "E",
+          "path": [
+            "last_modified"
+          ],
+          "lhs": "2026-02-19T02:14:50.854Z",
+          "rhs": "2026-02-23T01:12:26.890910Z"
+        }
+      ],
+      "field": "entity",
+      "target_id": "iron_sorcerer.json"
     }
   ],
   "tags": [
