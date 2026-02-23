@@ -15,7 +15,7 @@
     "passive": [
       {
         "name": "Scourge of War",
-        "description": "Increases Rank III population, reduces Rank II population."
+        "description": "Increases Rank III population by 1, reduces Rank II population by 2."
       },
       {
         "name": "Forges of Valm",
