@@ -1,54 +1,14 @@
-import json
-import os
-import sys
-from pathlib import Path
-
 import jsonschema
 import pytest
 from jsonschema import validators
 
 # Try to import referencing, if not available use legacy (but this project has it)
 try:
-    from referencing import Registry, Resource
+    from referencing import Registry, Resource  # noqa: F401
 except ImportError:
     pytest.skip("referencing library not installed", allow_module_level=True)
 
-# Ensure scripts module is found
-sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "..", "scripts")))
-import config  # noqa: E402
-
-
-def load_json(filepath):
-    with open(filepath, encoding="utf-8") as f:
-        return json.load(f)
-
-
-@pytest.fixture(scope="session")
-def registry_and_schemas():
-    """Builds a registry of all schemas in the V2 schema directory."""
-    registry = Registry()
-    schemas_by_filename = {}
-
-    # Walk schema directory
-    for root, _, files in os.walk(config.SCHEMAS_DIR):
-        for file in files:
-            if not file.endswith(".schema.json"):
-                continue
-            filepath = os.path.join(root, file)
-            schema = load_json(filepath)
-
-            # Use absolute file URI as ID for robust local resolution
-            abs_uri = Path(filepath).as_uri()
-            resource = Resource.from_contents(schema)
-            registry = registry.with_resource(abs_uri, resource)
-
-            # Map filename to full path uri for lookup
-            # normalization for Windows paths
-            rel_name = os.path.relpath(filepath, config.SCHEMAS_DIR).replace("\\", "/")
-            schemas_by_filename[rel_name] = abs_uri
-            schemas_by_filename[file] = abs_uri  # fallback
-
-    return registry, schemas_by_filename
+import config
 
 
 def test_json_schemas_robust(data_loader, registry_and_schemas):
@@ -114,3 +74,39 @@ def test_json_schemas_robust(data_loader, registry_and_schemas):
                 errors.append(f"[{folder}/{filename}] Validation Exception: {e}")
 
     assert len(errors) == 0, "\n".join(errors[:20])  # Limit error output
+
+
+# ---------------------------------------------------------------------------
+# Negative validation tests — schemas must REJECT invalid data
+# ---------------------------------------------------------------------------
+
+
+def _get_validator(registry_and_schemas, schema_filename):
+    """Helper to build a validator for a given schema file."""
+    registry, schemas_map = registry_and_schemas
+    schema_uri = schemas_map[schema_filename]
+    schema_resource = registry.get_or_retrieve(schema_uri).value
+    schema_contents = schema_resource.contents
+    ValidatorClass = validators.validator_for(schema_contents)
+    return ValidatorClass(schema_contents, registry=registry)
+
+
+def test_rejects_missing_entity_id(registry_and_schemas):
+    """An empty object should fail validation against units.schema.json."""
+    validator = _get_validator(registry_and_schemas, "units.schema.json")
+    with pytest.raises(jsonschema.ValidationError):
+        validator.validate({})
+
+
+def test_rejects_wrong_type_for_health(registry_and_schemas):
+    """A string value for a numeric field should fail validation."""
+    validator = _get_validator(registry_and_schemas, "units.schema.json")
+    with pytest.raises(jsonschema.ValidationError):
+        validator.validate({"entity_id": "test", "health": "not_a_number"})
+
+
+def test_rejects_unknown_property_on_unit(registry_and_schemas):
+    """An unknown top-level property should fail if schema uses additionalProperties/unevaluatedProperties: false."""
+    validator = _get_validator(registry_and_schemas, "units.schema.json")
+    with pytest.raises(jsonschema.ValidationError):
+        validator.validate({"entity_id": "test", "garbage_field": True})

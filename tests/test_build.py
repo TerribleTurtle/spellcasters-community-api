@@ -1,13 +1,9 @@
 import json
 import os
-import sys
 from unittest.mock import patch
 
+import build_api
 import pytest
-
-# Ensure scripts module is found
-sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "..", "scripts")))
-import build_api  # noqa: E402
 
 
 @pytest.fixture

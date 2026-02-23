@@ -78,6 +78,12 @@ Full endpoint documentation is available in [CONTRIBUTING.md](CONTRIBUTING.md).
 
     See `api/v2/units.json`
 
+4.  **Run Tests:**
+
+    ```bash
+    python -m pytest -v
+    ```
+
 ## 🤝 Contributing
 
 This project is built by the community, for the community. **Anyone is free to contribute!**
