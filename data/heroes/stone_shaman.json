@@ -19,7 +19,7 @@
       },
       {
         "name": "Child of the Titans",
-        "description": "Increases Rank II and Rank III population while reducing Rank I population."
+        "description": "Increases Rank II population by 5 and Rank III population by 1 while reducing Rank I population by 15."
       },
       {
         "name": "Pathfinder",
