@@ -262,9 +262,14 @@
 
     <h1>🧪 Schema Validator</h1>
     <p class="intro">
-      Validate your JSON data against the official schemas before submitting a
-      Pull Request. Paste your JSON, upload a file, or use a direct link.
+      Validate your JSON data against the official schemas before submitting a Pull Request.
     </p>
+    
+    <div style="background: rgba(88, 166, 255, 0.1); border-left: 3px solid var(--accent); padding: 12px; margin: 16px 0; font-size: 13px; color: var(--text-primary);">
+      <strong>🛠️ Checking a Pull Request:</strong> You can auto-fetch a file by adding <code>?url=</code> to this page's address.<br>
+      <span style="color: var(--text-secondary); margin-top: 4px; display: inline-block;">Example: <code>schema-validator.html?url=https://raw.githubusercontent.com/.../your-file.json</code></span>
+    </div>
+
     <p class="security-note">
       🔒 100% client-side — your data never leaves your browser.
     </p>
