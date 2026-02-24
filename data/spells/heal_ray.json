@@ -10,6 +10,19 @@
   "tags": [],
   "range": 45,
   "value": 300,
+  "mechanics": {
+    "aura": [
+      {
+        "name": "AoE Heal",
+        "description": "Heals allies in the targeted area.",
+        "radius": 0,
+        "value": 0,
+        "interval": 0,
+        "effect": "Heal",
+        "target_types": ["Ally"]
+      }
+    ]
+  },
   "charges": 1,
   "recharge_time": 5,
   "cast_time": 0

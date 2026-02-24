@@ -3,48 +3,101 @@
     "id": "fire_infusion",
     "name": "Fire Infusion",
     "element": "Fire",
-    "effect": "Enhances creatures and buildings with fire infusion, increasing offensive capabilities and applying buildup of burning status on enemies.",
-    "status_buildup": "Burning"
+    "allied_effect": {
+      "description": "Increases damage dealt by infused allies.",
+      "stat_multiplier": {
+        "damage": 0
+      }
+    },
+    "enemy_effect": {
+      "description": "Applies buildup of Burning status on enemies, dealing damage over time.",
+      "status_buildup": "Burning",
+      "damage_tiers": [
+        {
+          "tier": "I",
+          "value": 0,
+          "calculation_unit": "flat",
+          "interval": 0
+        },
+        {
+          "tier": "II",
+          "value": 0,
+          "calculation_unit": "flat",
+          "interval": 0
+        },
+        {
+          "tier": "III",
+          "value": 0,
+          "calculation_unit": "flat",
+          "interval": 0
+        }
+      ]
+    }
   },
   {
     "id": "lightning_infusion",
     "name": "Lightning Infusion",
     "element": "Lightning",
-    "effect": "Enhances creatures and buildings with lightning infusion, increasing mobility and applying buildup of a chain lightning attack.",
-    "status_buildup": "Chain Lightning"
+    "allied_effect": {
+      "description": "Increases movement speed of infused allies.",
+      "stat_multiplier": {
+        "movement_speed": 0
+      }
+    },
+    "enemy_effect": {
+      "description": "Applies buildup of a chain lightning attack on enemies, dealing damage.",
+      "status_buildup": "Chain Lightning"
+    }
   },
   {
     "id": "poison_infusion",
     "name": "Poison Infusion",
     "element": "Poison",
-    "effect": "Enhances creatures and buildings with poison infusion, granting them health regeneration and applying buildup of poison on enemies.",
-    "status_buildup": "Poison",
-    "damage_tiers": [
-      {
-        "tier": "I",
-        "value": 0.001,
-        "calculation_unit": "percent_max_hp",
-        "interval": 1
-      },
-      {
-        "tier": "II",
-        "value": 0.003,
-        "calculation_unit": "percent_max_hp",
-        "interval": 1
-      },
-      {
-        "tier": "III",
-        "value": 0.005,
-        "calculation_unit": "percent_max_hp",
-        "interval": 1
+    "allied_effect": {
+      "description": "Grants health regeneration to infused allies.",
+      "heal": {
+        "value": 0,
+        "interval": 0
       }
-    ]
+    },
+    "enemy_effect": {
+      "description": "Applies buildup of Poison on enemies, dealing damage over time based on max HP.",
+      "status_buildup": "Poison",
+      "damage_tiers": [
+        {
+          "tier": "I",
+          "value": 0.001,
+          "calculation_unit": "percent_max_hp",
+          "interval": 1
+        },
+        {
+          "tier": "II",
+          "value": 0.003,
+          "calculation_unit": "percent_max_hp",
+          "interval": 1
+        },
+        {
+          "tier": "III",
+          "value": 0.005,
+          "calculation_unit": "percent_max_hp",
+          "interval": 1
+        }
+      ]
+    }
   },
   {
     "id": "ice_infusion",
     "name": "Ice Infusion",
     "element": "Ice",
-    "effect": "Enhances creatures and buildings with ice infusion, making them more resistant and applying buildup of freeze on enemies.",
-    "status_buildup": "Freeze"
+    "allied_effect": {
+      "description": "Increases damage resistance of infused allies.",
+      "stat_multiplier": {
+        "damage_resistance": 0
+      }
+    },
+    "enemy_effect": {
+      "description": "Applies buildup of Freeze on enemies, slowing and eventually freezing them.",
+      "status_buildup": "Freeze"
+    }
   }
 ]

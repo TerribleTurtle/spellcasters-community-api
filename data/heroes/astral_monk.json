@@ -37,12 +37,6 @@
       "damage": 32,
       "description": "Pierces through enemies with colossal astral fists.",
       "mechanics": {
-        "features": [
-          {
-            "name": "Combo Sequence",
-            "description": "Alternates between Palm Strike (32) and Power Punch (47)."
-          }
-        ],
         "pierce": true
       }
     },

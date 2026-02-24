@@ -1,5 +1,33 @@
 # Schema Changelog
 
+## Schema Changes - v1.5 Infusions Redesign & Data Corrections
+
+## Overview
+
+Redesigns the infusion system to support dual-natured effects (allied buffs vs enemy debuffs) and corrects several data files based on game design feedback.
+
+## Breaking Changes
+
+### 1. `infusions.schema.json` — Restructured
+
+- **Removed:** `effect` (string), `status_buildup` (string), root-level `damage_tiers` (array).
+- **Added:** `allied_effect` (object) — contains `description`, `stat_multiplier` (damage/resistance/speed), and `heal` (value/interval).
+- **Added:** `enemy_effect` (object) — contains `description`, `status_buildup`, and `damage_tiers`.
+
+### 2. Data Corrections
+
+- **`lich.json`** — Single aura split into two: "Cursed Wounds (Slow)" and "Cursed Wounds (Vulnerability)".
+- **`astral_monk.json`** — Removed incorrect "Combo Sequence" feature from primary ability.
+- **`heal_ray.json`** — Added `mechanics.aura` for AoE heal component (beam heal remains as `value`).
+
+## Developer Action Required
+
+- Update infusion parsers to read `allied_effect` and `enemy_effect` instead of `effect`/`status_buildup`.
+- Update Lich rendering to handle multiple aura entries.
+- Replace infusion icon with a generic magical icon (not fire-specific).
+
+---
+
 ## Schema Changes - v1.4 Patch History System
 
 ## Overview

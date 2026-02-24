@@ -2,7 +2,7 @@
   "$schema": "https://json-schema.org/draft/2019-09/schema",
   "$id": "https://spellcasters.gg/schemas/v2/infusions.schema.json",
   "title": "Infusions Data File",
-  "description": "Database of all infusion effects.",
+  "description": "Database of all infusion effects. Each infusion has separate allied (buff) and enemy (debuff) effects.",
   "type": "array",
   "items": {
     "type": "object",
@@ -15,35 +15,84 @@
         "type": "string",
         "enum": ["Fire", "Lightning", "Poison", "Ice"]
       },
-      "effect": {
-        "type": "string",
-        "description": "Description of the infusion's effect on creatures/buildings."
-      },
-      "status_buildup": {
-        "type": "string",
-        "description": "The status condition built up on enemies (e.g. Burning, Chain Lightning, Freeze, Poison)."
-      },
-      "damage_tiers": {
-        "type": "array",
-        "items": {
-          "type": "object",
-          "properties": {
-            "tier": { "type": "string", "enum": ["I", "II", "III"] },
-            "value": { "type": "number" },
-            "calculation_unit": {
-              "$ref": "definitions/enums.schema.json#/definitions/calculation_unit_enum"
+      "allied_effect": {
+        "type": "object",
+        "description": "Buff applied to allied units when infused.",
+        "properties": {
+          "description": { "type": "string" },
+          "stat_multiplier": {
+            "type": "object",
+            "description": "Percentage-based stat modifiers applied to allies.",
+            "properties": {
+              "damage": {
+                "type": "number",
+                "description": "Damage buff multiplier (e.g. 1.15 = +15% damage)."
+              },
+              "damage_resistance": {
+                "type": "number",
+                "description": "Damage resistance multiplier (e.g. 0.85 = 15% less damage taken)."
+              },
+              "movement_speed": {
+                "type": "number",
+                "description": "Movement speed multiplier (e.g. 1.20 = +20% speed)."
+              }
             },
-            "interval": {
-              "type": "number",
-              "description": "Seconds between ticks."
-            }
+            "additionalProperties": false
           },
-          "required": ["tier", "value", "calculation_unit"],
-          "additionalProperties": false
-        }
+          "heal": {
+            "type": "object",
+            "description": "Healing over time applied to allied units.",
+            "properties": {
+              "value": {
+                "type": "number",
+                "description": "Amount healed per tick."
+              },
+              "interval": {
+                "type": "number",
+                "description": "Seconds between heal ticks."
+              }
+            },
+            "required": ["value", "interval"],
+            "additionalProperties": false
+          }
+        },
+        "required": ["description"],
+        "additionalProperties": false
+      },
+      "enemy_effect": {
+        "type": "object",
+        "description": "Debuff applied to enemy units hit by infused attacks.",
+        "properties": {
+          "description": { "type": "string" },
+          "status_buildup": {
+            "type": "string",
+            "description": "The status condition built up on enemies (e.g. Burning, Chain Lightning, Freeze, Poison)."
+          },
+          "damage_tiers": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "tier": { "type": "string", "enum": ["I", "II", "III"] },
+                "value": { "type": "number" },
+                "calculation_unit": {
+                  "$ref": "definitions/enums.schema.json#/definitions/calculation_unit_enum"
+                },
+                "interval": {
+                  "type": "number",
+                  "description": "Seconds between damage ticks."
+                }
+              },
+              "required": ["tier", "value", "calculation_unit"],
+              "additionalProperties": false
+            }
+          }
+        },
+        "required": ["description", "status_buildup"],
+        "additionalProperties": false
       }
     },
-    "required": ["id", "name", "element", "effect", "status_buildup"],
+    "required": ["id", "name", "element", "allied_effect", "enemy_effect"],
     "additionalProperties": false
   }
 }
