@@ -8,10 +8,12 @@ assignees: ""
 
 **Data Type**
 
-- [ ] Creature
-- [ ] Spell
 - [ ] Hero
-- [ ] Item
+- [ ] Unit
+- [ ] Spell
+- [ ] Titan
+- [ ] Consumable
+- [ ] Upgrade
 - [ ] Other
 
 **Item Name**

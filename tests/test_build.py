@@ -21,7 +21,7 @@ def build_output(temp_output_dir):
     """
     with patch("build_api.OUTPUT_DIR", temp_output_dir):
         # Prevent sys.exit() from stopping the test runner if build fails
-        with patch("sys.exit") as mock_exit:
+        with patch("sys.exit") as mock_exit, patch("config.OUTPUT_DIR", temp_output_dir):
             build_api.main()
 
             # Ensure it didn't exit with error

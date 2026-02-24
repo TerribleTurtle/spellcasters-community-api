@@ -6,13 +6,14 @@ import json
 import os
 import re
 import subprocess
+
 from deepdiff import DeepDiff
 
 
 def load_json(path):
     if not os.path.exists(path):
         return None
-    with open(path, "r", encoding="utf-8") as f:
+    with open(path, encoding="utf-8") as f:
         try:
             return json.load(f)
         except json.JSONDecodeError:
@@ -28,8 +29,7 @@ def get_file_content_at_commit(filepath, commit_hash):
     """Fetches the JSON content of a file at a specific Git commit."""
     try:
         result = subprocess.run(
-            ["git", "show", f"{commit_hash}:{filepath}"],
-            capture_output=True, text=True, check=True
+            ["git", "show", f"{commit_hash}:{filepath}"], capture_output=True, text=True, check=True
         )
         return json.loads(result.stdout)
     except Exception:
@@ -51,7 +51,7 @@ def compute_diff(old_data, new_data):
     # Exclude last_modified from diffing so we don't get noisy patch notes just for timestamp bumps
     diff = DeepDiff(old_data or {}, new_data or {}, ignore_order=True, exclude_paths=["root['last_modified']"])
     diffs = []
-    
+
     if "dictionary_item_added" in diff:
         for path in diff["dictionary_item_added"]:
             keys = _parse_deepdiff_path(path)
@@ -103,5 +103,5 @@ def compute_diff(old_data, new_data):
         for path, val in diff["iterable_item_removed"].items():
             keys = _parse_deepdiff_path(path)
             diffs.append({"path": keys, "removed": True, "old_value": val})
-            
+
     return diffs

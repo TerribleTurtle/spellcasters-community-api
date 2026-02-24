@@ -1,7 +1,7 @@
 [
   {
-    "version": "0.0.4",
-    "date": "2026-02-22",
+    "version": "0.0.1",
+    "date": "2026-02-24",
     "snapshot": {
       "entity_id": "swamp_witch",
       "name": "Swamp Witch",
@@ -12,7 +12,7 @@
       "health": 350,
       "movement_type": "Ground",
       "population": 0,
-      "last_modified": "2026-02-22T23:04:23.954069Z",
+      "last_modified": "2026-02-18T07:20:50.326Z",
       "$schema": "../../schemas/v2/heroes.schema.json",
       "class": "Duelist",
       "difficulty": 3,
@@ -28,7 +28,7 @@
           },
           {
             "name": "Swarm Dominance",
-            "description": "The Swamp Witch has more Rank I population, but less Rank II and Rank III population.  "
+            "description": "The Swamp Witch increases Rank I population by 5, while reducing Rank II and Rank III population by 2."
           }
         ],
         "primary": {

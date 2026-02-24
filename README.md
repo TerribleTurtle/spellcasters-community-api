@@ -2,10 +2,10 @@
 
 **A free, open-source API for Spellcasters Chronicles.**
 
-> [!WARNING] > **BETA NOTICE:** Current data reflects the **Closed Beta**.
-> We will begin manual updates for **Early Access** on and after **Feb 26th**.
+> [!WARNING] > **BETA NOTICE:** Current data reflects the **Closed Beta** (Data Collection Phase).
+> **Early Access** begins **Feb 26th** — schema and data updates will follow.
 >
-> **SCHEMA ALERT:** The JSON schema is volatile and may change without notice until **Feb 26th**.
+> **SCHEMA NOTE:** The JSON schema may receive breaking changes before the Early Access launch.
 
 This project is a collaborative tool for **developers** (building apps/tools) and the **community** (wiki editors/fans).
 It is **free to use** and **open for anyone to contribute**.
@@ -15,7 +15,7 @@ It is **free to use** and **open for anyone to contribute**.
 Please refer to [CONTRIBUTING.md](CONTRIBUTING.md) to learn how to:
 
 - Use this data in your own projects
-- Add new units or items
+- Add new data (heroes, spells, units, and more)
 - Fix typos
 
 ## 💬 Community

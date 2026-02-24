@@ -1,7 +1,7 @@
 [
   {
-    "version": "0.0.4",
-    "date": "2026-02-22",
+    "version": "0.0.1",
+    "date": "2026-02-24",
     "snapshot": {
       "$schema": "../../schemas/v2/spells.schema.json",
       "entity_id": "poison_grenade",
@@ -27,8 +27,7 @@
       },
       "charges": 1,
       "recharge_time": 60,
-      "cast_time": 0,
-      "last_modified": "2026-02-22T22:08:21.303020Z"
+      "cast_time": 0
     }
   }
 ]

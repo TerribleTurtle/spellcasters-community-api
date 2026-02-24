@@ -26,7 +26,7 @@ If applicable, add screenshots to help explain your problem.
 **Environment (please complete the following information):**
 
 - OS: [e.g. Windows]
-- Python Version: [e.g. 3.9]
+- Python Version: [e.g. 3.11]
 
 **Additional context**
 Add any other context about the problem here.

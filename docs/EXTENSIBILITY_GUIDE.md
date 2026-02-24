@@ -54,7 +54,7 @@ python scripts/build_api.py
 Changing a field (e.g., renaming `cost` to `gold_cost`) is harder because it breaks backward compatibility.
 
 1.  **Modify Schema:** Update the schema to accept _both_ the old and new field (optional) or just the new one.
-2.  **Migrate Data:** You may need to write a migration script (like `migrate_v2.py`) to batch-update all JSON files.
+2.  **Migrate Data:** You may need to write a migration script to batch-update all JSON files.
 3.  **Strict Mode:** Once migrated, remove the old field from the schema to enforce the new structure.
 
 ## Comparison: V2 vs. Legacy V1

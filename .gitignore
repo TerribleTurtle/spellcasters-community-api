@@ -43,16 +43,23 @@ active_state.md
 # Build Artifacts
 api/v1/
 api/v2/
+timeline/
+changelog*.json
 
 # Node.js (ajv2019.bundle.js build tooling)
 node_modules/
 
+# Test / Coverage Artifacts
+.coverage
+test_out.txt
+
 # Caches
 .asset_cache.json
+.ruff_cache/
+.pytest_cache/
 
 # Backups and Logs
 backups/
 data/backups/
 data/queue_backups/
 data/audit.jsonl
-active_state.md

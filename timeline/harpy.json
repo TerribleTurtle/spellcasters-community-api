@@ -1,7 +1,7 @@
 [
   {
-    "version": "0.0.4",
-    "date": "2026-02-23",
+    "version": "0.0.1",
+    "date": "2026-02-24",
     "snapshot": {
       "$schema": "../../schemas/v2/units.schema.json",
       "entity_id": "harpy",
@@ -44,10 +44,9 @@
       "dps": 12,
       "attack_interval": 1,
       "charges": 1,
-      "recharge_time": 5,
+      "recharge_time": 7,
       "cast_time": 0,
-      "population": 0,
-      "last_modified": "2026-02-23T01:11:12.203914Z"
+      "population": 0
     }
   }
 ]

@@ -20,3 +20,5 @@ When the user asks for Linux commands (curl, grep, ls, etc.), use this pattern i
 `& "C:\Program Files\Git\bin\bash.exe" -c "curl -s https://api.github.com/..."`
 **Grep code:**
 `& "C:\Program Files\Git\bin\bash.exe" -c "grep -r 'TODO' src/"`
+
+C:\Python314\python

@@ -1,7 +1,7 @@
 [
   {
-    "version": "0.0.2",
-    "date": "2026-02-19",
+    "version": "0.0.1",
+    "date": "2026-02-24",
     "snapshot": {
       "$schema": "../../schemas/v2/spells.schema.json",
       "entity_id": "thunder_ray",

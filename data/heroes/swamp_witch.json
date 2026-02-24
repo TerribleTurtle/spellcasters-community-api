@@ -54,9 +54,7 @@
         "damage_modifiers": [
           {
             "multiplier": 1.5,
-            "target_types": [
-              "All"
-            ]
+            "target_types": ["All"]
           }
         ],
         "features": [

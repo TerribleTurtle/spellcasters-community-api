@@ -16,11 +16,10 @@ Simulated history:
 
 import json
 import os
-from unittest.mock import MagicMock, patch, call
+from unittest.mock import MagicMock, patch
 
-import pytest
 import generate_patch
-
+import pytest
 
 # ---------------------------------------------------------------------------
 # Fixtures: Simulated game world
@@ -102,7 +101,7 @@ def pipeline_env(tmp_path):
 
 def build_subprocess_router(pipeline_env):
     """Builds a side_effect function that routes subprocess.run calls to the correct mock.
-    
+
     This simulates a 3-version git history:
       commit_a = 0.0.1 (skeleton exists)
       commit_b = 0.0.2 (skeleton buffed)
@@ -150,10 +149,12 @@ def build_subprocess_router(pipeline_env):
 
         # git diff --name-status commit_b HEAD
         if "git diff" in cmd_str and "commit_b" in cmd_str:
-            return make_git_diff_response([
-                "M\tdata/units/skeleton.json",
-                "A\tdata/spells/fireball.json",
-            ])
+            return make_git_diff_response(
+                [
+                    "M\tdata/units/skeleton.json",
+                    "A\tdata/spells/fireball.json",
+                ]
+            )
 
         # git ls-tree -r --name-only {commit} data/
         if "git ls-tree" in cmd_str:
@@ -162,10 +163,12 @@ def build_subprocess_router(pipeline_env):
             elif "commit_b" in cmd_str:
                 return make_ls_tree_response(["data/units/skeleton.json"])
             elif "commit_c" in cmd_str:
-                return make_ls_tree_response([
-                    "data/units/skeleton.json",
-                    "data/spells/fireball.json",
-                ])
+                return make_ls_tree_response(
+                    [
+                        "data/units/skeleton.json",
+                        "data/spells/fireball.json",
+                    ]
+                )
 
         # Default: empty response
         m = MagicMock()
@@ -180,6 +183,7 @@ def build_subprocess_router(pipeline_env):
 # Integration Tests: Full Pipeline Contract
 # ===========================================================================
 
+
 class TestMainPipelineContract:
     """Tests the complete pipeline's observable output."""
 
@@ -187,12 +191,14 @@ class TestMainPipelineContract:
         """Runs main() with all paths patched to use tmp_path."""
         router, call_log = build_subprocess_router(pipeline_env)
 
-        with patch("subprocess.run", side_effect=router), \
-             patch.object(generate_patch, "GAME_CONFIG_PATH", pipeline_env["game_config_path"]), \
-             patch.object(generate_patch, "PATCHES_FILE", pipeline_env["patches_path"]), \
-             patch.object(generate_patch, "TIMELINE_DIR", pipeline_env["timeline_dir"]), \
-             patch.object(generate_patch.config, "DATA_DIR", pipeline_env["data_dir"]), \
-             patch.object(generate_patch.config, "BASE_DIR", str(pipeline_env["tmp_path"])):
+        with (
+            patch("subprocess.run", side_effect=router),
+            patch.object(generate_patch, "GAME_CONFIG_PATH", pipeline_env["game_config_path"]),
+            patch.object(generate_patch, "PATCHES_FILE", pipeline_env["patches_path"]),
+            patch.object(generate_patch, "TIMELINE_DIR", pipeline_env["timeline_dir"]),
+            patch.object(generate_patch.config, "DATA_DIR", pipeline_env["data_dir"]),
+            patch.object(generate_patch.config, "BASE_DIR", str(pipeline_env["tmp_path"])),
+        ):
             generate_patch.main()
 
         return call_log
@@ -218,9 +224,7 @@ class TestMainPipelineContract:
         assert "changes" in patch_002
         assert len(patch_002["changes"]) > 0
 
-        skeleton_change = next(
-            (c for c in patch_002["changes"] if c["target_id"] == "skeleton.json"), None
-        )
+        skeleton_change = next((c for c in patch_002["changes"] if c["target_id"] == "skeleton.json"), None)
         assert skeleton_change is not None, "Skeleton should be in 0.0.2 changes"
         assert skeleton_change["change_type"] == "edit"
         assert skeleton_change["category"] == "units"
@@ -237,9 +241,7 @@ class TestMainPipelineContract:
         patches = json.loads(open(pipeline_env["patches_path"], encoding="utf-8").read())
         patch_003 = next(p for p in patches if p["version"] == "0.0.3")
 
-        fireball_change = next(
-            (c for c in patch_003["changes"] if c["target_id"] == "fireball.json"), None
-        )
+        fireball_change = next((c for c in patch_003["changes"] if c["target_id"] == "fireball.json"), None)
         assert fireball_change is not None, "Fireball should be in 0.0.3 changes"
         assert fireball_change["change_type"] == "add"
         assert fireball_change["category"] == "spells"
@@ -251,9 +253,7 @@ class TestMainPipelineContract:
         patches = json.loads(open(pipeline_env["patches_path"], encoding="utf-8").read())
         patch_003 = next(p for p in patches if p["version"] == "0.0.3")
 
-        skeleton_change = next(
-            (c for c in patch_003["changes"] if c["target_id"] == "skeleton.json"), None
-        )
+        skeleton_change = next((c for c in patch_003["changes"] if c["target_id"] == "skeleton.json"), None)
         assert skeleton_change is not None
 
     def test_patch_entries_have_required_metadata(self, pipeline_env):
@@ -261,15 +261,15 @@ class TestMainPipelineContract:
         self._run_pipeline(pipeline_env)
 
         patches = json.loads(open(pipeline_env["patches_path"], encoding="utf-8").read())
-        for patch in patches:
-            assert "id" in patch
-            assert "version" in patch
-            assert "date" in patch
-            assert "type" in patch
-            assert "title" in patch
-            assert "tags" in patch
-            assert "changes" in patch
-            assert isinstance(patch["changes"], list)
+        for p in patches:
+            assert "id" in p
+            assert "version" in p
+            assert "date" in p
+            assert "type" in p
+            assert "title" in p
+            assert "tags" in p
+            assert "changes" in p
+            assert isinstance(p["changes"], list)
 
     def test_timeline_skeleton_has_all_versions(self, pipeline_env):
         """timeline/skeleton.json should have snapshots for 0.0.1, 0.0.2, and 0.0.3."""
@@ -317,9 +317,7 @@ class TestMainPipelineContract:
         for fname in os.listdir(pipeline_env["timeline_dir"]):
             if not fname.endswith(".json"):
                 continue
-            timeline = json.loads(
-                open(os.path.join(pipeline_env["timeline_dir"], fname), encoding="utf-8").read()
-            )
+            timeline = json.loads(open(os.path.join(pipeline_env["timeline_dir"], fname), encoding="utf-8").read())
             for entry in timeline:
                 assert "version" in entry
                 assert "date" in entry
@@ -338,6 +336,7 @@ class TestMainPipelineContract:
 # ===========================================================================
 # Edge Case Integration Tests
 # ===========================================================================
+
 
 class TestMainPipelineEdgeCases:
     """Edge cases for the complete pipeline."""
@@ -371,12 +370,14 @@ class TestMainPipelineEdgeCases:
             m.stdout = ""
             return m
 
-        with patch("subprocess.run", side_effect=router), \
-             patch.object(generate_patch, "GAME_CONFIG_PATH", str(game_config_path)), \
-             patch.object(generate_patch, "PATCHES_FILE", str(patches_path)), \
-             patch.object(generate_patch, "TIMELINE_DIR", str(timeline_dir)), \
-             patch.object(generate_patch.config, "DATA_DIR", str(data_dir)), \
-             patch.object(generate_patch.config, "BASE_DIR", str(tmp_path)):
+        with (
+            patch("subprocess.run", side_effect=router),
+            patch.object(generate_patch, "GAME_CONFIG_PATH", str(game_config_path)),
+            patch.object(generate_patch, "PATCHES_FILE", str(patches_path)),
+            patch.object(generate_patch, "TIMELINE_DIR", str(timeline_dir)),
+            patch.object(generate_patch.config, "DATA_DIR", str(data_dir)),
+            patch.object(generate_patch.config, "BASE_DIR", str(tmp_path)),
+        ):
             generate_patch.main()
 
         patches = json.loads(patches_path.read_text(encoding="utf-8"))
@@ -408,12 +409,14 @@ class TestMainPipelineEdgeCases:
             m.stdout = ""
             return m
 
-        with patch("subprocess.run", side_effect=router), \
-             patch.object(generate_patch, "GAME_CONFIG_PATH", str(game_config_path)), \
-             patch.object(generate_patch, "PATCHES_FILE", str(patches_path)), \
-             patch.object(generate_patch, "TIMELINE_DIR", str(timeline_dir)), \
-             patch.object(generate_patch.config, "DATA_DIR", str(data_dir)), \
-             patch.object(generate_patch.config, "BASE_DIR", str(tmp_path)):
+        with (
+            patch("subprocess.run", side_effect=router),
+            patch.object(generate_patch, "GAME_CONFIG_PATH", str(game_config_path)),
+            patch.object(generate_patch, "PATCHES_FILE", str(patches_path)),
+            patch.object(generate_patch, "TIMELINE_DIR", str(timeline_dir)),
+            patch.object(generate_patch.config, "DATA_DIR", str(data_dir)),
+            patch.object(generate_patch.config, "BASE_DIR", str(tmp_path)),
+        ):
             generate_patch.main()
 
         # Timeline should still be created from disk

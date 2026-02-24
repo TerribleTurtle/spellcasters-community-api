@@ -1,7 +1,7 @@
 [
   {
-    "version": "0.0.3",
-    "date": "2026-02-19",
+    "version": "0.0.1",
+    "date": "2026-02-24",
     "snapshot": {
       "$schema": "../../schemas/v2/units.schema.json",
       "entity_id": "ogre",
@@ -25,49 +25,7 @@
             ]
           },
           {
-            "multiplier": 1.75,
-            "target_types": [
-              "Creature"
-            ]
-          }
-        ]
-      },
-      "movement_speed": 3,
-      "movement_type": "Ground",
-      "population": 0,
-      "rank": "III",
-      "recharge_time": 50,
-      "tags": [],
-      "last_modified": "2026-02-19T05:08:34.477Z"
-    }
-  },
-  {
-    "version": "0.0.4",
-    "date": "2026-02-22",
-    "snapshot": {
-      "$schema": "../../schemas/v2/units.schema.json",
-      "entity_id": "ogre",
-      "name": "Ogre",
-      "category": "Creature",
-      "attack_interval": 1,
-      "cast_time": 0,
-      "charges": 1,
-      "damage": 70,
-      "description": "Mighty warrior that crushes target areas with a hammer.",
-      "dps": 70,
-      "health": 2300,
-      "image_required": true,
-      "magic_school": "War",
-      "mechanics": {
-        "damage_modifiers": [
-          {
-            "multiplier": 5,
-            "target_types": [
-              "Building"
-            ]
-          },
-          {
-            "multiplier": 1.75,
+            "multiplier": 0.75,
             "target_types": [
               "Creature"
             ]
@@ -80,7 +38,7 @@
       "rank": "III",
       "recharge_time": 60,
       "tags": [],
-      "last_modified": "2026-02-22T22:41:32.801607Z"
+      "last_modified": "2026-02-19T05:08:34.477Z"
     }
   }
 ]

@@ -1,7 +1,7 @@
 [
   {
-    "version": "0.0.2",
-    "date": "2026-02-19",
+    "version": "0.0.1",
+    "date": "2026-02-24",
     "snapshot": {
       "$schema": "../../schemas/v2/heroes.schema.json",
       "entity_id": "mystic_scribe",
@@ -33,7 +33,7 @@
         "primary": {
           "name": "Brush Strike",
           "damage": 25,
-          "description": "Strike with enchanted ink to damage enemies and boost allies’ Max HP.",
+          "description": "Strike with enchanted ink to damage enemies and boost allies\u2019 Max HP.",
           "mechanics": {
             "cleave": true,
             "features": [

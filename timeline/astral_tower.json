@@ -1,7 +1,7 @@
 [
   {
-    "version": "0.0.4",
-    "date": "2026-02-22",
+    "version": "0.0.1",
+    "date": "2026-02-24",
     "snapshot": {
       "$schema": "../../schemas/v2/units.schema.json",
       "entity_id": "astral_tower",
@@ -19,8 +19,7 @@
       "charges": 1,
       "recharge_time": 60,
       "cast_time": 0,
-      "population": 0,
-      "last_modified": "2026-02-22T22:41:32.788963Z"
+      "population": 0
     }
   }
 ]

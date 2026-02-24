@@ -1,7 +1,7 @@
 [
   {
-    "version": "0.0.4",
-    "date": "2026-02-22",
+    "version": "0.0.1",
+    "date": "2026-02-24",
     "snapshot": {
       "$schema": "../../schemas/v2/spells.schema.json",
       "entity_id": "frost_surge",
@@ -15,8 +15,7 @@
       "range": 24,
       "charges": 1,
       "recharge_time": 60,
-      "cast_time": 0,
-      "last_modified": "2026-02-22T22:41:32.786312Z"
+      "cast_time": 0
     }
   }
 ]

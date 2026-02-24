@@ -1,5 +1,5 @@
 """
-Unit tests for generate_patch.py
+Unit tests for generate_patch.py (Stateless Architecture)
 
 Tests the pure utility functions and git-dependent functions (with mocked subprocess).
 """
@@ -9,132 +9,163 @@ from unittest.mock import MagicMock, patch
 import generate_patch
 
 # ---------------------------------------------------------------------------
-# _map_path_to_array — Pure function, no mocking needed
+# compute_diff — Pure function, no mocking needed
 # ---------------------------------------------------------------------------
 
 
-class TestMapPathToArray:
-    """Tests for the DeepDiff path-string parser."""
+class TestComputeDiff:
+    """Tests for the DeepDiff parser and formatter."""
 
-    def test_simple_key(self):
-        result = generate_patch._map_path_to_array("root['mechanics']")
-        assert result == ["mechanics"]
+    def test_item_added(self):
+        old = {"stats": {"health": 100}}
+        new = {"stats": {"health": 100, "attack": 50}}
+        diffs = generate_patch.compute_diff(old, new)
 
-    def test_nested_keys(self):
-        result = generate_patch._map_path_to_array("root['mechanics']['damage_modifiers']")
-        assert result == ["mechanics", "damage_modifiers"]
+        assert len(diffs) == 1
+        assert diffs[0]["path"] == ["stats", "attack"]
+        assert diffs[0]["new_value"] == 50
 
-    def test_integer_index(self):
-        result = generate_patch._map_path_to_array("root['mechanics']['spawner'][0]")
-        assert result == ["mechanics", "spawner", 0]
+    def test_item_removed(self):
+        old = {"stats": {"health": 100, "attack": 50}}
+        new = {"stats": {"health": 100}}
+        diffs = generate_patch.compute_diff(old, new)
 
-    def test_multiple_integer_indices(self):
-        result = generate_patch._map_path_to_array("root['list'][2]['nested'][0]")
-        assert result == ["list", 2, "nested", 0]
+        assert len(diffs) == 1
+        assert diffs[0]["path"] == ["stats", "attack"]
+        assert diffs[0].get("removed") is True
 
-    def test_root_only(self):
-        result = generate_patch._map_path_to_array("root")
-        assert result == []
+    def test_value_changed(self):
+        old = {"stats": {"health": 100}}
+        new = {"stats": {"health": 150}}
+        diffs = generate_patch.compute_diff(old, new)
 
-    def test_deep_path(self):
-        result = generate_patch._map_path_to_array("root['a']['b']['c']['d'][10]")
-        assert result == ["a", "b", "c", "d", 10]
+        assert len(diffs) == 1
+        assert diffs[0]["path"] == ["stats", "health"]
+        assert diffs[0]["old_value"] == 100
+        assert diffs[0]["new_value"] == 150
 
+    def test_iterable_item_added(self):
+        old = {"tags": ["fire"]}
+        new = {"tags": ["fire", "magic"]}
+        diffs = generate_patch.compute_diff(old, new)
 
-# ---------------------------------------------------------------------------
-# get_commit_author — requires subprocess mocking
-# ---------------------------------------------------------------------------
+        assert len(diffs) == 1
+        assert diffs[0]["path"] == ["tags", 1]
+        assert diffs[0]["new_value"] == "magic"
 
+    def test_ignores_last_modified(self):
+        old = {"last_modified": "2024-01-01", "stats": {"health": 100}}
+        new = {"last_modified": "2024-01-02", "stats": {"health": 100}}
+        diffs = generate_patch.compute_diff(old, new)
 
-class TestGetCommitAuthor:
-    """Tests for git commit author extraction."""
-
-    def test_returns_human_co_author(self):
-        """Should prefer Co-authored-by over commit author."""
-        body_result = MagicMock()
-        body_result.stdout = "Some commit message\n\nCo-authored-by: Jane Doe <jane@example.com>"
-
-        with patch("generate_patch.subprocess.run", return_value=body_result):
-            assert generate_patch.get_commit_author() == "Jane Doe"
-
-    def test_filters_bot_authors(self):
-        """Should skip bot co-authors and fall back to commit author."""
-        body_result = MagicMock()
-        body_result.stdout = "Co-authored-by: dependabot[bot] <dependabot@github.com>"
-
-        author_result = MagicMock()
-        author_result.stdout = "Human Dev"
-
-        with patch("generate_patch.subprocess.run", side_effect=[body_result, author_result]):
-            assert generate_patch.get_commit_author() == "Human Dev"
-
-    def test_fallback_to_commit_author(self):
-        """When no Co-authored-by found, should use git commit author."""
-        body_result = MagicMock()
-        body_result.stdout = "Just a plain commit message"
-
-        author_result = MagicMock()
-        author_result.stdout = "Commit Author"
-
-        with patch("generate_patch.subprocess.run", side_effect=[body_result, author_result]):
-            assert generate_patch.get_commit_author() == "Commit Author"
-
-    def test_returns_none_on_error(self):
-        """Should return None when git commands fail."""
-        import subprocess
-
-        with patch("generate_patch.subprocess.run", side_effect=subprocess.CalledProcessError(1, "git")):
-            assert generate_patch.get_commit_author() is None
+        # Should be empty because last_modified is excluded
+        assert len(diffs) == 0
 
 
 # ---------------------------------------------------------------------------
-# get_git_diff_files — requires subprocess + env mocking
+# get_changed_files_between — requires subprocess mocking
 # ---------------------------------------------------------------------------
 
 
-class TestGetGitDiffFiles:
+class TestGetChangedFilesBetween:
     """Tests for git diff file listing."""
 
-    def test_parses_name_status_output(self):
+    @patch("subprocess.run")
+    def test_parses_name_status_output(self, mock_run):
         """Should parse git diff --name-status output correctly."""
-        # Mock the two subprocess calls:
-        # 1. git log -1 --format=%H data/patches.json (for before_sha)
-        # 2. git diff --name-status before_sha after_sha
-        log_result = MagicMock()
-        log_result.stdout = "abc123"
+        result = MagicMock()
+        result.stdout = "M\tdata/units/skeleton.json\nA\tdata/spells/fireball.json\n"
+        mock_run.return_value = result
 
-        diff_result = MagicMock()
-        diff_result.stdout = "M\tdata/units/skeleton.json\nA\tdata/spells/fireball.json\n"
+        changed = generate_patch.get_changed_files_between("before", "after")
+        assert ("M", "data/units/skeleton.json") in changed
+        assert ("A", "data/spells/fireball.json") in changed
+        assert len(changed) == 2
 
-        with (
-            patch("generate_patch.subprocess.run", side_effect=[log_result, diff_result]),
-            patch.dict("os.environ", {"AFTER_SHA": "def456"}, clear=False),
-        ):
-            result = generate_patch.get_git_diff_files()
-            assert ("M", "data/units/skeleton.json") in result
-            assert ("A", "data/spells/fireball.json") in result
-            assert len(result) == 2
-
-    def test_filters_non_data_files(self):
+    @patch("subprocess.run")
+    def test_filters_non_data_files(self, mock_run):
         """Should only include files under data/ with .json extension."""
-        log_result = MagicMock()
-        log_result.stdout = "abc123"
+        result = MagicMock()
+        result.stdout = "M\tdata/units/skeleton.json\nM\tscripts/build_api.py\nM\tREADME.md\n"
+        mock_run.return_value = result
 
-        diff_result = MagicMock()
-        diff_result.stdout = "M\tdata/units/skeleton.json\nM\tscripts/build_api.py\nM\tREADME.md\n"
+        changed = generate_patch.get_changed_files_between("before", "after")
+        assert len(changed) == 1
+        assert changed[0] == ("M", "data/units/skeleton.json")
 
-        with (
-            patch("generate_patch.subprocess.run", side_effect=[log_result, diff_result]),
-            patch.dict("os.environ", {"AFTER_SHA": "def456"}, clear=False),
-        ):
-            result = generate_patch.get_git_diff_files()
-            assert len(result) == 1
-            assert result[0] == ("M", "data/units/skeleton.json")
-
-    def test_returns_empty_on_error(self):
+    @patch("subprocess.run")
+    def test_returns_empty_on_error(self, mock_run):
         """Should return empty list when git commands fail."""
         import subprocess
 
-        with patch("generate_patch.subprocess.run", side_effect=subprocess.CalledProcessError(1, "git")):
-            result = generate_patch.get_git_diff_files()
-            assert result == []
+        mock_run.side_effect = subprocess.CalledProcessError(1, "git")
+
+        changed = generate_patch.get_changed_files_between("before", "after")
+        assert changed == []
+
+
+# ---------------------------------------------------------------------------
+# discover_version_boundaries — requires subprocess mocking
+# ---------------------------------------------------------------------------
+
+
+class TestDiscoverVersionBoundaries:
+    @patch("subprocess.run")
+    def test_parses_git_log_and_show(self, mock_run):
+        # First call gets commit SHAs
+        log_result = MagicMock()
+        log_result.stdout = "commit1\ncommit2\n"
+
+        # Second call gets game_config for commit1
+        show1_result = MagicMock()
+        show1_result.stdout = '{"version": "0.0.1"}'
+
+        # Third call gets game_config for commit2
+        show2_result = MagicMock()
+        show2_result.stdout = '{"version": "0.0.2"}'
+
+        mock_run.side_effect = [log_result, show1_result, show2_result]
+
+        boundaries = generate_patch.discover_version_boundaries("1.0.0")
+        assert len(boundaries) == 2
+        assert boundaries[0] == {"version": "0.0.1", "commit": "commit1"}
+        assert boundaries[1] == {"version": "0.0.2", "commit": "commit2"}
+
+    @patch("subprocess.run")
+    def test_ignores_commits_that_dont_change_version(self, mock_run):
+        log_result = MagicMock()
+        log_result.stdout = "commit1\ncommit1_fix\ncommit2\n"
+
+        show1_result = MagicMock()
+        show1_result.stdout = '{"version": "0.0.1"}'
+
+        show1_fix_result = MagicMock()
+        show1_fix_result.stdout = '{"version": "0.0.1"}'
+
+        show2_result = MagicMock()
+        show2_result.stdout = '{"version": "0.0.2"}'
+
+        mock_run.side_effect = [log_result, show1_result, show1_fix_result, show2_result]
+
+        boundaries = generate_patch.discover_version_boundaries("1.0.0")
+        assert len(boundaries) == 2
+        assert boundaries[0] == {"version": "0.0.1", "commit": "commit1"}  # Only first commit for 0.0.1
+        assert boundaries[1] == {"version": "0.0.2", "commit": "commit2"}
+
+    @patch("subprocess.run")
+    def test_ignores_future_versions(self, mock_run):
+        log_result = MagicMock()
+        log_result.stdout = "commit1\ncommit2\n"
+
+        show1_result = MagicMock()
+        show1_result.stdout = '{"version": "0.0.1"}'
+
+        show2_result = MagicMock()
+        show2_result.stdout = '{"version": "0.0.4"}'
+
+        mock_run.side_effect = [log_result, show1_result, show2_result]
+
+        # Current version is 0.0.1, so it should ignore 0.0.4
+        boundaries = generate_patch.discover_version_boundaries("0.0.1")
+        assert len(boundaries) == 1
+        assert boundaries[0] == {"version": "0.0.1", "commit": "commit1"}

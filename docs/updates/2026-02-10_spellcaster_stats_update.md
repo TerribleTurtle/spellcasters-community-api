@@ -4,7 +4,7 @@ This document outlines the schema changes and data updates applied to Spellcaste
 
 ## 1. Schema Changes
 
-### `spellcaster.schema.json`
+### `heroes.schema.json`
 
 - **[NEW] `projectiles`**: Added to `ability_detail.stats`.
   - Type: `integer` (nullable)

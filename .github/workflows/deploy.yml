@@ -99,7 +99,6 @@ jobs:
       - name: Run Build Script
         run: python scripts/build_api.py
 
-
       - name: Assemble Public Directory
         run: |
           mkdir public
@@ -114,7 +113,6 @@ jobs:
           cp ajv2019.bundle.js public/
           cp -r assets public/
           cp .nojekyll public/
-          cp V1_all_data.json public/
           cp changelog*.json public/
           cp data/patches.json public/
 

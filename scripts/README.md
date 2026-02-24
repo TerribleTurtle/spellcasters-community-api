@@ -18,7 +18,7 @@ pip install -r requirements.txt
 Aggregates individual JSON files from `data/` into consolidated API responses in `api/v2/`.
 
 - Generates collection files (e.g., `units.json`, `spells.json`).
-- Generates a master `all_data.json` and `status.json`.
+- Generates `status.json`.
 - Copies Patch History endpoints (`changelog*.json`, `timeline/`).
 
 ### `check.ps1`
@@ -40,12 +40,16 @@ Performs strict validation on the data to ensure API quality.
 - **Reference Integrity:** Ensures logical links are valid (e.g., Upgrade targets reference existing Unit tags).
 - **Asset Hygiene:** Checks for missing images and warns if images are too large (>100KB) or have incorrect dimensions.
 
-### `check_data_consistency.py`
+### `build_audit_log.py`
 
-**Usage:** `python scripts/check_data_consistency.py`
-Audits V2 data against the legacy V1 source of truth (`V1_all_data.json`) to control data migration quality.
+**Usage:** `python scripts/build_audit_log.py`
+Generates an audit log (`audit.json`) based on recent Git history and schema validations.
 
-- Generates a `consistency_report.txt` detailing mismatches.
+- Tracks added, modified, and deleted entities across commits.
+
+### `patch_utils.py`
+
+Utility functions for generating and managing patch data, determining change types (`add`, `edit`, `delete`), and interacting with Git history.
 
 ### `release.py`
 
@@ -107,5 +111,5 @@ Some scripts rely on environment variables when running in GitHub Actions:
 - **`BEFORE_SHA`**: The commit SHA before the push. Used by `generate_patch.py` to diff changes. (Fallback: `HEAD~1`)
 - **`AFTER_SHA`**: The commit SHA after the push. Used by `generate_patch.py`. (Fallback: `HEAD`)
 
-> **Note:** The deploy workflow (`deploy.yml`) requires `contents:write`, `pages:write`, and `id-token:write` permissions.
+> **Note:** The deploy workflow (`deploy.yml`) requires `contents:read`, `pages:write`, and `id-token:write` permissions.
 > **Local Development:** You do **not** need a `.env` file to run scripts locally. They will gracefully fall back to local git history (`HEAD~1` and `HEAD`).

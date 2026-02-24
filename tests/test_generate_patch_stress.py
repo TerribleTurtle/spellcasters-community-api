@@ -5,19 +5,18 @@ Adversarial, edge-case, and chaos-engineering style tests.
 Goal: Try to break every function in every conceivable way.
 """
 
-from unittest.mock import MagicMock, patch, call
-import subprocess
 import json
-import pytest
+import subprocess
+from unittest.mock import MagicMock, patch
 
 import generate_patch
 import patch_utils
-
-
+import pytest
 
 # ===========================================================================
 # _parse_deepdiff_path — Regex parser torture tests
 # ===========================================================================
+
 
 class TestParseDeepDiffPath:
     """Test the regex-based DeepDiff path parser with every evil input."""
@@ -78,6 +77,7 @@ class TestParseDeepDiffPath:
 # ===========================================================================
 # compute_diff — Pure function adversarial torture tests
 # ===========================================================================
+
 
 class TestComputeDiffAdversarial:
     """Adversarial tests for compute_diff."""
@@ -287,6 +287,7 @@ class TestComputeDiffAdversarial:
 # get_changed_files_between — Git subprocess mock torture tests
 # ===========================================================================
 
+
 class TestGetChangedFilesBetweenAdversarial:
     """Adversarial tests for get_changed_files_between."""
 
@@ -387,7 +388,7 @@ class TestGetChangedFilesBetweenAdversarial:
         # This WILL crash with IndexError because parts[1] doesn't exist
         # Let's see if it does — this is a legit bug-finder
         try:
-            changed = generate_patch.get_changed_files_between("a", "b")
+            generate_patch.get_changed_files_between("a", "b")
             # If it doesn't crash, that's fine
         except (IndexError, ValueError):
             pytest.fail("get_changed_files_between crashed on malformed tab output!")
@@ -406,6 +407,7 @@ class TestGetChangedFilesBetweenAdversarial:
 # ===========================================================================
 # discover_version_boundaries — Git history chaos tests
 # ===========================================================================
+
 
 class TestDiscoverVersionBoundariesAdversarial:
     """Adversarial tests for discover_version_boundaries."""
@@ -437,7 +439,7 @@ class TestDiscoverVersionBoundariesAdversarial:
         show2.stdout = '{"version": "0.0.1"}'
 
         mock_run.side_effect = [log_result, show1, show2]
-        
+
         boundaries = generate_patch.discover_version_boundaries("0.0.1")
         assert len(boundaries) == 1
         assert boundaries[0]["version"] == "0.0.1"
@@ -521,6 +523,7 @@ class TestDiscoverVersionBoundariesAdversarial:
 # get_file_content_at_commit — Git show mock tests
 # ===========================================================================
 
+
 class TestGetFileContentAtCommit:
     """Tests for get_file_content_at_commit."""
 
@@ -565,6 +568,7 @@ class TestGetFileContentAtCommit:
 # load_json / save_json — File I/O edge cases
 # ===========================================================================
 
+
 class TestLoadJson:
     """Tests for load_json."""
 
@@ -588,7 +592,7 @@ class TestLoadJson:
 
     def test_array_json_file(self, tmp_path):
         f = tmp_path / "arr.json"
-        f.write_text('[1, 2, 3]', encoding="utf-8")
+        f.write_text("[1, 2, 3]", encoding="utf-8")
         assert patch_utils.load_json(str(f)) == [1, 2, 3]
 
     def test_unicode_json_file(self, tmp_path):
@@ -622,6 +626,7 @@ class TestSaveJson:
 # ===========================================================================
 # Integration-style: compute_diff with realistic game data
 # ===========================================================================
+
 
 class TestComputeDiffRealisticData:
     """Tests with data that looks like actual game entities."""
