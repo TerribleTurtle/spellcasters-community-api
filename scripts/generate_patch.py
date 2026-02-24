@@ -1,478 +1,319 @@
-"""
-Automated Patch Generation Script
-
-This script computes differences for JSON files changed in the current git commit
-(or staging area) and automatically merges them into the current active patch block
-in patches.json.
-
-Requires: `deepdiff` library for computing structured JSON diffs.
-
-It then integrates with build_api.py to generate updated static timeline and changelog files.
-"""
-
 import json
 import os
 import re
 import subprocess
 import sys
+import glob
 from datetime import UTC, datetime
-
 from deepdiff import DeepDiff
+import config
 
-# Import local modules safely
-sys.path.append(os.path.dirname(os.path.abspath(__file__)))
-import build_changelogs  # noqa: E402
-import config  # noqa: E402
+GAME_CONFIG_PATH = os.path.join(config.DATA_DIR, "game_config.json")
+PATCHES_FILE = os.path.join(config.DATA_DIR, "patches.json")
+TIMELINE_DIR = os.path.join(config.BASE_DIR, "timeline")
 
-DATA_DIR = config.DATA_DIR
-PATCHES_FILE = os.path.join(DATA_DIR, "patches.json")
-GAME_CONFIG_PATH = os.path.join(DATA_DIR, "game_config.json")
+from patch_utils import load_json, save_json, get_file_content_at_commit, compute_diff
 
-
-def load_json(path):
-    """Loads and parses a JSON file. Returns None if the file is missing or invalid."""
-    if not os.path.exists(path):
-        return None
-    with open(path, encoding="utf-8") as f:
-        try:
-            return json.load(f)
-        except json.JSONDecodeError:
-            return None
-
-
-def save_json(path, data):
-    """Writes data to a JSON file with consistent formatting."""
-    with open(path, "w", encoding="utf-8") as f:
-        json.dump(data, f, indent=2)
-
-
-def get_git_diff_files():
-    """Gets the list of changed files from git.
-    Dynamically determines the BEFORE_SHA based on the last commit that
-    modified data/patches.json, to ensure no changes are missed if
-    multiple PRs merge concurrently."""
+def discover_version_boundaries(current_version):
+    """
+    Walks git history of game_config.json to find the first commit of each version.
+    Returns: list of dicts [{'version': '0.0.1', 'commit': 'abc1234'}, ...] oldest to newest.
+    Only includes versions <= current_version to handle messy resets.
+    """
+    import subprocess
+    boundaries = []
+    seen_versions = set()
+    
     try:
-        after_sha = os.environ.get("AFTER_SHA")
-        if not after_sha:
-            after_sha = "HEAD"
+        from packaging.version import parse as parse_version
+        curr_ver_parsed = parse_version(current_version)
+        use_packaging = True
+    except ImportError:
+        use_packaging = False
 
-        try:
-            # Find the last commit where data/patches.json was modified.
-            # This is our reliable "last processed state" baseline.
-            result_last_patch = subprocess.run(
-                ["git", "log", "-1", "--format=%H", "data/patches.json"], capture_output=True, text=True, check=True
-            )
-            before_sha = result_last_patch.stdout.strip()
-        except subprocess.CalledProcessError:
-            before_sha = None
-
-        # Fallback if something went wrong finding BEFORE_SHA
-        if not before_sha:
-            before_sha = os.environ.get("BEFORE_SHA")
-
-        if not before_sha or before_sha.startswith("0000000"):
-            before_sha = "HEAD~1"
-
-        print(f"Comparing diff between {before_sha} and {after_sha}")
-
-        # Get files changed in the specified range
+    # Get all commits that touched game_config.json, oldest first
+    try:
         result = subprocess.run(
-            ["git", "diff", "--name-status", before_sha, after_sha], capture_output=True, text=True, check=True
+            ["git", "log", "--reverse", "--format=%H", "data/game_config.json"],
+            capture_output=True, text=True, check=True
         )
-        changed_files = []
-        for line in result.stdout.strip().split("\n"):
-            if not line:
-                continue
-            parts = line.split("\t")
-            status = parts[0]
-            filepath = parts[1]
-
-            # Only care about data/ json files
-            if filepath.startswith("data/") and filepath.endswith(".json"):
-                changed_files.append((status, filepath))
-
-        return changed_files
-    except subprocess.CalledProcessError as e:
-        print(f"Error getting git diff: {e}")
+        commits = [c for c in result.stdout.strip().split("\n") if c]
+    except subprocess.CalledProcessError:
+        print("Warning: Could not read git history for game_config.json")
         return []
 
+    for commit in commits:
+        try:
+            # Read game_config.json at that specific commit
+            show = subprocess.run(
+                ["git", "show", f"{commit}:data/game_config.json"],
+                capture_output=True, text=True, check=True
+            )
+            data = json.loads(show.stdout)
+            version = data.get("version")
+                
+            # Skip historical boundaries that are "ahead" of our current baseline
+            if use_packaging:
+                if parse_version(version) > curr_ver_parsed:
+                    continue
+            else:
+                 if version != current_version and version > current_version:
+                    continue
+                    
+            if version and version not in seen_versions:
+                boundaries.append({"version": version, "commit": commit})
+                seen_versions.add(version)
+        except Exception:
+            pass
+            
+    # Add a pseudo-boundary for the absolute initial commit (Big Bang) if we need a baseline before 0.0.1
+    # Actually, 0.0.1 is our baseline. Changes in 0.0.1 are the baseline itself.
+    return boundaries
 
-def get_file_content_at_commit(filepath, commit_hash="HEAD~1"):
-    """Reads the content of a file at a specific commit."""
+def get_changed_files_between(before_sha, after_sha):
+    """Gets all data/ files changed between two commits."""
+    if not before_sha:
+        return []
     try:
         result = subprocess.run(
-            ["git", "show", f"{commit_hash}:{filepath}"], capture_output=True, text=True, check=True
+            ["git", "diff", "--name-status", before_sha, after_sha],
+            capture_output=True, text=True, check=True
         )
-        return json.loads(result.stdout)
-    except subprocess.CalledProcessError:
-        return None  # File didn't exist in that commit
-    except json.JSONDecodeError:
-        return None
+        changed = []
+        for line in result.stdout.strip().split("\n"):
+            if not line: continue
+            parts = line.split("\t")
+            status, filepath = parts[0], parts[1]
+            if filepath.startswith("data/") and filepath.endswith(".json"):
+                # Ignore core structural files
+                if filepath not in ("data/patches.json", "data/game_config.json", "data/queue.json", "data/audit.jsonl"):
+                    changed.append((status, filepath))
+        return changed
+    except Exception as e:
+        print(f"Git diff error: {e}")
+        return []
 
-
-def get_commit_author():
-    """Gets the original PR author from the squash merge commit.
-
-    GitHub squash merges include a 'Co-authored-by:' trailer with the
-    original PR author's name. We prefer that over the commit author
-    (which is the person who clicked 'merge').  Bot authors like
-    dependabot and github-actions are filtered out.
-    """
+def get_entity_files_at_commit(commit_hash):
+    """Lists all entity data files (data/{folder}/*.json) at a specific git commit."""
+    entity_files = []
     try:
-        # Get the full commit body to look for Co-authored-by trailers
-        result = subprocess.run(["git", "log", "-1", "--format=%b"], capture_output=True, text=True, check=True)
-        body = result.stdout.strip()
-
-        # Parse Co-authored-by lines: "Co-authored-by: Name <email>"
-        co_authors = re.findall(r"Co-authored-by:\s*(.+?)\s*<", body)
-
-        # Filter out bots
-        bot_suffixes = ("[bot]",)
-        human_authors = [a.strip() for a in co_authors if not a.strip().endswith(bot_suffixes)]
-
-        if human_authors:
-            return human_authors[0]
-
-        # Fallback: use the commit author (for non-squash-merge commits)
-        result = subprocess.run(["git", "log", "-1", "--format=%an"], capture_output=True, text=True, check=True)
-        return result.stdout.strip()
-    except subprocess.CalledProcessError:
-        return None
+        result = subprocess.run(
+            ["git", "ls-tree", "-r", "--name-only", commit_hash, "data/"],
+            capture_output=True, text=True, check=True
+        )
+        for line in result.stdout.strip().split("\n"):
+            if not line or not line.endswith(".json"):
+                continue
+            # Filter to entity folders only, skip structural files
+            parts = line.split("/")
+            if len(parts) >= 3 and parts[1] in config.FOLDER_TO_SCHEMA:
+                entity_files.append(line)
+    except Exception:
+        pass
+    return entity_files
 
 
-def _map_path_to_array(path_str):
+def collect_timeline_snapshot(version, commit_hash, is_active):
+    """Collects entity snapshots for a single version boundary.
+    
+    Returns a dict of {entity_id: {version, date, snapshot}} entries.
+    For the active version, reads from disk. For historical versions, reads from git.
     """
-    Converts a deepdiff path string "root['mechanics']['damage_modifiers'][1]"
-    to a list ["mechanics", "damage_modifiers", 1]
-    """
-    # Remove "root" prefix
-    if path_str.startswith("root"):
-        path_str = path_str[4:]
-
-    parts = []
-    # Find all tokens inside brackets, e.g. 'mechanics' or 1
-    # This regex matches either single-quoted strings or digits
-    matches = re.findall(r"\[(?:'([^']+)'|(\d+))\]", path_str)
-
-    for string_match, int_match in matches:
-        if string_match:
-            parts.append(string_match)
-        elif int_match:
-            parts.append(int(int_match))
-
-    return parts
-
-
-def _get_timeline_baseline(filepath, current_version):
-    """
-    Attempts to fetch the entity's state from the timeline for the PREVIOUS version.
-    Since timeline snapshots represent the state *after* a version is applied,
-    we must compare against the snapshot from the previous version to get a cumulative diff.
-    """
-    filename = os.path.basename(filepath)
-    entity_id = os.path.splitext(filename)[0]
-    timeline_path = os.path.join(config.BASE_DIR, config.PATCH_HISTORY_DIR, f"{entity_id}.json")
-
-    if not os.path.exists(timeline_path):
-        return None
-
-    timeline = load_json(timeline_path)
-    if not timeline:
-        return None
-
-    # We want the snapshot immediately preceding current_version, or the latest available
-    # Assuming timeline is sorted chronologically or we just take the last one that isn't current_version
-    # In practice, comparing against the most recent snapshot that isn't current_version
-    valid_snapshots = [entry for entry in timeline if entry.get("version") != current_version]
-    if valid_snapshots:
-        # Take the most recent valid snapshot (last in list if appended chronologically)
-        return valid_snapshots[-1].get("snapshot")
-
-    return None
-
-
-def _create_timeline_baseline(filepath, current_version, entity_data):
-    """
-    Creates a timeline snapshot for a newly added entity.
-    Follows the same format as snapshot_baseline.py: [{version, date, snapshot}]
-    Idempotent: skips if the current version already has an entry.
-    """
-    filename = os.path.basename(filepath)
-    entity_id = os.path.splitext(filename)[0]
-    timeline_dir = os.path.join(config.BASE_DIR, config.PATCH_HISTORY_DIR)
-    timeline_path = os.path.join(timeline_dir, f"{entity_id}.json")
-
-    os.makedirs(timeline_dir, exist_ok=True)
-
-    # Load existing timeline or start fresh
-    timeline = []
-    if os.path.exists(timeline_path):
-        timeline = load_json(timeline_path) or []
-        # Idempotency: skip if version already exists
-        if any(entry.get("version") == current_version for entry in timeline):
-            print(f"  Timeline already has {current_version} for {entity_id}, skipping.")
-            return
-
-    today = datetime.now(UTC).strftime("%Y-%m-%d")
-    snapshot_entry = {"version": current_version, "date": today, "snapshot": entity_data}
-    timeline.append(snapshot_entry)
-    save_json(timeline_path, timeline)
-    print(f"  Created timeline baseline for {entity_id} at {current_version}")
-
-
-def generate_slim_change(filepath, status, current_version):
-    """Generates a slim diff representing the change in patches.json format.
-
-    For additions (status 'A'), old_data is set to {} so DeepDiff produces
-    full-object 'N' diffs, and a timeline baseline snapshot is created.
-    For deletions (status 'D'), new_data is set to {} so DeepDiff produces
-    full-object 'D' diffs.
-    """
-    parts = filepath.split("/")
-    if len(parts) < 3:
-        return None
-
-    category = parts[1]  # e.g. heroes
-    filename = parts[-1]
-
-    old_data = None
-    new_data = None
-
-    if status == "A":
-        # Addition: diff against empty dict to capture all fields as new
-        full_path = os.path.join(config.BASE_DIR, filepath)
-        new_data = load_json(full_path)
-        old_data = {}
-    elif status == "D":
-        # Deletion: diff old state against empty dict to capture all fields as removed
-        old_data = _get_timeline_baseline(filepath, current_version)
-        if old_data is None:
-            old_data = get_file_content_at_commit(filepath)
-        new_data = {}
-    elif status == "M":
-        # Modification: standard diff logic
-        old_data = _get_timeline_baseline(filepath, current_version)
-        if old_data is None:
-            old_data = get_file_content_at_commit(filepath)
-        full_path = os.path.join(config.BASE_DIR, filepath)
-        new_data = load_json(full_path)
-
-    # Always stamp last_modified for additions and modifications (authoritative server time)
-    if status in ("A", "M") and new_data is not None:
-        new_time = datetime.now(UTC).isoformat()
-        if new_time.endswith("+00:00"):
-            new_time = new_time.replace("+00:00", "Z")  # format normalization
-        new_data["last_modified"] = new_time
-        save_json(os.path.join(config.BASE_DIR, filepath), new_data)
-        print(f"Auto-updated last_modified for {filename}")
-
-    change_type = "edit"
-    if status == "A":
-        change_type = "add"
-    elif status == "D":
-        change_type = "delete"
-
-    entity_name = filename
-    if new_data and "name" in new_data:
-        entity_name = new_data["name"]
-    elif old_data and "name" in old_data:
-        entity_name = old_data["name"]
-
-    diffs = []
-    if old_data is not None and new_data is not None:
-        ddiff = DeepDiff(old_data, new_data, ignore_order=True)
-
-        # Map DeepDiff output to The Grimoire's slim patch format
-        if "dictionary_item_added" in ddiff:
-            items_added = ddiff["dictionary_item_added"]
-            # Depending on DeepDiff version, this might be a set of paths or a dict of path:value
-            if isinstance(items_added, dict):
-                for path, val in items_added.items():
-                    diffs.append({"kind": "N", "path": _map_path_to_array(path), "rhs": val})
-            else:
-                for path in items_added:
-                    # We have to extract the value from new_data using the mapped path
-                    mapped_path = _map_path_to_array(path)
-                    val = new_data
-                    for key in mapped_path:
-                        val = val[key]
-                    diffs.append({"kind": "N", "path": mapped_path, "rhs": val})
-
-        if "dictionary_item_removed" in ddiff:
-            items_removed = ddiff["dictionary_item_removed"]
-            if isinstance(items_removed, dict):
-                for path, val in items_removed.items():
-                    diffs.append({"kind": "D", "path": _map_path_to_array(path), "lhs": val})
-            else:
-                for path in items_removed:
-                    mapped_path = _map_path_to_array(path)
-                    val = old_data
-                    for key in mapped_path:
-                        val = val[key]
-                    diffs.append({"kind": "D", "path": mapped_path, "lhs": val})
-
-        if "values_changed" in ddiff:
-            for path, change in ddiff["values_changed"].items():
-                # Sometimes comparing full dict to empty dict causes values_changed for the whole root
-                if path in ("root", ""):
-                    # If this happens, it means the whole object was added/deleted/changed.
-                    # We should handle it at the dictionary level above, but if it surfaces here:
-                    if status == "A":
-                        for k, v in change["new_value"].items():
-                            diffs.append({"kind": "N", "path": [k], "rhs": v})
-                    elif status == "D":
-                        for k, v in change["old_value"].items():
-                            diffs.append({"kind": "D", "path": [k], "lhs": v})
+    snapshots = {}
+    date = datetime.now(UTC).strftime("%Y-%m-%d")
+    
+    if is_active:
+        # Active version: read from disk (most up-to-date)
+        for folder in config.FOLDER_TO_SCHEMA.keys():
+            src_dir = os.path.join(config.DATA_DIR, folder)
+            if not os.path.exists(src_dir):
+                continue
+            for path in glob.glob(os.path.join(src_dir, "*.json")):
+                data = load_json(path)
+                if not data:
                     continue
+                entity_id = os.path.splitext(os.path.basename(path))[0]
+                snapshots[entity_id] = {
+                    "version": version,
+                    "date": date,
+                    "snapshot": data
+                }
+    else:
+        # Historical version: read from git at the commit
+        entity_files = get_entity_files_at_commit(commit_hash)
+        for filepath in entity_files:
+            data = get_file_content_at_commit(filepath, commit_hash)
+            if not data:
+                continue
+            entity_id = os.path.splitext(os.path.basename(filepath))[0]
+            snapshots[entity_id] = {
+                "version": version,
+                "date": date,
+                "snapshot": data
+            }
+    
+    return snapshots
 
-                diffs.append(
-                    {
-                        "kind": "E",
-                        "path": _map_path_to_array(path),
-                        "lhs": change["old_value"],
-                        "rhs": change["new_value"],
-                    }
-                )
-        if "iterable_item_added" in ddiff:
-            for path, val in ddiff["iterable_item_added"].items():
-                diff_path = _map_path_to_array(path)
-                # For arrays, The Grimoire expects {kind: 'A', path: array_path, index: idx, item: {}}
-                idx = diff_path.pop()  # Last item is the index
-                diffs.append({"kind": "A", "path": diff_path, "index": idx, "item": {"kind": "N", "rhs": val}})
-        if "iterable_item_removed" in ddiff:
-            for path, val in ddiff["iterable_item_removed"].items():
-                diff_path = _map_path_to_array(path)
-                idx = diff_path.pop()
-                diffs.append({"kind": "A", "path": diff_path, "index": idx, "item": {"kind": "D", "lhs": val}})
 
-    # For additions and modifications, create/update timeline baseline snapshot
-    if status in ("A", "M") and new_data:
-        _create_timeline_baseline(filepath, current_version, new_data)
-
-    return {
-        "name": entity_name,
-        "category": category,
-        "change_type": change_type,
-        "diffs": diffs,
-        "field": "entity",
-        "target_id": filename,
-    }
+def write_timeline_files(timeline_data):
+    """Writes accumulated timeline data to disk.
+    
+    Args:
+        timeline_data: dict of {entity_id: [snapshot_1, snapshot_2, ...]} 
+    """
+    os.makedirs(TIMELINE_DIR, exist_ok=True)
+    count = 0
+    for entity_id, snapshots in timeline_data.items():
+        timeline_path = os.path.join(TIMELINE_DIR, f"{entity_id}.json")
+        save_json(timeline_path, snapshots)
+        count += 1
+    print(f"  Wrote {count} timeline files.")
 
 
 def main():
-    print("Generating patches from recent changes...")
-
-    # Run Schema Validation First
-    try:
-        print("Running schema validation...")
-        # validate_schemas checks everything and calls sys.exit(1) on failure
-        # To avoid the script dying here, we run it as a subprocess
-        res = subprocess.run(
-            [sys.executable, os.path.join(config.BASE_DIR, "scripts", "validate_schemas.py")], check=False
-        )
-        if res.returncode != 0:
-            print("Validation failed. Aborting patch generation.")
-            sys.exit(1)
-    except Exception as e:
-        print(f"Validation error: {e}")
+    print("Stateless Patch Generation Pipeline")
+    
+    if not os.path.exists(GAME_CONFIG_PATH):
+        print("Error: game_config.json not found.")
         sys.exit(1)
-
-    # Get changes
-    changed = get_git_diff_files()
-    if not changed:
-        print("No data files changed.")
-        return
-
-    # Read game config for current version
+        
     game_config = load_json(GAME_CONFIG_PATH)
-    if not game_config:
-        print("Error reading game config.")
-        return
-
     current_version = game_config.get("version", "0.0.1")
-
-    # Load patches
-    patches = load_json(PATCHES_FILE) or []
-
-    # Legacy strip: remove "diff" key from all patches (one-time migration)
-    _dirty = False
-    for p in patches:
-        if "diff" in p:
-            del p["diff"]
-            _dirty = True
-    if _dirty:
-        save_json(PATCHES_FILE, patches)
-        print("Stripped legacy 'diff' keys from patches.json")
-
-    # Get commit author for contributor attribution
-    author = get_commit_author()
-    contributor_tag = f"contributor:{author}" if author else None
-    if author:
-        print(f"Contributor: {author}")
-
-    # Process changes
-    new_changes = []
-    for status, filepath in changed:
-        # Ignore patches.json, game_config.json, queue.json
-        exclude = ("data/patches.json", "data/game_config.json", "data/queue.json", "data/audit.jsonl")
-        if filepath in exclude:
-            continue
-
-        change = generate_slim_change(filepath, status, current_version)
-        if change:
-            new_changes.append(change)
-
-    if not new_changes:
-        print("No patchable entity changes found.")
+    
+    boundaries = discover_version_boundaries(current_version)
+    
+    # Timeline accumulator: {entity_id: [{version, date, snapshot}, ...]}
+    timeline_data = {}
+    
+    if not boundaries:
+        print("No version boundaries found in git. Assuming fresh start.")
+        # Fresh start: snapshot current disk state as the only timeline entry
+        snapshots = collect_timeline_snapshot(current_version, "HEAD", is_active=True)
+        for entity_id, snap in snapshots.items():
+            timeline_data[entity_id] = [snap]
+        write_timeline_files(timeline_data)
         return
-
-    # Find existing patch block for this version, or create new
-    target_patch = next((p for p in patches if p.get("version") == current_version), None)
-
-    if target_patch:
-        print(f"Appending {len(new_changes)} changes to existing patch {current_version}...")
-
-        for c in new_changes:
-            # Check for duplicate target (if someone edited same file multiple times)
-            existing_idx = next(
-                (i for i, existing in enumerate(target_patch["changes"]) if existing["target_id"] == c["target_id"]), -1
-            )
-
-            if existing_idx >= 0:
-                target_patch["changes"][existing_idx] = c
+        
+    print(f"Found {len(boundaries)} version boundaries in git logs.")
+    
+    patches = load_json(PATCHES_FILE) or []
+    
+    # Process each version from oldest to newest
+    for i in range(len(boundaries)):
+        version = boundaries[i]["version"]
+        start_commit = boundaries[i]["commit"]
+        
+        # The end commit for this version is the start of the NEXT version, 
+        # or HEAD if it's the current active version.
+        if i + 1 < len(boundaries):
+            end_commit = boundaries[i+1]["commit"] + "~1"
+            is_active = False
+        else:
+            end_commit = "HEAD"
+            is_active = True
+            
+        print(f"\nEvaluating Version {version} (Baseline: {start_commit} -> {end_commit})")
+        
+        # --- Timeline: Capture entity snapshots at every version (including 0.0.1 baseline) ---
+        # Always use start_commit — it's the commit that introduced this version
+        version_snapshots = collect_timeline_snapshot(version, start_commit, is_active)
+        for entity_id, snap in version_snapshots.items():
+            if entity_id not in timeline_data:
+                timeline_data[entity_id] = []
+            timeline_data[entity_id].append(snap)
+        
+        # --- Patch Generation: Skip 0.0.1 baseline and future versions ---
+        patch_meta = next((p for p in patches if p.get("version") == version), None)
+        if not patch_meta:
+            if version == "0.0.1":
+                print(f"  Skipping patch generation for {version} (initial baseline)")
+                continue
+            
+            try:
+                from packaging.version import parse as parse_version
+                if parse_version(version) > parse_version(current_version):
+                    print(f"  Skipping patch generation for {version} (ahead of current baseline {current_version})")
+                    continue
+            except ImportError:
+                if version != current_version and version > current_version:
+                     print(f"  Skipping patch generation for {version} (ahead of current baseline {current_version})")
+                     continue
+                
+            patch_meta = {
+                "id": f"patch_{version.replace('.', '_')}",
+                "version": version,
+                "date": datetime.now(UTC).isoformat()[:10],
+                "type": "Patch",
+                "title": f"Patch {version}",
+                "tags": []
+            }
+            patches.insert(0, patch_meta)
+            
+        # Compute dynamic diffs from baseline
+        if i == 0:
+            before_sha = None
+        else:
+            before_sha = boundaries[i-1]["commit"]
+            
+        if not is_active and "changes" in patch_meta and len(patch_meta["changes"]) > 0:
+            print(f"  Historical changes already exist for {version}, skipping computation.")
+            continue
+            
+        if not before_sha:
+            continue
+            
+        changed_files = get_changed_files_between(before_sha, end_commit)
+        changes = []
+        
+        for status, filepath in changed_files:
+            filename = os.path.basename(filepath)
+            
+            if status == "D":
+                old_data = get_file_content_at_commit(filepath, before_sha)
+                new_data = {}
+                change_type = "delete"
+            elif status == "A":
+                old_data = {}
+                if is_active:
+                    new_data = load_json(os.path.join(config.BASE_DIR, filepath))
+                else:
+                    new_data = get_file_content_at_commit(filepath, end_commit)
+                change_type = "add"
             else:
-                target_patch["changes"].append(c)
+                old_data = get_file_content_at_commit(filepath, before_sha)
+                if is_active:
+                    new_data = load_json(os.path.join(config.BASE_DIR, filepath))
+                else:
+                    new_data = get_file_content_at_commit(filepath, end_commit)
+                change_type = "edit"
+                
+            if not old_data and not new_data:
+                continue
+                
+            diffs = compute_diff(old_data, new_data)
+            if not diffs:
+                continue
+                
+            name = (new_data or old_data).get("name", filename)
+            cat = filepath.split("/")[1] if "data/" in filepath else "misc"
+            
+            changes.append({
+                "target_id": filename,
+                "name": name,
+                "field": "entity",
+                "change_type": change_type,
+                "category": cat,
+                "diffs": diffs
+            })
+            
+        patch_meta["changes"] = changes
+        print(f"  Computed {len(changes)} changes for {version}")
 
-        target_patch["date"] = datetime.now(UTC).isoformat()
-
-        # Add contributor tag if not already present
-        if contributor_tag:
-            existing_tags = set(target_patch.get("tags", []))
-            existing_tags.add(contributor_tag)
-            target_patch["tags"] = sorted(existing_tags)
-    else:
-        print(f"Creating new patch block for {current_version}...")
-        target_patch = {
-            "id": f"patch_{current_version.replace('.', '_')}",
-            "version": current_version,
-            "date": datetime.now(UTC).isoformat(),
-            "type": "Content",  # Default
-            "changes": new_changes,
-            "tags": [contributor_tag] if contributor_tag else [],
-            "title": f"Update {current_version}",
-        }
-        patches.insert(0, target_patch)
-
+    # Flush all outputs
     save_json(PATCHES_FILE, patches)
-    print("Saved patches.json")
-
-    # Trigger static file builds
-    print("Generating paginated changelogs...")
-    try:
-        build_changelogs.main()
-    except Exception as e:
-        print(f"Error building changelogs: {e}")
-        sys.exit(1)
+    print("\n  Writing timeline snapshots...")
+    write_timeline_files(timeline_data)
+    print("\nPatch generation complete.")
 
 
 if __name__ == "__main__":

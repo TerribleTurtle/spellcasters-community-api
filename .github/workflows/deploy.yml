@@ -6,7 +6,7 @@ on:
   workflow_dispatch:
 
 permissions:
-  contents: write
+  contents: read
   pages: write
   id-token: write
 
@@ -92,26 +92,19 @@ jobs:
 
       - name: Generate Patches
         run: python scripts/generate_patch.py
-        env:
-          BEFORE_SHA: ${{ github.event.before }}
-          AFTER_SHA: ${{ github.event.after }}
+
+      - name: Build Audit Log
+        run: python scripts/build_audit_log.py
 
       - name: Run Build Script
         run: python scripts/build_api.py
 
-      - name: Commit Patches to Repository
-        uses: stefanzweifel/git-auto-commit-action@04702edda442b2e678b25b537cec683a1493fcb9 # v7.1.0
-        with:
-          commit_message: "chore: auto-commit updated patches and timeline [skip ci]"
-          commit_user_name: "github-actions[bot]"
-          commit_user_email: "github-actions[bot]@users.noreply.github.com"
-          commit_author: "github-actions[bot] <github-actions[bot]@users.noreply.github.com>"
-          file_pattern: "data/patches.json changelog*.json timeline/*.json"
 
       - name: Assemble Public Directory
         run: |
           mkdir public
           cp -r api public/
+          cp audit.json public/
           cp -r timeline public/ || true
           cp -r schemas public/
           cp index.html public/

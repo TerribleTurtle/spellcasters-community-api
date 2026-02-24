@@ -141,7 +141,7 @@ def main():
         files = glob.glob(os.path.join(source_path, "*.json"))
         for file in files:
             content = load_json(file)
-            if content:
+            if content is not None:
                 content = sanitize_recursive(content)
                 collection.append(content)
             else:
@@ -157,7 +157,7 @@ def main():
         path = os.path.join(DATA_DIR, filename)
         if os.path.exists(path):
             content = load_json(path)
-            if content:
+            if content is not None:
                 content = sanitize_recursive(content)
                 save_json(f"{key}.json", content)
                 all_data[key] = content
