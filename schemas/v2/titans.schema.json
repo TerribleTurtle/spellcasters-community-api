@@ -13,10 +13,13 @@
     { "$ref": "definitions/resource.schema.json#/definitions/cost" }
   ],
   "properties": {
+    "stat_changes": {
+      "$ref": "definitions/core.schema.json#/definitions/stat_changes"
+    },
     "category": {
       "$ref": "definitions/enums.schema.json#/definitions/category_enum"
     },
-    
+
     "passive_health_regen": { "type": "integer", "minimum": 0 },
     "heal_amount": { "type": "integer", "minimum": 0 },
     "healing_bonus": { "type": "integer", "minimum": 0 },

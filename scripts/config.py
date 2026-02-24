@@ -42,6 +42,11 @@ SCHEMA_FILES = {
     "changelog_index": "changelog_index.schema.json",
     "changelog": "changelog.schema.json",
     "timeline_entry": "timeline_entry.schema.json",
+    "status": "status.schema.json",
+    "patches": "patches.schema.json",
+    "changelog_latest": "changelog_latest.schema.json",
+    "all_data": "all_data.schema.json",
+    "audit": "audit.schema.json",
 }
 
 # Data Folder to Schema Mapping (Folder Name -> Schema Key)

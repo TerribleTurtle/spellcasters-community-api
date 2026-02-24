@@ -13,10 +13,15 @@
     { "$ref": "definitions/stats.schema.json#/definitions/ability_stats" }
   ],
   "properties": {
+    "stat_changes": {
+      "$ref": "definitions/core.schema.json#/definitions/stat_changes"
+    },
     "category": {
       "$ref": "definitions/enums.schema.json#/definitions/category_enum"
     },
-    "mechanics": { "$ref": "definitions/mechanics.schema.json#/definitions/mechanics" }
+    "mechanics": {
+      "$ref": "definitions/mechanics.schema.json#/definitions/mechanics"
+    }
   },
   "examples": [
     {

@@ -116,7 +116,7 @@ class TestMainBuild:
         with open(tmp_path / "changelog.json", encoding="utf-8") as f:
             assert json.load(f) == []
         with open(tmp_path / "changelog_latest.json", encoding="utf-8") as f:
-            assert json.load(f) == {}
+            assert json.load(f) is None
 
     def test_missing_patches_file(self, tmp_path):
         """Should handle missing patches.json gracefully."""

@@ -11,6 +11,9 @@
     { "$ref": "definitions/stats.schema.json#/definitions/base_stats" }
   ],
   "properties": {
+    "stat_changes": {
+      "$ref": "definitions/core.schema.json#/definitions/stat_changes"
+    },
     "category": {
       "$ref": "definitions/enums.schema.json#/definitions/category_enum"
     },
@@ -18,14 +21,21 @@
       "$ref": "definitions/enums.schema.json#/definitions/class_enum"
     },
     "difficulty": { "type": "integer", "minimum": 1, "maximum": 3 },
-    
-    "movement_type": { "$ref": "definitions/enums.schema.json#/definitions/movement_type" },
-    "population": { "$ref": "definitions/resource.schema.json#/definitions/cost/properties/population" },
+
+    "movement_type": {
+      "$ref": "definitions/enums.schema.json#/definitions/movement_type"
+    },
+    "population": {
+      "$ref": "definitions/resource.schema.json#/definitions/cost/properties/population"
+    },
 
     "abilities": {
       "type": "object",
       "properties": {
-        "passive": { "type": "array", "items": { "$ref": "#/definitions/ability_detail" } },
+        "passive": {
+          "type": "array",
+          "items": { "$ref": "#/definitions/ability_detail" }
+        },
         "primary": { "$ref": "#/definitions/ability_detail" },
         "defense": { "$ref": "#/definitions/ability_detail" },
         "ultimate": { "$ref": "#/definitions/ability_detail" }
@@ -46,7 +56,11 @@
       "population": 0,
       "abilities": {
         "passive": [],
-        "primary": { "name": "Attack", "description": "Basic attack", "damage": 10 },
+        "primary": {
+          "name": "Attack",
+          "description": "Basic attack",
+          "damage": 10
+        },
         "defense": { "name": "Block", "description": "Blocks damage" },
         "ultimate": { "name": "Win", "description": "Wins the game" }
       }

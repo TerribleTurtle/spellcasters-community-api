@@ -13,15 +13,21 @@
     { "$ref": "definitions/resource.schema.json#/definitions/cost" }
   ],
   "properties": {
+    "stat_changes": {
+      "$ref": "definitions/core.schema.json#/definitions/stat_changes"
+    },
     "category": {
       "$ref": "definitions/enums.schema.json#/definitions/category_enum"
     },
-    
+
     "size": { "$ref": "definitions/enums.schema.json#/definitions/size_enum" },
-    "movement_type": { "$ref": "definitions/enums.schema.json#/definitions/movement_type" },
+    "movement_type": {
+      "$ref": "definitions/enums.schema.json#/definitions/movement_type"
+    },
 
-
-    "mechanics": { "$ref": "definitions/mechanics.schema.json#/definitions/mechanics" }
+    "mechanics": {
+      "$ref": "definitions/mechanics.schema.json#/definitions/mechanics"
+    }
   },
   "if": {
     "properties": { "category": { "const": "Building" } }

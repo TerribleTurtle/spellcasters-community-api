@@ -76,7 +76,7 @@ def main():
     if patches:
         save_json(latest_path, patches[0])
     else:
-        save_json(latest_path, {})
+        save_json(latest_path, None)
 
     # --- 3. Paginated changelog_page_N.json ---
     total_patches = len(patches)

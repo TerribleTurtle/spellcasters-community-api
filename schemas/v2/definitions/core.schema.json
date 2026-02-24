@@ -1,99 +1,119 @@
 {
-    "$schema": "https://json-schema.org/draft/2019-09/schema",
+  "$schema": "https://json-schema.org/draft/2019-09/schema",
   "$id": "https://spellcasters.gg/schemas/v2/definitions/core.schema.json",
-    "title": "Core Definitions",
-    "description": "Fundamental identity and metadata definitions.",
-    "definitions": {
-        "identity": {
-            "type": "object",
-            "required": [
-                "entity_id",
-                "name",
-                "description",
-                "tags"
-            ],
-            "properties": {
-                "entity_id": {
-                    "type": "string",
-                    "pattern": "^[a-z0-9_]+$",
-                    "minLength": 1,
-                    "maxLength": 64,
-                    "description": "Unique identifier for the entity (snake_case)."
-                },
-                "name": {
-                    "type": "string",
-                    "minLength": 1,
-                    "maxLength": 128,
-                    "description": "Display name of the entity."
-                },
-                "description": {
-                    "type": "string",
-                    "description": "Detailed text description of the entity."
-                },
+  "title": "Core Definitions",
+  "description": "Fundamental identity and metadata definitions.",
+  "definitions": {
+    "identity": {
+      "type": "object",
+      "required": ["entity_id", "name", "description", "tags"],
+      "properties": {
+        "entity_id": {
+          "type": "string",
+          "pattern": "^[a-z0-9_]+$",
+          "minLength": 1,
+          "maxLength": 64,
+          "description": "Unique identifier for the entity (snake_case)."
+        },
+        "name": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 128,
+          "description": "Display name of the entity."
+        },
+        "description": {
+          "type": "string",
+          "description": "Detailed text description of the entity."
+        },
 
-                "tags": {
-                    "type": "array",
-                    "description": "List of tags for categorization.",
-                    "uniqueItems": true,
-                    "items": {
-                        "type": "string",
-                        "pattern": "^[a-z0-9_]+$"
-                    }
-                }
-            }
+        "tags": {
+          "type": "array",
+          "description": "List of tags for categorization.",
+          "uniqueItems": true,
+          "items": {
+            "type": "string",
+            "pattern": "^[a-z0-9_]+$"
+          }
+        }
+      }
+    },
+    "meta": {
+      "type": "object",
+      "required": [],
+      "properties": {
+        "$schema": {
+          "type": "string"
         },
-        "meta": {
-            "type": "object",
-            "required": [],
-            "properties": {
-                "$schema": {
-                    "type": "string"
-                },
-                "last_modified": {
-                    "type": "string",
-                    "format": "date-time"
-                },
-                "game_version": {
-                    "type": "string",
-                    "pattern": "^\\d+\\.\\d+\\.\\d+$"
-                }
-            }
+        "last_modified": {
+          "type": "string",
+          "format": "date-time"
         },
-        "changelog": {
+        "game_version": {
+          "type": "string",
+          "pattern": "^\\d+\\.\\d+\\.\\d+$"
+        }
+      }
+    },
+    "changelog": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["date", "version", "description"],
+        "properties": {
+          "date": {
+            "type": "string",
+            "format": "date-time",
+            "description": "Date of the change (ISO 8601)."
+          },
+          "version": {
+            "type": "string",
+            "description": "Semantic version number."
+          },
+          "description": {
+            "type": "string",
+            "description": "Details of the change."
+          }
+        },
+        "additionalProperties": false
+      }
+    },
+    "assets": {
+      "type": "object",
+      "properties": {
+        "image_required": {
+          "type": "boolean",
+          "default": true
+        }
+      }
+    },
+    "stat_changes": {
+      "type": "array",
+      "description": "Historical stat differences between patch versions.",
+      "items": {
+        "type": "object",
+        "required": ["version", "changes"],
+        "properties": {
+          "version": {
+            "type": "string"
+          },
+          "date": {
+            "type": "string"
+          },
+          "changes": {
             "type": "array",
             "items": {
-                "type": "object",
-                "required": [
-                    "date",
-                    "version",
-                    "description"
-                ],
-                "properties": {
-                    "date": {
-                        "type": "string",
-                        "format": "date-time",
-                        "description": "Date of the change (ISO 8601)."
-                    },
-                    "version": {
-                        "type": "string",
-                        "description": "Semantic version number."
-                    },
-                    "description": {
-                        "type": "string",
-                        "description": "Details of the change."
-                    }
-                },
-                "additionalProperties": false
+              "type": "object",
+              "required": ["field", "new"],
+              "properties": {
+                "field": { "type": "string" },
+                "old": {},
+                "new": {}
+              }
             }
+          }
         },
-        "assets": {
-            "type": "object",
-            "properties": {
-                "image_required": {
-                    "type": "boolean",
-                    "default": true
-                }
-            }
-        }
+        "additionalProperties": false
+      }
     }
+  }
 }

@@ -4,16 +4,27 @@
   "title": "Upgrade",
   "description": "RNG Level-up bonus options.",
   "type": "object",
-  "allOf": [
-    { "$ref": "definitions/core.schema.json#/definitions/meta" }
-  ],
+  "allOf": [{ "$ref": "definitions/core.schema.json#/definitions/meta" }],
   "properties": {
+    "stat_changes": {
+      "$ref": "definitions/core.schema.json#/definitions/stat_changes"
+    },
     "upgrade_id": { "type": "string" },
-    "$schema": { "$ref": "definitions/core.schema.json#/definitions/meta/properties/$schema" },
-    "last_modified": { "$ref": "definitions/core.schema.json#/definitions/meta/properties/last_modified" },
-    "game_version": { "$ref": "definitions/core.schema.json#/definitions/meta/properties/game_version" },
-    "entity_id": { "$ref": "definitions/core.schema.json#/definitions/identity/properties/entity_id" },
-    "name": { "$ref": "definitions/core.schema.json#/definitions/identity/properties/name" },
+    "$schema": {
+      "$ref": "definitions/core.schema.json#/definitions/meta/properties/$schema"
+    },
+    "last_modified": {
+      "$ref": "definitions/core.schema.json#/definitions/meta/properties/last_modified"
+    },
+    "game_version": {
+      "$ref": "definitions/core.schema.json#/definitions/meta/properties/game_version"
+    },
+    "entity_id": {
+      "$ref": "definitions/core.schema.json#/definitions/identity/properties/entity_id"
+    },
+    "name": {
+      "$ref": "definitions/core.schema.json#/definitions/identity/properties/name"
+    },
     "description": { "type": "string", "description": "User-facing text." },
     "target_tags": {
       "type": "array",

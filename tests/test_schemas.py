@@ -110,3 +110,30 @@ def test_rejects_unknown_property_on_unit(registry_and_schemas):
     validator = _get_validator(registry_and_schemas, "units.schema.json")
     with pytest.raises(jsonschema.ValidationError):
         validator.validate({"entity_id": "test", "garbage_field": True})
+
+
+def test_standalone_endpoints(registry_and_schemas):
+    """
+    Validates API endpoint files in api/v2/ against their specific schemas.
+    """
+    import os
+    endpoints = {
+        "api/v2/status.json": "status.schema.json",
+        "api/v2/patches.json": "patches.schema.json",
+        "api/v2/changelog_latest.json": "changelog_latest.schema.json",
+        "api/v2/all_data.json": "all_data.schema.json",
+        "audit.json": "audit.schema.json",
+    }
+
+    for relative_path, schema_filename in endpoints.items():
+        data_path = os.path.join(config.BASE_DIR, relative_path)
+        if not os.path.exists(data_path):
+            continue  # Skip if the script hasn't generated them yet
+
+        data = config.load_json(data_path)
+        validator = _get_validator(registry_and_schemas, schema_filename)
+
+        try:
+            validator.validate(data)
+        except jsonschema.ValidationError as e:
+            pytest.fail(f"Validation failed for {relative_path}:\n{e.message}")

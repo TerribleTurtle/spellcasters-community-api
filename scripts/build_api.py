@@ -16,6 +16,7 @@ from datetime import UTC, datetime
 
 import config
 from config import load_json
+from timeline_utils import build_entity_stat_changes, resolve_entity_id
 from validate_integrity import validate_integrity
 
 # Configuration
@@ -36,6 +37,17 @@ AGGREGATION_MAP = {
 
 # Single File Copy
 SINGLE_FILES = {"game_config": "game_config.json", "patches": "patches.json"}
+
+# Timeline Tracking Configuration
+TIMELINE_DIR = os.path.join(config.BASE_DIR, "timeline")
+TRACKED_FIELDS = {
+    "heroes": ["health", "difficulty", "abilities.primary.damage"],
+    "units": ["health", "dps", "range", "recharge_time", "attack_interval"],
+    "spells": ["damage", "range", "recharge_time", "duration", "value"],
+    "titans": ["health", "damage", "dps", "movement_speed"],
+    "consumables": ["value", "stack_size", "duration"],
+    "upgrades": ["effect"],
+}
 
 
 def ensure_output_dir():
@@ -146,6 +158,15 @@ def main():
                 collection.append(content)
             else:
                 errors += 1
+
+        # Inject stat changes from timeline
+        tracked_fields = TRACKED_FIELDS.get(key, [])
+        for entity in collection:
+            eid = resolve_entity_id(entity)
+            if eid:
+                changes = build_entity_stat_changes(eid, TIMELINE_DIR, tracked_fields)
+                if changes:
+                    entity["stat_changes"] = changes
 
         # Save individual aggregation
         save_json(f"{key}.json", collection)
