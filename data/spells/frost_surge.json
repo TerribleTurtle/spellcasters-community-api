@@ -9,6 +9,11 @@
   "image_required": true,
   "tags": [],
   "range": 24,
+  "mechanics": {
+    "infusion": {
+      "id": "ice_infusion"
+    }
+  },
   "charges": 1,
   "recharge_time": 60,
   "cast_time": 0

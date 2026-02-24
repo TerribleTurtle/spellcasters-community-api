@@ -42,6 +42,7 @@ Developers should use this base URL to fetch data for their applications.
   - [titans.json](https://terribleturtle.github.io/spellcasters-community-api/api/v2/titans.json)
   - [consumables.json](https://terribleturtle.github.io/spellcasters-community-api/api/v2/consumables.json)
   - [upgrades.json](https://terribleturtle.github.io/spellcasters-community-api/api/v2/upgrades.json)
+  - [infusions.json](https://terribleturtle.github.io/spellcasters-community-api/api/v2/infusions.json) - Elemental Infusion Definitions
 
 ### 📦 Patch History API
 

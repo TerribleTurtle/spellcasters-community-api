@@ -1,0 +1,49 @@
+{
+  "$schema": "https://json-schema.org/draft/2019-09/schema",
+  "$id": "https://spellcasters.gg/schemas/v2/infusions.schema.json",
+  "title": "Infusions Data File",
+  "description": "Database of all infusion effects.",
+  "type": "array",
+  "items": {
+    "type": "object",
+    "properties": {
+      "id": { "type": "string" },
+      "name": {
+        "$ref": "definitions/core.schema.json#/definitions/identity/properties/name"
+      },
+      "element": {
+        "type": "string",
+        "enum": ["Fire", "Lightning", "Poison", "Ice"]
+      },
+      "effect": {
+        "type": "string",
+        "description": "Description of the infusion's effect on creatures/buildings."
+      },
+      "status_buildup": {
+        "type": "string",
+        "description": "The status condition built up on enemies (e.g. Burning, Chain Lightning, Freeze, Poison)."
+      },
+      "damage_tiers": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "tier": { "type": "string", "enum": ["I", "II", "III"] },
+            "value": { "type": "number" },
+            "calculation_unit": {
+              "$ref": "definitions/enums.schema.json#/definitions/calculation_unit_enum"
+            },
+            "interval": {
+              "type": "number",
+              "description": "Seconds between ticks."
+            }
+          },
+          "required": ["tier", "value", "calculation_unit"],
+          "additionalProperties": false
+        }
+      }
+    },
+    "required": ["id", "name", "element", "effect", "status_buildup"],
+    "additionalProperties": false
+  }
+}

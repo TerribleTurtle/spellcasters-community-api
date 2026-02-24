@@ -47,6 +47,7 @@ SCHEMA_FILES = {
     "changelog_latest": "changelog_latest.schema.json",
     "all_data": "all_data.schema.json",
     "audit": "audit.schema.json",
+    "infusion": "infusions.schema.json",
 }
 
 # Data Folder to Schema Mapping (Folder Name -> Schema Key)

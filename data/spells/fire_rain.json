@@ -12,11 +12,12 @@
     "damage_modifiers": [
       {
         "multiplier": 1.2,
-        "target_types": [
-          "Creature"
-        ]
+        "target_types": ["Creature"]
       }
-    ]
+    ],
+    "infusion": {
+      "id": "fire_infusion"
+    }
   },
   "damage": 450,
   "range": 45,

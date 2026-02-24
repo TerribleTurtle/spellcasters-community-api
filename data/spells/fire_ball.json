@@ -9,12 +9,14 @@
   "description": "Fast projectile emitting a burning aura that deals medium Fire damage to a target.",
   "image_required": true,
   "magic_school": "Elemental",
-  "mechanics": {},
+  "mechanics": {
+    "infusion": {
+      "id": "fire_infusion"
+    }
+  },
   "range": 80,
   "rank": "III",
   "recharge_time": 60,
-  "tags": [
-    "homing"
-  ],
+  "tags": ["homing"],
   "last_modified": "2026-02-19T05:10:47.465Z"
 }

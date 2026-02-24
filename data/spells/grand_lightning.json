@@ -10,6 +10,11 @@
   "tags": [],
   "damage": 3675,
   "range": 36,
+  "mechanics": {
+    "infusion": {
+      "id": "lightning_infusion"
+    }
+  },
   "charges": 1,
   "recharge_time": 120,
   "cast_time": 0

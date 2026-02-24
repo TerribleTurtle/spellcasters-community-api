@@ -1,0 +1,19 @@
+{
+  "$schema": "https://json-schema.org/draft/2019-09/schema",
+  "$id": "https://spellcasters.gg/schemas/v2/definitions/mechanics/infusion.schema.json",
+  "title": "Infusion Reference",
+  "description": "Reference to a global infusion type.",
+  "definitions": {
+    "infusion": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "The ID of the infusion from infusions.json"
+        }
+      },
+      "required": ["id"],
+      "additionalProperties": false
+    }
+  }
+}

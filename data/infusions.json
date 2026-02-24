@@ -1,0 +1,50 @@
+[
+  {
+    "id": "fire_infusion",
+    "name": "Fire Infusion",
+    "element": "Fire",
+    "effect": "Enhances creatures and buildings with fire infusion, increasing offensive capabilities and applying buildup of burning status on enemies.",
+    "status_buildup": "Burning"
+  },
+  {
+    "id": "lightning_infusion",
+    "name": "Lightning Infusion",
+    "element": "Lightning",
+    "effect": "Enhances creatures and buildings with lightning infusion, increasing mobility and applying buildup of a chain lightning attack.",
+    "status_buildup": "Chain Lightning"
+  },
+  {
+    "id": "poison_infusion",
+    "name": "Poison Infusion",
+    "element": "Poison",
+    "effect": "Enhances creatures and buildings with poison infusion, granting them health regeneration and applying buildup of poison on enemies.",
+    "status_buildup": "Poison",
+    "damage_tiers": [
+      {
+        "tier": "I",
+        "value": 0.001,
+        "calculation_unit": "percent_max_hp",
+        "interval": 1
+      },
+      {
+        "tier": "II",
+        "value": 0.003,
+        "calculation_unit": "percent_max_hp",
+        "interval": 1
+      },
+      {
+        "tier": "III",
+        "value": 0.005,
+        "calculation_unit": "percent_max_hp",
+        "interval": 1
+      }
+    ]
+  },
+  {
+    "id": "ice_infusion",
+    "name": "Ice Infusion",
+    "element": "Ice",
+    "effect": "Enhances creatures and buildings with ice infusion, making them more resistant and applying buildup of freeze on enemies.",
+    "status_buildup": "Freeze"
+  }
+]

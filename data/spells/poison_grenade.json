@@ -15,11 +15,12 @@
     "damage_modifiers": [
       {
         "multiplier": 0,
-        "target_types": [
-          "Building"
-        ]
+        "target_types": ["Building"]
       }
-    ]
+    ],
+    "infusion": {
+      "id": "poison_infusion"
+    }
   },
   "charges": 1,
   "recharge_time": 60,

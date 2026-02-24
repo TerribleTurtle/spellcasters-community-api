@@ -73,6 +73,13 @@ def get_schema_for_file(filepath, data, schemas_map):
     if candidate in schemas_map:
         return schemas_map[candidate]
 
+    # 3. Heuristic based on filename explicitly (for root files like infusions.json)
+    filename = os.path.basename(filepath)
+    name_without_ext = os.path.splitext(filename)[0]
+    candidate2 = f"{name_without_ext}.schema.json"
+    if candidate2 in schemas_map:
+        return schemas_map[candidate2]
+
     return None
 
 

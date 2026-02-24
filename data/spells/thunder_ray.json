@@ -11,7 +11,10 @@
   "magic_school": "Technomancy",
   "mechanics": {
     "interval": 1,
-    "waves": 7
+    "waves": 7,
+    "infusion": {
+      "id": "lightning_infusion"
+    }
   },
   "range": 45,
   "rank": "I",

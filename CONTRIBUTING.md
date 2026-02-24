@@ -93,7 +93,13 @@ RNG Level-up bonus options.
 
 The single source of truth for the Game Version and global metadata.
 
-#### 8. Patch History (`api/v2/`)
+#### 8. Infusions (`data/infusions.json`)
+
+Global definitions for elemental infusions (Fire, Lightning, Poison, Ice).
+
+- **Schema**: [infusions.schema.json](schemas/v2/infusions.schema.json)
+
+#### 9. Patch History (`api/v2/`)
 
 Generated dynamically by the management tools during the CI build process. **Do not track these manually.**
 

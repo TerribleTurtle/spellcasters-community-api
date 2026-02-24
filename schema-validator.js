@@ -58,6 +58,8 @@ const SCHEMA_FILES = [
   "definitions/mechanics/damage_reduction.schema.json",
   "definitions/mechanics/bonus_damage.schema.json",
   "definitions/mechanics/initial_attack.schema.json",
+  "definitions/mechanics/infusion.schema.json",
+  "infusions.schema.json",
 ];
 
 /**

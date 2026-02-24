@@ -319,6 +319,24 @@ def validate_integrity():
                         print(f"[WARN] Upgrade {os.path.basename(filepath)} targets tag '{t}' which no unit possesses.")
                         warnings += 1
 
+            # Logic: Infusions -> Infusions IDs
+            if "mechanics" in data and isinstance(data["mechanics"], dict):
+                inf = data["mechanics"].get("infusion")
+                if inf and "id" in inf:
+                    inf_id = inf["id"]
+                    if "infusions" in db:
+                        # Find if any infusion object has this id
+                        found = False
+                        for inf_file, inf_data_list in db["infusions"].items():
+                            for obj in inf_data_list:
+                                if obj.get("id") == inf_id:
+                                    found = True
+                                    break
+                            if found: break
+                        if not found:
+                            print(f"[FAIL] {os.path.basename(filepath)} references unknown infusion '{inf_id}'")
+                            errors += 1
+
     # Validate Game Config
     game_config_path = os.path.join(DATA_DIR, "game_config.json")
     if os.path.exists(game_config_path):

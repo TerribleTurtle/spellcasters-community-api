@@ -32,7 +32,10 @@
       "description": "Burns enemies with powerful Fire attacks.",
       "damage": 28,
       "mechanics": {
-        "cleave": true
+        "cleave": true,
+        "infusion": {
+          "id": "fire_infusion"
+        }
       }
     },
     "defense": {
@@ -47,7 +50,12 @@
     "ultimate": {
       "name": "Burning Conquest",
       "description": "Captures a territory, inflicts Fire damage and fully infuses allied units and Titans with Fire.",
-      "damage": 67
+      "damage": 67,
+      "mechanics": {
+        "infusion": {
+          "id": "fire_infusion"
+        }
+      }
     }
   }
 }

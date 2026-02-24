@@ -11,7 +11,8 @@
     "upgrades",
     "units",
     "spells",
-    "titans"
+    "titans",
+    "infusions"
   ],
   "additionalProperties": false,
   "properties": {
@@ -54,6 +55,9 @@
     "titans": {
       "type": "array",
       "items": { "$ref": "titans.schema.json" }
+    },
+    "infusions": {
+      "$ref": "infusions.schema.json"
     },
     "game_config": {
       "$ref": "game_config.schema.json"
