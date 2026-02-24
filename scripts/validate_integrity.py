@@ -327,12 +327,13 @@ def validate_integrity():
                     if "infusions" in db:
                         # Find if any infusion object has this id
                         found = False
-                        for inf_file, inf_data_list in db["infusions"].items():
+                        for _, inf_data_list in db["infusions"].items():
                             for obj in inf_data_list:
                                 if obj.get("id") == inf_id:
                                     found = True
                                     break
-                            if found: break
+                            if found:
+                                break
                         if not found:
                             print(f"[FAIL] {os.path.basename(filepath)} references unknown infusion '{inf_id}'")
                             errors += 1
