@@ -4,141 +4,163 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Spellcasters Community API</title>
+    <meta
+      name="description"
+      content="Free, open-source API for Spellcasters Chronicles. Game data for heroes, spells, units, titans, consumables, and more."
+    />
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <h1>Spellcasters Community API (Free & Open)</h1>
+    <header class="hero">
+      <h1>🔮 Spellcasters Community API</h1>
+      <p class="tagline">
+        Free &amp; open-source game data for the Spellcasters Chronicles
+        community.<br />Built by fans, for everyone.
+      </p>
+      <div class="hero-actions">
+        <a
+          class="btn btn-primary"
+          href="https://github.com/TerribleTurtle/spellcasters-community-api/blob/main/CONTRIBUTING.md"
+          >Contribute Data</a
+        >
+        <a
+          class="btn btn-secondary"
+          href="https://github.com/TerribleTurtle/spellcasters-community-api"
+          >GitHub Repository</a
+        >
+      </div>
+    </header>
 
-    <div class="warning-banner">
-      <span>
-        <strong>⚠️ BETA NOTICE:</strong> Current data reflects the
-        <strong>Closed Beta</strong>. We will begin manual updates for
-        <strong>Early Access</strong> on and after <strong>Feb 26th</strong>.
-      </span>
-    </div>
-    <p>
-      Welcome to the open-source database for the Spellcasters Chronicles
-      community. Built by fans, for everyone.
-    </p>
-
-    <div class="card">
-      <h2>🚀 API Status: Active</h2>
-      <p>This API serves static JSON data via GitHub Pages.</p>
-
-      <h3>Quick Links</h3>
-      <ul>
-        <li>
-          📄
-          <a
-            href="https://github.com/TerribleTurtle/spellcasters-community-api/blob/main/GUIDE.md"
-            >Developer Guide</a
-          >
-        </li>
-        <li>
-          ✍️
-          <a
-            href="https://github.com/TerribleTurtle/spellcasters-community-api/blob/main/CONTRIBUTING.md"
-            >Contribute Data</a
-          >
-        </li>
-        <li>
-          📂
-          <a href="https://github.com/TerribleTurtle/spellcasters-community-api"
-            >GitHub Repository</a
-          >
-        </li>
-      </ul>
-
-      <h3>Endpoints</h3>
-      <ul>
-        <li>
-          🔮 <a href="api/v2/game_config.json">Game Config</a>
-          <code>/api/v2/game_config.json</code>
-        </li>
-        <li>
-          🪄 <a href="api/v2/heroes.json">Heroes (Spellcasters)</a>
-          <code>/api/v2/heroes.json</code>
-        </li>
-        <li>
-          👹 <a href="api/v2/units.json">Units (Creatures & Buildings)</a>
-          <code>/api/v2/units.json</code>
-        </li>
-        <li>
-          📜 <a href="api/v2/spells.json">Spells</a>
-          <code>/api/v2/spells.json</code>
-        </li>
-        <li>
-          🗿 <a href="api/v2/titans.json">Titans</a>
-          <code>/api/v2/titans.json</code>
-        </li>
-        <li>
-          💊 <a href="api/v2/consumables.json">Consumables</a>
-          <code>/api/v2/consumables.json</code>
-        </li>
-        <li>
-          ⬆️ <a href="api/v2/upgrades.json">Upgrades</a>
-          <code>/api/v2/upgrades.json</code>
-        </li>
-        <li>
-          🔥 <a href="api/v2/infusions.json">Infusions</a>
-          <code>/api/v2/infusions.json</code>
-        </li>
-        <li>
-          📦
-          <a href="api/v2/all_data.json">Master Archive (All Data Combined)</a>
-          <code>/api/v2/all_data.json</code>
-        </li>
-      </ul>
-
-      <h3>Auditing & Architecture</h3>
-      <ul>
-        <li>
-          🕵️‍♂️ <a href="api/v2/audit.json">Git Commit Audit Log</a>
-          <code>/api/v2/audit.json</code>
-        </li>
-        <li>
-          ⏱️ <a href="api/v2/timeline/">Timeline Directory (Stat History)</a>
-          <code>/api/v2/timeline/</code>
-        </li>
-        <li>
-          📐 <a href="schemas/">JSON Schemas</a>
-          <code>/schemas/</code>
-        </li>
-      </ul>
-
-      <h3>Patch History</h3>
-      <ul>
-        <li>
-          📋 <a href="api/v2/changelog_index.json">Changelog Index</a>
-          <code>/api/v2/changelog_index.json</code>
-        </li>
-        <li>
-          📅 <a href="api/v2/changelog.json">Changelog</a>
-          <code>/api/v2/changelog.json</code>
-        </li>
-        <li>
-          🆕 <a href="api/v2/changelog_latest.json">Latest Patch</a>
-          <code>/api/v2/changelog_latest.json</code>
-        </li>
-        <li>
-          ⚙️ <a href="api/v2/patches.json">Patch Definitions</a>
-          <code>/api/v2/patches.json</code>
-        </li>
-      </ul>
-
-      <h3>Tools</h3>
-      <ul>
-        <li>
-          🧪 <a href="schema-validator.html">Schema Validator</a>
-          <code>Local Validation Tool</code>
-        </li>
-      </ul>
+    <div class="notice">
+      <strong>⚠️ BETA NOTICE:</strong> Current data reflects the
+      <strong>Closed Beta</strong>. We will begin updates for
+      <strong>Early Access</strong> on <strong>Feb 26th</strong>.
     </div>
 
-    <div class="footer">
+    <section class="status-bar">
+      <span class="status-dot"></span>
+      <span>API Status: <strong>Active</strong></span>
+      <code class="base-url"
+        >https://terribleturtle.github.io/spellcasters-community-api/api/v2/</code
+      >
+    </section>
+
+    <h2 class="section-title">📦 Collections</h2>
+    <div class="grid">
+      <a href="api/v2/heroes.json" class="card" id="ep-heroes">
+        <span class="card-icon">🪄</span>
+        <span class="card-label">Heroes</span>
+        <code>/api/v2/heroes.json</code>
+      </a>
+      <a href="api/v2/units.json" class="card" id="ep-units">
+        <span class="card-icon">👹</span>
+        <span class="card-label">Units</span>
+        <code>/api/v2/units.json</code>
+      </a>
+      <a href="api/v2/spells.json" class="card" id="ep-spells">
+        <span class="card-icon">📜</span>
+        <span class="card-label">Spells</span>
+        <code>/api/v2/spells.json</code>
+      </a>
+      <a href="api/v2/titans.json" class="card" id="ep-titans">
+        <span class="card-icon">🗿</span>
+        <span class="card-label">Titans</span>
+        <code>/api/v2/titans.json</code>
+      </a>
+      <a href="api/v2/consumables.json" class="card" id="ep-consumables">
+        <span class="card-icon">💊</span>
+        <span class="card-label">Consumables</span>
+        <code>/api/v2/consumables.json</code>
+      </a>
+      <a href="api/v2/upgrades.json" class="card" id="ep-upgrades">
+        <span class="card-icon">⬆️</span>
+        <span class="card-label">Upgrades</span>
+        <code>/api/v2/upgrades.json</code>
+      </a>
+      <a href="api/v2/infusions.json" class="card" id="ep-infusions">
+        <span class="card-icon">🔥</span>
+        <span class="card-label">Infusions</span>
+        <code>/api/v2/infusions.json</code>
+      </a>
+      <a href="api/v2/game_config.json" class="card" id="ep-game-config">
+        <span class="card-icon">⚙️</span>
+        <span class="card-label">Game Config</span>
+        <code>/api/v2/game_config.json</code>
+      </a>
+      <a href="api/v2/all_data.json" class="card card-wide" id="ep-all-data">
+        <span class="card-icon">📦</span>
+        <span class="card-label">Master Archive</span>
+        <code>/api/v2/all_data.json</code>
+        <span class="card-desc">All collections combined in one payload</span>
+      </a>
+    </div>
+
+    <h2 class="section-title">📋 Patch History</h2>
+    <div class="grid">
+      <a
+        href="api/v2/changelog_index.json"
+        class="card"
+        id="ep-changelog-index"
+      >
+        <span class="card-icon">📋</span>
+        <span class="card-label">Changelog Index</span>
+        <code>/api/v2/changelog_index.json</code>
+      </a>
+      <a href="api/v2/changelog.json" class="card" id="ep-changelog">
+        <span class="card-icon">📅</span>
+        <span class="card-label">Full Changelog</span>
+        <code>/api/v2/changelog.json</code>
+      </a>
+      <a
+        href="api/v2/changelog_latest.json"
+        class="card"
+        id="ep-changelog-latest"
+      >
+        <span class="card-icon">🆕</span>
+        <span class="card-label">Latest Patch</span>
+        <code>/api/v2/changelog_latest.json</code>
+      </a>
+      <a href="api/v2/patches.json" class="card" id="ep-patches">
+        <span class="card-icon">⚙️</span>
+        <span class="card-label">Patch Definitions</span>
+        <code>/api/v2/patches.json</code>
+      </a>
+      <a href="api/v2/timeline/" class="card" id="ep-timeline">
+        <span class="card-icon">⏱️</span>
+        <span class="card-label">Timeline</span>
+        <code>/api/v2/timeline/</code>
+        <span class="card-desc">Per-entity stat history across patches</span>
+      </a>
+    </div>
+
+    <h2 class="section-title">🛠️ Tools &amp; Architecture</h2>
+    <div class="grid">
+      <a href="api/v2/audit.json" class="card" id="ep-audit">
+        <span class="card-icon">🕵️</span>
+        <span class="card-label">Audit Log</span>
+        <code>/api/v2/audit.json</code>
+      </a>
+      <a href="schemas/" class="card" id="ep-schemas">
+        <span class="card-icon">📐</span>
+        <span class="card-label">JSON Schemas</span>
+        <code>/schemas/</code>
+      </a>
+      <a href="schema-validator.html" class="card" id="tool-validator">
+        <span class="card-icon">🧪</span>
+        <span class="card-label">Schema Validator</span>
+        <code>Browser-based validation tool</code>
+      </a>
+      <a href="api/v2/status.json" class="card" id="ep-status">
+        <span class="card-icon">💚</span>
+        <span class="card-label">Status</span>
+        <code>/api/v2/status.json</code>
+      </a>
+    </div>
+
+    <footer class="footer">
       <p>
-        This project is a community effort and is not officially affiliated with
-        the game developers.
+        This project is a community effort and is not affiliated with the game
+        developers.
       </p>
       <p>
         Looking for the game devs?
@@ -147,6 +169,10 @@
           >Join the Official Game Discord</a
         >
       </p>
-    </div>
+      <p>
+        Powered by this API →
+        <a href="https://www.spellcastersdb.com/">SpellcastersDB</a>
+      </p>
+    </footer>
   </body>
 </html>
