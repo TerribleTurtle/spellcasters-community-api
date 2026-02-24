@@ -117,6 +117,7 @@ def test_standalone_endpoints(registry_and_schemas):
     Validates API endpoint files in api/v2/ against their specific schemas.
     """
     import os
+
     endpoints = {
         "api/v2/status.json": "status.schema.json",
         "api/v2/patches.json": "patches.schema.json",
