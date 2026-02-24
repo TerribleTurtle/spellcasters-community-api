@@ -1,7 +1,7 @@
 {
   "id": "patch_0_0_4",
   "version": "0.0.4",
-  "date": "2026-02-23T13:02:35.368237+00:00",
+  "date": "2026-02-24T01:33:02.405384+00:00",
   "type": "Hotfix",
   "changes": [
     {
@@ -185,6 +185,17 @@
         {
           "kind": "E",
           "path": [
+            "mechanics",
+            "damage_modifiers",
+            1,
+            "multiplier"
+          ],
+          "lhs": 1.75,
+          "rhs": 0.75
+        },
+        {
+          "kind": "E",
+          "path": [
             "recharge_time"
           ],
           "lhs": 50,
@@ -196,7 +207,7 @@
             "last_modified"
           ],
           "lhs": "2026-02-19T05:08:34.477Z",
-          "rhs": "2026-02-22T22:41:32.801607Z"
+          "rhs": "2026-02-24T01:33:02.402863Z"
         }
       ],
       "field": "entity",
@@ -436,6 +447,7 @@
   ],
   "tags": [
     "contributor:AnonJoker-cloud",
+    "contributor:TerribleTurtle",
     "contributor:TerribleTurtles"
   ],
   "title": "Hotfix 0.0.4"
