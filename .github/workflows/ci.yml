@@ -105,8 +105,8 @@ jobs:
       - name: Build Audit Log
         run: python scripts/build_audit_log.py
 
-      - name: Build API
-        run: python scripts/build_api.py
-
       - name: Validate Changelog Build
         run: python scripts/build_changelogs.py
+
+      - name: Build API
+        run: python scripts/build_api.py

@@ -14,11 +14,11 @@
           "charges": 2,
           "cooldown": 10,
           "description": "Turns invisible and move faster.",
-          "duration": 1.5,
+          "duration": 3,
           "mechanics": {
             "stealth": {
               "break_on_attack": true,
-              "duration": 1.5
+              "duration": 3
             }
           }
         },
@@ -29,7 +29,7 @@
           },
           {
             "name": "Last Light",
-            "description": "All damage dealt is increased against targets below half health."
+            "description": "All damage dealt is increased by 47% against targets below half health."
           },
           {
             "name": "Cosmic Air",
@@ -62,7 +62,7 @@
       "movement_type": "Ground",
       "population": 0,
       "tags": [],
-      "last_modified": "2026-02-22T21:56:56.000Z"
+      "last_modified": "2026-02-24T05:46:00.000Z"
     }
   }
 ]
