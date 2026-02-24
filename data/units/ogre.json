@@ -21,7 +21,7 @@
         ]
       },
       {
-        "multiplier": 1.75,
+        "multiplier": 0.75,
         "target_types": [
           "Creature"
         ]
