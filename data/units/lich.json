@@ -8,16 +8,30 @@
   "charges": 1,
   "damage": 5,
   "description": "Undead caster that inflicts curses to enemies, increasing the damage they take and reducing their movement speed.",
-  "dps": 5,
+  "mechanics": {
+    "aura": [
+      {
+        "name": "Cursed Wounds",
+        "description": "Curses enemies when dealing damage, increasing the damage they take (1.32x) and reducing their movement speed (0.4x). Lingers for 1s.",
+        "radius": 3,
+        "effect": "Debuff",
+        "target_types": ["Enemy"]
+      }
+    ]
+  },
   "health": 500,
   "image_required": true,
   "magic_school": "Necromancy",
   "movement_speed": 5,
   "movement_type": "Flying",
+  "dps": 5,
+  "attack_interval": 1,
+  "charges": 1,
+  "recharge_time": 25,
+  "cast_time": 0,
   "population": 0,
   "range": 25,
   "rank": "II",
-  "recharge_time": 25,
   "tags": [],
-  "last_modified": "2026-02-18T08:10:21.047Z"
+  "last_modified": "2026-02-24T05:41:00.000Z"
 }

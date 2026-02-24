@@ -15,11 +15,23 @@
     "passive": [
       {
         "name": "Echo of Mercy",
-        "description": "While on the ground, the Mystic Scribe emits a healing aura."
+        "description": "While on the ground, the Mystic Scribe emits a healing aura.",
+        "mechanics": {
+          "aura": [
+            {
+              "name": "Echo of Mercy Aura",
+              "radius": 5,
+              "value": 10,
+              "effect": "Heal",
+              "target_types": ["Ally"],
+              "interval": 1
+            }
+          ]
+        }
       },
       {
         "name": "Holy Magic Mastery",
-        "description": "All Holy incantations recharge faster."
+        "description": "All Holy incantations recharge 16.7% faster."
       },
       {
         "name": "Thousand Favors",
@@ -42,7 +54,10 @@
     },
     "ultimate": {
       "name": "Seal of Immortality",
-      "description": "Mark the ground with a massive healing seal.",
+      "description": "Mark the ground with a massive healing seal (70 + 1.37% target Max HP).",
+      "heal_amount": 70,
+      "radius": 30,
+      "interval": 1,
       "duration": 30
     }
   },
@@ -53,5 +68,5 @@
   "movement_type": "Ground",
   "population": 0,
   "tags": [],
-  "last_modified": "2026-02-19T02:13:18.977Z"
+  "last_modified": "2026-02-24T05:37:00.000Z"
 }
