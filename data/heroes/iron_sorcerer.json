@@ -37,6 +37,7 @@
     "ultimate": {
       "name": "Iron Tempest",
       "description": "Unleash a metal vortex that deals heavy damage, staggers/knocks back all creatures inside.",
+      "damage": 67,
       "duration": 3
     }
   },

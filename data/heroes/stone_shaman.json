@@ -38,9 +38,7 @@
             "effect": "Heal",
             "interval": 1,
             "radius": 8,
-            "target_types": [
-              "Ally"
-            ],
+            "target_types": ["Ally"],
             "value": 7
           }
         ],
@@ -56,6 +54,7 @@
     "ultimate": {
       "name": "Wall of Kamazad",
       "description": "Deploys a colossal wall capable of blocking Titans. The wall has 15000 Health and deals % damage to enemies in its path.",
+      "damage": 67,
       "health": 15000
     }
   },

@@ -46,7 +46,8 @@
     },
     "ultimate": {
       "name": "Burning Conquest",
-      "description": "Captures a territory, inflicts Fire damage and fully infuses allied units and Titans with Fire."
+      "description": "Captures a territory, inflicts Fire damage and fully infuses allied units and Titans with Fire.",
+      "damage": 67
     }
   }
 }
