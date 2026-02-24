@@ -233,6 +233,16 @@ def build_patch_history():
         else:
             print(f"[WARN] Patch file not found: {src}")
 
+    # 1a. Copy audit log
+    audit_src = os.path.join(config.BASE_DIR, "audit.json")
+    audit_dst = os.path.join(OUTPUT_DIR, "audit.json")
+    if os.path.exists(audit_src):
+        shutil.copy2(audit_src, audit_dst)
+        print(f"[OK] Copied audit.json -> {OUTPUT_DIR}")
+        copied += 1
+    else:
+        print("[WARN] audit.json not found at project root (run build_audit_log.py first)")
+
     # 1b. Copy paginated changelog pages (changelog_page_*.json)
     for page_file in glob.glob(os.path.join(config.BASE_DIR, "changelog_page_*.json")):
         filename = os.path.basename(page_file)
