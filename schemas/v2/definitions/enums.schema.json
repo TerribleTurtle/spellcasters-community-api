@@ -86,7 +86,7 @@
     "change_type_enum": {
       "type": "string",
       "description": "Type of change made to an entity.",
-      "enum": ["add", "edit", "delete"]
+      "enum": ["add", "edit", "delete", "rename"]
     },
     "patch_category_enum": {
       "type": "string",

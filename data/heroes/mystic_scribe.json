@@ -20,6 +20,7 @@
           "aura": [
             {
               "name": "Echo of Mercy Aura",
+              "description": "Heals nearby allies.",
               "radius": 5,
               "value": 10,
               "effect": "Heal",

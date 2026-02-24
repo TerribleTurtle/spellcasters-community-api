@@ -1,0 +1,64 @@
+{
+  "$schema": "https://json-schema.org/draft/2019-09/schema",
+  "$id": "https://spellcasters.gg/schemas/v2/audit.schema.json",
+  "title": "Audit Log",
+  "description": "An array of generated commit records logging changes to data files.",
+  "definitions": {
+    "audit_change_entry": {
+      "type": "object",
+      "required": ["entity_id", "file", "category", "change_type"],
+      "properties": {
+        "entity_id": {
+          "type": "string",
+          "description": "Short ID of the changed entity."
+        },
+        "file": { "type": "string", "description": "Path to the file." },
+        "category": {
+          "type": "string",
+          "description": "Category folder of the file."
+        },
+        "change_type": {
+          "$ref": "definitions/enums.schema.json#/definitions/change_type_enum"
+        },
+        "diffs": {
+          "type": "array",
+          "description": "Field-level diffs detailing what changed.",
+          "items": {
+            "type": "object",
+            "required": ["path"],
+            "properties": {
+              "path": {
+                "type": "array",
+                "items": { "type": ["string", "integer"] }
+              },
+              "removed": { "type": "boolean" },
+              "old_value": {},
+              "new_value": {}
+            }
+          }
+        }
+      }
+    },
+    "audit_commit": {
+      "type": "object",
+      "required": ["commit", "timestamp", "author", "message", "changes"],
+      "properties": {
+        "commit": { "type": "string", "description": "Git commit SHA hash." },
+        "timestamp": { "type": "string", "format": "date-time" },
+        "author": {
+          "type": "string",
+          "description": "The author of the commit."
+        },
+        "message": { "type": "string", "description": "The commit message." },
+        "changes": {
+          "type": "array",
+          "items": { "$ref": "#/definitions/audit_change_entry" }
+        }
+      }
+    }
+  },
+  "type": "array",
+  "items": {
+    "$ref": "#/definitions/audit_commit"
+  }
+}

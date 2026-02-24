@@ -1,0 +1,65 @@
+{
+  "$schema": "https://json-schema.org/draft/2019-09/schema",
+  "$id": "https://spellcasters.gg/schemas/v2/all_data.schema.json",
+  "title": "All Data",
+  "description": "A single consolidated payload containing all game data endpoints.",
+  "type": "object",
+  "required": [
+    "build_info",
+    "heroes",
+    "consumables",
+    "upgrades",
+    "units",
+    "spells",
+    "titans"
+  ],
+  "additionalProperties": false,
+  "properties": {
+    "build_info": {
+      "type": "object",
+      "required": ["version", "generated_at"],
+      "properties": {
+        "version": {
+          "type": "string",
+          "description": "The semantic version of the data."
+        },
+        "generated_at": {
+          "type": "string",
+          "format": "date-time",
+          "description": "ISO 8601 generation timestamp."
+        }
+      },
+      "additionalProperties": false
+    },
+    "heroes": {
+      "type": "array",
+      "items": { "$ref": "heroes.schema.json" }
+    },
+    "consumables": {
+      "type": "array",
+      "items": { "$ref": "consumables.schema.json" }
+    },
+    "upgrades": {
+      "type": "array",
+      "items": { "$ref": "upgrades.schema.json" }
+    },
+    "units": {
+      "type": "array",
+      "items": { "$ref": "units.schema.json" }
+    },
+    "spells": {
+      "type": "array",
+      "items": { "$ref": "spells.schema.json" }
+    },
+    "titans": {
+      "type": "array",
+      "items": { "$ref": "titans.schema.json" }
+    },
+    "game_config": {
+      "$ref": "game_config.schema.json"
+    },
+    "patches": {
+      "$ref": "patches.schema.json"
+    }
+  }
+}

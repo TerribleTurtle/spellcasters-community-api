@@ -1,0 +1,10 @@
+{
+  "$schema": "https://json-schema.org/draft/2019-09/schema",
+  "$id": "https://spellcasters.gg/schemas/v2/patches.schema.json",
+  "title": "Patches List",
+  "description": "A list of all patches. Equivalent structure to changelog.json.",
+  "type": "array",
+  "items": {
+    "$ref": "changelog.schema.json#/definitions/patch_entry"
+  }
+}
