@@ -15,11 +15,14 @@
     "passive": [
       {
         "name": "Echo of Mercy",
-        "description": "While on the ground, the Mystic Scribe emits a healing aura."
+        "description": "While on the ground, the Mystic Scribe emits a healing aura.",
+        "heal": 10,
+        "radius:": 5,
+        "interval": 1
       },
       {
         "name": "Holy Magic Mastery",
-        "description": "All Holy incantations recharge faster."
+        "description": "All Holy incantations recharge 16.7% faster."
       },
       {
         "name": "Thousand Favors",
@@ -43,7 +46,10 @@
     "ultimate": {
       "name": "Seal of Immortality",
       "description": "Mark the ground with a massive healing seal.",
-      "duration": 30
+      "heal": "70 + 1.37% target Max HP",
+      "radius": 30,
+      "duration": 30,
+      "interval": 1
     }
   },
   "description": "An Enchanter who uses magical ink to damage enemies, heal allies, and create protective barriers.",
