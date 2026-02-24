@@ -162,7 +162,7 @@ class TestMainMultiVersion:
         self, mock_load, mock_discover, mock_collect, mock_changed, mock_save, mock_write
     ):
         """0.0.1 is the baseline — no patch should be generated for it."""
-        mock_load.side_effect = lambda path: ({"version": "0.0.2"} if "game_config" in path else [])
+        mock_load.side_effect = lambda path: {"version": "0.0.2"} if "game_config" in path else []
         mock_discover.return_value = [
             {"version": "0.0.1", "commit": "commit_a"},
             {"version": "0.0.2", "commit": "commit_b"},
@@ -200,7 +200,7 @@ class TestMainMultiVersion:
         mock_collect.return_value = {}
 
         with patch("generate_patch.get_file_content_at_commit") as mock_content:
-            mock_content.side_effect = lambda fp, commit: ({"health": 100} if "cA" in commit else {"health": 200})
+            mock_content.side_effect = lambda fp, commit: {"health": 100} if "cA" in commit else {"health": 200}
             mock_changed.return_value = [("M", "data/units/ogre.json")]
             generate_patch.main()
 
