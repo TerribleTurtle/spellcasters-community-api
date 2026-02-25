@@ -1,65 +1,72 @@
 {
-    "$schema":  "https://json-schema.org/draft/2019-09/schema",
+  "$schema": "https://json-schema.org/draft/2019-09/schema",
   "$id": "https://spellcasters.gg/schemas/v2/definitions/ability.schema.json",
-    "title":  "Ability Definitions",
-    "description":  "Shared definition for abilities used by Heroes and Units.",
-    "definitions":  {
-                        "ability_detail":  {
-                                               "type":  "object",
-                                               "allOf":  [
-                                                             {
-                                                                 "$ref":  "stats.schema.json#/definitions/ability_stats"
-                                                             }
-                                                         ],
-                                               "properties":  {
-                                                                  "name":  {
-                                                                               "$ref":  "core.schema.json#/definitions/identity/properties/name"
-                                                                           },
-                                                                  "description":  {
-                                                                                      "$ref":  "core.schema.json#/definitions/identity/properties/description"
-                                                                                  },
-                                                                  "mechanics":  {
-                                                                                    "allOf":  [
-                                                                                                  {
-                                                                                                      "$ref":  "mechanics.schema.json#/definitions/mechanics"
-                                                                                                  }
-                                                                                              ]
-                                                                                },
-                                                                  "damage": { "$ref": "stats.schema.json#/definitions/common_combat_props/properties/damage" },
-                                                                  "heal_amount": { "$ref": "stats.schema.json#/definitions/stat_value" },
-                                                                  "duration": { "$ref": "stats.schema.json#/definitions/duration_value" },
-                                                                  "stacks": { "type": "integer", "minimum": 0 },
-                                                                  "charges": { "type": "integer", "minimum": 0 },
-                                                                  "cooldown": { "$ref": "stats.schema.json#/definitions/ability_stats/properties/cooldown" },
-                                                                  "range": { "$ref": "stats.schema.json#/definitions/common_combat_props/properties/range" },
-                                                                  "value": { "$ref": "stats.schema.json#/definitions/stat_value" },
-                                                                  "radius": { "$ref": "stats.schema.json#/definitions/ability_stats/properties/radius" },
+  "title": "Ability Definitions",
+  "description": "Shared definition for abilities used by Heroes and Units.",
+  "definitions": {
+    "ability_detail": {
+      "type": "object",
+      "allOf": [
+        {
+          "$ref": "stats.schema.json#/definitions/ability_stats"
+        }
+      ],
+      "properties": {
+        "name": {
+          "$ref": "core.schema.json#/definitions/identity/properties/name"
+        },
+        "description": {
+          "$ref": "core.schema.json#/definitions/identity/properties/description"
+        },
+        "mechanics": {
+          "allOf": [
+            {
+              "$ref": "mechanics.schema.json#/definitions/mechanics"
+            }
+          ]
+        },
+        "damage": {
+          "$ref": "stats.schema.json#/definitions/common_combat_props/properties/damage"
+        },
+        "damage_overrides": {
+          "$ref": "stats.schema.json#/definitions/common_combat_props/properties/damage_overrides"
+        },
+        "heal_amount": { "$ref": "stats.schema.json#/definitions/stat_value" },
+        "duration": { "$ref": "stats.schema.json#/definitions/duration_value" },
+        "stacks": { "type": "integer", "minimum": 0 },
+        "charges": { "type": "integer", "minimum": 0 },
+        "cooldown": {
+          "$ref": "stats.schema.json#/definitions/ability_stats/properties/cooldown"
+        },
+        "range": {
+          "$ref": "stats.schema.json#/definitions/common_combat_props/properties/range"
+        },
+        "value": { "$ref": "stats.schema.json#/definitions/stat_value" },
+        "radius": {
+          "$ref": "stats.schema.json#/definitions/ability_stats/properties/radius"
+        },
 
-
-                                                                  "interval": { "$ref": "stats.schema.json#/definitions/duration_value" },
-                                                                  "projectiles": { "type": "integer", "minimum": 1 },
-                                                                  "health": { "$ref": "stats.schema.json#/definitions/stat_value" }
-                                                              },
-                                               "required":  [
-                                                                "name",
-                                                                "description"
-                                                            ],
-                                               "examples":  [
-                                                                {
-                                                                    "name":  "Fireball",
-                                                                    "description":  "Deals damage in an area.",
-                                                                    "damage":  50,
-                                                                    "radius":  5
-                                                                },
-                                                                {
-                                                                    "name":  "Heal",
-                                                                    "description":  "Restores health over time.",
-                                                                    "heal_amount":  20,
-                                                                    "duration":  5,
-                                                                    "interval":  1
-                                                                }
-                                                            ],
-                                               "additionalProperties":  false
-                                           }
-                    }
+        "interval": { "$ref": "stats.schema.json#/definitions/duration_value" },
+        "projectiles": { "type": "integer", "minimum": 1 },
+        "health": { "$ref": "stats.schema.json#/definitions/stat_value" }
+      },
+      "required": ["name", "description"],
+      "examples": [
+        {
+          "name": "Fireball",
+          "description": "Deals damage in an area.",
+          "damage": 50,
+          "radius": 5
+        },
+        {
+          "name": "Heal",
+          "description": "Restores health over time.",
+          "heal_amount": 20,
+          "duration": 5,
+          "interval": 1
+        }
+      ],
+      "additionalProperties": false
+    }
+  }
 }

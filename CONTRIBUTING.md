@@ -61,12 +61,14 @@ Refers to the player-controlled characters.
 - **Schema**: [units.schema.json](schemas/v2/units.schema.json)
 - **Description**: Physical entities with health, collision, and movement. (Creatures & Buildings)
 - **Key Fields**: `health`, `movement_speed` (if mobile), `damage` (if armed), `range`.
+- **Optional**: `damage_overrides` — flat damage values against specific target types (see [Damage Overrides](#damage-overrides) below).
 
 #### 3. Spells (`data/spells`)
 
 - **Schema**: [spells.schema.json](schemas/v2/spells.schema.json)
 - **Description**: Instant actions or effects.
 - **Key Fields**: `mana_cost`, `cooldown`, `range` (Min/Max), `cast_time`.
+- **Optional**: `damage_overrides` — flat damage values against specific target types. Omit for non-damaging spells (e.g. Heal Ray).
 
 #### 4. Titans (`data/titans`)
 
@@ -151,6 +153,26 @@ We use strongly-typed objects for mechanics to ensure the game engine can read t
   - **Match:** Target Type (e.g., "Building").
   - **Condition:** Structured logic (e.g., `{"field": "target.hp_percent", "op": "<", "val": 0.5}`).
     - _Note: Legacy string conditions (e.g., "Always") are strictly forbidden._
+
+#### Damage Overrides
+
+Units and Spells support an optional `damage_overrides` object for specifying different flat damage values against specific target categories. The base `damage` field acts as the default; any target type listed in `damage_overrides` uses that value instead.
+
+- **Keys**: Any valid target type (`Creature`, `Spellcaster`, `Building`, `Lifestone`, `Flying`, `Ground`, etc.).
+- **Values**: Non-negative numbers (flat damage).
+- **Non-damaging abilities**: Omit `damage_overrides` entirely (e.g., Heal Ray).
+
+```json
+{
+  "damage": 50,
+  "damage_overrides": {
+    "Building": 250,
+    "Lifestone": 250
+  }
+}
+```
+
+> The above means: 50 damage to everything, except 250 flat damage to Buildings and Lifestones.
 
 ### Updating Existing Data
 

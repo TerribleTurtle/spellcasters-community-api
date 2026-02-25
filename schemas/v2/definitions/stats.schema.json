@@ -18,14 +18,33 @@
       "minimum": 0,
       "description": "Time duration in seconds."
     },
+    "damage_overrides": {
+      "type": "object",
+      "description": "Optional flat damage values against specific target categories. Each key is a target type and the value is the exact flat damage dealt to that target. If a target type is not listed, the base 'damage' value applies. Omit this field entirely for non-damaging abilities (e.g. Heal Ray).",
+      "propertyNames": {
+        "$ref": "enums.schema.json#/definitions/target_type_enum"
+      },
+      "additionalProperties": {
+        "$ref": "#/definitions/stat_value"
+      },
+      "examples": [
+        {
+          "Building": 250,
+          "Lifestone": 250
+        }
+      ]
+    },
     "common_combat_props": {
       "type": "object",
       "properties": {
-        "damage": { 
+        "damage": {
           "allOf": [{ "$ref": "#/definitions/stat_value" }],
-          "description": "Damage dealt."
+          "description": "Base damage dealt. Acts as the default when no damage_overrides entry exists for a target."
         },
-        "range": { 
+        "damage_overrides": {
+          "$ref": "#/definitions/damage_overrides"
+        },
+        "range": {
           "allOf": [{ "$ref": "#/definitions/stat_value" }],
           "description": "Range in tiles."
         }
@@ -34,7 +53,7 @@
     "mobility_stats": {
       "type": "object",
       "properties": {
-        "movement_speed": { 
+        "movement_speed": {
           "allOf": [{ "$ref": "#/definitions/stat_value" }],
           "description": "Speed in tiles per second."
         }
@@ -43,30 +62,32 @@
     "base_stats": {
       "type": "object",
       "properties": {
-        "health": { 
+        "health": {
           "allOf": [{ "$ref": "#/definitions/stat_value" }],
           "description": "Hit Points. When this reaches 0, the unit dies."
         },
-        "population": { "$ref": "resource.schema.json#/definitions/population_cost" }
+        "population": {
+          "$ref": "resource.schema.json#/definitions/population_cost"
+        }
       }
     },
     "ability_stats": {
       "type": "object",
       "allOf": [{ "$ref": "#/definitions/common_combat_props" }],
       "properties": {
-        "value": { 
+        "value": {
           "allOf": [{ "$ref": "#/definitions/stat_value" }],
           "description": "Generic magnitude (e.g. heal amount, shield strength)."
         },
-        "radius": { 
+        "radius": {
           "allOf": [{ "$ref": "#/definitions/stat_value" }],
           "description": "Area of effect radius in tiles."
         },
-        "duration": { 
+        "duration": {
           "allOf": [{ "$ref": "#/definitions/duration_value" }],
           "description": "Effect duration in seconds."
         },
-        "cooldown": { 
+        "cooldown": {
           "allOf": [{ "$ref": "#/definitions/duration_value" }],
           "description": "Cooldown time in seconds."
         }
@@ -76,11 +97,11 @@
       "type": "object",
       "allOf": [{ "$ref": "#/definitions/common_combat_props" }],
       "properties": {
-        "dps": { 
+        "dps": {
           "allOf": [{ "$ref": "#/definitions/stat_value" }],
           "description": "Damage Per Second (calculated)."
         },
-        "attack_interval": { 
+        "attack_interval": {
           "allOf": [{ "$ref": "#/definitions/duration_value" }],
           "description": "Time between attacks in seconds."
         }
