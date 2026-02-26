@@ -14,6 +14,34 @@
     "Creature": 0,
     "Spellcaster": 0
   },
+  "mechanics": {
+    "damage_modifiers": [
+      {
+        "target_types": [
+          "Building"
+        ],
+        "multiplier": 1.0
+      },
+      {
+        "target_types": [
+          "Lifestone"
+        ],
+        "multiplier": 1.0
+      },
+      {
+        "target_types": [
+          "Creature"
+        ],
+        "multiplier": 1.0
+      },
+      {
+        "target_types": [
+          "Spellcaster"
+        ],
+        "multiplier": 1.0
+      }
+    ]
+  },
   "health": 2500,
   "charges": 1,
   "recharge_time": 25,

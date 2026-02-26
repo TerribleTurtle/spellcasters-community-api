@@ -20,7 +20,33 @@
     "waves": 7,
     "infusion": {
       "id": "lightning_infusion"
-    }
+    },
+    "damage_modifiers": [
+      {
+        "target_types": [
+          "Building"
+        ],
+        "multiplier": 1.0
+      },
+      {
+        "target_types": [
+          "Lifestone"
+        ],
+        "multiplier": 1.0
+      },
+      {
+        "target_types": [
+          "Creature"
+        ],
+        "multiplier": 1.0
+      },
+      {
+        "target_types": [
+          "Spellcaster"
+        ],
+        "multiplier": 1.0
+      }
+    ]
   },
   "range": 45,
   "rank": "I",

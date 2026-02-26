@@ -16,7 +16,33 @@
   "image_required": true,
   "magic_school": "Astral",
   "mechanics": {
-    "waves": 4
+    "waves": 4,
+    "damage_modifiers": [
+      {
+        "target_types": [
+          "Building"
+        ],
+        "multiplier": 1.0
+      },
+      {
+        "target_types": [
+          "Lifestone"
+        ],
+        "multiplier": 1.0
+      },
+      {
+        "target_types": [
+          "Creature"
+        ],
+        "multiplier": 1.0
+      },
+      {
+        "target_types": [
+          "Spellcaster"
+        ],
+        "multiplier": 1.0
+      }
+    ]
   },
   "range": 80,
   "rank": "II",
