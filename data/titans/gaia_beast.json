@@ -12,7 +12,7 @@
     {
       "location": "chest",
       "multiplier": 2.0,
-      "description": "Gaia Beast takes +100% extra damage on its chest."
+      "description": "Gaia Beast takes extra damage on its chest."
     }
   ],
   "mechanics": {

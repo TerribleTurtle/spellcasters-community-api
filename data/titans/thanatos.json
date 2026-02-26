@@ -12,7 +12,7 @@
     {
       "location": "back",
       "multiplier": 1.25,
-      "description": "Thanatos takes +25% extra damage from behind."
+      "description": "Thanatos takes extra damage from behind."
     }
   ],
   "mechanics": {
