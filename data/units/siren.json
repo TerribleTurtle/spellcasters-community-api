@@ -29,6 +29,23 @@
     "Spellcaster": 0
   },
   "mechanics": {
+    "aura": [
+      {
+        "name": "Siren Song",
+        "description": "Charms nearby enemies, causing them to attack their own allies.",
+        "radius": 0,
+        "value": 0,
+        "interval": 0,
+        "effect": "Debuff",
+        "target_types": ["Enemy"]
+      }
+    ],
+    "features": [
+      {
+        "name": "Friendly Fire",
+        "description": "Affected enemies deal damage to their own allies."
+      }
+    ],
     "damage_modifiers": [
       {
         "target_types": [

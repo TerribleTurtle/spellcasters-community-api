@@ -29,6 +29,12 @@
     "Spellcaster": 0
   },
   "mechanics": {
+    "features": [
+      {
+        "name": "Charge",
+        "description": "Charges at buildings, dealing bonus damage on impact."
+      }
+    ],
     "damage_modifiers": [
       {
         "target_types": [

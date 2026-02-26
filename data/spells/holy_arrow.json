@@ -23,6 +23,23 @@
   },
   "range": 0,
   "mechanics": {
+    "aura": [
+      {
+        "name": "Holy Healing",
+        "description": "Heals allies hit by the arrow.",
+        "radius": 0,
+        "value": 0,
+        "interval": 0,
+        "effect": "Heal",
+        "target_types": ["Ally"]
+      }
+    ],
+    "features": [
+      {
+        "name": "Dual Effect",
+        "description": "Damages enemies and heals allies in the path."
+      }
+    ],
     "damage_modifiers": [
       {
         "target_types": [

@@ -23,6 +23,12 @@
   },
   "range": 0,
   "mechanics": {
+    "features": [
+      {
+        "name": "Transform",
+        "description": "Transforms Rank I creatures into harmless critters."
+      }
+    ],
     "damage_modifiers": [
       {
         "target_types": [

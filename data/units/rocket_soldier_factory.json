@@ -28,6 +28,19 @@
   },
   "range": 0,
   "mechanics": {
+    "spawner": [
+      {
+        "unit_id": "rocket_soldier",
+        "count": 5,
+        "interval": 10,
+        "trigger": "Interval"
+      },
+      {
+        "unit_id": "rocket_soldier",
+        "count": 10,
+        "trigger": "Death"
+      }
+    ],
     "damage_modifiers": [
       {
         "target_types": [
