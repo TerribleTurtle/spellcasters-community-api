@@ -52,6 +52,7 @@ node_modules/
 # Test / Coverage Artifacts
 .coverage
 test_out.txt
+changelog.txt
 
 # Caches
 .asset_cache.json
