@@ -25,6 +25,12 @@
     ]
   },
   "damage": 8,
+  "damage_overrides": {
+    "Building": 0,
+    "Lifestone": 0,
+    "Creature": 0,
+    "Spellcaster": 0
+  },
   "health": 85,
   "range": 36,
   "movement_speed": 3,

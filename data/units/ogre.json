@@ -7,6 +7,12 @@
   "cast_time": 0,
   "charges": 1,
   "damage": 70,
+  "damage_overrides": {
+    "Building": 0,
+    "Lifestone": 0,
+    "Creature": 0,
+    "Spellcaster": 0
+  },
   "description": "Mighty warrior that crushes target areas with a hammer.",
   "dps": 70,
   "health": 2300,

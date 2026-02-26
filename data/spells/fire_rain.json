@@ -12,7 +12,9 @@
     "damage_modifiers": [
       {
         "multiplier": 1.2,
-        "target_types": ["Creature"]
+        "target_types": [
+          "Creature"
+        ]
       }
     ],
     "infusion": {
@@ -20,6 +22,12 @@
     }
   },
   "damage": 450,
+  "damage_overrides": {
+    "Building": 0,
+    "Lifestone": 0,
+    "Creature": 0,
+    "Spellcaster": 0
+  },
   "range": 45,
   "duration": 12,
   "charges": 1,

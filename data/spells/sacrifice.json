@@ -13,6 +13,12 @@
     "interval": 1
   },
   "damage": 18,
+  "damage_overrides": {
+    "Building": 0,
+    "Lifestone": 0,
+    "Creature": 0,
+    "Spellcaster": 0
+  },
   "charges": 1,
   "recharge_time": 5,
   "cast_time": 0

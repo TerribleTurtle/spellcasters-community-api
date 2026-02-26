@@ -24,6 +24,12 @@
     ]
   },
   "damage": 12,
+  "damage_overrides": {
+    "Building": 0,
+    "Lifestone": 0,
+    "Creature": 0,
+    "Spellcaster": 0
+  },
   "health": 225,
   "movement_speed": 3,
   "movement_type": "Ground",

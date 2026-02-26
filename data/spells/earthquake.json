@@ -6,6 +6,12 @@
   "cast_time": 0,
   "charges": 1,
   "damage": 76,
+  "damage_overrides": {
+    "Building": 0,
+    "Lifestone": 0,
+    "Creature": 0,
+    "Spellcaster": 0
+  },
   "description": "Ground shockwave that damages structures and staggers creatures significantly. Damage is split into 3 waves.",
   "image_required": true,
   "magic_school": "Wild",

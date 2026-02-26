@@ -9,6 +9,12 @@
   "tags": [],
   "health": 85,
   "damage": 20,
+  "damage_overrides": {
+    "Building": 0,
+    "Lifestone": 0,
+    "Creature": 0,
+    "Spellcaster": 0
+  },
   "dps": 20,
   "attack_interval": 1,
   "movement_speed": 7,

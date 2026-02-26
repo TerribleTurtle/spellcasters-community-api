@@ -7,6 +7,12 @@
   "cast_time": 0,
   "charges": 1,
   "damage": 5,
+  "damage_overrides": {
+    "Building": 0,
+    "Lifestone": 0,
+    "Creature": 0,
+    "Spellcaster": 0
+  },
   "description": "Undead caster that inflicts curses to enemies, increasing the damage they take and reducing their movement speed.",
   "mechanics": {
     "aura": [
@@ -17,7 +23,9 @@
         "value": 0.4,
         "interval": 1,
         "effect": "Debuff",
-        "target_types": ["Enemy"]
+        "target_types": [
+          "Enemy"
+        ]
       },
       {
         "name": "Cursed Wounds (Vulnerability)",
@@ -26,7 +34,9 @@
         "value": 1.32,
         "interval": 1,
         "effect": "Debuff",
-        "target_types": ["Enemy"]
+        "target_types": [
+          "Enemy"
+        ]
       }
     ]
   },

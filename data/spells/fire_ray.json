@@ -16,6 +16,12 @@
     }
   },
   "damage": 14,
+  "damage_overrides": {
+    "Building": 0,
+    "Lifestone": 0,
+    "Creature": 0,
+    "Spellcaster": 0
+  },
   "range": 45,
   "charges": 1,
   "recharge_time": 5,

@@ -6,6 +6,12 @@
   "cast_time": 0,
   "charges": 1,
   "damage": 32,
+  "damage_overrides": {
+    "Building": 0,
+    "Lifestone": 0,
+    "Creature": 0,
+    "Spellcaster": 0
+  },
   "description": "Rapid burst of projectiles.",
   "image_required": true,
   "magic_school": "Astral",

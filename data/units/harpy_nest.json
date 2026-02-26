@@ -8,6 +8,12 @@
   "description": "Nest that continuously spawns new Harpies.",
   "image_required": true,
   "tags": [],
+  "damage_overrides": {
+    "Building": 0,
+    "Lifestone": 0,
+    "Creature": 0,
+    "Spellcaster": 0
+  },
   "mechanics": {
     "spawner": [
       {

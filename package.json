@@ -3,5 +3,8 @@
     "ajv": "^8.18.0",
     "ajv-formats": "^3.0.1",
     "puppeteer": "^24.37.5"
+  },
+  "devDependencies": {
+    "@apidevtools/json-schema-ref-parser": "^15.2.2"
   }
 }

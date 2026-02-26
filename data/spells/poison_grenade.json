@@ -9,13 +9,21 @@
   "image_required": true,
   "tags": [],
   "damage": 25,
+  "damage_overrides": {
+    "Building": 0,
+    "Lifestone": 0,
+    "Creature": 0,
+    "Spellcaster": 0
+  },
   "range": 40,
   "duration": 12,
   "mechanics": {
     "damage_modifiers": [
       {
         "multiplier": 0,
-        "target_types": ["Building"]
+        "target_types": [
+          "Building"
+        ]
       }
     ],
     "infusion": {

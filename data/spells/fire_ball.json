@@ -6,6 +6,12 @@
   "cast_time": 0.5,
   "charges": 1,
   "damage": 530,
+  "damage_overrides": {
+    "Building": 0,
+    "Lifestone": 0,
+    "Creature": 0,
+    "Spellcaster": 0
+  },
   "description": "Fast projectile emitting a burning aura that deals medium Fire damage to a target.",
   "image_required": true,
   "magic_school": "Elemental",
@@ -17,6 +23,8 @@
   "range": 80,
   "rank": "III",
   "recharge_time": 60,
-  "tags": ["homing"],
+  "tags": [
+    "homing"
+  ],
   "last_modified": "2026-02-19T05:10:47.465Z"
 }

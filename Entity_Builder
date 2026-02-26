@@ -1,0 +1,599 @@
+# Entity Builder — Software Design Document
+
+> [!IMPORTANT]
+> **Status: TODO** — Feasibility confirmed. All open questions resolved. Ready for implementation when prioritized.
+>
+> **Estimated effort:** 10–15 hours across 6 phases.
+> **Auto-update guarantee:** Schema-driven architecture ensures the form updates automatically when schemas change (via CI build, Option B).
+
+## 1. Overview
+
+### 1.1 Purpose
+
+The **Entity Builder** is a browser-based, zero-code form tool that enables community contributors to create valid JSON data files for the [Spellcasters Community API](https://terribleturtle.github.io/spellcasters-community-api/) without ever seeing raw JSON or understanding the schema system.
+
+Contributors select an entity type (Hero, Unit, Spell, etc.), fill out a guided form with dropdowns, number inputs, and text fields, and click **"Download JSON"** to receive a schema-compliant `.json` file ready for a Pull Request.
+
+### 1.2 Problem Statement
+
+Today, contributors must:
+
+1. Read the schema files and `CONTRIBUTING.md` to understand required fields
+2. Manually author JSON with correct nesting, types, enums, and cross-references
+3. Run `validate_integrity.py` or use the online Schema Validator to catch errors
+4. Debug cryptic Ajv error messages when something is wrong
+
+This creates a high barrier for non-technical community members (artists, lorekeepers, game enthusiasts) who have valuable game knowledge but no JSON experience.
+
+### 1.3 Goals
+
+| ID  | Goal                                                                                         | Priority   |
+| --- | -------------------------------------------------------------------------------------------- | ---------- |
+| G1  | Allow non-technical users to create valid entity JSON via a visual form                      | **Must**   |
+| G2  | Support all 7 entity types (Heroes, Units, Spells, Titans, Consumables, Upgrades, Infusions) | **Must**   |
+| G3  | Host on the existing GitHub Pages site alongside the Schema Validator                        | **Must**   |
+| G4  | Produce downloadable `.json` files that pass `validate_integrity.py`                         | **Must**   |
+| G5  | Match the existing dark theme and design language of the API site                            | **Should** |
+| G6  | Provide contextual help text and tooltips derived from schema descriptions                   | **Should** |
+| G7  | Support loading/editing existing JSON files (round-trip editing)                             | **Could**  |
+| G8  | Deep-link integration with PRs (pre-populate from URL)                                       | **Could**  |
+
+### 1.4 Non-Goals
+
+- **Not a game modding tool** — this produces API data files, not game engine configs
+- **Not a replacement for the Schema Validator** — the validator remains the authoritative check
+- **No server-side component** — 100% client-side, consistent with the existing security model
+- **No authentication** — anyone can use it; PR review remains the quality gate
+
+---
+
+## 2. Architecture
+
+### 2.1 High-Level Architecture
+
+```mermaid
+graph TD
+    subgraph "Build Time (CI / Local)"
+        A["schemas/v2/*.schema.json<br/>(24 files)"] -->|"bundle_schemas.js<br/>(@apidevtools/json-schema-ref-parser)"| B["dist/schemas/*.bundled.json<br/>(7 files, self-contained)"]
+    end
+
+    subgraph "Runtime (Browser)"
+        B -->|"fetch()"| C["Entity Builder Page"]
+        C --> D["RJSF Form Engine<br/>(React JSON Schema Form)"]
+        D --> E["Live Form UI"]
+        E -->|"User fills fields"| F["formData (JS object)"]
+        F -->|"JSON.stringify + download"| G["entity_id.json<br/>(Schema-valid file)"]
+        F -->|"Optional"| H["Schema Validator<br/>(existing tool)"]
+    end
+
+    style A fill:#1a1a2e,stroke:#58a6ff,color:#c9d1d9
+    style B fill:#1a1a2e,stroke:#3fb950,color:#c9d1d9
+    style C fill:#1a1a2e,stroke:#58a6ff,color:#c9d1d9
+    style D fill:#1a1a2e,stroke:#d29922,color:#c9d1d9
+    style E fill:#1a1a2e,stroke:#58a6ff,color:#c9d1d9
+    style F fill:#1a1a2e,stroke:#58a6ff,color:#c9d1d9
+    style G fill:#1a1a2e,stroke:#3fb950,color:#c9d1d9
+    style H fill:#1a1a2e,stroke:#8b949e,color:#c9d1d9
+```
+
+### 2.2 Component Breakdown
+
+| Component               | Description                                                                                                          | Technology                                                                 |
+| ----------------------- | -------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------- |
+| **Schema Bundler**      | Build-time Node.js script that dereferences all `$ref`s across 24 schema files into 7 self-contained bundled schemas | `@apidevtools/json-schema-ref-parser` (already a devDependency)            |
+| **Entity Builder Page** | Static HTML page served from GitHub Pages                                                                            | Vanilla HTML + `style.css` (existing)                                      |
+| **Form Engine**         | Renders JSON Schema as interactive form controls                                                                     | RJSF v5 (`@rjsf/core` + `@rjsf/validator-ajv8`) via CDN or vendored bundle |
+| **UI Schema Layer**     | Custom layout and widget configuration per entity type                                                               | JSON `uiSchema` objects (RJSF convention)                                  |
+| **Export Module**       | Generates downloadable `.json` with proper formatting                                                                | `Blob` + `URL.createObjectURL` + `<a download>`                            |
+| **Import Module**       | Loads existing `.json` files into the form for editing                                                               | `FileReader` API + `fetch()` for URLs                                      |
+
+---
+
+## 3. Schema Analysis
+
+### 3.1 Schema Inventory
+
+The project uses **JSON Schema Draft 2019-09** with a deep inheritance hierarchy:
+
+```
+schemas/v2/
+├── heroes.schema.json          ← allOf[identity, meta, assets, base_stats] + abilities
+├── units.schema.json           ← allOf[identity, meta, assets, magic, stats, cost] + if/then/else
+├── spells.schema.json          ← allOf[identity, meta, assets, magic, cost, ability_stats]
+├── titans.schema.json          ← allOf[identity, meta, assets, magic, stats, cost]
+├── consumables.schema.json     ← allOf[identity, meta, assets]
+├── upgrades.schema.json        ← allOf[meta] + additionalProperties: false
+├── infusions.schema.json       ← Array of infusion objects (standalone)
+│
+└── definitions/
+    ├── core.schema.json        ← identity, meta, assets, stat_changes, changelog
+    ├── stats.schema.json       ← stat_value, combat_stats, ability_stats, damage_overrides
+    ├── enums.schema.json       ← 12 enum definitions
+    ├── magic.schema.json       ← magic_school, rank
+    ├── resource.schema.json    ← charges, recharge_time, population
+    ├── ability.schema.json     ← ability_detail (used by Heroes)
+    ├── mechanics.schema.json   ← mechanics container (references 8 sub-schemas)
+    └── mechanics/
+        ├── aura.schema.json
+        ├── bonus_damage.schema.json
+        ├── damage_modifier.schema.json
+        ├── damage_reduction.schema.json
+        ├── feature.schema.json
+        ├── infusion.schema.json
+        ├── initial_attack.schema.json
+        └── spawner.schema.json
+```
+
+### 3.2 Advanced Schema Features in Use
+
+| Feature                          | Where Used                                                  | RJSF Support                                                | Mitigation                                                            |
+| -------------------------------- | ----------------------------------------------------------- | ----------------------------------------------------------- | --------------------------------------------------------------------- |
+| `$ref` (external, cross-file)    | All entity schemas reference `definitions/*.schema.json`    | ❌ Not at runtime                                           | **Build-time bundling** resolves all refs into self-contained schemas |
+| `$ref` (local, `#/definitions/`) | `heroes.schema.json` → `#/definitions/ability_detail`       | ✅ Native                                                   | No action needed                                                      |
+| `allOf` (inheritance)            | Every entity composes from identity + meta + stats + ...    | ✅ Native — merges into flat form                           | No action needed                                                      |
+| `oneOf` (polymorphism)           | `cleave`: boolean or object with `damage_percent`, `radius` | ✅ Native — renders variant selector dropdown               | Custom `uiSchema` labels recommended                                  |
+| `if/then/else` (conditional)     | `units.schema.json`: Buildings force `movement_speed: 0`    | ✅ Native — dynamic field visibility                        | Works automatically                                                   |
+| `enum`                           | 12 enum definitions (category, class, movement_type, etc.)  | ✅ Native — renders as `<select>` dropdowns                 | Add `enumNames` for friendly labels                                   |
+| `unevaluatedProperties: false`   | Top-level entity schemas                                    | ⚠️ Ajv2019 bug — existing workaround strips it at load time | Apply same `stripUnevaluatedProperties()` used by Schema Validator    |
+| `pattern` (regex)                | `entity_id` enforces `^[a-z0-9_]+$`                         | ✅ Native — validates on blur                               | Add helpful placeholder text                                          |
+| `format: "date-time"`            | `last_modified` field                                       | ✅ With format plugin — or auto-fill                        | Recommend auto-filling with `new Date().toISOString()`                |
+| `additionalProperties: false`    | Mechanics sub-schemas, Upgrades                             | ✅ Native — prevents extra fields                           | No action needed                                                      |
+| `propertyNames` constraint       | `damage_overrides` keys must match `target_type_enum`       | ⚠️ Partial                                                  | Custom widget needed — key-value editor with enum-constrained keys    |
+
+### 3.3 Bundling Strategy
+
+Each entity schema's full `$ref` tree is resolved at build time into a single file:
+
+| Source Schema             | Ref Depth                                       | Bundled Output                          | Approx Size |
+| ------------------------- | ----------------------------------------------- | --------------------------------------- | ----------- |
+| `heroes.schema.json`      | 4 levels (hero → ability → mechanics → spawner) | `dist/schemas/heroes.bundled.json`      | ~12 KB      |
+| `units.schema.json`       | 3 levels (unit → mechanics → aura)              | `dist/schemas/units.bundled.json`       | ~10 KB      |
+| `spells.schema.json`      | 3 levels                                        | `dist/schemas/spells.bundled.json`      | ~8 KB       |
+| `titans.schema.json`      | 3 levels                                        | `dist/schemas/titans.bundled.json`      | ~10 KB      |
+| `consumables.schema.json` | 2 levels                                        | `dist/schemas/consumables.bundled.json` | ~5 KB       |
+| `upgrades.schema.json`    | 1 level                                         | `dist/schemas/upgrades.bundled.json`    | ~3 KB       |
+| `infusions.schema.json`   | 1 level                                         | `dist/schemas/infusions.bundled.json`   | ~4 KB       |
+
+---
+
+## 4. Detailed Design
+
+### 4.1 Build-Time: Schema Bundling Script
+
+**File:** `scripts/bundle_schemas.js` (new)
+
+```
+Input:  schemas/v2/{entity}.schema.json  (7 entity schemas)
+Output: dist/schemas/{entity}.bundled.json  (7 self-contained schemas)
+```
+
+**Responsibilities:**
+
+1. Iterate over the 7 entity schema files
+2. Use `$RefParser.dereference()` to inline all external `$ref`s
+3. Apply `stripUnevaluatedProperties()` (same workaround as `schema-validator.js`)
+4. Remove `$schema`, `$id`, and `examples` keys (not needed by the form engine, reduces payload)
+5. Write each bundled schema to `dist/schemas/`
+
+**Integration with CI:**
+
+- Add a `bundle-schemas` step to `deploy.yml` **before** the "Assemble Public Directory" step
+- Add `cp -r dist/schemas public/dist/` to the public directory assembly
+- The `ci.yml` workflow does **not** need this step (it doesn't deploy)
+
+### 4.2 Runtime: Entity Builder Page
+
+**File:** `entity-builder.html` (new)
+
+#### 4.2.1 Page Structure
+
+```
+┌─────────────────────────────────────────────────┐
+│  ← Back to API                                   │
+│                                                   │
+│  🏗️ Entity Builder                               │
+│  Create valid JSON data for the Spellcasters API  │
+│                                                   │
+│  🔒 100% client-side — nothing leaves your browser│
+├─────────────────────────────────────────────────┤
+│  ┌──────────────┐  ┌──────────────────────────┐  │
+│  │ ENTITY TYPE  │  │  LOAD EXISTING (optional) │  │
+│  │ [▼ Unit    ] │  │  [📂 Upload] [🔗 URL]    │  │
+│  └──────────────┘  └──────────────────────────┘  │
+├─────────────────────────────────────────────────┤
+│                                                   │
+│  ┌─ Identity ──────────────────────────────────┐  │
+│  │  Entity ID:    [_______________] snake_case  │  │
+│  │  Name:         [_______________]             │  │
+│  │  Description:  [_______________]             │  │
+│  │  Tags:         [tag1] [tag2] [+ Add]         │  │
+│  └──────────────────────────────────────────────┘  │
+│                                                   │
+│  ┌─ Classification ────────────────────────────┐  │
+│  │  Category:     [▼ Creature  ]                │  │
+│  │  Magic School: [▼ Elemental ]                │  │
+│  │  Rank:         [▼ I         ]                │  │
+│  └──────────────────────────────────────────────┘  │
+│                                                   │
+│  ┌─ Combat Stats ──────────────────────────────┐  │
+│  │  Health:         [1000]                      │  │
+│  │  Damage:         [50  ]                      │  │
+│  │  Attack Interval: [1.2 ] seconds             │  │
+│  │  Range:          [5   ] tiles                │  │
+│  │  Movement Speed: [6   ] tiles/sec            │  │
+│  │  Movement Type:  [▼ Ground]                  │  │
+│  └──────────────────────────────────────────────┘  │
+│                                                   │
+│  ┌─ Mechanics (optional) ──────────────────────┐  │
+│  │  [+ Add Feature] [+ Add Aura] [+ Spawner]   │  │
+│  │  ┌─ Feature #1 ─────────────────────────┐   │  │
+│  │  │  Name: [Cleave]                       │   │  │
+│  │  │  Desc: [Attacks hit multiple enemies] │   │  │
+│  │  │  [🗑️ Remove]                          │   │  │
+│  │  └───────────────────────────────────────┘   │  │
+│  └──────────────────────────────────────────────┘  │
+│                                                   │
+│  ┌─ Metadata ──────────────────────────────────┐  │
+│  │  Last Modified: [auto-filled: 2026-02-25T...] │ │
+│  │  Game Version:  [0.0.1]                      │  │
+│  └──────────────────────────────────────────────┘  │
+│                                                   │
+│  ┌──────────────────────────────────────────────┐ │
+│  │  [💾 Download JSON]  [📋 Copy to Clipboard]  │ │
+│  │  [🧪 Validate (opens Schema Validator)]      │ │
+│  └──────────────────────────────────────────────┘ │
+│                                                   │
+│  ┌─ Live Preview ──────────────────────────────┐  │
+│  │  {                                           │  │
+│  │    "entity_id": "goblin_grunt",              │  │
+│  │    "name": "Goblin Grunt",                   │  │
+│  │    ...                                       │  │
+│  │  }                                           │  │
+│  └──────────────────────────────────────────────┘  │
+└─────────────────────────────────────────────────┘
+```
+
+#### 4.2.2 Form Sections by Entity Type
+
+The form dynamically shows/hides sections based on the selected entity type:
+
+| Section                                             | Heroes | Units            | Spells | Titans | Consumables | Upgrades     | Infusions     |
+| --------------------------------------------------- | ------ | ---------------- | ------ | ------ | ----------- | ------------ | ------------- |
+| **Identity** (id, name, desc, tags)                 | ✅     | ✅               | ✅     | ✅     | ✅          | ✅ (partial) | ✅ (id, name) |
+| **Classification** (category, school, rank)         | ✅     | ✅               | ✅     | ✅     | ✅          | ❌           | ✅ (element)  |
+| **Base Stats** (health, population)                 | ✅     | ✅               | ❌     | ✅     | ❌          | ❌           | ❌            |
+| **Combat Stats** (damage, range, attack_interval)   | ❌     | ✅               | ✅     | ✅     | ❌          | ❌           | ❌            |
+| **Resource** (charges, recharge, cast_time)         | ❌     | ✅               | ✅     | ✅     | ❌          | ❌           | ❌            |
+| **Mobility** (movement_speed, movement_type)        | ✅     | ✅ (conditional) | ❌     | ✅     | ❌          | ❌           | ❌            |
+| **Abilities** (passive, primary, defense, ultimate) | ✅     | ❌               | ❌     | ❌     | ❌          | ❌           | ❌            |
+| **Mechanics** (features, aura, spawner, etc.)       | ❌     | ✅               | ✅     | ✅     | ✅          | ❌           | ❌            |
+| **Consumable Fields** (effect_type, value, etc.)    | ❌     | ❌               | ❌     | ❌     | ✅          | ❌           | ❌            |
+| **Upgrade Fields** (target_tags, effect)            | ❌     | ❌               | ❌     | ❌     | ❌          | ✅           | ❌            |
+| **Infusion Fields** (allied_effect, enemy_effect)   | ❌     | ❌               | ❌     | ❌     | ❌          | ❌           | ✅            |
+| **Metadata** (last_modified, game_version)          | ✅     | ✅               | ✅     | ✅     | ✅          | ✅           | ❌            |
+
+#### 4.2.3 UI Schema Configuration
+
+RJSF uses a separate `uiSchema` object to control layout, ordering, help text, and custom widgets. Key customizations:
+
+```javascript
+const uiSchemas = {
+  units: {
+    // Field ordering
+    "ui:order": [
+      "entity_id",
+      "name",
+      "description",
+      "tags",
+      "category",
+      "magic_school",
+      "rank",
+      "size",
+      "health",
+      "damage",
+      "damage_overrides",
+      "attack_interval",
+      "range",
+      "dps",
+      "movement_speed",
+      "movement_type",
+      "charges",
+      "recharge_time",
+      "cast_time",
+      "population",
+      "mechanics",
+      "image_required",
+      "last_modified",
+      "game_version",
+      "stat_changes",
+    ],
+    // Auto-fill last_modified
+    last_modified: { "ui:widget": "hidden" },
+    // Better labels for enums
+    category: { "ui:help": "Creature = mobile unit, Building = stationary" },
+    // Collapsible sections for advanced fields
+    mechanics: { "ui:collapsed": true, "ui:title": "⚙️ Mechanics (Advanced)" },
+    stat_changes: {
+      "ui:collapsed": true,
+      "ui:title": "📊 Stat Changes (Patch History)",
+    },
+    damage_overrides: {
+      "ui:help":
+        "Optional: set flat damage values against specific target types",
+    },
+  },
+  // ... similar for heroes, spells, etc.
+};
+```
+
+### 4.3 Export & Output
+
+#### 4.3.1 JSON Output Format
+
+The generated JSON must match the exact format expected by `validate_integrity.py`:
+
+```json
+{
+  "entity_id": "goblin_grunt",
+  "name": "Goblin Grunt",
+  "description": "A small green creature.",
+  "tags": ["minion"],
+  "category": "Creature",
+  "magic_school": "Wild",
+  "rank": "I",
+  "size": "Small",
+  "health": 50,
+  "damage": 5,
+  "attack_interval": 1.2,
+  "range": 1,
+  "movement_speed": 6,
+  "movement_type": "Ground",
+  "population": 1,
+  "charges": 1,
+  "recharge_time": 10,
+  "last_modified": "2026-02-25T00:00:00Z",
+  "image_required": true
+}
+```
+
+#### 4.3.2 Post-Processing Rules
+
+Before export, the builder must:
+
+1. **Auto-fill `last_modified`** with the current UTC timestamp
+2. **Strip empty optional fields** — remove keys where the value is `""`, `null`, `[]`, or `{}`
+3. **Strip `$schema` field** — the `$schema` key is not expected in data files
+4. **Filename suggestion** — default to `{entity_id}.json` (e.g., `goblin_grunt.json`)
+5. **Pretty-print** — 2-space indentation, consistent with existing data files
+
+### 4.4 Import / Edit Mode
+
+Users should be able to load existing JSON files to edit them:
+
+1. **File Upload:** Same `FileReader` pattern used by the Schema Validator
+2. **URL Fetch:** Same `?url=` parameter pattern for PR integration
+3. **Auto-detect entity type:** Same `autoSelectSchema()` logic from `schema-validator.js`
+4. **Round-trip fidelity:** Loading → editing → downloading must not drop or reorder fields beyond what post-processing does
+
+---
+
+## 5. Technology Decisions
+
+### 5.1 Form Engine: RJSF v5
+
+**Selected:** [React JSON Schema Form (RJSF)](https://github.com/rjsf-team/react-jsonschema-form) v5
+
+**Rationale:**
+
+- Industry-standard React-based JSON Schema form renderer
+- Native support for `allOf`, `oneOf`, `anyOf`, `if/then/else`, `$ref` (local)
+- Highly customizable via `uiSchema` and custom widgets
+- Active maintenance and large community
+- Works with Ajv8 validator (compatible with Draft 2019-09)
+
+**Alternatives Considered:**
+
+| Tool              | Why Not                                                                         |
+| ----------------- | ------------------------------------------------------------------------------- |
+| JSONForms         | Requires separate UI Schema format, smaller community, more complex setup       |
+| Formly (Angular)  | Wrong framework — project is vanilla JS/React                                   |
+| Custom vanilla JS | Enormous effort to handle `allOf` merging, conditional fields, array management |
+
+### 5.2 Delivery: Vendored UMD Bundle
+
+Rather than relying on CDN links (which can break, have UMD global name issues, and fail offline), the recommended approach is:
+
+1. **Build a single `entity-builder.bundle.js`** using a bundler (Vite, esbuild, or webpack)
+2. This bundle includes React, ReactDOM, RJSF, and the validator — all vendored
+3. The bundle is committed to the repo (similar to the existing `ajv2019.bundle.js` pattern)
+4. The HTML page loads this single `.js` file — zero external dependencies at runtime
+
+This matches the existing pattern: `ajv2019.bundle.js` (309 KB) is already vendored for the Schema Validator.
+
+### 5.3 Build Tool Chain
+
+```mermaid
+graph LR
+    A["src/entity-builder/"] -->|"esbuild / Vite"| B["entity-builder.bundle.js"]
+    C["schemas/v2/"] -->|"bundle_schemas.js"| D["dist/schemas/*.bundled.json"]
+    B --> E["entity-builder.html"]
+    D --> E
+    E -->|"deploy.yml"| F["GitHub Pages"]
+
+    style A fill:#1a1a2e,stroke:#58a6ff,color:#c9d1d9
+    style B fill:#1a1a2e,stroke:#3fb950,color:#c9d1d9
+    style C fill:#1a1a2e,stroke:#58a6ff,color:#c9d1d9
+    style D fill:#1a1a2e,stroke:#3fb950,color:#c9d1d9
+    style E fill:#1a1a2e,stroke:#d29922,color:#c9d1d9
+    style F fill:#1a1a2e,stroke:#3fb950,color:#c9d1d9
+```
+
+---
+
+## 6. File Inventory
+
+### 6.1 New Files
+
+| File                                | Purpose                                                                        |
+| ----------------------------------- | ------------------------------------------------------------------------------ |
+| `scripts/bundle_schemas.js`         | Build-time: resolve `$ref`s into self-contained bundled schemas                |
+| `src/entity-builder/index.jsx`      | React entry point: form engine, entity type selector, export logic             |
+| `src/entity-builder/uiSchemas.js`   | Per-entity `uiSchema` definitions (field order, help text, collapsed sections) |
+| `src/entity-builder/postProcess.js` | Output post-processing (strip empties, auto-fill timestamps, format)           |
+| `entity-builder.html`               | Static HTML page (analogous to `schema-validator.html`)                        |
+| `entity-builder.bundle.js`          | Vendored JS bundle (React + RJSF + validator)                                  |
+| `dist/schemas/*.bundled.json`       | 7 bundled schema files (build artifact, gitignored or committed)               |
+
+### 6.2 Modified Files
+
+| File                           | Change                                                                          |
+| ------------------------------ | ------------------------------------------------------------------------------- |
+| `.github/workflows/deploy.yml` | Add `bundle_schemas.js` step + copy `entity-builder.*` and `dist/` to `public/` |
+| `index.html`                   | Add "Entity Builder" card to the Tools & Architecture section                   |
+| `package.json`                 | Add `bundle-schemas` and `build:entity-builder` npm scripts                     |
+| `CONTRIBUTING.md`              | Add section about using the Entity Builder to create data files                 |
+
+### 6.3 Unchanged Files
+
+All existing schema files, the schema validator, the API build pipeline, Python scripts, tests, and data files remain untouched.
+
+---
+
+## 7. Integration with Existing Systems
+
+### 7.1 GitHub Pages Deployment
+
+The `deploy.yml` "Assemble Public Directory" step gains these lines:
+
+```yaml
+# Entity Builder
+cp entity-builder.html public/
+cp entity-builder.bundle.js public/
+cp -r dist/schemas public/dist/
+```
+
+### 7.2 PR Integration Flow
+
+```mermaid
+sequenceDiagram
+    participant C as Contributor
+    participant EB as Entity Builder<br/>(GitHub Pages)
+    participant GH as GitHub PR
+    participant SV as Schema Validator<br/>(GitHub Pages)
+    participant CI as CI Pipeline
+
+    C->>EB: Opens Entity Builder page
+    C->>EB: Selects "Unit", fills form
+    EB->>C: Downloads goblin_grunt.json
+    C->>GH: Creates PR with goblin_grunt.json
+    GH->>CI: Triggers CI (lint, test, validate_integrity)
+    CI-->>GH: ✅ All checks pass
+    Note over GH,SV: Reviewer clicks validator link
+    GH->>SV: ?url=raw.githubusercontent.com/.../goblin_grunt.json
+    SV-->>GH: ✅ Schema valid
+```
+
+### 7.3 Landing Page Integration
+
+A new card is added to the "Tools & Architecture" grid in `index.html`:
+
+```html
+<a href="entity-builder.html" class="card" id="tool-builder">
+  <span class="card-icon">🏗️</span>
+  <span class="card-label">Entity Builder</span>
+  <code>Visual form-based JSON creator</code>
+</a>
+```
+
+---
+
+## 8. Edge Cases & Constraints
+
+### 8.1 Known Schema Quirks
+
+| Issue                                                               | Impact                                                    | Solution                                                                                                                                                    |
+| ------------------------------------------------------------------- | --------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `unevaluatedProperties` not tracked through `allOf` by Ajv2019      | False positives on valid schemas                          | Strip at bundle time (existing pattern from `schema-validator.js`)                                                                                          |
+| `damage_overrides` uses `propertyNames` constraint                  | RJSF has no native "enum-keyed object" widget             | Build a custom `DamageOverridesWidget` — a simple key-value editor where the key is a dropdown of `target_type_enum` values and the value is a number input |
+| `upgrades.schema.json` has `additionalProperties: true` on `effect` | Open-ended object — RJSF renders generic key-value editor | Acceptable — matches the intentionally flexible schema design                                                                                               |
+| `infusions.schema.json` is an `array` at root, not `object`         | RJSF expects root `type: "object"`                        | Wrap in a synthetic `{ items: [...] }` container, unwrap on export                                                                                          |
+| Hero `abilities.passive` is an array, others are single objects     | Mixed array/object in same parent                         | RJSF handles this natively via the schema's `type` declarations                                                                                             |
+
+### 8.2 Validation Limitations
+
+The Entity Builder produces **schema-valid** JSON, but cannot enforce all rules from `validate_integrity.py`:
+
+| Rule                                               | Schema-Enforceable?        | Builder Coverage                             |
+| -------------------------------------------------- | -------------------------- | -------------------------------------------- |
+| Required fields present                            | ✅ Yes                     | ✅ Covered                                   |
+| Enum values correct                                | ✅ Yes                     | ✅ Covered                                   |
+| `entity_id` format (snake_case)                    | ✅ Yes (pattern)           | ✅ Covered                                   |
+| `entity_id` uniqueness                             | ❌ No (requires DB lookup) | ❌ Not covered — CI catches this             |
+| Upgrade `target_tags` exist on at least one Unit   | ❌ No (cross-file)         | ❌ Not covered — CI catches this             |
+| Asset file exists at `assets/{category}/{id}.webp` | ❌ No (filesystem)         | ❌ Not covered — contributor adds separately |
+
+> [!IMPORTANT]
+> The Entity Builder reduces errors but does not replace CI validation. Contributors should still be directed to run `validate_integrity.py` or use the Schema Validator before submitting PRs.
+
+---
+
+## 9. Estimated Effort
+
+| Phase                        | Tasks                                                                                                           | Estimate        |
+| ---------------------------- | --------------------------------------------------------------------------------------------------------------- | --------------- |
+| **Phase 1: Schema Bundling** | `bundle_schemas.js`, npm scripts, deploy.yml integration                                                        | 2–3 hours       |
+| **Phase 2: Core Form**       | Entity Builder page, RJSF integration, entity type selector, basic form rendering for all 7 types               | 4–6 hours       |
+| **Phase 3: UX Polish**       | `uiSchema` configuration (field ordering, help text, collapsible sections), dark theme styling, auto-fill logic | 3–4 hours       |
+| **Phase 4: Export/Import**   | Download JSON, Copy to Clipboard, file upload, URL loading, live preview panel                                  | 2–3 hours       |
+| **Phase 5: Custom Widgets**  | `DamageOverridesWidget`, Infusions array wrapper, tag array editor                                              | 2–3 hours       |
+| **Phase 6: Integration**     | `index.html` card, `CONTRIBUTING.md` update, deploy.yml changes, testing                                        | 1–2 hours       |
+| **Total**                    |                                                                                                                 | **14–21 hours** |
+
+---
+
+## 10. Resolved Decisions
+
+All open questions have been resolved (2026-02-25):
+
+| # | Question | Decision | Rationale |
+|---|----------|----------|-----------|
+| 1 | **Bundle strategy** | **Option B — Build in CI** | Keeps repo clean, guarantees the form always reflects the latest source code. Node.js is already available in CI. |
+| 2 | **Bundled schemas** | **Option B — Build in CI** | Critical for the auto-update requirement. Schema changes are picked up automatically on next deploy with zero human intervention. |
+| 3 | **Infusions scope** | **Single entry mode** | Builder creates one infusion entry at a time. Contributor manually adds it to the `data/infusions.json` array. Simpler UX, avoids complex array-management UI. |
+| 4 | **`stat_changes` field** | **Hidden in create, collapsed read-only in edit** | This is historical patch data, not contributor-authored. Hiding it in create mode reduces clutter; showing it read-only in edit mode preserves round-trip fidelity. |
+| 5 | **Validation feedback** | **Inline (next to fields)** | RJSF supports this natively. Inline errors are a better UX than a summary panel for form-based workflows. |
+
+---
+
+## 11. Feasibility Findings
+
+Assessment performed 2026-02-25 against the current codebase:
+
+### Confirmed Ready
+
+- **`@apidevtools/json-schema-ref-parser`** is already a devDependency — no new deps needed for bundling
+- **`schema-validator.js`** contains reusable patterns: `stripUnevaluatedProperties()`, `autoSelectSchema()`, file upload, URL fetch, and the Ajv2019 workaround
+- **`style.css`** and the existing dark theme can be shared directly
+- **`deploy.yml`** public directory assembly pattern is straightforward to extend
+- All 24 schema files use standard Draft 2019-09 features that RJSF v5 supports (with the documented mitigations)
+
+### Auto-Update Mechanism
+
+The form is **schema-driven, not hand-coded**:
+
+| Change Type | Auto-Updates? | Notes |
+|---|---|---|
+| New/renamed field in a schema | ✅ Yes | Bundler re-reads source schemas; RJSF renders new fields |
+| New enum value | ✅ Yes | Pulled from `enums.schema.json` at bundle time |
+| New definition file | ✅ Yes | `$ref` resolution is recursive |
+| New entity type (8th schema) | ⚠️ Partial | Must add to `bundle_schemas.js` input list + entity selector dropdown |
+| `uiSchema` for new fields | ⚠️ Optional | RJSF renders sensible defaults; custom ordering/help text is optional polish |
+
+### Risk Assessment
+
+| Risk | Severity | Mitigation |
+|---|---|---|
+| RJSF bundle size (~200KB gzipped) | Low | Acceptable; existing `ajv2019.bundle.js` is 309KB |
+| `unevaluatedProperties` Ajv bug | Low | Already solved in `schema-validator.js` |
+| `damage_overrides` custom widget | Medium | Requires a custom key-value editor; well-scoped |
+| Infusions root-level array | Low | Synthetic object wrapper at load, unwrap at export |

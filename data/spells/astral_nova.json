@@ -6,11 +6,17 @@
   "cast_time": 0,
   "charges": 1,
   "damage": 4200,
+  "damage_overrides": {
+    "Building": 0,
+    "Lifestone": 0,
+    "Creature": 0,
+    "Spellcaster": 0
+  },
   "description": "Massive projectile emitting a damaging aura that deals heavy damage on impact.",
   "image_required": true,
   "magic_school": "Astral",
   "range": 80,
-    "mechanics": {
+  "mechanics": {
     "damage_modifiers": [
       {
         "multiplier": 0.27,
