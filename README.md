@@ -78,9 +78,12 @@ Full endpoint documentation is available in [CONTRIBUTING.md](CONTRIBUTING.md).
     ```bash
     python scripts/validate_integrity.py
     python scripts/verify_strictness.py
+    python scripts/build_audit_log.py
     python scripts/build_changelogs.py
     python scripts/build_api.py
     ```
+
+    > **Note:** The `generate_patch.py` script is explicitly omitted here as it requires CI environment variables (`BEFORE_SHA`, `AFTER_SHA`).
 
     See `api/v2/units.json`
 
@@ -90,6 +93,17 @@ Full endpoint documentation is available in [CONTRIBUTING.md](CONTRIBUTING.md).
     python scripts/validate_integrity.py
     python -m pytest -v
     ```
+
+5.  **Frontend Tooling (Optional):**
+
+    If you are modifying the browser-based schema validator (`schema-validator.js`), you may need to update the bundled dependencies using Node.js:
+    
+    ```bash
+    npm install
+    npx browserify build_ajv.js -o ajv2019.bundle.js
+    ```
+
+> 💡 **Tip:** For detailed documentation on all python helper tools, CI scripts, and environment variables, see [`scripts/README.md`](scripts/README.md).
 
 ## 🤝 Contributing
 

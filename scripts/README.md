@@ -104,6 +104,12 @@ Tools for performing deep audits of the data and schema layers. These are typica
 
 Shared configuration module containing paths, constants, and helper functions used by other scripts.
 
+### `schema-validator.js` and `build_ajv.js`
+
+These files live in the repository root and power the browser-based [Schema Validator](https://terribleturtle.github.io/spellcasters-community-api/schema-validator.html).
+- `schema-validator.js`: The frontend logic that runs `ajv` in the browser to validate JSON contributions immediately.
+- `build_ajv.js`: A Node.js entry point used to bundle `ajv` and `ajv-formats` into `ajv2019.bundle.js` for the browser. This is only necessary if you are upgrading the Ajv dependencies via `npm install`.
+
 ## 🔑 CI/CD Environment Variables
 
 Some scripts rely on environment variables when running in GitHub Actions:

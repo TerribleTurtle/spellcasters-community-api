@@ -5,3 +5,5 @@ referencing>=0.31.0
 deepdiff>=8.0.0
 ruff>=0.9.0
 pre-commit>=3.6.0
+mypy>=1.9.0
+types-jsonschema

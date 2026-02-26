@@ -208,17 +208,19 @@ Units and Spells that have complex mechanics support an optional `damage_modifie
 
 ### ✅ Verification
 
-Before submitting a Pull Request, run the verification script to check your changes:
+Before submitting a Pull Request, run the verification scripts to check your changes:
 
 **Windows / Mac / Linux:**
 
 ```bash
-python scripts/validate_schemas.py
 python scripts/validate_integrity.py
+python scripts/verify_strictness.py
 ```
 
 If the tests pass without errors, your data is valid!
-(Note: The validation script will also check asset integrity.)
+(Note: `validate_integrity.py` is the primary check; it performs schema validation alongside deep referential and asset integrity checks.)
+
+> 💡 **Tip:** For a full breakdown of all helper scripts and validation tools, see the [`scripts/README.md`](scripts/README.md).
 
 #### Logic Integrity Rules
 
