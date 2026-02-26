@@ -295,7 +295,8 @@ def main():
             if not diffs:
                 continue
 
-            name = (new_data or old_data).get("name", filename)
+            source = new_data or old_data
+            name = source.get("name", filename) if isinstance(source, dict) else filename
             cat = filepath.split("/")[1] if "data/" in filepath else "misc"
 
             changes.append(

@@ -1,7 +1,35 @@
 [
   {
     "version": "0.0.1",
-    "date": "2026-02-24",
+    "date": "2026-02-26",
+    "snapshot": {
+      "$schema": "../../schemas/v2/spells.schema.json",
+      "entity_id": "fire_ball",
+      "name": "Fire Ball",
+      "category": "Spell",
+      "magic_school": "Elemental",
+      "rank": "III",
+      "description": "Fast projectile that deals medium Fire damage to a target.",
+      "image_required": true,
+      "last_modified": "2026-02-11T02:15:23.308710+00:00",
+      "tags": [],
+      "changelog": [
+        {
+          "version": "0.0.1",
+          "date": "2026-02-08T09:49:16.843620+00:00",
+          "description": "Initial Closed Beta 2 Data"
+        }
+      ],
+      "damage": 530,
+      "range": 80,
+      "charges": 1,
+      "recharge_time": 10.0,
+      "cast_time": 0.0
+    }
+  },
+  {
+    "version": "0.0.4",
+    "date": "2026-02-26",
     "snapshot": {
       "$schema": "../../schemas/v2/spells.schema.json",
       "entity_id": "fire_ball",
@@ -16,11 +44,72 @@
       "mechanics": {},
       "range": 80,
       "rank": "III",
-      "recharge_time": 60,
+      "recharge_time": 50,
       "tags": [
         "homing"
       ],
       "last_modified": "2026-02-19T05:10:47.465Z"
+    }
+  },
+  {
+    "version": "0.1.0",
+    "date": "2026-02-26",
+    "snapshot": {
+      "$schema": "../../schemas/v2/spells.schema.json",
+      "entity_id": "fire_ball",
+      "name": "Fire Ball",
+      "category": "Spell",
+      "cast_time": 0.5,
+      "charges": 1,
+      "damage": 530,
+      "damage_overrides": {
+        "Building": 0,
+        "Lifestone": 0,
+        "Creature": 0,
+        "Spellcaster": 0
+      },
+      "description": "Fast projectile emitting a burning aura that deals medium Fire damage to a target.",
+      "image_required": true,
+      "magic_school": "Elemental",
+      "mechanics": {
+        "infusion": {
+          "id": "fire_infusion"
+        },
+        "damage_modifiers": [
+          {
+            "target_types": [
+              "Building"
+            ],
+            "multiplier": 1.0
+          },
+          {
+            "target_types": [
+              "Lifestone"
+            ],
+            "multiplier": 1.0
+          },
+          {
+            "target_types": [
+              "Creature"
+            ],
+            "multiplier": 1.0
+          },
+          {
+            "target_types": [
+              "Spellcaster"
+            ],
+            "multiplier": 1.0
+          }
+        ]
+      },
+      "range": 80,
+      "rank": "III",
+      "recharge_time": 60,
+      "tags": [
+        "homing"
+      ],
+      "last_modified": "2026-02-19T05:10:47.465Z",
+      "knowledge_cost": 50
     }
   }
 ]

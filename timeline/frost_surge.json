@@ -1,7 +1,34 @@
 [
   {
     "version": "0.0.1",
-    "date": "2026-02-24",
+    "date": "2026-02-26",
+    "snapshot": {
+      "$schema": "../../schemas/v2/spells.schema.json",
+      "entity_id": "frost_surge",
+      "name": "Frost Surge",
+      "category": "Spell",
+      "magic_school": "Wild",
+      "rank": "III",
+      "description": "Ice pulse that freezes enemies and infuses nearby allies.",
+      "image_required": true,
+      "last_modified": "2026-02-11T02:15:23.311669+00:00",
+      "tags": [],
+      "changelog": [
+        {
+          "version": "0.0.1",
+          "date": "2026-02-08T09:49:16.844303+00:00",
+          "description": "Initial Closed Beta 2 Data"
+        }
+      ],
+      "range": 24,
+      "charges": 1,
+      "recharge_time": 10.0,
+      "cast_time": 0.0
+    }
+  },
+  {
+    "version": "0.0.4",
+    "date": "2026-02-26",
     "snapshot": {
       "$schema": "../../schemas/v2/spells.schema.json",
       "entity_id": "frost_surge",
@@ -14,8 +41,33 @@
       "tags": [],
       "range": 24,
       "charges": 1,
-      "recharge_time": 60,
+      "recharge_time": 50,
       "cast_time": 0
+    }
+  },
+  {
+    "version": "0.1.0",
+    "date": "2026-02-26",
+    "snapshot": {
+      "$schema": "../../schemas/v2/spells.schema.json",
+      "entity_id": "frost_surge",
+      "name": "Frost Surge",
+      "category": "Spell",
+      "magic_school": "Wild",
+      "rank": "III",
+      "description": "Ice pulse that freezes enemies and infuses nearby allies.",
+      "image_required": true,
+      "tags": [],
+      "range": 24,
+      "mechanics": {
+        "infusion": {
+          "id": "ice_infusion"
+        }
+      },
+      "charges": 1,
+      "recharge_time": 60,
+      "cast_time": 0,
+      "knowledge_cost": 50
     }
   }
 ]

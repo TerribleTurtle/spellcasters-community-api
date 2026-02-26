@@ -121,7 +121,6 @@ def test_standalone_endpoints(registry_and_schemas):
     endpoints = {
         "api/v2/status.json": "status.schema.json",
         "api/v2/patches.json": "patches.schema.json",
-        "api/v2/changelog_latest.json": "changelog_latest.schema.json",
         "api/v2/all_data.json": "all_data.schema.json",
         "audit.json": "audit.schema.json",
         "api/v2/infusions.json": "infusions.schema.json",

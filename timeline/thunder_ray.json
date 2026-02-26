@@ -1,7 +1,39 @@
 [
   {
     "version": "0.0.1",
-    "date": "2026-02-24",
+    "date": "2026-02-26",
+    "snapshot": {
+      "$schema": "../../schemas/v2/spells.schema.json",
+      "entity_id": "thunder_ray",
+      "name": "Thunder Ray",
+      "category": "Spell",
+      "magic_school": "Technomancy",
+      "rank": "I",
+      "description": "Focused beam that deals low Lightning damage.",
+      "image_required": true,
+      "last_modified": "2026-02-11T02:15:23.317054+00:00",
+      "tags": [],
+      "changelog": [
+        {
+          "version": "0.0.1",
+          "date": "2026-02-08T09:49:16.839433+00:00",
+          "description": "Initial Closed Beta 2 Data"
+        }
+      ],
+      "mechanics": {
+        "waves": 5,
+        "interval": 1
+      },
+      "damage": 14,
+      "range": 45,
+      "charges": 1,
+      "recharge_time": 10.0,
+      "cast_time": 0.0
+    }
+  },
+  {
+    "version": "0.0.4",
+    "date": "2026-02-26",
     "snapshot": {
       "$schema": "../../schemas/v2/spells.schema.json",
       "entity_id": "thunder_ray",
@@ -22,6 +54,67 @@
       "recharge_time": 5,
       "tags": [],
       "last_modified": "2026-02-19T02:01:14.345Z"
+    }
+  },
+  {
+    "version": "0.1.0",
+    "date": "2026-02-26",
+    "snapshot": {
+      "$schema": "../../schemas/v2/spells.schema.json",
+      "entity_id": "thunder_ray",
+      "name": "Thunder Ray",
+      "category": "Spell",
+      "cast_time": 0,
+      "charges": 1,
+      "damage": 10,
+      "damage_overrides": {
+        "Building": 0,
+        "Lifestone": 0,
+        "Creature": 0,
+        "Spellcaster": 0
+      },
+      "description": "Focused beam that deals low Lightning damage.",
+      "image_required": true,
+      "magic_school": "Technomancy",
+      "mechanics": {
+        "interval": 1,
+        "waves": 7,
+        "infusion": {
+          "id": "lightning_infusion"
+        },
+        "damage_modifiers": [
+          {
+            "target_types": [
+              "Building"
+            ],
+            "multiplier": 1.0
+          },
+          {
+            "target_types": [
+              "Lifestone"
+            ],
+            "multiplier": 1.0
+          },
+          {
+            "target_types": [
+              "Creature"
+            ],
+            "multiplier": 1.0
+          },
+          {
+            "target_types": [
+              "Spellcaster"
+            ],
+            "multiplier": 1.0
+          }
+        ]
+      },
+      "range": 45,
+      "rank": "I",
+      "recharge_time": 5,
+      "tags": [],
+      "last_modified": "2026-02-19T02:01:14.345Z",
+      "knowledge_cost": 50
     }
   }
 ]

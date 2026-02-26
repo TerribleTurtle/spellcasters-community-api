@@ -1,7 +1,46 @@
 [
   {
     "version": "0.0.1",
-    "date": "2026-02-24",
+    "date": "2026-02-26",
+    "snapshot": {
+      "$schema": "../../schemas/v2/spells.schema.json",
+      "entity_id": "poison_grenade",
+      "name": "Poison Grenade",
+      "category": "Spell",
+      "magic_school": "Necromancy",
+      "rank": "III",
+      "description": "Grenade that creates a Poison cloud over the target area.",
+      "image_required": true,
+      "last_modified": "2026-02-11T02:15:23.314081+00:00",
+      "tags": [],
+      "changelog": [
+        {
+          "version": "0.0.1",
+          "date": "2026-02-08T09:49:16.845763+00:00",
+          "description": "Initial Closed Beta 2 Data"
+        }
+      ],
+      "damage": 25,
+      "range": 40,
+      "duration": 12,
+      "mechanics": {
+        "damage_modifiers": [
+          {
+            "multiplier": 0.0,
+            "target_types": [
+              "Building"
+            ]
+          }
+        ]
+      },
+      "charges": 1,
+      "recharge_time": 10,
+      "cast_time": 0
+    }
+  },
+  {
+    "version": "0.0.4",
+    "date": "2026-02-26",
     "snapshot": {
       "$schema": "../../schemas/v2/spells.schema.json",
       "entity_id": "poison_grenade",
@@ -26,8 +65,49 @@
         ]
       },
       "charges": 1,
-      "recharge_time": 60,
+      "recharge_time": 50,
       "cast_time": 0
+    }
+  },
+  {
+    "version": "0.1.0",
+    "date": "2026-02-26",
+    "snapshot": {
+      "$schema": "../../schemas/v2/spells.schema.json",
+      "entity_id": "poison_grenade",
+      "name": "Poison Grenade",
+      "category": "Spell",
+      "magic_school": "Necromancy",
+      "rank": "III",
+      "description": "Grenade that creates a Poison cloud over the target area.",
+      "image_required": true,
+      "tags": [],
+      "damage": 25,
+      "damage_overrides": {
+        "Building": 0,
+        "Lifestone": 0,
+        "Creature": 0,
+        "Spellcaster": 0
+      },
+      "range": 40,
+      "duration": 12,
+      "mechanics": {
+        "damage_modifiers": [
+          {
+            "multiplier": 0,
+            "target_types": [
+              "Building"
+            ]
+          }
+        ],
+        "infusion": {
+          "id": "poison_infusion"
+        }
+      },
+      "charges": 1,
+      "recharge_time": 60,
+      "cast_time": 0,
+      "knowledge_cost": 200
     }
   }
 ]

@@ -1,7 +1,165 @@
 [
   {
     "version": "0.0.1",
-    "date": "2026-02-24",
+    "date": "2026-02-26",
+    "snapshot": {
+      "$schema": "../../schemas/v2/heroes.schema.json",
+      "name": "Stone Shaman",
+      "class": "Enchanter",
+      "category": "Spellcaster",
+      "movement_type": "Ground",
+      "health": 1300,
+      "movement_speed": 5,
+      "population": 0,
+      "image_required": true,
+      "difficulty": 2,
+      "tags": [],
+      "abilities": {
+        "passive": [
+          {
+            "name": "Mountain\u2019s Favor",
+            "description": "The Stone Shaman\u2019s attacks deal double damage to buildings."
+          },
+          {
+            "name": "Child of the Titans",
+            "description": "Increases Rank II and Rank III population while reducing Rank I population."
+          },
+          {
+            "name": "Pathfinder",
+            "description": "While on the ground, the Shaman recharges Wild spells much faster."
+          }
+        ],
+        "primary": {
+          "name": "Mountain Staff",
+          "description": "Swing your catalyst to deal heavy melee damage and interrupt enemies.",
+          "damage": 42,
+          "mechanics": {
+            "features": [
+              {
+                "name": "Interruption",
+                "description": "Successfully hitting a Spellcaster twice interrupts their actions."
+              },
+              {
+                "name": "Cleave",
+                "description": "Attacks hit multiple enemies in an arc."
+              }
+            ],
+            "aura": [
+              {
+                "name": "Building Enchant",
+                "description": "Attacks enchant ally buildings, enabling them to emit a healing aura.",
+                "radius": 8,
+                "value": 7,
+                "effect": "Heal",
+                "interval": 1.0,
+                "target_types": [
+                  "Ally"
+                ]
+              }
+            ]
+          }
+        },
+        "defense": {
+          "name": "Wind Shield",
+          "description": "Conjure a protective wind barrier that deals damage on contact.",
+          "charges": 1,
+          "duration": 3
+        },
+        "ultimate": {
+          "name": "Wall of Kamazad",
+          "description": "Deploys a colossal wall capable of blocking Titans. The wall has 15000 Health and deals % damage to enemies in its path.",
+          "health": 15000
+        }
+      },
+      "last_modified": "2026-02-11T01:13:54.455218+00:00",
+      "changelog": [
+        {
+          "version": "0.0.1",
+          "date": "2026-02-05T18:35:34.217480Z",
+          "description": "Initial Closed Beta 2 Data"
+        }
+      ],
+      "entity_id": "stone_shaman",
+      "description": "An Enchanter who channels the power of earth to deal heavy damage, interrupt spellcasters, and fortify buildings."
+    }
+  },
+  {
+    "version": "0.0.4",
+    "date": "2026-02-26",
+    "snapshot": {
+      "$schema": "../../schemas/v2/heroes.schema.json",
+      "entity_id": "stone_shaman",
+      "name": "Stone Shaman",
+      "class": "Enchanter",
+      "category": "Spellcaster",
+      "abilities": {
+        "defense": {
+          "name": "Wind Shield",
+          "charges": 1,
+          "cooldown": 13,
+          "description": "Conjure a protective wind barrier that deals damage on contact.",
+          "duration": 3
+        },
+        "passive": [
+          {
+            "name": "Mountain\u2019s Favor",
+            "description": "The Stone Shaman\u2019s attacks deal double damage to buildings."
+          },
+          {
+            "name": "Child of the Titans",
+            "description": "Increases Rank II and Rank III population while reducing Rank I population."
+          },
+          {
+            "name": "Pathfinder",
+            "description": "While on the ground, the Shaman recharges Wild spells and creatures much faster."
+          }
+        ],
+        "primary": {
+          "name": "Mountain Staff",
+          "damage": 42,
+          "description": "Swing your catalyst to deal heavy melee damage and interrupt enemies.",
+          "mechanics": {
+            "aura": [
+              {
+                "name": "Building Enchant",
+                "description": "Attacks enchant ally buildings, enabling them to emit a healing aura.",
+                "effect": "Heal",
+                "interval": 1,
+                "radius": 8,
+                "target_types": [
+                  "Ally"
+                ],
+                "value": 7
+              }
+            ],
+            "cleave": true,
+            "features": [
+              {
+                "name": "Interruption",
+                "description": "Successfully hitting a Spellcaster twice interrupts their actions."
+              }
+            ]
+          }
+        },
+        "ultimate": {
+          "name": "Wall of Kamazad",
+          "description": "Deploys a colossal wall capable of blocking Titans. The wall has 15000 Health and deals % damage to enemies in its path.",
+          "health": 15000
+        }
+      },
+      "description": "An Enchanter who channels the power of earth to deal heavy damage, interrupt spellcasters, and fortify buildings.",
+      "difficulty": 2,
+      "health": 600,
+      "image_required": true,
+      "movement_type": "Ground",
+      "population": 0,
+      "tags": [],
+      "last_modified": "2026-02-19T02:04:38.362Z"
+    }
+  },
+  {
+    "version": "0.1.0",
+    "date": "2026-02-26",
     "snapshot": {
       "$schema": "../../schemas/v2/heroes.schema.json",
       "entity_id": "stone_shaman",
@@ -60,6 +218,7 @@
         "ultimate": {
           "name": "Wall of Kamazad",
           "description": "Deploys a colossal wall capable of blocking Titans. The wall has 15000 Health and deals % damage to enemies in its path.",
+          "damage": 67,
           "health": 15000
         }
       },

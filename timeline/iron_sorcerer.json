@@ -1,7 +1,129 @@
 [
   {
     "version": "0.0.1",
-    "date": "2026-02-24",
+    "date": "2026-02-26",
+    "snapshot": {
+      "$schema": "../../schemas/v2/heroes.schema.json",
+      "name": "Iron Sorcerer",
+      "class": "Conqueror",
+      "category": "Spellcaster",
+      "movement_type": "Ground",
+      "health": 1200,
+      "movement_speed": 5,
+      "population": 0,
+      "image_required": true,
+      "difficulty": 1,
+      "tags": [],
+      "abilities": {
+        "passive": [
+          {
+            "name": "Scourge of War",
+            "description": "Increases Rank III population, reduces Rank II population."
+          },
+          {
+            "name": "Forges of Valm",
+            "description": "Creatures spawned from Buildings have significantly more health."
+          },
+          {
+            "name": "Field Commander",
+            "description": "While on the ground, nearby creatures gain a strong defensive buff."
+          }
+        ],
+        "primary": {
+          "name": "Twin Strike",
+          "description": "Strike with powerful mid-range attacks that interrupt enemies.",
+          "damage": 35,
+          "mechanics": {
+            "features": [
+              {
+                "name": "Cleave",
+                "description": "Attacks hit multiple enemies in an arc."
+              }
+            ]
+          }
+        },
+        "defense": {
+          "name": "Rune Shield",
+          "description": "Raise a shield that protects allies and reflects attacks.",
+          "charges": 4,
+          "duration": 0.5
+        },
+        "ultimate": {
+          "name": "Iron Tempest",
+          "description": "Unleash a metal vortex that deals heavy damage, staggers/knocks back all creatures inside.",
+          "duration": 3
+        }
+      },
+      "last_modified": "2026-02-11T01:13:54.454807+00:00",
+      "changelog": [
+        {
+          "version": "0.0.1",
+          "date": "2026-02-05T18:35:34.217480Z",
+          "description": "Initial Closed Beta 2 Data"
+        }
+      ],
+      "entity_id": "iron_sorcerer",
+      "description": "A Conqueror who dominates the battlefield with heavy melee strikes, protective runes, and a metal vortex."
+    }
+  },
+  {
+    "version": "0.0.4",
+    "date": "2026-02-26",
+    "snapshot": {
+      "$schema": "../../schemas/v2/heroes.schema.json",
+      "entity_id": "iron_sorcerer",
+      "name": "Iron Sorcerer",
+      "class": "Conqueror",
+      "category": "Spellcaster",
+      "abilities": {
+        "defense": {
+          "name": "Rune Shield",
+          "charges": 4,
+          "cooldown": 5,
+          "description": "Raise a shield that protects allies and reflects attacks.",
+          "duration": 0.5
+        },
+        "passive": [
+          {
+            "name": "Scourge of War",
+            "description": "Increases Rank III population, reduces Rank II population."
+          },
+          {
+            "name": "Forges of Valm",
+            "description": "Creatures spawned from Buildings have significantly more health."
+          },
+          {
+            "name": "Field Commander",
+            "description": "While on the ground, nearby creatures gain a strong defensive buff."
+          }
+        ],
+        "primary": {
+          "name": "Twin Strike",
+          "damage": 35,
+          "description": "Strike with powerful mid-range attacks that interrupt enemies.",
+          "mechanics": {
+            "cleave": true
+          }
+        },
+        "ultimate": {
+          "name": "Iron Tempest",
+          "description": "Unleash a metal vortex that deals heavy damage, staggers/knocks back all creatures inside.",
+          "duration": 3
+        }
+      },
+      "description": "A Conqueror who dominates the battlefield with heavy melee strikes, protective runes, and a metal vortex.",
+      "difficulty": 1,
+      "health": 450,
+      "image_required": true,
+      "movement_type": "Ground",
+      "population": 0,
+      "tags": [],
+      "last_modified": "2026-02-19T02:14:50.854Z"
+    }
+  },
+  {
+    "version": "0.1.0",
+    "date": "2026-02-26",
     "snapshot": {
       "$schema": "../../schemas/v2/heroes.schema.json",
       "entity_id": "iron_sorcerer",
@@ -41,6 +163,7 @@
         "ultimate": {
           "name": "Iron Tempest",
           "description": "Unleash a metal vortex that deals heavy damage, staggers/knocks back all creatures inside.",
+          "damage": 67,
           "duration": 3
         }
       },

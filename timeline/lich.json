@@ -1,7 +1,40 @@
 [
   {
     "version": "0.0.1",
-    "date": "2026-02-24",
+    "date": "2026-02-26",
+    "snapshot": {
+      "$schema": "../../schemas/v2/units.schema.json",
+      "entity_id": "lich",
+      "name": "Lich",
+      "category": "Creature",
+      "magic_school": "Necromancy",
+      "rank": "II",
+      "description": "Undead caster that inflicts curses to enemies, increasing the damage they take and reducing their movement speed.",
+      "image_required": true,
+      "last_modified": "2026-02-11T02:15:23.296958+00:00",
+      "tags": [],
+      "changelog": [
+        {
+          "version": "0.0.1",
+          "date": "2026-02-08T09:49:16.841271+00:00",
+          "description": "Initial Closed Beta 2 Data"
+        }
+      ],
+      "damage": 5,
+      "health": 500,
+      "movement_speed": 5,
+      "movement_type": "Flying",
+      "dps": 5,
+      "attack_interval": 1.0,
+      "charges": 1,
+      "recharge_time": 10.0,
+      "cast_time": 0.0,
+      "population": 0
+    }
+  },
+  {
+    "version": "0.0.4",
+    "date": "2026-02-26",
     "snapshot": {
       "$schema": "../../schemas/v2/units.schema.json",
       "entity_id": "lich",
@@ -12,16 +45,88 @@
       "charges": 1,
       "damage": 5,
       "description": "Undead caster that inflicts curses to enemies, increasing the damage they take and reducing their movement speed.",
+      "dps": 5,
+      "health": 500,
+      "image_required": true,
+      "magic_school": "Necromancy",
+      "movement_speed": 5,
+      "movement_type": "Flying",
+      "population": 0,
+      "range": 25,
+      "rank": "II",
+      "recharge_time": 25,
+      "tags": [],
+      "last_modified": "2026-02-18T08:10:21.047Z"
+    }
+  },
+  {
+    "version": "0.1.0",
+    "date": "2026-02-26",
+    "snapshot": {
+      "$schema": "../../schemas/v2/units.schema.json",
+      "entity_id": "lich",
+      "name": "Lich",
+      "category": "Creature",
+      "attack_interval": 1,
+      "cast_time": 0,
+      "charges": 1,
+      "damage": 5,
+      "damage_overrides": {
+        "Building": 0,
+        "Lifestone": 0,
+        "Creature": 0,
+        "Spellcaster": 0
+      },
+      "description": "Undead caster that inflicts curses to enemies, increasing the damage they take and reducing their movement speed.",
       "mechanics": {
         "aura": [
           {
-            "name": "Cursed Wounds",
-            "description": "Curses enemies when dealing damage, increasing the damage they take (1.32x) and reducing their movement speed (0.4x). Lingers for 1s.",
+            "name": "Cursed Wounds (Slow)",
+            "description": "Reduces movement speed of nearby enemies by 60%. Lingers for 1s.",
             "radius": 3,
+            "value": 0.4,
+            "interval": 1,
             "effect": "Debuff",
             "target_types": [
               "Enemy"
             ]
+          },
+          {
+            "name": "Cursed Wounds (Vulnerability)",
+            "description": "Increases damage taken by nearby enemies by 32%. Lingers for 1s.",
+            "radius": 3,
+            "value": 1.32,
+            "interval": 1,
+            "effect": "Debuff",
+            "target_types": [
+              "Enemy"
+            ]
+          }
+        ],
+        "damage_modifiers": [
+          {
+            "target_types": [
+              "Building"
+            ],
+            "multiplier": 1.0
+          },
+          {
+            "target_types": [
+              "Lifestone"
+            ],
+            "multiplier": 1.0
+          },
+          {
+            "target_types": [
+              "Creature"
+            ],
+            "multiplier": 1.0
+          },
+          {
+            "target_types": [
+              "Spellcaster"
+            ],
+            "multiplier": 1.0
           }
         ]
       },
@@ -36,7 +141,8 @@
       "range": 25,
       "rank": "II",
       "tags": [],
-      "last_modified": "2026-02-24T05:41:00.000Z"
+      "last_modified": "2026-02-24T05:41:00.000Z",
+      "knowledge_cost": 500
     }
   }
 ]

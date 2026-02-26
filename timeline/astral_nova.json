@@ -1,7 +1,35 @@
 [
   {
     "version": "0.0.1",
-    "date": "2026-02-24",
+    "date": "2026-02-26",
+    "snapshot": {
+      "$schema": "../../schemas/v2/spells.schema.json",
+      "entity_id": "astral_nova",
+      "name": "Astral Nova",
+      "category": "Spell",
+      "magic_school": "Astral",
+      "rank": "IV",
+      "description": "Massive projectile that deals heavy damage on impact.",
+      "image_required": true,
+      "last_modified": "2026-02-11T02:15:23.307103+00:00",
+      "tags": [],
+      "changelog": [
+        {
+          "version": "0.0.1",
+          "date": "2026-02-08T09:49:16.846742+00:00",
+          "description": "Initial Closed Beta 2 Data"
+        }
+      ],
+      "damage": 4200,
+      "range": 80,
+      "charges": 1,
+      "recharge_time": 10.0,
+      "cast_time": 0.0
+    }
+  },
+  {
+    "version": "0.0.4",
+    "date": "2026-02-26",
     "snapshot": {
       "$schema": "../../schemas/v2/spells.schema.json",
       "entity_id": "astral_nova",
@@ -10,6 +38,33 @@
       "cast_time": 0,
       "charges": 1,
       "damage": 4200,
+      "description": "Massive projectile emitting a damaging aura that deals heavy damage on impact.",
+      "image_required": true,
+      "magic_school": "Astral",
+      "range": 80,
+      "rank": "IV",
+      "recharge_time": 120,
+      "tags": [],
+      "last_modified": "2026-02-19T05:11:27.677Z"
+    }
+  },
+  {
+    "version": "0.1.0",
+    "date": "2026-02-26",
+    "snapshot": {
+      "$schema": "../../schemas/v2/spells.schema.json",
+      "entity_id": "astral_nova",
+      "name": "Astral Nova",
+      "category": "Spell",
+      "cast_time": 0,
+      "charges": 1,
+      "damage": 4200,
+      "damage_overrides": {
+        "Building": 0,
+        "Lifestone": 0,
+        "Creature": 0,
+        "Spellcaster": 0
+      },
       "description": "Massive projectile emitting a damaging aura that deals heavy damage on impact.",
       "image_required": true,
       "magic_school": "Astral",
@@ -27,7 +82,8 @@
       "rank": "IV",
       "recharge_time": 120,
       "tags": [],
-      "last_modified": "2026-02-19T05:11:27.677Z"
+      "last_modified": "2026-02-19T05:11:27.677Z",
+      "knowledge_cost": 200
     }
   }
 ]

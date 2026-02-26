@@ -1,7 +1,41 @@
 [
   {
     "version": "0.0.1",
-    "date": "2026-02-24",
+    "date": "2026-02-26",
+    "snapshot": {
+      "$schema": "../../schemas/v2/units.schema.json",
+      "entity_id": "stone_behemoth",
+      "name": "Stone Behemoth",
+      "category": "Creature",
+      "magic_school": "Elemental",
+      "rank": "III",
+      "description": "Siege unit that hurls long-range boulders for heavy area damage.",
+      "image_required": true,
+      "last_modified": "2026-02-11T02:15:23.304488+00:00",
+      "tags": [],
+      "changelog": [
+        {
+          "version": "0.0.1",
+          "date": "2026-02-08T09:49:16.846434+00:00",
+          "description": "Initial Closed Beta 2 Data"
+        }
+      ],
+      "damage": 40,
+      "health": 210,
+      "range": 55,
+      "movement_speed": 2,
+      "movement_type": "Ground",
+      "dps": 40,
+      "attack_interval": 1.0,
+      "charges": 1,
+      "recharge_time": 10.0,
+      "cast_time": 0.0,
+      "population": 0
+    }
+  },
+  {
+    "version": "0.0.4",
+    "date": "2026-02-26",
     "snapshot": {
       "$schema": "../../schemas/v2/units.schema.json",
       "entity_id": "stone_behemoth",
@@ -20,9 +54,70 @@
       "dps": 40,
       "attack_interval": 1,
       "charges": 1,
-      "recharge_time": 60,
+      "recharge_time": 50,
       "cast_time": 0,
       "population": 0
+    }
+  },
+  {
+    "version": "0.1.0",
+    "date": "2026-02-26",
+    "snapshot": {
+      "$schema": "../../schemas/v2/units.schema.json",
+      "entity_id": "stone_behemoth",
+      "name": "Stone Behemoth",
+      "category": "Creature",
+      "magic_school": "Elemental",
+      "rank": "III",
+      "description": "Siege unit that hurls long-range boulders for heavy area damage.",
+      "image_required": true,
+      "tags": [],
+      "damage": 40,
+      "damage_overrides": {
+        "Building": 0,
+        "Lifestone": 0,
+        "Creature": 0,
+        "Spellcaster": 0
+      },
+      "mechanics": {
+        "damage_modifiers": [
+          {
+            "target_types": [
+              "Building"
+            ],
+            "multiplier": 1.0
+          },
+          {
+            "target_types": [
+              "Lifestone"
+            ],
+            "multiplier": 1.0
+          },
+          {
+            "target_types": [
+              "Creature"
+            ],
+            "multiplier": 1.0
+          },
+          {
+            "target_types": [
+              "Spellcaster"
+            ],
+            "multiplier": 1.0
+          }
+        ]
+      },
+      "health": 2100,
+      "range": 55,
+      "movement_speed": 2,
+      "movement_type": "Ground",
+      "dps": 40,
+      "attack_interval": 1,
+      "charges": 1,
+      "recharge_time": 60,
+      "cast_time": 0,
+      "population": 0,
+      "knowledge_cost": 300
     }
   }
 ]
