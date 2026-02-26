@@ -22,14 +22,16 @@ def main():
     except Exception as e:
         print(f"CRITICAL: Failed to create registry: {e}")
         sys.exit(1)
+        return  # explicit return for linters
 
     # 2. Get Hero Schema
     schema_filename = "heroes.schema.json"
     if schema_filename not in schemas_map:
         print(f"CRITICAL: {schema_filename} not found in registry.")
         sys.exit(1)
+        return
 
-    hero_uri = schemas_map[schema_filename]
+    hero_uri = schemas_map.get(schema_filename)
     resolver = registry.resolver()
     resolved = resolver.lookup(hero_uri)
     schema = resolved.contents

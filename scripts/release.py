@@ -49,7 +49,11 @@ def bump_version(current_version, bump_type):
         except ValueError:
             major, minor, patch = 0, 0, 0
     else:
-        major, minor, patch = map(int, parts)
+        try:
+            major, minor, patch = map(int, parts)
+        except ValueError:
+            print(f"Warning: Current version '{current_version}' contains non-integer parts. Resetting to 0.0.1.")
+            major, minor, patch = 0, 0, 0
 
     if bump_type == "major":
         major += 1
