@@ -36,7 +36,12 @@ AGGREGATION_MAP = {
 }
 
 # Single File Copy
-SINGLE_FILES = {"game_config": "game_config.json", "patches": "patches.json", "infusions": "infusions.json"}
+SINGLE_FILES = {
+    "game_config": "game_config.json",
+    "patches": "patches.json",
+    "infusions": "infusions.json",
+    "game_systems": "game_systems.json",
+}
 
 # Timeline Tracking Configuration
 TIMELINE_DIR = os.path.join(config.BASE_DIR, "timeline")
@@ -46,7 +51,7 @@ TRACKED_FIELDS = {
     "spells": ["damage", "range", "recharge_time", "duration", "value"],
     "titans": ["health", "damage", "dps", "movement_speed"],
     "consumables": ["value", "stack_size", "duration"],
-    "upgrades": ["effect"],
+    "upgrades": ["archetype", "level_cap"],
 }
 
 

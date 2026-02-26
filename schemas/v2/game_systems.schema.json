@@ -1,0 +1,103 @@
+{
+  "$schema": "https://json-schema.org/draft/2019-09/schema",
+  "$id": "https://spellcasters.gg/schemas/v2/game_systems.schema.json",
+  "title": "Game Systems",
+  "description": "Global game rules, economy, match XP, and ranked parameters.",
+  "type": "object",
+  "properties": {
+    "$schema": { "type": "string" },
+    "progression": {
+      "type": "object",
+      "properties": {
+        "starting_knowledge": {
+          "type": "object",
+          "properties": {
+            "default": { "type": "integer", "minimum": 0 },
+            "beta": { "type": "integer", "minimum": 0 }
+          },
+          "required": ["default", "beta"],
+          "additionalProperties": false
+        },
+        "earn_rates": {
+          "type": "object",
+          "properties": {
+            "first_daily_match": { "type": "integer", "minimum": 0 },
+            "win": { "type": "integer", "minimum": 0 },
+            "loss": { "type": "integer", "minimum": 0 }
+          },
+          "required": ["first_daily_match", "win", "loss"],
+          "additionalProperties": false
+        }
+      },
+      "required": ["starting_knowledge", "earn_rates"],
+      "additionalProperties": false
+    },
+    "ranked": {
+      "type": "object",
+      "properties": {
+        "tiers_per_rank": { "type": "integer", "minimum": 1 },
+        "rp_gain_per_win": { "type": "integer", "minimum": 0 },
+        "ranks": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "name": { "type": "string" },
+              "rp_threshold_min": { "type": "integer", "minimum": 0 },
+              "rp_loss_per_loss": { "type": "integer", "minimum": 0 }
+            },
+            "required": ["name", "rp_threshold_min", "rp_loss_per_loss"],
+            "additionalProperties": false
+          }
+        }
+      },
+      "required": ["tiers_per_rank", "rp_gain_per_win", "ranks"],
+      "additionalProperties": false
+    },
+    "match_xp": {
+      "type": "object",
+      "properties": {
+        "capture_xp": {
+          "type": "object",
+          "properties": {
+            "first_capture": { "type": "integer", "minimum": 0 },
+            "recapture": { "type": "integer", "minimum": 0 },
+            "passive_per_sec": { "type": "number", "minimum": 0 },
+            "spellcaster_on_point": { "type": "integer", "minimum": 0 }
+          },
+          "required": ["first_capture", "recapture", "passive_per_sec", "spellcaster_on_point"],
+          "additionalProperties": false
+        },
+        "kill_xp": {
+          "type": "object",
+          "properties": {
+            "spellcaster_death": { "type": "integer", "minimum": 0 },
+            "rank_i": { "type": "integer", "minimum": 0 },
+            "rank_ii": { "type": "integer", "minimum": 0 },
+            "rank_iii": { "type": "integer", "minimum": 0 },
+            "rank_iv": { "type": "integer", "minimum": 0 }
+          },
+          "required": ["spellcaster_death", "rank_i", "rank_ii", "rank_iii", "rank_iv"],
+          "additionalProperties": false
+        },
+        "building_spawn_multiplier": { "type": "number", "minimum": 0, "maximum": 1 },
+        "level_thresholds": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "level": { "type": "integer", "minimum": 1 },
+              "xp_required": { "type": "integer", "minimum": 0 }
+            },
+            "required": ["level", "xp_required"],
+            "additionalProperties": false
+          }
+        }
+      },
+      "required": ["capture_xp", "kill_xp", "building_spawn_multiplier", "level_thresholds"],
+      "additionalProperties": false
+    }
+  },
+  "required": ["progression", "ranked", "match_xp"],
+  "additionalProperties": false
+}

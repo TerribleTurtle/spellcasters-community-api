@@ -30,6 +30,15 @@
     },
     "mechanics": {
       "$ref": "definitions/mechanics.schema.json#/definitions/mechanics"
+    },
+    "grants_incantation": {
+      "type": "string",
+      "description": "entity_id of the spell this Cast Stone grants as a 5th incantation."
+    },
+    "drop_time_seconds": {
+      "type": "array",
+      "items": { "type": "integer", "minimum": 0 },
+      "description": "Match times (in seconds) when chests holding this stone spawn."
     }
   },
   "required": ["category"],

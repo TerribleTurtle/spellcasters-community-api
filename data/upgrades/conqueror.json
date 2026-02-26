@@ -1,0 +1,43 @@
+{
+  "$schema": "../schemas/v2/upgrades.schema.json",
+  "entity_id": "upgrades_conqueror",
+  "name": "Conqueror Upgrades",
+  "game_version": "0.1.1",
+  "last_modified": "2026-02-26",
+  "archetype": "Conqueror",
+  "level_cap": 25,
+  "population_scaling": [
+    { "level": 1, "population_cap": 10 },
+    { "level": 5, "population_cap": 14 },
+    { "level": 10, "population_cap": 18 },
+    { "level": 15, "population_cap": 22 },
+    { "level": 20, "population_cap": 26 },
+    { "level": 25, "population_cap": 30 }
+  ],
+  "incantation_upgrades": [
+    {
+      "incantation_id": "fire_ball",
+      "upgrades": [
+        { "name": "Searing Impact", "description": "Increases fire_ball damage by 15%.", "effect": { "damage": 1.15 } },
+        { "name": "Wide Blaze", "description": "Increases fire_ball radius by 20%.", "effect": { "radius": 1.20 } },
+        { "name": "Rapid Ignition", "description": "Reduces fire_ball recharge time by 10%.", "effect": { "recharge_time": 0.90 } }
+      ]
+    },
+    {
+      "incantation_id": "ogre",
+      "upgrades": [
+        { "name": "Ironhide", "description": "Increases ogre health by 20%.", "effect": { "health": 1.20 } },
+        { "name": "Crushing Blow", "description": "Increases ogre damage by 15%.", "effect": { "damage": 1.15 } },
+        { "name": "War Cry", "description": "Ogre gains an attack speed buff on spawn.", "effect": { "attack_interval": 0.85 } }
+      ]
+    },
+    {
+      "incantation_id": "earth_golem",
+      "upgrades": [
+        { "name": "Stone Fortification", "description": "Increases earth_golem health by 25%.", "effect": { "health": 1.25 } },
+        { "name": "Seismic Slam", "description": "Increases earth_golem damage by 20%.", "effect": { "damage": 1.20 } },
+        { "name": "Living Wall", "description": "Reduces earth_golem movement speed but greatly increases armor.", "effect": { "armor": 1.50, "movement_speed": 0.80 } }
+      ]
+    }
+  ]
+}

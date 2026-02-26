@@ -1,15 +1,14 @@
 {
   "$schema": "https://json-schema.org/draft/2019-09/schema",
   "$id": "https://spellcasters.gg/schemas/v2/upgrades.schema.json",
-  "title": "Upgrade",
-  "description": "RNG Level-up bonus options.",
+  "title": "Archetype Upgrade Table",
+  "description": "Fixed level-up upgrades per incantation, grouped by archetype.",
   "type": "object",
   "allOf": [{ "$ref": "definitions/core.schema.json#/definitions/meta" }],
   "properties": {
     "stat_changes": {
       "$ref": "definitions/core.schema.json#/definitions/stat_changes"
     },
-    "upgrade_id": { "type": "string" },
     "$schema": {
       "$ref": "definitions/core.schema.json#/definitions/meta/properties/$schema"
     },
@@ -25,18 +24,64 @@
     "name": {
       "$ref": "definitions/core.schema.json#/definitions/identity/properties/name"
     },
-    "description": { "type": "string", "description": "User-facing text." },
-    "target_tags": {
-      "type": "array",
-      "items": { "type": "string" },
-      "description": "Tags of units this upgrade applies to."
+    "archetype": {
+      "$ref": "definitions/enums.schema.json#/definitions/class_enum",
+      "description": "The hero class archetype this upgrade table belongs to."
     },
-    "effect": {
-      "type": "object",
-      "description": "Key-value pairs of stats to modify.",
-      "additionalProperties": true
+    "level_cap": {
+      "type": "integer",
+      "minimum": 1,
+      "description": "Maximum level for this archetype."
+    },
+    "population_scaling": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "level": { "type": "integer", "minimum": 1 },
+          "population_cap": { "type": "integer", "minimum": 0 }
+        },
+        "required": ["level", "population_cap"],
+        "additionalProperties": false
+      },
+      "description": "Population caps that auto-scale with level."
+    },
+    "incantation_upgrades": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "incantation_id": {
+            "type": "string",
+            "description": "entity_id of the spell or unit incantation."
+          },
+          "upgrades": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "name": { "type": "string" },
+                "description": { "type": "string" },
+                "effect": {
+                  "type": "object",
+                  "description": "Key-value pairs of stats to modify.",
+                  "additionalProperties": true
+                }
+              },
+              "required": ["name", "description", "effect"],
+              "additionalProperties": false
+            },
+            "minItems": 3,
+            "maxItems": 3,
+            "description": "Exactly 3 fixed upgrade choices for this incantation."
+          }
+        },
+        "required": ["incantation_id", "upgrades"],
+        "additionalProperties": false
+      },
+      "description": "Fixed upgrades available per incantation for this archetype."
     }
   },
-  "required": ["upgrade_id", "description", "target_tags", "effect"],
+  "required": ["archetype", "level_cap", "population_scaling", "incantation_upgrades"],
   "additionalProperties": false
 }

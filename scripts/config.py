@@ -48,6 +48,7 @@ SCHEMA_FILES = {
     "all_data": "all_data.schema.json",
     "audit": "audit.schema.json",
     "infusion": "infusions.schema.json",
+    "game_systems": "game_systems.schema.json",
 }
 
 # Data Folder to Schema Mapping (Folder Name -> Schema Key)

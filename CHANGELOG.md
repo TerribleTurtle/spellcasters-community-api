@@ -2,6 +2,19 @@
 
 All notable changes to this project will be documented in this file.
 
+## [0.1.2] - 2026-02-26
+
+- feat(schema): rework `upgrades.schema.json` from RNG placeholder to archetype-based fixed upgrades
+- feat(schema): create `game_systems.schema.json` (progression, ranked, match XP)
+- feat(schema): add `Cast_Stone` to `consumable_effect_enum`, add `grants_incantation` and `drop_time_seconds` to consumables
+- feat(schema): add `game_systems` ref to `all_data.schema.json`
+- feat(data): add archetype upgrade tables (conqueror, duelist, enchanter)
+- feat(data): add `game_systems.json` with progression economy, ranked mode, and match XP values
+- feat(data): add Cast Stone consumables (`cast_stone_fire_ball`, `cast_stone_heal_ray`)
+- feat(pipeline): register `game_systems` in `config.py` and `build_api.py`
+- feat(ui): add Game Systems endpoint card to `index.html`
+- chore: delete old `data/upgrades/placeholder.json`
+
 ## [0.1.0] - 2026-02-26
 
 - feat(schema): add `knowledge_cost` field to `unlockable` definition in `core.schema.json`

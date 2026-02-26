@@ -1,0 +1,19 @@
+{
+  "$schema": "../../schemas/v2/consumables.schema.json",
+  "entity_id": "cast_stone_fire_ball",
+  "name": "Cast Stone: Fire Ball",
+  "description": "A Cast Stone that grants Fire Ball as a 5th incantation slot.",
+  "game_version": "0.1.1",
+  "last_modified": "2026-02-26",
+  "category": "Consumable",
+  "effect_type": "Cast_Stone",
+  "grants_incantation": "fire_ball",
+  "drop_time_seconds": [300, 600],
+  "value": 0,
+  "stack_size": 1,
+  "image_required": true,
+  "tags": [
+    "cast_stone",
+    "fire"
+  ]
+}

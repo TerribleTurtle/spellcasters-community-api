@@ -64,6 +64,9 @@
     },
     "patches": {
       "$ref": "patches.schema.json"
+    },
+    "game_systems": {
+      "$ref": "game_systems.schema.json"
     }
   }
 }
