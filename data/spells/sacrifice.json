@@ -5,7 +5,7 @@
   "category": "Spell",
   "magic_school": "Astral",
   "rank": "I",
-  "description": "Dark ritual that recalls allies to recharge summons.",
+  "description": "Dark ritual that damager enemies and curses units. Units killed by the curse recharge all your incantations.",
   "image_required": true,
   "tags": [],
   "mechanics": {

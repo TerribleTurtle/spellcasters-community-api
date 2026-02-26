@@ -8,7 +8,7 @@
   "description": "Fire pulse that burns enemies and infuses nearby allies.",
   "image_required": true,
   "tags": [],
-  "range": 24,
+  "range": 48,
   "mechanics": {
     "infusion": {
       "id": "fire_infusion"

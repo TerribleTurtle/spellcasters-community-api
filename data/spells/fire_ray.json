@@ -41,7 +41,7 @@
       }
     ]
   },
-  "damage": 14,
+  "damage": 70,
   "damage_overrides": {
     "Building": 0,
     "Lifestone": 0,

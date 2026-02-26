@@ -8,7 +8,7 @@
   "description": "Grenade that creates a Poison cloud over the target area.",
   "image_required": true,
   "tags": [],
-  "damage": 25,
+  "damage": 35,
   "damage_overrides": {
     "Building": 0,
     "Lifestone": 0,

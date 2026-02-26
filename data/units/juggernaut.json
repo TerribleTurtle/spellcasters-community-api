@@ -24,17 +24,17 @@
       }
     ]
   },
-  "damage": 100,
+  "damage": 50,
   "damage_overrides": {
     "Building": 0,
     "Lifestone": 0,
     "Creature": 0,
     "Spellcaster": 0
   },
-  "health": 4000,
+  "health": 10000,
   "movement_speed": 3,
   "movement_type": "Ground",
-  "dps": 100,
+  "dps": 50,
   "attack_interval": 1,
   "charges": 1,
   "recharge_time": 120,

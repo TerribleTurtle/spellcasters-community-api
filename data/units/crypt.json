@@ -55,7 +55,7 @@
       }
     ]
   },
-  "health": 1000,
+  "health": 750,
   "charges": 1,
   "recharge_time": 60,
   "cast_time": 0,

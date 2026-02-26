@@ -4,7 +4,7 @@
   "category": "Creature",
   "magic_school": "Necromancy",
   "rank": "I",
-  "description": "Fast creature that explodes on contact, dealing bonus damage to structures.",
+  "description": "Fast creature that explodes on contact, dealing bonus damage to buildings.",
   "image_required": true,
   "tags": [],
   "health": 85,
@@ -45,7 +45,7 @@
       }
     ]
   },
-  "last_modified": "2026-02-18T07:21:50.210Z",
+  "last_modified": "2026-02-26T15:11:00.000Z",
   "$schema": "../../schemas/v2/units.schema.json",
   "knowledge_cost": 50
 }

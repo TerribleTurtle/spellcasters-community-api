@@ -15,13 +15,19 @@
         "target_types": [
           "Creature"
         ]
+      },
+      {
+        "multiplier": 0.5,
+        "target_types": [
+          "Building"
+        ]
       }
     ],
     "infusion": {
       "id": "fire_infusion"
     }
   },
-  "damage": 450,
+  "damage": 600,
   "damage_overrides": {
     "Building": 0,
     "Lifestone": 0,
@@ -29,7 +35,7 @@
     "Spellcaster": 0
   },
   "range": 45,
-  "duration": 12,
+  "duration": 15,
   "charges": 1,
   "recharge_time": 120,
   "cast_time": 0,

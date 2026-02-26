@@ -5,12 +5,13 @@
   "category": "Spell",
   "magic_school": "Holy",
   "rank": "IV",
-  "description": "Magic circle that resurrects creatures with partial health.",
+  "description": "Magic circle that resurrects creatures at 100% HP (up to 5,000 HP). Limited to once per creature.",
   "image_required": true,
   "tags": [],
   "duration": 12,
   "charges": 1,
   "recharge_time": 120,
   "cast_time": 0,
-  "knowledge_cost": 800
+  "knowledge_cost": 800,
+  "last_modified": "2026-02-26T15:24:25Z"
 }

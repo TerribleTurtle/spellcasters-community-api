@@ -28,7 +28,7 @@
   "health": 220,
   "movement_speed": 7,
   "movement_type": "Flying",
-  "range": 36,
+  "range": 35,
   "dps": 19,
   "attack_interval": 1,
   "charges": 1,

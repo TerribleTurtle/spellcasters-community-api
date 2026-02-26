@@ -66,19 +66,19 @@
       "damage_tiers": [
         {
           "tier": "I",
-          "value": 0.001,
+          "value": 0.10,
           "calculation_unit": "percent_max_hp",
           "interval": 1
         },
         {
           "tier": "II",
-          "value": 0.003,
+          "value": 0.15,
           "calculation_unit": "percent_max_hp",
           "interval": 1
         },
         {
           "tier": "III",
-          "value": 0.005,
+          "value": 0.25,
           "calculation_unit": "percent_max_hp",
           "interval": 1
         }

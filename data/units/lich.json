@@ -70,13 +70,13 @@
   "image_required": true,
   "magic_school": "Necromancy",
   "movement_speed": 5,
-  "movement_type": "Flying",
+  "movement_type": "Hover",
   "dps": 5,
   "recharge_time": 25,
   "population": 0,
   "range": 25,
   "rank": "II",
   "tags": [],
-  "last_modified": "2026-02-24T05:41:00.000Z",
+  "last_modified": "2026-02-26T15:11:00.000Z",
   "knowledge_cost": 500
 }

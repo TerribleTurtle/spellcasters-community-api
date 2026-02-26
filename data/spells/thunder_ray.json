@@ -5,7 +5,7 @@
   "category": "Spell",
   "cast_time": 0,
   "charges": 1,
-  "damage": 10,
+  "damage": 70,
   "damage_overrides": {
     "Building": 0,
     "Lifestone": 0,
