@@ -10,6 +10,7 @@ All notable changes to this project will be documented in this file.
 - feat(data): add 7 new entities — Rhino Rider, Siren, Rocket Soldier Factory, Ice Ray, Poison Breath, Metamorphosis, Holy Arrow
 - feat(assets): add Knowledge and Eldergold currency icons (PNG + WebP) in `assets/currencies/`
 - feat(assets): add placeholder images for 7 new entities (PNG + WebP)
+- feat(assets): replace placeholder WebP images with real art for Rhino Rider, Siren, Rocket Soldier Factory, Ice Ray, Poison Breath, Metamorphosis, Holy Arrow
 - chore: bump game version to `0.1.0`
 
 ## [1.0.1] - 2026-02-26
