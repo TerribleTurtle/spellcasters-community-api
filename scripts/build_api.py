@@ -116,6 +116,34 @@ def sanitize_recursive(data):
     return data
 
 
+def inject_hero_image_urls(entity):
+    """
+    Injects root-relative image URLs for hero card and abilities.
+    Only includes URLs if the corresponding .webp file exists in assets/.
+    """
+    eid = entity.get("entity_id")
+    if not eid:
+        return
+
+    image_urls = {}
+
+    # Check card art
+    card_rel_path = f"heroes/{eid}.webp"
+    card_abs_path = os.path.join(config.ASSETS_DIR, card_rel_path.replace("/", os.sep))
+    if os.path.exists(card_abs_path):
+        image_urls["card"] = f"/assets/{card_rel_path}"
+
+    # Check abilities
+    for ability_type in ["attack", "defense", "passive", "ultimate"]:
+        ability_rel_path = f"heroes/abilities/{eid}_{ability_type}.webp"
+        ability_abs_path = os.path.join(config.ASSETS_DIR, ability_rel_path.replace("/", os.sep))
+        if os.path.exists(ability_abs_path):
+            image_urls[ability_type] = f"/assets/{ability_rel_path}"
+
+    if image_urls:
+        entity["image_urls"] = image_urls
+
+
 def main():
     print(f"Building API {VERSION_API}...")
 
@@ -167,6 +195,9 @@ def main():
                 changes = build_entity_stat_changes(eid, TIMELINE_DIR, tracked_fields)
                 if changes:
                     entity["stat_changes"] = changes
+
+            if key == "heroes":
+                inject_hero_image_urls(entity)
 
         # Save individual aggregation
         save_json(f"{key}.json", collection)

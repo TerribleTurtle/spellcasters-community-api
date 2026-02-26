@@ -14,6 +14,9 @@
     "stat_changes": {
       "$ref": "definitions/core.schema.json#/definitions/stat_changes"
     },
+    "image_urls": {
+      "$ref": "definitions/core.schema.json#/definitions/image_urls"
+    },
     "category": {
       "$ref": "definitions/enums.schema.json#/definitions/category_enum"
     },

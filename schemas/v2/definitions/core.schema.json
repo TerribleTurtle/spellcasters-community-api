@@ -86,6 +86,13 @@
         }
       }
     },
+    "image_urls": {
+      "type": "object",
+      "description": "Build-generated image URLs for this entity.",
+      "additionalProperties": {
+        "type": "string"
+      }
+    },
     "stat_changes": {
       "type": "array",
       "description": "Historical stat differences between patch versions.",
