@@ -34,32 +34,6 @@
     }
   },
   {
-    "version": "0.0.4",
-    "date": "2026-02-26",
-    "snapshot": {
-      "$schema": "../../schemas/v2/units.schema.json",
-      "entity_id": "steam_tank",
-      "name": "Steam Tank",
-      "category": "Creature",
-      "magic_school": "Technomancy",
-      "rank": "III",
-      "description": "Long-range unit that deals heavy damage to a target.",
-      "image_required": true,
-      "tags": [],
-      "damage": 40,
-      "health": 1300,
-      "range": 75,
-      "movement_speed": 3,
-      "movement_type": "Ground",
-      "dps": 40,
-      "attack_interval": 1,
-      "charges": 1,
-      "recharge_time": 50,
-      "cast_time": 0,
-      "population": 0
-    }
-  },
-  {
     "version": "0.1.0",
     "date": "2026-02-26",
     "snapshot": {

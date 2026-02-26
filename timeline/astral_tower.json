@@ -31,29 +31,6 @@
     }
   },
   {
-    "version": "0.0.4",
-    "date": "2026-02-26",
-    "snapshot": {
-      "$schema": "../../schemas/v2/units.schema.json",
-      "entity_id": "astral_tower",
-      "name": "Astral Tower",
-      "category": "Building",
-      "magic_school": "Astral",
-      "rank": "III",
-      "description": "A heavy defensive tower that targets enemies inside allied territory and can defend itself when attacked.",
-      "image_required": true,
-      "tags": [],
-      "damage": 50,
-      "health": 3500,
-      "dps": 50,
-      "attack_interval": 1,
-      "charges": 1,
-      "recharge_time": 50,
-      "cast_time": 0,
-      "population": 0
-    }
-  },
-  {
     "version": "0.1.0",
     "date": "2026-02-26",
     "snapshot": {

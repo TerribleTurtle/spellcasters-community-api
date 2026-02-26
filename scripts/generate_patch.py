@@ -180,7 +180,10 @@ def main():
     game_config = load_json(GAME_CONFIG_PATH)
     current_version = game_config.get("version", "0.0.1")
 
-    boundaries = discover_version_boundaries(current_version)
+    # Only recognize versions that exist in the official changelog
+    official_versions = {entry["version"] for entry in game_config.get("changelog", [])}
+    all_boundaries = discover_version_boundaries(current_version)
+    boundaries = [b for b in all_boundaries if b["version"] in official_versions]
 
     # Timeline accumulator: {entity_id: [{version, date, snapshot}, ...]}
     timeline_data = {}

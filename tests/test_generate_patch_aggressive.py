@@ -162,7 +162,11 @@ class TestMainMultiVersion:
         self, mock_load, mock_discover, mock_collect, mock_changed, mock_save, mock_write
     ):
         """0.0.1 is the baseline — no patch should be generated for it."""
-        mock_load.side_effect = lambda path: {"version": "0.0.2"} if "game_config" in path else []
+        mock_load.side_effect = lambda path: (
+            {"version": "0.0.2", "changelog": [{"version": "0.0.2"}, {"version": "0.0.1"}]}
+            if "game_config" in path
+            else []
+        )
         mock_discover.return_value = [
             {"version": "0.0.1", "commit": "commit_a"},
             {"version": "0.0.2", "commit": "commit_b"},
@@ -187,7 +191,7 @@ class TestMainMultiVersion:
     ):
         """When changed files exist, changes should be appended to the patch meta."""
         mock_load.side_effect = lambda path: (
-            {"version": "0.0.2"}
+            {"version": "0.0.2", "changelog": [{"version": "0.0.2"}, {"version": "0.0.1"}]}
             if "game_config" in path
             else (
                 [{"version": "0.0.2", "id": "p1", "title": "Patch 2"}] if "patches" in path else {"name": "Test Entity"}

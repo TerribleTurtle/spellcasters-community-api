@@ -57,54 +57,6 @@
     }
   },
   {
-    "version": "0.0.4",
-    "date": "2026-02-26",
-    "snapshot": {
-      "$schema": "../../schemas/v2/spells.schema.json",
-      "entity_id": "earthquake",
-      "name": "Earthquake",
-      "category": "Spell",
-      "cast_time": 0,
-      "charges": 1,
-      "damage": 76,
-      "description": "Ground shockwave that damages structures and staggers creatures significantly. Damage is split into 3 waves.",
-      "image_required": true,
-      "magic_school": "Wild",
-      "mechanics": {
-        "bonus_damage": [
-          {
-            "target_types": [
-              "Building"
-            ],
-            "unit": "percent_max_hp",
-            "value": 1.3
-          }
-        ],
-        "damage_modifiers": [
-          {
-            "multiplier": 0,
-            "target_types": [
-              "Flying"
-            ]
-          },
-          {
-            "multiplier": 1.3,
-            "target_types": [
-              "Building"
-            ]
-          }
-        ],
-        "stagger_modifier": true,
-        "waves": 3
-      },
-      "range": 35,
-      "rank": "III",
-      "recharge_time": 50,
-      "tags": [],
-      "last_modified": "2026-02-19T00:40:45.876Z"
-    }
-  },
-  {
     "version": "0.1.0",
     "date": "2026-02-26",
     "snapshot": {

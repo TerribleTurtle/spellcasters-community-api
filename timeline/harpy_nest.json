@@ -43,41 +43,6 @@
     }
   },
   {
-    "version": "0.0.4",
-    "date": "2026-02-26",
-    "snapshot": {
-      "$schema": "../../schemas/v2/units.schema.json",
-      "entity_id": "harpy_nest",
-      "name": "Harpy Nest",
-      "category": "Building",
-      "magic_school": "Wild",
-      "rank": "III",
-      "description": "Nest that continuously spawns new Harpies.",
-      "image_required": true,
-      "tags": [],
-      "mechanics": {
-        "spawner": [
-          {
-            "unit_id": "harpy",
-            "count": 5,
-            "interval": 10,
-            "trigger": "Interval"
-          },
-          {
-            "unit_id": "harpy",
-            "count": 10,
-            "trigger": "Death"
-          }
-        ]
-      },
-      "health": 750,
-      "charges": 1,
-      "recharge_time": 50,
-      "cast_time": 0,
-      "population": 0
-    }
-  },
-  {
     "version": "0.1.0",
     "date": "2026-02-26",
     "snapshot": {

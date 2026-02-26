@@ -39,37 +39,6 @@
     }
   },
   {
-    "version": "0.0.4",
-    "date": "2026-02-26",
-    "snapshot": {
-      "$schema": "../../schemas/v2/spells.schema.json",
-      "entity_id": "poison_grenade",
-      "name": "Poison Grenade",
-      "category": "Spell",
-      "magic_school": "Necromancy",
-      "rank": "III",
-      "description": "Grenade that creates a Poison cloud over the target area.",
-      "image_required": true,
-      "tags": [],
-      "damage": 25,
-      "range": 40,
-      "duration": 12,
-      "mechanics": {
-        "damage_modifiers": [
-          {
-            "multiplier": 0,
-            "target_types": [
-              "Building"
-            ]
-          }
-        ]
-      },
-      "charges": 1,
-      "recharge_time": 50,
-      "cast_time": 0
-    }
-  },
-  {
     "version": "0.1.0",
     "date": "2026-02-26",
     "snapshot": {

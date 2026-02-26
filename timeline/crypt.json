@@ -43,41 +43,6 @@
     }
   },
   {
-    "version": "0.0.4",
-    "date": "2026-02-26",
-    "snapshot": {
-      "$schema": "../../schemas/v2/units.schema.json",
-      "entity_id": "crypt",
-      "name": "Crypt",
-      "category": "Building",
-      "magic_school": "Necromancy",
-      "rank": "III",
-      "description": "Shrine that continuously summons new Skeleton Warriors.",
-      "image_required": true,
-      "tags": [],
-      "mechanics": {
-        "spawner": [
-          {
-            "unit_id": "skeleton_warrior",
-            "count": 5,
-            "interval": 10,
-            "trigger": "Interval"
-          },
-          {
-            "unit_id": "skeleton_warrior",
-            "count": 10,
-            "trigger": "Death"
-          }
-        ]
-      },
-      "health": 1000,
-      "charges": 1,
-      "recharge_time": 50,
-      "cast_time": 0,
-      "population": 0
-    }
-  },
-  {
     "version": "0.1.0",
     "date": "2026-02-26",
     "snapshot": {

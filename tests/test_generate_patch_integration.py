@@ -30,9 +30,12 @@ SKELETON_V2 = {"entity_id": "skeleton", "name": "Skeleton", "health": 150, "dama
 SKELETON_V3 = {"entity_id": "skeleton", "name": "Skeleton", "health": 120, "damage": 30}  # rebalanced
 FIREBALL_V3 = {"entity_id": "fireball", "name": "Fireball", "mana_cost": 5, "damage": 100}  # added in 0.0.3
 
-GAME_CONFIG_V1 = {"version": "0.0.1"}
-GAME_CONFIG_V2 = {"version": "0.0.2"}
-GAME_CONFIG_V3 = {"version": "0.0.3"}
+GAME_CONFIG_V1 = {"version": "0.0.1", "changelog": [{"version": "0.0.1"}]}
+GAME_CONFIG_V2 = {"version": "0.0.2", "changelog": [{"version": "0.0.2"}, {"version": "0.0.1"}]}
+GAME_CONFIG_V3 = {
+    "version": "0.0.3",
+    "changelog": [{"version": "0.0.3"}, {"version": "0.0.2"}, {"version": "0.0.1"}],
+}
 
 
 def make_git_show_response(data):
@@ -349,7 +352,9 @@ class TestMainPipelineEdgeCases:
         units_dir.mkdir()
 
         game_config_path = data_dir / "game_config.json"
-        game_config_path.write_text(json.dumps({"version": "0.0.1"}), encoding="utf-8")
+        game_config_path.write_text(
+            json.dumps({"version": "0.0.1", "changelog": [{"version": "0.0.1"}]}), encoding="utf-8"
+        )
         (units_dir / "skeleton.json").write_text(json.dumps(SKELETON_V1), encoding="utf-8")
 
         patches_path = data_dir / "patches.json"
@@ -361,7 +366,7 @@ class TestMainPipelineEdgeCases:
             if "git log" in cmd_str:
                 return make_git_log_response(["commit_a"])
             if "git show" in cmd_str and "game_config" in cmd_str:
-                return make_git_show_response({"version": "0.0.1"})
+                return make_git_show_response({"version": "0.0.1", "changelog": [{"version": "0.0.1"}]})
             if "git ls-tree" in cmd_str:
                 return make_ls_tree_response(["data/units/skeleton.json"])
             if "git show" in cmd_str and "skeleton" in cmd_str:
@@ -394,7 +399,9 @@ class TestMainPipelineEdgeCases:
         units_dir.mkdir()
 
         game_config_path = data_dir / "game_config.json"
-        game_config_path.write_text(json.dumps({"version": "0.0.1"}), encoding="utf-8")
+        game_config_path.write_text(
+            json.dumps({"version": "0.0.1", "changelog": [{"version": "0.0.1"}]}), encoding="utf-8"
+        )
         (units_dir / "skeleton.json").write_text(json.dumps(SKELETON_V1), encoding="utf-8")
 
         patches_path = data_dir / "patches.json"

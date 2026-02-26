@@ -8,3297 +8,6 @@
     "tags": [],
     "changes": [
       {
-        "target_id": "astral_monk.json",
-        "name": "Astral Monk",
-        "field": "entity",
-        "change_type": "edit",
-        "category": "heroes",
-        "diffs": [
-          {
-            "path": [
-              "abilities",
-              "primary",
-              "mechanics",
-              "features"
-            ],
-            "removed": true
-          },
-          {
-            "path": [
-              "abilities",
-              "passive",
-              0,
-              "description"
-            ],
-            "old_value": "All Astral spells recharge faster.",
-            "new_value": "All Astral spells recharge 32% faster."
-          },
-          {
-            "path": [
-              "abilities",
-              "passive",
-              1,
-              "description"
-            ],
-            "old_value": "All damage dealt is increased against targets below half health.",
-            "new_value": "All damage dealt is increased by 47% against targets below half health."
-          },
-          {
-            "path": [
-              "abilities",
-              "defense",
-              "duration"
-            ],
-            "old_value": 1.5,
-            "new_value": 3
-          },
-          {
-            "path": [
-              "abilities",
-              "defense",
-              "mechanics",
-              "stealth",
-              "duration"
-            ],
-            "old_value": 1.5,
-            "new_value": 3
-          }
-        ]
-      },
-      {
-        "target_id": "fire_elementalist.json",
-        "name": "Fire Elementalist",
-        "field": "entity",
-        "change_type": "edit",
-        "category": "heroes",
-        "diffs": [
-          {
-            "path": [
-              "abilities",
-              "primary",
-              "mechanics",
-              "infusion"
-            ],
-            "new_value": {
-              "id": "fire_infusion"
-            }
-          },
-          {
-            "path": [
-              "abilities",
-              "ultimate",
-              "damage"
-            ],
-            "new_value": 67
-          },
-          {
-            "path": [
-              "abilities",
-              "ultimate",
-              "mechanics"
-            ],
-            "new_value": {
-              "infusion": {
-                "id": "fire_infusion"
-              }
-            }
-          },
-          {
-            "path": [
-              "abilities",
-              "passive",
-              0,
-              "description"
-            ],
-            "old_value": "Allied creatures near the Fire Elementalist capture Altar faster.",
-            "new_value": "Allied creatures near the Fire Elementalist capture Altar +58% faster."
-          },
-          {
-            "path": [
-              "abilities",
-              "passive",
-              1,
-              "description"
-            ],
-            "old_value": "Damaging burning enemies heals the Fire Elementalist.",
-            "new_value": "Damaging burning enemies heals the Fire Elementalist for 10 Health."
-          }
-        ]
-      },
-      {
-        "target_id": "iron_sorcerer.json",
-        "name": "Iron Sorcerer",
-        "field": "entity",
-        "change_type": "edit",
-        "category": "heroes",
-        "diffs": [
-          {
-            "path": [
-              "abilities",
-              "ultimate",
-              "damage"
-            ],
-            "new_value": 67
-          },
-          {
-            "path": [
-              "abilities",
-              "passive",
-              0,
-              "description"
-            ],
-            "old_value": "Increases Rank III population, reduces Rank II population.",
-            "new_value": "Increases Rank III population by 1, reduces Rank II population by 2."
-          }
-        ]
-      },
-      {
-        "target_id": "mystic_scribe.json",
-        "name": "Mystic Scribe",
-        "field": "entity",
-        "change_type": "edit",
-        "category": "heroes",
-        "diffs": [
-          {
-            "path": [
-              "abilities",
-              "passive",
-              0,
-              "mechanics"
-            ],
-            "new_value": {
-              "aura": [
-                {
-                  "name": "Echo of Mercy Aura",
-                  "description": "Heals nearby allies.",
-                  "radius": 5,
-                  "value": 10,
-                  "effect": "Heal",
-                  "target_types": [
-                    "Ally"
-                  ],
-                  "interval": 1
-                }
-              ]
-            }
-          },
-          {
-            "path": [
-              "abilities",
-              "ultimate",
-              "heal_amount"
-            ],
-            "new_value": 70
-          },
-          {
-            "path": [
-              "abilities",
-              "ultimate",
-              "radius"
-            ],
-            "new_value": 30
-          },
-          {
-            "path": [
-              "abilities",
-              "ultimate",
-              "interval"
-            ],
-            "new_value": 1
-          },
-          {
-            "path": [
-              "abilities",
-              "passive",
-              1,
-              "description"
-            ],
-            "old_value": "All Holy incantations recharge faster.",
-            "new_value": "All Holy incantations recharge 16.7% faster."
-          },
-          {
-            "path": [
-              "abilities",
-              "ultimate",
-              "description"
-            ],
-            "old_value": "Mark the ground with a massive healing seal.",
-            "new_value": "Mark the ground with a massive healing seal (70 + 1.37% target Max HP)."
-          }
-        ]
-      },
-      {
-        "target_id": "stone_shaman.json",
-        "name": "Stone Shaman",
-        "field": "entity",
-        "change_type": "edit",
-        "category": "heroes",
-        "diffs": [
-          {
-            "path": [
-              "abilities",
-              "ultimate",
-              "damage"
-            ],
-            "new_value": 67
-          },
-          {
-            "path": [
-              "abilities",
-              "passive",
-              1,
-              "description"
-            ],
-            "old_value": "Increases Rank II and Rank III population while reducing Rank I population.",
-            "new_value": "Increases Rank II population by 5 and Rank III population by 1 while reducing Rank I population by 15."
-          },
-          {
-            "path": [
-              "abilities",
-              "passive",
-              2,
-              "description"
-            ],
-            "old_value": "While on the ground, the Shaman recharges Wild spells and creatures much faster.",
-            "new_value": "While on the ground, the Shaman recharges Wild spells and creatures +58% faster."
-          }
-        ]
-      },
-      {
-        "target_id": "swamp_witch.json",
-        "name": "Swamp Witch",
-        "field": "entity",
-        "change_type": "edit",
-        "category": "heroes",
-        "diffs": [
-          {
-            "path": [
-              "abilities",
-              "primary",
-              "mechanics",
-              "infusion"
-            ],
-            "new_value": {
-              "id": "poison_infusion"
-            }
-          },
-          {
-            "path": [
-              "abilities",
-              "passive",
-              2,
-              "description"
-            ],
-            "old_value": "The Swamp Witch has more Rank I population, but less Rank II and Rank III population.  ",
-            "new_value": "The Swamp Witch increases Rank I population by 5, while reducing Rank II and Rank III population by 2."
-          },
-          {
-            "path": [
-              "abilities",
-              "ultimate",
-              "description"
-            ],
-            "old_value": "Unleashes a demonic form that boosts all spell damage by 150%. Poison Strike fires 2 extra projectiles that deal +285% damage.",
-            "new_value": "Unleashes a demonic form that boosts all spell damage by +50%. Poison Strike fires 2 extra projectiles that deal +185% damage."
-          },
-          {
-            "path": [
-              "abilities",
-              "ultimate",
-              "mechanics",
-              "damage_modifiers",
-              0,
-              "multiplier"
-            ],
-            "old_value": 2.5,
-            "new_value": 1.5
-          },
-          {
-            "path": [
-              "abilities",
-              "ultimate",
-              "mechanics",
-              "features",
-              0,
-              "description"
-            ],
-            "old_value": "Poison Strike gains 2 extra projectiles dealing +285% damage.",
-            "new_value": "Poison Strike gains 2 extra projectiles dealing +185% damage."
-          }
-        ]
-      },
-      {
-        "target_id": "infusions.json",
-        "name": "infusions.json",
-        "field": "entity",
-        "change_type": "add",
-        "category": "infusions.json",
-        "diffs": [
-          {
-            "path": [],
-            "old_value": {},
-            "new_value": [
-              {
-                "id": "fire_infusion",
-                "name": "Fire Infusion",
-                "element": "Fire",
-                "allied_effect": {
-                  "description": "Increases damage dealt by infused allies.",
-                  "stat_multiplier": {
-                    "damage": 0
-                  }
-                },
-                "enemy_effect": {
-                  "description": "Applies buildup of Burning status on enemies, dealing damage over time.",
-                  "status_buildup": "Burning",
-                  "damage_tiers": [
-                    {
-                      "tier": "I",
-                      "value": 0,
-                      "calculation_unit": "flat",
-                      "interval": 0
-                    },
-                    {
-                      "tier": "II",
-                      "value": 0,
-                      "calculation_unit": "flat",
-                      "interval": 0
-                    },
-                    {
-                      "tier": "III",
-                      "value": 0,
-                      "calculation_unit": "flat",
-                      "interval": 0
-                    }
-                  ]
-                }
-              },
-              {
-                "id": "lightning_infusion",
-                "name": "Lightning Infusion",
-                "element": "Lightning",
-                "allied_effect": {
-                  "description": "Increases movement speed of infused allies.",
-                  "stat_multiplier": {
-                    "movement_speed": 0
-                  }
-                },
-                "enemy_effect": {
-                  "description": "Applies buildup of a chain lightning attack on enemies, dealing damage.",
-                  "status_buildup": "Chain Lightning"
-                }
-              },
-              {
-                "id": "poison_infusion",
-                "name": "Poison Infusion",
-                "element": "Poison",
-                "allied_effect": {
-                  "description": "Grants health regeneration to infused allies.",
-                  "heal": {
-                    "value": 0,
-                    "interval": 0
-                  }
-                },
-                "enemy_effect": {
-                  "description": "Applies buildup of Poison on enemies, dealing damage over time based on max HP.",
-                  "status_buildup": "Poison",
-                  "damage_tiers": [
-                    {
-                      "tier": "I",
-                      "value": 0.001,
-                      "calculation_unit": "percent_max_hp",
-                      "interval": 1
-                    },
-                    {
-                      "tier": "II",
-                      "value": 0.003,
-                      "calculation_unit": "percent_max_hp",
-                      "interval": 1
-                    },
-                    {
-                      "tier": "III",
-                      "value": 0.005,
-                      "calculation_unit": "percent_max_hp",
-                      "interval": 1
-                    }
-                  ]
-                }
-              },
-              {
-                "id": "ice_infusion",
-                "name": "Ice Infusion",
-                "element": "Ice",
-                "allied_effect": {
-                  "description": "Increases damage resistance of infused allies.",
-                  "stat_multiplier": {
-                    "damage_resistance": 0
-                  }
-                },
-                "enemy_effect": {
-                  "description": "Applies buildup of Freeze on enemies, slowing and eventually freezing them.",
-                  "status_buildup": "Freeze"
-                }
-              }
-            ]
-          }
-        ]
-      },
-      {
-        "target_id": "astral_nova.json",
-        "name": "Astral Nova",
-        "field": "entity",
-        "change_type": "edit",
-        "category": "spells",
-        "diffs": [
-          {
-            "path": [
-              "damage_overrides"
-            ],
-            "new_value": {
-              "Building": 0,
-              "Lifestone": 0,
-              "Creature": 0,
-              "Spellcaster": 0
-            }
-          },
-          {
-            "path": [
-              "mechanics"
-            ],
-            "new_value": {
-              "damage_modifiers": [
-                {
-                  "multiplier": 0.27,
-                  "target_types": [
-                    "Building"
-                  ]
-                }
-              ]
-            }
-          },
-          {
-            "path": [
-              "knowledge_cost"
-            ],
-            "new_value": 200
-          }
-        ]
-      },
-      {
-        "target_id": "astral_shot.json",
-        "name": "Astral Shot",
-        "field": "entity",
-        "change_type": "edit",
-        "category": "spells",
-        "diffs": [
-          {
-            "path": [
-              "damage_overrides"
-            ],
-            "new_value": {
-              "Building": 0,
-              "Lifestone": 0,
-              "Creature": 0,
-              "Spellcaster": 0
-            }
-          },
-          {
-            "path": [
-              "knowledge_cost"
-            ],
-            "new_value": 0
-          },
-          {
-            "path": [
-              "mechanics",
-              "damage_modifiers"
-            ],
-            "new_value": [
-              {
-                "target_types": [
-                  "Building"
-                ],
-                "multiplier": 1.0
-              },
-              {
-                "target_types": [
-                  "Lifestone"
-                ],
-                "multiplier": 1.0
-              },
-              {
-                "target_types": [
-                  "Creature"
-                ],
-                "multiplier": 1.0
-              },
-              {
-                "target_types": [
-                  "Spellcaster"
-                ],
-                "multiplier": 1.0
-              }
-            ]
-          }
-        ]
-      },
-      {
-        "target_id": "earthquake.json",
-        "name": "Earthquake",
-        "field": "entity",
-        "change_type": "edit",
-        "category": "spells",
-        "diffs": [
-          {
-            "path": [
-              "damage_overrides"
-            ],
-            "new_value": {
-              "Building": 0,
-              "Lifestone": 0,
-              "Creature": 0,
-              "Spellcaster": 0
-            }
-          },
-          {
-            "path": [
-              "knowledge_cost"
-            ],
-            "new_value": 500
-          }
-        ]
-      },
-      {
-        "target_id": "fire_ball.json",
-        "name": "Fire Ball",
-        "field": "entity",
-        "change_type": "edit",
-        "category": "spells",
-        "diffs": [
-          {
-            "path": [
-              "damage_overrides"
-            ],
-            "new_value": {
-              "Building": 0,
-              "Lifestone": 0,
-              "Creature": 0,
-              "Spellcaster": 0
-            }
-          },
-          {
-            "path": [
-              "knowledge_cost"
-            ],
-            "new_value": 50
-          },
-          {
-            "path": [
-              "mechanics"
-            ],
-            "old_value": {},
-            "new_value": {
-              "infusion": {
-                "id": "fire_infusion"
-              },
-              "damage_modifiers": [
-                {
-                  "target_types": [
-                    "Building"
-                  ],
-                  "multiplier": 1.0
-                },
-                {
-                  "target_types": [
-                    "Lifestone"
-                  ],
-                  "multiplier": 1.0
-                },
-                {
-                  "target_types": [
-                    "Creature"
-                  ],
-                  "multiplier": 1.0
-                },
-                {
-                  "target_types": [
-                    "Spellcaster"
-                  ],
-                  "multiplier": 1.0
-                }
-              ]
-            }
-          },
-          {
-            "path": [
-              "recharge_time"
-            ],
-            "old_value": 50,
-            "new_value": 60
-          }
-        ]
-      },
-      {
-        "target_id": "fire_rain.json",
-        "name": "Fire Rain",
-        "field": "entity",
-        "change_type": "edit",
-        "category": "spells",
-        "diffs": [
-          {
-            "path": [
-              "damage_overrides"
-            ],
-            "new_value": {
-              "Building": 0,
-              "Lifestone": 0,
-              "Creature": 0,
-              "Spellcaster": 0
-            }
-          },
-          {
-            "path": [
-              "knowledge_cost"
-            ],
-            "new_value": 500
-          },
-          {
-            "path": [
-              "mechanics",
-              "infusion"
-            ],
-            "new_value": {
-              "id": "fire_infusion"
-            }
-          }
-        ]
-      },
-      {
-        "target_id": "fire_ray.json",
-        "name": "Fire Ray",
-        "field": "entity",
-        "change_type": "edit",
-        "category": "spells",
-        "diffs": [
-          {
-            "path": [
-              "damage_overrides"
-            ],
-            "new_value": {
-              "Building": 0,
-              "Lifestone": 0,
-              "Creature": 0,
-              "Spellcaster": 0
-            }
-          },
-          {
-            "path": [
-              "knowledge_cost"
-            ],
-            "new_value": 0
-          },
-          {
-            "path": [
-              "mechanics",
-              "infusion"
-            ],
-            "new_value": {
-              "id": "fire_infusion"
-            }
-          },
-          {
-            "path": [
-              "mechanics",
-              "damage_modifiers"
-            ],
-            "new_value": [
-              {
-                "target_types": [
-                  "Building"
-                ],
-                "multiplier": 1.0
-              },
-              {
-                "target_types": [
-                  "Lifestone"
-                ],
-                "multiplier": 1.0
-              },
-              {
-                "target_types": [
-                  "Creature"
-                ],
-                "multiplier": 1.0
-              },
-              {
-                "target_types": [
-                  "Spellcaster"
-                ],
-                "multiplier": 1.0
-              }
-            ]
-          }
-        ]
-      },
-      {
-        "target_id": "flame_surge.json",
-        "name": "Flame Surge",
-        "field": "entity",
-        "change_type": "edit",
-        "category": "spells",
-        "diffs": [
-          {
-            "path": [
-              "mechanics"
-            ],
-            "new_value": {
-              "infusion": {
-                "id": "fire_infusion"
-              }
-            }
-          },
-          {
-            "path": [
-              "knowledge_cost"
-            ],
-            "new_value": 50
-          }
-        ]
-      },
-      {
-        "target_id": "frost_surge.json",
-        "name": "Frost Surge",
-        "field": "entity",
-        "change_type": "edit",
-        "category": "spells",
-        "diffs": [
-          {
-            "path": [
-              "mechanics"
-            ],
-            "new_value": {
-              "infusion": {
-                "id": "ice_infusion"
-              }
-            }
-          },
-          {
-            "path": [
-              "knowledge_cost"
-            ],
-            "new_value": 50
-          },
-          {
-            "path": [
-              "recharge_time"
-            ],
-            "old_value": 50,
-            "new_value": 60
-          }
-        ]
-      },
-      {
-        "target_id": "grand_lightning.json",
-        "name": "Grand Lightning",
-        "field": "entity",
-        "change_type": "edit",
-        "category": "spells",
-        "diffs": [
-          {
-            "path": [
-              "damage_overrides"
-            ],
-            "new_value": {
-              "Building": 0,
-              "Lifestone": 0,
-              "Creature": 0,
-              "Spellcaster": 0
-            }
-          },
-          {
-            "path": [
-              "mechanics"
-            ],
-            "new_value": {
-              "infusion": {
-                "id": "lightning_infusion"
-              },
-              "damage_modifiers": [
-                {
-                  "target_types": [
-                    "Building"
-                  ],
-                  "multiplier": 1.0
-                },
-                {
-                  "target_types": [
-                    "Lifestone"
-                  ],
-                  "multiplier": 1.0
-                },
-                {
-                  "target_types": [
-                    "Creature"
-                  ],
-                  "multiplier": 1.0
-                },
-                {
-                  "target_types": [
-                    "Spellcaster"
-                  ],
-                  "multiplier": 1.0
-                }
-              ]
-            }
-          },
-          {
-            "path": [
-              "knowledge_cost"
-            ],
-            "new_value": 0
-          }
-        ]
-      },
-      {
-        "target_id": "heal_ray.json",
-        "name": "Heal Ray",
-        "field": "entity",
-        "change_type": "edit",
-        "category": "spells",
-        "diffs": [
-          {
-            "path": [
-              "mechanics"
-            ],
-            "new_value": {
-              "aura": [
-                {
-                  "name": "AoE Heal",
-                  "description": "Heals allies in the targeted area.",
-                  "radius": 0,
-                  "value": 0,
-                  "interval": 0,
-                  "effect": "Heal",
-                  "target_types": [
-                    "Ally"
-                  ]
-                }
-              ]
-            }
-          },
-          {
-            "path": [
-              "knowledge_cost"
-            ],
-            "new_value": 0
-          }
-        ]
-      },
-      {
-        "target_id": "holy_arrow.json",
-        "name": "Holy Arrow",
-        "field": "entity",
-        "change_type": "add",
-        "category": "spells",
-        "diffs": [
-          {
-            "path": [
-              "$schema"
-            ],
-            "new_value": "../../schemas/v2/spells.schema.json"
-          },
-          {
-            "path": [
-              "range"
-            ],
-            "new_value": 0
-          },
-          {
-            "path": [
-              "entity_id"
-            ],
-            "new_value": "holy_arrow"
-          },
-          {
-            "path": [
-              "recharge_time"
-            ],
-            "new_value": 10
-          },
-          {
-            "path": [
-              "tags"
-            ],
-            "new_value": []
-          },
-          {
-            "path": [
-              "description"
-            ],
-            "new_value": "Piercing arrow that damages enemies and heals allies."
-          },
-          {
-            "path": [
-              "rank"
-            ],
-            "new_value": "II"
-          },
-          {
-            "path": [
-              "knowledge_cost"
-            ],
-            "new_value": 200
-          },
-          {
-            "path": [
-              "name"
-            ],
-            "new_value": "Holy Arrow"
-          },
-          {
-            "path": [
-              "mechanics"
-            ],
-            "new_value": {
-              "damage_modifiers": [
-                {
-                  "target_types": [
-                    "Building"
-                  ],
-                  "multiplier": 1.0
-                },
-                {
-                  "target_types": [
-                    "Lifestone"
-                  ],
-                  "multiplier": 1.0
-                },
-                {
-                  "target_types": [
-                    "Creature"
-                  ],
-                  "multiplier": 1.0
-                },
-                {
-                  "target_types": [
-                    "Spellcaster"
-                  ],
-                  "multiplier": 1.0
-                }
-              ]
-            }
-          },
-          {
-            "path": [
-              "damage"
-            ],
-            "new_value": 0
-          },
-          {
-            "path": [
-              "game_version"
-            ],
-            "new_value": "0.1.0"
-          },
-          {
-            "path": [
-              "charges"
-            ],
-            "new_value": 1
-          },
-          {
-            "path": [
-              "category"
-            ],
-            "new_value": "Spell"
-          },
-          {
-            "path": [
-              "cast_time"
-            ],
-            "new_value": 0
-          },
-          {
-            "path": [
-              "damage_overrides"
-            ],
-            "new_value": {
-              "Building": 0,
-              "Lifestone": 0,
-              "Creature": 0,
-              "Spellcaster": 0
-            }
-          },
-          {
-            "path": [
-              "magic_school"
-            ],
-            "new_value": "Holy"
-          },
-          {
-            "path": [
-              "image_required"
-            ],
-            "new_value": true
-          }
-        ]
-      },
-      {
-        "target_id": "ice_ray.json",
-        "name": "Ice Ray",
-        "field": "entity",
-        "change_type": "add",
-        "category": "spells",
-        "diffs": [
-          {
-            "path": [
-              "$schema"
-            ],
-            "new_value": "../../schemas/v2/spells.schema.json"
-          },
-          {
-            "path": [
-              "range"
-            ],
-            "new_value": 45
-          },
-          {
-            "path": [
-              "entity_id"
-            ],
-            "new_value": "ice_ray"
-          },
-          {
-            "path": [
-              "recharge_time"
-            ],
-            "new_value": 10
-          },
-          {
-            "path": [
-              "tags"
-            ],
-            "new_value": []
-          },
-          {
-            "path": [
-              "description"
-            ],
-            "new_value": "Focused beam that deals sustained Frost damage."
-          },
-          {
-            "path": [
-              "rank"
-            ],
-            "new_value": "I"
-          },
-          {
-            "path": [
-              "knowledge_cost"
-            ],
-            "new_value": 200
-          },
-          {
-            "path": [
-              "name"
-            ],
-            "new_value": "Ice Ray"
-          },
-          {
-            "path": [
-              "mechanics"
-            ],
-            "new_value": {
-              "infusion": {
-                "id": "ice_infusion"
-              },
-              "damage_modifiers": [
-                {
-                  "target_types": [
-                    "Building"
-                  ],
-                  "multiplier": 1.0
-                },
-                {
-                  "target_types": [
-                    "Lifestone"
-                  ],
-                  "multiplier": 1.0
-                },
-                {
-                  "target_types": [
-                    "Creature"
-                  ],
-                  "multiplier": 1.0
-                },
-                {
-                  "target_types": [
-                    "Spellcaster"
-                  ],
-                  "multiplier": 1.0
-                }
-              ]
-            }
-          },
-          {
-            "path": [
-              "damage"
-            ],
-            "new_value": 70
-          },
-          {
-            "path": [
-              "game_version"
-            ],
-            "new_value": "0.1.0"
-          },
-          {
-            "path": [
-              "charges"
-            ],
-            "new_value": 1
-          },
-          {
-            "path": [
-              "category"
-            ],
-            "new_value": "Spell"
-          },
-          {
-            "path": [
-              "cast_time"
-            ],
-            "new_value": 0
-          },
-          {
-            "path": [
-              "damage_overrides"
-            ],
-            "new_value": {
-              "Building": 0,
-              "Lifestone": 0,
-              "Creature": 0,
-              "Spellcaster": 0
-            }
-          },
-          {
-            "path": [
-              "magic_school"
-            ],
-            "new_value": "Elemental"
-          },
-          {
-            "path": [
-              "image_required"
-            ],
-            "new_value": true
-          }
-        ]
-      },
-      {
-        "target_id": "metamorphosis.json",
-        "name": "Metamorphosis",
-        "field": "entity",
-        "change_type": "add",
-        "category": "spells",
-        "diffs": [
-          {
-            "path": [
-              "$schema"
-            ],
-            "new_value": "../../schemas/v2/spells.schema.json"
-          },
-          {
-            "path": [
-              "range"
-            ],
-            "new_value": 0
-          },
-          {
-            "path": [
-              "entity_id"
-            ],
-            "new_value": "metamorphosis"
-          },
-          {
-            "path": [
-              "recharge_time"
-            ],
-            "new_value": 10
-          },
-          {
-            "path": [
-              "tags"
-            ],
-            "new_value": []
-          },
-          {
-            "path": [
-              "description"
-            ],
-            "new_value": "Ritual that transforms Rank I creatures into harmless critters."
-          },
-          {
-            "path": [
-              "rank"
-            ],
-            "new_value": "III"
-          },
-          {
-            "path": [
-              "knowledge_cost"
-            ],
-            "new_value": 800
-          },
-          {
-            "path": [
-              "name"
-            ],
-            "new_value": "Metamorphosis"
-          },
-          {
-            "path": [
-              "mechanics"
-            ],
-            "new_value": {
-              "damage_modifiers": [
-                {
-                  "target_types": [
-                    "Building"
-                  ],
-                  "multiplier": 1.0
-                },
-                {
-                  "target_types": [
-                    "Lifestone"
-                  ],
-                  "multiplier": 1.0
-                },
-                {
-                  "target_types": [
-                    "Creature"
-                  ],
-                  "multiplier": 1.0
-                },
-                {
-                  "target_types": [
-                    "Spellcaster"
-                  ],
-                  "multiplier": 1.0
-                }
-              ]
-            }
-          },
-          {
-            "path": [
-              "damage"
-            ],
-            "new_value": 0
-          },
-          {
-            "path": [
-              "game_version"
-            ],
-            "new_value": "0.1.0"
-          },
-          {
-            "path": [
-              "charges"
-            ],
-            "new_value": 1
-          },
-          {
-            "path": [
-              "category"
-            ],
-            "new_value": "Spell"
-          },
-          {
-            "path": [
-              "cast_time"
-            ],
-            "new_value": 0
-          },
-          {
-            "path": [
-              "damage_overrides"
-            ],
-            "new_value": {
-              "Building": 0,
-              "Lifestone": 0,
-              "Creature": 0,
-              "Spellcaster": 0
-            }
-          },
-          {
-            "path": [
-              "magic_school"
-            ],
-            "new_value": "Astral"
-          },
-          {
-            "path": [
-              "image_required"
-            ],
-            "new_value": true
-          }
-        ]
-      },
-      {
-        "target_id": "poison_breath.json",
-        "name": "Poison Breath",
-        "field": "entity",
-        "change_type": "add",
-        "category": "spells",
-        "diffs": [
-          {
-            "path": [
-              "$schema"
-            ],
-            "new_value": "../../schemas/v2/spells.schema.json"
-          },
-          {
-            "path": [
-              "range"
-            ],
-            "new_value": 45
-          },
-          {
-            "path": [
-              "entity_id"
-            ],
-            "new_value": "poison_breath"
-          },
-          {
-            "path": [
-              "recharge_time"
-            ],
-            "new_value": 10
-          },
-          {
-            "path": [
-              "tags"
-            ],
-            "new_value": []
-          },
-          {
-            "path": [
-              "description"
-            ],
-            "new_value": "Focused beam that deals low Poison damage."
-          },
-          {
-            "path": [
-              "rank"
-            ],
-            "new_value": "I"
-          },
-          {
-            "path": [
-              "knowledge_cost"
-            ],
-            "new_value": 50
-          },
-          {
-            "path": [
-              "name"
-            ],
-            "new_value": "Poison Breath"
-          },
-          {
-            "path": [
-              "mechanics"
-            ],
-            "new_value": {
-              "infusion": {
-                "id": "poison_infusion"
-              },
-              "damage_modifiers": [
-                {
-                  "target_types": [
-                    "Building"
-                  ],
-                  "multiplier": 1.0
-                },
-                {
-                  "target_types": [
-                    "Lifestone"
-                  ],
-                  "multiplier": 1.0
-                },
-                {
-                  "target_types": [
-                    "Creature"
-                  ],
-                  "multiplier": 1.0
-                },
-                {
-                  "target_types": [
-                    "Spellcaster"
-                  ],
-                  "multiplier": 1.0
-                }
-              ]
-            }
-          },
-          {
-            "path": [
-              "damage"
-            ],
-            "new_value": 70
-          },
-          {
-            "path": [
-              "game_version"
-            ],
-            "new_value": "0.1.0"
-          },
-          {
-            "path": [
-              "charges"
-            ],
-            "new_value": 1
-          },
-          {
-            "path": [
-              "category"
-            ],
-            "new_value": "Spell"
-          },
-          {
-            "path": [
-              "cast_time"
-            ],
-            "new_value": 0
-          },
-          {
-            "path": [
-              "damage_overrides"
-            ],
-            "new_value": {
-              "Building": 0,
-              "Lifestone": 0,
-              "Creature": 0,
-              "Spellcaster": 0
-            }
-          },
-          {
-            "path": [
-              "magic_school"
-            ],
-            "new_value": "Necromancy"
-          },
-          {
-            "path": [
-              "image_required"
-            ],
-            "new_value": true
-          }
-        ]
-      },
-      {
-        "target_id": "poison_grenade.json",
-        "name": "Poison Grenade",
-        "field": "entity",
-        "change_type": "edit",
-        "category": "spells",
-        "diffs": [
-          {
-            "path": [
-              "damage_overrides"
-            ],
-            "new_value": {
-              "Building": 0,
-              "Lifestone": 0,
-              "Creature": 0,
-              "Spellcaster": 0
-            }
-          },
-          {
-            "path": [
-              "knowledge_cost"
-            ],
-            "new_value": 200
-          },
-          {
-            "path": [
-              "mechanics",
-              "infusion"
-            ],
-            "new_value": {
-              "id": "poison_infusion"
-            }
-          },
-          {
-            "path": [
-              "recharge_time"
-            ],
-            "old_value": 50,
-            "new_value": 60
-          }
-        ]
-      },
-      {
-        "target_id": "resurrection.json",
-        "name": "Resurrection",
-        "field": "entity",
-        "change_type": "edit",
-        "category": "spells",
-        "diffs": [
-          {
-            "path": [
-              "knowledge_cost"
-            ],
-            "new_value": 800
-          }
-        ]
-      },
-      {
-        "target_id": "sacrifice.json",
-        "name": "Sacrifice",
-        "field": "entity",
-        "change_type": "edit",
-        "category": "spells",
-        "diffs": [
-          {
-            "path": [
-              "damage_overrides"
-            ],
-            "new_value": {
-              "Building": 0,
-              "Lifestone": 0,
-              "Creature": 0,
-              "Spellcaster": 0
-            }
-          },
-          {
-            "path": [
-              "knowledge_cost"
-            ],
-            "new_value": 50
-          },
-          {
-            "path": [
-              "mechanics",
-              "damage_modifiers"
-            ],
-            "new_value": [
-              {
-                "target_types": [
-                  "Building"
-                ],
-                "multiplier": 1.0
-              },
-              {
-                "target_types": [
-                  "Lifestone"
-                ],
-                "multiplier": 1.0
-              },
-              {
-                "target_types": [
-                  "Creature"
-                ],
-                "multiplier": 1.0
-              },
-              {
-                "target_types": [
-                  "Spellcaster"
-                ],
-                "multiplier": 1.0
-              }
-            ]
-          }
-        ]
-      },
-      {
-        "target_id": "thunder_ray.json",
-        "name": "Thunder Ray",
-        "field": "entity",
-        "change_type": "edit",
-        "category": "spells",
-        "diffs": [
-          {
-            "path": [
-              "damage_overrides"
-            ],
-            "new_value": {
-              "Building": 0,
-              "Lifestone": 0,
-              "Creature": 0,
-              "Spellcaster": 0
-            }
-          },
-          {
-            "path": [
-              "knowledge_cost"
-            ],
-            "new_value": 50
-          },
-          {
-            "path": [
-              "mechanics",
-              "infusion"
-            ],
-            "new_value": {
-              "id": "lightning_infusion"
-            }
-          },
-          {
-            "path": [
-              "mechanics",
-              "damage_modifiers"
-            ],
-            "new_value": [
-              {
-                "target_types": [
-                  "Building"
-                ],
-                "multiplier": 1.0
-              },
-              {
-                "target_types": [
-                  "Lifestone"
-                ],
-                "multiplier": 1.0
-              },
-              {
-                "target_types": [
-                  "Creature"
-                ],
-                "multiplier": 1.0
-              },
-              {
-                "target_types": [
-                  "Spellcaster"
-                ],
-                "multiplier": 1.0
-              }
-            ]
-          }
-        ]
-      },
-      {
-        "target_id": "gaia_beast.json",
-        "name": "Gaia Beast",
-        "field": "entity",
-        "change_type": "edit",
-        "category": "titans",
-        "diffs": [
-          {
-            "path": [
-              "weak_points"
-            ],
-            "new_value": [
-              {
-                "location": "chest",
-                "multiplier": 2.0,
-                "description": "Gaia Beast takes extra damage on its chest."
-              }
-            ]
-          }
-        ]
-      },
-      {
-        "target_id": "thanatos.json",
-        "name": "Thanatos",
-        "field": "entity",
-        "change_type": "edit",
-        "category": "titans",
-        "diffs": [
-          {
-            "path": [
-              "weak_points"
-            ],
-            "new_value": [
-              {
-                "location": "back",
-                "multiplier": 1.25,
-                "description": "Thanatos takes extra damage from behind."
-              }
-            ]
-          }
-        ]
-      },
-      {
-        "target_id": "astral_tower.json",
-        "name": "Astral Tower",
-        "field": "entity",
-        "change_type": "edit",
-        "category": "units",
-        "diffs": [
-          {
-            "path": [
-              "damage_overrides"
-            ],
-            "new_value": {
-              "Building": 0,
-              "Lifestone": 0,
-              "Creature": 0,
-              "Spellcaster": 0
-            }
-          },
-          {
-            "path": [
-              "mechanics"
-            ],
-            "new_value": {
-              "damage_modifiers": [
-                {
-                  "target_types": [
-                    "Building"
-                  ],
-                  "multiplier": 1.0
-                },
-                {
-                  "target_types": [
-                    "Lifestone"
-                  ],
-                  "multiplier": 1.0
-                },
-                {
-                  "target_types": [
-                    "Creature"
-                  ],
-                  "multiplier": 1.0
-                },
-                {
-                  "target_types": [
-                    "Spellcaster"
-                  ],
-                  "multiplier": 1.0
-                }
-              ]
-            }
-          },
-          {
-            "path": [
-              "knowledge_cost"
-            ],
-            "new_value": 300
-          },
-          {
-            "path": [
-              "recharge_time"
-            ],
-            "old_value": 50,
-            "new_value": 60
-          }
-        ]
-      },
-      {
-        "target_id": "ballista.json",
-        "name": "Ballista",
-        "field": "entity",
-        "change_type": "edit",
-        "category": "units",
-        "diffs": [
-          {
-            "path": [
-              "damage_overrides"
-            ],
-            "new_value": {
-              "Building": 0,
-              "Lifestone": 0,
-              "Creature": 0,
-              "Spellcaster": 0
-            }
-          },
-          {
-            "path": [
-              "mechanics"
-            ],
-            "new_value": {
-              "damage_modifiers": [
-                {
-                  "target_types": [
-                    "Building"
-                  ],
-                  "multiplier": 1.0
-                },
-                {
-                  "target_types": [
-                    "Lifestone"
-                  ],
-                  "multiplier": 1.0
-                },
-                {
-                  "target_types": [
-                    "Creature"
-                  ],
-                  "multiplier": 1.0
-                },
-                {
-                  "target_types": [
-                    "Spellcaster"
-                  ],
-                  "multiplier": 1.0
-                }
-              ]
-            }
-          },
-          {
-            "path": [
-              "knowledge_cost"
-            ],
-            "new_value": 200
-          }
-        ]
-      },
-      {
-        "target_id": "crypt.json",
-        "name": "Crypt",
-        "field": "entity",
-        "change_type": "edit",
-        "category": "units",
-        "diffs": [
-          {
-            "path": [
-              "damage_overrides"
-            ],
-            "new_value": {
-              "Building": 0,
-              "Lifestone": 0,
-              "Creature": 0,
-              "Spellcaster": 0
-            }
-          },
-          {
-            "path": [
-              "knowledge_cost"
-            ],
-            "new_value": 300
-          },
-          {
-            "path": [
-              "mechanics",
-              "damage_modifiers"
-            ],
-            "new_value": [
-              {
-                "target_types": [
-                  "Building"
-                ],
-                "multiplier": 1.0
-              },
-              {
-                "target_types": [
-                  "Lifestone"
-                ],
-                "multiplier": 1.0
-              },
-              {
-                "target_types": [
-                  "Creature"
-                ],
-                "multiplier": 1.0
-              },
-              {
-                "target_types": [
-                  "Spellcaster"
-                ],
-                "multiplier": 1.0
-              }
-            ]
-          },
-          {
-            "path": [
-              "recharge_time"
-            ],
-            "old_value": 50,
-            "new_value": 60
-          }
-        ]
-      },
-      {
-        "target_id": "dryad.json",
-        "name": "Dryad",
-        "field": "entity",
-        "change_type": "edit",
-        "category": "units",
-        "diffs": [
-          {
-            "path": [
-              "damage_overrides"
-            ],
-            "new_value": {
-              "Building": 0,
-              "Lifestone": 0,
-              "Creature": 0,
-              "Spellcaster": 0
-            }
-          },
-          {
-            "path": [
-              "knowledge_cost"
-            ],
-            "new_value": 50
-          },
-          {
-            "path": [
-              "mechanics",
-              "damage_modifiers"
-            ],
-            "new_value": [
-              {
-                "target_types": [
-                  "Building"
-                ],
-                "multiplier": 1.0
-              },
-              {
-                "target_types": [
-                  "Lifestone"
-                ],
-                "multiplier": 1.0
-              },
-              {
-                "target_types": [
-                  "Creature"
-                ],
-                "multiplier": 1.0
-              },
-              {
-                "target_types": [
-                  "Spellcaster"
-                ],
-                "multiplier": 1.0
-              }
-            ]
-          },
-          {
-            "path": [
-              "mechanics",
-              "aura",
-              0,
-              "value"
-            ],
-            "old_value": 30,
-            "new_value": 13
-          }
-        ]
-      },
-      {
-        "target_id": "earth_golem.json",
-        "name": "Earth Golem",
-        "field": "entity",
-        "change_type": "edit",
-        "category": "units",
-        "diffs": [
-          {
-            "path": [
-              "damage_overrides"
-            ],
-            "new_value": {
-              "Building": 0,
-              "Lifestone": 0,
-              "Creature": 0,
-              "Spellcaster": 0
-            }
-          },
-          {
-            "path": [
-              "knowledge_cost"
-            ],
-            "new_value": 50
-          }
-        ]
-      },
-      {
-        "target_id": "faerie.json",
-        "name": "Faerie",
-        "field": "entity",
-        "change_type": "edit",
-        "category": "units",
-        "diffs": [
-          {
-            "path": [
-              "damage_overrides"
-            ],
-            "new_value": {
-              "Building": 0,
-              "Lifestone": 0,
-              "Creature": 0,
-              "Spellcaster": 0
-            }
-          },
-          {
-            "path": [
-              "knowledge_cost"
-            ],
-            "new_value": 50
-          },
-          {
-            "path": [
-              "mechanics",
-              "damage_modifiers"
-            ],
-            "new_value": [
-              {
-                "target_types": [
-                  "Building"
-                ],
-                "multiplier": 1.0
-              },
-              {
-                "target_types": [
-                  "Lifestone"
-                ],
-                "multiplier": 1.0
-              },
-              {
-                "target_types": [
-                  "Creature"
-                ],
-                "multiplier": 1.0
-              },
-              {
-                "target_types": [
-                  "Spellcaster"
-                ],
-                "multiplier": 1.0
-              }
-            ]
-          }
-        ]
-      },
-      {
-        "target_id": "giant_shielder.json",
-        "name": "Giant Shielder",
-        "field": "entity",
-        "change_type": "edit",
-        "category": "units",
-        "diffs": [
-          {
-            "path": [
-              "damage_overrides"
-            ],
-            "new_value": {
-              "Building": 0,
-              "Lifestone": 0,
-              "Creature": 0,
-              "Spellcaster": 0
-            }
-          },
-          {
-            "path": [
-              "knowledge_cost"
-            ],
-            "new_value": 300
-          },
-          {
-            "path": [
-              "recharge_time"
-            ],
-            "old_value": 50,
-            "new_value": 60
-          }
-        ]
-      },
-      {
-        "target_id": "harpy.json",
-        "name": "Harpy",
-        "field": "entity",
-        "change_type": "edit",
-        "category": "units",
-        "diffs": [
-          {
-            "path": [
-              "damage_overrides"
-            ],
-            "new_value": {
-              "Building": 0,
-              "Lifestone": 0,
-              "Creature": 0,
-              "Spellcaster": 0
-            }
-          },
-          {
-            "path": [
-              "knowledge_cost"
-            ],
-            "new_value": 50
-          },
-          {
-            "path": [
-              "health"
-            ],
-            "old_value": 100,
-            "new_value": 150
-          },
-          {
-            "path": [
-              "recharge_time"
-            ],
-            "old_value": 5,
-            "new_value": 7
-          }
-        ]
-      },
-      {
-        "target_id": "harpy_nest.json",
-        "name": "Harpy Nest",
-        "field": "entity",
-        "change_type": "edit",
-        "category": "units",
-        "diffs": [
-          {
-            "path": [
-              "damage_overrides"
-            ],
-            "new_value": {
-              "Building": 0,
-              "Lifestone": 0,
-              "Creature": 0,
-              "Spellcaster": 0
-            }
-          },
-          {
-            "path": [
-              "knowledge_cost"
-            ],
-            "new_value": 300
-          },
-          {
-            "path": [
-              "mechanics",
-              "damage_modifiers"
-            ],
-            "new_value": [
-              {
-                "target_types": [
-                  "Building"
-                ],
-                "multiplier": 1.0
-              },
-              {
-                "target_types": [
-                  "Lifestone"
-                ],
-                "multiplier": 1.0
-              },
-              {
-                "target_types": [
-                  "Creature"
-                ],
-                "multiplier": 1.0
-              },
-              {
-                "target_types": [
-                  "Spellcaster"
-                ],
-                "multiplier": 1.0
-              }
-            ]
-          },
-          {
-            "path": [
-              "recharge_time"
-            ],
-            "old_value": 50,
-            "new_value": 60
-          }
-        ]
-      },
-      {
-        "target_id": "juggernaut.json",
-        "name": "Juggernaut",
-        "field": "entity",
-        "change_type": "edit",
-        "category": "units",
-        "diffs": [
-          {
-            "path": [
-              "damage_overrides"
-            ],
-            "new_value": {
-              "Building": 0,
-              "Lifestone": 0,
-              "Creature": 0,
-              "Spellcaster": 0
-            }
-          },
-          {
-            "path": [
-              "knowledge_cost"
-            ],
-            "new_value": 800
-          }
-        ]
-      },
-      {
-        "target_id": "lich.json",
-        "name": "Lich",
-        "field": "entity",
-        "change_type": "edit",
-        "category": "units",
-        "diffs": [
-          {
-            "path": [
-              "damage_overrides"
-            ],
-            "new_value": {
-              "Building": 0,
-              "Lifestone": 0,
-              "Creature": 0,
-              "Spellcaster": 0
-            }
-          },
-          {
-            "path": [
-              "mechanics"
-            ],
-            "new_value": {
-              "aura": [
-                {
-                  "name": "Cursed Wounds (Slow)",
-                  "description": "Reduces movement speed of nearby enemies by 60%. Lingers for 1s.",
-                  "radius": 3,
-                  "value": 0.4,
-                  "interval": 1,
-                  "effect": "Debuff",
-                  "target_types": [
-                    "Enemy"
-                  ]
-                },
-                {
-                  "name": "Cursed Wounds (Vulnerability)",
-                  "description": "Increases damage taken by nearby enemies by 32%. Lingers for 1s.",
-                  "radius": 3,
-                  "value": 1.32,
-                  "interval": 1,
-                  "effect": "Debuff",
-                  "target_types": [
-                    "Enemy"
-                  ]
-                }
-              ],
-              "damage_modifiers": [
-                {
-                  "target_types": [
-                    "Building"
-                  ],
-                  "multiplier": 1.0
-                },
-                {
-                  "target_types": [
-                    "Lifestone"
-                  ],
-                  "multiplier": 1.0
-                },
-                {
-                  "target_types": [
-                    "Creature"
-                  ],
-                  "multiplier": 1.0
-                },
-                {
-                  "target_types": [
-                    "Spellcaster"
-                  ],
-                  "multiplier": 1.0
-                }
-              ]
-            }
-          },
-          {
-            "path": [
-              "knowledge_cost"
-            ],
-            "new_value": 500
-          }
-        ]
-      },
-      {
-        "target_id": "lizard_archer.json",
-        "name": "Lizard Archer",
-        "field": "entity",
-        "change_type": "edit",
-        "category": "units",
-        "diffs": [
-          {
-            "path": [
-              "damage_overrides"
-            ],
-            "new_value": {
-              "Building": 0,
-              "Lifestone": 0,
-              "Creature": 0,
-              "Spellcaster": 0
-            }
-          },
-          {
-            "path": [
-              "knowledge_cost"
-            ],
-            "new_value": 50
-          },
-          {
-            "path": [
-              "recharge_time"
-            ],
-            "old_value": 5,
-            "new_value": 9
-          }
-        ]
-      },
-      {
-        "target_id": "ogre.json",
-        "name": "Ogre",
-        "field": "entity",
-        "change_type": "edit",
-        "category": "units",
-        "diffs": [
-          {
-            "path": [
-              "damage_overrides"
-            ],
-            "new_value": {
-              "Building": 0,
-              "Lifestone": 0,
-              "Creature": 0,
-              "Spellcaster": 0
-            }
-          },
-          {
-            "path": [
-              "knowledge_cost"
-            ],
-            "new_value": 0
-          },
-          {
-            "path": [
-              "mechanics",
-              "damage_modifiers",
-              1,
-              "multiplier"
-            ],
-            "old_value": 1.75,
-            "new_value": 0.75
-          },
-          {
-            "path": [
-              "recharge_time"
-            ],
-            "old_value": 50,
-            "new_value": 60
-          }
-        ]
-      },
-      {
-        "target_id": "rampart.json",
-        "name": "Rampart",
-        "field": "entity",
-        "change_type": "edit",
-        "category": "units",
-        "diffs": [
-          {
-            "path": [
-              "damage_overrides"
-            ],
-            "new_value": {
-              "Building": 0,
-              "Lifestone": 0,
-              "Creature": 0,
-              "Spellcaster": 0
-            }
-          },
-          {
-            "path": [
-              "mechanics"
-            ],
-            "new_value": {
-              "damage_modifiers": [
-                {
-                  "target_types": [
-                    "Building"
-                  ],
-                  "multiplier": 1.0
-                },
-                {
-                  "target_types": [
-                    "Lifestone"
-                  ],
-                  "multiplier": 1.0
-                },
-                {
-                  "target_types": [
-                    "Creature"
-                  ],
-                  "multiplier": 1.0
-                },
-                {
-                  "target_types": [
-                    "Spellcaster"
-                  ],
-                  "multiplier": 1.0
-                }
-              ]
-            }
-          },
-          {
-            "path": [
-              "knowledge_cost"
-            ],
-            "new_value": 50
-          }
-        ]
-      },
-      {
-        "target_id": "rhino_rider.json",
-        "name": "Rhino Rider",
-        "field": "entity",
-        "change_type": "add",
-        "category": "units",
-        "diffs": [
-          {
-            "path": [
-              "movement_speed"
-            ],
-            "new_value": 0
-          },
-          {
-            "path": [
-              "$schema"
-            ],
-            "new_value": "../../schemas/v2/units.schema.json"
-          },
-          {
-            "path": [
-              "range"
-            ],
-            "new_value": 1
-          },
-          {
-            "path": [
-              "entity_id"
-            ],
-            "new_value": "rhino_rider"
-          },
-          {
-            "path": [
-              "recharge_time"
-            ],
-            "new_value": 10
-          },
-          {
-            "path": [
-              "movement_type"
-            ],
-            "new_value": "Ground"
-          },
-          {
-            "path": [
-              "tags"
-            ],
-            "new_value": []
-          },
-          {
-            "path": [
-              "description"
-            ],
-            "new_value": "Mounted unit that charges and destroys enemy structures."
-          },
-          {
-            "path": [
-              "rank"
-            ],
-            "new_value": "II"
-          },
-          {
-            "path": [
-              "population"
-            ],
-            "new_value": 0
-          },
-          {
-            "path": [
-              "knowledge_cost"
-            ],
-            "new_value": 500
-          },
-          {
-            "path": [
-              "name"
-            ],
-            "new_value": "Rhino Rider"
-          },
-          {
-            "path": [
-              "mechanics"
-            ],
-            "new_value": {
-              "damage_modifiers": [
-                {
-                  "target_types": [
-                    "Building"
-                  ],
-                  "multiplier": 1.0
-                },
-                {
-                  "target_types": [
-                    "Lifestone"
-                  ],
-                  "multiplier": 1.0
-                },
-                {
-                  "target_types": [
-                    "Creature"
-                  ],
-                  "multiplier": 1.0
-                },
-                {
-                  "target_types": [
-                    "Spellcaster"
-                  ],
-                  "multiplier": 1.0
-                }
-              ]
-            }
-          },
-          {
-            "path": [
-              "damage"
-            ],
-            "new_value": 0
-          },
-          {
-            "path": [
-              "game_version"
-            ],
-            "new_value": "0.1.0"
-          },
-          {
-            "path": [
-              "attack_interval"
-            ],
-            "new_value": 1
-          },
-          {
-            "path": [
-              "health"
-            ],
-            "new_value": 0
-          },
-          {
-            "path": [
-              "charges"
-            ],
-            "new_value": 1
-          },
-          {
-            "path": [
-              "dps"
-            ],
-            "new_value": 0
-          },
-          {
-            "path": [
-              "category"
-            ],
-            "new_value": "Creature"
-          },
-          {
-            "path": [
-              "cast_time"
-            ],
-            "new_value": 0
-          },
-          {
-            "path": [
-              "damage_overrides"
-            ],
-            "new_value": {
-              "Building": 0,
-              "Lifestone": 0,
-              "Creature": 0,
-              "Spellcaster": 0
-            }
-          },
-          {
-            "path": [
-              "magic_school"
-            ],
-            "new_value": "War"
-          },
-          {
-            "path": [
-              "image_required"
-            ],
-            "new_value": true
-          }
-        ]
-      },
-      {
-        "target_id": "rocket_soldier.json",
-        "name": "Rocket Soldier",
-        "field": "entity",
-        "change_type": "edit",
-        "category": "units",
-        "diffs": [
-          {
-            "path": [
-              "damage_overrides"
-            ],
-            "new_value": {
-              "Building": 0,
-              "Lifestone": 0,
-              "Creature": 0,
-              "Spellcaster": 0
-            }
-          },
-          {
-            "path": [
-              "knowledge_cost"
-            ],
-            "new_value": 50
-          }
-        ]
-      },
-      {
-        "target_id": "rocket_soldier_factory.json",
-        "name": "Rocket Soldier Factory",
-        "field": "entity",
-        "change_type": "add",
-        "category": "units",
-        "diffs": [
-          {
-            "path": [
-              "movement_speed"
-            ],
-            "new_value": 0
-          },
-          {
-            "path": [
-              "$schema"
-            ],
-            "new_value": "../../schemas/v2/units.schema.json"
-          },
-          {
-            "path": [
-              "range"
-            ],
-            "new_value": 0
-          },
-          {
-            "path": [
-              "entity_id"
-            ],
-            "new_value": "rocket_soldier_factory"
-          },
-          {
-            "path": [
-              "recharge_time"
-            ],
-            "new_value": 10
-          },
-          {
-            "path": [
-              "tags"
-            ],
-            "new_value": []
-          },
-          {
-            "path": [
-              "population"
-            ],
-            "new_value": 0
-          },
-          {
-            "path": [
-              "description"
-            ],
-            "new_value": "Factory that continuously produces Rocket Soldiers."
-          },
-          {
-            "path": [
-              "rank"
-            ],
-            "new_value": "III"
-          },
-          {
-            "path": [
-              "knowledge_cost"
-            ],
-            "new_value": 500
-          },
-          {
-            "path": [
-              "name"
-            ],
-            "new_value": "Rocket Soldier Factory"
-          },
-          {
-            "path": [
-              "mechanics"
-            ],
-            "new_value": {
-              "damage_modifiers": [
-                {
-                  "target_types": [
-                    "Building"
-                  ],
-                  "multiplier": 1.0
-                },
-                {
-                  "target_types": [
-                    "Lifestone"
-                  ],
-                  "multiplier": 1.0
-                },
-                {
-                  "target_types": [
-                    "Creature"
-                  ],
-                  "multiplier": 1.0
-                },
-                {
-                  "target_types": [
-                    "Spellcaster"
-                  ],
-                  "multiplier": 1.0
-                }
-              ]
-            }
-          },
-          {
-            "path": [
-              "damage"
-            ],
-            "new_value": 0
-          },
-          {
-            "path": [
-              "game_version"
-            ],
-            "new_value": "0.1.0"
-          },
-          {
-            "path": [
-              "attack_interval"
-            ],
-            "new_value": 1
-          },
-          {
-            "path": [
-              "health"
-            ],
-            "new_value": 0
-          },
-          {
-            "path": [
-              "charges"
-            ],
-            "new_value": 1
-          },
-          {
-            "path": [
-              "dps"
-            ],
-            "new_value": 0
-          },
-          {
-            "path": [
-              "category"
-            ],
-            "new_value": "Building"
-          },
-          {
-            "path": [
-              "cast_time"
-            ],
-            "new_value": 0
-          },
-          {
-            "path": [
-              "damage_overrides"
-            ],
-            "new_value": {
-              "Building": 0,
-              "Lifestone": 0,
-              "Creature": 0,
-              "Spellcaster": 0
-            }
-          },
-          {
-            "path": [
-              "magic_school"
-            ],
-            "new_value": "Technomancy"
-          },
-          {
-            "path": [
-              "image_required"
-            ],
-            "new_value": true
-          }
-        ]
-      },
-      {
-        "target_id": "ruin_spider.json",
-        "name": "Ruin Spider",
-        "field": "entity",
-        "change_type": "edit",
-        "category": "units",
-        "diffs": [
-          {
-            "path": [
-              "damage_overrides"
-            ],
-            "new_value": {
-              "Building": 0,
-              "Lifestone": 0,
-              "Creature": 0,
-              "Spellcaster": 0
-            }
-          },
-          {
-            "path": [
-              "knowledge_cost"
-            ],
-            "new_value": 50
-          }
-        ]
-      },
-      {
-        "target_id": "siren.json",
-        "name": "Siren",
-        "field": "entity",
-        "change_type": "add",
-        "category": "units",
-        "diffs": [
-          {
-            "path": [
-              "movement_speed"
-            ],
-            "new_value": 0
-          },
-          {
-            "path": [
-              "$schema"
-            ],
-            "new_value": "../../schemas/v2/units.schema.json"
-          },
-          {
-            "path": [
-              "range"
-            ],
-            "new_value": 1
-          },
-          {
-            "path": [
-              "entity_id"
-            ],
-            "new_value": "siren"
-          },
-          {
-            "path": [
-              "recharge_time"
-            ],
-            "new_value": 10
-          },
-          {
-            "path": [
-              "movement_type"
-            ],
-            "new_value": "Ground"
-          },
-          {
-            "path": [
-              "tags"
-            ],
-            "new_value": []
-          },
-          {
-            "path": [
-              "description"
-            ],
-            "new_value": "Disruptive creature that makes enemies fight each other."
-          },
-          {
-            "path": [
-              "rank"
-            ],
-            "new_value": "II"
-          },
-          {
-            "path": [
-              "population"
-            ],
-            "new_value": 0
-          },
-          {
-            "path": [
-              "knowledge_cost"
-            ],
-            "new_value": 800
-          },
-          {
-            "path": [
-              "name"
-            ],
-            "new_value": "Siren"
-          },
-          {
-            "path": [
-              "mechanics"
-            ],
-            "new_value": {
-              "damage_modifiers": [
-                {
-                  "target_types": [
-                    "Building"
-                  ],
-                  "multiplier": 1.0
-                },
-                {
-                  "target_types": [
-                    "Lifestone"
-                  ],
-                  "multiplier": 1.0
-                },
-                {
-                  "target_types": [
-                    "Creature"
-                  ],
-                  "multiplier": 1.0
-                },
-                {
-                  "target_types": [
-                    "Spellcaster"
-                  ],
-                  "multiplier": 1.0
-                }
-              ]
-            }
-          },
-          {
-            "path": [
-              "damage"
-            ],
-            "new_value": 0
-          },
-          {
-            "path": [
-              "game_version"
-            ],
-            "new_value": "0.1.0"
-          },
-          {
-            "path": [
-              "attack_interval"
-            ],
-            "new_value": 1
-          },
-          {
-            "path": [
-              "health"
-            ],
-            "new_value": 0
-          },
-          {
-            "path": [
-              "charges"
-            ],
-            "new_value": 1
-          },
-          {
-            "path": [
-              "dps"
-            ],
-            "new_value": 0
-          },
-          {
-            "path": [
-              "category"
-            ],
-            "new_value": "Creature"
-          },
-          {
-            "path": [
-              "cast_time"
-            ],
-            "new_value": 0
-          },
-          {
-            "path": [
-              "damage_overrides"
-            ],
-            "new_value": {
-              "Building": 0,
-              "Lifestone": 0,
-              "Creature": 0,
-              "Spellcaster": 0
-            }
-          },
-          {
-            "path": [
-              "magic_school"
-            ],
-            "new_value": "Wild"
-          },
-          {
-            "path": [
-              "image_required"
-            ],
-            "new_value": true
-          }
-        ]
-      },
-      {
-        "target_id": "skeleton_warrior.json",
-        "name": "Skeleton Warrior",
-        "field": "entity",
-        "change_type": "edit",
-        "category": "units",
-        "diffs": [
-          {
-            "path": [
-              "damage_overrides"
-            ],
-            "new_value": {
-              "Building": 0,
-              "Lifestone": 0,
-              "Creature": 0,
-              "Spellcaster": 0
-            }
-          },
-          {
-            "path": [
-              "knowledge_cost"
-            ],
-            "new_value": 0
-          }
-        ]
-      },
-      {
-        "target_id": "steam_tank.json",
-        "name": "Steam Tank",
-        "field": "entity",
-        "change_type": "edit",
-        "category": "units",
-        "diffs": [
-          {
-            "path": [
-              "damage_overrides"
-            ],
-            "new_value": {
-              "Building": 0,
-              "Lifestone": 0,
-              "Creature": 0,
-              "Spellcaster": 0
-            }
-          },
-          {
-            "path": [
-              "mechanics"
-            ],
-            "new_value": {
-              "damage_modifiers": [
-                {
-                  "target_types": [
-                    "Building"
-                  ],
-                  "multiplier": 1.0
-                },
-                {
-                  "target_types": [
-                    "Lifestone"
-                  ],
-                  "multiplier": 1.0
-                },
-                {
-                  "target_types": [
-                    "Creature"
-                  ],
-                  "multiplier": 1.0
-                },
-                {
-                  "target_types": [
-                    "Spellcaster"
-                  ],
-                  "multiplier": 1.0
-                }
-              ]
-            }
-          },
-          {
-            "path": [
-              "knowledge_cost"
-            ],
-            "new_value": 300
-          },
-          {
-            "path": [
-              "recharge_time"
-            ],
-            "old_value": 50,
-            "new_value": 60
-          }
-        ]
-      },
-      {
-        "target_id": "stone_behemoth.json",
-        "name": "Stone Behemoth",
-        "field": "entity",
-        "change_type": "edit",
-        "category": "units",
-        "diffs": [
-          {
-            "path": [
-              "damage_overrides"
-            ],
-            "new_value": {
-              "Building": 0,
-              "Lifestone": 0,
-              "Creature": 0,
-              "Spellcaster": 0
-            }
-          },
-          {
-            "path": [
-              "mechanics"
-            ],
-            "new_value": {
-              "damage_modifiers": [
-                {
-                  "target_types": [
-                    "Building"
-                  ],
-                  "multiplier": 1.0
-                },
-                {
-                  "target_types": [
-                    "Lifestone"
-                  ],
-                  "multiplier": 1.0
-                },
-                {
-                  "target_types": [
-                    "Creature"
-                  ],
-                  "multiplier": 1.0
-                },
-                {
-                  "target_types": [
-                    "Spellcaster"
-                  ],
-                  "multiplier": 1.0
-                }
-              ]
-            }
-          },
-          {
-            "path": [
-              "knowledge_cost"
-            ],
-            "new_value": 300
-          },
-          {
-            "path": [
-              "recharge_time"
-            ],
-            "old_value": 50,
-            "new_value": 60
-          }
-        ]
-      },
-      {
-        "target_id": "wolven_hunter.json",
-        "name": "Wolven Hunter",
-        "field": "entity",
-        "change_type": "edit",
-        "category": "units",
-        "diffs": [
-          {
-            "path": [
-              "damage_overrides"
-            ],
-            "new_value": {
-              "Building": 0,
-              "Lifestone": 0,
-              "Creature": 0,
-              "Spellcaster": 0
-            }
-          },
-          {
-            "path": [
-              "mechanics"
-            ],
-            "new_value": {
-              "damage_modifiers": [
-                {
-                  "target_types": [
-                    "Building"
-                  ],
-                  "multiplier": 1.0
-                },
-                {
-                  "target_types": [
-                    "Lifestone"
-                  ],
-                  "multiplier": 1.0
-                },
-                {
-                  "target_types": [
-                    "Creature"
-                  ],
-                  "multiplier": 1.0
-                },
-                {
-                  "target_types": [
-                    "Spellcaster"
-                  ],
-                  "multiplier": 1.0
-                }
-              ]
-            }
-          },
-          {
-            "path": [
-              "knowledge_cost"
-            ],
-            "new_value": 200
-          }
-        ]
-      },
-      {
-        "target_id": "wyvern.json",
-        "name": "Wyvern",
-        "field": "entity",
-        "change_type": "edit",
-        "category": "units",
-        "diffs": [
-          {
-            "path": [
-              "damage_overrides"
-            ],
-            "new_value": {
-              "Building": 0,
-              "Lifestone": 0,
-              "Creature": 0,
-              "Spellcaster": 0
-            }
-          },
-          {
-            "path": [
-              "knowledge_cost"
-            ],
-            "new_value": 0
-          }
-        ]
-      }
-    ]
-  },
-  {
-    "id": "patch_0_0_4",
-    "version": "0.0.4",
-    "date": "2026-02-26",
-    "type": "Patch",
-    "title": "Patch 0.0.4",
-    "tags": [],
-    "changes": [
-      {
         "target_id": "charge_orb_1.json",
         "name": "Charge Orb I",
         "field": "entity",
@@ -3307,15 +16,15 @@
         "diffs": [
           {
             "path": [
-              "$schema"
+              "image_required"
             ],
-            "new_value": "../../schemas/v2/consumables.schema.json"
+            "new_value": true
           },
           {
             "path": [
-              "name"
+              "effect_type"
             ],
-            "new_value": "Charge Orb I"
+            "new_value": "Charge_Refill"
           },
           {
             "path": [
@@ -3325,9 +34,21 @@
           },
           {
             "path": [
-              "image_required"
+              "description"
             ],
-            "new_value": true
+            "new_value": "Small Recharge. Restores 5 Energy (5x Rank I, 1x Rank II)."
+          },
+          {
+            "path": [
+              "$schema"
+            ],
+            "new_value": "../../schemas/v2/consumables.schema.json"
+          },
+          {
+            "path": [
+              "stack_size"
+            ],
+            "new_value": 1
           },
           {
             "path": [
@@ -3346,27 +67,15 @@
           },
           {
             "path": [
-              "effect_type"
-            ],
-            "new_value": "Charge_Refill"
-          },
-          {
-            "path": [
-              "stack_size"
-            ],
-            "new_value": 1
-          },
-          {
-            "path": [
               "category"
             ],
             "new_value": "Consumable"
           },
           {
             "path": [
-              "description"
+              "name"
             ],
-            "new_value": "Small Recharge. Restores 5 Energy (5x Rank I, 1x Rank II)."
+            "new_value": "Charge Orb I"
           }
         ]
       },
@@ -3379,15 +88,15 @@
         "diffs": [
           {
             "path": [
-              "$schema"
+              "image_required"
             ],
-            "new_value": "../../schemas/v2/consumables.schema.json"
+            "new_value": true
           },
           {
             "path": [
-              "name"
+              "effect_type"
             ],
-            "new_value": "Charge Orb II"
+            "new_value": "Charge_Refill"
           },
           {
             "path": [
@@ -3397,9 +106,21 @@
           },
           {
             "path": [
-              "image_required"
+              "description"
             ],
-            "new_value": true
+            "new_value": "Medium Recharge. Restores 15 Energy (15x Rank I, 3x Rank II, 1x Rank III)."
+          },
+          {
+            "path": [
+              "$schema"
+            ],
+            "new_value": "../../schemas/v2/consumables.schema.json"
+          },
+          {
+            "path": [
+              "stack_size"
+            ],
+            "new_value": 1
           },
           {
             "path": [
@@ -3418,27 +139,15 @@
           },
           {
             "path": [
-              "effect_type"
-            ],
-            "new_value": "Charge_Refill"
-          },
-          {
-            "path": [
-              "stack_size"
-            ],
-            "new_value": 1
-          },
-          {
-            "path": [
               "category"
             ],
             "new_value": "Consumable"
           },
           {
             "path": [
-              "description"
+              "name"
             ],
-            "new_value": "Medium Recharge. Restores 15 Energy (15x Rank I, 3x Rank II, 1x Rank III)."
+            "new_value": "Charge Orb II"
           }
         ]
       },
@@ -3451,21 +160,15 @@
         "diffs": [
           {
             "path": [
-              "duration"
+              "image_required"
             ],
-            "new_value": 0
+            "new_value": true
           },
           {
             "path": [
-              "$schema"
+              "effect_type"
             ],
-            "new_value": "../../schemas/v2/consumables.schema.json"
-          },
-          {
-            "path": [
-              "name"
-            ],
-            "new_value": "Conquest Banner"
+            "new_value": "Capture"
           },
           {
             "path": [
@@ -3475,17 +178,21 @@
           },
           {
             "path": [
-              "image_required"
+              "description"
             ],
-            "new_value": true
+            "new_value": "Captures an enemy territory and refill all charges."
           },
           {
             "path": [
-              "mechanics"
+              "$schema"
             ],
-            "new_value": {
-              "auto_capture_altars": true
-            }
+            "new_value": "../../schemas/v2/consumables.schema.json"
+          },
+          {
+            "path": [
+              "stack_size"
+            ],
+            "new_value": 1
           },
           {
             "path": [
@@ -3504,15 +211,11 @@
           },
           {
             "path": [
-              "effect_type"
+              "mechanics"
             ],
-            "new_value": "Capture"
-          },
-          {
-            "path": [
-              "stack_size"
-            ],
-            "new_value": 1
+            "new_value": {
+              "auto_capture_altars": true
+            }
           },
           {
             "path": [
@@ -3522,9 +225,15 @@
           },
           {
             "path": [
-              "description"
+              "name"
             ],
-            "new_value": "Captures an enemy territory and refill all charges."
+            "new_value": "Conquest Banner"
+          },
+          {
+            "path": [
+              "duration"
+            ],
+            "new_value": 0
           }
         ]
       },
@@ -3537,21 +246,15 @@
         "diffs": [
           {
             "path": [
-              "duration"
+              "image_required"
             ],
-            "new_value": 0
+            "new_value": true
           },
           {
             "path": [
-              "$schema"
+              "effect_type"
             ],
-            "new_value": "../../schemas/v2/consumables.schema.json"
-          },
-          {
-            "path": [
-              "name"
-            ],
-            "new_value": "Healing Grimoire I"
+            "new_value": "Heal"
           },
           {
             "path": [
@@ -3561,9 +264,21 @@
           },
           {
             "path": [
-              "image_required"
+              "description"
             ],
-            "new_value": true
+            "new_value": "Light Heal. Restores 25 Health to the Spellcaster."
+          },
+          {
+            "path": [
+              "$schema"
+            ],
+            "new_value": "../../schemas/v2/consumables.schema.json"
+          },
+          {
+            "path": [
+              "stack_size"
+            ],
+            "new_value": 1
           },
           {
             "path": [
@@ -3582,27 +297,21 @@
           },
           {
             "path": [
-              "effect_type"
-            ],
-            "new_value": "Heal"
-          },
-          {
-            "path": [
-              "stack_size"
-            ],
-            "new_value": 1
-          },
-          {
-            "path": [
               "category"
             ],
             "new_value": "Consumable"
           },
           {
             "path": [
-              "description"
+              "name"
             ],
-            "new_value": "Light Heal. Restores 25 Health to the Spellcaster."
+            "new_value": "Healing Grimoire I"
+          },
+          {
+            "path": [
+              "duration"
+            ],
+            "new_value": 0
           }
         ]
       },
@@ -3615,21 +324,15 @@
         "diffs": [
           {
             "path": [
-              "duration"
+              "image_required"
             ],
-            "new_value": 0
+            "new_value": true
           },
           {
             "path": [
-              "$schema"
+              "effect_type"
             ],
-            "new_value": "../../schemas/v2/consumables.schema.json"
-          },
-          {
-            "path": [
-              "name"
-            ],
-            "new_value": "Healing Grimoire II"
+            "new_value": "Heal"
           },
           {
             "path": [
@@ -3639,9 +342,21 @@
           },
           {
             "path": [
-              "image_required"
+              "description"
             ],
-            "new_value": true
+            "new_value": "Medium Heal. Restores 75 Health to the Spellcaster."
+          },
+          {
+            "path": [
+              "$schema"
+            ],
+            "new_value": "../../schemas/v2/consumables.schema.json"
+          },
+          {
+            "path": [
+              "stack_size"
+            ],
+            "new_value": 1
           },
           {
             "path": [
@@ -3660,27 +375,21 @@
           },
           {
             "path": [
-              "effect_type"
-            ],
-            "new_value": "Heal"
-          },
-          {
-            "path": [
-              "stack_size"
-            ],
-            "new_value": 1
-          },
-          {
-            "path": [
               "category"
             ],
             "new_value": "Consumable"
           },
           {
             "path": [
-              "description"
+              "name"
             ],
-            "new_value": "Medium Heal. Restores 75 Health to the Spellcaster."
+            "new_value": "Healing Grimoire II"
+          },
+          {
+            "path": [
+              "duration"
+            ],
+            "new_value": 0
           }
         ]
       },
@@ -3693,21 +402,15 @@
         "diffs": [
           {
             "path": [
-              "duration"
+              "image_required"
             ],
-            "new_value": 0
+            "new_value": true
           },
           {
             "path": [
-              "$schema"
+              "effect_type"
             ],
-            "new_value": "../../schemas/v2/consumables.schema.json"
-          },
-          {
-            "path": [
-              "name"
-            ],
-            "new_value": "Healing Grimoire III"
+            "new_value": "Heal"
           },
           {
             "path": [
@@ -3717,9 +420,21 @@
           },
           {
             "path": [
-              "image_required"
+              "description"
             ],
-            "new_value": true
+            "new_value": "Major Heal. Restores 150 Health to the Spellcaster."
+          },
+          {
+            "path": [
+              "$schema"
+            ],
+            "new_value": "../../schemas/v2/consumables.schema.json"
+          },
+          {
+            "path": [
+              "stack_size"
+            ],
+            "new_value": 1
           },
           {
             "path": [
@@ -3738,27 +453,21 @@
           },
           {
             "path": [
-              "effect_type"
-            ],
-            "new_value": "Heal"
-          },
-          {
-            "path": [
-              "stack_size"
-            ],
-            "new_value": 1
-          },
-          {
-            "path": [
               "category"
             ],
             "new_value": "Consumable"
           },
           {
             "path": [
-              "description"
+              "name"
             ],
-            "new_value": "Major Heal. Restores 150 Health to the Spellcaster."
+            "new_value": "Healing Grimoire III"
+          },
+          {
+            "path": [
+              "duration"
+            ],
+            "new_value": 0
           }
         ]
       },
@@ -3771,25 +480,13 @@
         "diffs": [
           {
             "path": [
-              "duration"
+              "image_required"
             ],
             "removed": true
           },
           {
             "path": [
-              "$schema"
-            ],
-            "removed": true
-          },
-          {
-            "path": [
-              "changelog"
-            ],
-            "removed": true
-          },
-          {
-            "path": [
-              "name"
+              "effect_type"
             ],
             "removed": true
           },
@@ -3807,6 +504,18 @@
           },
           {
             "path": [
+              "$schema"
+            ],
+            "removed": true
+          },
+          {
+            "path": [
+              "changelog"
+            ],
+            "removed": true
+          },
+          {
+            "path": [
               "value"
             ],
             "removed": true
@@ -3819,19 +528,19 @@
           },
           {
             "path": [
-              "effect_type"
-            ],
-            "removed": true
-          },
-          {
-            "path": [
               "category"
             ],
             "removed": true
           },
           {
             "path": [
-              "image_required"
+              "name"
+            ],
+            "removed": true
+          },
+          {
+            "path": [
+              "duration"
             ],
             "removed": true
           }
@@ -3846,25 +555,13 @@
         "diffs": [
           {
             "path": [
-              "duration"
+              "image_required"
             ],
             "removed": true
           },
           {
             "path": [
-              "$schema"
-            ],
-            "removed": true
-          },
-          {
-            "path": [
-              "changelog"
-            ],
-            "removed": true
-          },
-          {
-            "path": [
-              "name"
+              "effect_type"
             ],
             "removed": true
           },
@@ -3882,6 +579,18 @@
           },
           {
             "path": [
+              "$schema"
+            ],
+            "removed": true
+          },
+          {
+            "path": [
+              "changelog"
+            ],
+            "removed": true
+          },
+          {
+            "path": [
               "value"
             ],
             "removed": true
@@ -3894,19 +603,19 @@
           },
           {
             "path": [
-              "effect_type"
-            ],
-            "removed": true
-          },
-          {
-            "path": [
               "category"
             ],
             "removed": true
           },
           {
             "path": [
-              "image_required"
+              "name"
+            ],
+            "removed": true
+          },
+          {
+            "path": [
+              "duration"
             ],
             "removed": true
           }
@@ -3921,25 +630,13 @@
         "diffs": [
           {
             "path": [
-              "duration"
+              "image_required"
             ],
             "removed": true
           },
           {
             "path": [
-              "$schema"
-            ],
-            "removed": true
-          },
-          {
-            "path": [
-              "changelog"
-            ],
-            "removed": true
-          },
-          {
-            "path": [
-              "name"
+              "effect_type"
             ],
             "removed": true
           },
@@ -3957,6 +654,18 @@
           },
           {
             "path": [
+              "$schema"
+            ],
+            "removed": true
+          },
+          {
+            "path": [
+              "changelog"
+            ],
+            "removed": true
+          },
+          {
+            "path": [
               "value"
             ],
             "removed": true
@@ -3969,19 +678,19 @@
           },
           {
             "path": [
-              "effect_type"
-            ],
-            "removed": true
-          },
-          {
-            "path": [
               "category"
             ],
             "removed": true
           },
           {
             "path": [
-              "image_required"
+              "name"
+            ],
+            "removed": true
+          },
+          {
+            "path": [
+              "duration"
             ],
             "removed": true
           }
@@ -3996,21 +705,15 @@
         "diffs": [
           {
             "path": [
-              "duration"
+              "image_required"
             ],
-            "new_value": 30
+            "new_value": true
           },
           {
             "path": [
-              "$schema"
+              "effect_type"
             ],
-            "new_value": "../../schemas/v2/consumables.schema.json"
-          },
-          {
-            "path": [
-              "name"
-            ],
-            "new_value": "Power Grimoire"
+            "new_value": "Buff"
           },
           {
             "path": [
@@ -4020,15 +723,27 @@
           },
           {
             "path": [
-              "image_required"
-            ],
-            "new_value": true
-          },
-          {
-            "path": [
               "buff_target"
             ],
             "new_value": "Damage"
+          },
+          {
+            "path": [
+              "description"
+            ],
+            "new_value": "Increases Damage by 10%."
+          },
+          {
+            "path": [
+              "$schema"
+            ],
+            "new_value": "../../schemas/v2/consumables.schema.json"
+          },
+          {
+            "path": [
+              "stack_size"
+            ],
+            "new_value": 1
           },
           {
             "path": [
@@ -4048,27 +763,21 @@
           },
           {
             "path": [
-              "effect_type"
-            ],
-            "new_value": "Buff"
-          },
-          {
-            "path": [
-              "stack_size"
-            ],
-            "new_value": 1
-          },
-          {
-            "path": [
               "category"
             ],
             "new_value": "Consumable"
           },
           {
             "path": [
-              "description"
+              "name"
             ],
-            "new_value": "Increases Damage by 10%."
+            "new_value": "Power Grimoire"
+          },
+          {
+            "path": [
+              "duration"
+            ],
+            "new_value": 30
           }
         ]
       },
@@ -4081,21 +790,15 @@
         "diffs": [
           {
             "path": [
-              "duration"
+              "image_required"
             ],
-            "new_value": 30
+            "new_value": true
           },
           {
             "path": [
-              "$schema"
+              "effect_type"
             ],
-            "new_value": "../../schemas/v2/consumables.schema.json"
-          },
-          {
-            "path": [
-              "name"
-            ],
-            "new_value": "Protection Grimoire"
+            "new_value": "Buff"
           },
           {
             "path": [
@@ -4105,15 +808,27 @@
           },
           {
             "path": [
-              "image_required"
-            ],
-            "new_value": true
-          },
-          {
-            "path": [
               "buff_target"
             ],
             "new_value": "Defense"
+          },
+          {
+            "path": [
+              "description"
+            ],
+            "new_value": "Increases Defense by 10%."
+          },
+          {
+            "path": [
+              "$schema"
+            ],
+            "new_value": "../../schemas/v2/consumables.schema.json"
+          },
+          {
+            "path": [
+              "stack_size"
+            ],
+            "new_value": 1
           },
           {
             "path": [
@@ -4133,27 +848,21 @@
           },
           {
             "path": [
-              "effect_type"
-            ],
-            "new_value": "Buff"
-          },
-          {
-            "path": [
-              "stack_size"
-            ],
-            "new_value": 1
-          },
-          {
-            "path": [
               "category"
             ],
             "new_value": "Consumable"
           },
           {
             "path": [
-              "description"
+              "name"
             ],
-            "new_value": "Increases Defense by 10%."
+            "new_value": "Protection Grimoire"
+          },
+          {
+            "path": [
+              "duration"
+            ],
+            "new_value": 30
           }
         ]
       },
@@ -4166,25 +875,13 @@
         "diffs": [
           {
             "path": [
-              "duration"
+              "image_required"
             ],
             "removed": true
           },
           {
             "path": [
-              "$schema"
-            ],
-            "removed": true
-          },
-          {
-            "path": [
-              "changelog"
-            ],
-            "removed": true
-          },
-          {
-            "path": [
-              "name"
+              "effect_type"
             ],
             "removed": true
           },
@@ -4202,6 +899,18 @@
           },
           {
             "path": [
+              "$schema"
+            ],
+            "removed": true
+          },
+          {
+            "path": [
+              "changelog"
+            ],
+            "removed": true
+          },
+          {
+            "path": [
               "value"
             ],
             "removed": true
@@ -4214,19 +923,19 @@
           },
           {
             "path": [
-              "effect_type"
-            ],
-            "removed": true
-          },
-          {
-            "path": [
               "category"
             ],
             "removed": true
           },
           {
             "path": [
-              "image_required"
+              "name"
+            ],
+            "removed": true
+          },
+          {
+            "path": [
+              "duration"
             ],
             "removed": true
           }
@@ -4408,6 +1117,21 @@
             "path": [
               "abilities",
               "passive",
+              0
+            ],
+            "old_value": {
+              "name": "Ignition Spark",
+              "description": "Allied creatures near the Fire Elementalist capture Altar faster."
+            },
+            "new_value": {
+              "name": "Ignition Spark",
+              "description": "Allied creatures near the Fire Elementalist capture Altar +58% faster."
+            }
+          },
+          {
+            "path": [
+              "abilities",
+              "passive",
               1
             ],
             "old_value": {
@@ -4432,21 +1156,6 @@
             "new_value": {
               "name": "Blazing Momentum",
               "description": "When you or your creatures kill a Burning enemy, recharge Elemental incantations."
-            }
-          },
-          {
-            "path": [
-              "abilities",
-              "passive",
-              0
-            ],
-            "old_value": {
-              "name": "Ignition Spark",
-              "description": "Allied creatures near the Fire Elementalist capture Altar faster."
-            },
-            "new_value": {
-              "name": "Ignition Spark",
-              "description": "Allied creatures near the Fire Elementalist capture Altar +58% faster."
             }
           }
         ]
@@ -5004,6 +1713,12 @@
           },
           {
             "path": [
+              "knowledge_cost"
+            ],
+            "new_value": 200
+          },
+          {
+            "path": [
               "changelog"
             ],
             "removed": true
@@ -5048,6 +1763,12 @@
               "Creature": 0,
               "Spellcaster": 0
             }
+          },
+          {
+            "path": [
+              "knowledge_cost"
+            ],
+            "new_value": 0
           },
           {
             "path": [
@@ -5134,6 +1855,12 @@
               "Creature": 0,
               "Spellcaster": 0
             }
+          },
+          {
+            "path": [
+              "knowledge_cost"
+            ],
+            "new_value": 500
           },
           {
             "path": [
@@ -5256,6 +1983,12 @@
           },
           {
             "path": [
+              "knowledge_cost"
+            ],
+            "new_value": 50
+          },
+          {
+            "path": [
               "changelog"
             ],
             "removed": true
@@ -5310,6 +2043,12 @@
           },
           {
             "path": [
+              "knowledge_cost"
+            ],
+            "new_value": 500
+          },
+          {
+            "path": [
               "mechanics",
               "infusion"
             ],
@@ -5358,6 +2097,12 @@
               "Creature": 0,
               "Spellcaster": 0
             }
+          },
+          {
+            "path": [
+              "knowledge_cost"
+            ],
+            "new_value": 0
           },
           {
             "path": [
@@ -5441,6 +2186,12 @@
           },
           {
             "path": [
+              "knowledge_cost"
+            ],
+            "new_value": 50
+          },
+          {
+            "path": [
               "changelog"
             ],
             "removed": true
@@ -5477,6 +2228,12 @@
                 "id": "ice_infusion"
               }
             }
+          },
+          {
+            "path": [
+              "knowledge_cost"
+            ],
+            "new_value": 50
           },
           {
             "path": [
@@ -5556,6 +2313,12 @@
           },
           {
             "path": [
+              "knowledge_cost"
+            ],
+            "new_value": 0
+          },
+          {
+            "path": [
               "changelog"
             ],
             "removed": true
@@ -5605,6 +2368,12 @@
           },
           {
             "path": [
+              "knowledge_cost"
+            ],
+            "new_value": 0
+          },
+          {
+            "path": [
               "changelog"
             ],
             "removed": true
@@ -5626,6 +2395,608 @@
         ]
       },
       {
+        "target_id": "holy_arrow.json",
+        "name": "Holy Arrow",
+        "field": "entity",
+        "change_type": "add",
+        "category": "spells",
+        "diffs": [
+          {
+            "path": [
+              "range"
+            ],
+            "new_value": 0
+          },
+          {
+            "path": [
+              "knowledge_cost"
+            ],
+            "new_value": 200
+          },
+          {
+            "path": [
+              "magic_school"
+            ],
+            "new_value": "Holy"
+          },
+          {
+            "path": [
+              "mechanics"
+            ],
+            "new_value": {
+              "damage_modifiers": [
+                {
+                  "target_types": [
+                    "Building"
+                  ],
+                  "multiplier": 1.0
+                },
+                {
+                  "target_types": [
+                    "Lifestone"
+                  ],
+                  "multiplier": 1.0
+                },
+                {
+                  "target_types": [
+                    "Creature"
+                  ],
+                  "multiplier": 1.0
+                },
+                {
+                  "target_types": [
+                    "Spellcaster"
+                  ],
+                  "multiplier": 1.0
+                }
+              ]
+            }
+          },
+          {
+            "path": [
+              "recharge_time"
+            ],
+            "new_value": 10
+          },
+          {
+            "path": [
+              "damage_overrides"
+            ],
+            "new_value": {
+              "Building": 0,
+              "Lifestone": 0,
+              "Creature": 0,
+              "Spellcaster": 0
+            }
+          },
+          {
+            "path": [
+              "charges"
+            ],
+            "new_value": 1
+          },
+          {
+            "path": [
+              "description"
+            ],
+            "new_value": "Piercing arrow that damages enemies and heals allies."
+          },
+          {
+            "path": [
+              "$schema"
+            ],
+            "new_value": "../../schemas/v2/spells.schema.json"
+          },
+          {
+            "path": [
+              "rank"
+            ],
+            "new_value": "II"
+          },
+          {
+            "path": [
+              "category"
+            ],
+            "new_value": "Spell"
+          },
+          {
+            "path": [
+              "image_required"
+            ],
+            "new_value": true
+          },
+          {
+            "path": [
+              "entity_id"
+            ],
+            "new_value": "holy_arrow"
+          },
+          {
+            "path": [
+              "game_version"
+            ],
+            "new_value": "0.1.0"
+          },
+          {
+            "path": [
+              "damage"
+            ],
+            "new_value": 0
+          },
+          {
+            "path": [
+              "tags"
+            ],
+            "new_value": []
+          },
+          {
+            "path": [
+              "cast_time"
+            ],
+            "new_value": 0
+          },
+          {
+            "path": [
+              "name"
+            ],
+            "new_value": "Holy Arrow"
+          }
+        ]
+      },
+      {
+        "target_id": "ice_ray.json",
+        "name": "Ice Ray",
+        "field": "entity",
+        "change_type": "add",
+        "category": "spells",
+        "diffs": [
+          {
+            "path": [
+              "range"
+            ],
+            "new_value": 45
+          },
+          {
+            "path": [
+              "knowledge_cost"
+            ],
+            "new_value": 200
+          },
+          {
+            "path": [
+              "magic_school"
+            ],
+            "new_value": "Elemental"
+          },
+          {
+            "path": [
+              "mechanics"
+            ],
+            "new_value": {
+              "infusion": {
+                "id": "ice_infusion"
+              },
+              "damage_modifiers": [
+                {
+                  "target_types": [
+                    "Building"
+                  ],
+                  "multiplier": 1.0
+                },
+                {
+                  "target_types": [
+                    "Lifestone"
+                  ],
+                  "multiplier": 1.0
+                },
+                {
+                  "target_types": [
+                    "Creature"
+                  ],
+                  "multiplier": 1.0
+                },
+                {
+                  "target_types": [
+                    "Spellcaster"
+                  ],
+                  "multiplier": 1.0
+                }
+              ]
+            }
+          },
+          {
+            "path": [
+              "recharge_time"
+            ],
+            "new_value": 10
+          },
+          {
+            "path": [
+              "damage_overrides"
+            ],
+            "new_value": {
+              "Building": 0,
+              "Lifestone": 0,
+              "Creature": 0,
+              "Spellcaster": 0
+            }
+          },
+          {
+            "path": [
+              "charges"
+            ],
+            "new_value": 1
+          },
+          {
+            "path": [
+              "description"
+            ],
+            "new_value": "Focused beam that deals sustained Frost damage."
+          },
+          {
+            "path": [
+              "$schema"
+            ],
+            "new_value": "../../schemas/v2/spells.schema.json"
+          },
+          {
+            "path": [
+              "rank"
+            ],
+            "new_value": "I"
+          },
+          {
+            "path": [
+              "category"
+            ],
+            "new_value": "Spell"
+          },
+          {
+            "path": [
+              "image_required"
+            ],
+            "new_value": true
+          },
+          {
+            "path": [
+              "entity_id"
+            ],
+            "new_value": "ice_ray"
+          },
+          {
+            "path": [
+              "game_version"
+            ],
+            "new_value": "0.1.0"
+          },
+          {
+            "path": [
+              "damage"
+            ],
+            "new_value": 70
+          },
+          {
+            "path": [
+              "tags"
+            ],
+            "new_value": []
+          },
+          {
+            "path": [
+              "cast_time"
+            ],
+            "new_value": 0
+          },
+          {
+            "path": [
+              "name"
+            ],
+            "new_value": "Ice Ray"
+          }
+        ]
+      },
+      {
+        "target_id": "metamorphosis.json",
+        "name": "Metamorphosis",
+        "field": "entity",
+        "change_type": "add",
+        "category": "spells",
+        "diffs": [
+          {
+            "path": [
+              "range"
+            ],
+            "new_value": 0
+          },
+          {
+            "path": [
+              "knowledge_cost"
+            ],
+            "new_value": 800
+          },
+          {
+            "path": [
+              "magic_school"
+            ],
+            "new_value": "Astral"
+          },
+          {
+            "path": [
+              "mechanics"
+            ],
+            "new_value": {
+              "damage_modifiers": [
+                {
+                  "target_types": [
+                    "Building"
+                  ],
+                  "multiplier": 1.0
+                },
+                {
+                  "target_types": [
+                    "Lifestone"
+                  ],
+                  "multiplier": 1.0
+                },
+                {
+                  "target_types": [
+                    "Creature"
+                  ],
+                  "multiplier": 1.0
+                },
+                {
+                  "target_types": [
+                    "Spellcaster"
+                  ],
+                  "multiplier": 1.0
+                }
+              ]
+            }
+          },
+          {
+            "path": [
+              "recharge_time"
+            ],
+            "new_value": 10
+          },
+          {
+            "path": [
+              "damage_overrides"
+            ],
+            "new_value": {
+              "Building": 0,
+              "Lifestone": 0,
+              "Creature": 0,
+              "Spellcaster": 0
+            }
+          },
+          {
+            "path": [
+              "charges"
+            ],
+            "new_value": 1
+          },
+          {
+            "path": [
+              "description"
+            ],
+            "new_value": "Ritual that transforms Rank I creatures into harmless critters."
+          },
+          {
+            "path": [
+              "$schema"
+            ],
+            "new_value": "../../schemas/v2/spells.schema.json"
+          },
+          {
+            "path": [
+              "rank"
+            ],
+            "new_value": "III"
+          },
+          {
+            "path": [
+              "category"
+            ],
+            "new_value": "Spell"
+          },
+          {
+            "path": [
+              "image_required"
+            ],
+            "new_value": true
+          },
+          {
+            "path": [
+              "entity_id"
+            ],
+            "new_value": "metamorphosis"
+          },
+          {
+            "path": [
+              "game_version"
+            ],
+            "new_value": "0.1.0"
+          },
+          {
+            "path": [
+              "damage"
+            ],
+            "new_value": 0
+          },
+          {
+            "path": [
+              "tags"
+            ],
+            "new_value": []
+          },
+          {
+            "path": [
+              "cast_time"
+            ],
+            "new_value": 0
+          },
+          {
+            "path": [
+              "name"
+            ],
+            "new_value": "Metamorphosis"
+          }
+        ]
+      },
+      {
+        "target_id": "poison_breath.json",
+        "name": "Poison Breath",
+        "field": "entity",
+        "change_type": "add",
+        "category": "spells",
+        "diffs": [
+          {
+            "path": [
+              "range"
+            ],
+            "new_value": 45
+          },
+          {
+            "path": [
+              "knowledge_cost"
+            ],
+            "new_value": 50
+          },
+          {
+            "path": [
+              "magic_school"
+            ],
+            "new_value": "Necromancy"
+          },
+          {
+            "path": [
+              "mechanics"
+            ],
+            "new_value": {
+              "infusion": {
+                "id": "poison_infusion"
+              },
+              "damage_modifiers": [
+                {
+                  "target_types": [
+                    "Building"
+                  ],
+                  "multiplier": 1.0
+                },
+                {
+                  "target_types": [
+                    "Lifestone"
+                  ],
+                  "multiplier": 1.0
+                },
+                {
+                  "target_types": [
+                    "Creature"
+                  ],
+                  "multiplier": 1.0
+                },
+                {
+                  "target_types": [
+                    "Spellcaster"
+                  ],
+                  "multiplier": 1.0
+                }
+              ]
+            }
+          },
+          {
+            "path": [
+              "recharge_time"
+            ],
+            "new_value": 10
+          },
+          {
+            "path": [
+              "damage_overrides"
+            ],
+            "new_value": {
+              "Building": 0,
+              "Lifestone": 0,
+              "Creature": 0,
+              "Spellcaster": 0
+            }
+          },
+          {
+            "path": [
+              "charges"
+            ],
+            "new_value": 1
+          },
+          {
+            "path": [
+              "description"
+            ],
+            "new_value": "Focused beam that deals low Poison damage."
+          },
+          {
+            "path": [
+              "$schema"
+            ],
+            "new_value": "../../schemas/v2/spells.schema.json"
+          },
+          {
+            "path": [
+              "rank"
+            ],
+            "new_value": "I"
+          },
+          {
+            "path": [
+              "category"
+            ],
+            "new_value": "Spell"
+          },
+          {
+            "path": [
+              "image_required"
+            ],
+            "new_value": true
+          },
+          {
+            "path": [
+              "entity_id"
+            ],
+            "new_value": "poison_breath"
+          },
+          {
+            "path": [
+              "game_version"
+            ],
+            "new_value": "0.1.0"
+          },
+          {
+            "path": [
+              "damage"
+            ],
+            "new_value": 70
+          },
+          {
+            "path": [
+              "tags"
+            ],
+            "new_value": []
+          },
+          {
+            "path": [
+              "cast_time"
+            ],
+            "new_value": 0
+          },
+          {
+            "path": [
+              "name"
+            ],
+            "new_value": "Poison Breath"
+          }
+        ]
+      },
+      {
         "target_id": "poison_grenade.json",
         "name": "Poison Grenade",
         "field": "entity",
@@ -5642,6 +3013,12 @@
               "Creature": 0,
               "Spellcaster": 0
             }
+          },
+          {
+            "path": [
+              "knowledge_cost"
+            ],
+            "new_value": 200
           },
           {
             "path": [
@@ -5674,6 +3051,12 @@
         "change_type": "edit",
         "category": "spells",
         "diffs": [
+          {
+            "path": [
+              "knowledge_cost"
+            ],
+            "new_value": 800
+          },
           {
             "path": [
               "changelog"
@@ -5713,6 +3096,12 @@
               "Creature": 0,
               "Spellcaster": 0
             }
+          },
+          {
+            "path": [
+              "knowledge_cost"
+            ],
+            "new_value": 50
           },
           {
             "path": [
@@ -5785,6 +3174,12 @@
               "Creature": 0,
               "Spellcaster": 0
             }
+          },
+          {
+            "path": [
+              "knowledge_cost"
+            ],
+            "new_value": 50
           },
           {
             "path": [
@@ -5985,6 +3380,12 @@
           },
           {
             "path": [
+              "knowledge_cost"
+            ],
+            "new_value": 300
+          },
+          {
+            "path": [
               "changelog"
             ],
             "removed": true
@@ -6065,6 +3466,12 @@
           },
           {
             "path": [
+              "knowledge_cost"
+            ],
+            "new_value": 200
+          },
+          {
+            "path": [
               "changelog"
             ],
             "removed": true
@@ -6109,6 +3516,12 @@
               "Creature": 0,
               "Spellcaster": 0
             }
+          },
+          {
+            "path": [
+              "knowledge_cost"
+            ],
+            "new_value": 300
           },
           {
             "path": [
@@ -6181,6 +3594,12 @@
               "Creature": 0,
               "Spellcaster": 0
             }
+          },
+          {
+            "path": [
+              "knowledge_cost"
+            ],
+            "new_value": 50
           },
           {
             "path": [
@@ -6273,6 +3692,12 @@
               "Creature": 0,
               "Spellcaster": 0
             }
+          },
+          {
+            "path": [
+              "knowledge_cost"
+            ],
+            "new_value": 50
           },
           {
             "path": [
@@ -6390,6 +3815,12 @@
           },
           {
             "path": [
+              "knowledge_cost"
+            ],
+            "new_value": 50
+          },
+          {
+            "path": [
               "changelog"
             ],
             "removed": true
@@ -6434,6 +3865,12 @@
               "Creature": 0,
               "Spellcaster": 0
             }
+          },
+          {
+            "path": [
+              "knowledge_cost"
+            ],
+            "new_value": 300
           },
           {
             "path": [
@@ -6483,6 +3920,12 @@
               "Creature": 0,
               "Spellcaster": 0
             }
+          },
+          {
+            "path": [
+              "knowledge_cost"
+            ],
+            "new_value": 50
           },
           {
             "path": [
@@ -6575,6 +4018,12 @@
           },
           {
             "path": [
+              "knowledge_cost"
+            ],
+            "new_value": 300
+          },
+          {
+            "path": [
               "mechanics",
               "damage_modifiers"
             ],
@@ -6644,6 +4093,12 @@
               "Creature": 0,
               "Spellcaster": 0
             }
+          },
+          {
+            "path": [
+              "knowledge_cost"
+            ],
+            "new_value": 800
           },
           {
             "path": [
@@ -6790,6 +4245,12 @@
           },
           {
             "path": [
+              "knowledge_cost"
+            ],
+            "new_value": 500
+          },
+          {
+            "path": [
               "changelog"
             ],
             "removed": true
@@ -6834,6 +4295,12 @@
               "Creature": 0,
               "Spellcaster": 0
             }
+          },
+          {
+            "path": [
+              "knowledge_cost"
+            ],
+            "new_value": 50
           },
           {
             "path": [
@@ -6914,6 +4381,12 @@
               "Creature": 0,
               "Spellcaster": 0
             }
+          },
+          {
+            "path": [
+              "knowledge_cost"
+            ],
+            "new_value": 0
           },
           {
             "path": [
@@ -7023,6 +4496,12 @@
           },
           {
             "path": [
+              "knowledge_cost"
+            ],
+            "new_value": 50
+          },
+          {
+            "path": [
               "changelog"
             ],
             "removed": true
@@ -7044,6 +4523,191 @@
         ]
       },
       {
+        "target_id": "rhino_rider.json",
+        "name": "Rhino Rider",
+        "field": "entity",
+        "change_type": "add",
+        "category": "units",
+        "diffs": [
+          {
+            "path": [
+              "range"
+            ],
+            "new_value": 1
+          },
+          {
+            "path": [
+              "knowledge_cost"
+            ],
+            "new_value": 500
+          },
+          {
+            "path": [
+              "movement_speed"
+            ],
+            "new_value": 0
+          },
+          {
+            "path": [
+              "magic_school"
+            ],
+            "new_value": "War"
+          },
+          {
+            "path": [
+              "mechanics"
+            ],
+            "new_value": {
+              "damage_modifiers": [
+                {
+                  "target_types": [
+                    "Building"
+                  ],
+                  "multiplier": 1.0
+                },
+                {
+                  "target_types": [
+                    "Lifestone"
+                  ],
+                  "multiplier": 1.0
+                },
+                {
+                  "target_types": [
+                    "Creature"
+                  ],
+                  "multiplier": 1.0
+                },
+                {
+                  "target_types": [
+                    "Spellcaster"
+                  ],
+                  "multiplier": 1.0
+                }
+              ]
+            }
+          },
+          {
+            "path": [
+              "recharge_time"
+            ],
+            "new_value": 10
+          },
+          {
+            "path": [
+              "damage_overrides"
+            ],
+            "new_value": {
+              "Building": 0,
+              "Lifestone": 0,
+              "Creature": 0,
+              "Spellcaster": 0
+            }
+          },
+          {
+            "path": [
+              "charges"
+            ],
+            "new_value": 1
+          },
+          {
+            "path": [
+              "dps"
+            ],
+            "new_value": 0
+          },
+          {
+            "path": [
+              "description"
+            ],
+            "new_value": "Mounted unit that charges and destroys enemy structures."
+          },
+          {
+            "path": [
+              "$schema"
+            ],
+            "new_value": "../../schemas/v2/units.schema.json"
+          },
+          {
+            "path": [
+              "rank"
+            ],
+            "new_value": "II"
+          },
+          {
+            "path": [
+              "health"
+            ],
+            "new_value": 0
+          },
+          {
+            "path": [
+              "category"
+            ],
+            "new_value": "Creature"
+          },
+          {
+            "path": [
+              "image_required"
+            ],
+            "new_value": true
+          },
+          {
+            "path": [
+              "movement_type"
+            ],
+            "new_value": "Ground"
+          },
+          {
+            "path": [
+              "entity_id"
+            ],
+            "new_value": "rhino_rider"
+          },
+          {
+            "path": [
+              "attack_interval"
+            ],
+            "new_value": 1
+          },
+          {
+            "path": [
+              "game_version"
+            ],
+            "new_value": "0.1.0"
+          },
+          {
+            "path": [
+              "damage"
+            ],
+            "new_value": 0
+          },
+          {
+            "path": [
+              "tags"
+            ],
+            "new_value": []
+          },
+          {
+            "path": [
+              "cast_time"
+            ],
+            "new_value": 0
+          },
+          {
+            "path": [
+              "name"
+            ],
+            "new_value": "Rhino Rider"
+          },
+          {
+            "path": [
+              "population"
+            ],
+            "new_value": 0
+          }
+        ]
+      },
+      {
         "target_id": "rocket_soldier.json",
         "name": "Rocket Soldier",
         "field": "entity",
@@ -7060,6 +4724,12 @@
               "Creature": 0,
               "Spellcaster": 0
             }
+          },
+          {
+            "path": [
+              "knowledge_cost"
+            ],
+            "new_value": 50
           },
           {
             "path": [
@@ -7131,6 +4801,185 @@
         ]
       },
       {
+        "target_id": "rocket_soldier_factory.json",
+        "name": "Rocket Soldier Factory",
+        "field": "entity",
+        "change_type": "add",
+        "category": "units",
+        "diffs": [
+          {
+            "path": [
+              "range"
+            ],
+            "new_value": 0
+          },
+          {
+            "path": [
+              "knowledge_cost"
+            ],
+            "new_value": 500
+          },
+          {
+            "path": [
+              "movement_speed"
+            ],
+            "new_value": 0
+          },
+          {
+            "path": [
+              "magic_school"
+            ],
+            "new_value": "Technomancy"
+          },
+          {
+            "path": [
+              "mechanics"
+            ],
+            "new_value": {
+              "damage_modifiers": [
+                {
+                  "target_types": [
+                    "Building"
+                  ],
+                  "multiplier": 1.0
+                },
+                {
+                  "target_types": [
+                    "Lifestone"
+                  ],
+                  "multiplier": 1.0
+                },
+                {
+                  "target_types": [
+                    "Creature"
+                  ],
+                  "multiplier": 1.0
+                },
+                {
+                  "target_types": [
+                    "Spellcaster"
+                  ],
+                  "multiplier": 1.0
+                }
+              ]
+            }
+          },
+          {
+            "path": [
+              "recharge_time"
+            ],
+            "new_value": 10
+          },
+          {
+            "path": [
+              "damage_overrides"
+            ],
+            "new_value": {
+              "Building": 0,
+              "Lifestone": 0,
+              "Creature": 0,
+              "Spellcaster": 0
+            }
+          },
+          {
+            "path": [
+              "charges"
+            ],
+            "new_value": 1
+          },
+          {
+            "path": [
+              "dps"
+            ],
+            "new_value": 0
+          },
+          {
+            "path": [
+              "description"
+            ],
+            "new_value": "Factory that continuously produces Rocket Soldiers."
+          },
+          {
+            "path": [
+              "$schema"
+            ],
+            "new_value": "../../schemas/v2/units.schema.json"
+          },
+          {
+            "path": [
+              "rank"
+            ],
+            "new_value": "III"
+          },
+          {
+            "path": [
+              "health"
+            ],
+            "new_value": 0
+          },
+          {
+            "path": [
+              "category"
+            ],
+            "new_value": "Building"
+          },
+          {
+            "path": [
+              "image_required"
+            ],
+            "new_value": true
+          },
+          {
+            "path": [
+              "entity_id"
+            ],
+            "new_value": "rocket_soldier_factory"
+          },
+          {
+            "path": [
+              "attack_interval"
+            ],
+            "new_value": 1
+          },
+          {
+            "path": [
+              "game_version"
+            ],
+            "new_value": "0.1.0"
+          },
+          {
+            "path": [
+              "damage"
+            ],
+            "new_value": 0
+          },
+          {
+            "path": [
+              "tags"
+            ],
+            "new_value": []
+          },
+          {
+            "path": [
+              "cast_time"
+            ],
+            "new_value": 0
+          },
+          {
+            "path": [
+              "name"
+            ],
+            "new_value": "Rocket Soldier Factory"
+          },
+          {
+            "path": [
+              "population"
+            ],
+            "new_value": 0
+          }
+        ]
+      },
+      {
         "target_id": "ruin_spider.json",
         "name": "Ruin Spider",
         "field": "entity",
@@ -7150,6 +4999,12 @@
           },
           {
             "path": [
+              "knowledge_cost"
+            ],
+            "new_value": 50
+          },
+          {
+            "path": [
               "changelog"
             ],
             "removed": true
@@ -7160,26 +5015,6 @@
             ],
             "old_value": 10,
             "new_value": 5
-          },
-          {
-            "path": [
-              "mechanics",
-              "damage_modifiers",
-              2
-            ],
-            "old_value": {
-              "multiplier": 2.5,
-              "condition": "Always",
-              "target_types": [
-                "Building"
-              ]
-            },
-            "new_value": {
-              "multiplier": 1.5,
-              "target_types": [
-                "Building"
-              ]
-            }
           },
           {
             "path": [
@@ -7198,6 +5033,26 @@
               "multiplier": 0.5,
               "target_types": [
                 "Creature"
+              ]
+            }
+          },
+          {
+            "path": [
+              "mechanics",
+              "damage_modifiers",
+              2
+            ],
+            "old_value": {
+              "multiplier": 2.5,
+              "condition": "Always",
+              "target_types": [
+                "Building"
+              ]
+            },
+            "new_value": {
+              "multiplier": 1.5,
+              "target_types": [
+                "Building"
               ]
             }
           },
@@ -7231,6 +5086,191 @@
         ]
       },
       {
+        "target_id": "siren.json",
+        "name": "Siren",
+        "field": "entity",
+        "change_type": "add",
+        "category": "units",
+        "diffs": [
+          {
+            "path": [
+              "range"
+            ],
+            "new_value": 1
+          },
+          {
+            "path": [
+              "knowledge_cost"
+            ],
+            "new_value": 800
+          },
+          {
+            "path": [
+              "movement_speed"
+            ],
+            "new_value": 0
+          },
+          {
+            "path": [
+              "magic_school"
+            ],
+            "new_value": "Wild"
+          },
+          {
+            "path": [
+              "mechanics"
+            ],
+            "new_value": {
+              "damage_modifiers": [
+                {
+                  "target_types": [
+                    "Building"
+                  ],
+                  "multiplier": 1.0
+                },
+                {
+                  "target_types": [
+                    "Lifestone"
+                  ],
+                  "multiplier": 1.0
+                },
+                {
+                  "target_types": [
+                    "Creature"
+                  ],
+                  "multiplier": 1.0
+                },
+                {
+                  "target_types": [
+                    "Spellcaster"
+                  ],
+                  "multiplier": 1.0
+                }
+              ]
+            }
+          },
+          {
+            "path": [
+              "recharge_time"
+            ],
+            "new_value": 10
+          },
+          {
+            "path": [
+              "damage_overrides"
+            ],
+            "new_value": {
+              "Building": 0,
+              "Lifestone": 0,
+              "Creature": 0,
+              "Spellcaster": 0
+            }
+          },
+          {
+            "path": [
+              "charges"
+            ],
+            "new_value": 1
+          },
+          {
+            "path": [
+              "dps"
+            ],
+            "new_value": 0
+          },
+          {
+            "path": [
+              "description"
+            ],
+            "new_value": "Disruptive creature that makes enemies fight each other."
+          },
+          {
+            "path": [
+              "$schema"
+            ],
+            "new_value": "../../schemas/v2/units.schema.json"
+          },
+          {
+            "path": [
+              "rank"
+            ],
+            "new_value": "II"
+          },
+          {
+            "path": [
+              "health"
+            ],
+            "new_value": 0
+          },
+          {
+            "path": [
+              "category"
+            ],
+            "new_value": "Creature"
+          },
+          {
+            "path": [
+              "image_required"
+            ],
+            "new_value": true
+          },
+          {
+            "path": [
+              "movement_type"
+            ],
+            "new_value": "Ground"
+          },
+          {
+            "path": [
+              "entity_id"
+            ],
+            "new_value": "siren"
+          },
+          {
+            "path": [
+              "attack_interval"
+            ],
+            "new_value": 1
+          },
+          {
+            "path": [
+              "game_version"
+            ],
+            "new_value": "0.1.0"
+          },
+          {
+            "path": [
+              "damage"
+            ],
+            "new_value": 0
+          },
+          {
+            "path": [
+              "tags"
+            ],
+            "new_value": []
+          },
+          {
+            "path": [
+              "cast_time"
+            ],
+            "new_value": 0
+          },
+          {
+            "path": [
+              "name"
+            ],
+            "new_value": "Siren"
+          },
+          {
+            "path": [
+              "population"
+            ],
+            "new_value": 0
+          }
+        ]
+      },
+      {
         "target_id": "skeleton_warrior.json",
         "name": "Skeleton Warrior",
         "field": "entity",
@@ -7247,6 +5287,12 @@
               "Creature": 0,
               "Spellcaster": 0
             }
+          },
+          {
+            "path": [
+              "knowledge_cost"
+            ],
+            "new_value": 0
           },
           {
             "path": [
@@ -7363,6 +5409,12 @@
           },
           {
             "path": [
+              "knowledge_cost"
+            ],
+            "new_value": 300
+          },
+          {
+            "path": [
               "changelog"
             ],
             "removed": true
@@ -7447,6 +5499,12 @@
                 }
               ]
             }
+          },
+          {
+            "path": [
+              "knowledge_cost"
+            ],
+            "new_value": 300
           },
           {
             "path": [
@@ -7537,6 +5595,12 @@
           },
           {
             "path": [
+              "knowledge_cost"
+            ],
+            "new_value": 200
+          },
+          {
+            "path": [
               "changelog"
             ],
             "removed": true
@@ -7584,6 +5648,12 @@
           },
           {
             "path": [
+              "knowledge_cost"
+            ],
+            "new_value": 0
+          },
+          {
+            "path": [
               "changelog"
             ],
             "removed": true
@@ -7628,9 +5698,21 @@
           },
           {
             "path": [
+              "description"
+            ],
+            "new_value": "Placeholder content to prevent 404s on the upgrades endpoint."
+          },
+          {
+            "path": [
               "$schema"
             ],
             "new_value": "../../schemas/v2/upgrades.schema.json"
+          },
+          {
+            "path": [
+              "target_tags"
+            ],
+            "new_value": []
           },
           {
             "path": [
@@ -7645,18 +5727,6 @@
             "new_value": {
               "dev_mode": 1
             }
-          },
-          {
-            "path": [
-              "target_tags"
-            ],
-            "new_value": []
-          },
-          {
-            "path": [
-              "description"
-            ],
-            "new_value": "Placeholder content to prevent 404s on the upgrades endpoint."
           }
         ]
       }
