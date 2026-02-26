@@ -98,7 +98,8 @@ def save_json(filename, data):
 
 def sanitize_recursive(data):
     """
-    Recursively escapes HTML characters in strings to prevent XSS.
+    Escapes HTML characters in strings to prevent XSS.
+    Uses an iterative approach to handle arbitrarily deep nesting.
 
     Args:
         data (dict | list | str | any): The data to sanitize.
@@ -107,13 +108,46 @@ def sanitize_recursive(data):
         The sanitized data structure.
     """
     if isinstance(data, str):
-        # Only escape < to prevent tag injection, preserving > and quotes for readability and game math
         return data.replace("<", "&lt;")
+    if not isinstance(data, (dict, list)):
+        return data
+
+    # Iterative deep-copy-and-sanitize using a stack
     if isinstance(data, dict):
-        return {k: sanitize_recursive(v) for k, v in data.items()}
-    if isinstance(data, list):
-        return [sanitize_recursive(v) for v in data]
-    return data
+        root = {}
+    else:
+        root = [None] * len(data)
+
+    # Stack entries: (source_container, key_or_index, dest_container)
+    stack = []
+
+    # Seed the stack with top-level items
+    if isinstance(data, dict):
+        for k, v in data.items():
+            stack.append((v, k, root))
+    else:
+        for i, v in enumerate(data):
+            stack.append((v, i, root))
+
+    while stack:
+        value, key, dest = stack.pop()
+
+        if isinstance(value, str):
+            dest[key] = value.replace("<", "&lt;")
+        elif isinstance(value, dict):
+            new_dict = {}
+            dest[key] = new_dict
+            for k, v in value.items():
+                stack.append((v, k, new_dict))
+        elif isinstance(value, list):
+            new_list = [None] * len(value)
+            dest[key] = new_list
+            for i, v in enumerate(value):
+                stack.append((v, i, new_list))
+        else:
+            dest[key] = value
+
+    return root
 
 
 def inject_hero_image_urls(entity):
