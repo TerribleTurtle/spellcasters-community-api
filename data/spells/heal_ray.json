@@ -19,11 +19,14 @@
         "value": 0,
         "interval": 0,
         "effect": "Heal",
-        "target_types": ["Ally"]
+        "target_types": [
+          "Ally"
+        ]
       }
     ]
   },
   "charges": 1,
   "recharge_time": 5,
-  "cast_time": 0
+  "cast_time": 0,
+  "knowledge_cost": 0
 }

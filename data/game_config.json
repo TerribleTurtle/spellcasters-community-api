@@ -1,6 +1,6 @@
 {
   "name": "Spellcasters Chronicles",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "developer": "Quantic Dream",
   "publisher": "Quantic Dream",
   "genre": "3v3 Deckbuilder RTS MOBA",
@@ -10,8 +10,13 @@
     "homepage": "https://www.spellcasterschronicles.com/en-US",
     "steam": "https://store.steampowered.com/app/2458470/Spellcasters_Chronicles/"
   },
-  "status": "Dev",
+  "status": "Early Access",
   "changelog": [
+    {
+      "version": "0.1.0",
+      "date": "2026-02-26T15:00:00Z",
+      "description": "Early Access Launch"
+    },
     {
       "version": "0.0.1",
       "date": "2026-02-23T21:40:00Z",

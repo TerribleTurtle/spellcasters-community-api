@@ -81,7 +81,7 @@
     "game_status_enum": {
       "type": "string",
       "description": "Development or live status of the game.",
-      "enum": ["Live", "Beta", "Alpha", "Dev", "In Development"]
+      "enum": ["Live", "Beta", "Alpha", "Dev", "In Development", "Early Access"]
     },
     "change_type_enum": {
       "type": "string",

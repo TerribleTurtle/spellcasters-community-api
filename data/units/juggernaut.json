@@ -39,5 +39,6 @@
   "charges": 1,
   "recharge_time": 120,
   "cast_time": 0,
-  "population": 0
+  "population": 0,
+  "knowledge_cost": 800
 }

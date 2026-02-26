@@ -16,5 +16,6 @@
   },
   "charges": 1,
   "recharge_time": 50,
-  "cast_time": 0
+  "cast_time": 0,
+  "knowledge_cost": 50
 }

@@ -2,7 +2,7 @@
 
 ## Supported Versions
 
-This project is currently in **Data Collection Phase** (Beta).
+This project is currently in **Early Access**.
 
 | Version | Supported              |
 | ------- | ---------------------- |

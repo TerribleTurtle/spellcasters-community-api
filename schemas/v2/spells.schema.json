@@ -10,7 +10,8 @@
     { "$ref": "definitions/core.schema.json#/definitions/assets" },
     { "$ref": "definitions/magic.schema.json#/definitions/magic_props" },
     { "$ref": "definitions/resource.schema.json#/definitions/cost" },
-    { "$ref": "definitions/stats.schema.json#/definitions/ability_stats" }
+    { "$ref": "definitions/stats.schema.json#/definitions/ability_stats" },
+    { "$ref": "definitions/core.schema.json#/definitions/unlockable" }
   ],
   "properties": {
     "stat_changes": {

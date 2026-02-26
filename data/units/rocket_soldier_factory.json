@@ -1,0 +1,58 @@
+{
+  "$schema": "../../schemas/v2/units.schema.json",
+  "entity_id": "rocket_soldier_factory",
+  "name": "Rocket Soldier Factory",
+  "category": "Building",
+  "magic_school": "Technomancy",
+  "rank": "III",
+  "description": "Factory that continuously produces Rocket Soldiers.",
+  "image_required": true,
+  "tags": [],
+  "health": 0,
+  "damage": 0,
+  "dps": 0,
+  "attack_interval": 1,
+  "movement_speed": 0,
+  "charges": 1,
+  "recharge_time": 10,
+  "cast_time": 0,
+  "population": 0,
+  "knowledge_cost": 500,
+  "last_modified": "2026-02-26T15:00:00.000Z",
+  "game_version": "0.1.0",
+  "damage_overrides": {
+    "Building": 0,
+    "Lifestone": 0,
+    "Creature": 0,
+    "Spellcaster": 0
+  },
+  "range": 0,
+  "mechanics": {
+    "damage_modifiers": [
+      {
+        "target_types": [
+          "Building"
+        ],
+        "multiplier": 1.0
+      },
+      {
+        "target_types": [
+          "Lifestone"
+        ],
+        "multiplier": 1.0
+      },
+      {
+        "target_types": [
+          "Creature"
+        ],
+        "multiplier": 1.0
+      },
+      {
+        "target_types": [
+          "Spellcaster"
+        ],
+        "multiplier": 1.0
+      }
+    ]
+  }
+}

@@ -46,7 +46,8 @@ Now you can add the field to your JSON files in `data/heroes/`.
 Run the build script to confirm everything is correct:
 
 ```shell
-python scripts/build_api.py
+python scripts/validate_integrity.py
+python scripts/verify_strictness.py
 ```
 
 ## How to Change a Field (Breaking Change)

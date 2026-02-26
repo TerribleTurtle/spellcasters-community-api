@@ -4,7 +4,8 @@ Thank you for your interest in contributing! This project is **100% community-dr
 
 Please review our [Code of Conduct](CODE_OF_CONDUCT.md) before participating.
 
-> [!NOTE] > **Terminology:** In the game lore, characters are called **Spellcasters**. In this codebase and schema, they are strictly referred to as **Heroes** (`data/heroes`). These terms are interchangeable.
+> [!NOTE]
+> **Terminology:** In the game lore, characters are called **Spellcasters**. In this codebase and schema, they are strictly referred to as **Heroes** (`data/heroes`). These terms are interchangeable.
 
 ## How to Contribute
 

@@ -49,5 +49,6 @@
   },
   "charges": 1,
   "recharge_time": 120,
-  "cast_time": 0
+  "cast_time": 0,
+  "knowledge_cost": 0
 }

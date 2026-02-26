@@ -2,7 +2,7 @@
 
 ## Schema Changes - v1.5 Infusions Redesign & Data Corrections
 
-## Overview
+### Overview
 
 Redesigns the infusion system to support dual-natured effects (allied buffs vs enemy debuffs) and corrects several data files based on game design feedback.
 
@@ -30,7 +30,7 @@ Redesigns the infusion system to support dual-natured effects (allied buffs vs e
 
 ## Schema Changes - v1.4 Patch History System
 
-## Overview
+### Overview
 
 Adds JSON schemas and TypeScript types for the new patch history system. These define the shape of generated patch data served by the API.
 
@@ -66,7 +66,7 @@ Adds JSON schemas and TypeScript types for the new patch history system. These d
 
 ## Schema Changes - v1.3 Hero Speed Cleanup
 
-## Overview
+### Overview
 
 This update removes the `movement_speed` attribute from Heroes to better reflect their gameplay implementation.
 
@@ -89,7 +89,7 @@ This update removes the `movement_speed` attribute from Heroes to better reflect
 
 ## Schema Changes - v1.2 Architecture Normalization
 
-## Overview
+### Overview
 
 This update deprecates the monolithic `incantation` schema in favor of specific `spell` and `unit` schemas. It also introduces a more granular structure for shared definitions.
 
@@ -115,7 +115,7 @@ This update deprecates the monolithic `incantation` schema in favor of specific 
 
 ## Schema Changes - v1.1 Movement Update
 
-## Overview
+### Overview
 
 This update standardizes how `mechanics` are defined across all entities and adds explicit traversal capabilities (Movement Types) to Spellcasters.
 

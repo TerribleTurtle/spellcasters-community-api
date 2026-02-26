@@ -116,7 +116,6 @@ jobs:
           cp ajv2019.bundle.js public/
           cp -r assets public/
           cp .nojekyll public/
-          cp changelog*.json public/
           cp data/patches.json public/
 
       - name: Upload Artifact

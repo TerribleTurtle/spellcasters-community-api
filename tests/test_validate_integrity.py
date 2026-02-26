@@ -9,9 +9,8 @@ import json
 import os
 from unittest.mock import patch
 
-import pytest
-
 import config
+import pytest
 from validate_integrity import check_asset_exists, create_registry, validate_entry_assets
 
 # ---------------------------------------------------------------------------
@@ -143,28 +142,33 @@ def _create_tiny_image(path):
     img = Image.new("RGB", (1, 1), color="red")
     img.save(str(path), format="WEBP")
 
+
 # ---------------------------------------------------------------------------
 # cache loading & saving
 # ---------------------------------------------------------------------------
 
+
 class TestCacheOps:
     def test_load_save_cache_roundtrip(self, tmp_path):
         cache_file = tmp_path / ".asset_cache.json"
-        
+
         # Test missing cache file
         with patch("validate_integrity.CACHE_FILE", str(cache_file)):
             from validate_integrity import load_cache, save_cache
+
             assert load_cache() == {}
-            
+
             # Save and load
             data = {"/path/to/img": {"mtime": 123, "size": 456}}
             save_cache(data)
-            
+
             assert load_cache() == data
+
 
 # ---------------------------------------------------------------------------
 # "Evil" Asset tests
 # ---------------------------------------------------------------------------
+
 
 class TestEvilAssets:
     def test_evil_corrupted_image(self, tmp_path):
@@ -172,10 +176,10 @@ class TestEvilAssets:
         category_dir = tmp_path / "units"
         category_dir.mkdir()
         asset = category_dir / "bad.webp"
-        
+
         # Create a text file posing as an image
         asset.write_text("This is not a webp image", encoding="utf-8")
-        
+
         with patch("validate_integrity.ASSETS_DIR", str(tmp_path)):
             result = check_asset_exists("units", "bad", True, {})
             # Should have handled it cleanly and returned 1 warning
@@ -186,21 +190,25 @@ class TestEvilAssets:
 # validate_timeline_metadata
 # ---------------------------------------------------------------------------
 
+
 class TestValidateTimelineMetadata:
     def test_skips_missing_dir(self, tmp_path):
         from validate_integrity import validate_timeline_metadata
+
         with patch("config.OUTPUT_DIR", str(tmp_path)):
             # "timeline" dir does not exist in tmp_path
             assert validate_timeline_metadata(None, None) == 0
+
 
 # ---------------------------------------------------------------------------
 # main validate_integrity loop
 # ---------------------------------------------------------------------------
 
+
 class TestMainLoop:
     def test_validate_integrity_runs_clean_on_real_data(self):
         """Full integration: run validate_integrity against actual project data.
-        
+
         This exercises: data loading, schema registry, tag indexing,
         per-folder validation loop, asset checks, upgrade tag checks,
         game_config validation, patch history validation, timeline validation,
@@ -237,8 +245,8 @@ class TestMainLoop:
                 "entity_id": {"type": "string"},
                 "name": {"type": "string"},
                 "tags": {"type": "array", "items": {"type": "string"}},
-                "image_required": {"type": "boolean"}
-            }
+                "image_required": {"type": "boolean"},
+            },
         }
         (schemas_dir / "units.schema.json").write_text(json.dumps(schema), encoding="utf-8")
 
@@ -246,15 +254,16 @@ class TestMainLoop:
         units_dir = data_dir / "units"
         units_dir.mkdir()
         (units_dir / "bad_unit.json").write_text(
-            json.dumps({"entity_id": "bad_unit", "image_required": False, "tags": ["test"]}),
-            encoding="utf-8"
+            json.dumps({"entity_id": "bad_unit", "image_required": False, "tags": ["test"]}), encoding="utf-8"
         )
 
-        with patch("validate_integrity.SCHEMAS_DIR", str(schemas_dir)), \
-             patch("validate_integrity.DATA_DIR", str(data_dir)), \
-             patch("validate_integrity.ASSETS_DIR", str(assets_dir)), \
-             patch("config.OUTPUT_DIR", str(output_dir)), \
-             patch("validate_integrity.CACHE_FILE", str(tmp_path / ".cache.json")):
+        with (
+            patch("validate_integrity.SCHEMAS_DIR", str(schemas_dir)),
+            patch("validate_integrity.DATA_DIR", str(data_dir)),
+            patch("validate_integrity.ASSETS_DIR", str(assets_dir)),
+            patch("config.OUTPUT_DIR", str(output_dir)),
+            patch("validate_integrity.CACHE_FILE", str(tmp_path / ".cache.json")),
+        ):
             with pytest.raises(SystemExit) as exc_info:
                 validate_integrity()
             assert exc_info.value.code == 1
@@ -275,7 +284,7 @@ class TestMainLoop:
         upgrade_schema = {
             "$schema": "https://json-schema.org/draft/2020-12/schema",
             "$id": "upgrades",
-            "type": "object"
+            "type": "object",
         }
         (schemas_dir / "upgrades.schema.json").write_text(json.dumps(upgrade_schema), encoding="utf-8")
 
@@ -283,21 +292,19 @@ class TestMainLoop:
         upgrades_dir = data_dir / "upgrades"
         upgrades_dir.mkdir()
         (upgrades_dir / "evil_upgrade.json").write_text(
-            json.dumps({
-                "entity_id": "evil_upgrade",
-                "target_tags": ["nonexistent_tag"],
-                "image_required": False
-            }),
-            encoding="utf-8"
+            json.dumps({"entity_id": "evil_upgrade", "target_tags": ["nonexistent_tag"], "image_required": False}),
+            encoding="utf-8",
         )
 
-        with patch("validate_integrity.SCHEMAS_DIR", str(schemas_dir)), \
-             patch("validate_integrity.DATA_DIR", str(data_dir)), \
-             patch("validate_integrity.ASSETS_DIR", str(assets_dir)), \
-             patch("config.OUTPUT_DIR", str(output_dir)), \
-             patch("validate_integrity.CACHE_FILE", str(tmp_path / ".cache.json")), \
-             patch("validate_integrity.FOLDER_TO_SCHEMA", {"upgrades": "upgrade"}), \
-             patch("validate_integrity.SCHEMA_FILES", {"upgrade": "upgrades.schema.json"}):
+        with (
+            patch("validate_integrity.SCHEMAS_DIR", str(schemas_dir)),
+            patch("validate_integrity.DATA_DIR", str(data_dir)),
+            patch("validate_integrity.ASSETS_DIR", str(assets_dir)),
+            patch("config.OUTPUT_DIR", str(output_dir)),
+            patch("validate_integrity.CACHE_FILE", str(tmp_path / ".cache.json")),
+            patch("validate_integrity.FOLDER_TO_SCHEMA", {"upgrades": "upgrade"}),
+            patch("validate_integrity.SCHEMA_FILES", {"upgrade": "upgrades.schema.json"}),
+        ):
             # No errors (schemas pass) but there will be warnings for the orphan tag
             validate_integrity()
 
@@ -306,6 +313,7 @@ class TestTimelineMetadataIntegration:
     def test_validates_real_timeline(self):
         """Run validate_timeline_metadata against real project schemas if timeline exists."""
         from validate_integrity import create_registry, validate_timeline_metadata
+
         registry, schemas_map = create_registry(config.SCHEMAS_DIR)
         result = validate_timeline_metadata(registry, schemas_map)
         assert isinstance(result, int)
@@ -322,11 +330,9 @@ class TestTimelineMetadataIntegration:
             "$id": "timeline_entry",
             "type": "object",
             "required": ["version"],
-            "properties": {"version": {"type": "string"}}
+            "properties": {"version": {"type": "string"}},
         }
-        (schemas_dir / "timeline_entry.schema.json").write_text(
-            json.dumps(timeline_schema), encoding="utf-8"
-        )
+        (schemas_dir / "timeline_entry.schema.json").write_text(json.dumps(timeline_schema), encoding="utf-8")
 
         # Create invalid timeline file (missing required "version")
         timeline_dir = tmp_path / "output" / "timeline"
@@ -335,9 +341,6 @@ class TestTimelineMetadataIntegration:
 
         registry, schemas_map = create_registry(str(schemas_dir))
 
-        with patch("config.OUTPUT_DIR", str(tmp_path / "output")), \
-             patch("config.PATCH_HISTORY_DIR", "timeline"):
+        with patch("config.OUTPUT_DIR", str(tmp_path / "output")), patch("config.PATCH_HISTORY_DIR", "timeline"):
             errors = validate_timeline_metadata(registry, schemas_map)
         assert errors >= 1
-
-

@@ -2,10 +2,9 @@
 
 **A free, open-source API for Spellcasters Chronicles.**
 
-> [!WARNING] > **BETA NOTICE:** Current data reflects the **Closed Beta** (Data Collection Phase).
-> **Early Access** begins **Feb 26th** — schema and data updates will follow.
->
-> **SCHEMA NOTE:** The JSON schema may receive breaking changes before the Early Access launch.
+> [!NOTE]
+> **EARLY ACCESS:** Current data reflects the **Early Access** phase.
+> Schema and data updates will follow game patches.
 
 This project is a collaborative tool for **developers** (building apps/tools) and the **community** (wiki editors/fans).
 It is **free to use** and **open for anyone to contribute**.
@@ -83,7 +82,7 @@ Full endpoint documentation is available in [CONTRIBUTING.md](CONTRIBUTING.md).
     python scripts/build_api.py
     ```
 
-    > **Note:** The `generate_patch.py` script is explicitly omitted here as it requires CI environment variables (`BEFORE_SHA`, `AFTER_SHA`).
+    > 💡 **Shortcut:** Run `bash scripts/check.sh` (Linux/Mac) or `.\\scripts\\check.ps1` (Windows) to execute all validation and tests at once.
 
     See `api/v2/units.json`
 

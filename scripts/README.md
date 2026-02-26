@@ -31,6 +31,11 @@ Local CI/CD runner that executes all checks sequentially:
 3. Integrity Validation
 4. Strictness Verification
 
+### `check.sh`
+
+**Usage:** `bash scripts/check.sh` (Linux/macOS)
+Bash equivalent of `check.ps1`. Local CI/CD runner that executes formatting, linting, tests, and integrity validations sequentially.
+
 ### `validate_integrity.py`
 
 **Usage:** `python scripts/validate_integrity.py`
@@ -51,6 +56,14 @@ Generates an audit log (`audit.json`) based on recent Git history and schema val
 
 Utility functions for generating and managing patch data, determining change types (`add`, `edit`, `delete`), and interacting with Git history.
 
+### `timeline_utils.py`
+
+Shared utility module for patch history processing. Provides functions to compute stat-level diffs across entity versions and manage timeline snapshots.
+
+### `migration/`
+
+Directory containing one-off or historical scripts used for mass-migrating schema definitions or data formats.
+
 ### `release.py`
 
 **Usage:** `python scripts/release.py`
@@ -65,7 +78,7 @@ Interactive CLI tool to handle version bumping and changelog generation.
 Computes differences for JSON files changed in the current git commit and automatically merges them into the current active patch block in `data/patches.json`.
 
 - Creates timeline snapshots for newly added entities.
-- Expects `BEFORE_SHA` and `AFTER_SHA` environment variables in CI (falls back to local `HEAD~1` and `HEAD`).
+- Computes git history boundaries automatically to locate new data additions.
 
 ### `build_changelogs.py`
 
@@ -110,12 +123,6 @@ These files live in the repository root and power the browser-based [Schema Vali
 - `schema-validator.js`: The frontend logic that runs `ajv` in the browser to validate JSON contributions immediately.
 - `build_ajv.js`: A Node.js entry point used to bundle `ajv` and `ajv-formats` into `ajv2019.bundle.js` for the browser. This is only necessary if you are upgrading the Ajv dependencies via `npm install`.
 
-## 🔑 CI/CD Environment Variables
-
-Some scripts rely on environment variables when running in GitHub Actions:
-
-- **`BEFORE_SHA`**: The commit SHA before the push. Used by `generate_patch.py` to diff changes. (Fallback: `HEAD~1`)
-- **`AFTER_SHA`**: The commit SHA after the push. Used by `generate_patch.py`. (Fallback: `HEAD`)
+## 🔑 CI/CD Permissions
 
 > **Note:** The deploy workflow (`deploy.yml`) requires `contents:read`, `pages:write`, and `id-token:write` permissions.
-> **Local Development:** You do **not** need a `.env` file to run scripts locally. They will gracefully fall back to local git history (`HEAD~1` and `HEAD`).

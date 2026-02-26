@@ -1,10 +1,8 @@
 import json
-import os
 from unittest.mock import patch
 
 import build_api
 import pytest
-
 
 # ---------------------------------------------------------------------------
 # sanitize_recursive
@@ -55,12 +53,12 @@ class TestSanitizeRecursive:
         current["unsafe"] = "<evil>"
 
         result = build_api.sanitize_recursive(deep_data)
-        
+
         # Traverse expected result
         res_current = result
         for _ in range(1, 500):
             res_current = res_current["next"]
-        
+
         assert res_current["unsafe"] == "&lt;evil>"
 
 
@@ -81,11 +79,11 @@ class TestInjectHeroImageUrls:
         # Mock assets directory
         assets_dir = tmp_path / "assets"
         assets_dir.mkdir()
-        
+
         heroes_dir = assets_dir / "heroes"
         heroes_dir.mkdir()
         (heroes_dir / "test_hero.webp").touch()  # Card exists
-        
+
         abilities_dir = heroes_dir / "abilities"
         abilities_dir.mkdir()
         (abilities_dir / "test_hero_attack.webp").touch()  # Only attack ability exists
@@ -98,7 +96,7 @@ class TestInjectHeroImageUrls:
         assert "image_urls" in entity
         assert entity["image_urls"]["card"] == "/assets/heroes/test_hero.webp"
         assert entity["image_urls"]["attack"] == "/assets/heroes/abilities/test_hero_attack.webp"
-        
+
         # Missing abilities should not be injected
         assert "passive" not in entity["image_urls"]
         assert "defense" not in entity["image_urls"]
@@ -116,17 +114,17 @@ class TestFileOperations:
         # Pre-populate directory with a stale file
         output_dir = tmp_path / "api_out"
         output_dir.mkdir()
-        
+
         stale_file = output_dir / "units.json"
         stale_file.touch()
-        
+
         # A file not in the cleanup lists should survive
         survivor_file = output_dir / "survivor.txt"
         survivor_file.touch()
 
         with patch("build_api.OUTPUT_DIR", str(output_dir)):
             build_api.ensure_output_dir()
-            
+
         assert output_dir.exists()
         assert not stale_file.exists()
         assert survivor_file.exists()
@@ -135,15 +133,15 @@ class TestFileOperations:
         """Should write valid JSON payload."""
         output_dir = tmp_path / "api_out"
         output_dir.mkdir()
-        
+
         data = {"key": "value", "list": [1, 2, 3]}
-        
+
         with patch("build_api.OUTPUT_DIR", str(output_dir)):
             build_api.save_json("test.json", data)
-            
+
         written_file = output_dir / "test.json"
         assert written_file.exists()
-        
+
         with open(written_file, encoding="utf-8") as f:
             loaded = json.load(f)
             assert loaded == data
@@ -152,10 +150,10 @@ class TestFileOperations:
         """Should crash on non-serializable objects (expected behavior of json.dump)."""
         output_dir = tmp_path / "api_out"
         output_dir.mkdir()
-        
+
         class Unserializable:
             pass
-            
+
         with patch("build_api.OUTPUT_DIR", str(output_dir)):
             with pytest.raises(TypeError):
                 build_api.save_json("test.json", {"obj": Unserializable()})
@@ -165,24 +163,25 @@ class TestFileOperations:
 # build_patch_history
 # ---------------------------------------------------------------------------
 
+
 class TestBuildPatchHistory:
     def test_build_patch_history_copies_files(self, tmp_path):
         root_dir = tmp_path / "root"
         root_dir.mkdir()
-        
+
         out_dir = tmp_path / "out"
         out_dir.mkdir()
-        
+
         # Create some source files
         (root_dir / "changelog.json").touch()
         (root_dir / "audit.json").touch()
         (root_dir / "changelog_page_1.json").touch()
-        
+
         timeline_src = root_dir / "timeline"
         timeline_src.mkdir()
         (timeline_src / "snap1.json").touch()
         (timeline_src / "snap2.json").touch()
-        (timeline_src / ".gitkeep").touch() # Should skip dotfiles
+        (timeline_src / ".gitkeep").touch()  # Should skip dotfiles
 
         with patch("config.BASE_DIR", str(root_dir)), patch("build_api.OUTPUT_DIR", str(out_dir)):
             build_api.build_patch_history()
@@ -190,7 +189,7 @@ class TestBuildPatchHistory:
         assert (out_dir / "changelog.json").exists()
         assert (out_dir / "audit.json").exists()
         assert (out_dir / "changelog_page_1.json").exists()
-        
+
         assert (out_dir / "timeline" / "snap1.json").exists()
         assert (out_dir / "timeline" / "snap2.json").exists()
         assert not (out_dir / "timeline" / ".gitkeep").exists()
@@ -199,12 +198,11 @@ class TestBuildPatchHistory:
         """Should not crash if source files or directories are completely missing."""
         root_dir = tmp_path / "empty_root"
         root_dir.mkdir()
-        
+
         out_dir = tmp_path / "out"
         out_dir.mkdir()
-        
-        with patch("config.BASE_DIR", str(root_dir)), patch("build_api.OUTPUT_DIR", str(out_dir)):
-            build_api.build_patch_history() # Should run without Exception
-            
-        assert not (out_dir / "timeline").exists()
 
+        with patch("config.BASE_DIR", str(root_dir)), patch("build_api.OUTPUT_DIR", str(out_dir)):
+            build_api.build_patch_history()  # Should run without Exception
+
+        assert not (out_dir / "timeline").exists()

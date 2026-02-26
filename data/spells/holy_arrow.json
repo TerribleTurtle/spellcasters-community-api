@@ -1,0 +1,53 @@
+{
+  "$schema": "../../schemas/v2/spells.schema.json",
+  "entity_id": "holy_arrow",
+  "name": "Holy Arrow",
+  "category": "Spell",
+  "magic_school": "Holy",
+  "rank": "II",
+  "description": "Piercing arrow that damages enemies and heals allies.",
+  "image_required": true,
+  "tags": [],
+  "charges": 1,
+  "recharge_time": 10,
+  "cast_time": 0,
+  "knowledge_cost": 200,
+  "last_modified": "2026-02-26T15:00:00.000Z",
+  "game_version": "0.1.0",
+  "damage": 0,
+  "damage_overrides": {
+    "Building": 0,
+    "Lifestone": 0,
+    "Creature": 0,
+    "Spellcaster": 0
+  },
+  "range": 0,
+  "mechanics": {
+    "damage_modifiers": [
+      {
+        "target_types": [
+          "Building"
+        ],
+        "multiplier": 1.0
+      },
+      {
+        "target_types": [
+          "Lifestone"
+        ],
+        "multiplier": 1.0
+      },
+      {
+        "target_types": [
+          "Creature"
+        ],
+        "multiplier": 1.0
+      },
+      {
+        "target_types": [
+          "Spellcaster"
+        ],
+        "multiplier": 1.0
+      }
+    ]
+  }
+}

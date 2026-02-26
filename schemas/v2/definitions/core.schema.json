@@ -121,6 +121,16 @@
         },
         "additionalProperties": false
       }
+    },
+    "unlockable": {
+      "type": "object",
+      "properties": {
+        "knowledge_cost": {
+          "type": "integer",
+          "minimum": 0,
+          "description": "Amount of Knowledge required to purchase this incantation. 0 if free by default."
+        }
+      }
     }
   }
 }

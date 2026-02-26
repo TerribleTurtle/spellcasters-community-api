@@ -52,5 +52,6 @@
   "rank": "I",
   "recharge_time": 5,
   "tags": [],
-  "last_modified": "2026-02-19T02:01:14.345Z"
+  "last_modified": "2026-02-19T02:01:14.345Z",
+  "knowledge_cost": 50
 }

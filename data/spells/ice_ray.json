@@ -1,0 +1,56 @@
+{
+  "$schema": "../../schemas/v2/spells.schema.json",
+  "entity_id": "ice_ray",
+  "name": "Ice Ray",
+  "category": "Spell",
+  "magic_school": "Elemental",
+  "rank": "I",
+  "description": "Focused beam that deals sustained Frost damage.",
+  "image_required": true,
+  "tags": [],
+  "damage": 70,
+  "range": 45,
+  "mechanics": {
+    "infusion": {
+      "id": "ice_infusion"
+    },
+    "damage_modifiers": [
+      {
+        "target_types": [
+          "Building"
+        ],
+        "multiplier": 1.0
+      },
+      {
+        "target_types": [
+          "Lifestone"
+        ],
+        "multiplier": 1.0
+      },
+      {
+        "target_types": [
+          "Creature"
+        ],
+        "multiplier": 1.0
+      },
+      {
+        "target_types": [
+          "Spellcaster"
+        ],
+        "multiplier": 1.0
+      }
+    ]
+  },
+  "charges": 1,
+  "recharge_time": 10,
+  "cast_time": 0,
+  "knowledge_cost": 200,
+  "last_modified": "2026-02-26T15:00:00.000Z",
+  "game_version": "0.1.0",
+  "damage_overrides": {
+    "Building": 0,
+    "Lifestone": 0,
+    "Creature": 0,
+    "Spellcaster": 0
+  }
+}
