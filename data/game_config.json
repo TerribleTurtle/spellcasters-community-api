@@ -1,6 +1,6 @@
 {
   "name": "Spellcasters Chronicles",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "developer": "Quantic Dream",
   "publisher": "Quantic Dream",
   "genre": "3v3 Deckbuilder RTS MOBA",
@@ -12,6 +12,11 @@
   },
   "status": "Early Access",
   "changelog": [
+    {
+      "version": "0.1.1",
+      "date": "2026-02-26T18:30:00Z",
+      "description": "Version bump for dataset verification"
+    },
     {
       "version": "0.1.0",
       "date": "2026-02-26T15:00:00Z",
