@@ -174,6 +174,30 @@ Units and Spells support an optional `damage_overrides` object for specifying di
 
 > The above means: 50 damage to everything, except 250 flat damage to Buildings and Lifestones.
 
+#### Damage Modifiers
+
+Units and Spells that have complex mechanics support an optional `damage_modifiers` array within their `mechanics` block. This allows you to define percentage-based conditional damage multipliers.
+
+- **`target_types`**: An array of one or more valid target categories.
+- **`multiplier`**: A multiplier where `1.0` is 100% (normal damage). `0.5` means they deal half damage to those types, and `1.5` means they deal 150% damage.
+
+```json
+  "mechanics": {
+    "damage_modifiers": [
+      {
+        "target_types": ["Building"],
+        "multiplier": 1.5
+      },
+      {
+        "target_types": ["Creature", "Spellcaster"],
+        "multiplier": 0.5
+      }
+    ]
+  }
+```
+
+> The above example means the entity deals 150% damage to Buildings and only 50% damage to Creatures and Spellcasters.
+
 ### Updating Existing Data
 
 1.  Modify the fields in the existing JSON file.
@@ -189,6 +213,7 @@ Before submitting a Pull Request, run the verification script to check your chan
 **Windows / Mac / Linux:**
 
 ```bash
+python scripts/validate_schemas.py
 python scripts/validate_integrity.py
 ```
 

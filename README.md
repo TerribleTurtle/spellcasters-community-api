@@ -76,6 +76,9 @@ Full endpoint documentation is available in [CONTRIBUTING.md](CONTRIBUTING.md).
 3.  **Build & Verify:**
 
     ```bash
+    python scripts/validate_integrity.py
+    python scripts/verify_strictness.py
+    python scripts/build_changelogs.py
     python scripts/build_api.py
     ```
 
@@ -84,6 +87,7 @@ Full endpoint documentation is available in [CONTRIBUTING.md](CONTRIBUTING.md).
 4.  **Run Tests:**
 
     ```bash
+    python scripts/validate_integrity.py
     python -m pytest -v
     ```
 
@@ -122,7 +126,7 @@ This project is a community-maintained tool and is **not** affiliated with, endo
 - **Code:** The source code of this API builder is licensed under the MIT License.
 - **Assets & Data:** All game images, icons, names, and lore are the intellectual property of the game developers. They are used here for educational/informational purposes under standard Fan Content principles.
 - **Fan Content Policy:** Users of this API must respect the IP rights of the original creators.
-- **Assets:** Images in the `assets/` folder are provided for reference only.
+- **Assets:** Game images. See [CONTRIBUTING.md](CONTRIBUTING.md#%F0%9F%8E%A8-artist-or-lorekeeper) for submission rules.
 - **Data:** Game data is collected by the community and may not reflect the latest live game state.
 
 ### ⚠️ Data Accuracy Disclaimer
