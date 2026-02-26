@@ -1,0 +1,41 @@
+{
+  "$schema": "https://json-schema.org/draft/2019-09/schema",
+  "$id": "https://spellcasters.gg/schemas/v2/definitions/mechanics/weak_point.schema.json",
+  "title": "Weak Point",
+  "description": "Positional vulnerability for an entity.",
+  "definitions": {
+    "weak_points": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["location", "multiplier"],
+        "properties": {
+          "location": {
+            "type": "string",
+            "description": "The physical location of the weak point.",
+            "enum": [
+              "front",
+              "back",
+              "side",
+              "head",
+              "chest",
+              "legs",
+              "wings",
+              "tail"
+            ]
+          },
+          "multiplier": {
+            "type": "number",
+            "description": "The damage multiplier when hitting this location.",
+            "minimum": 1.0
+          },
+          "description": {
+            "type": "string",
+            "description": "Human-readable description of the weak point."
+          }
+        },
+        "additionalProperties": false
+      }
+    }
+  }
+}

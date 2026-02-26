@@ -8,6 +8,13 @@
   "description": "The Wild Titan. Crushes all structures as it marches toward the Lifestones. Destroys and captures altars instantly.",
   "image_required": true,
   "tags": [],
+  "weak_points": [
+    {
+      "location": "chest",
+      "multiplier": 2.0,
+      "description": "Gaia Beast takes +100% extra damage on its chest."
+    }
+  ],
   "mechanics": {
     "aura": [
       {
@@ -17,9 +24,7 @@
         "value": 0,
         "interval": 0,
         "effect": "Damage",
-        "target_types": [
-          "Enemy"
-        ]
+        "target_types": ["Enemy"]
       }
     ],
     "auto_capture_altars": true

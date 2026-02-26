@@ -23,6 +23,9 @@
     "passive_health_regen": { "type": "integer", "minimum": 0 },
     "heal_amount": { "type": "integer", "minimum": 0 },
     "healing_bonus": { "type": "integer", "minimum": 0 },
+    "weak_points": {
+      "$ref": "definitions/mechanics/weak_point.schema.json#/definitions/weak_points"
+    },
     "mechanics": {
       "allOf": [
         { "$ref": "definitions/mechanics.schema.json#/definitions/mechanics" }

@@ -8,6 +8,13 @@
   "description": "The Titan of Death. Weakens all nearby enemies and retaliates against Spellcasters.",
   "image_required": true,
   "tags": [],
+  "weak_points": [
+    {
+      "location": "back",
+      "multiplier": 1.25,
+      "description": "Thanatos takes +25% extra damage from behind."
+    }
+  ],
   "mechanics": {
     "aura": [
       {
@@ -17,9 +24,7 @@
         "value": 0.5,
         "interval": 1,
         "effect": "Debuff",
-        "target_types": [
-          "Enemy"
-        ]
+        "target_types": ["Enemy"]
       },
       {
         "name": "Death's Retaliation",
@@ -28,9 +33,7 @@
         "value": 0,
         "interval": 0,
         "effect": "Damage",
-        "target_types": [
-          "Enemy"
-        ]
+        "target_types": ["Enemy"]
       }
     ]
   },
