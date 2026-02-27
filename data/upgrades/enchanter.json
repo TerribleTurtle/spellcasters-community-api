@@ -7,37 +7,7 @@
   "archetype": "Enchanter",
   "level_cap": 25,
   "population_scaling": [
-    { "level": 1, "population_cap": 10 },
-    { "level": 5, "population_cap": 12 },
-    { "level": 10, "population_cap": 15 },
-    { "level": 15, "population_cap": 18 },
-    { "level": 20, "population_cap": 21 },
-    { "level": 25, "population_cap": 24 }
+    { "level": 1, "population_cap": 10 }
   ],
-  "incantation_upgrades": [
-    {
-      "incantation_id": "heal_ray",
-      "upgrades": [
-        { "name": "Restorative Surge", "description": "Increases heal_ray value by 20%.", "effect": { "value": 1.20 } },
-        { "name": "Extended Reach", "description": "Increases heal_ray range by 15%.", "effect": { "range": 1.15 } },
-        { "name": "Quick Mend", "description": "Reduces heal_ray recharge time by 10%.", "effect": { "recharge_time": 0.90 } }
-      ]
-    },
-    {
-      "incantation_id": "faerie",
-      "upgrades": [
-        { "name": "Fey Vitality", "description": "Increases faerie health by 25%.", "effect": { "health": 1.25 } },
-        { "name": "Enchanted Glow", "description": "Increases faerie heal aura range.", "effect": { "aura_range": 1.20 } },
-        { "name": "Spirit Link", "description": "Faerie heals more per tick.", "effect": { "heal_per_tick": 1.15 } }
-      ]
-    },
-    {
-      "incantation_id": "dryad",
-      "upgrades": [
-        { "name": "Nature's Bounty", "description": "Increases dryad health by 20%.", "effect": { "health": 1.20 } },
-        { "name": "Thorned Roots", "description": "Increases dryad damage by 15%.", "effect": { "damage": 1.15 } },
-        { "name": "Verdant Growth", "description": "Reduces dryad spawn time by 10%.", "effect": { "recharge_time": 0.90 } }
-      ]
-    }
-  ]
+  "incantation_upgrades": []
 }
