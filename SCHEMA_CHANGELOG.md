@@ -98,7 +98,8 @@ Adds JSON schemas and TypeScript types for the new patch history system. These d
 
 ---
 
-> **UNSTABLE SCHEMA:** The schema is currently in flux. Breaking changes may occur without notice until the Early Access launch on **Feb 26th**.
+> **UNSTABLE SCHEMA:** The schema is currently in flux. Breaking changes may occur without notice during the Early Access phase.
+> *Please note: This data is community-gathered and updated. As such, it may contain inaccuracies or mistakes.*
 
 ## Schema Changes - v1.3 Hero Speed Cleanup
 

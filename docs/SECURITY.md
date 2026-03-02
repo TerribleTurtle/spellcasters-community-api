@@ -3,6 +3,7 @@
 ## Supported Versions
 
 This project is currently in **Early Access**.
+*Please note: This data is community-gathered and updated. As such, it may contain inaccuracies or mistakes.*
 
 | Version | Supported              |
 | ------- | ---------------------- |

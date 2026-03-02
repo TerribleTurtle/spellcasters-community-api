@@ -5,6 +5,8 @@
 > [!NOTE]
 > **EARLY ACCESS:** Current data reflects the **Early Access** phase.
 > Schema and data updates will follow game patches.
+> 
+> *Please note: This data is community-gathered and updated. As such, it may contain inaccuracies or mistakes.* **Found an error? [Help us fix the data!](CONTRIBUTING.md)**
 
 This project is a collaborative tool for **developers** (building apps/tools) and the **community** (wiki editors/fans).
 It is **free to use** and **open for anyone to contribute**.

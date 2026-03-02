@@ -130,9 +130,9 @@ To avoid ambiguity between "Increased By" vs "Total", we use standard **Multipli
 - "Deals X% Damage" -> `Multiplier = X / 100`.
 - "Deals X% **Increased** Damage" -> `Multiplier = 1 + (X / 100)`.
 
-#### 2. Handling Unknown Values (Beta Data)
+#### 2. Handling Unknown Values (Early Access Data)
 
-Since we are in Beta, some exact numbers may be missing.
+Since we are in Early Access and this data is community-gathered and updated, some exact numbers may be missing or contain mistakes.
 
 **Standard**: Use **`-1.0`** as a **Sentinel Value** for "Unknown/To Be Verified".
 
