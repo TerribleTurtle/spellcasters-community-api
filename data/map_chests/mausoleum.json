@@ -1,0 +1,88 @@
+{
+    "$schema": "../../schemas/v2/map_chests.schema.json",
+    "entity_id": "mausoleum",
+    "name": "Mausoleum",
+    "description": "Chest spawn locations for the Mausoleum arena.",
+    "image_required": false,
+    "tags": [],
+    "last_modified": "2026-03-01T22:48:00Z",
+    "chests": [
+        {
+            "location": "Inner Side",
+            "rarity": "Common",
+            "tier": "T1",
+            "reward_entity_id": "harpy",
+            "reward_type": "Unit"
+        },
+        {
+            "location": "Inner Mid",
+            "rarity": "Common",
+            "tier": "T1",
+            "reward_entity_id": "faerie",
+            "reward_type": "Unit"
+        },
+        {
+            "location": "1st Tower Right",
+            "rarity": "Common",
+            "tier": "T1",
+            "reward_entity_id": "fire_ray",
+            "reward_type": "Spell"
+        },
+        {
+            "location": "1st Tower Left",
+            "rarity": "Common",
+            "tier": "T1",
+            "reward_entity_id": "poison_breath",
+            "reward_type": "Spell"
+        },
+        {
+            "location": "1st Tower Left Lower",
+            "rarity": "Common",
+            "tier": "T1",
+            "reward_entity_id": "fire_ray",
+            "reward_type": "Spell"
+        },
+        {
+            "location": "1st Tower Left",
+            "rarity": "Epic",
+            "tier": "T2",
+            "reward_entity_id": "fire_ball",
+            "reward_type": "Spell"
+        },
+        {
+            "location": "1st Tower Left Upper",
+            "rarity": "Epic",
+            "tier": "T3",
+            "reward_entity_id": "astral_tower",
+            "reward_type": "Unit"
+        },
+        {
+            "location": "1st Tower Right",
+            "rarity": "Epic",
+            "tier": "T2",
+            "reward_entity_id": "rampart",
+            "reward_type": "Unit"
+        },
+        {
+            "location": "1st Tower Right Lower",
+            "rarity": "Epic",
+            "tier": "T2",
+            "reward_entity_id": "wolven_hunter",
+            "reward_type": "Unit"
+        },
+        {
+            "location": "Mid Left (Leftside)",
+            "rarity": "Legendary",
+            "tier": "T4",
+            "reward_entity_id": "juggernaut",
+            "reward_type": "Unit"
+        },
+        {
+            "location": "Mid Left (Rightside)",
+            "rarity": "Legendary",
+            "tier": "T4",
+            "reward_entity_id": "astral_nova",
+            "reward_type": "Spell"
+        }
+    ]
+}

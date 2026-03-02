@@ -33,6 +33,7 @@ AGGREGATION_MAP = {
     "units": "units",
     "spells": "spells",
     "titans": "titans",
+    "map_chests": "map_chests",
 }
 
 # Single File Copy

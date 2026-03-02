@@ -12,13 +12,17 @@
     "units",
     "spells",
     "titans",
-    "infusions"
+    "infusions",
+    "map_chests"
   ],
   "additionalProperties": false,
   "properties": {
     "build_info": {
       "type": "object",
-      "required": ["version", "generated_at"],
+      "required": [
+        "version",
+        "generated_at"
+      ],
       "properties": {
         "version": {
           "type": "string",
@@ -34,27 +38,39 @@
     },
     "heroes": {
       "type": "array",
-      "items": { "$ref": "heroes.schema.json" }
+      "items": {
+        "$ref": "heroes.schema.json"
+      }
     },
     "consumables": {
       "type": "array",
-      "items": { "$ref": "consumables.schema.json" }
+      "items": {
+        "$ref": "consumables.schema.json"
+      }
     },
     "upgrades": {
       "type": "array",
-      "items": { "$ref": "upgrades.schema.json" }
+      "items": {
+        "$ref": "upgrades.schema.json"
+      }
     },
     "units": {
       "type": "array",
-      "items": { "$ref": "units.schema.json" }
+      "items": {
+        "$ref": "units.schema.json"
+      }
     },
     "spells": {
       "type": "array",
-      "items": { "$ref": "spells.schema.json" }
+      "items": {
+        "$ref": "spells.schema.json"
+      }
     },
     "titans": {
       "type": "array",
-      "items": { "$ref": "titans.schema.json" }
+      "items": {
+        "$ref": "titans.schema.json"
+      }
     },
     "infusions": {
       "$ref": "infusions.schema.json"
@@ -67,6 +83,12 @@
     },
     "game_systems": {
       "$ref": "game_systems.schema.json"
+    },
+    "map_chests": {
+      "type": "array",
+      "items": {
+        "$ref": "map_chests.schema.json"
+      }
     }
   }
 }

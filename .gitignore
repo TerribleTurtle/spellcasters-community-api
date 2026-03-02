@@ -64,3 +64,7 @@ backups/
 data/backups/
 data/queue_backups/
 data/audit.jsonl
+
+# direnv
+.envrc
+.direnv/

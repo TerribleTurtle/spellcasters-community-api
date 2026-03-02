@@ -1,5 +1,41 @@
 # Schema Changelog
 
+## Schema Changes - v1.6 Map Chests
+
+### Overview
+
+Adds a new `map_chests` entity type to track chest spawn locations and rewards per arena map.
+
+## Changes
+
+### 1. New Schema: `map_chests.schema.json`
+
+- **Location:** `schemas/v2/map_chests.schema.json`
+- **Purpose:** Defines chest spawn points on a map, each with a freeform location label, rarity (`Common`, `Epic`, `Legendary`), tier (`T1`–`T4`), and a reference to the rewarded unit or spell.
+- **Optional field:** `spawn_time_seconds` — reserved for future timing data.
+- **Composition:** Uses `$ref` to `core.schema.json` for identity, meta, and assets.
+- **Strictness:** `unevaluatedProperties: false` enforced.
+
+### 2. Pipeline Registration
+
+- **`config.py`:** Added `map_chest` → `map_chests.schema.json` and `map_chests` → `map_chest` folder mapping.
+- **`build_api.py`:** Added `map_chests` to `AGGREGATION_MAP`.
+- **`all_data.schema.json`:** Added `map_chests` array property (required).
+
+### 3. Referential Integrity
+
+- **`validate_integrity.py`:** New cross-reference check — validates that every chest's `reward_entity_id` exists in `data/units/` or `data/spells/` based on `reward_type`.
+
+### 4. Initial Data
+
+- **`data/map_chests/mausoleum.json`:** 11 chest entries for the Mausoleum arena (5 Common, 4 Epic, 2 Legendary).
+
+## Developer Action Required
+
+- Update consumers to handle the new `map_chests` collection in `all_data.json`.
+
+---
+
 ## Schema Changes - v1.5 Infusions Redesign & Data Corrections
 
 ### Overview

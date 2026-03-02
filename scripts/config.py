@@ -39,6 +39,7 @@ SCHEMA_FILES = {
     "upgrade": "upgrades.schema.json",
     "game_config": "game_config.schema.json",
     "titan": "titans.schema.json",
+    "map_chest": "map_chests.schema.json",
     "changelog_index": "changelog_index.schema.json",
     "changelog": "changelog.schema.json",
     "timeline_entry": "timeline_entry.schema.json",
@@ -59,6 +60,7 @@ FOLDER_TO_SCHEMA = {
     "heroes": "hero",
     "consumables": "consumable",
     "upgrades": "upgrade",
+    "map_chests": "map_chest",
 }
 
 

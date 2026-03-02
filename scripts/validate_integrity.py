@@ -338,6 +338,35 @@ def validate_integrity():
                             print(f"[FAIL] {os.path.basename(filepath)} references unknown infusion '{inf_id}'")
                             errors += 1
 
+    # Cross-reference: Map Chests -> Units/Spells
+    if "map_chests" in db:
+        # Build lookup sets of known entity IDs
+        unit_ids = set()
+        spell_ids = set()
+        if "units" in db:
+            for _, udata in db["units"].items():
+                eid = udata.get("entity_id")
+                if eid:
+                    unit_ids.add(eid)
+        if "spells" in db:
+            for _, sdata in db["spells"].items():
+                eid = sdata.get("entity_id")
+                if eid:
+                    spell_ids.add(eid)
+
+        for filepath, data in db["map_chests"].items():
+            for chest in data.get("chests", []):
+                reward_id = chest.get("reward_entity_id", "")
+                reward_type = chest.get("reward_type", "")
+                lookup = unit_ids if reward_type == "Unit" else spell_ids
+                if reward_id not in lookup:
+                    collection_name = "units" if reward_type == "Unit" else "spells"
+                    print(
+                        f"[FAIL] {os.path.basename(filepath)} chest at '{chest.get('location', '?')}' "
+                        f"references unknown {collection_name} entity '{reward_id}'"
+                    )
+                    errors += 1
+
     # Validate Game Config
     game_config_path = os.path.join(DATA_DIR, "game_config.json")
     if os.path.exists(game_config_path):
