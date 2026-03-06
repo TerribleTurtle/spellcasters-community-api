@@ -4,6 +4,7 @@
     "ajv-formats": "^3.0.1"
   },
   "devDependencies": {
-    "@apidevtools/json-schema-ref-parser": "^15.2.2"
+    "@apidevtools/json-schema-ref-parser": "^15.2.2",
+    "browserify": "^17.0.0"
   }
 }

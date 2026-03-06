@@ -13,11 +13,17 @@ def load_json(path):
             return None
 
 
-def load_timeline(entity_id, timeline_dir):
+def load_timeline(entity_id: str, timeline_dir: str) -> list[dict]:
     """
-    Loads timeline data for an entity.
-    Returns a list of snapshot dicts sorted by version (assumes existing timelines are sorted),
-    or an empty list if no timeline exists.
+    Loads timeline data for an entity by ID from the specified directory.
+
+    Args:
+        entity_id (str): The unique ID of the entity.
+        timeline_dir (str): Absolute path to the timeline directory.
+
+    Returns:
+        list[dict]: A list of snapshot dicts sorted by version (assumes existing timelines are sorted),
+                    or an empty list if no timeline exists.
     """
     path = os.path.join(timeline_dir, f"{entity_id}.json")
     data = load_json(path)
@@ -26,10 +32,15 @@ def load_timeline(entity_id, timeline_dir):
     return []
 
 
-def resolve_entity_id(entity_data):
+def resolve_entity_id(entity_data: dict) -> str | None:
     """
     Returns the unique identifier for an entity dict.
-    Upgrades use 'upgrade_id', everything else uses 'entity_id'.
+
+    Args:
+        entity_data (dict): The entity data dictionary to evaluate.
+
+    Returns:
+        str | None: The unique identifier ('upgrade_id' for upgrades, 'entity_id' for others), or None if invalid.
     """
     if not isinstance(entity_data, dict):
         return None
