@@ -184,6 +184,24 @@ def inject_hero_image_urls(entity):
         entity["image_urls"] = image_urls
 
 
+def inject_map_image_url(entity: dict) -> None:
+    """
+    Injects a root-relative image URL for a map entity.
+    Checks assets/maps/{entity_id}.webp first, falls back to .png.
+    Only injects if the file actually exists on disk.
+    """
+    eid = entity.get("entity_id")
+    if not eid:
+        return
+
+    for ext in ("webp", "png"):
+        rel_path = f"maps/{eid}.{ext}"
+        abs_path = os.path.join(config.ASSETS_DIR, rel_path.replace("/", os.sep))
+        if os.path.exists(abs_path):
+            entity["image_urls"] = {"map": f"/assets/{rel_path}"}
+            return
+
+
 def main():
     print(f"Building API {VERSION_API}...")
 
@@ -238,6 +256,8 @@ def main():
 
             if key == "heroes":
                 inject_hero_image_urls(entity)
+            elif key == "map_chests":
+                inject_map_image_url(entity)
 
         # Save individual aggregation
         save_json(f"{key}.json", collection)

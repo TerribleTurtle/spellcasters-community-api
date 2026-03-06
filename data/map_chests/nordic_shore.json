@@ -1,0 +1,74 @@
+{
+    "$schema": "../../schemas/v2/map_chests.schema.json",
+    "entity_id": "nordic_shore",
+    "name": "Nordic Shore",
+    "description": "Chest spawn locations for the Nordic Shore arena.",
+    "image_required": true,
+    "tags": [],
+    "last_modified": "2026-03-05T22:44:00Z",
+    "chests": [
+        {
+            "location": "Beach Left",
+            "rarity": "Common",
+            "tier": "T1",
+            "reward_entity_id": "faerie",
+            "reward_type": "Unit"
+        },
+        {
+            "location": "Beach Right",
+            "rarity": "Common",
+            "tier": "T1",
+            "reward_entity_id": "fire_ray",
+            "reward_type": "Spell"
+        },
+        {
+            "location": "Dockside",
+            "rarity": "Common",
+            "tier": "T1",
+            "reward_entity_id": "harpy",
+            "reward_type": "Unit"
+        },
+        {
+            "location": "Cliffside Left",
+            "rarity": "Epic",
+            "tier": "T2",
+            "reward_entity_id": "poison_breath",
+            "reward_type": "Spell"
+        },
+        {
+            "location": "Cliffside Right",
+            "rarity": "Epic",
+            "tier": "T2",
+            "reward_entity_id": "rampart",
+            "reward_type": "Unit"
+        },
+        {
+            "location": "Longship Bow",
+            "rarity": "Epic",
+            "tier": "T3",
+            "reward_entity_id": "fire_ball",
+            "reward_type": "Spell"
+        },
+        {
+            "location": "Longship Stern",
+            "rarity": "Epic",
+            "tier": "T3",
+            "reward_entity_id": "wolven_hunter",
+            "reward_type": "Unit"
+        },
+        {
+            "location": "Frozen Falls",
+            "rarity": "Legendary",
+            "tier": "T4",
+            "reward_entity_id": "astral_nova",
+            "reward_type": "Spell"
+        },
+        {
+            "location": "Jarl's Hall",
+            "rarity": "Legendary",
+            "tier": "T4",
+            "reward_entity_id": "juggernaut",
+            "reward_type": "Unit"
+        }
+    ]
+}

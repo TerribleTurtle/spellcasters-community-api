@@ -171,3 +171,15 @@ def test_referential_integrity_catches_dangling_reference(data_loader):
     # Verify a fake ID would fail the check
     assert "nonexistent_unit_xyz" not in unit_ids
     assert "nonexistent_spell_xyz" not in spell_ids
+
+
+# ---------------------------------------------------------------------------
+# 7. image_required is true on mausoleum
+# ---------------------------------------------------------------------------
+
+
+def test_mausoleum_has_image_required_true():
+    """Mausoleum data file must set image_required: true now that the asset exists."""
+    data = _load_mausoleum()
+    assert data is not None, "mausoleum.json failed to load"
+    assert data.get("image_required") is True, "mausoleum.json should have image_required: true"

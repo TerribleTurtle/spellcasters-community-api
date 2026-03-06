@@ -3,7 +3,7 @@
     "entity_id": "mausoleum",
     "name": "Mausoleum",
     "description": "Chest spawn locations for the Mausoleum arena.",
-    "image_required": false,
+    "image_required": true,
     "tags": [],
     "last_modified": "2026-03-01T22:48:00Z",
     "chests": [

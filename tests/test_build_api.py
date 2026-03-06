@@ -104,6 +104,61 @@ class TestInjectHeroImageUrls:
 
 
 # ---------------------------------------------------------------------------
+# inject_map_image_url
+# ---------------------------------------------------------------------------
+
+
+class TestInjectMapImageUrl:
+    def test_missing_entity_id(self):
+        """Should no-op if entity_id is missing."""
+        entity = {"name": "No ID"}
+        build_api.inject_map_image_url(entity)
+        assert "image_urls" not in entity
+
+    def test_injects_webp_when_present(self, tmp_path):
+        """Should prefer .webp over .png."""
+        assets_dir = tmp_path / "assets"
+        maps_dir = assets_dir / "maps"
+        maps_dir.mkdir(parents=True)
+        (maps_dir / "test_map.webp").touch()
+        (maps_dir / "test_map.png").touch()  # Both exist — webp wins
+
+        entity = {"entity_id": "test_map"}
+
+        with patch("config.ASSETS_DIR", str(assets_dir)):
+            build_api.inject_map_image_url(entity)
+
+        assert entity["image_urls"] == {"map": "/assets/maps/test_map.webp"}
+
+    def test_injects_png_when_webp_missing(self, tmp_path):
+        """Should fall back to .png when no .webp exists."""
+        assets_dir = tmp_path / "assets"
+        maps_dir = assets_dir / "maps"
+        maps_dir.mkdir(parents=True)
+        (maps_dir / "test_map.png").touch()
+
+        entity = {"entity_id": "test_map"}
+
+        with patch("config.ASSETS_DIR", str(assets_dir)):
+            build_api.inject_map_image_url(entity)
+
+        assert entity["image_urls"] == {"map": "/assets/maps/test_map.png"}
+
+    def test_no_injection_when_no_asset(self, tmp_path):
+        """Should not add image_urls when neither .webp nor .png exists."""
+        assets_dir = tmp_path / "assets"
+        maps_dir = assets_dir / "maps"
+        maps_dir.mkdir(parents=True)
+
+        entity = {"entity_id": "missing_map"}
+
+        with patch("config.ASSETS_DIR", str(assets_dir)):
+            build_api.inject_map_image_url(entity)
+
+        assert "image_urls" not in entity
+
+
+# ---------------------------------------------------------------------------
 # ensure_output_dir & save_json
 # ---------------------------------------------------------------------------
 

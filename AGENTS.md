@@ -104,7 +104,7 @@ The API is built from **7 entity types**, each with its own schema, data directo
 | **Titans**     | `data/titans/*.json`    | `schemas/v2/titans.schema.json`    | `assets/titans/`      | ✅        |
 | **Consumables**| `data/consumables/*.json`| `schemas/v2/consumables.schema.json`| —                     | ❌        |
 | **Upgrades**   | `data/upgrades/*.json`  | `schemas/v2/upgrades.schema.json`  | —                     | ❌        |
-| **Map Chests** | `data/map_chests/*.json`| `schemas/v2/map_chests.schema.json`| —                     | ❌        |
+| **Map Chests** | `data/map_chests/*.json`| `schemas/v2/map_chests.schema.json`| `assets/maps/`        | ✅        |
 
 **Standalone data files** (not per-entity):
 - `data/game_config.json` → `game_config.schema.json`

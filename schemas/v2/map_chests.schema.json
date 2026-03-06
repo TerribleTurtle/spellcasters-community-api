@@ -5,17 +5,32 @@
   "description": "Chest spawn locations and rewards for a specific map.",
   "type": "object",
   "allOf": [
-    { "$ref": "definitions/core.schema.json#/definitions/identity" },
-    { "$ref": "definitions/core.schema.json#/definitions/meta" },
-    { "$ref": "definitions/core.schema.json#/definitions/assets" }
+    {
+      "$ref": "definitions/core.schema.json#/definitions/identity"
+    },
+    {
+      "$ref": "definitions/core.schema.json#/definitions/meta"
+    },
+    {
+      "$ref": "definitions/core.schema.json#/definitions/assets"
+    }
   ],
   "properties": {
+    "image_urls": {
+      "$ref": "definitions/core.schema.json#/definitions/image_urls"
+    },
     "chests": {
       "type": "array",
       "description": "List of chest spawn points on this map.",
       "items": {
         "type": "object",
-        "required": ["location", "rarity", "tier", "reward_entity_id", "reward_type"],
+        "required": [
+          "location",
+          "rarity",
+          "tier",
+          "reward_entity_id",
+          "reward_type"
+        ],
         "properties": {
           "location": {
             "type": "string",
@@ -25,12 +40,21 @@
           },
           "rarity": {
             "type": "string",
-            "enum": ["Common", "Epic", "Legendary"],
+            "enum": [
+              "Common",
+              "Epic",
+              "Legendary"
+            ],
             "description": "Chest rarity tier category."
           },
           "tier": {
             "type": "string",
-            "enum": ["T1", "T2", "T3", "T4"],
+            "enum": [
+              "T1",
+              "T2",
+              "T3",
+              "T4"
+            ],
             "description": "Granular power tier within the rarity category."
           },
           "reward_entity_id": {
@@ -40,12 +64,18 @@
           },
           "reward_type": {
             "type": "string",
-            "enum": ["Unit", "Spell"],
+            "enum": [
+              "Unit",
+              "Spell"
+            ],
             "description": "Which entity collection the reward belongs to."
           },
           "spawn_time_seconds": {
             "type": "array",
-            "items": { "type": "integer", "minimum": 0 },
+            "items": {
+              "type": "integer",
+              "minimum": 0
+            },
             "description": "Match times (in seconds) when this chest spawns. Optional — for future use."
           }
         },
@@ -53,6 +83,8 @@
       }
     }
   },
-  "required": ["chests"],
+  "required": [
+    "chests"
+  ],
   "unevaluatedProperties": false
 }
