@@ -25,9 +25,15 @@
         ]
       },
       {
-        "multiplier": 0.65,
+        "multiplier": 0.85,
         "target_types": [
           "Building"
+        ]
+      },
+      {
+        "multiplier": 0.85,
+        "target_types": [
+          "Lifestone"
         ]
       }
     ],
@@ -40,7 +46,7 @@
       "description": "Deals 30 increased damage on pouncing initial attack on grounded and hovering units."
     }
   },
-  "health": 100,
+  "health": 80,
   "movement_speed": 8,
   "movement_type": "Flying",
   "dps": 12,
@@ -49,5 +55,6 @@
   "recharge_time": 7,
   "cast_time": 0,
   "population": 0,
-  "knowledge_cost": 50
+  "knowledge_cost": 0,
+  "last_modified": "2026-03-07T00:00:00Z"
 }

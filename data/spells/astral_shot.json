@@ -5,7 +5,7 @@
   "category": "Spell",
   "cast_time": 0,
   "charges": 1,
-  "damage": 32,
+  "damage": 28,
   "damage_overrides": {
     "Building": 0,
     "Lifestone": 0,
@@ -50,6 +50,6 @@
   "tags": [
     "homing"
   ],
-  "last_modified": "2026-02-19T02:12:48.686Z",
+  "last_modified": "2026-03-07T00:00:00Z",
   "knowledge_cost": 0
 }

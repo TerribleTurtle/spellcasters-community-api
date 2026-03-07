@@ -9,13 +9,32 @@
       "items": {
         "type": "object",
         "properties": {
-            "unit_id": { "type": "string", "pattern": "^[a-z0-9_]+$" },
-            "count": { "type": "integer", "minimum": 1 },
-            "interval": { "type": "number", "minimum": 0 },
-            "trigger": { "$ref": "../enums.schema.json#/definitions/spawner_trigger_enum" }
+          "unit_id": {
+            "type": "string",
+            "pattern": "^[a-z0-9_]+$"
+          },
+          "count": {
+            "type": "integer",
+            "minimum": 1
+          },
+          "interval": {
+            "type": "number",
+            "minimum": 0
+          },
+          "max_active": {
+            "type": "integer",
+            "minimum": 1
+          },
+          "trigger": {
+            "$ref": "../enums.schema.json#/definitions/spawner_trigger_enum"
+          }
         },
         "additionalProperties": false,
-        "required": ["unit_id", "count", "trigger"]
+        "required": [
+          "unit_id",
+          "count",
+          "trigger"
+        ]
       }
     }
   }

@@ -8,7 +8,7 @@
   "health": 350,
   "movement_type": "Ground",
   "population": 0,
-  "last_modified": "2026-02-18T07:20:50.326Z",
+  "last_modified": "2026-03-07T00:00:00Z",
   "$schema": "../../schemas/v2/heroes.schema.json",
   "class": "Duelist",
   "difficulty": 3,
@@ -30,7 +30,7 @@
     "primary": {
       "name": "Poison Strike",
       "description": "Fire a barrage of projectiles that deal Poison damage.",
-      "damage": 21,
+      "damage": 15,
       "projectiles": 2,
       "mechanics": {
         "features": [
@@ -41,7 +41,15 @@
         ],
         "infusion": {
           "id": "poison_infusion"
-        }
+        },
+        "damage_modifiers": [
+          {
+            "target_types": [
+              "Spellcaster"
+            ],
+            "multiplier": 0.88
+          }
+        ]
       }
     },
     "defense": {
@@ -57,7 +65,9 @@
         "damage_modifiers": [
           {
             "multiplier": 1.5,
-            "target_types": ["All"]
+            "target_types": [
+              "All"
+            ]
           }
         ],
         "features": [

@@ -2,6 +2,28 @@
 
 All notable changes to this project will be documented in this file.
 
+## [0.2.0] - 2026-03-07
+
+### Balance Updates (March 2026 Patch)
+
+- feat(data): Harpy HP 100→80, Building/Lifestone damage modifier 0.65→0.85
+- feat(data): Rhino Rider HP 0→550
+- feat(data): Astral Shot damage 32→28
+- feat(data): Swamp Witch Poison Strike damage 21→15, +0.88x vs Spellcasters
+- feat(data): Spawner XP multiplier 0.5→0.1
+- feat(data): Building spawner count 5→3, death spawn 10→6, max active 15→12
+- feat(data): knowledge cost adjustments across 24 units and spells
+- feat(data): Early Access compensation: 2,000 Knowledge for pre-March 2 players
+
+### Schema Additions
+
+- feat(schema): add `summon_xp` to `match_xp` in `game_systems.schema.json` (required)
+- feat(schema): add `map_objects` with `lifestone` to `game_systems.schema.json` (optional)
+- feat(schema): add `early_access_compensation` to `starting_knowledge` (required)
+- feat(schema): add `max_active` to `spawner.schema.json` (optional)
+- feat(data): populate `summon_xp` per-rank values (50/150/300/500)
+- feat(data): populate `map_objects.lifestone` (10 HP/s heal to Spellcasters in territory)
+
 ## [0.1.2] - 2026-02-26
 
 - feat(schema): rework `upgrades.schema.json` from RNG placeholder to archetype-based fixed upgrades

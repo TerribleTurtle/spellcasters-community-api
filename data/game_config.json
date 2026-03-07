@@ -1,6 +1,6 @@
 {
   "name": "Spellcasters Chronicles",
-  "version": "0.1.1",
+  "version": "0.2.0",
   "developer": "Quantic Dream",
   "publisher": "Quantic Dream",
   "genre": "3v3 Deckbuilder RTS MOBA",
@@ -12,6 +12,11 @@
   },
   "status": "Early Access",
   "changelog": [
+    {
+      "version": "0.2.0",
+      "date": "2026-03-07T00:00:00Z",
+      "description": "March 2026 patch balance updates, knowledge cost adjustments, summon_xp system, Lifestone map_objects"
+    },
     {
       "version": "0.1.1",
       "date": "2026-02-26T18:30:00Z",

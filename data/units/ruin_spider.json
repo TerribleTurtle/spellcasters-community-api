@@ -45,7 +45,7 @@
       }
     ]
   },
-  "last_modified": "2026-02-26T15:11:00.000Z",
+  "last_modified": "2026-03-07T00:00:00Z",
   "$schema": "../../schemas/v2/units.schema.json",
-  "knowledge_cost": 50
+  "knowledge_cost": 0
 }

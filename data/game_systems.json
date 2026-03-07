@@ -3,7 +3,8 @@
   "progression": {
     "starting_knowledge": {
       "default": 250,
-      "beta": 1000
+      "beta": 1000,
+      "early_access_compensation": 2000
     },
     "earn_rates": {
       "first_daily_match": 200,
@@ -15,8 +16,16 @@
     "tiers_per_rank": 5,
     "rp_gain_per_win": 20,
     "ranks": [
-      { "name": "Novice", "rp_threshold_min": 0, "rp_loss_per_loss": 5 },
-      { "name": "Grand Master", "rp_threshold_min": 1390, "rp_loss_per_loss": 20 }
+      {
+        "name": "Novice",
+        "rp_threshold_min": 0,
+        "rp_loss_per_loss": 5
+      },
+      {
+        "name": "Grand Master",
+        "rp_threshold_min": 1390,
+        "rp_loss_per_loss": 20
+      }
     ]
   },
   "match_xp": {
@@ -33,10 +42,29 @@
       "rank_iii": 300,
       "rank_iv": 500
     },
-    "building_spawn_multiplier": 0.5,
+    "summon_xp": {
+      "rank_i": 50,
+      "rank_ii": 150,
+      "rank_iii": 300,
+      "rank_iv": 500
+    },
+    "building_spawn_multiplier": 0.1,
     "level_thresholds": [
-      { "level": 1, "xp_required": 0 },
-      { "level": 25, "xp_required": 20000 }
+      {
+        "level": 1,
+        "xp_required": 0
+      },
+      {
+        "level": 25,
+        "xp_required": 20000
+      }
     ]
+  },
+  "map_objects": {
+    "lifestone": {
+      "heal_per_sec": 10,
+      "heal_target": "Spellcaster",
+      "heal_range": "territory"
+    }
   }
 }
