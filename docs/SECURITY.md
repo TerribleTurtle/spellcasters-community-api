@@ -33,3 +33,9 @@ This project is a static API. The scope is limited to:
 - The JSON data integrity.
 - The build scripts in `scripts/`.
 - The GitHub Actions workflows.
+
+## Known Vulnerabilities / Exceptions
+
+The following are known security alerts that are accepted as exceptions:
+
+- **`elliptic` (Low Severity)**: Located in the development dependencies (`browserify` -> `crypto-browserify` -> `create-ecdh` -> `elliptic`). The package is on its latest version (`6.6.1`) and there is currently no patch available. Since this is restricted to the local development and build environment and not exposed in the final static API, this warning is currently ignored.
