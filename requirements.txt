@@ -3,7 +3,7 @@ Pillow==12.3.0
 pytest==9.1.1
 referencing>=0.37.0
 deepdiff>=9.1.0
-ruff>=0.15.17
+ruff>=0.16.2
 pre-commit>=4.6.0
 mypy>=2.1.0
 types-jsonschema
