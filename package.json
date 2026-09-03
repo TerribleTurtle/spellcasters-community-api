@@ -6,5 +6,12 @@
   "devDependencies": {
     "@apidevtools/json-schema-ref-parser": "^15.5.0",
     "browserify": "^17.0.0"
+  },
+  "overrides": {
+    "brace-expansion": "^2.0.1",
+    "elliptic": ">=6.5.7",
+    "fast-uri": ">=3.1.6",
+    "js-yaml": ">=4.3.1",
+    "qs": ">=6.15.4"
   }
 }
