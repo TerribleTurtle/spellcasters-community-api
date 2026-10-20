@@ -1,5 +1,5 @@
 jsonschema==4.26.0
-Pillow==12.3.0
+Pillow==13.0.0
 pytest==9.1.1
 referencing>=0.37.0
 deepdiff>=9.1.0
