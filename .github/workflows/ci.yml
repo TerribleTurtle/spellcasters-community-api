@@ -110,3 +110,19 @@ jobs:
 
       - name: Build API
         run: python scripts/build_api.py
+
+  automerge:
+    name: Auto-merge Dependabot
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    needs: [build]
+    if: github.event_name == 'pull_request' && github.actor == 'dependabot[bot]'
+    permissions:
+      contents: write
+      pull-requests: write
+    steps:
+      - name: Merge Dependabot PR after CI passes
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          PR_URL: ${{ github.event.pull_request.html_url }}
+        run: gh pr merge --squash --delete-branch "$PR_URL"

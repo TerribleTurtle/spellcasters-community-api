@@ -146,7 +146,7 @@ def check_asset_exists(category, entity_id, is_required, cache):
             print(f"[WARN] Hygiene: {final_path} is {size_kb:.1f}KB (Max: {MAX_IMG_SIZE_KB}KB)")
             warnings += 1
 
-        with Image.open(final_path) as img:
+        with Image.open(final_path, formats=["WEBP", "PNG"]) as img:
             width, height = img.size
             if width > MAX_IMG_DIMENSION or height > MAX_IMG_DIMENSION:
                 print(

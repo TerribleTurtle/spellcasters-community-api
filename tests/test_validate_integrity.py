@@ -185,6 +185,21 @@ class TestEvilAssets:
             # Should have handled it cleanly and returned 1 warning
             assert result == 1
 
+    def test_evil_disallowed_format_disguised_as_webp(self, tmp_path):
+        """Should reject legacy image formats (e.g. BMP/TIFF) disguised with a .webp extension."""
+        from PIL import Image
+
+        category_dir = tmp_path / "units"
+        category_dir.mkdir()
+        asset = category_dir / "spoofed.webp"
+
+        img = Image.new("RGB", (1, 1), color="red")
+        img.save(str(asset), format="BMP")
+
+        with patch("validate_integrity.ASSETS_DIR", str(tmp_path)):
+            result = check_asset_exists("units", "spoofed", True, {})
+            assert result == 1
+
 
 # ---------------------------------------------------------------------------
 # validate_timeline_metadata

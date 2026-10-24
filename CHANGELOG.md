@@ -7,10 +7,11 @@ All notable changes to this project will be documented in this file.
 ### Security
 
 - fix(security): replace unsafe `eval()` with dict key lookup in patch diff computation (`scripts/patch_utils.py`)
-- fix(security): bump `Pillow` to 13.0.0 in `requirements.txt` to resolve 9 CVEs (alerts #52–#60)
+- fix(security): bump `Pillow` to 13.0.0 in `requirements.txt` to resolve 41 advisories (alerts #52–#60, #68–#99) and restrict `Image.open()` in `scripts/validate_integrity.py` to `WEBP`/`PNG` decoders
 - fix(security): add npm overrides for `shell-quote` (>=1.11.0), `brace-expansion` (>=2.1.7), `fast-uri` (>=4.2.3), `pbkdf2` (>=3.1.7), and `undici` (>=8.12.3) in `package.json`
 - chore(deps): bump `@apidevtools/json-schema-ref-parser` to 16.0.5 and rebuild `ajv2019.bundle.js`
 - chore(deps): bump Python tooling requirements (`ruff>=0.17.1`, `pre-commit>=4.7.0`, `mypy>=2.4.0`)
+- chore(ci): switch Dependabot to monthly grouped updates and auto-merge passing Dependabot PRs in `ci.yml`
 
 ## [0.2.0] - 2026-03-07
 
