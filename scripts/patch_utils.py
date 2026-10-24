@@ -39,8 +39,16 @@ def get_file_content_at_commit(filepath, commit_hash):
 def _parse_deepdiff_path(path):
     """Parses a DeepDiff path string like root['stats']['attack'] or root['tags'][0]
     into a clean list of keys: ['stats', 'attack'] or ['tags', 0]."""
-    matches = re.findall(r"\['([^']+)'\]|\[(\d+)\]", path)
-    return [m[0] if m[0] else int(m[1]) for m in matches]
+    matches = re.findall(r"\[(?:'([^']*)'|\"([^\"]*)\")\]|\[(\d+)\]", path)
+    res = []
+    for m in matches:
+        if m[0]:
+            res.append(m[0])
+        elif m[1]:
+            res.append(m[1])
+        elif m[2]:
+            res.append(int(m[2]))
+    return res
 
 
 def compute_diff(old_data, new_data):
@@ -56,7 +64,10 @@ def compute_diff(old_data, new_data):
         for path in diff["dictionary_item_added"]:
             keys = _parse_deepdiff_path(path)
             try:
-                val = eval("new_data" + path.replace("root", ""))
+                curr = new_data
+                for k in keys:
+                    curr = curr[k]
+                val = curr
             except Exception:
                 val = "[Complex Value]"
             diffs.append({"path": keys, "new_value": val})

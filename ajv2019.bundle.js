@@ -6579,22 +6579,30 @@ module.exports = function equal(a, b) {
 },{}],90:[function(require,module,exports){
 'use strict'
 
-const { normalizeIPv6, removeDotSegments, recomposeAuthority, normalizePercentEncoding, normalizePathEncoding, serializePathEncoding, normalizeQueryFragmentEncoding, encodeQuery, encodeFragment, reescapeHostDelimiters, isIPv4, nonSimpleDomain } = require('./lib/utils')
+const { normalizeIPv6, removeDotSegments, removeDotSegmentsRelative, recomposeAuthority, normalizePercentEncoding, normalizePathEncoding, serializePathEncoding, normalizeQueryFragmentEncoding, encodeQuery, encodeFragment, encodeHost, isIPv4, nonSimpleDomain } = require('./lib/utils')
 const { SCHEMES, getSchemeHandler } = require('./lib/schemes')
 
 const VALID_SCHEME = /^[A-Za-z][A-Za-z0-9+.-]*$/u
 const MALFORMED_SCHEME_ERROR = 'URI scheme is malformed.'
+const MALFORMED_HOST_ERROR = 'URI host is malformed.'
+// ASCII characters outside the RFC 3986 reg-name set (unreserved, sub-delims
+// and "%" for pct-encoded): C0 controls, space, DEL, and "#/:<>?@[\]^`{|}.
+const FORBIDDEN_DOMAIN_HOST_CHARACTER = /[\0-\x20"#/:<>?@[\\\]^`{|}\x7F]/u
 
 /**
+ * RFC 3986 section 3.1 does not allow percent-encoding in a scheme, so the
+ * scheme is validated as-is and never decoded. Decoding would let inert input
+ * such as `%6Aavascript:` become a live `javascript:` scheme.
+ *
  * @param {string} scheme
  * @returns {string}
  */
-function decodeValidScheme (scheme) {
-  const decodedScheme = unescape(String(scheme))
-  if (!VALID_SCHEME.test(decodedScheme)) {
+function validateScheme (scheme) {
+  const stringScheme = String(scheme)
+  if (!VALID_SCHEME.test(stringScheme)) {
     throw new TypeError(MALFORMED_SCHEME_ERROR)
   }
-  return decodedScheme
+  return stringScheme
 }
 
 /**
@@ -6623,6 +6631,7 @@ function resolve (baseURI, relativeURI, options) {
   const {
     parsed: baseParsed,
     malformedAuthorityOrPort: baseMalformed,
+    malformedReferenceEdge: baseMalformedReferenceEdge,
     malformedPercentEncoding: baseMalformedPercentEncoding,
     malformedSchemeSpecific: baseMalformedSchemeSpecific,
     malformedHost: baseMalformedHost,
@@ -6631,6 +6640,7 @@ function resolve (baseURI, relativeURI, options) {
   const {
     parsed: relativeParsed,
     malformedAuthorityOrPort: relativeMalformed,
+    malformedReferenceEdge: relativeMalformedReferenceEdge,
     malformedPercentEncoding: relativeMalformedPercentEncoding,
     malformedSchemeSpecific: relativeMalformedSchemeSpecific,
     malformedHost: relativeMalformedHost,
@@ -6639,6 +6649,8 @@ function resolve (baseURI, relativeURI, options) {
   if (
     baseMalformed ||
     relativeMalformed ||
+    baseMalformedReferenceEdge ||
+    relativeMalformedReferenceEdge ||
     baseMalformedPercentEncoding ||
     relativeMalformedPercentEncoding ||
     baseMalformedSchemeSpecific ||
@@ -6653,8 +6665,22 @@ function resolve (baseURI, relativeURI, options) {
   const resolved = resolveComponent(baseParsed, relativeParsed, schemelessOptions, true)
   const resolvedSchemeHandler = getSchemeHandler((options && options.scheme) || resolved.scheme)
   const resolvedHost = resolved.host
+  // Inputs are parsed scheme-neutrally during resolution, so enforce the final
+  // HTTP scheme's required host before serializing an invalid HTTP URI.
+  if (
+    (resolved.scheme === 'http' || resolved.scheme === 'https') &&
+    !resolvedHost
+  ) {
+    throw new Error('HTTP URIs must have a host.')
+  }
   const resolvedHostIsIP = resolvedHost !== undefined && resolvedHost !== '' &&
     (isIPv4(resolvedHost) || normalizeIPv6(resolvedHost).isIPV6)
+  // Inputs are parsed scheme-neutrally, so delimiters and controls in a domain
+  // host are only detected here, once the final scheme is known. They always
+  // fail closed, including in percent-encoded hosts.
+  if (hasForbiddenDomainHost(resolved, options || {}, resolvedSchemeHandler, resolvedHostIsIP)) {
+    throw new Error(MALFORMED_HOST_ERROR)
+  }
   canonicalizeHost(resolved, options || {}, resolvedSchemeHandler, resolvedHostIsIP)
   // Percent escapes in an ASCII reg-name are encoded data. The WHATWG hostname
   // parser can reject them even though fast-uri preserves them safely as RFC
@@ -6665,7 +6691,26 @@ function resolve (baseURI, relativeURI, options) {
     throw new Error(resolved.error)
   }
   schemelessOptions.skipEscape = true
+  if (resolvedSchemeHandler && resolvedSchemeHandler.absolutePath) {
+    schemelessOptions.absolutePath = true
+  }
   return serialize(resolved, schemelessOptions)
+}
+
+/**
+ * Copies a host component together with its parse-time zone identifier (if
+ * any), so downstream recomposition does not re-derive an IPv6 zone from the
+ * ambiguous single-"%" component form. The zone is validated on use by
+ * `recomposeAuthority` rather than blindly trusted.
+ *
+ * @param {import('./types/index').URIComponent} target
+ * @param {import('./types/index').URIComponent} source
+ */
+function copyHost (target, source) {
+  target.host = source.host
+  if (source.ipv6Zone !== undefined) {
+    target.ipv6Zone = source.ipv6Zone
+  }
 }
 
 /**
@@ -6688,15 +6733,18 @@ function resolveComponent (base, relative, options, skipNormalization) {
     target.scheme = relative.scheme
     // target.authority = relative.authority;
     target.userinfo = relative.userinfo
-    target.host = relative.host
+    copyHost(target, relative)
     target.port = relative.port
-    target.path = removeDotSegments(relative.path || '')
+    const relativeSchemeHandler = getSchemeHandler(relative.scheme)
+    target.path = relativeSchemeHandler && relativeSchemeHandler.absolutePath
+      ? relative.path || ''
+      : removeDotSegments(relative.path || '')
     target.query = relative.query
   } else {
     if (relative.userinfo !== undefined || relative.host !== undefined || relative.port !== undefined) {
       // target.authority = relative.authority;
       target.userinfo = relative.userinfo
-      target.host = relative.host
+      copyHost(target, relative)
       target.port = relative.port
       target.path = removeDotSegments(relative.path || '')
       target.query = relative.query
@@ -6712,20 +6760,23 @@ function resolveComponent (base, relative, options, skipNormalization) {
         if (relative.path[0] === '/') {
           target.path = removeDotSegments(relative.path)
         } else {
-          if ((base.userinfo !== undefined || base.host !== undefined || base.port !== undefined) && !base.path) {
+          const baseHasAuthority = base.userinfo !== undefined || base.host !== undefined || base.port !== undefined
+          if (baseHasAuthority && !base.path) {
             target.path = '/' + relative.path
           } else if (!base.path) {
             target.path = relative.path
           } else {
             target.path = base.path.slice(0, base.path.lastIndexOf('/') + 1) + relative.path
           }
-          target.path = removeDotSegments(target.path)
+          target.path = base.scheme === undefined && !baseHasAuthority && target.path[0] !== '/'
+            ? removeDotSegmentsRelative(target.path)
+            : removeDotSegments(target.path)
         }
         target.query = relative.query
       }
       // target.authority = base.authority;
       target.userinfo = base.userinfo
-      target.host = base.host
+      copyHost(target, base)
       target.port = base.port
     }
     target.scheme = base.scheme
@@ -6757,6 +6808,7 @@ function equal (uriA, uriB, options) {
 function serialize (cmpts, opts) {
   const component = {
     host: cmpts.host,
+    ipv6Zone: cmpts.ipv6Zone,
     scheme: cmpts.scheme,
     userinfo: cmpts.userinfo,
     port: cmpts.port,
@@ -6779,7 +6831,7 @@ function serialize (cmpts, opts) {
   const uriTokens = []
 
   if (component.scheme) {
-    component.scheme = decodeValidScheme(component.scheme)
+    component.scheme = validateScheme(component.scheme)
   }
 
   // find scheme handler
@@ -6789,7 +6841,11 @@ function serialize (cmpts, opts) {
   if (schemeHandler && schemeHandler.serialize) schemeHandler.serialize(component, options)
 
   const hasAuthority = component.userinfo !== undefined || component.host !== undefined || component.port !== undefined
-  const pathNoScheme = !options.skipEscape && component.scheme === undefined && !hasAuthority
+  // A reference with no emitted scheme is path-noscheme: a bare ':' in its
+  // first path segment would reparse as a scheme (RFC 3986 3.3/4.2). Enforced
+  // under skipEscape too (resolve()), so the reapply below gates on this flag.
+  const schemelessReference = (component.scheme === undefined || options.reference === 'suffix') && !hasAuthority
+  const pathNoScheme = !options.skipEscape && schemelessReference
 
   if (component.path !== undefined) {
     if (!options.skipEscape) {
@@ -6801,11 +6857,12 @@ function serialize (cmpts, opts) {
 
   if (options.reference !== 'suffix' && component.scheme) {
     // Scheme handlers may replace the scheme during serialization.
-    component.scheme = decodeValidScheme(component.scheme)
+    component.scheme = validateScheme(component.scheme)
     uriTokens.push(component.scheme, ':')
   }
 
-  const authority = recomposeAuthority(component)
+  const allowNonAsciiHost = options.unicodeSupport === true || Boolean(schemeHandler && schemeHandler.unicodeSupport)
+  const authority = recomposeAuthority(component, allowNonAsciiHost)
   if (authority !== undefined) {
     if (options.reference !== 'suffix') {
       uriTokens.push('//')
@@ -6821,13 +6878,18 @@ function serialize (cmpts, opts) {
     let s = component.path
 
     if (!options.absolutePath && (!schemeHandler || !schemeHandler.absolutePath)) {
-      s = removeDotSegments(s)
+      // A relative-path reference keeps its unresolvable leading ".." segments
+      // and must never become root-relative (RFC 3986 section 5.2.4 applies to
+      // merged target paths, not to the reference itself).
+      s = schemelessReference && s[0] !== '/'
+        ? removeDotSegmentsRelative(s)
+        : removeDotSegments(s)
     }
 
     // Dot-segment removal can expose a colon that was not originally in the
     // first segment (for example, "./a:b"). Reapply path-noscheme encoding so
     // the serialized relative reference cannot be reparsed as a URI scheme.
-    if (pathNoScheme) {
+    if (schemelessReference) {
       s = serializePathEncoding(s, true)
     }
 
@@ -6947,6 +7009,11 @@ function canonicalizeHost (parsed, options, schemeHandler, isIP) {
     parsed.host[0] === '[' &&
     parsed.host[parsed.host.length - 1] === ']'
 
+  if (hasForbiddenDomainHost(parsed, options, schemeHandler, isIP)) {
+    parsed.error = parsed.error || MALFORMED_HOST_ERROR
+    return true
+  }
+
   if (
     !options.unicodeSupport &&
     (!schemeHandler || !schemeHandler.unicodeSupport) &&
@@ -6957,21 +7024,67 @@ function canonicalizeHost (parsed, options, schemeHandler, isIP) {
     !bracketedIPLiteral &&
     nonSimpleDomain(parsed.host)
   ) {
+    let url
     try {
-      parsed.host = new URL('http://' + parsed.host).hostname
+      url = new URL('http://' + parsed.host)
     } catch (e) {
       parsed.error = parsed.error || "Host's domain name can not be converted to ASCII: " + e
       return true
     }
+    // The WHATWG parser must have read the whole input as a host. Anything
+    // else means it found a delimiter fast-uri did not, so its hostname would
+    // describe a different authority.
+    if (!isHostOnlyURL(url)) {
+      parsed.error = parsed.error || MALFORMED_HOST_ERROR
+      return true
+    }
+    parsed.host = url.hostname
   }
 
   return false
 }
 
 /**
+ * Whether a domain host contains an ASCII character that RFC 3986 does not
+ * allow in a reg-name (unreserved, sub-delims, or pct-encoded). Such a host is
+ * rejected instead of being handed to the WHATWG URL parser, which would treat
+ * "@" as a userinfo delimiter (silently dropping the data before it) and strip
+ * TAB, LF, and CR. Non-ASCII characters remain allowed for IDNs.
+ *
+ * @param {import('./types/index').URIComponent} parsed
+ * @param {import('./types/index').Options} options
+ * @param {{ domainHost?: boolean }|undefined} schemeHandler
+ * @param {boolean} isIP
+ * @returns {boolean}
+ */
+function hasForbiddenDomainHost (parsed, options, schemeHandler, isIP) {
+  return Boolean(
+    parsed.host &&
+    isIP === false &&
+    !isIPLiteral(parsed.host) &&
+    (options.domainHost || (schemeHandler && schemeHandler.domainHost)) &&
+    FORBIDDEN_DOMAIN_HOST_CHARACTER.test(parsed.host)
+  )
+}
+
+/**
+ * @param {URL} url
+ * @returns {boolean}
+ */
+function isHostOnlyURL (url) {
+  return url.username === '' &&
+    url.password === '' &&
+    url.port === '' &&
+    url.pathname === '/' &&
+    url.search === '' &&
+    url.hash === '' &&
+    url.hostname !== ''
+}
+
+/**
  * @param {string} uri
  * @param {import('./types/index').Options} [opts]
- * @returns {{ parsed: import('./types/index').URIComponent, malformedAuthorityOrPort: boolean, malformedPercentEncoding: boolean, malformedSchemeSpecific: boolean, malformedHost: boolean, malformedScheme: boolean }}
+ * @returns {{ parsed: import('./types/index').URIComponent, malformedAuthorityOrPort: boolean, malformedReferenceEdge: boolean, malformedPercentEncoding: boolean, malformedSchemeSpecific: boolean, malformedHost: boolean, malformedScheme: boolean }}
  */
 function parseWithStatus (uri, opts) {
   const options = Object.assign({}, opts)
@@ -6987,6 +7100,12 @@ function parseWithStatus (uri, opts) {
   }
 
   let malformedAuthorityOrPort = false
+  // Check the caller's original reference before suffix mode prepends a scheme
+  // or authority marker and turns its leading edge into interior data.
+  const malformedReferenceEdge = uri.length !== 0 && (
+    uri.charCodeAt(0) <= 0x20 ||
+    uri.charCodeAt(uri.length - 1) <= 0x20
+  )
   let malformedPercentEncoding = false
   let malformedSchemeSpecific = false
   let malformedHost = false
@@ -7037,6 +7156,10 @@ function parseWithStatus (uri, opts) {
     }
   }
 
+  if (malformedReferenceEdge) {
+    parsed.error = parsed.error || 'URI must not contain leading or trailing C0 controls or spaces.'
+  }
+
   const matches = uri.match(URI_PARSE)
 
   if (matches) {
@@ -7050,9 +7173,8 @@ function parseWithStatus (uri, opts) {
     parsed.fragment = matches[8]
 
     if (parsed.scheme !== undefined) {
-      const decodedScheme = unescape(parsed.scheme)
-      if (VALID_SCHEME.test(decodedScheme)) {
-        parsed.scheme = decodedScheme.toLowerCase()
+      if (VALID_SCHEME.test(parsed.scheme)) {
+        parsed.scheme = parsed.scheme.toLowerCase()
       } else {
         parsed.error = parsed.error || MALFORMED_SCHEME_ERROR
         malformedScheme = true
@@ -7085,8 +7207,18 @@ function parseWithStatus (uri, opts) {
         malformedIPLiteral = hasIPLiteralBracket && (!bracketedIPLiteral || ipv6result.error === true)
         parsed.host = isIP ? ipv6result.host : ipv6result.host.toLowerCase()
 
+        if (isIP && ipv6result.isIPV6 === true && parsed.host.indexOf('%') !== -1) {
+          // Persist the zone identifier so recomposition never has to re-derive
+          // it from the ambiguous single-"%" component form, which misreads a
+          // zone that begins with "25" as a %25 separator. It is validated on
+          // use during recomposition, so a host reassigned after parse or an
+          // input zone that does not describe the host is ignored. Only zoned
+          // literals are ambiguous; plain IPv6 addresses round-trip without it.
+          parsed.ipv6Zone = parsed.host.slice(parsed.host.indexOf('%') + 1)
+        }
+
         if (malformedIPLiteral) {
-          parsed.error = parsed.error || 'URI host is malformed.'
+          parsed.error = parsed.error || MALFORMED_HOST_ERROR
           malformedAuthorityOrPort = true
         }
       } else {
@@ -7116,13 +7248,27 @@ function parseWithStatus (uri, opts) {
       malformedHost = canonicalizeHost(parsed, options, schemeHandler, isIP)
     }
 
-    if (!schemeHandler || (schemeHandler && !schemeHandler.skipNormalize)) {
-      if (uri.indexOf('%') !== -1) {
-        if (parsed.host !== undefined && !malformedIPLiteral) {
-          const host = isIP ? parsed.host : normalizePercentEncoding(parsed.host, true)
-          parsed.host = reescapeHostDelimiters(host, isIP)
-        }
+    if (parsed.host !== undefined && !malformedIPLiteral) {
+      let host = parsed.host
+      if (uri.indexOf('%') !== -1 && !isIP) {
+        host = normalizePercentEncoding(host, true)
+        // Fold reg-name case after decoding unreserved octets. The second
+        // pass only restores uppercase hex in escapes that remain encoded.
+        host = normalizePercentEncoding(host.toLowerCase())
       }
+      // Resolution parses both inputs with the internal `null` scheme before
+      // the effective scheme is known. Preserve raw host characters for that
+      // intermediate step so the final scheme can apply domain canonicalization;
+      // the resolved authority is encoded when it is serialized.
+      if (options.scheme !== 'null') {
+        const allowNonAsciiHost = options.unicodeSupport === true || Boolean(schemeHandler && schemeHandler.unicodeSupport)
+        parsed.host = encodeHost(host, isIP, allowNonAsciiHost)
+      } else {
+        parsed.host = host
+      }
+    }
+
+    if (!schemeHandler || (schemeHandler && !schemeHandler.skipNormalize)) {
       if (parsed.path) {
         parsed.path = normalizePathEncoding(parsed.path)
       }
@@ -7144,7 +7290,7 @@ function parseWithStatus (uri, opts) {
   } else {
     parsed.error = parsed.error || 'URI can not be parsed.'
   }
-  return { parsed, malformedAuthorityOrPort, malformedPercentEncoding, malformedSchemeSpecific, malformedHost, malformedScheme }
+  return { parsed, malformedAuthorityOrPort, malformedReferenceEdge, malformedPercentEncoding, malformedSchemeSpecific, malformedHost, malformedScheme }
 }
 
 /**
@@ -7168,13 +7314,14 @@ function normalizeString (uri, opts) {
 /**
  * @param {string} uri
  * @param {import('./types/index').Options} [opts]
- * @returns {{ normalized: string, malformedAuthorityOrPort: boolean, malformedPercentEncoding: boolean, malformedSchemeSpecific: boolean, malformedHost: boolean, malformedScheme: boolean }}
+ * @returns {{ normalized: string, malformedAuthorityOrPort: boolean, malformedReferenceEdge: boolean, malformedPercentEncoding: boolean, malformedSchemeSpecific: boolean, malformedHost: boolean, malformedScheme: boolean }}
  */
 function normalizeStringWithStatus (uri, opts) {
-  const { parsed, malformedAuthorityOrPort, malformedPercentEncoding, malformedSchemeSpecific, malformedHost, malformedScheme } = parseWithStatus(uri, opts)
+  const { parsed, malformedAuthorityOrPort, malformedReferenceEdge, malformedPercentEncoding, malformedSchemeSpecific, malformedHost, malformedScheme } = parseWithStatus(uri, opts)
   return {
-    normalized: malformedAuthorityOrPort || malformedPercentEncoding || malformedSchemeSpecific || malformedHost || malformedScheme ? uri : serialize(parsed, opts),
+    normalized: malformedAuthorityOrPort || malformedReferenceEdge || malformedPercentEncoding || malformedSchemeSpecific || malformedHost || malformedScheme ? uri : serialize(parsed, opts),
     malformedAuthorityOrPort,
+    malformedReferenceEdge,
     malformedPercentEncoding,
     malformedSchemeSpecific,
     malformedHost,
@@ -7198,8 +7345,8 @@ function normalizeComparableURI (uri, opts) {
   } catch {
     return undefined
   }
-  const { normalized, malformedAuthorityOrPort, malformedPercentEncoding, malformedSchemeSpecific, malformedHost, malformedScheme } = normalizeStringWithStatus(value, opts)
-  return malformedAuthorityOrPort || malformedPercentEncoding || malformedSchemeSpecific || malformedHost || malformedScheme ? undefined : normalized
+  const { normalized, malformedAuthorityOrPort, malformedReferenceEdge, malformedPercentEncoding, malformedSchemeSpecific, malformedHost, malformedScheme } = normalizeStringWithStatus(value, opts)
+  return malformedAuthorityOrPort || malformedReferenceEdge || malformedPercentEncoding || malformedSchemeSpecific || malformedHost || malformedScheme ? undefined : normalized
 }
 
 const fastUri = {
@@ -7449,7 +7596,10 @@ const urn = /** @type {SchemeHandler} */ ({
   scheme: 'urn',
   parse: urnParse,
   serialize: urnSerialize,
-  skipNormalize: true
+  skipNormalize: true,
+  // The NSS is opaque to generic URI path processing. In particular, RFC 2141
+  // and RFC 8141 do not treat slash-delimited dot segments as equivalent.
+  absolutePath: true
 })
 
 const urnuuid = /** @type {SchemeHandler} */ ({
@@ -7509,6 +7659,7 @@ const DTEXT_IRI = allowSet(DTEXT_ALLOWED, true)
 const HEX_PAIR = /^[\da-f]{2}$/iu
 const MAILTO_DOMAIN_LITERAL = /^\[[\x21-\x5A\x5E-\x7E]*\]$/u
 const MAILTO_DOMAIN_ERROR = 'URI mailto has an invalid recipient domain.'
+const MAILTO_AUTHORITY_ERROR = 'URI mailto must not have an authority component.'
 const HAS_SURROGATE = /[\uD800-\uDFFF]/u
 
 /**
@@ -7714,28 +7865,50 @@ function mailtoParse (component, options) {
         mailtoComponent.error = mailtoComponent.error || 'URI mailto has malformed header fields.'
         continue
       }
-      const name = eqIdx === -1 ? token : token.slice(0, eqIdx)
+      const name = decodeHex(eqIdx === -1 ? token : token.slice(0, eqIdx))
+      const normalizedName = name.toLowerCase()
       const value = eqIdx === -1 ? '' : token.slice(eqIdx + 1)
-      if (name === 'to') {
+      if (normalizedName === 'to') {
         const addrs = value.split(',')
         for (let j = 0; j < addrs.length; j++) to.push(addrs[j])
         continue
       }
-      if (name === 'subject') {
+      if (normalizedName === 'subject') {
         mailtoComponent.subject = decodeHex(value)
         continue
       }
-      if (name === 'body') {
+      if (normalizedName === 'body') {
         mailtoComponent.body = decodeHex(value)
         continue
       }
       if (headers === null) headers = /** @type {Record<string,string>} */ (Object.create(null))
-      headers[decodeHex(name)] = decodeHex(value)
+      headers[name] = decodeHex(value)
     }
     if (headers !== null) mailtoComponent.headers = headers
   }
 
   mailtoComponent.query = undefined
+
+  // RFC 6068 defines no authority for the `mailto` scheme. A `mailto://` input
+  // that retains an authority and also carries recipients (from the path or a
+  // `to=` hfield) folds a leading "/" into the recipient local part on the
+  // next parse; the generic serializer then reinserts a "/" before that path
+  // on every pass, so serialize(parse(x)) is not a fixpoint and a
+  // renormalize-to-fixpoint loop accretes one "%2F" per pass. Drop the
+  // retained authority so the parse -> serialize round trip is stable. A bare
+  // `mailto://host` with no recipients is left as-is: it is idempotent and host
+  // normalization for skip-normalize schemes stays intact.
+  if (
+    to.length > 0 &&
+    (mailtoComponent.userinfo !== undefined ||
+      mailtoComponent.host !== undefined ||
+      mailtoComponent.port !== undefined)
+  ) {
+    mailtoComponent.userinfo = undefined
+    mailtoComponent.host = undefined
+    mailtoComponent.port = undefined
+    mailtoComponent.error = mailtoComponent.error || MAILTO_AUTHORITY_ERROR
+  }
 
   for (let i = 0; i < to.length; i++) {
     const rawAddr = to[i]
@@ -7756,6 +7929,18 @@ function mailtoParse (component, options) {
 }
 
 /**
+ * Encodes a decoded mailto header name. Unlike `encodeWithAllow`, a percent
+ * sign is always data here, even when followed by two hex digits. Preserving
+ * such a sequence as an existing escape would decode the name again on the
+ * next parse and could turn a generic header into `to`, `subject`, or `body`.
+ * @param {string} name
+ * @returns {string}
+ */
+function mailtoEncodeHeaderName (name) {
+  return encodeWithAllow(name.replace(/%/gu, '%25'), HFNAME)
+}
+
+/**
  * @param {import('../types/index').URIComponent} component
  * @param {import('../types/index').Options} options
  * @returns {import('../types/index').URIComponent}
@@ -7763,7 +7948,40 @@ function mailtoParse (component, options) {
 function mailtoSerialize (component, options) {
   const mailtoComponent = component
   const to = Array.isArray(mailtoComponent.to) ? mailtoComponent.to.slice() : []
+  const sourceHeaders = mailtoComponent.headers && typeof mailtoComponent.headers === 'object'
+    ? Object.assign(Object.create(null), mailtoComponent.headers)
+    : Object.create(null)
+  const headers = Object.create(null)
+
+  // Header field names are case-insensitive. Canonicalize the fields with
+  // dedicated component properties so callers cannot smuggle a second spelling
+  // through `headers`. As during parsing, all `to` fields are accumulated;
+  // repeated subject/body fields use the last value.
+  for (const name in sourceHeaders) {
+    const normalizedName = name.toLowerCase()
+    if (normalizedName === 'to') {
+      const addrs = String(sourceHeaders[name]).split(',')
+      for (let i = 0; i < addrs.length; i++) to.push(addrs[i])
+    } else if (normalizedName === 'subject' || normalizedName === 'body') {
+      headers[normalizedName] = sourceHeaders[name]
+    } else {
+      headers[name] = sourceHeaders[name]
+    }
+  }
+
+  if (mailtoComponent.subject !== undefined) headers.subject = mailtoComponent.subject
+  if (mailtoComponent.body !== undefined) headers.body = mailtoComponent.body
+  mailtoComponent.headers = headers
+
   if (to.length) {
+    // RFC 6068 defines no authority for the `mailto` scheme. If an
+    // application constructs a component with both an authority and recipients,
+    // drop the authority before the generic serializer can insert a "/" path
+    // separator that becomes part of the first recipient on the next parse.
+    mailtoComponent.userinfo = undefined
+    mailtoComponent.host = undefined
+    mailtoComponent.port = undefined
+
     for (let i = 0; i < to.length; i++) {
       const addr = String(to[i])
       const atIdx = addr.lastIndexOf('@')
@@ -7789,21 +8007,13 @@ function mailtoSerialize (component, options) {
     mailtoComponent.path = undefined
   }
 
-  const headers = mailtoComponent.headers && typeof mailtoComponent.headers === 'object'
-    ? Object.assign(Object.create(null), mailtoComponent.headers)
-    : Object.create(null)
-
-  if (mailtoComponent.subject) headers.subject = mailtoComponent.subject
-  if (mailtoComponent.body) headers.body = mailtoComponent.body
-  mailtoComponent.headers = headers
-
-  // `headers` has a null prototype and was filled via Object.assign, so every
-  // enumerable key is an own property and no hasOwnProperty guard is needed.
+  // `headers` has a null prototype, so every enumerable key is an own property
+  // and no hasOwnProperty guard is needed.
   let query = ''
   let count = 0
   for (const name in headers) {
     if (count++ !== 0) query += '&'
-    query += encodeWithAllow(name, HFNAME) + '=' + encodeWithAllow(String(headers[name]), HFNAME)
+    query += mailtoEncodeHeaderName(name) + '=' + encodeWithAllow(String(headers[name]), HFNAME)
   }
 
   if (count !== 0) {
@@ -7888,6 +8098,12 @@ const isQueryFragmentCharacter = RegExp.prototype.test.bind(/^[A-Za-z0-9\-._~!$&
 
 /** @type {(value: string) => boolean} */
 const isUserinfoCharacter = RegExp.prototype.test.bind(/^[A-Za-z0-9\-._~!$&'()*+,;=:]$/u)
+
+/** @type {(value: string) => boolean} */
+const isRegNameCharacter = RegExp.prototype.test.bind(/^[A-Za-z0-9\-._~!$&'()*+,;=]$/u)
+
+/** @type {(value: string) => boolean} */
+const isLiteralRegName = RegExp.prototype.test.bind(/^[A-Za-z0-9\-._~!$&'()*+,;=]*$/u)
 
 /**
  * @param {Array<string>} input
@@ -8212,23 +8428,78 @@ function removeDotSegments (path) {
 }
 
 /**
- * Re-escape RFC 3986 gen-delims that must not appear literally in the host.
- * After the URI regex parses, these characters cannot be literal in the host
- * field, so any that appear after decoding came from percent-encoding and
- * must be restored to prevent authority structure changes.
+ * Removes dot segments from the path of a relative reference (a path that does
+ * not start with "/") without changing what it resolves to against any base.
+ * Unlike `removeDotSegments`, leading ".." segments that cannot be collapsed
+ * are kept, the result never becomes root-relative, and a result that would be
+ * empty or start with an empty segment is prefixed with "." (an empty path
+ * means "same document" and a leading "//" would introduce an authority).
  *
- * @param {string} host
- * @param {boolean} isIP - true for IPv4/IPv6 hosts (skip colon re-escaping)
+ * @param {string} path
  * @returns {string}
  */
-const HOST_DELIMS = { '@': '%40', '/': '%2F', '?': '%3F', '#': '%23', ':': '%3A' }
-const HOST_DELIM_RE = /[@/?#:]/g
-const HOST_DELIM_NO_COLON_RE = /[@/?#]/g
+function removeDotSegmentsRelative (path) {
+  if (path === '' || path[0] === '/') {
+    return removeDotSegments(path)
+  }
 
-function reescapeHostDelimiters (host, isIP) {
-  const re = isIP ? HOST_DELIM_NO_COLON_RE : HOST_DELIM_RE
-  re.lastIndex = 0
-  return host.replace(re, (ch) => HOST_DELIMS[ch])
+  const segments = path.split('/')
+  const last = segments.length - 1
+  /** @type {string[]} */
+  const output = []
+  let trailingDirectory = false
+
+  for (let i = 0; i <= last; i++) {
+    const segment = segments[i]
+    if (segment === '.' || segment === '..') {
+      if (segment === '..') {
+        if (output.length !== 0 && output[output.length - 1] !== '..') {
+          output.pop()
+        } else {
+          output.push('..')
+        }
+      }
+      trailingDirectory = i === last
+    } else {
+      output.push(segment)
+    }
+  }
+
+  if (trailingDirectory && output[output.length - 1] !== '..') {
+    output.push('')
+  }
+  if (output.length === 0 || output[0] === '' || output[0].includes(':')) {
+    // An empty path, a leading empty segment ("//"), or a first segment
+    // containing ":" (which would be mistaken for a scheme, RFC 3986 section
+    // 4.2) must stay behind a "." segment so the reference keeps its meaning.
+    output.unshift('.')
+  }
+
+  return output.join('/')
+}
+
+/**
+ * Encodes a host according to the RFC 3986 host grammar. Valid IP literals
+ * have already been checked by `normalizeIPv6`, so their address separators
+ * remain literal. Every other host is a reg-name and may contain only
+ * unreserved characters, sub-delimiters, and valid percent escapes.
+ *
+ * @param {string} host
+ * @param {boolean} isIP - true for a validated IPv4/IPv6 host
+ * @param {boolean} [allowNonAscii=false] - preserve non-ASCII IRI characters
+ * @returns {string}
+ */
+const IP_HOST_DELIMS = { '@': '%40', '/': '%2F', '?': '%3F', '#': '%23' }
+const IP_HOST_DELIM_RE = /[@/?#]/g
+
+function encodeHost (host, isIP, allowNonAscii = false) {
+  if (!isIP) {
+    if (isLiteralRegName(host)) return host
+    return encodeComponent(host, isRegNameCharacter, allowNonAscii)
+  }
+
+  IP_HOST_DELIM_RE.lastIndex = 0
+  return host.replace(IP_HOST_DELIM_RE, (ch) => IP_HOST_DELIMS[ch])
 }
 
 /**
@@ -8491,9 +8762,10 @@ function normalizeQueryFragmentEncoding (input) {
  *
  * @param {string} input
  * @param {(value: string) => boolean} isAllowed
+ * @param {boolean} [allowNonAscii=false]
  * @returns {string}
  */
-function encodeComponent (input, isAllowed) {
+function encodeComponent (input, isAllowed, allowNonAscii = false) {
   let output = ''
 
   for (let i = 0; i < input.length; i++) {
@@ -8514,17 +8786,19 @@ function encodeComponent (input, isAllowed) {
       if (code < 0x80) {
         output += BYTE_HEX[code]
       } else if (code < 0xD800 || code > 0xDFFF) {
-        output += percentEncodeNonAscii(code)
+        output += allowNonAscii ? ch : percentEncodeNonAscii(code)
       } else if (code <= 0xDBFF && i + 1 < input.length) {
         const low = input.charCodeAt(i + 1)
         if (low >= 0xDC00 && low <= 0xDFFF) {
-          output += percentEncodeNonAscii(0x10000 + ((code - 0xD800) << 10) + (low - 0xDC00))
+          output += allowNonAscii
+            ? ch + input[i + 1]
+            : percentEncodeNonAscii(0x10000 + ((code - 0xD800) << 10) + (low - 0xDC00))
           i++
         } else {
-          output += percentEncodeNonAscii(0xFFFD)
+          output += allowNonAscii ? '\uFFFD' : percentEncodeNonAscii(0xFFFD)
         }
       } else {
-        output += percentEncodeNonAscii(0xFFFD)
+        output += allowNonAscii ? '\uFFFD' : percentEncodeNonAscii(0xFFFD)
       }
     }
   }
@@ -8606,10 +8880,42 @@ function escapePreservingEscapes (input) {
 }
 
 /**
+ * Rebuilds the bracketed form of a zoned IPv6 authority from the current
+ * `component.host` and its zone identifier (`component.ipv6Zone`), but only
+ * when they are consistent and describe a real zoned IPv6 literal that
+ * normalizes back to `component.host`. This validates the zone on use, so a
+ * caller-supplied `ipv6Zone` that does not match the host (or a host
+ * reassigned after `parse`) is never trusted and recomposition falls back to
+ * the normal path.
+ *
  * @param {import('../types/index').URIComponent} component
  * @returns {string|undefined}
  */
-function recomposeAuthority (component) {
+function recomposeZonedIPv6Host (component) {
+  const zone = component.ipv6Zone
+  // Without an ipv6Zone the single-"%" host form is genuinely ambiguous when
+  // the zone begins with "25", so we fall through to the best-effort heuristic
+  // (which matches the pre-existing behavior for hand-built components that do
+  // not carry a zone).
+  if (zone === undefined) return undefined
+  const host = component.host
+  const separator = host.indexOf('%')
+  if (separator === -1) return undefined
+  const address = host.slice(0, separator)
+  const escaped = address + '%25' + zone
+  const derived = normalizeIPv6('[' + escaped + ']')
+  if (derived.isIPV6 === true && derived.host === host) {
+    return '[' + escaped + ']'
+  }
+  return undefined
+}
+
+/**
+ * @param {import('../types/index').URIComponent} component
+ * @param {boolean} [allowNonAscii=false] - preserve non-ASCII IRI characters
+ * @returns {string|undefined}
+ */
+function recomposeAuthority (component, allowNonAscii = false) {
   const uriTokens = []
 
   if (component.userinfo !== undefined) {
@@ -8620,17 +8926,30 @@ function recomposeAuthority (component) {
   if (component.host !== undefined) {
     let host = component.host
     if (!isIPv4(host)) {
-      let ipV6res = normalizeIPv6(host)
-      if (ipV6res.isIPV6 !== true && ipV6res.isIPVFuture !== true) {
-        // Decode only unreserved bytes, once. In particular, keep %25 encoded
-        // so it cannot introduce a second escape during recomposition.
-        host = normalizePercentEncoding(host, true)
-        ipV6res = normalizeIPv6(host)
-      }
-      if (ipV6res.isIPV6 === true || ipV6res.isIPVFuture === true) {
-        host = `[${ipV6res.escapedHost}]`
+      // A parse-time zone identifier is authoritative only while it still
+      // describes the current host. Re-deriving an IPv6 zone from the
+      // single-"%" component form is ambiguous when the zone begins with
+      // "25": it is misread as a %25 separator, rewriting e.g. zone
+      // "25eth0" into "eth0" (or destroying a zone of just "25"). A
+      // validated zone keeps parse, normalize, serialize and equal in
+      // agreement.
+      const zonedHost = recomposeZonedIPv6Host(component)
+      if (zonedHost !== undefined) {
+        host = zonedHost
       } else {
-        host = reescapeHostDelimiters(host, false)
+        let ipV6res = normalizeIPv6(host)
+        if (ipV6res.isIPV6 !== true && ipV6res.isIPVFuture !== true) {
+          // Decode only unreserved bytes, once. In particular, keep %25
+          // encoded so it cannot introduce a second escape during
+          // recomposition.
+          host = normalizePercentEncoding(host, true)
+          ipV6res = normalizeIPv6(host)
+        }
+        if (ipV6res.isIPV6 === true || ipV6res.isIPVFuture === true) {
+          host = `[${ipV6res.escapedHost}]`
+        } else {
+          host = encodeHost(host, false, allowNonAscii)
+        }
       }
     }
     uriTokens.push(host)
@@ -8654,7 +8973,7 @@ module.exports = {
   nonSimpleDomain,
   nonSimpleMailtoDomain,
   recomposeAuthority,
-  reescapeHostDelimiters,
+  encodeHost,
   normalizePercentEncoding,
   normalizePathEncoding,
   serializePathEncoding,
@@ -8664,6 +8983,7 @@ module.exports = {
   encodeFragment,
   escapePreservingEscapes,
   removeDotSegments,
+  removeDotSegmentsRelative,
   isIPv4,
   isUUID,
   normalizeIPv6,

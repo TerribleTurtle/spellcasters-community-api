@@ -39,6 +39,9 @@ class TestParseDeepdiffPath:
         result = patch_utils._parse_deepdiff_path("root['list'][99]")
         assert result == ["list", 99]
 
+    def test_double_quoted_string_key(self):
+        assert patch_utils._parse_deepdiff_path('root["warrior\'s_axe"]') == ["warrior's_axe"]
+
 
 # ---------------------------------------------------------------------------
 # compute_diff — pure function (via patch_utils, not generate_patch)
@@ -75,6 +78,14 @@ class TestComputeDiff:
         assert diffs[0]["path"] == ["attack"]
         assert diffs[0]["new_value"] == 50
         assert "old_value" not in diffs[0]
+
+    def test_key_added_safe_no_eval_execution(self):
+        # Ensure keys containing code-like strings or quotes do not trigger eval and are extracted safely
+        code_key = "os.system('calc')"
+        diffs = patch_utils.compute_diff({"base": 1}, {"base": 1, code_key: 123})
+        assert len(diffs) == 1
+        assert diffs[0]["path"] == [code_key]
+        assert diffs[0]["new_value"] == 123
 
     def test_key_removed(self):
         diffs = patch_utils.compute_diff({"health": 100, "attack": 50}, {"health": 100})
